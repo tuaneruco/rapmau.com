@@ -134,6 +134,10 @@ function renderCategoryPills() {
       state.visibleCount = 24;
       renderCategoryPills();
       renderProducts();
+      const activeBtn = container.querySelector('.cat-pill.active');
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     });
   });
 }
@@ -659,11 +663,11 @@ function openProductModal(sku, preferredVariantId) {
           </div>
         </div>
 
-        <div style="display:flex; gap:10px; margin:16px 0;">
+        <div style="display:flex; gap:10px; margin:16px 0; flex-wrap:wrap;">
           <button
             type="button"
             class="btn btn-primary"
-            style="flex:1; font-size:15px;"
+            style="flex:1 1 220px; font-size:15px;"
             data-action="add-cart-modal"
             data-sku="${product.sku}"
             data-var="${activeVar.id}"
@@ -673,6 +677,7 @@ function openProductModal(sku, preferredVariantId) {
           <button
             type="button"
             class="btn btn-secondary"
+            style="flex:1 1 160px;"
             id="modalAskThisSkuBtn"
             data-sku="${product.sku}"
           >
@@ -948,8 +953,8 @@ function openCartModal() {
       ${state.cart
         .map(
           (item, idx) => `
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px dashed var(--border-soft);">
-          <div style="flex:1;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; padding:8px 0; border-bottom:1px dashed var(--border-soft);">
+          <div style="flex:1 1 180px;">
             <strong style="font-size:14px;">[${item.sku}] ${item.title}</strong>
             <div style="font-size:12px; color:var(--text-muted);">${item.variantName}</div>
           </div>

@@ -111,6 +111,26 @@
       .studio-grid {
         grid-template-columns: 1fr;
       }
+      .studio-tabs {
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+      }
+      .st-tab {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+      .studio-canvas-box {
+        min-height: 360px;
+        padding: 12px;
+      }
+      .ctrl-group input[type="text"],
+      .ctrl-group input[type="number"],
+      .ctrl-group select {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
