@@ -61,6 +61,7 @@ async function initApp() {
     state.categories = data.categories || [];
 
     hydrateSiteMetadata();
+    applyRouteFromLocation({ initial: true });
     renderCategoryPills();
     renderProducts();
     renderFreeBooks();
@@ -70,6 +71,180 @@ async function initApp() {
   } catch (err) {
     console.error('Lỗi tải catalog:', err);
   }
+}
+
+const DEFAULT_SEO = {
+  title: 'RAPMAU.COM — Rập Mẫu Đồ Da PDF/DXF, Rập Giấy, Rập Mica, Khuôn Bế & Dụng Cụ Làm Đồ Da',
+  description:
+    'Chọn rập PDF/DXF, rập giấy, rập mica hoặc khuôn theo mẫu; tìm phụ kiện và dụng cụ cơ bản để tự làm đồ da. Cần hỏi mẫu phù hợp, hãy liên hệ Hotline/Zalo: 0971.463.768 (Mr.Tuan) - Email: info@rapmau.com.',
+  canonical: 'https://www.rapmau.com/',
+  h1Html:
+    'Chọn <span class="text-accent">rập PDF/DXF</span>, <span class="text-accent">rập giấy</span>, <span class="text-accent">rập mica</span> hoặc <span class="text-accent">khuôn theo mẫu</span>'
+};
+
+function setDocumentMeta({ title, description, canonical, h1Text, jsonLd }) {
+  if (title) document.title = title;
+  const descEl = document.querySelector('meta[name="description"]');
+  if (descEl && description) descEl.setAttribute('content', description);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle && title) ogTitle.setAttribute('content', title);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc && description) ogDesc.setAttribute('content', description);
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl && canonical) ogUrl.setAttribute('content', canonical);
+  const canonEl = document.querySelector('link[rel="canonical"]');
+  if (canonEl && canonical) canonEl.setAttribute('href', canonical);
+  const h1El = document.querySelector('.ch-title');
+  if (h1El) {
+    if (h1Text) h1El.textContent = h1Text;
+    else h1El.innerHTML = DEFAULT_SEO.h1Html;
+  }
+
+  let ldScript = document.getElementById('dynamicJsonLd');
+  if (jsonLd) {
+    if (!ldScript) {
+      ldScript = document.createElement('script');
+      ldScript.type = 'application/ld+json';
+      ldScript.id = 'dynamicJsonLd';
+      document.head.appendChild(ldScript);
+    }
+    ldScript.textContent = JSON.stringify(jsonLd);
+  } else if (ldScript) {
+    ldScript.remove();
+  }
+}
+
+function buildProductJsonLd(product) {
+  const prices = product.variants.map((v) => v.price).filter((p) => p >= 0);
+  const lowPrice = Math.min(...prices);
+  const highPrice = Math.max(...prices);
+  const prodUrl = `https://www.rapmau.com/rap-mau/${product.slug}`;
+  const imgUrl = product.images[0]?.startsWith('http')
+    ? product.images[0]
+    : `https://www.rapmau.com${encodeURI(product.images[0] || '/assets/brand/hero-workbench.jpg')}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    sku: product.sku,
+    mpn: product.sku,
+    image: [imgUrl],
+    description: `${product.title} chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}). Độ dày da khuyên dùng: ${product.leatherThickness}, bước đục: ${product.chiselPitch}. Cung cấp đủ 4 phiên bản: File PDF/DXF, Rập Giấy 350gsm, Rập Mica 2mm và Khuôn Bế Thép tại www.rapmau.com.`,
+    brand: {
+      '@type': 'Brand',
+      name: 'RAPMAU.COM'
+    },
+    category: product.categoryName,
+    offers: {
+      '@type': 'AggregateOffer',
+      url: prodUrl,
+      priceCurrency: 'VND',
+      lowPrice,
+      highPrice,
+      offerCount: product.variants.length,
+      availability: 'https://schema.org/InStock',
+      offers: product.variants.map((v) => ({
+        '@type': 'Offer',
+        name: v.name,
+        sku: `${product.sku}-${v.id.toUpperCase()}`,
+        price: v.price,
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        url: prodUrl
+      }))
+    }
+  };
+}
+
+function buildCategoryJsonLd(catObj, catProducts) {
+  const catUrl = `https://www.rapmau.com/danh-muc/${catObj.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${catObj.name} (${catObj.count} mẫu chuẩn 1:1)`,
+    url: catUrl,
+    description: `Tuyển tập ${catObj.count} mẫu ${catObj.name.toLowerCase()} chuẩn tỷ lệ 1:1 tại www.rapmau.com: tải file PDF/DXF hoặc đặt cắt Rập Giấy 350gsm, Rập Mica 2mm và Khuôn Bế Thép.`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: catProducts.length,
+      itemListElement: catProducts.slice(0, 20).map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://www.rapmau.com/rap-mau/${p.slug}`,
+        name: p.title
+      }))
+    }
+  };
+}
+
+function syncCategorySeoAndUrl(catKey, { pushUrl = true } = {}) {
+  if (catKey === 'all') {
+    if (pushUrl && window.location.pathname !== '/') {
+      window.history.pushState({ type: 'home' }, '', '/');
+    }
+    setDocumentMeta({
+      title: DEFAULT_SEO.title,
+      description: DEFAULT_SEO.description,
+      canonical: DEFAULT_SEO.canonical,
+      h1Text: null,
+      jsonLd: null
+    });
+    return;
+  }
+
+  const catObj = state.categories.find((c) => c.key === catKey || c.slug === catKey);
+  if (!catObj) return;
+  const targetPath = `/danh-muc/${catObj.slug}`;
+  if (pushUrl && window.location.pathname !== targetPath) {
+    window.history.pushState({ type: 'category', catKey: catObj.key }, '', targetPath);
+  }
+  const catProducts = state.products.filter((p) => p.categoryKey === catObj.key);
+  setDocumentMeta({
+    title: `${catObj.name} — ${catObj.count} Mẫu Rập PDF/DXF, Rập Giấy, Rập Mica 1:1 | RAPMAU.COM`,
+    description: `Chọn ngay ${catObj.count} mẫu ${catObj.name} chuẩn tỷ lệ 1:1: tải file PDF/DXF tự động 24/7, đặt cắt CNC Rập Giấy 350gsm, Rập Mica 2mm hoặc Khuôn Bế Thép. Liên hệ Mr.Tuan: 0971.463.768.`,
+    canonical: `https://www.rapmau.com${targetPath}`,
+    h1Text: `${catObj.name} (${catObj.count} Mẫu Chuẩn 1:1)`,
+    jsonLd: buildCategoryJsonLd(catObj, catProducts)
+  });
+}
+
+function applyRouteFromLocation({ initial = false } = {}) {
+  const rawPath = decodeURIComponent(window.location.pathname).replace(/\/+$/, '') || '/';
+  const preRoute = window.__INITIAL_ROUTE__;
+
+  if (preRoute?.type === 'category' || rawPath.startsWith('/danh-muc/')) {
+    const slug = preRoute?.slug || rawPath.replace('/danh-muc/', '').split('/')[0];
+    const foundCat = state.categories.find((c) => c.slug === slug || c.key === slug);
+    if (foundCat) {
+      state.selectedCategory = foundCat.key;
+      syncCategorySeoAndUrl(foundCat.key, { pushUrl: false });
+      document.getElementById('productModalBackdrop')?.classList.add('hidden');
+      return;
+    }
+  }
+
+  if (preRoute?.type === 'product' || rawPath.startsWith('/rap-mau/')) {
+    const slug = preRoute?.slug || rawPath.replace('/rap-mau/', '').split('/')[0];
+    const foundProd = state.products.find(
+      (p) => p.slug === slug || p.sku.toLowerCase() === slug.toLowerCase()
+    );
+    if (foundProd) {
+      state.selectedCategory = foundProd.categoryKey;
+      if (initial) {
+        setTimeout(() => {
+          openProductModal(foundProd.sku, null, { pushUrl: false });
+        }, 0);
+      } else {
+        openProductModal(foundProd.sku, null, { pushUrl: false });
+      }
+      return;
+    }
+  }
+
+  state.selectedCategory = 'all';
+  document.getElementById('productModalBackdrop')?.classList.add('hidden');
+  syncCategorySeoAndUrl('all', { pushUrl: false });
 }
 
 function hydrateSiteMetadata() {
@@ -132,6 +307,7 @@ function renderCategoryPills() {
     btn.addEventListener('click', () => {
       state.selectedCategory = btn.dataset.cat;
       state.visibleCount = 24;
+      syncCategorySeoAndUrl(state.selectedCategory, { pushUrl: true });
       renderCategoryPills();
       renderProducts();
       const activeBtn = container.querySelector('.cat-pill.active');
@@ -544,7 +720,15 @@ function renderTools() {
     .join('');
 }
 
-function openProductModal(sku, preferredVariantId) {
+function closeProductModal({ restoreUrl = true } = {}) {
+  const backdrop = document.getElementById('productModalBackdrop');
+  if (backdrop) backdrop.classList.add('hidden');
+  if (restoreUrl) {
+    syncCategorySeoAndUrl(state.selectedCategory, { pushUrl: true });
+  }
+}
+
+function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThumbs = false } = {}) {
   const product = state.products.find((p) => p.sku === sku);
   if (!product) return;
 
@@ -552,20 +736,40 @@ function openProductModal(sku, preferredVariantId) {
   const backdrop = document.getElementById('productModalBackdrop');
   const content = document.getElementById('productModalContent');
 
+  // Cập nhật URL & SEO + Schema.org Product/Offer cho sản phẩm đang mở
+  const targetProdPath = `/rap-mau/${product.slug}`;
+  if (pushUrl && window.location.pathname !== targetProdPath) {
+    window.history.pushState({ type: 'product', sku: product.sku }, '', targetProdPath);
+  }
+  setDocumentMeta({
+    title: `${product.title} — PDF/DXF, Rập Giấy, Rập Mica, Khuôn Bế | RAPMAU.COM`,
+    description: `Mua hoặc tải ${product.title} chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}, Đục ${product.chiselPitch}, Da ${product.leatherThickness}). Đủ 4 biến thể: File PDF/DXF, Rập Giấy 350gsm, Rập Mica 2mm & Khuôn Bế Thép.`,
+    canonical: `https://www.rapmau.com${targetProdPath}`,
+    h1Text: product.title,
+    jsonLd: buildProductJsonLd(product)
+  });
+
   // Danh sách ảnh + ảnh bản vẽ CAD trích xuất từ PDF (nếu có)
   const galleryImages = [...product.images];
   if (product.cadPreview && !galleryImages.includes(product.cadPreview)) {
     galleryImages.push(product.cadPreview);
   }
 
+  const MAX_VISIBLE_THUMBS = 6;
+  const hasMoreThumbs = !showAllThumbs && galleryImages.length > MAX_VISIBLE_THUMBS;
+  const visibleThumbs = hasMoreThumbs ? galleryImages.slice(0, MAX_VISIBLE_THUMBS - 1) : galleryImages;
+  const hiddenCount = galleryImages.length - visibleThumbs.length;
+
   const matchingTools = state.accessories.filter((a) => product.recommendedTools.includes(a.id));
   const firstPdfUrl = product.pdfFiles[0] ? encodeURI(product.pdfFiles[0]) : '';
   const isFreePdf = activeVar.id === 'pdf_dxf' && activeVar.price === 0;
+  let currentImgIdx = 0;
 
   content.innerHTML = `
     <div class="detail-grid">
-      <div>
-        <div id="detailMediaDisplay">
+      <!-- CỘT 1 (TRÊN MOBILE LÀ PHẦN ĐẦU TIÊN): 1. KHUNG ẢNH CHÍNH & THUMBNAIL GỌN GÀNG -->
+      <div class="detail-media-col">
+        <div class="detail-media-stage" id="detailMediaDisplay">
           <img
             src="${encodeURI(galleryImages[0])}"
             alt="${product.title}"
@@ -573,61 +777,57 @@ function openProductModal(sku, preferredVariantId) {
             id="detailMainImage"
             onerror="this.src='/assets/tools/pattern-placeholder.svg'"
           />
-        </div>
-
-        <div class="detail-thumbs">
-          ${galleryImages
-            .map(
-              (img, idx) => `
-            <button type="button" class="detail-thumb-btn ${idx === 0 ? 'active' : ''}" data-img="${encodeURI(img)}">
-              <img src="${encodeURI(img)}" alt="Thumb ${idx + 1}" />
-            </button>
+          ${
+            galleryImages.length > 1
+              ? `
+            <button type="button" class="stage-nav-btn stage-prev" id="stagePrevBtn" aria-label="Ảnh trước">‹</button>
+            <button type="button" class="stage-nav-btn stage-next" id="stageNextBtn" aria-label="Ảnh tiếp">›</button>
+            <span class="stage-counter" id="stageCounterBadge">1 / ${galleryImages.length}</span>
           `
-            )
-            .join('')}
+              : ''
+          }
           ${
             firstPdfUrl
-              ? `<button type="button" class="btn-sm btn-detail" id="togglePdfPreviewBtn" data-pdf="${firstPdfUrl}" style="height:68px; flex-shrink:0;">
+              ? `<button type="button" class="stage-pdf-btn" id="togglePdfPreviewBtn" data-pdf="${firstPdfUrl}">
                   📐 Xem Bản Vẽ PDF 1:1
                  </button>`
               : ''
           }
         </div>
 
-        <div class="cross-sell-box">
-          <strong style="font-size:14px; color:var(--bg-saddle); display:block; margin-bottom:8px;">
-            🛠️ Phụ Kiện &amp; Dụng Cụ Cơ Bản Khuyên Dùng Cho Mẫu ${product.sku}:
-          </strong>
-          ${matchingTools
+        <div class="detail-thumbs-grid">
+          ${visibleThumbs
             .map(
-              (t) => `
-            <div class="cross-sell-item">
-              <div>
-                <strong>${t.title}</strong>
-                <div style="font-size:12px; color:var(--accent-leather); font-weight:700;">${formatVND(t.price)}</div>
-              </div>
-              <button type="button" class="btn-sm btn-detail" data-action="add-tool" data-id="${t.id}">
-                + Mua kèm
-              </button>
-            </div>
+              (img, idx) => `
+            <button type="button" class="detail-thumb-btn ${idx === 0 ? 'active' : ''}" data-idx="${idx}" data-img="${encodeURI(img)}">
+              <img src="${encodeURI(img)}" alt="${product.sku} - Ảnh ${idx + 1}" loading="lazy" />
+            </button>
           `
             )
             .join('')}
+          ${
+            hasMoreThumbs
+              ? `<button type="button" class="detail-thumb-more" id="expandAllThumbsBtn" title="Xem toàn bộ ${galleryImages.length} ảnh">
+                  +${hiddenCount} ảnh
+                 </button>`
+              : ''
+          }
         </div>
       </div>
 
-      <div>
-        <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px;">
+      <!-- CỘT 2 (NGAY DƯỚI ẢNH TRÊN MOBILE): 2. TÊN -> 3. GIÁ -> 4. BIẾN THỂ -> 5. NÚT MUA -> 6. THÔNG SỐ -->
+      <div class="detail-info-col">
+        <div class="detail-meta-badges">
           <span class="sku-badge">${product.sku}</span>
-          <span class="size-badge">${product.categoryName}</span>
+          <a href="/danh-muc/${product.categorySlug}" class="size-badge detail-cat-link" data-cat-link="${product.categoryKey}">${product.categoryName}</a>
           <span class="size-badge">Khổ ${product.paperSizes.join('/')}</span>
         </div>
 
-        <h2 style="font-size:22px; color:var(--bg-saddle); margin-bottom:10px;">${product.title}</h2>
+        <h2 class="detail-title">${product.title}</h2>
 
-        <div style="background:var(--bg-warm); padding:14px; border-radius:12px; margin-bottom:14px;">
+        <div class="detail-price-box">
           <div style="font-size:12px; color:var(--text-muted); font-weight:700;">GIÁ BIẾN THỂ ĐANG CHỌN (${activeVar.shortLabel.toUpperCase()}):</div>
-          <div style="display:flex; align-items:baseline; gap:12px; margin-top:4px;">
+          <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-top:4px;">
             <span style="font-size:28px; font-weight:900; color:${isFreePdf ? 'var(--accent-green)' : 'var(--accent-leather)'};">
               ${formatVND(activeVar.price)}
             </span>
@@ -663,11 +863,10 @@ function openProductModal(sku, preferredVariantId) {
           </div>
         </div>
 
-        <div style="display:flex; gap:10px; margin:16px 0; flex-wrap:wrap;">
+        <div class="detail-cta-row">
           <button
             type="button"
-            class="btn btn-primary"
-            style="flex:1 1 220px; font-size:15px;"
+            class="btn btn-primary detail-buy-btn"
             data-action="add-cart-modal"
             data-sku="${product.sku}"
             data-var="${activeVar.id}"
@@ -676,8 +875,7 @@ function openProductModal(sku, preferredVariantId) {
           </button>
           <button
             type="button"
-            class="btn btn-secondary"
-            style="flex:1 1 160px;"
+            class="btn btn-secondary detail-ask-btn"
             id="modalAskThisSkuBtn"
             data-sku="${product.sku}"
           >
@@ -685,11 +883,18 @@ function openProductModal(sku, preferredVariantId) {
           </button>
         </div>
 
+        <!-- Khung cam kết niềm tin & quyền thương mại ngay dưới nút mua -->
+        <div class="detail-trust-box">
+          <div>✅ <strong>Quyền thương mại:</strong> Được phép sản xuất &amp; bán thương mại sản phẩm đồ da hoàn thiện.</div>
+          <div>🔄 <strong>Bảo hành chuẩn 1:1:</strong> Hỗ trợ gửi lại file qua Zalo trong 15 phút hoặc hoàn tiền 100% nếu lỗi tỷ lệ.</div>
+          <div>🚚 <strong>Giao hàng toàn quốc:</strong> Được kiểm tra Rập Giấy 350gsm / Rập Mica 2mm trước khi thanh toán.</div>
+        </div>
+
         <table class="specs-table">
           <tbody>
             <tr>
-              <td>Mã định danh (SKU)</td>
-              <td><strong>${product.sku}</strong> (Thư mục gốc: <code>${product.folderPath}</code>)</td>
+              <td>Mã sản phẩm (SKU)</td>
+              <td><strong>${product.sku}</strong> — Danh mục: <strong>${product.categoryShort}</strong></td>
             </tr>
             <tr>
               <td>Định dạng &amp; Khổ giấy</td>
@@ -708,26 +913,74 @@ function openProductModal(sku, preferredVariantId) {
               <td>${product.leatherEstimate} • Độ khó: <strong>${product.difficulty}</strong></td>
             </tr>
             <tr>
-              <td>File trong bộ rập (${product.pdfCount})</td>
-              <td>${product.pdfFileNames.join(', ') || 'Bản vẽ tiêu chuẩn'}</td>
+              <td>Bản vẽ trong bộ (${product.pdfCount})</td>
+              <td><code>${product.pdfFileNames.join('</code>, <code>') || `${product.sku}-Ban-Ve-Rap-1-1.pdf`}</code></td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- 7. PHỤ KIỆN & DỤNG CỤ BÁN KÈM (ĐẶT Ở CUỐI CÙNG ĐỂ KHÔNG ĐẨY NÚT MUA XUỐNG DƯỚI) -->
+      <div class="detail-cross-sell-bottom">
+        <div class="cross-sell-box">
+          <strong style="font-size:14px; color:var(--bg-saddle); display:block; margin-bottom:8px;">
+            🛠️ Phụ Kiện &amp; Dụng Cụ Cơ Bản Khuyên Dùng Cho Mẫu ${product.sku}:
+          </strong>
+          <div class="cross-sell-grid">
+            ${matchingTools
+              .map(
+                (t) => `
+              <div class="cross-sell-item">
+                <div>
+                  <strong>${t.title}</strong>
+                  <div style="font-size:12px; color:var(--accent-leather); font-weight:700;">${formatVND(t.price)}</div>
+                </div>
+                <button type="button" class="btn-sm btn-detail" data-action="add-tool" data-id="${t.id}">
+                  + Mua kèm
+                </button>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </div>
       </div>
     </div>
   `;
 
   backdrop.classList.remove('hidden');
 
+  const updateStageImage = (newIdx) => {
+    currentImgIdx = (newIdx + galleryImages.length) % galleryImages.length;
+    const mainImg = document.getElementById('detailMainImage');
+    if (mainImg) {
+      mainImg.src = encodeURI(galleryImages[currentImgIdx]);
+    }
+    const counter = document.getElementById('stageCounterBadge');
+    if (counter) {
+      counter.textContent = `${currentImgIdx + 1} / ${galleryImages.length}`;
+    }
+    content.querySelectorAll('.detail-thumb-btn').forEach((b) => {
+      b.classList.toggle('active', Number(b.dataset.idx) === currentImgIdx);
+    });
+  };
+
   // Gắn sự kiện đổi ảnh thumbnail trong modal
   content.querySelectorAll('.detail-thumb-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      content.querySelectorAll('.detail-thumb-btn').forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      const display = document.getElementById('detailMediaDisplay');
-      display.innerHTML = `<img src="${btn.dataset.img}" class="detail-main-img" alt="${product.title}" />`;
+      updateStageImage(Number(btn.dataset.idx));
     });
   });
+
+  const prevBtn = document.getElementById('stagePrevBtn');
+  if (prevBtn) prevBtn.onclick = () => updateStageImage(currentImgIdx - 1);
+  const nextBtn = document.getElementById('stageNextBtn');
+  if (nextBtn) nextBtn.onclick = () => updateStageImage(currentImgIdx + 1);
+
+  const expandBtn = document.getElementById('expandAllThumbsBtn');
+  if (expandBtn) {
+    expandBtn.onclick = () => openProductModal(product.sku, activeVar.id, { pushUrl: false, showAllThumbs: true });
+  }
 
   // Xem trực tiếp file PDF bản vẽ 1:1 ngay trong modal
   const pdfBtn = document.getElementById('togglePdfPreviewBtn');
@@ -738,11 +991,22 @@ function openProductModal(sku, preferredVariantId) {
     });
   }
 
+  // Bấm vào huy hiệu danh mục trong modal
+  content.querySelectorAll('[data-cat-link]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      state.selectedCategory = link.dataset.catLink;
+      closeProductModal({ restoreUrl: true });
+      renderCategoryPills();
+      renderProducts();
+    });
+  });
+
   // Đổi biến thể trong modal
   content.querySelectorAll('.detail-variant-option').forEach((opt) => {
     opt.addEventListener('click', () => {
       state.cardVariantOverrides[product.id] = opt.dataset.modalVar;
-      openProductModal(product.sku, opt.dataset.modalVar);
+      openProductModal(product.sku, opt.dataset.modalVar, { pushUrl: false, showAllThumbs });
       renderProducts();
     });
   });
@@ -751,7 +1015,7 @@ function openProductModal(sku, preferredVariantId) {
   const askSkuBtn = document.getElementById('modalAskThisSkuBtn');
   if (askSkuBtn) {
     askSkuBtn.addEventListener('click', () => {
-      backdrop.classList.add('hidden');
+      closeProductModal({ restoreUrl: true });
       const skuInput = document.getElementById('consultSkuRef');
       if (skuInput) skuInput.value = `${product.sku} - ${product.title}`;
       document.getElementById('tu-van-dat-mau').scrollIntoView({ behavior: 'smooth' });
@@ -1332,6 +1596,7 @@ function resetAllFilters() {
 
   renderCategoryPills();
   renderProducts();
+  syncCategorySeoAndUrl('all', { pushUrl: true });
 }
 
 function bindEvents() {
@@ -1488,8 +1753,10 @@ function bindEvents() {
   }
 
   // Mở/đóng các Modal
-  document.getElementById('closeProductModalBtn').onclick = () =>
-    document.getElementById('productModalBackdrop').classList.add('hidden');
+  document.getElementById('closeProductModalBtn').onclick = () => closeProductModal({ restoreUrl: true });
+  document.getElementById('productModalBackdrop').addEventListener('click', (e) => {
+    if (e.target.id === 'productModalBackdrop') closeProductModal({ restoreUrl: true });
+  });
   document.getElementById('closeCartModalBtn').onclick = () =>
     document.getElementById('cartModalBackdrop').classList.add('hidden');
   document.getElementById('closeAdminModalBtn').onclick = () =>
@@ -1498,6 +1765,21 @@ function bindEvents() {
   document.getElementById('openCartBtn').onclick = openCartModal;
   const openAdminBtn = document.getElementById('openAdminBtn');
   if (openAdminBtn) openAdminBtn.onclick = openAdminModal;
+
+  const logoHomeLink = document.getElementById('logoHomeLink');
+  if (logoHomeLink) {
+    logoHomeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      resetAllFilters();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  window.addEventListener('popstate', () => {
+    applyRouteFromLocation({ initial: false });
+    renderCategoryPills();
+    renderProducts();
+  });
 
   const scrollToConsult = () => {
     document.getElementById('tu-van-dat-mau').scrollIntoView({ behavior: 'smooth' });
@@ -1512,6 +1794,7 @@ function bindEvents() {
   document.querySelectorAll('#footerCategoryLinks a[data-cat]').forEach((a) => {
     a.addEventListener('click', () => {
       state.selectedCategory = a.dataset.cat;
+      syncCategorySeoAndUrl(state.selectedCategory, { pushUrl: true });
       renderCategoryPills();
       renderProducts();
     });

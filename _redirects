@@ -1,4 +1,1 @@
 /api/catalog /data/catalog.json 200
-/api/export-csv /data/rapmau-products-master.csv 200
-/admin /admin.html 200
-/studio /studio.html 200

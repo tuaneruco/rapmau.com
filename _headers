@@ -1,5 +1,7 @@
 /*
   Access-Control-Allow-Origin: *
+/admin/*
+  X-Robots-Tag: noindex, nofollow
 /media/*
   Cache-Control: public, max-age=604800, immutable
 /previews/*
