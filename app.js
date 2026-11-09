@@ -1083,7 +1083,7 @@ function addPatternToCart(sku, variantId) {
   const variant = getEffectiveVariant(product, variantId);
 
   // Nếu là File PDF Miễn Phí (0đ) -> mở thẳng cửa sổ tải file ngay lập tức!
-  if (variant.id === 'pdf_dxf' && variant.price === 0 && product.pdfFiles.length > 0) {
+  if (variant.id === 'pdf_dxf' && variant.price === 0) {
     openInstantFreeDownloadModal(product);
     return;
   }
@@ -1143,28 +1143,75 @@ function openInstantFreeDownloadModal(product) {
   const backdrop = document.getElementById('cartModalBackdrop');
   const content = document.getElementById('cartModalContent');
 
+  const pdfList = product.pdfFiles || [];
+  const cadList = product.cadFiles || [];
+  const fallbackImages = pdfList.length === 0 && cadList.length === 0 ? product.images || [] : [];
+
   content.innerHTML = `
     <div style="text-align:center; padding: 12px;">
-      <span class="free-badge" style="font-size:13px; padding:5px 12px;">🎁 RẬP PDF MIỄN PHÍ TỪ WWW.RAPMAU.COM</span>
+      <span class="free-badge" style="font-size:13px; padding:5px 12px;">🎁 RẬP PDF MIỄN PHÍ 0Đ TỪ WWW.RAPMAU.COM</span>
       <h2 style="margin:12px 0 6px; color:var(--bg-saddle);">${product.title}</h2>
       <p style="font-size:14px; color:var(--text-muted); margin-bottom:18px;">
         Bản vẽ chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}). Hãy chọn chế độ in <strong>Actual Size / 100%</strong> khi in ra giấy.
       </p>
 
       <div style="background:var(--bg-parchment); padding:16px; border-radius:12px; border:1px dashed var(--border-stitch); margin-bottom:20px;">
-        <strong style="display:block; margin-bottom:10px;">Danh sách file tải xuống trực tiếp:</strong>
+        <strong style="display:block; margin-bottom:10px;">Danh sách file tải xuống trực tiếp (Miễn phí 0đ):</strong>
         <div style="display:flex; flex-direction:column; gap:8px;">
-          ${product.pdfFiles
+          ${pdfList
             .map(
-              (url, idx) => `
+              (url, idx) => {
+                const cleanName = product.pdfFileNames[idx] || `${product.sku}-Ban-Ve-Rap-1-1-${idx + 1}.pdf`;
+                return `
             <a
-              href="${encodeURI(url)}?download=1"
+              href="${encodeURI(url)}"
               class="btn btn-primary"
-              download
+              download="${cleanName}"
+              target="_blank"
+              rel="noopener"
             >
-              ⬇ Tải File: ${product.pdfFileNames[idx] || `Ban-ve-${idx + 1}.pdf`} (${product.fileSizeMB} MB)
+              ⬇ Tải File PDF: ${cleanName} (${product.fileSizeMB} MB)
             </a>
-          `
+          `;
+              }
+            )
+            .join('')}
+          ${cadList
+            .map(
+              (url, idx) => {
+                const ext = url.split('.').pop() || 'dxf';
+                const cleanCadName = `${product.sku}-Vector-CAD-${idx + 1}.${ext}`;
+                return `
+            <a
+              href="${encodeURI(url)}"
+              class="btn btn-secondary"
+              download="${cleanCadName}"
+              target="_blank"
+              rel="noopener"
+            >
+              📐 Tải File CAD/Vector: ${cleanCadName}
+            </a>
+          `;
+              }
+            )
+            .join('')}
+          ${fallbackImages
+            .map(
+              (url, idx) => {
+                const ext = url.split('.').pop() || 'jpg';
+                const cleanImgName = `${product.sku}-Ban-Rap-1-1-Trang-${idx + 1}.${ext}`;
+                return `
+            <a
+              href="${encodeURI(url)}"
+              class="btn btn-primary"
+              download="${cleanImgName}"
+              target="_blank"
+              rel="noopener"
+            >
+              ⬇ Tải Bản Rập Chuẩn: ${cleanImgName}
+            </a>
+          `;
+              }
             )
             .join('')}
         </div>
@@ -1177,7 +1224,7 @@ function openInstantFreeDownloadModal(product) {
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <button type="button" class="btn-sm btn-add" id="upsellPaperBtn">+ Đặt Rập Giấy (${formatVND(product.variants[1]?.price || 55000)})</button>
-          <button type="button" class="btn-sm btn-add" id="upsellMicaBtn">+ Đặt Rập Mica 2mm (${formatVND(product.variants[2]?.price || 135000)})</button>
+          ${product.variants[2] ? `<button type="button" class="btn-sm btn-add" id="upsellMicaBtn">+ Đặt Rập Mica 2mm (${formatVND(product.variants[2].price)})</button>` : ''}
         </div>
       </div>
     </div>
