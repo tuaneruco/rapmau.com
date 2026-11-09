@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Công Cụ Đồ Da Online — Xử Lý Ảnh, In Chìm Logo &amp; Phác Thảo Rập | WWW.RAPMAU.COM</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      background: #f3efe8;
+    }
+    .studio-header {
+      background: var(--bg-espresso);
+      color: #fff;
+      padding: 12px 0;
+      border-bottom: 2px dashed var(--accent-gold);
+    }
+    .studio-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .studio-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .st-tab {
+      padding: 9px 16px;
+      border-radius: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: #f3eadc;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .st-tab.active {
+      background: var(--accent-gold);
+      color: #1c130c;
+      border-color: var(--accent-gold);
+    }
+    .studio-workspace {
+      padding: 24px 0 48px;
+    }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 22px;
+      align-items: flex-start;
+    }
+    .studio-controls {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .studio-canvas-box {
+      background: #1e1814;
+      border-radius: 14px;
+      border: 2px dashed var(--border-stitch);
+      padding: 20px;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    canvas {
+      max-width: 100%;
+      max-height: 620px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+    .ctrl-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ctrl-group label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--bg-saddle);
+      display: flex;
+      justify-content: space-between;
+    }
+    .ctrl-group input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent-leather);
+    }
+    .ctrl-group input[type="text"],
+    .ctrl-group input[type="number"],
+    .ctrl-group select {
+      padding: 8px 10px;
+      border-radius: 7px;
+      border: 1px solid var(--border-stitch);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    @media (max-width: 960px) {
+      .studio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Studio -->
+  <header class="studio-header">
+    <div class="container studio-header-inner">
+      <a href="/" class="brand-logo" style="color:#fff;">
+        <img src="/assets/brand/logo-header.png" alt="RAPMAU.COM" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title" style="color:#fde68a;">RAPMAU STUDIO</span>
+          <span class="brand-sub" style="color:#d6c3ad;">Xử Lý Ảnh • In Chìm Logo • Phác Thảo Rập 1:1</span>
+        </div>
+      </a>
+
+      <div class="studio-tabs" id="studioMainTabs">
+        <button type="button" class="st-tab active" data-panel="panel-watermark">
+          🏷️ 1. Xử Lý Ảnh &amp; In Chìm Logo
+        </button>
+        <button type="button" class="st-tab" data-panel="panel-sketch">
+          📐 2. Phác Thảo Rập &amp; Tính Lỗ Đục 1:1
+        </button>
+        <button type="button" class="st-tab" data-panel="panel-custom">
+          🔌 3. Nhúng Công Cụ Riêng Của Bạn
+        </button>
+      </div>
+
+      <div style="display:flex; gap:8px;">
+        <a href="/admin" class="btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; text-decoration:none;">⚙️ Về Quản Trị CMS</a>
+        <a href="/" class="btn-sm" style="background:var(--accent-gold); color:#1c130c; text-decoration:none;">🌐 Về Trang Chủ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="studio-workspace container">
+    <!-- CÔNG CỤ 1: XỬ LÝ ẢNH SẢN PHẨM & IN CHÌM LOGO RAPMAU.COM / DẬP CHÌM LÊN DA -->
+    <section id="panel-watermark" class="studio-panel">
+      <div class="studio-grid">
+        <div class="studio-controls">
+          <h3 style="color:var(--bg-saddle); font-size:17px;">🏷️ Xử Lý Ảnh &amp; In Chìm Logo</h3>
+          <p style="font-size:12.5px; color:var(--text-muted);">
+            Tải ảnh từ máy hoặc chọn ảnh từ 258 mẫu rập để chỉnh sáng, che watermark cũ và in chìm logo <strong>RAPMAU.COM</strong> (hoặc logo thương hiệu riêng).
+          </p>
+
+          <div class="ctrl-group">
+            <label>1. Chọn ảnh từ kho 258 mẫu rập (Admin):</label>
+            <select id="skuImageSelect">
+              <option value="">-- Hoặc tải ảnh từ máy bên dưới --</option>
+            </select>
+          </div>
+
+          <div class="ctrl-group">
+            <label>Hoặc tải ảnh sản phẩm từ máy tính:</label>
+            <input type="file" id="uploadPhotoInput" accept="image/*" />
+          </div>
+
+          <hr style="border:none; border-top:1px dashed var(--border-soft);" />
+
+          <div class="ctrl-group">
+            <label>2. Chế độ xử lý &amp; Đóng dấu Logo:</label>
+            <select id="watermarkStyleSelect">
+              <option value="deboss_center">In chìm Logo RAPMAU.COM giữa ảnh (Bản quyền)</option>
+              <option value="corner_badge">Gắn nhãn thương hiệu góc phải dưới (Chuẩn TMĐT)</option>
+              <option value="cover_strip">Dải băng che Watermark cũ + Gắn Logo RAPMAU.COM</option>
+              <option value="tiled_diagonal">Phủ lưới chìm chéo toàn ảnh (Chống sao chép)</option>
+            </select>
+          </div>
+
+          <div class="ctrl-group">
+            <label>Dòng chữ đóng dấu kèm Logo:</label>
+            <input type="text" id="watermarkTextInput" value="WWW.RAPMAU.COM • 0971.463.768" />
+          </div>
+
+          <div class="ctrl-group">
+            <label><span>Độ đậm / Độ mờ Logo (Opacity)</span> <span id="valOpacity">65%</span></label>
+            <input type="range" id="wmOpacityRange" min="10" max="100" value="65" />
+          </div>
+
+          <div class="ctrl-group">
+            <label><span>Kích thước Logo &amp; Chữ</span> <span id="valScale">100%</span></label>
+            <input type="range" id="wmScaleRange" min="40" max="180" value="100" />
+          </div>
+
+          <div class="ctrl-group">
+            <label><span>Vị trí theo chiều dọc (Che chữ cũ)</span> <span id="valPosY">58%</span></label>
+            <input type="range" id="wmPosYRange" min="10" max="92" value="58" />
+          </div>
+
+          <hr style="border:none; border-top:1px dashed var(--border-soft);" />
+
+          <div class="ctrl-group">
+            <label><span>Độ sáng ảnh (Brightness)</span> <span id="valBright">100%</span></label>
+            <input type="range" id="imgBrightRange" min="60" max="140" value="100" />
+          </div>
+
+          <div class="ctrl-group">
+            <label><span>Độ tương phản vân da (Contrast)</span> <span id="valContrast">105%</span></label>
+            <input type="range" id="imgContrastRange" min="70" max="150" value="105" />
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
+            <button type="button" class="btn btn-primary btn-full" id="downloadProcessedImgBtn">
+              ⬇ Tải Ảnh Đã Xử Lý Về Máy (JPEG)
+            </button>
+            <button type="button" class="btn btn-secondary btn-full" id="saveToCatalogSkuBtn">
+              💾 Lưu Đè Làm Ảnh Chính Của Mã SKU Đang Chọn
+            </button>
+          </div>
+          <p id="studioSaveStatus" class="form-feedback hidden"></p>
+        </div>
+
+        <div class="studio-canvas-box">
+          <canvas id="photoCanvas" width="900" height="675"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÔNG CỤ 2: PHÁC THẢO RẬP & TÍNH LỖ ĐỤC 1:1 (PATTERN SKETCHER) -->
+    <section id="panel-sketch" class="studio-panel hidden">
+      <div class="studio-grid">
+        <div class="studio-controls">
+          <h3 style="color:var(--bg-saddle); font-size:17px;">📐 Phác Thảo Rập &amp; Chia Bước Đục 1:1</h3>
+          <p style="font-size:12.5px; color:var(--text-muted);">
+            Nhập kích thước chi tiết da (mm) và bước đục để hệ thống tự động dựng bản vẽ kỹ thuật tỷ lệ 1:1, tính số lỗ đục và định mức da.
+          </p>
+
+          <div class="ctrl-group">
+            <label>Tên chi tiết rập:</label>
+            <input type="text" id="sketchTitleInput" value="Thân Ngoài Ví Ngang Bifold (RM-CUSTOM)" />
+          </div>
+
+          <div class="form-row">
+            <div class="ctrl-group">
+              <label>Chiều ngang (mm):</label>
+              <input type="number" id="sketchWidthMm" value="220" min="20" max="600" />
+            </div>
+            <div class="ctrl-group">
+              <label>Chiều cao (mm):</label>
+              <input type="number" id="sketchHeightMm" value="95" min="20" max="500" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="ctrl-group">
+              <label>Bo góc R (mm):</label>
+              <input type="number" id="sketchRadiusMm" value="6" min="0" max="40" />
+            </div>
+            <div class="ctrl-group">
+              <label>Cách mép khâu (mm):</label>
+              <input type="number" id="sketchMarginMm" value="3.5" step="0.5" min="2" max="10" />
+            </div>
+          </div>
+
+          <div class="ctrl-group">
+            <label>Bước đục lỗ (Pricking Iron Pitch):</label>
+            <select id="sketchPitchMm">
+              <option value="3.0">3.0 mm (Ví nhỏ / Dây đồng hồ)</option>
+              <option value="3.38" selected>3.38 mm (Chuẩn Ví da &amp; Túi nữ)</option>
+              <option value="3.85">3.85 mm (Túi đeo chéo / Bao kính)</option>
+              <option value="4.0">4.0 mm (Túi xách / Balo / Cặp táp)</option>
+            </select>
+          </div>
+
+          <div class="ctrl-group">
+            <label>Đường gấp đôi / Rãnh lạng giữa:</label>
+            <select id="sketchFoldLine">
+              <option value="center_v">Có trục gấp đôi giữa (Ví gập đôi)</option>
+              <option value="trifold">Chia 3 phần (Ví gập ba)</option>
+              <option value="none">Không có đường gấp (Miếng phẳng)</option>
+            </select>
+          </div>
+
+          <div id="sketchStatsSummary" style="background:var(--bg-parchment); padding:10px; border-radius:8px; font-size:12.5px; border-left:3px solid var(--accent-leather);"></div>
+
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button type="button" class="btn btn-primary btn-full" id="downloadSketchPngBtn">
+              ⬇ Xuất Bản Vẽ Kỹ Thuật (PNG 1:1)
+            </button>
+            <button type="button" class="btn btn-zalo btn-full" id="sendSketchToMrTuanBtn">
+              💬 Gửi Bản Phác Thảo Đặt Cắt Mica / Khuôn Bế
+            </button>
+          </div>
+        </div>
+
+        <div class="studio-canvas-box">
+          <canvas id="sketchCanvas" width="960" height="620"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÔNG CỤ 3: HƯỚNG DẪN & KHUNG NHÚNG CÔNG CỤ CÓ SẴN CỦA BẠN -->
+    <section id="panel-custom" class="studio-panel hidden">
+      <div class="cms-card" style="background:#fff; padding:26px; border-radius:14px; border:1px solid var(--border-soft);">
+        <span class="section-eyebrow">CỔNG TÍCH HỢP MỞ (CUSTOM TOOL CONNECTOR)</span>
+        <h2 style="color:var(--bg-saddle); margin:6px 0 10px;">Kết Nối Các File Công Cụ HTML/JS Sẵn Có Của Bạn Vào Website</h2>
+        <p style="font-size:14px; color:var(--text-muted); margin-bottom:18px;">
+          Ngoài 2 bộ công cụ Canvas đã tích hợp sẵn ở Tab 1 và Tab 2, bạn có thể đưa nguyên bản các công cụ xử lý ảnh, in chìm logo, phác thảo rập mà bạn đã code trước đó vào website <strong>www.rapmau.com</strong> theo 2 cách cực kỳ đơn giản:
+        </p>
+
+        <div class="guide-grid" style="margin-bottom:20px;">
+          <div style="background:var(--bg-parchment); padding:18px; border-radius:12px; border:1px solid var(--border-soft);">
+            <h4 style="color:var(--bg-saddle); margin-bottom:6px;">Cách 1: Chép file vào thư mục <code>public/custom-tools/</code></h4>
+            <p style="font-size:13px; color:var(--text-muted);">
+              Bạn chỉ cần copy các file <code>.html</code>, <code>.js</code>, <code>.css</code> của công cụ bạn đã viết vào thư mục:<br/>
+              <code>/Users/tuaneruco/Desktop/CTY/Mẫu tổng hợp -PDF/public/custom-tools/</code><br/>
+              Hoặc gửi tên đường dẫn file cho tôi trong khung chat để tôi gắn trực tiếp vào các Tab này.
+            </p>
+          </div>
+
+          <div style="background:var(--bg-parchment); padding:18px; border-radius:12px; border:1px solid var(--border-soft);">
+            <h4 style="color:var(--bg-saddle); margin-bottom:6px;">Cách 2: Dán đường dẫn URL / File Local để chạy ngay bên dưới</h4>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+              <input
+                type="text"
+                id="customToolUrlInput"
+                placeholder="Nhập đường dẫn (VD: /custom-tools/index.html hoặc https://...)"
+                style="flex:1; padding:9px 12px; border-radius:8px; border:1px solid var(--border-stitch);"
+              />
+              <button type="button" class="btn btn-primary" id="loadCustomToolBtn">Mở Công Cụ</button>
+            </div>
+          </div>
+        </div>
+
+        <iframe
+          id="customToolIframe"
+          src="about:blank"
+          style="width:100%; height:600px; border:2px dashed var(--border-stitch); border-radius:12px; background:#faf6f0;"
+          title="Khung nhúng công cụ tùy chỉnh"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/studio.js"></script>
+</body>
+</html>

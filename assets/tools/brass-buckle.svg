@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <rect width="600" height="450" fill="#FBF8F3"/>
+  <rect x="36" y="36" width="528" height="295" rx="18" fill="#5A3818"/>
+  <rect x="54" y="54" width="492" height="259" rx="12" stroke="#FCD34D" stroke-width="2" stroke-dasharray="8 6" opacity="0.5"/>
+  <circle cx="300" cy="155" r="56" fill="#FCD34D" opacity="0.18"/>
+  <path d="M265 155 L335 155 M300 120 L300 190" stroke="#FCD34D" stroke-width="5" stroke-linecap="round"/>
+  <rect x="195" y="232" width="210" height="36" rx="18" fill="#FCD34D" opacity="0.22"/>
+  <text x="300" y="255" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">PHỤ KIỆN &amp; DỤNG CỤ RAPMAU.COM</text>
+  <text x="300" y="378" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="800" fill="#2D1B0E">ĐẦU KHOÁ KIM ĐỒNG ĐÚC ĐẶC</text>
+  <text x="300" y="408" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="#7C5E42">SIZE 15MM - 38MM • LÀM BALO, TẠP DỀ, DÂY ĐỒNG HỒ</text>
+</svg>

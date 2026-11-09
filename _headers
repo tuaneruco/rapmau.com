@@ -1,0 +1,8 @@
+/*
+  Access-Control-Allow-Origin: *
+/media/*
+  Cache-Control: public, max-age=604800, immutable
+/previews/*
+  Cache-Control: public, max-age=604800, immutable
+/assets/*
+  Cache-Control: public, max-age=604800, immutable

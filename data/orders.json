@@ -1,0 +1,77 @@
+[
+  {
+    "orderCode": "RM452620",
+    "createdAt": "2026-11-07T06:37:32.620Z",
+    "customer": {
+      "name": "Anh Tài",
+      "phone": "0394844995",
+      "email": "tuan.eruco@gmail.com",
+      "address": "Nhận file trực tuyến"
+    },
+    "items": [
+      {
+        "cartKey": "RM-BALO-002__pdf_dxf",
+        "itemType": "pattern",
+        "sku": "RM-BALO-002",
+        "title": "Rập Balo Da Thủ Công Phom Chuẩn - Mã RM-BALO-002",
+        "variantId": "pdf_dxf",
+        "variantName": "File PDF (Khổ A4)",
+        "deliveryType": "digital",
+        "price": 59000,
+        "qty": 1,
+        "thumb": "/media/Balo/02/il_1140xN.2266948520_5ow8.jpg",
+        "pdfFiles": [
+          "/media/Balo/02/LeatherBackpack5compressed.pdf"
+        ],
+        "pdfFileNames": [
+          "LeatherBackpack5compressed.pdf"
+        ]
+      },
+      {
+        "cartKey": "RM-TDL-001__pdf_dxf",
+        "itemType": "pattern",
+        "sku": "RM-TDL-001",
+        "title": "Rập Túi Du Lịch Weekender / Travel - Mã RM-TDL-001",
+        "variantId": "pdf_dxf",
+        "variantName": "File PDF (Khổ A4)",
+        "deliveryType": "digital",
+        "price": 65000,
+        "qty": 1,
+        "thumb": "/media/Túi du lịch/01/il_1140xN.1676022734_ez0f.jpg",
+        "pdfFiles": [
+          "/media/Túi du lịch/01/Largeweekenderbagassemblyinstructions.pdf",
+          "/media/Túi du lịch/01/shoulderstrappatternandinstructions.pdf",
+          "/media/Túi du lịch/01/smallweekenderbagpatterns.pdf"
+        ],
+        "pdfFileNames": [
+          "Largeweekenderbagassemblyinstructions.pdf",
+          "shoulderstrappatternandinstructions.pdf",
+          "smallweekenderbagpatterns.pdf"
+        ]
+      },
+      {
+        "cartKey": "RM-TN-001__pdf_dxf",
+        "itemType": "pattern",
+        "sku": "RM-TN-001",
+        "title": "Rập Túi Nữ Mẫu TX001 (RM-TN-001)",
+        "variantId": "pdf_dxf",
+        "variantName": "File PDF (Khổ A4)",
+        "deliveryType": "digital",
+        "price": 49000,
+        "qty": 1,
+        "thumb": "/media/Túi nữ/TX001/44447385_2103115979720155_9026707709163995136_n.jpg",
+        "pdfFiles": [
+          "/media/Túi nữ/TX001/LZpatternBXK-05A1.pdf",
+          "/media/Túi nữ/TX001/LZpatternBXK-05A4.pdf"
+        ],
+        "pdfFileNames": [
+          "LZpatternBXK-05A1.pdf",
+          "LZpatternBXK-05A4.pdf"
+        ]
+      }
+    ],
+    "totalAmount": 173000,
+    "paymentMethod": "vietqr",
+    "status": "pending_verification"
+  }
+]

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <rect width="600" height="450" fill="#F8F4EE"/>
+  <rect x="24" y="24" width="552" height="402" rx="12" stroke="#D7C7B2" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="140" y="90" width="320" height="220" rx="14" fill="#EADBC8" stroke="#8B5A2B" stroke-width="3"/>
+  <rect x="155" y="105" width="290" height="190" rx="8" stroke="#A66E38" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="300" cy="200" r="14" fill="#C89D54" stroke="#6E441B" stroke-width="3"/>
+  <text x="300" y="355" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#5A3818">BẢN VẼ RẬP CHUẨN TỶ LỆ 1:1</text>
+  <text x="300" y="382" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#8C6B4A">WWW.RAPMAU.COM • PDF / DXF / RẬP GIẤY / MICA</text>
+</svg>
