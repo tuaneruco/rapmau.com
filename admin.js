@@ -794,6 +794,7 @@ function renderToolsTable() {
           <strong>${a.sku}</strong>
           <div style="font-size:11px; color:var(--text-muted);">${a.category || ''}</div>
           <span style="display:inline-block; margin-top:2px; padding:1px 6px; border-radius:4px; background:#fef3c7; color:#92400e; font-size:10.5px; font-weight:800;">🏢 ${vName}</span>
+          <a href="${a.shopeeUrl || 'https://shopee.vn/dathungleather'}" target="_blank" rel="noopener" style="display:inline-block; margin-top:2px; padding:1px 6px; border-radius:4px; background:#fee2e2; color:#b91c1c; font-size:10.5px; font-weight:700; text-decoration:none;" title="Xem sản phẩm trên Shopee">🛒 Shopee ↗</a>
         </td>
         <td><input type="text" class="cms-input-title" data-tfield="title" value="${String(a.title || '').replace(/"/g, '&quot;')}" /></td>
         <td><input type="text" class="cms-input-sm" style="width:135px;" data-tfield="badge" value="${String(a.badge || '').replace(/"/g, '&quot;')}" /></td>
@@ -1526,6 +1527,8 @@ function bindAdminEvents() {
       : '➕ Thêm Dụng Cụ / Phụ Kiện Mới';
     document.getElementById('editToolId').value = '';
     document.getElementById('toolModalForm').reset();
+    document.getElementById('toolFormShopeeUrl').value = 'https://shopee.vn/dathungleather';
+    document.getElementById('toolFormTiktokUrl').value = 'https://www.tiktok.com/@rapmau.com';
     const vSel = document.getElementById('toolFormVendorSelect');
     if (vSel) {
       vSel.value = getActiveVendorId() || 'dathungleather';
@@ -1587,6 +1590,8 @@ function bindAdminEvents() {
       document.getElementById('toolFormImageUrl').value = (item.images && item.images[0]) || '';
       document.getElementById('toolFormDesc').value = item.description || '';
       document.getElementById('toolFormSpecs').value = (item.specs || []).join('\n');
+      document.getElementById('toolFormShopeeUrl').value = item.shopeeUrl || 'https://shopee.vn/dathungleather';
+      document.getElementById('toolFormTiktokUrl').value = item.tiktokUrl || 'https://www.tiktok.com/@rapmau.com';
       const vSel = document.getElementById('toolFormVendorSelect');
       if (vSel) vSel.value = inferItemVendorId(item);
       toolModal.classList.remove('hidden');
@@ -1677,6 +1682,8 @@ function bindAdminEvents() {
       originalPrice: Number(document.getElementById('toolFormOriginalPrice').value) || 0,
       imageUrl: document.getElementById('toolFormImageUrl').value.trim() || '/assets/tools/tool-1.svg',
       description: document.getElementById('toolFormDesc').value.trim(),
+      shopeeUrl: document.getElementById('toolFormShopeeUrl').value.trim() || 'https://shopee.vn/dathungleather',
+      tiktokUrl: document.getElementById('toolFormTiktokUrl').value.trim() || 'https://www.tiktok.com/@rapmau.com',
       vendorId: chosenVendorId,
       vendorName: chosenVendorName,
       specs: document

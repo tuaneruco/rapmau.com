@@ -892,20 +892,20 @@ function renderTools() {
               <span style="font-size: 11px; color: var(--text-muted); font-weight: 700;">Mua qua sàn TMĐT:</span>
               <div style="display: flex; gap: 6px; align-items: center;">
                 <a
-                  href="https://shopee.vn/dathungleather"
+                  href="${item.shopeeUrl || 'https://shopee.vn/dathungleather'}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Mua ${item.title} trên Shopee Da Thủng Leather"
+                  title="Mua ${item.title} trên Shopee"
                   style="display:inline-flex; align-items:center; gap:4px; background:#ee4d2d; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; transition:opacity .15s;"
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
                   <span>Shopee</span>
                 </a>
                 <a
-                  href="https://www.tiktok.com/@rapmau.com"
+                  href="${item.tiktokUrl || 'https://www.tiktok.com/@rapmau.com'}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Xem video và mua trên TikTok Shop @rapmau.com"
+                  title="Xem video và mua trên TikTok Shop"
                   style="display:inline-flex; align-items:center; gap:4px; background:#000000; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; transition:opacity .15s;"
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.34 0 .66.06.96.17v-3.55a6.37 6.37 0 00-.96-.08A6.34 6.34 0 003 15.28a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.06a8.16 8.16 0 004.91 1.63v-3.5a4.86 4.86 0 01-1-.5z"/></svg>
@@ -1136,7 +1136,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
                   <div style="font-size:12px; color:var(--accent-leather); font-weight:700;">${formatVND(t.price)}</div>
                 </div>
                 <div style="display:flex; gap:6px; align-items:center; flex-shrink:0;">
-                  <a href="https://shopee.vn/dathungleather" target="_blank" rel="noopener noreferrer" style="background:#ee4d2d; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:2px;" title="Mua trên Shopee">Shopee</a>
+                  <a href="${t.shopeeUrl || 'https://shopee.vn/dathungleather'}" target="_blank" rel="noopener noreferrer" style="background:#ee4d2d; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:2px;" title="Mua trên Shopee">Shopee</a>
                   <button type="button" class="btn-sm btn-detail" data-action="add-tool" data-id="${t.id}">
                     + Mua kèm
                   </button>
@@ -1272,7 +1272,7 @@ function openToolDetailModal(toolId) {
           
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
             <a
-              href="https://shopee.vn/dathungleather"
+              href="${tool.shopeeUrl || 'https://shopee.vn/dathungleather'}"
               target="_blank"
               rel="noopener noreferrer"
               class="btn"
@@ -1282,7 +1282,7 @@ function openToolDetailModal(toolId) {
               <span>Mua trên Shopee</span>
             </a>
             <a
-              href="https://www.tiktok.com/@rapmau.com"
+              href="${tool.tiktokUrl || 'https://www.tiktok.com/@rapmau.com'}"
               target="_blank"
               rel="noopener noreferrer"
               class="btn"
