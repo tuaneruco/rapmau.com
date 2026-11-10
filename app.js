@@ -49,11 +49,24 @@ function getEffectiveVariant(product, variantId) {
 
 async function initApp() {
   try {
-    let res = await fetch('/api/catalog');
-    if (!res.ok) {
+    let fromApi = false;
+    let res = await fetch('/api/catalog').catch(() => null);
+    if (res && res.ok) {
+      fromApi = true;
+    } else {
       res = await fetch('/data/catalog.json');
     }
-    const data = await res.json();
+    let data = await res.json();
+    if (!fromApi) {
+      const localOverride = localStorage.getItem('rapmau_cms_catalog_override');
+      if (localOverride) {
+        try {
+          data = JSON.parse(localOverride);
+        } catch {
+          // ignore
+        }
+      }
+    }
     state.catalog = data;
     state.products = data.products || [];
     state.accessories = data.accessories || [];
@@ -268,6 +281,10 @@ function hydrateSiteMetadata() {
     const groupBtn = document.getElementById('joinZaloGroupPrimaryBtn');
     if (groupBtn) {
       groupBtn.href = site.zaloGroupUrl || `https://zalo.me/${zaloClean}`;
+    }
+    if (site.ctaNote) {
+      const subEl = document.querySelector('.ch-sub');
+      if (subEl) subEl.textContent = site.ctaNote;
     }
   }
 }

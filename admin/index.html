@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>Quản Trị Hệ Thống CMS — WWW.RAPMAU.COM</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="/styles.css" />
@@ -79,6 +80,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
       background: #fff;
       padding: 16px 22px;
       border-radius: 14px;
@@ -136,6 +139,7 @@
       font-weight: 800;
       position: sticky;
       top: 0;
+      z-index: 2;
     }
     .cms-input-sm {
       width: 92px;
@@ -147,12 +151,43 @@
     }
     .cms-input-title {
       width: 100%;
-      min-width: 220px;
+      min-width: 200px;
       padding: 6px 8px;
       border: 1px solid var(--border-stitch);
       border-radius: 6px;
       font-size: 13px;
       font-weight: 600;
+    }
+    .btn-danger-sm {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fca5a5;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .btn-danger-sm:hover {
+      background: #dc2626;
+      color: #fff;
+    }
+    .btn-edit-sm {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-edit-sm:hover {
+      background: #f59e0b;
+      color: #fff;
     }
     .toast-bar {
       position: fixed;
@@ -165,7 +200,85 @@
       font-weight: 800;
       font-size: 14px;
       box-shadow: var(--shadow-md);
-      z-index: 300;
+      z-index: 900;
+    }
+    /* Login Screen Overlay */
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #1e140d 0%, #3b2314 55%, #1f1610 100%);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .login-overlay.hidden {
+      display: none !important;
+    }
+    .login-box {
+      background: #fff;
+      width: 100%;
+      max-width: 430px;
+      border-radius: 18px;
+      padding: 30px 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      border: 2px solid var(--accent-gold);
+    }
+    .login-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border-stitch);
+    }
+    .login-brand img {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+    }
+    .login-error {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    /* Admin Modal */
+    .admin-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 12, 8, 0.65);
+      z-index: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .admin-modal-backdrop.hidden {
+      display: none !important;
+    }
+    .admin-modal-card {
+      background: #fff;
+      width: 100%;
+      max-width: 640px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-stitch);
+    }
+    .chk-row {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--accent-leather);
     }
     @media (max-width: 960px) {
       .admin-layout {
@@ -209,6 +322,75 @@
   </style>
 </head>
 <body>
+  <!-- MÀN HÌNH ĐĂNG NHẬP QUẢN TRỊ BẰNG MẬT KHẨU -->
+  <div id="adminLoginOverlay" class="login-overlay">
+    <div class="login-box">
+      <div class="login-brand">
+        <img src="/assets/brand/logo-header.png" alt="RAPMAU.COM" />
+        <div>
+          <strong style="display:block; font-size:18px; color:var(--bg-saddle);">QUẢN TRỊ RAPMAU.COM</strong>
+          <span style="font-size:12.5px; color:var(--text-muted);">Đăng nhập tài khoản Admin để thêm, sửa, xoá sản phẩm</span>
+        </div>
+      </div>
+
+      <div id="loginErrorBox" class="login-error hidden"></div>
+
+      <form id="adminLoginForm">
+        <div class="form-field" style="margin-bottom:14px;">
+          <label style="font-weight:800; color:var(--bg-saddle);">Tên đăng nhập Quản trị viên</label>
+          <input
+            type="text"
+            id="loginUsernameInput"
+            value="admin"
+            placeholder="Nhập tên tài khoản (VD: admin)"
+            required
+            autocomplete="username"
+            style="width:100%; padding:11px 14px; border-radius:9px; border:1.5px solid var(--border-stitch); font-size:14px; font-weight:700;"
+          />
+        </div>
+
+        <div class="form-field" style="margin-bottom:14px;">
+          <label style="font-weight:800; color:var(--bg-saddle);">Mật khẩu Quản trị</label>
+          <div style="display:flex; gap:8px;">
+            <input
+              type="password"
+              id="loginPasswordInput"
+              placeholder="Nhập mật khẩu quản trị..."
+              required
+              autocomplete="current-password"
+              style="flex:1; padding:11px 14px; border-radius:9px; border:1.5px solid var(--border-stitch); font-size:14px; font-weight:700;"
+            />
+            <button
+              type="button"
+              id="toggleShowPwdBtn"
+              class="btn btn-outline"
+              style="padding:0 12px; font-size:12.5px; white-space:nowrap;"
+            >
+              👁️ Hiện
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; font-size:13px;">
+          <label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-weight:600;">
+            <input type="checkbox" id="loginRememberChk" checked style="width:16px; height:16px;" />
+            Ghi nhớ đăng nhập trên thiết bị này
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full" style="padding:12px; font-size:15px;">
+          🔐 Đăng Nhập Vào Hệ Thống Quản Trị
+        </button>
+
+        <div style="margin-top:14px; text-align:center;">
+          <a href="/" style="font-size:13px; color:var(--text-muted); text-decoration:none; font-weight:600;">
+            ← Quay về trang chủ WWW.RAPMAU.COM
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="admin-layout">
     <!-- Sidebar Quản Trị -->
     <aside class="admin-sidebar">
@@ -216,36 +398,41 @@
         <img src="/assets/brand/logo-header.png" alt="RAPMAU.COM" />
         <div>
           <strong style="display:block; font-size:16px; color:#fde68a;">RAPMAU.COM</strong>
-          <span style="font-size:11.5px; color:#cbb59d;">Quản Trị Viên • Mr.Tuan</span>
+          <span style="font-size:11.5px; color:#cbb59d;">Quản Trị Viên • <span id="adminUserBadge">admin</span></span>
         </div>
       </a>
 
       <div class="admin-nav" id="adminTabNav">
         <button type="button" class="admin-nav-btn active" data-tab="tab-patterns">
-          <span>📐 Quản Lý 258 Mẫu Rập</span>
+          <span>📐 Quản Lý Mẫu Rập</span>
           <span id="sideCountPatterns">258</span>
         </button>
-        <button type="button" class="admin-nav-btn" data-tab="tab-orders">
-          <span>📦 Đơn Hàng &amp; Zalo Leads</span>
-          <span id="sideCountOrders">0</span>
-        </button>
         <button type="button" class="admin-nav-btn" data-tab="tab-tools">
-          <span>🛠️ Quản Lý 12 Bộ Dụng Cụ</span>
-          <span id="sideCountTools">12</span>
+          <span>🛠️ Quản Lý Dụng Cụ &amp; Phụ Kiện</span>
+          <span id="sideCountTools">48</span>
         </button>
         <button type="button" class="admin-nav-btn" data-tab="tab-books">
           <span>📚 Tủ Sách &amp; Nhóm Zalo</span>
           <span id="sideCountBooks">26</span>
         </button>
+        <button type="button" class="admin-nav-btn" data-tab="tab-orders">
+          <span>📦 Đơn Hàng &amp; Zalo Leads</span>
+          <span id="sideCountOrders">0</span>
+        </button>
         <button type="button" class="admin-nav-btn" data-tab="tab-settings">
-          <span>⚙️ Cấu Hình Web &amp; VietQR</span>
+          <span>⚙️ Nội Dung, VietQR &amp; Mật Khẩu</span>
         </button>
       </div>
 
       <div style="margin-top:auto; display:flex; flex-direction:column; gap:8px;">
-        <a href="/studio" class="btn btn-primary btn-full" style="font-size:13px;">🎨 Mở Studio Ảnh &amp; Phác Thảo Rập</a>
-        <a href="/api/export-csv" class="btn btn-secondary btn-full" style="font-size:13px;">📊 Tải File Excel/CSV Master</a>
+        <button type="button" id="btnPublishToWeb" class="btn btn-primary btn-full" style="font-size:13px; background:#15803d; border-color:#15803d;">
+          🚀 Xuất Bản Lên RAPMAU.COM
+        </button>
+        <a href="/studio" class="btn btn-secondary btn-full" style="font-size:13px;">🎨 Mở Studio Ảnh &amp; Đóng Dấu Rập</a>
         <a href="/" class="btn btn-outline btn-full" style="font-size:13px;">🌐 Xem Trang Chủ Website</a>
+        <button type="button" id="btnAdminLogout" class="btn btn-outline btn-full" style="font-size:12.5px; color:#fca5a5; border-color:rgba(252,165,165,0.4);">
+          🔒 Đăng Xuất Tài Khoản
+        </button>
       </div>
     </aside>
 
@@ -253,47 +440,58 @@
     <main class="admin-main">
       <div class="admin-topbar">
         <div>
-          <h1 style="font-size:21px; color:var(--bg-saddle);">Trung Tâm Quản Trị Website WWW.RAPMAU.COM</h1>
+          <h1 style="font-size:20px; color:var(--bg-saddle);">Trung Tâm Quản Trị Nội Dung &amp; Sản Phẩm WWW.RAPMAU.COM</h1>
           <p style="font-size:13px; color:var(--text-muted);">
             Hotline/Zalo: <strong id="topHotlineText">0971.463.768 (Mr.Tuan)</strong> • Email: <strong id="topEmailText">info@rapmau.com</strong>
+            <span id="localModeIndicator" style="margin-left:8px; padding:2px 8px; border-radius:99px; font-size:11.5px; font-weight:800; background:#dcfce7; color:#166534;">● Đã đăng nhập Admin</span>
           </p>
         </div>
-        <div style="display:flex; gap:10px;">
-          <a href="/" target="_blank" class="btn btn-primary">👁️ Mở Trang Khách Hàng (Tab Mới)</a>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" id="btnTopPublish" class="btn btn-primary" style="background:#15803d; border-color:#15803d; font-size:13px;">
+            🚀 Xuất Bản Lên Web
+          </button>
+          <button type="button" id="btnExportCatalogJson" class="btn btn-secondary" style="font-size:13px;">
+            📥 Tải Bản Sao JSON
+          </button>
+          <label class="btn btn-outline" style="font-size:13px; cursor:pointer; margin:0;">
+            📤 Khôi Phục JSON
+            <input type="file" id="inputImportCatalogJson" accept=".json,application/json" style="display:none;" />
+          </label>
+          <a href="/" target="_blank" class="btn btn-outline" style="font-size:13px;">👁️ Xem Web</a>
         </div>
       </div>
 
       <!-- KPI Cards -->
       <div class="kpi-grid">
         <div class="kpi-card">
-          <small>TỔNG MẪU RẬP ĐÃ CHUẨN HOÁ</small>
+          <small>TỔNG MẪU RẬP HIỆN CÓ</small>
           <strong id="kpiTotalPatterns">258</strong>
         </div>
         <div class="kpi-card">
           <small>MẪU ĐANG MỞ FREE PDF (0Đ)</small>
-          <strong id="kpiFreePatterns" style="color:var(--accent-green);">0</strong>
+          <strong id="kpiFreePatterns" style="color:var(--accent-green);">258</strong>
+        </div>
+        <div class="kpi-card">
+          <small>DỤNG CỤ &amp; PHỤ KIỆN</small>
+          <strong id="kpiToolsCount" style="color:var(--accent-leather);">48 món</strong>
         </div>
         <div class="kpi-card">
           <small>TỦ SÁCH NHÓM ZALO</small>
           <strong id="kpiBooks" style="color:var(--accent-zalo);">26 cuốn</strong>
         </div>
         <div class="kpi-card">
-          <small>ĐƠN ĐẶT HÀNG MỚI</small>
-          <strong id="kpiOrders" style="color:var(--accent-leather);">0</strong>
-        </div>
-        <div class="kpi-card">
-          <small>SĐT ZALO ĐĂNG KÝ / TƯ VẤN</small>
-          <strong id="kpiLeads">0</strong>
+          <small>ĐƠN ĐẶT HÀNG &amp; LEADS</small>
+          <strong id="kpiOrders" style="color:var(--bg-saddle);">0</strong>
         </div>
       </div>
 
-      <!-- TAB 1: QUẢN LÝ 258 MẪU RẬP & GIÁ 4 BIẾN THỂ -->
+      <!-- TAB 1: QUẢN LÝ MẪU RẬP (THÊM, SỬA, XOÁ TỪNG MẪU HOẶC XOÁ HÀNG LOẠT) -->
       <section id="tab-patterns" class="admin-tab-panel">
         <!-- Công cụ cập nhật giá hàng loạt theo Danh mục -->
         <div class="cms-card" style="background:var(--bg-parchment); border:1.5px dashed var(--accent-leather);">
           <h3 style="color:var(--bg-saddle); margin-bottom:6px;">⚡ Cập Nhật Giá Hàng Loạt Theo Danh Mục (4 Biến Thể)</h3>
           <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">
-            Giúp bạn đổi nhanh mức giá chuẩn của cả một danh mục (VD: Toàn bộ 68 mẫu Ví hoặc 52 mẫu Túi xách) chỉ với 1 cú bấm:
+            Đổi nhanh mức giá của toàn bộ sản phẩm hoặc từng danh mục (nhập <code>0</code> nếu muốn miễn phí 0đ):
           </p>
           <form id="bulkPriceForm" style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;">
             <div>
@@ -302,7 +500,7 @@
             </div>
             <div>
               <label style="display:block; font-size:12px; font-weight:700;">Giá File PDF/DXF (đ):</label>
-              <input type="number" id="bulkPdfPrice" class="cms-input-sm" placeholder="VD: 29000" />
+              <input type="number" id="bulkPdfPrice" class="cms-input-sm" placeholder="VD: 0" value="0" />
             </div>
             <div>
               <label style="display:block; font-size:12px; font-weight:700;">Giá Rập Giấy (đ):</label>
@@ -320,33 +518,48 @@
           </form>
         </div>
 
-        <!-- Bảng chỉnh sửa từng mẫu rập -->
+        <!-- Bảng chỉnh sửa, thêm mới và xoá mẫu rập -->
         <div class="cms-card">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
-            <h3 style="color:var(--bg-saddle);">Danh Sách Sản Phẩm Rập Mẫu (<span id="adminFilteredCount">258</span> mẫu)</h3>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <select id="adminCatFilter" style="padding:8px 12px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;"></select>
-              <input
-                type="search"
-                id="adminSearchInput"
-                placeholder="Tìm SKU (RM-VI-001) hoặc tên mẫu..."
-                style="padding:8px 14px; border-radius:8px; border:1px solid var(--border-stitch); min-width:260px;"
-              />
+            <div>
+              <h3 style="color:var(--bg-saddle);">Danh Sách Sản Phẩm Rập Mẫu (<span id="adminFilteredCount">258</span> mẫu)</h3>
+              <p style="font-size:12.5px; color:var(--text-muted);">Tích chọn các mẫu không cần thiết để xoá hàng loạt, hoặc bấm nút <strong>🗑️ Xoá</strong> ở từng dòng.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+              <button type="button" id="btnOpenAddPatternModal" class="btn btn-primary" style="font-size:13px;">
+                + Thêm Mẫu Rập Mới
+              </button>
+              <button type="button" id="btnBulkDeletePatterns" class="btn-danger-sm" style="padding:9px 14px; font-size:13px;">
+                🗑️ Xoá mẫu đã chọn (<span id="selectedPatternsCount">0</span>)
+              </button>
             </div>
           </div>
 
-          <div style="max-height:600px; overflow-y:auto; border:1px solid var(--border-soft); border-radius:10px;">
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+            <select id="adminCatFilter" style="padding:8px 12px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;"></select>
+            <input
+              type="search"
+              id="adminSearchInput"
+              placeholder="Tìm mã SKU (RM-VI-001) hoặc tên mẫu rập..."
+              style="padding:8px 14px; border-radius:8px; border:1px solid var(--border-stitch); min-width:280px; flex:1;"
+            />
+          </div>
+
+          <div style="max-height:620px; overflow-y:auto; border:1px solid var(--border-soft); border-radius:10px;">
             <table class="cms-table">
               <thead>
                 <tr>
+                  <th style="width:36px; text-align:center;">
+                    <input type="checkbox" id="selectAllPatternsChk" class="chk-row" title="Chọn tất cả mẫu đang hiển thị" />
+                  </th>
                   <th>Ảnh</th>
-                  <th>Mã SKU / Thư mục</th>
+                  <th>Mã SKU / Danh mục</th>
                   <th>Tên Sản Phẩm Hiển Thị Trên Web</th>
                   <th>Giá PDF/DXF (0 = Free)</th>
                   <th>Giá Rập Giấy</th>
                   <th>Giá Rập Mica</th>
                   <th>Giá Khuôn Bế</th>
-                  <th>Thao Tác</th>
+                  <th>Thao Tác (Lưu / Xoá)</th>
                 </tr>
               </thead>
               <tbody id="adminProductsTableBody"></tbody>
@@ -355,7 +568,110 @@
         </div>
       </section>
 
-      <!-- TAB 2: ĐƠN HÀNG & KHÁCH ĐĂNG KÝ NHÓM ZALO -->
+      <!-- TAB 2: QUẢN LÝ DỤNG CỤ & PHỤ KIỆN (THÊM MỚI, CHỈNH SỬA, XOÁ SẢN PHẨM KHÔNG CẦN THIẾT) -->
+      <section id="tab-tools" class="admin-tab-panel hidden">
+        <div class="cms-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+            <div>
+              <h3 style="color:var(--bg-saddle);">🛠️ Quản Lý Dụng Cụ &amp; Phụ Kiện Làm Đồ Da (<span id="adminToolsFilteredCount">48</span> sản phẩm)</h3>
+              <p style="font-size:12.5px; color:var(--text-muted);">
+                Chỉnh sửa nhanh tên, giá bán, nhãn nổi bật hoặc tích chọn để <strong>loại bỏ những sản phẩm không cần thiết</strong>.
+              </p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+              <button type="button" id="btnOpenAddToolModal" class="btn btn-primary" style="font-size:13px;">
+                + Thêm Dụng Cụ / Phụ Kiện Mới
+              </button>
+              <button type="button" id="btnBulkDeleteTools" class="btn-danger-sm" style="padding:9px 14px; font-size:13px;">
+                🗑️ Xoá dụng cụ đã chọn (<span id="selectedToolsCount">0</span>)
+              </button>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+            <select id="adminToolCatFilter" style="padding:8px 12px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;">
+              <option value="all">Tất cả nhóm dụng cụ &amp; phụ kiện</option>
+              <option value="ComBo dụng cụ">ComBo dụng cụ</option>
+              <option value="Đục lỗ làm đồ da">Đục lỗ làm đồ da</option>
+              <option value="Dụng cụ cắt, gọt, lạng">Dụng cụ cắt, gọt, lạng</option>
+              <option value="Chỉ may da, Keo, Sơn cạnh">Chỉ may da, Keo, Sơn cạnh</option>
+              <option value="Dụng cụ xử lý cạnh, bề mặt">Dụng cụ xử lý cạnh, bề mặt</option>
+              <option value="Ke lấy dấu, Thước, Bút, Kim">Ke lấy dấu, Thước, Bút, Kim</option>
+              <option value="Búa, Tấm lót, Kẹp gỗ">Búa, Tấm lót, Kẹp gỗ</option>
+              <option value="Rập Mika &amp; Phụ kiện khác">Rập Mika &amp; Phụ kiện khác</option>
+              <option value="Combo Khởi Đầu">Combo Khởi Đầu</option>
+              <option value="Dụng Cụ Đục &amp; Khâu">Dụng Cụ Đục &amp; Khâu</option>
+              <option value="Dụng Cụ Cắt &amp; Lạng">Dụng Cụ Cắt &amp; Lạng</option>
+              <option value="Xử Lý Cạnh &amp; Bề Mặt">Xử Lý Cạnh &amp; Bề Mặt</option>
+              <option value="Phụ Kiện Kim Loại">Phụ Kiện Kim Loại</option>
+            </select>
+            <input
+              type="search"
+              id="adminToolSearchInput"
+              placeholder="Tìm tên dụng cụ, mã SKU (PK-CB-001, DC-01)..."
+              style="padding:8px 14px; border-radius:8px; border:1px solid var(--border-stitch); min-width:260px; flex:1;"
+            />
+          </div>
+
+          <div style="max-height:640px; overflow-y:auto; border:1px solid var(--border-soft); border-radius:10px;">
+            <table class="cms-table">
+              <thead>
+                <tr>
+                  <th style="width:36px; text-align:center;">
+                    <input type="checkbox" id="selectAllToolsChk" class="chk-row" title="Chọn tất cả dụng cụ đang hiển thị" />
+                  </th>
+                  <th>Ảnh</th>
+                  <th>Mã SKU &amp; Nhóm</th>
+                  <th>Tên Bộ Dụng Cụ / Phụ Kiện</th>
+                  <th>Nhãn Nổi Bật</th>
+                  <th>Giá Bán (VNĐ)</th>
+                  <th>Giá Gốc (VNĐ)</th>
+                  <th>Thao Tác (Lưu / Sửa / Xoá)</th>
+                </tr>
+              </thead>
+              <tbody id="adminToolsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: QUẢN LÝ TỦ SÁCH & NHÓM ZALO -->
+      <section id="tab-books" class="admin-tab-panel hidden">
+        <div class="cms-card" style="background:#eff6ff; border:1.5px dashed #0068ff;">
+          <h3 style="color:#1e40af; margin-bottom:8px;">💬 Cấu Hình Link Nhóm Zalo: "Chia Sẻ Mẫu Và Sách Miễn Phí"</h3>
+          <p style="font-size:13px; color:#1e3a8a; margin-bottom:12px;">
+            Dán đường link mời tham gia nhóm Zalo của bạn (VD: <code>https://zalo.me/g/abcdef123</code>) vào ô bên dưới để khách bấm tham gia nhóm trước khi tải sách:
+          </p>
+          <form id="quickZaloGroupForm" style="display:flex; gap:10px; max-width:720px; flex-wrap:wrap;">
+            <input
+              type="text"
+              id="quickZaloGroupInput"
+              style="flex:1; min-width:240px; padding:10px 14px; border-radius:8px; border:1px solid #60a5fa; font-weight:700;"
+              placeholder="https://zalo.me/g/..."
+            />
+            <button type="submit" class="btn btn-zalo" style="width:auto;">💾 Lưu Link Nhóm Zalo</button>
+          </form>
+        </div>
+
+        <div class="cms-card">
+          <h3 style="color:var(--bg-saddle); margin-bottom:14px;">📚 Danh Sách Đầu Sách Đồ Da Miễn Phí (Sửa tên hoặc Xoá sách không cần thiết)</h3>
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Bìa</th>
+                <th>Mã</th>
+                <th>Thư Mục</th>
+                <th>Tên Sách Hiển Thị</th>
+                <th>Dung Lượng</th>
+                <th>Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="adminBooksTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 4: ĐƠN HÀNG & KHÁCH ĐĂNG KÝ NHÓM ZALO -->
       <section id="tab-orders" class="admin-tab-panel hidden">
         <div class="cms-card">
           <h3 style="color:var(--bg-saddle); margin-bottom:12px;">📦 Danh Sách Đơn Đặt Hàng Từ Website</h3>
@@ -368,69 +684,20 @@
         </div>
       </section>
 
-      <!-- TAB 3: QUẢN LÝ 12 BỘ DỤNG CỤ & PHỤ KIỆN -->
-      <section id="tab-tools" class="admin-tab-panel hidden">
-        <div class="cms-card">
-          <h3 style="color:var(--bg-saddle); margin-bottom:14px;">🛠️ Quản Lý Giá &amp; Thông Tin 12 Bộ Dụng Cụ Làm Đồ Da</h3>
-          <table class="cms-table">
-            <thead>
-              <tr>
-                <th>Ảnh</th>
-                <th>Mã SKU</th>
-                <th>Tên Bộ Dụng Cụ / Phụ Kiện</th>
-                <th>Nhãn Nổi Bật</th>
-                <th>Giá Bán (VNĐ)</th>
-                <th>Giá Gốc (VNĐ)</th>
-                <th>Lưu</th>
-              </tr>
-            </thead>
-            <tbody id="adminToolsTableBody"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- TAB 4: QUẢN LÝ TỦ SÁCH & NHÓM ZALO -->
-      <section id="tab-books" class="admin-tab-panel hidden">
-        <div class="cms-card" style="background:#eff6ff; border:1.5px dashed #0068ff;">
-          <h3 style="color:#1e40af; margin-bottom:8px;">💬 Cấu Hình Link Nhóm Zalo: "Chia Sẻ Mẫu Và Sách Miễn Phí"</h3>
-          <p style="font-size:13px; color:#1e3a8a; margin-bottom:12px;">
-            Dán đường link mời tham gia nhóm Zalo của bạn (VD: <code>https://zalo.me/g/abcdef123</code>) vào ô bên dưới để khách bấm tham gia nhóm trước khi tải 26 đầu sách:
-          </p>
-          <form id="quickZaloGroupForm" style="display:flex; gap:10px; max-width:720px;">
-            <input
-              type="text"
-              id="quickZaloGroupInput"
-              style="flex:1; padding:10px 14px; border-radius:8px; border:1px solid #60a5fa; font-weight:700;"
-              placeholder="https://zalo.me/g/..."
-            />
-            <button type="submit" class="btn btn-zalo" style="width:auto;">💾 Lưu Link Nhóm Zalo</button>
-          </form>
-        </div>
-
-        <div class="cms-card">
-          <h3 style="color:var(--bg-saddle); margin-bottom:14px;">📚 Danh Sách 26 Đầu Sách Trong 3 Thư Mục (`Ebook`, `Bộ sách nhật`, `Ebook China`)</h3>
-          <table class="cms-table">
-            <thead>
-              <tr>
-                <th>Bìa</th>
-                <th>Mã</th>
-                <th>Thư Mục</th>
-                <th>Tên Sách Hiển Thị</th>
-                <th>Tên File Gốc</th>
-                <th>Dung Lượng</th>
-                <th>Kiểm Tra File</th>
-              </tr>
-            </thead>
-            <tbody id="adminBooksTableBody"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- TAB 5: CẤU HÌNH WEBSITE, VIETQR & TÊN MIỀN -->
+      <!-- TAB 5: CẤU HÌNH NỘI DUNG WEBSITE, VIETQR & ĐỔI MẬT KHẨU QUẢN TRỊ -->
       <section id="tab-settings" class="admin-tab-panel hidden">
         <div class="detail-grid">
           <form id="fullSiteSettingsForm" class="cms-card">
-            <h3 style="color:var(--bg-saddle); margin-bottom:14px;">⚙️ Thông Tin Liên Hệ &amp; Tài Khoản Nhận Tiền VietQR</h3>
+            <h3 style="color:var(--bg-saddle); margin-bottom:14px;">📝 Chỉnh Sửa Nội Dung Tiêu Đề &amp; Thông Tin Liên Hệ Website</h3>
+            <div class="form-field" style="margin-bottom:12px;">
+              <label>Tiêu đề chính trang chủ (Hero Title)</label>
+              <input type="text" id="cfgTagline" placeholder="Chọn rập PDF/DXF, rập giấy, rập mica hoặc khuôn theo mẫu" />
+            </div>
+            <div class="form-field" style="margin-bottom:12px;">
+              <label>Mô tả giới thiệu đầu trang (Hero Subtitle)</label>
+              <textarea id="cfgCtaNote" rows="2" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-family:inherit; font-size:13.5px;"></textarea>
+            </div>
+
             <div class="form-row">
               <div class="form-field">
                 <label>Hotline hiển thị trên toàn web</label>
@@ -474,23 +741,189 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px;">
-              💾 Lưu Toàn Bộ Cấu Hình Website
+              💾 Lưu Toàn Bộ Nội Dung &amp; Cấu Hình Website
             </button>
           </form>
 
-          <div class="cms-card">
-            <h3 style="color:var(--bg-saddle); margin-bottom:12px;">🔍 Xem Trước Mã Thanh Toán VietQR Của Bạn</h3>
-            <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px;">
-              Mã QR bên dưới sẽ tự động hiển thị khi khách đặt mua Rập PDF/DXF, Rập Giấy, Rập Mica hoặc Dụng cụ:
-            </p>
-            <div style="text-align:center; background:var(--bg-parchment); padding:20px; border-radius:12px; border:1px dashed var(--accent-leather);">
-              <img id="previewVietQrImg" src="" alt="Preview VietQR" style="max-width:240px; border-radius:10px; border:1px solid var(--border-soft);" />
-              <div id="previewVietQrText" style="margin-top:10px; font-size:13.5px; font-weight:700; color:var(--bg-saddle);"></div>
+          <div>
+            <!-- Đổi mật khẩu quản trị -->
+            <form id="changePasswordForm" class="cms-card" style="border:1.5px solid var(--accent-gold);">
+              <h3 style="color:var(--bg-saddle); margin-bottom:8px;">🔐 Đổi Tài Khoản &amp; Mật Khẩu Quản Trị Viên</h3>
+              <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px;">
+                Bảo mật trang <code>/admin</code> bằng mật khẩu riêng của bạn:
+              </p>
+              <div class="form-field" style="margin-bottom:10px;">
+                <label>Tên đăng nhập Admin</label>
+                <input type="text" id="pwdNewUsername" value="admin" required />
+              </div>
+              <div class="form-field" style="margin-bottom:10px;">
+                <label>Mật khẩu hiện tại</label>
+                <input type="password" id="pwdCurrentInput" placeholder="Nhập mật khẩu đang dùng..." required />
+              </div>
+              <div class="form-field" style="margin-bottom:10px;">
+                <label>Mật khẩu mới (tối thiểu 4 ký tự)</label>
+                <input type="password" id="pwdNewInput" placeholder="Nhập mật khẩu mới..." required />
+              </div>
+              <div class="form-field" style="margin-bottom:14px;">
+                <label>Nhập lại mật khẩu mới</label>
+                <input type="password" id="pwdConfirmInput" placeholder="Xác nhận mật khẩu mới..." required />
+              </div>
+              <button type="submit" class="btn btn-secondary btn-full">
+                🔑 Cập Nhật Mật Khẩu Quản Trị
+              </button>
+            </form>
+
+            <div class="cms-card">
+              <h3 style="color:var(--bg-saddle); margin-bottom:12px;">🔍 Xem Trước Mã Thanh Toán VietQR</h3>
+              <div style="text-align:center; background:var(--bg-parchment); padding:18px; border-radius:12px; border:1px dashed var(--accent-leather);">
+                <img id="previewVietQrImg" src="" alt="Preview VietQR" style="max-width:220px; border-radius:10px; border:1px solid var(--border-soft);" />
+                <div id="previewVietQrText" style="margin-top:10px; font-size:13.5px; font-weight:700; color:var(--bg-saddle);"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+  </div>
+
+  <!-- MODAL 1: THÊM MẪU RẬP MỚI -->
+  <div id="addPatternModal" class="admin-modal-backdrop hidden">
+    <div class="admin-modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 style="color:var(--bg-saddle); font-size:18px;">➕ Thêm Mẫu Rập Đồ Da Mới</h3>
+        <button type="button" id="closeAddPatternModalBtn" class="btn-danger-sm">✕ Đóng</button>
+      </div>
+      <form id="addPatternForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Tên mẫu rập hiển thị *</label>
+            <input type="text" id="newPatTitle" placeholder="VD: Rập Ví Đứng Handmade 6 Ngăn Thẻ" required />
+          </div>
+          <div class="form-field">
+            <label>Danh mục sản phẩm *</label>
+            <select id="newPatCategory" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;"></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Mã SKU (để trống sẽ tự tạo)</label>
+            <input type="text" id="newPatSku" placeholder="VD: RM-VI-069" />
+          </div>
+          <div class="form-field">
+            <label>Khổ giấy in (cách nhau dấu phẩy)</label>
+            <input type="text" id="newPatPaperSizes" value="A4" placeholder="A4, A3" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Giá File PDF/DXF (0 = Miễn phí)</label>
+            <input type="number" id="newPatPricePdf" value="0" />
+          </div>
+          <div class="form-field">
+            <label>Giá Rập Giấy Cứng 350gsm (đ)</label>
+            <input type="number" id="newPatPricePaper" value="55000" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Giá Rập Mica Trong 2mm (đ)</label>
+            <input type="number" id="newPatPriceMica" value="135000" />
+          </div>
+          <div class="form-field">
+            <label>Giá Khuôn Bế Thép (đ)</label>
+            <input type="number" id="newPatPriceDie" value="450000" />
+          </div>
+        </div>
+        <div class="form-field" style="margin-bottom:12px;">
+          <label>Ảnh đại diện sản phẩm (Chọn file ảnh từ máy hoặc dán URL)</label>
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            <input type="text" id="newPatImageUrl" placeholder="/assets/tools/pattern-placeholder.svg" style="flex:1;" />
+            <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0;">
+              📷 Tải ảnh từ máy
+              <input type="file" id="newPatImageFile" accept="image/*" style="display:none;" />
+            </label>
+          </div>
+        </div>
+        <div class="form-field" style="margin-bottom:14px;">
+          <label>Link tải File PDF/DXF (nếu có)</label>
+          <input type="text" id="newPatPdfUrl" placeholder="/media/patterns/..." />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">💾 Tạo Mẫu Rập Mới</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: THÊM / SỬA CHI TIẾT DỤNG CỤ & PHỤ KIỆN -->
+  <div id="toolFormModal" class="admin-modal-backdrop hidden">
+    <div class="admin-modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 id="toolModalHeading" style="color:var(--bg-saddle); font-size:18px;">➕ Thêm Dụng Cụ / Phụ Kiện Mới</h3>
+        <button type="button" id="closeToolModalBtn" class="btn-danger-sm">✕ Đóng</button>
+      </div>
+      <form id="toolModalForm">
+        <input type="hidden" id="editToolId" value="" />
+        <div class="form-row">
+          <div class="form-field">
+            <label>Tên dụng cụ / phụ kiện *</label>
+            <input type="text" id="toolFormTitle" placeholder="VD: Bộ dụng cụ làm đồ da cơ bản 18 món" required />
+          </div>
+          <div class="form-field">
+            <label>Mã SKU</label>
+            <input type="text" id="toolFormSku" placeholder="VD: PK-CB-037" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Nhóm danh mục dụng cụ</label>
+            <input type="text" id="toolFormCategory" value="ComBo dụng cụ" list="toolCategoryList" />
+            <datalist id="toolCategoryList">
+              <option value="ComBo dụng cụ"></option>
+              <option value="Đục lỗ làm đồ da"></option>
+              <option value="Dụng cụ cắt, gọt, lạng"></option>
+              <option value="Chỉ may da, Keo, Sơn cạnh"></option>
+              <option value="Dụng cụ xử lý cạnh, bề mặt"></option>
+              <option value="Ke lấy dấu, Thước, Bút, Kim"></option>
+              <option value="Búa, Tấm lót, Kẹp gỗ"></option>
+              <option value="Rập Mika &amp; Phụ kiện khác"></option>
+              <option value="Phụ Kiện Kim Loại"></option>
+            </datalist>
+          </div>
+          <div class="form-field">
+            <label>Nhãn nổi bật (Badge)</label>
+            <input type="text" id="toolFormBadge" value="Sẵn hàng giao ngay" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Giá bán (VNĐ) *</label>
+            <input type="number" id="toolFormPrice" value="150000" required />
+          </div>
+          <div class="form-field">
+            <label>Giá gốc gạch ngang (VNĐ)</label>
+            <input type="number" id="toolFormOriginalPrice" value="195000" />
+          </div>
+        </div>
+        <div class="form-field" style="margin-bottom:12px;">
+          <label>Ảnh sản phẩm (Dán URL hoặc tải ảnh từ máy tính/điện thoại)</label>
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            <input type="text" id="toolFormImageUrl" placeholder="/assets/tools/..." style="flex:1;" />
+            <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0;">
+              📷 Tải ảnh lên
+              <input type="file" id="toolFormImageFile" accept="image/*" style="display:none;" />
+            </label>
+          </div>
+        </div>
+        <div class="form-field" style="margin-bottom:12px;">
+          <label>Mô tả ngắn sản phẩm</label>
+          <textarea id="toolFormDesc" rows="2" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-family:inherit; font-size:13px;"></textarea>
+        </div>
+        <div class="form-field" style="margin-bottom:14px;">
+          <label>Thông số / Đặc điểm nổi bật (mỗi dòng 1 ý)</label>
+          <textarea id="toolFormSpecs" rows="3" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-family:inherit; font-size:13px;" placeholder="Thép chịu lực sắc bén&#10;Phù hợp cho người mới bắt đầu"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">💾 Lưu Thông Tin Dụng Cụ / Phụ Kiện</button>
+      </form>
+    </div>
   </div>
 
   <div id="adminToast" class="toast-bar hidden">✅ Đã lưu thay đổi thành công!</div>
