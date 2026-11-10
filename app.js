@@ -668,13 +668,20 @@ function openZaloBookModal(bookId) {
 
 function renderTools() {
   const grid = document.getElementById('toolsGrid');
+  const allTab = document.querySelector('#toolsFilterTabs .tool-tab[data-toolcat="all"]');
+  if (allTab) {
+    allTab.textContent = `Tất cả (${state.accessories.length})`;
+  }
   const list = state.accessories.filter((item) => {
     if (state.selectedToolCat === 'all') return true;
     if (state.selectedToolCat === 'Dụng Cụ & Máy Móc') {
       return item.category.includes('Máy Móc') || item.category.includes('Cắt Rập');
     }
     if (state.selectedToolCat === 'Dụng Cụ Đục & Khâu') {
-      return item.category.includes('Đục') || item.category.includes('Kim Chỉ') || item.category.includes('Hoá Chất');
+      return item.category.includes('Đục') || item.category.includes('Kim Chỉ');
+    }
+    if (state.selectedToolCat === 'Phụ Kiện Kim Loại') {
+      return item.category.includes('Phụ Kiện') || item.category.includes('Hoá Chất');
     }
     return item.category === state.selectedToolCat;
   });

@@ -27,7 +27,7 @@
   "stats": {
     "totalPatterns": 258,
     "totalCategories": 21,
-    "totalToolsAndAccessories": 12,
+    "totalToolsAndAccessories": 48,
     "freePatternsCount": 258,
     "freeBooksCount": 26
   },
@@ -25173,6 +25173,798 @@
       "description": "Bộ dụng cụ thiết yếu để tự cắt rập giấy tại nhà sau khi in file PDF hoặc cắt da theo rập mica.",
       "images": [
         "/assets/tools/cutting-kit.svg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-006",
+      "sku": "RM-PK-006",
+      "title": "Bộ Dụng Cụ Làm Đồ Da Thủ Công Cơ Bản (Full Setup Cho Người Mới)",
+      "slug": "bo-dung-cu-lam-do-da-thu-cong-co-ban",
+      "category": "Combo Người Mới",
+      "type": "tool",
+      "price": 940000,
+      "originalPrice": 1000000,
+      "badge": "Setup Cơ Bản - Giảm 6%",
+      "inStock": true,
+      "specs": [
+        "Trọn bộ dụng cụ cơ bản đầy đủ từ đo cắt, đục lỗ, khâu tay đến xử lý cạnh da",
+        "Bao gồm: Bộ đục lỗ, búa, bảng cắt, dao cắt da, thước, kim khâu đầu tù, chỉ sáp, keo & gỗ đánh cạnh",
+        "Thiết kế tối ưu chi phí cho người mới bắt đầu làm ví da, bao kính, dây đồng hồ, túi nhỏ"
+      ],
+      "description": "Gói Setup bộ dụng cụ làm đồ da thủ công cơ bản giúp người mới bắt đầu có ngay đầy đủ đồ nghề tiêu chuẩn mà không phải mua lẻ từng món.",
+      "images": [
+        "/assets/tools/phukien/pk-06-1.jpg",
+        "/assets/tools/phukien/pk-06-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-007",
+      "sku": "RM-PK-007",
+      "title": "Bộ Dụng Cụ Làm Đồ Da Thủ Công Cơ Bản Nâng Cao (Pro Leathercraft Kit)",
+      "slug": "bo-dung-cu-lam-do-da-thu-cong-co-ban-nang-cao",
+      "category": "Combo Người Mới",
+      "type": "tool",
+      "price": 2650000,
+      "originalPrice": 2780000,
+      "badge": "Setup Nâng Cao - Bán chạy",
+      "inStock": true,
+      "specs": [
+        "Phiên bản nâng cao đầy đủ dụng cụ chuyên sâu cho thợ làm đồ da handmade và xưởng nhỏ",
+        "Tích hợp thêm kẹp gỗ khâu da, dụng cụ lạng da, ke viền, bộ đục sắc bén và phụ liệu hoàn thiện cạnh cao cấp",
+        "Đáp ứng chế tác mọi mẫu Ví da, Túi xách, Cặp táp, Balo và Dây đồng hồ tinh xảo"
+      ],
+      "description": "Bộ dụng cụ làm đồ da thủ công cơ bản nâng cao dành cho người muốn đầu tư bài bản ngay từ đầu để làm các sản phẩm đồ da độ hoàn thiện cao.",
+      "images": [
+        "/assets/tools/phukien/pk-07-1.jpg",
+        "/assets/tools/phukien/pk-07-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-001",
+      "sku": "RM-PK-001",
+      "title": "Set 5 Kẹp Mép Cố Định Giữ Dán Cạnh Da Không Để Lại Vết Hằn",
+      "slug": "5-kep-mep-de-giu-dan-canh-da",
+      "category": "Dụng Cụ Đục & Khâu",
+      "type": "accessory",
+      "price": 20000,
+      "originalPrice": 30000,
+      "badge": "Phụ liệu thiết yếu",
+      "inStock": true,
+      "specs": [
+        "Bộ 5 kẹp inox bọc mỏ phẳng giúp giữ chặt 2 mép da khi chờ keo khô",
+        "Không làm trầy xước hoặc hằn lún bề mặt da thật khi kẹp",
+        "Rất tiện lợi khi ráp ngăn ví, hông túi xách và quai đeo"
+      ],
+      "description": "Set 5 kẹp mép chuyên dụng giữ cố định cạnh da sau khi bôi keo, giúp đục lỗ và khâu tay chính xác tuyệt đối.",
+      "images": [
+        "/assets/tools/phukien/pk-01-1.jpg",
+        "/assets/tools/phukien/pk-01-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-002",
+      "sku": "RM-PK-002",
+      "title": "Băng Dính 3M Chuyên Dụng Dán Mép Da & Định Vị Rập Tạm Thời",
+      "slug": "bang-dinh-3m-dan-mep",
+      "category": "Kim Chỉ & Vật Tư",
+      "type": "accessory",
+      "price": 30000,
+      "originalPrice": 35000,
+      "badge": "Định vị chuẩn xác",
+      "inStock": true,
+      "specs": [
+        "Băng dính 2 mặt 3M bản mảnh chuyên dán mép da, khóa kéo YKK và lót ngăn thẻ",
+        "Độ bám dính cao, mỏng nhẹ không làm cộm mép khâu",
+        "Giúp cố định khóa kéo và chi tiết da trước khi đục lỗ mà không bị xô lệch"
+      ],
+      "description": "Băng dính 3M dán mép hỗ trợ định vị khóa kéo và các chi tiết rập da nhanh gọn, sạch sẽ.",
+      "images": [
+        "/assets/tools/phukien/pk-02-1.jpg",
+        "/assets/tools/phukien/pk-02-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-003",
+      "sku": "RM-PK-003",
+      "title": "Bao Bọc Ngón Tay Japan Bảo Vệ Tay Khi Khâu Da Thủ Công",
+      "slug": "bao-boc-ngon-tay-japan-khau-da",
+      "category": "Dụng Cụ Đục & Khâu",
+      "type": "accessory",
+      "price": 30000,
+      "originalPrice": 45000,
+      "badge": "Bảo vệ ngón tay",
+      "inStock": true,
+      "specs": [
+        "Chất liệu da/cao su êm ái, co giãn ôm sát ngón trỏ và ngón út",
+        "Chống đau rát và cứa đứt tay khi rút chỉ sáp chặt tay trong thời gian dài",
+        "Tăng độ bám khi kéo kim khâu qua lớp da dày"
+      ],
+      "description": "Bao bọc ngón tay phong cách Japan giúp thợ làm đồ da rút chỉ sáp đanh chặt mà không bị chỉ cứa đau tay.",
+      "images": [
+        "/assets/tools/phukien/pk-03-1.jpg",
+        "/assets/tools/phukien/pk-03-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-004",
+      "sku": "RM-PK-004",
+      "title": "Bộ Chữ Đồng Dập Nhiệt Loại Thường (Đóng Tên & Cá Nhân Hóa Đồ Da)",
+      "slug": "bo-chu-dong-dong-dap-nhiet",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 650000,
+      "originalPrice": 1550000,
+      "badge": "Khắc tên theo yêu cầu",
+      "inStock": true,
+      "specs": [
+        "Bộ chữ cái A-Z, chữ số và ký tự bằng đồng thau sắc nét dùng để dập chìm hoặc ép nhũ",
+        "Tương thích với mỏ hàn nhiệt cầm tay và máy dập nhiệt logo",
+        "Giúp đóng tên khách hàng, số điện thoại lên ví da, dây đồng hồ, móc khóa"
+      ],
+      "description": "Bộ chữ đồng dập nhiệt giúp xưởng và thợ thủ công dễ dàng cá nhân hóa tên riêng lên sản phẩm đồ da.",
+      "images": [
+        "/assets/tools/phukien/pk-04-1.jpg",
+        "/assets/tools/phukien/pk-04-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-005",
+      "sku": "RM-PK-005",
+      "title": "Bộ Chữ Đồng Dập Nhiệt Mang Cài Chữ T (Khay Ghép Trượt CNC Chính Xác)",
+      "slug": "bo-chu-dong-t-khay-ghep-truot",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 650000,
+      "originalPrice": 2300000,
+      "badge": "Chuẩn CNC cao cấp",
+      "inStock": true,
+      "specs": [
+        "Thiết kế chân mang cá chữ T trượt trực tiếp vào thanh cài đồng bộ, căn thẳng hàng tuyệt đối",
+        "Đồng CNC độ sâu rãnh lớn, nét chữ thanh mảnh sang trọng không bị lem viền",
+        "Lắp vừa mọi dòng máy ép nhiệt logo và mỏ hàn nhiệt chuyên dụng"
+      ],
+      "description": "Bộ chữ đồng dập nhiệt mang cài T kèm khay ghép trượt giúp xếp chữ nhanh và thẳng hàng tuyệt đối khi ép nhũ/dập nhiệt.",
+      "images": [
+        "/assets/tools/phukien/pk-05-1.jpg",
+        "/assets/tools/phukien/pk-05-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-008",
+      "sku": "RM-PK-008",
+      "title": "Bộ Khuôn Dao Bế Hỗ Trợ Làm Dây Đồng Hồ Da Chuẩn Size",
+      "slug": "bo-khuon-dao-be-ho-tro-lam-day-dong-ho-da",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 460000,
+      "originalPrice": 490000,
+      "badge": "Chuẩn form dây đồng hồ",
+      "inStock": true,
+      "specs": [
+        "Khuôn dao thép sắc bén giúp dập nhanh phôi dây đồng hồ, đĩa chặn và đầu mũi dây",
+        "Độ chính xác cao, hai cạnh dây cân đối tuyệt đối không cần cắt tay thủ công",
+        "Dùng kết hợp với búa nhựa chữ T hoặc máy dập cơ khí"
+      ],
+      "description": "Bộ khuôn dao bế chuyên dụng làm dây đồng hồ da giúp tăng tốc độ sản xuất và chuẩn hóa kích thước từng bộ dây.",
+      "images": [
+        "/assets/tools/phukien/pk-08-1.jpg",
+        "/assets/tools/phukien/pk-08-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-009",
+      "sku": "RM-PK-009",
+      "title": "Búa Nhựa Chữ T Đục Lỗ & Chạm Khắc Da Cán Gỗ Đầm Tay",
+      "slug": "bua-cham-nhua-chu-t-duc-da",
+      "category": "Dụng Cụ Đục & Khâu",
+      "type": "tool",
+      "price": 100000,
+      "originalPrice": 165000,
+      "badge": "Bảo vệ đầu đục",
+      "inStock": true,
+      "specs": [
+        "Đầu búa nhựa Nylon đặc siêu bền, giảm chấn và giảm tiếng ồn khi đóng đục",
+        "Bảo vệ chuôi đục xiên, đục trám và dụng cụ chạm khắc không bị tòe đầu thép",
+        "Cán gỗ tiện công thái học cầm chắc tay, lực đóng đầm và đều"
+      ],
+      "description": "Búa nhựa chữ T chuyên dụng để đóng đục lỗ khâu da và gõ tool chạm khắc da mà không làm hỏng đầu đục.",
+      "images": [
+        "/assets/tools/phukien/pk-09-1.jpg",
+        "/assets/tools/phukien/pk-09-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-010",
+      "sku": "RM-PK-010",
+      "title": "Da Bò Pullup Hàng Loại 1 (Da Thật Nguyên Tấm / Cắt Lẻ Theo Pia)",
+      "slug": "da-bo-pullup-hang-loai-1",
+      "category": "Hoá Chất & Xử Lý Cạnh",
+      "type": "accessory",
+      "price": 75000,
+      "originalPrice": 90000,
+      "badge": "Da bò thật loại 1",
+      "inStock": true,
+      "specs": [
+        "Da bò Pullup thuộc thảo mộc/sáp dầu đanh dẻo, lên màu Vintage cực đẹp khi bẻ cong",
+        "Độ dày tiêu chuẩn 1.4mm - 2.0mm phù hợp làm Ví da, Túi đeo chéo, Cặp táp, Bao kính",
+        "Đơn giá tính theo Pia (1 Pia = 30x30cm), hỗ trợ lạng mỏng theo mẫu rập"
+      ],
+      "description": "Da bò Pullup hàng loại 1 bề mặt mịn đẹp, dễ xử lý cạnh, cực kỳ thích hợp để thực hành và làm sản phẩm thương mại từ các mẫu rập 1:1.",
+      "images": [
+        "/assets/tools/phukien/pk-10-1.jpg",
+        "/assets/tools/phukien/pk-10-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-011",
+      "sku": "RM-PK-011",
+      "title": "Dấu Logo Khắc In Hình Họa Tiết, Chữ Số, 12 Con Giáp & Icon Lên Da",
+      "slug": "dau-logo-khac-in-hinh-hoa-tiet",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 120000,
+      "originalPrice": 150000,
+      "badge": "Trang trí đồ da",
+      "inStock": true,
+      "specs": [
+        "Con dấu kim loại khắc CNC sâu nét: 12 con giáp, họa tiết cổ điển, chữ số và biểu tượng may mắn",
+        "Dùng đóng trực tiếp lên da mộc (Veg-tan) làm ẩm hoặc ép nhiệt lên da thuộc",
+        "Kèm trục cán đóng cầm tay tiện lợi"
+      ],
+      "description": "Bộ dấu logo họa tiết và 12 con giáp giúp tạo điểm nhấn độc bản lên ví da, móc khóa, bao hộ chiếu.",
+      "images": [
+        "/assets/tools/phukien/pk-11-1.jpg",
+        "/assets/tools/phukien/pk-11-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-012",
+      "sku": "RM-PK-012",
+      "title": "Dịch Vụ Lạng Da Tấm Bằng Máy Công Nghiệp Độ Chính Xác Cao",
+      "slug": "dich-vu-lang-da-tam",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "accessory",
+      "price": 50000,
+      "originalPrice": 80000,
+      "badge": "Hỗ trợ thợ & xưởng",
+      "inStock": true,
+      "specs": [
+        "Nhận hạ độ dày da nguyên tấm hoặc các chi tiết ví/túi bằng máy lạng băng công nghiệp",
+        "Độ mỏng đồng đều tuyệt đối từ 0.4mm - 2.0mm theo đúng thông số bản vẽ rập",
+        "Giúp ngăn thẻ ví và mép gấp túi mỏng gọn không bị cộm"
+      ],
+      "description": "Dịch vụ lạng mỏng da tấm chuyên nghiệp cho khách mua da hoặc chưa có máy lạng tại nhà.",
+      "images": [
+        "/assets/tools/phukien/pk-12-1.jpg",
+        "/assets/tools/phukien/pk-12-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-013",
+      "sku": "RM-PK-013",
+      "title": "Dụng Cụ Mài Nhám & Dũa Đục Tròn Sắc Bén Chuyên Dụng",
+      "slug": "dung-cu-mai-dua-duc-tron-sac-ben",
+      "category": "Dụng Cụ Đục & Khâu",
+      "type": "tool",
+      "price": 340000,
+      "originalPrice": 390000,
+      "badge": "Giữ đục luôn bén",
+      "inStock": true,
+      "specs": [
+        "Cây côn mài nhám kim cương/thép giúp mài sắc cả lòng trong và mép ngoài của mũi đục tròn",
+        "Khôi phục độ sắc bén cho các cỡ đục lỗ tròn từ 1mm đến 6mm chỉ sau vài vòng xoay",
+        "Tăng tuổi thọ bộ đục và giúp lỗ đục trên da luôn tròn ngọt, không xơ"
+      ],
+      "description": "Dụng cụ mài nhám dũa đục tròn giúp bảo dưỡng mũi đục luôn sắc bén như mới.",
+      "images": [
+        "/assets/tools/phukien/pk-13-1.jpg",
+        "/assets/tools/phukien/pk-13-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-014",
+      "sku": "RM-PK-014",
+      "title": "Đế Dép Hermes 1:1 Chính Hãng Bằng Da Đế Thật (Phôi Làm Dép Da)",
+      "slug": "de-dep-herme-s-chinh-hang-bang-da-de-that",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 940000,
+      "originalPrice": 1100000,
+      "badge": "Phôi đế da thật 1:1",
+      "inStock": true,
+      "specs": [
+        "Bộ phôi đế dép chuẩn tỷ lệ 1:1 chế tác từ da đế thật cao cấp, đầm chắc và chống trượt",
+        "Kết hợp hoàn hảo với các mẫu Rập Giày Dép trên hệ thống rapmau.com",
+        "Đủ size nam/nữ tiêu chuẩn để thợ lên quai da thủ công"
+      ],
+      "description": "Đế dép chuẩn 1:1 bằng da đế thật dành cho thợ làm dép da handmade cao cấp.",
+      "images": [
+        "/assets/tools/phukien/pk-14-1.jpg",
+        "/assets/tools/phukien/pk-14-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-015",
+      "sku": "RM-PK-015",
+      "title": "Đồng Hồ Đo Độ Dày Da Chuyên Dụng (0 - 10mm Chính Xác 0.1mm)",
+      "slug": "dong-ho-do-do-day-da",
+      "category": "Dụng Cụ Cắt Rập",
+      "type": "tool",
+      "price": 100000,
+      "originalPrice": 240000,
+      "badge": "Đo chuẩn 0.1mm",
+      "inStock": true,
+      "specs": [
+        "Mặt đồng hồ kim / điện tử hiển thị rõ nét độ dày tấm da tính theo milimet (0.1mm)",
+        "Cần gạt lò xo kẹp nhẹ nhàng, kiểm tra nhanh độ đồng đều của da sau khi lạng",
+        "Giúp chọn đúng độ dày da khuyến nghị trên từng bản vẽ rập PDF"
+      ],
+      "description": "Đồng hồ đo độ dày da giúp người làm da kiểm soát chính xác độ dày vách ngăn, mặt ngoài ví và quai túi.",
+      "images": [
+        "/assets/tools/phukien/pk-15-1.jpg",
+        "/assets/tools/phukien/pk-15-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-016",
+      "sku": "RM-PK-016",
+      "title": "Giá Gỗ Để Chỉ Khâu 60 Ống — Kệ Bàn Làm Đồ Da Thủ Công Gọn Đẹp",
+      "slug": "gia-go-de-chi-khau-60-ong-dung-cu-lam-do-da-thu-cong",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 150000,
+      "originalPrice": 190000,
+      "badge": "Sắp xếp 60 cuộn chỉ",
+      "inStock": true,
+      "specs": [
+        "Gỗ tự nhiên mịn đẹp gồm 60 cọc cắm cuộn chỉ sáp đa màu sắc",
+        "Có thể đặt đứng trên bàn làm da hoặc treo tường tiết kiệm diện tích",
+        "Giúp nhìn rõ màu chỉ và rút chỉ nhanh không bị rối"
+      ],
+      "description": "Giá gỗ để 60 ống chỉ khâu giúp góc làm đồ da thủ công luôn ngăn nắp, chuyên nghiệp.",
+      "images": [
+        "/assets/tools/phukien/pk-16-1.jpg",
+        "/assets/tools/phukien/pk-16-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-017",
+      "sku": "RM-PK-017",
+      "title": "Giấy Bìa Rập Craft Nâu USA 500gsm Khổ A3 Dày Cứng (Tự Bồi & Cắt Rập)",
+      "slug": "giay-bia-rap-craft-nau-usa-500gsm-kho-a3",
+      "category": "Dụng Cụ Cắt Rập",
+      "type": "accessory",
+      "price": 10000,
+      "originalPrice": 15000,
+      "badge": "Bìa rập 500gsm siêu đanh",
+      "inStock": true,
+      "specs": [
+        "Bìa Kraft nâu nhập khẩu USA định lượng 500gsm dày cứng, không cong vênh khi kẻ dấu",
+        "Khổ lớn A3 (42x29.7cm) thoải mái dán bản in rập PDF A4/A3 lên để cắt bộ rập cứng dùng lâu dài",
+        "Mép bìa đanh mịn, tỳ mũi dùi lấy dấu lên da cực chuẩn"
+      ],
+      "description": "Giấy bìa rập Craft nâu USA 500gsm khổ A3 chuyên dùng để bồi rập giấy PDF sau khi tải miễn phí từ rapmau.com.",
+      "images": [
+        "/assets/tools/phukien/pk-17-1.jpg",
+        "/assets/tools/phukien/pk-17-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-018",
+      "sku": "RM-PK-018",
+      "title": "Hộp Đựng Keo Dán Da Cho Xưởng Có Nắp Kín Chống Khô Keo",
+      "slug": "hop-dung-keo-dan-da-cho-xuong-co-nap-kin",
+      "category": "Hoá Chất & Xử Lý Cạnh",
+      "type": "accessory",
+      "price": 25000,
+      "originalPrice": 40000,
+      "badge": "Chống bay hơi keo",
+      "inStock": true,
+      "specs": [
+        "Thiết kế nắp vặn kín khí kèm thanh gạt keo thừa tiện lợi",
+        "Giữ keo con chó, keo gốc nước, keo trắng luôn lỏng mịn không bị đông đặc",
+        "Nhựa dày chịu dung môi hoá chất bền bỉ cho bàn thợ"
+      ],
+      "description": "Hộp đựng keo dán da có nắp kín giúp tiết kiệm keo và thao tác phết keo mép da sạch sẽ.",
+      "images": [
+        "/assets/tools/phukien/pk-18-1.jpg",
+        "/assets/tools/phukien/pk-18-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-019",
+      "sku": "RM-PK-019",
+      "title": "Hộp Gỗ Ngăn Kéo Decor Đựng Dụng Cụ Làm Da & Phụ Kiện Nhỏ",
+      "slug": "hop-go-ngan-keo-decor-dung-cu-tra-che",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 280000,
+      "originalPrice": 320000,
+      "badge": "Gỗ Decor cao cấp",
+      "inStock": true,
+      "specs": [
+        "Hộp gỗ nhiều ngăn kéo phân loại kim khâu, nút bấm, đinh tán, khoen đồng và mũi đục",
+        "Phong cách Vintage sang trọng, trang trí bàn làm việc đồ da thủ công",
+        "Ngăn kéo trượt êm, bảo quản dụng cụ thép không bị ẩm gỉ"
+      ],
+      "description": "Hộp gỗ ngăn kéo Decor giúp lưu trữ gọn gàng các phụ kiện kim loại và dụng cụ làm đồ da.",
+      "images": [
+        "/assets/tools/phukien/pk-19-1.jpg",
+        "/assets/tools/phukien/pk-19-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-020",
+      "sku": "RM-PK-020",
+      "title": "Kem Dưỡng Da Thuộc Chồn (Mink Oil) Làm Mềm & Chống Nước Cho Da Thật",
+      "slug": "kem-duong-da-thuoc-chon",
+      "category": "Hoá Chất & Xử Lý Cạnh",
+      "type": "accessory",
+      "price": 35000,
+      "originalPrice": 50000,
+      "badge": "Dưỡng mềm & bóng da",
+      "inStock": true,
+      "specs": [
+        "Chiết xuất mỡ chồn tự nhiên giúp cấp ẩm, làm mềm da bò/da mộc và phục hồi vết xước nhẹ",
+        "Tạo lớp màng bảo vệ chống thấm nước nhẹ và chống mốc cho ví, túi, giày da",
+        "Không màu, dùng được cho mọi màu da thuộc"
+      ],
+      "description": "Kem dưỡng da thuộc chồn (Mink Oil) dùng để bảo dưỡng và hoàn thiện bề mặt sản phẩm đồ da trước khi bàn giao cho khách.",
+      "images": [
+        "/assets/tools/phukien/pk-20-1.jpg",
+        "/assets/tools/phukien/pk-20-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-021",
+      "sku": "RM-PK-021",
+      "title": "Khay Gỗ Cắm Dụng Cụ Tools Đồ Da Đa Tầng Chuyên Nghiệp",
+      "slug": "khay-go-cam-dung-cu-tools",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 1250000,
+      "originalPrice": 1450000,
+      "badge": "Chuẩn Studio Đồ Da",
+      "inStock": true,
+      "specs": [
+        "Khay gỗ nguyên khối thiết kế đa tầng cắm đầy đủ bộ đục, dao cắt, ke viền, dùi, búa và lọ sơn",
+        "Giúp lấy đúng dụng cụ chỉ trong 1 giây, bảo vệ mũi đục không va chạm vào nhau",
+        "Nâng tầm thẩm mỹ chuyên nghiệp cho xưởng và góc quay video làm đồ da"
+      ],
+      "description": "Khay gỗ cắm dụng cụ Tools cao cấp dành cho nghệ nhân và xưởng chế tác đồ da thủ công.",
+      "images": [
+        "/assets/tools/phukien/pk-21-1.jpg",
+        "/assets/tools/phukien/pk-21-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-022",
+      "sku": "RM-PK-022",
+      "title": "Khay Hộp Decor Trưng Bày Sản Phẩm Nắp Mica Trong Suốt Bọc Nhung",
+      "slug": "khay-hop-decor-san-pham-trang-tri-nap-mica-boc-nhung",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 160000,
+      "originalPrice": 180000,
+      "badge": "Trưng bày & Bảo quản",
+      "inStock": true,
+      "specs": [
+        "Lòng khay bọc nhung êm ái kèm nắp kính Mica trong suốt chống bụi bẩn",
+        "Phù hợp trưng bày dây đồng hồ da, ví mini, móc khóa hoặc bộ phụ kiện khóa đồng cao cấp",
+        "Có khóa cài kim loại chắc chắn, tiện mang đi hội chợ/gặp khách"
+      ],
+      "description": "Khay hộp bọc nhung nắp mica giúp trưng bày thành phẩm đồ da hoặc phụ kiện khóa cao cấp sang trọng.",
+      "images": [
+        "/assets/tools/phukien/pk-22-1.jpg",
+        "/assets/tools/phukien/pk-22-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-023",
+      "sku": "RM-PK-023",
+      "title": "Khoá Vân Tay Bảo Mật Thông Minh Cho Dây Kéo Túi, Cặp Táp, Clutch, Ví Da",
+      "slug": "khoa-van-tay-tui-cap-clutch-da",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 440000,
+      "originalPrice": 460000,
+      "badge": "Khóa vân tay 0.5s",
+      "inStock": true,
+      "specs": [
+        "Cảm biến vân tay nhạy bén mở khóa trong 0.5 giây, lưu trữ nhiều dấu vân tay",
+        "Lắp trực tiếp cho các mẫu Rập Clutch, Cặp Táp Công Sở và Túi Du Lịch cao cấp",
+        "Hợp kim kẽm mạ chống gỉ, sạc cổng USB tiện lợi dùng nhiều tháng"
+      ],
+      "description": "Bộ khóa vân tay bảo mật hiện đại giúp nâng tầm giá trị thương mại cho các mẫu Clutch nam và Cặp táp da.",
+      "images": [
+        "/assets/tools/phukien/pk-23-1.jpg",
+        "/assets/tools/phukien/pk-23-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-024",
+      "sku": "RM-PK-024",
+      "title": "Làm Logo Dấu Đồng Dập Nhiệt Trên Da, Gỗ, Nhựa Theo Thiết Kế Riêng",
+      "slug": "logo-dong-dap-nhiet-tren-da-go",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 180000,
+      "originalPrice": 250000,
+      "badge": "Khắc CNC theo thương hiệu",
+      "inStock": true,
+      "specs": [
+        "Gia công mặt dấu đồng thau dày khắc CNC sâu 2.5mm - 3mm từ file ảnh hoặc phác thảo trên Studio",
+        "Tích hợp lỗ ốc ren chuẩn lắp vừa mỏ hàn nhiệt và máy dập nhiệt",
+        "Giúp đóng thương hiệu riêng sắc nét lên ví da, túi xách, mác da"
+      ],
+      "description": "Nhận khắc logo dấu đồng dập nhiệt theo yêu cầu riêng để đóng thương hiệu lên sản phẩm đồ da của bạn.",
+      "images": [
+        "/assets/tools/phukien/pk-24-1.jpg",
+        "/assets/tools/phukien/pk-24-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-025",
+      "sku": "RM-PK-025",
+      "title": "Máy Dập 3in1 Đóng Cúc Bấm 4 Chi Tiết, Khoen Ô Rê & Đinh Tán Không Tiếng Ồn",
+      "slug": "may-dap-cuc-o-re-dinh-tan",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 350000,
+      "originalPrice": 390000,
+      "badge": "Dập êm không ồn",
+      "inStock": true,
+      "specs": [
+        "Cơ cấu tay đòn trợ lực giúp ép cúc bấm, đinh tán, mắt cáo (ô rê) nhẹ nhàng không cần gõ búa",
+        "Làm đồ da ban đêm tại chung cư/phòng riêng hoàn toàn yên tĩnh",
+        "Mặt cúc vào thẳng đều, không bị móp méo hay lệch tâm"
+      ],
+      "description": "Máy dập 3in1 chuyên đóng cúc bấm, đinh tán và khoen ô rê nhanh chuẩn, không gây tiếng ồn.",
+      "images": [
+        "/assets/tools/phukien/pk-25-1.png",
+        "/assets/tools/phukien/pk-25-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-026",
+      "sku": "RM-PK-026",
+      "title": "Máy Dập Đục Lỗ & Đóng Tán Cơ Khí Chế Tạo (Đục Không Tiếng Ồn)",
+      "slug": "may-dap-duc-va-tan",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 70000,
+      "originalPrice": 3400000,
+      "badge": "Đục êm tuyệt đối",
+      "inStock": true,
+      "specs": [
+        "Hệ thống trục ép thanh răng / đầu kẹp mang danh giúp gắn mọi loại đục xiên, đục trám, khuôn bế nhỏ",
+        "Đục xuyên qua nhiều lớp da dày hoàn toàn không phát ra tiếng động",
+        "Có bán lẻ phụ kiện đầu kẹp/bàn dập (từ 70.000đ) và trọn bộ máy cơ khí"
+      ],
+      "description": "Máy dập đục lỗ và đóng tán cơ khí chế tạo siêu bền, giải pháp hoàn hảo để làm đồ da tại nhà không gây tiếng ồn.",
+      "images": [
+        "/assets/tools/phukien/pk-26-1.jpg",
+        "/assets/tools/phukien/pk-26-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-027",
+      "sku": "RM-PK-027",
+      "title": "Máy Dập Ép Nhiệt Dấu Logo & Ép Nhũ Trên Da, Gỗ, Nhựa, Bìa Giấy",
+      "slug": "may-dap-nhiet-logo-tren-da-go",
+      "category": "Dụng Cụ & Máy Móc",
+      "type": "tool",
+      "price": 130000,
+      "originalPrice": 2100000,
+      "badge": "Ép nhiệt & Ép nhũ chuẩn",
+      "inStock": true,
+      "specs": [
+        "Điều chỉnh nhiệt độ kỹ thuật số chính xác từ 0 - 400°C cho từng loại da thuộc và giấy nhũ",
+        "Bàn căn tọa độ có vạch thước giúp dập logo chính giữa ví/mác túi hàng loạt",
+        "Gồm tùy chọn mỏ hàn nhiệt cầm tay (130.000đ) đến máy bàn trục ép chuyên nghiệp (2.100.000đ)"
+      ],
+      "description": "Máy dập ép nhiệt dấu logo và ép nhũ vàng/bạc chuyên nghiệp cho xưởng đồ da handmade.",
+      "images": [
+        "/assets/tools/phukien/pk-27-1.jpeg",
+        "/assets/tools/phukien/pk-27-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-028",
+      "sku": "RM-PK-028",
+      "title": "Dầu Dưỡng Bóng Da Milk Oil Columbus Japan Cao Cấp",
+      "slug": "milk-oil-duong-bong-da-nhat",
+      "category": "Hoá Chất & Xử Lý Cạnh",
+      "type": "accessory",
+      "price": 160000,
+      "originalPrice": 195000,
+      "badge": "Nhập khẩu Nhật Bản",
+      "inStock": true,
+      "specs": [
+        "Dầu dưỡng da Columbus (Japan) thẩm thấu nhanh, không gây nhờn rít bề mặt da",
+        "Giúp da mộc Veg-tan và da bò sáp lên nước bóng tự nhiên, mềm mại và bền màu",
+        "An toàn cho da tay, mùi hương dịu nhẹ"
+      ],
+      "description": "Milk Oil Columbus Japan chính hãng chuyên dưỡng bóng và cấp ẩm sâu cho các sản phẩm đồ da cao cấp.",
+      "images": [
+        "/assets/tools/phukien/pk-28-1.jpg",
+        "/assets/tools/phukien/pk-28-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-029",
+      "sku": "RM-PK-029",
+      "title": "Name Tag Tên Đồng Gắn Mác Cá Nhân Hóa Cho Túi Xách & Ví Da",
+      "slug": "name-tag-dong-theo-yeu-cau",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 50000,
+      "originalPrice": 200000,
+      "badge": "Mác đồng khắc tên",
+      "inStock": true,
+      "specs": [
+        "Mác đồng thau nguyên chất cắt và khắc tên/thương hiệu theo yêu cầu",
+        "Có chân gập hoặc lỗ bắt đinh tán/khâu chỉ trực tiếp lên mặt túi xách, cặp táp, bìa sổ",
+        "Tăng độ nhận diện thương hiệu cao cấp cho sản phẩm thủ công"
+      ],
+      "description": "Name tag đồng gắn mác thương hiệu cá nhân hóa theo yêu cầu cho các dòng túi da và phụ kiện.",
+      "images": [
+        "/assets/tools/phukien/pk-29-1.jpg",
+        "/assets/tools/phukien/pk-29-2.jpeg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-030",
+      "sku": "RM-PK-030",
+      "title": "Bộ Phụ Kiện Còng Sổ & Khoá Làm Sổ Sách Da Thủ Công Cao Cấp",
+      "slug": "phu-kien-lam-so-sach-da-thu-cong-cao-cap-khac-biet",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 25000,
+      "originalPrice": 520000,
+      "badge": "Làm sổ da Binder A5/A6",
+      "inStock": true,
+      "specs": [
+        "Còng sổ inox/đồng 6 lỗ chuẩn A5, A6, B5 kèm đinh ốc bắt gáy sổ da",
+        "Độ đàn hồi cao, đóng mở êm khít, mạ vàng/bạc/đồng cổ sang trọng",
+        "Kết hợp với các mẫu rập bìa sổ tay và bao hộ chiếu"
+      ],
+      "description": "Phụ kiện còng sổ và nẹp góc cao cấp chuyên dùng chế tác sổ tay bìa da thủ công.",
+      "images": [
+        "/assets/tools/phukien/pk-30-1.jpg",
+        "/assets/tools/phukien/pk-30-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-031",
+      "sku": "RM-PK-031",
+      "title": "Phôi Ốp Lưng Dán Da Điện Thoại iPhone 12 / 13 / 14 / 15 / 16 / 17 Pro Max",
+      "slug": "phoi-op-lung-dan-da-iphone-16-15-14-13-12-pro-max",
+      "category": "Phụ Kiện Kim Loại",
+      "type": "accessory",
+      "price": 30000,
+      "originalPrice": 45000,
+      "badge": "Đủ mã iPhone mới nhất",
+      "inStock": true,
+      "specs": [
+        "Phôi ốp PC/TPU viền gờ hạ bậc chuyên dụng để bọc/dán da thật hoặc da cá sấu, kỳ đà",
+        "Ôm khít thân máy, bảo vệ cụm camera và bấm nút nhạy nhẹ",
+        "Đủ dòng từ iPhone 12, 13, 14, 15, 16 đến iPhone 17 Pro / Pro Max / Air"
+      ],
+      "description": "Phôi ốp lưng chuyên dụng có rãnh âm để dán da thật thủ công vừa khít, không bị bong mép.",
+      "images": [
+        "/assets/tools/phukien/pk-31-1.jpg",
+        "/assets/tools/phukien/pk-31-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-032",
+      "sku": "RM-PK-032",
+      "title": "Bộ Rập Clutch Kelly Depeches 25 Chuẩn Tỷ Lệ 1:1",
+      "slug": "rap-clutch-depeches",
+      "category": "Dụng Cụ Cắt Rập",
+      "type": "tool",
+      "price": 150000,
+      "originalPrice": 220000,
+      "badge": "Rập Clutch Cao Cấp",
+      "inStock": true,
+      "specs": [
+        "Bộ rập giấy cứng cắt sẵn chuẩn tỷ lệ 1:1 theo phom Clutch Kelly Depeches 25",
+        "Đánh dấu đầy đủ vị trí lỗ đục, đường gập hông và vị trí gắn khóa",
+        "Giúp thợ lên phom túi Clutch sang trọng chuẩn từng milimet"
+      ],
+      "description": "Bộ rập Clutch Depeches cắt sẵn chính xác giúp chế tác mẫu ví cầm tay nam/nữ đẳng cấp.",
+      "images": [
+        "/assets/tools/phukien/pk-32-1.jpg",
+        "/assets/tools/phukien/pk-32-2.png"
+      ]
+    },
+    {
+      "id": "PK-SETUP-033",
+      "sku": "RM-PK-033",
+      "title": "Bộ Rập Giấy Túi Clutch Nam 02 (Rập Bìa Cứng Cắt Sẵn 1:1)",
+      "slug": "rap-giay-tui-clutch-nam-02",
+      "category": "Dụng Cụ Cắt Rập",
+      "type": "tool",
+      "price": 150000,
+      "originalPrice": 200000,
+      "badge": "Cắt CNC trên bìa cứng",
+      "inStock": true,
+      "specs": [
+        "Bộ rập giấy bìa cứng định lượng cao cho mẫu Túi Clutch Nam khóa kéo đa ngăn",
+        "Có sẵn rãnh định vị đường đục lỗ và kích thước từng ngăn thẻ, ngăn tiền",
+        "Mua về áp trực tiếp lên da để cắt và đục lỗ ngay"
+      ],
+      "description": "Bộ rập giấy túi Clutch nam 02 cắt sẵn tiện lợi cho thợ làm đồ da thủ công.",
+      "images": [
+        "/assets/tools/phukien/pk-33-1.jpg",
+        "/assets/tools/phukien/pk-33-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-034",
+      "sku": "RM-PK-034",
+      "title": "Thớt Gỗ Bần (Cork Board) Kê Đục Lỗ & Cắm Dùi Khâu Da An Toàn",
+      "slug": "thot-go-ban-cam-dui-khau",
+      "category": "Dụng Cụ Đục & Khâu",
+      "type": "accessory",
+      "price": 40000,
+      "originalPrice": 55000,
+      "badge": "Bảo vệ mũi dùi & đục",
+      "inStock": true,
+      "specs": [
+        "Gỗ bần tự nhiên ép mật độ cao, đàn hồi tốt và không làm cùn mũi dùi nhọn",
+        "Dùng kê dưới tấm da khi đâm dùi khâu hoặc cắm bảo quản dùi, kim trên bàn",
+        "Kích thước nhỏ gọn, chống trượt trên mặt bàn làm việc"
+      ],
+      "description": "Thớt gỗ bần chuyên dụng kê đâm dùi và bảo vệ mũi dụng cụ sắc nhọn trên bàn làm da.",
+      "images": [
+        "/assets/tools/phukien/pk-34-1.jpg",
+        "/assets/tools/phukien/pk-34-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-035",
+      "sku": "RM-PK-035",
+      "title": "Thước Kẹp Cơ Khí & Thước Đo Độ Điện Tử Màn Hình LED Chính Xác",
+      "slug": "thuoc-kep-cap-co-khi-thuoc-do-do-dien-tu-man-hinh-led",
+      "category": "Dụng Cụ Cắt Rập",
+      "type": "tool",
+      "price": 150000,
+      "originalPrice": 240000,
+      "badge": "Màn hình LED rõ nét",
+      "inStock": true,
+      "specs": [
+        "Đo đường kính phụ kiện khoen khóa, độ dày da, khoảng cách lỗ đục và góc cắt rập chính xác 0.01mm",
+        "Màn hình LCD/LED hiển thị số lớn dễ đọc, chuyển đổi nhanh mm / inch",
+        "Thân thước cứng cáp, trượt êm mượt"
+      ],
+      "description": "Thước kẹp và thước đo góc điện tử màn hình LED giúp thiết kế rập và kiểm tra thông số phụ kiện chuẩn xác.",
+      "images": [
+        "/assets/tools/phukien/pk-35-1.jpg",
+        "/assets/tools/phukien/pk-35-2.jpg"
+      ]
+    },
+    {
+      "id": "PK-SETUP-036",
+      "sku": "RM-PK-036",
+      "title": "Thước Nhựa Chống Cắt 2in1 Lõi Thép Kẻ Rập & Dọc Da An Toàn",
+      "slug": "thuoc-nhua-chong-cat-2in1",
+      "category": "Dụng Cụ Cắt Rập",
+      "type": "tool",
+      "price": 55000,
+      "originalPrice": 75000,
+      "badge": "Có viền thép chống cắt",
+      "inStock": true,
+      "specs": [
+        "Thân thước trong suốt có lưới tọa độ giúp nhìn xuyên bề mặt da và giấy rập để căn vuông góc",
+        "Cạnh thước nẹp lõi thép không gỉ chống lưỡi dao rọc giấy phạm vào thước",
+        "Thiết kế 2in1 vừa đo căn lề song song vừa làm thước cắt thẳng"
+      ],
+      "description": "Thước nhựa chống cắt 2in1 nẹp cạnh thép giúp cắt rập giấy và rọc da thẳng tắp, an toàn.",
+      "images": [
+        "/assets/tools/phukien/pk-36-1.jpg",
+        "/assets/tools/phukien/pk-36-2.jpg"
       ]
     }
   ],
