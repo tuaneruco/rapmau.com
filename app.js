@@ -13,6 +13,10 @@ const state = {
   sortFilter: 'featured',
   searchQuery: '',
   visibleCount: 24,
+  visibleToolsCount: 8,
+  visibleBooksCount: 4,
+  visibleArticlesCount: 4,
+  showAllFaqs: false,
   selectedToolCat: 'all',
   selectedArticleCat: 'all',
   selectedBookFolder: 'all',
@@ -321,6 +325,8 @@ function applyRouteFromLocation({ initial = false } = {}) {
   }
 
   if (preRoute?.type === 'articles_hub' || rawPath === '/bai-viet') {
+    state.visibleArticlesCount = 999;
+    state.showAllFaqs = true;
     document.getElementById('articleModalBackdrop')?.classList.add('hidden');
     setDocumentMeta({
       title: 'Cẩm Nang Kỹ Thuật Làm Đồ Da Handmade, In Rập 1:1 & Bảng Quy Đổi Thông Số | RAPMAU.COM',
@@ -621,7 +627,22 @@ function renderFreeBooks() {
     return b.folderKey === state.selectedBookFolder;
   });
 
-  grid.innerHTML = list
+  const visibleBooks = list.slice(0, state.visibleBooksCount);
+  const loadMoreBooksWrap = document.getElementById('loadMoreBooksWrap');
+  const loadMoreBooksBtn = document.getElementById('loadMoreBooksBtn');
+  if (loadMoreBooksWrap && loadMoreBooksBtn) {
+    if (list.length > state.visibleBooksCount) {
+      loadMoreBooksWrap.classList.remove('hidden');
+      loadMoreBooksBtn.textContent = `📚 Xem trọn bộ ${list.length} đầu sách đồ da miễn phí (+${list.length - state.visibleBooksCount} cuốn)`;
+    } else if (list.length > 4) {
+      loadMoreBooksWrap.classList.remove('hidden');
+      loadMoreBooksBtn.textContent = '📚 Thu gọn danh sách sách (hiện 4 cuốn tiêu biểu)';
+    } else {
+      loadMoreBooksWrap.classList.add('hidden');
+    }
+  }
+
+  grid.innerHTML = visibleBooks
     .map((b) => {
       const cover = encodeURI(b.cover || '/assets/tools/pattern-placeholder.svg');
       const dlUrl = encodeURI(b.downloadUrl);
@@ -818,7 +839,22 @@ function renderTools() {
     return item.category === state.selectedToolCat;
   });
 
-  grid.innerHTML = list
+  const visibleTools = list.slice(0, state.visibleToolsCount);
+  const loadMoreToolsWrap = document.getElementById('loadMoreToolsWrap');
+  const loadMoreToolsBtn = document.getElementById('loadMoreToolsBtn');
+  if (loadMoreToolsWrap && loadMoreToolsBtn) {
+    if (list.length > state.visibleToolsCount) {
+      loadMoreToolsWrap.classList.remove('hidden');
+      loadMoreToolsBtn.textContent = `🛠️ Xem tất cả ${list.length} Dụng cụ, Da thuộc & Phụ kiện (+${list.length - state.visibleToolsCount} món)`;
+    } else if (list.length > 8) {
+      loadMoreToolsWrap.classList.remove('hidden');
+      loadMoreToolsBtn.textContent = '🛠️ Thu gọn danh sách dụng cụ (hiện 8 món tiêu biểu)';
+    } else {
+      loadMoreToolsWrap.classList.add('hidden');
+    }
+  }
+
+  grid.innerHTML = visibleTools
     .map((item) => {
       const thumb = encodeURI(item.images[0] || '/assets/tools/starter-kit.svg');
       return `
@@ -1783,7 +1819,22 @@ function renderArticles() {
     return;
   }
 
-  grid.innerHTML = list
+  const visibleArts = list.slice(0, state.visibleArticlesCount);
+  const loadMoreArtWrap = document.getElementById('loadMoreArticlesWrap');
+  const loadMoreArtBtn = document.getElementById('loadMoreArticlesBtn');
+  if (loadMoreArtWrap && loadMoreArtBtn) {
+    if (list.length > state.visibleArticlesCount) {
+      loadMoreArtWrap.classList.remove('hidden');
+      loadMoreArtBtn.textContent = `📰 Xem tất cả ${list.length} bài viết kỹ thuật & bảng thông số (+${list.length - state.visibleArticlesCount} bài)`;
+    } else if (list.length > 4) {
+      loadMoreArtWrap.classList.remove('hidden');
+      loadMoreArtBtn.textContent = '📰 Thu gọn bài viết (hiện 4 bài nổi bật)';
+    } else {
+      loadMoreArtWrap.classList.add('hidden');
+    }
+  }
+
+  grid.innerHTML = visibleArts
     .map((art) => {
       const faqCount = (art.faqs?.length || 0) + (art.aeoQuestion ? 1 : 0);
       return `
@@ -1839,11 +1890,18 @@ function renderGlobalFaqs() {
     }
   }
 
+  const toggleFaqsBtn = document.getElementById('toggleAllFaqsBtn');
+  if (toggleFaqsBtn) {
+    toggleFaqsBtn.textContent = state.showAllFaqs
+      ? 'Thu gọn câu hỏi (hiện 4 câu)'
+      : `Xem tất cả ${allFaqs.length} câu hỏi thường gặp`;
+  }
+
   container.innerHTML = allFaqs
-    .slice(0, 12)
+    .slice(0, state.showAllFaqs ? 20 : 4)
     .map(
       (item, idx) => `
-      <details class="aeo-faq-item" ${idx < 2 ? 'open' : ''} itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <details class="aeo-faq-item" ${idx === 0 ? 'open' : ''} itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <summary itemprop="name">${item.q}</summary>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <p itemprop="text">
@@ -2144,12 +2202,58 @@ function bindEvents() {
     });
   });
 
+  // Nút xem thêm / thu gọn Dụng cụ, Sách & Bài viết
+  const loadMoreToolsBtn = document.getElementById('loadMoreToolsBtn');
+  if (loadMoreToolsBtn) {
+    loadMoreToolsBtn.addEventListener('click', () => {
+      state.visibleToolsCount = state.visibleToolsCount <= 8 ? 999 : 8;
+      renderTools();
+    });
+  }
+
+  const loadMoreBooksBtn = document.getElementById('loadMoreBooksBtn');
+  if (loadMoreBooksBtn) {
+    loadMoreBooksBtn.addEventListener('click', () => {
+      state.visibleBooksCount = state.visibleBooksCount <= 4 ? 999 : 4;
+      renderFreeBooks();
+    });
+  }
+
+  const loadMoreArticlesBtn = document.getElementById('loadMoreArticlesBtn');
+  if (loadMoreArticlesBtn) {
+    loadMoreArticlesBtn.addEventListener('click', () => {
+      state.visibleArticlesCount = state.visibleArticlesCount <= 4 ? 999 : 4;
+      renderArticles();
+    });
+  }
+
+  const toggleAllFaqsBtn = document.getElementById('toggleAllFaqsBtn');
+  if (toggleAllFaqsBtn) {
+    toggleAllFaqsBtn.addEventListener('click', () => {
+      state.showAllFaqs = !state.showAllFaqs;
+      renderGlobalFaqs();
+    });
+  }
+
+  // Tự động mở Accordion Chính sách khi người dùng bấm link neo (#thong-tin-xuong, #chinh-sach-...)
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      const targetId = anchor.getAttribute('href').slice(1);
+      if (!targetId) return;
+      const targetEl = document.getElementById(targetId);
+      if (targetEl && targetEl.tagName === 'DETAILS') {
+        targetEl.open = true;
+      }
+    });
+  });
+
   // Tab lọc Dụng cụ & Phụ kiện
   document.querySelectorAll('#toolsFilterTabs .tool-tab').forEach((tab) => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('#toolsFilterTabs .tool-tab').forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
       state.selectedToolCat = tab.dataset.toolcat;
+      state.visibleToolsCount = state.selectedToolCat === 'all' ? 8 : 999;
       renderTools();
     });
   });
@@ -2160,6 +2264,7 @@ function bindEvents() {
       document.querySelectorAll('#articlesFilterTabs .tool-tab').forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
       state.selectedArticleCat = tab.dataset.artcat;
+      state.visibleArticlesCount = state.selectedArticleCat === 'all' ? 4 : 999;
       renderArticles();
     });
   });
@@ -2190,6 +2295,7 @@ function bindEvents() {
       document.querySelectorAll('#booksFolderTabs .book-tab').forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
       state.selectedBookFolder = tab.dataset.folder;
+      state.visibleBooksCount = state.selectedBookFolder === 'all' ? 4 : 999;
       renderFreeBooks();
     });
   });

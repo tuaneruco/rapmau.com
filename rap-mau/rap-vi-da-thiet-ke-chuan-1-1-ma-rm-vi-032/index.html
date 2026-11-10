@@ -76,66 +76,41 @@
     </div>
   </header>
 
-  <!-- 3. Compact Hero & Thanh Chọn Nhanh 4 Biến Thể Giá (Gọn gàng để thấy ngay sản phẩm bên dưới) -->
+  <!-- 3. Thanh Hero Siêu Gọn & Chọn Nhanh 4 Biến Thể Giá (Thấy ngay sản phẩm ở màn hình đầu tiên) -->
   <section class="compact-hero">
     <div class="container compact-hero-inner">
       <div class="ch-left">
         <div class="ch-badge-row">
-          <span class="hero-eyebrow">HỆ THỐNG RẬP MẪU &amp; DỤNG CỤ ĐỒ DA CHUẨN 1:1</span>
-          <a href="#nhan-sach-mien-phi" class="ch-gift-link">🎁 Tặng 26 Sách Đồ Da khi vào Nhóm Zalo →</a>
+          <span class="hero-eyebrow">KHO 258+ RẬP ĐỒ DA TỶ LỆ 1:1 • DỤNG CỤ &amp; DA THUỘC</span>
+          <a href="/rapmau-studio/" class="ch-gift-link">🪄 Công cụ Tách nền &amp; In chìm Logo AI →</a>
         </div>
         <h1 class="ch-title">Rập Ví Da Thiết Kế Chuẩn 1:1 - Mã RM-VI-032</h1>
         <p class="ch-sub">Mã SKU: <strong>RM-VI-032</strong> • Danh mục: <strong>Rập Ví Da (Wallet &amp; Cardholder)</strong> • Khổ bản vẽ: <strong>A2</strong> • Độ dày da: <strong>1.0mm - 1.6mm (Vách ngoài 1.6mm, ngăn thẻ 1.0mm)</strong> • Bước đục: <strong>3.0mm hoặc 3.38mm</strong>.</p>
-
-        <!-- 3 Thẻ Hình Ảnh Thực Tế Thu Gọn (Bấm để chuyển thẳng tới phân khu) -->
-        <div class="ch-visual-strip">
-          <a href="#ban-lam-viec" class="ch-visual-chip">
-            <img src="/assets/brand/hero-workbench.jpg" alt="Rập mẫu 1:1" />
-            <div>
-              <strong>258+ Rập Chuẩn 1:1</strong>
-              <span>21 danh mục đồ da</span>
-            </div>
-          </a>
-          <a href="#phu-kien-dung-cu" class="ch-visual-chip">
-            <img src="/assets/brand/tools-kit-pro.jpg" alt="Dụng cụ làm da" />
-            <div>
-              <strong>Dụng Cụ &amp; Phụ Kiện</strong>
-              <span>Đục, kim chỉ, máy lạng</span>
-            </div>
-          </a>
-          <a href="#tu-van-dat-mau" class="ch-visual-chip">
-            <img src="/assets/brand/leather-rolls.jpg" alt="Tư vấn chọn mẫu" />
-            <div>
-              <strong>Hỏi Mẫu &amp; Đặt Khuôn</strong>
-              <span>Tư vấn 1:1 qua Zalo</span>
-            </div>
-          </a>
-        </div>
       </div>
 
-      <!-- Bảng chuyển đổi chế độ giá 4 biến thể trực quan -->
+      <!-- Bảng chuyển đổi chế độ giá 4 biến thể gọn trên 1 hàng -->
       <div class="ch-right">
         <div class="ch-panel-head">
-          <span>BƯỚC 1: CHỌN LOẠI RẬP BẠN MUỐN XEM BẢNG GIÁ</span>
+          <span>CHỌN LOẠI RẬP ĐỂ XEM GIÁ TRÊN TỪNG MẪU:</span>
           <a href="#bang-so-sanh-rap">So sánh 4 loại?</a>
         </div>
         <div class="variant-mode-grid" id="globalVariantSelector">
           <button type="button" class="variant-mode-card active" data-variant="pdf_dxf">
             <div class="vm-top">
               <span class="vm-icon">📄</span>
-              <span class="vm-badge" style="background:#15803d; color:#fff;">Miễn phí 100%</span>
+              <span class="vm-badge" style="background:#15803d; color:#fff;">0đ Free</span>
             </div>
-            <strong>1. File PDF / DXF</strong>
-            <span class="vm-price-hint">Miễn phí 0đ (258 mẫu)</span>
+            <strong>1. File PDF/DXF</strong>
+            <span class="vm-price-hint">Tải ngay (258 mẫu)</span>
           </button>
 
           <button type="button" class="variant-mode-card" data-variant="rap_giay">
             <div class="vm-top">
               <span class="vm-icon">📦</span>
-              <span class="vm-badge">Cắt CNC sẵn</span>
+              <span class="vm-badge">Cắt CNC</span>
             </div>
             <strong>2. Rập Giấy 350gsm</strong>
-            <span class="vm-price-hint">39.000đ – 160.000đ</span>
+            <span class="vm-price-hint">39k – 160k</span>
           </button>
 
           <button type="button" class="variant-mode-card" data-variant="rap_mica">
@@ -144,7 +119,7 @@
               <span class="vm-badge vm-badge-hot">Bán chạy</span>
             </div>
             <strong>3. Rập Mica 2mm</strong>
-            <span class="vm-price-hint">89.000đ – 450.000đ</span>
+            <span class="vm-price-hint">89k – 450k</span>
           </button>
 
           <button type="button" class="variant-mode-card" data-variant="khuon_be">
@@ -593,37 +568,30 @@
       </div>
 
       <div class="tools-grid" id="toolsGrid">
-        <!-- Render động từ catalog.accessories -->
+        <!-- Render động từ catalog.accessories (mặc định 8 món nổi bật) -->
+      </div>
+
+      <div class="load-more-wrap" id="loadMoreToolsWrap" style="margin-top:18px;">
+        <button type="button" class="btn btn-secondary" id="loadMoreToolsBtn">
+          🛠️ Xem tất cả 68 Dụng cụ, Da thuộc &amp; Phụ kiện (+60 món)
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- 6. MỤC NHẬN SÁCH MIỄN PHÍ KHI THAM GIA NHÓM ZALO CHIA SẺ MẪU VÀ SÁCH MIỄN PHÍ -->
+  <!-- 6. MỤC NHẬN SÁCH MIỄN PHÍ KHI THAM GIA NHÓM ZALO CHIA SẺ MẪU VÀ SÁCH MIỄN PHÍ (RÚT GỌN 4 CUỐN TIÊU BIỂU) -->
   <section class="free-books-section" id="nhan-sach-mien-phi">
     <div class="container">
       <div class="zalo-book-banner">
         <div class="zbb-left">
           <span class="zbb-badge">🎁 QUÀ TẶNG CỘNG ĐỒNG ĐỒ DA • WWW.RAPMAU.COM</span>
-          <h2>Nhận Miễn Phí 26+ Đầu Sách Đồ Da Khi Tham Gia Nhóm Zalo: <span class="text-accent">"Chia Sẻ Mẫu Và Sách Miễn Phí"</span></h2>
+          <h2>Tặng Miễn Phí 26+ Đầu Sách Đồ Da Khi Tham Gia Nhóm Zalo: <span class="text-accent">"Chia Sẻ Mẫu Và Sách Miễn Phí"</span></h2>
           <p>
-            Tham gia nhóm Zalo cùng <strong>Mr.Tuan (0971.463.768)</strong> để tải miễn phí trọn bộ 3 thư mục sách quý hiếm:
-            <strong>📁 Ebook (7 tài liệu)</strong>, <strong>📁 Bộ sách nhật (12 tập)</strong> và <strong>📁 Ebook China (7 tập)</strong>.
+            Tham gia nhóm Zalo cùng <strong>Mr.Tuan (0971.463.768)</strong> để mở khóa tải trọn bộ <strong>12 Tập Sách Khâu Da Nhật Bản</strong>, <strong>7 Ebook Quốc Tế</strong> và <strong>7 Tập Giáo Trình Đồ Da</strong>.
           </p>
-          <div class="zbb-perks">
-            <span>✅ 12 Tập Sách Khâu Túi &amp; Giày Da Nhật Bản</span>
-            <span>✅ 7 Ebook Quốc Tế (MAKE, Fashionary, Bag Design...)</span>
-            <span>✅ Chia Sẻ Mẫu Rập Free Hàng Tuần</span>
-          </div>
         </div>
         <div class="zbb-right">
           <div class="zbb-card">
-            <div class="zbb-card-header">
-              <span class="zbb-zalo-pill">ZALO GROUP</span>
-              <strong>Chia Sẻ Mẫu &amp; Sách Miễn Phí</strong>
-            </div>
-            <p id="zaloUnlockStatusText">
-              Bấm tham gia nhóm Zalo để mở khoá tải trực tiếp toàn bộ 26 đầu sách PDF ngay trên website:
-            </p>
             <a
               href="https://zalo.me/0971463768"
               target="_blank"
@@ -631,22 +599,21 @@
               id="joinZaloGroupPrimaryBtn"
               class="btn btn-zalo btn-full"
             >
-              💬 Tham Gia Nhóm Zalo Chia Sẻ Mẫu &amp; Sách Miễn Phí
+              💬 Tham Gia Nhóm Zalo Nhận Sách Miễn Phí
             </a>
             <button type="button" class="btn btn-primary btn-full" id="openBookUnlockModalBtn" style="margin-top:8px;">
-              🔓 Đã Tham Gia Nhóm → Mở Khoá Tải 26 Sách Ngay
+              🔓 Đã Tham Gia Nhóm → Mở Khoá Tải 26 Sách
             </button>
           </div>
         </div>
       </div>
 
-      <div class="section-header" style="margin-top: 24px;">
+      <div class="section-header" style="margin-top: 18px;">
         <div>
-          <span class="section-eyebrow">THƯ VIỆN GIÁO TRÌNH &amp; SÁCH ĐỒ DA MIỄN PHÍ</span>
-          <h3 class="section-title" style="font-size:22px;">Chọn Thư Mục Sách Cần Tải</h3>
+          <h3 class="section-title" style="font-size:19px;">📚 Sách &amp; Giáo Trình Đồ Da Tiêu Biểu</h3>
         </div>
         <div class="books-folder-tabs" id="booksFolderTabs">
-          <button type="button" class="book-tab active" data-folder="all">📚 Tất cả (26 tài liệu)</button>
+          <button type="button" class="book-tab active" data-folder="all">📚 Tất cả (26)</button>
           <button type="button" class="book-tab" data-folder="Ebook">📁 Ebook (7)</button>
           <button type="button" class="book-tab" data-folder="Bộ sách nhật">📁 Bộ sách nhật (12)</button>
           <button type="button" class="book-tab" data-folder="Ebook China">📁 Ebook China (7)</button>
@@ -654,94 +621,36 @@
       </div>
 
       <div class="books-grid" id="freeBooksGrid">
-        <!-- Render động từ catalog.freeBooks -->
+        <!-- Render động từ catalog.freeBooks (mặc định 4 cuốn) -->
+      </div>
+
+      <div class="load-more-wrap" id="loadMoreBooksWrap" style="margin-top:16px;">
+        <button type="button" class="btn btn-secondary" id="loadMoreBooksBtn">
+          📚 Xem trọn bộ 26 đầu sách đồ da miễn phí (+22 cuốn)
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- 7. SO SÁNH 4 LOẠI RẬP & HƯỚNG DẪN IN TỶ LỆ 1:1 -->
-  <section class="guide-section" id="bang-so-sanh-rap">
-    <div class="container">
-      <div class="guide-grid">
-        <div class="comparison-card">
-          <span class="section-eyebrow">BẢNG SO SÁNH NHANH</span>
-          <h3>Nên Chọn Rập PDF/DXF, Rập Giấy, Rập Mica Hay Khuôn Bế?</h3>
-          <div class="table-responsive">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th>Tiêu chí</th>
-                  <th>File PDF / DXF</th>
-                  <th>Rập Giấy 350gsm</th>
-                  <th>Rập Mica 2mm</th>
-                  <th>Khuôn Bế Thép</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Phù hợp với</strong></td>
-                  <td>Tự in A4/A3 tại nhà hoặc cắt máy laser</td>
-                  <td>Người mới làm 1–5 SP, cần rập cắt sẵn ngay</td>
-                  <td>Thợ làm thường xuyên, nhìn xuyên vân da &amp; né sẹo</td>
-                  <td>Xưởng sản xuất dập máy hàng loạt</td>
-                </tr>
-                <tr>
-                  <td><strong>Thời gian nhận</strong></td>
-                  <td><strong>Tải ngay 24/7</strong></td>
-                  <td>Ship COD 1–3 ngày</td>
-                  <td>Cắt Laser 1–2 ngày</td>
-                  <td>Gia công 3–5 ngày</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="printing-guide-card" id="huong-dan-in-rap">
-          <span class="section-eyebrow">QUY TẮC IN RẬP CHUẨN 1:1</span>
-          <h3>3 Bước In File PDF Không Bị Lệch Tỷ Lệ</h3>
-          <ol class="guide-steps">
-            <li>
-              <strong>1. Chọn "Actual Size" hoặc "Scale: 100%"</strong>
-              <p>Không chọn "Fit to page" khi in trên Adobe Acrobat / Foxit Reader.</p>
-            </li>
-            <li>
-              <strong>2. Đo kiểm tra ô thước chuẩn (Test Square)</strong>
-              <p>Đo lại vạch 3cm/5cm/10cm trên bản in để chắc chắn bước đục 3.38mm/4.0mm chính xác tuyệt đối.</p>
-            </li>
-            <li>
-              <strong>3. Đặt Rập Giấy / Rập Mica nếu không tiện tự in</strong>
-              <p>Chọn ngay biến thể <strong>Rập Giấy 350gsm</strong> hoặc <strong>Rập Mica 2mm</strong> trên từng mẫu để nhận bộ rập cắt CNC hoàn chỉnh.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7.5. HỆ THỐNG BÀI VIẾT CẨM NANG KỸ THUẬT & HỎI ĐÁP ĐỒ DA (TỐI ƯU SEO & AEO) -->
+  <!-- 7. CẨM NANG KỸ THUẬT & HỎI ĐÁP ĐỒ DA (HIỂN THỊ GỌN 4 BÀI NỔI BẬT + NÚT XEM TẤT CẢ) -->
   <section class="articles-section" id="cam-nang-bai-viet">
     <div class="container">
       <div class="section-header">
         <div>
-          <span class="section-eyebrow">KIẾN THỨC THỰC CHIẾN CHUẨN XƯỞNG • HỎI ĐÁP NHANH (SEO &amp; AEO HUB)</span>
-          <h2 class="section-title">📰 Cẩm Nang Kỹ Thuật Làm Đồ Da, Chọn Rập &amp; Bảng Quy Đổi Thông Số</h2>
-          <p class="section-desc">
-            Tổng hợp bài viết chuyên sâu giải đáp trực diện mọi thắc mắc về cách in rập PDF tỷ lệ 1:1, bảng phối đục lỗ &amp; chỉ sáp, định mức Pia da thuộc và quy trình chế tác đồ da handmade.
-          </p>
+          <span class="section-eyebrow">KIẾN THỨC THỰC CHIẾN CHUẨN XƯỞNG • HỎI ĐÁP NHANH</span>
+          <h2 class="section-title">📰 Cẩm Nang Kỹ Thuật Làm Đồ Da &amp; Bảng Quy Đổi Thông Số</h2>
         </div>
         <div class="articles-filter-tabs" id="articlesFilterTabs">
-          <button type="button" class="tool-tab active" data-artcat="all">Tất cả bài viết (8)</button>
+          <button type="button" class="tool-tab active" data-artcat="all">Tất cả (8)</button>
           <button type="button" class="tool-tab" data-artcat="Kỹ Thuật Rập & Bản Vẽ">In Rập 1:1</button>
           <button type="button" class="tool-tab" data-artcat="Tư Vấn Chọn Rập">So Sánh 4 Loại Rập</button>
           <button type="button" class="tool-tab" data-artcat="Cẩm Nang Người Mới">Dụng Cụ Người Mới</button>
-          <button type="button" class="tool-tab" data-artcat="Kỹ Thuật Khâu Da">Bảng Quy Đổi Đục &amp; Chỉ</button>
+          <button type="button" class="tool-tab" data-artcat="Kỹ Thuật Khâu Da">Đục &amp; Chỉ Sáp</button>
           <button type="button" class="tool-tab" data-artcat="Kiến Thức Da Thuộc">Chọn Da &amp; Tính Pia</button>
-          <button type="button" class="tool-tab" data-artcat="Hướng Dẫn Thực Hành">Quy Trình &amp; Bảo Dưỡng</button>
         </div>
       </div>
 
-      <!-- Lưới bài viết SEO/AEO -->
+      <!-- Lưới bài viết SEO/AEO (mặc định hiển thị 4 bài) -->
       <div class="articles-grid" id="articlesGrid">
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
           <div>
@@ -819,89 +728,22 @@
             <a href="/bai-viet/bang-quy-doi-buoc-duc-lo-3-0-3-38-4-0mm-va-co-chi-sap-khau-da" class="btn btn-primary btn-sm" data-art-slug="bang-quy-doi-buoc-duc-lo-3-0-3-38-4-0mm-va-co-chi-sap-khau-da">Đọc chi tiết →</a>
           </div>
         </article>
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <div>
-            <div class="art-card-top">
-              <span class="art-cat-badge" itemprop="articleSection">Kiến Thức Da Thuộc</span>
-              <span class="art-read-time">⏱️ 8 phút đọc</span>
-            </div>
-            <h3 class="art-card-title" itemprop="headline">
-              <a href="/bai-viet/cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap" data-art-slug="cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap">Cách Chọn Da Thuộc (Da Bò Veg-Tan Ý, Da Nappa, Da Dê, Da Heo Lót) &amp; Độ Dày Da Chuẩn Theo Từng Mẫu Rập</a>
-            </h3>
-            <div class="art-aeo-snippet" itemprop="abstract">
-              <strong>💡 Tóm tắt nhanh (AEO):</strong>
-              Độ dày và loại da thuộc chuẩn cho từng sản phẩm như sau: (1) Ví da nam/nữ: Mặt ngoài dùng da bò Veg-Tan, Epsom, Nappa hoặc Da dê dày 1.2mm – 1.6mm; ngăn thẻ bên trong dùng da dày 0.6mm – 0.8mm; da heo lót 0.5mm; (2) Túi xách &amp; Clutch: Dùng da bò dày 1.6mm – 2.2mm (hoặc da 1.2mm bồi Salpa/Microfiber); (3) Thắt lưng &amp; Quai túi: Dùng da bò Veg-Tan nguyên tấm dày 3.0mm – 4.0mm.
-            </div>
-          </div>
-          <div class="art-card-footer">
-            <span class="art-faq-count">✅ 3 câu hỏi giải đáp</span>
-            <a href="/bai-viet/cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap" class="btn btn-primary btn-sm" data-art-slug="cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap">Đọc chi tiết →</a>
-          </div>
-        </article>
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <div>
-            <div class="art-card-top">
-              <span class="art-cat-badge" itemprop="articleSection">Hướng Dẫn Thực Hành</span>
-              <span class="art-read-time">⏱️ 9 phút đọc</span>
-            </div>
-            <h3 class="art-card-title" itemprop="headline">
-              <a href="/bai-viet/quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh" data-art-slug="quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh">Quy Trình 7 Bước Tự Làm Ví Da Handmade Tại Nhà Từ Bản Vẽ Rập 1:1 Đến Đánh Bóng &amp; Sơn Cạnh</a>
-            </h3>
-            <div class="art-aeo-snippet" itemprop="abstract">
-              <strong>💡 Tóm tắt nhanh (AEO):</strong>
-              Quy trình tiêu chuẩn để hoàn thiện một chiếc ví da handmade từ bản vẽ rập gồm 7 bước theo thứ tự: (1) In rập tỷ lệ 1:1 và cắt bộ rập; (2) Áp rập lấy dấu bằng bút nhũ và cắt phôi da bằng dao 30 độ; (3) Lạng mỏng mép da (Skiving) và đánh bóng trước những cạnh khuất (ngăn thẻ); (4) Bôi keo dán da và ép khít các chi tiết theo thứ tự từ trong ra ngoài; (5) Kẻ đường biên và đục lỗ thẳng góc 90 độ; (6) Khâu tay 2 kim Saddle Stitch và gõ phẳng đường chỉ; (7) Gọt cạnh, chà nhám và đánh bóng cạnh (hoặc sơn cạnh).
-            </div>
-          </div>
-          <div class="art-card-footer">
-            <span class="art-faq-count">✅ 3 câu hỏi giải đáp</span>
-            <a href="/bai-viet/quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh" class="btn btn-primary btn-sm" data-art-slug="quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh">Đọc chi tiết →</a>
-          </div>
-        </article>
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <div>
-            <div class="art-card-top">
-              <span class="art-cat-badge" itemprop="articleSection">Kiến Thức Da Thuộc</span>
-              <span class="art-read-time">⏱️ 5 phút đọc</span>
-            </div>
-            <h3 class="art-card-title" itemprop="headline">
-              <a href="/bai-viet/cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach" data-art-slug="cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach">1 Pia (SF) Da Bằng Bao Nhiêu Cm²? Công Thức Tính Diện Tích Da Thuộc Cần Mua Cho Ví, Túi Xách &amp; Thắt Lưng</a>
-            </h3>
-            <div class="art-aeo-snippet" itemprop="abstract">
-              <strong>💡 Tóm tắt nhanh (AEO):</strong>
-              Trong ngành da thuộc, 1 Pia (viết tắt là 1 SF – Square Foot) tương đương một hình vuông kích thước 30.48cm × 30.48cm, tức bằng khoảng 929 cm² (thường làm tròn là 30cm × 30cm = 900 cm²). Định mức da trung bình gồm cả hao hụt: Bao thẻ cần 1–1.5 Pia; Ví gập đôi cần 2.5–3.5 Pia; Ví dài/Clutch cần 4–6 Pia; Túi đeo chéo nữ cần 7–10 Pia; Cặp công sở hoặc Balo cần 15–22 Pia.
-            </div>
-          </div>
-          <div class="art-card-footer">
-            <span class="art-faq-count">✅ 3 câu hỏi giải đáp</span>
-            <a href="/bai-viet/cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach" class="btn btn-primary btn-sm" data-art-slug="cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach">Đọc chi tiết →</a>
-          </div>
-        </article>
-        <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <div>
-            <div class="art-card-top">
-              <span class="art-cat-badge" itemprop="articleSection">Hoàn Thiện &amp; Bảo Dưỡng</span>
-              <span class="art-read-time">⏱️ 6 phút đọc</span>
-            </div>
-            <h3 class="art-card-title" itemprop="headline">
-              <a href="/bai-viet/cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm" data-art-slug="cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm">Kỹ Thuật Dán Mép Da Bằng Keo Renia Italy, Keo B7000 &amp; Bảo Dưỡng Đồ Da Bằng Dầu Dưỡng Leather Balm</a>
-            </h3>
-            <div class="art-aeo-snippet" itemprop="abstract">
-              <strong>💡 Tóm tắt nhanh (AEO):</strong>
-              Trong làm đồ da handmade, 2 loại keo tốt và tiện dụng nhất là: (1) Keo Renia / Keo vàng chuyên dụng (dán tiếp xúc 2 mặt cho lực kết dính cực mạnh, đàn hồi tốt, phù hợp dán lót toàn bề mặt, đế giày, quai túi chịu lực); và (2) Keo trong suốt B7000 có vòi kim nhỏ (phù hợp tra chính xác vào đường biên 2–3mm của ngăn thẻ ví, dây đồng hồ mà không lo lem vàng mặt da). Sau khi hoàn thiện sản phẩm, thoa một lớp mỏng dầu dưỡng Leather Balm giúp da mềm bóng và chống ẩm mốc.
-            </div>
-          </div>
-          <div class="art-card-footer">
-            <span class="art-faq-count">✅ 3 câu hỏi giải đáp</span>
-            <a href="/bai-viet/cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm" class="btn btn-primary btn-sm" data-art-slug="cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm">Đọc chi tiết →</a>
-          </div>
-        </article>
       </div>
 
-      <!-- Khối Câu Hỏi Thường Gặp (AEO Direct Q&A Hub) -->
+      <div class="load-more-wrap" id="loadMoreArticlesWrap" style="margin-top:16px;">
+        <button type="button" class="btn btn-secondary" id="loadMoreArticlesBtn">
+          📰 Xem tất cả 8 bài viết kỹ thuật &amp; bảng thông số (+4 bài)
+        </button>
+      </div>
+
+      <!-- Khối Câu Hỏi Thường Gặp Thu Gọn -->
       <div class="aeo-faq-hub" id="hoi-dap-do-da">
-        <div class="aeo-faq-header">
-          <span class="section-eyebrow">TRẢ LỜI TRỰC TIẾP NGẮN GỌN • CHUẨN TRÍCH DẪN AI &amp; GOOGLE</span>
-          <h3>💡 Câu Hỏi Thường Gặp Khi Tải Rập &amp; Tự Làm Đồ Da Handmade (FAQ)</h3>
+        <div class="aeo-faq-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div>
+            <span class="section-eyebrow">HỎI ĐÁP NHANH CHUẨN XƯỞNG</span>
+            <h3>💡 Câu Hỏi Thường Gặp Khi Tải Rập &amp; Tự Làm Đồ Da (FAQ)</h3>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="toggleAllFaqsBtn">Xem tất cả câu hỏi</button>
         </div>
         <div class="aeo-faq-list" id="globalFaqList">
           <details class="aeo-faq-item" open itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -928,116 +770,148 @@
               <p itemprop="text">Quy tắc phối bước đục lỗ da và đường kính chỉ sáp chuẩn xưởng như sau: (1) Bước đục 2.7mm – 3.0mm dùng chỉ sáp 0.35mm – 0.45mm (phù hợp dây đồng hồ, ví nhỏ cao cấp); (2) Bước đục 3.38mm dùng chỉ sáp 0.45mm – 0.55mm (phù hợp ví da, clutch); (3) Bước đục 3.85mm – 4.0mm dùng chỉ sáp tròn 0.5mm – 0.65mm hoặc chỉ dẹt 0.6mm – 0.8mm (phù hợp túi xách, ví nam, thắt lưng); (4) Bước đục 5.0mm dùng chỉ 0.8mm – 1.0mm (balo, túi du lịch). <br /><a href="/bai-viet/bang-quy-doi-buoc-duc-lo-3-0-3-38-4-0mm-va-co-chi-sap-khau-da" data-art-slug="bang-quy-doi-buoc-duc-lo-3-0-3-38-4-0mm-va-co-chi-sap-khau-da" style="display:inline-block; margin-top:6px; font-weight:800; color:var(--accent-leather); font-size:12px;">📖 Xem bài phân tích &amp; bảng thông số đầy đủ →</a></p>
             </div>
           </details>
-          <details class="aeo-faq-item"  itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name">Làm ví da, túi xách và dây đồng hồ nên chọn loại da thuộc nào và độ dày bao nhiêu mm?</summary>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Độ dày và loại da thuộc chuẩn cho từng sản phẩm như sau: (1) Ví da nam/nữ: Mặt ngoài dùng da bò Veg-Tan, Epsom, Nappa hoặc Da dê dày 1.2mm – 1.6mm; ngăn thẻ bên trong dùng da dày 0.6mm – 0.8mm; da heo lót 0.5mm; (2) Túi xách &amp; Clutch: Dùng da bò dày 1.6mm – 2.2mm (hoặc da 1.2mm bồi Salpa/Microfiber); (3) Thắt lưng &amp; Quai túi: Dùng da bò Veg-Tan nguyên tấm dày 3.0mm – 4.0mm. <br /><a href="/bai-viet/cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap" data-art-slug="cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap" style="display:inline-block; margin-top:6px; font-weight:800; color:var(--accent-leather); font-size:12px;">📖 Xem bài phân tích &amp; bảng thông số đầy đủ →</a></p>
-            </div>
-          </details>
-          <details class="aeo-faq-item"  itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name">Quy trình làm một chiếc ví da handmade từ bản vẽ rập gồm mấy bước?</summary>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Quy trình tiêu chuẩn để hoàn thiện một chiếc ví da handmade từ bản vẽ rập gồm 7 bước theo thứ tự: (1) In rập tỷ lệ 1:1 và cắt bộ rập; (2) Áp rập lấy dấu bằng bút nhũ và cắt phôi da bằng dao 30 độ; (3) Lạng mỏng mép da (Skiving) và đánh bóng trước những cạnh khuất (ngăn thẻ); (4) Bôi keo dán da và ép khít các chi tiết theo thứ tự từ trong ra ngoài; (5) Kẻ đường biên và đục lỗ thẳng góc 90 độ; (6) Khâu tay 2 kim Saddle Stitch và gõ phẳng đường chỉ; (7) Gọt cạnh, chà nhám và đánh bóng cạnh (hoặc sơn cạnh). <br /><a href="/bai-viet/quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh" data-art-slug="quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh" style="display:inline-block; margin-top:6px; font-weight:800; color:var(--accent-leather); font-size:12px;">📖 Xem bài phân tích &amp; bảng thông số đầy đủ →</a></p>
-            </div>
-          </details>
-          <details class="aeo-faq-item"  itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name">1 Pia (1 SF) da thuộc bằng bao nhiêu cm2 và làm 1 chiếc ví hay túi xách hết bao nhiêu Pia da?</summary>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Trong ngành da thuộc, 1 Pia (viết tắt là 1 SF – Square Foot) tương đương một hình vuông kích thước 30.48cm × 30.48cm, tức bằng khoảng 929 cm² (thường làm tròn là 30cm × 30cm = 900 cm²). Định mức da trung bình gồm cả hao hụt: Bao thẻ cần 1–1.5 Pia; Ví gập đôi cần 2.5–3.5 Pia; Ví dài/Clutch cần 4–6 Pia; Túi đeo chéo nữ cần 7–10 Pia; Cặp công sở hoặc Balo cần 15–22 Pia. <br /><a href="/bai-viet/cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach" data-art-slug="cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach" style="display:inline-block; margin-top:6px; font-weight:800; color:var(--accent-leather); font-size:12px;">📖 Xem bài phân tích &amp; bảng thông số đầy đủ →</a></p>
-            </div>
-          </details>
-          <details class="aeo-faq-item"  itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name">Nên dùng keo dán da loại nào tốt nhất và cách bôi keo không bị lem bẩn mặt da?</summary>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Trong làm đồ da handmade, 2 loại keo tốt và tiện dụng nhất là: (1) Keo Renia / Keo vàng chuyên dụng (dán tiếp xúc 2 mặt cho lực kết dính cực mạnh, đàn hồi tốt, phù hợp dán lót toàn bề mặt, đế giày, quai túi chịu lực); và (2) Keo trong suốt B7000 có vòi kim nhỏ (phù hợp tra chính xác vào đường biên 2–3mm của ngăn thẻ ví, dây đồng hồ mà không lo lem vàng mặt da). Sau khi hoàn thiện sản phẩm, thoa một lớp mỏng dầu dưỡng Leather Balm giúp da mềm bóng và chống ẩm mốc. <br /><a href="/bai-viet/cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm" data-art-slug="cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm" style="display:inline-block; margin-top:6px; font-weight:800; color:var(--accent-leather); font-size:12px;">📖 Xem bài phân tích &amp; bảng thông số đầy đủ →</a></p>
-            </div>
-          </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. CAM KẾT CHẤT LƯỢNG, BẢN QUYỀN THƯƠNG MẠI & CHÍNH SÁCH KHÁCH HÀNG (TRUST & POLICIES) -->
+  <!-- 8. BẢNG SO SÁNH 4 LOẠI RẬP, HƯỚNG DẪN IN 1:1 & CHÍNH SÁCH BẢO HÀNH (DẠNG ACCORDION GỌN GÀNG) -->
   <section class="trust-policy-section" id="chinh-sach-cam-ket">
+    <div id="bang-so-sanh-rap"></div>
+    <div id="huong-dan-in-rap"></div>
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom:16px;">
         <div>
           <span class="section-eyebrow">MINH BẠCH • UY TÍN • BẢO VỆ QUYỀN LỢI NGƯỜI MUA</span>
-          <h2 class="section-title">🛡️ Thông Tin Xưởng, Quyền Thương Mại &amp; Chính Sách Bảo Hành</h2>
+          <h2 class="section-title">🛡️ So Sánh 4 Loại Rập, Quyền Thương Mại &amp; Chính Sách Bảo Hành</h2>
           <p class="section-desc">
-            Cam kết bản vẽ chuẩn tỷ lệ 1:1 thực chiến từ xưởng sản xuất đồ da thủ công, chính sách nhận file tự động và bảo hành đổi trả rõ ràng.
+            Bấm vào từng mục bên dưới để xem chi tiết bảng so sánh rập, hướng dẫn in tỷ lệ 1:1 và các cam kết bảo hành từ Xưởng RAPMAU.COM.
           </p>
         </div>
       </div>
 
-      <div class="trust-policy-grid">
+      <div class="policy-accordion-stack">
+        <!-- Mục 0: Bảng so sánh 4 loại rập & Hướng dẫn in 1:1 -->
+        <details class="policy-acc-item" open>
+          <summary>
+            <span>📊 <strong>Bảng So Sánh 4 Loại Rập (PDF / Giấy 350gsm / Mica 2mm / Khuôn Bế) &amp; 3 Bước In Chuẩn Tỷ Lệ 1:1</strong></span>
+          </summary>
+          <div class="policy-acc-body">
+            <div class="guide-grid" style="margin-top:8px;">
+              <div class="comparison-card" style="padding:14px;">
+                <h4>Nên Chọn Rập PDF/DXF, Rập Giấy, Rập Mica Hay Khuôn Bế?</h4>
+                <div class="table-responsive" style="margin-top:8px;">
+                  <table class="compare-table">
+                    <thead>
+                      <tr>
+                        <th>Tiêu chí</th>
+                        <th>File PDF / DXF</th>
+                        <th>Rập Giấy 350gsm</th>
+                        <th>Rập Mica 2mm</th>
+                        <th>Khuôn Bế Thép</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Phù hợp với</strong></td>
+                        <td>Tự in A4/A3 tại nhà hoặc cắt máy laser</td>
+                        <td>Người mới làm 1–5 SP, cần rập cắt sẵn ngay</td>
+                        <td>Thợ làm thường xuyên, nhìn xuyên vân da &amp; né sẹo</td>
+                        <td>Xưởng sản xuất dập máy hàng loạt</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Thời gian nhận</strong></td>
+                        <td><strong>Tải ngay 24/7 (0đ)</strong></td>
+                        <td>Ship COD 1–3 ngày</td>
+                        <td>Cắt Laser 1–2 ngày</td>
+                        <td>Gia công 3–5 ngày</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="printing-guide-card" style="padding:14px;">
+                <h4>3 Bước In File PDF Không Bị Lệch Tỷ Lệ</h4>
+                <ol class="guide-steps" style="margin-top:8px;">
+                  <li><strong>1. Chọn "Actual Size" hoặc "Scale: 100%"</strong> — Không chọn "Fit to page" khi in trên Adobe Acrobat / Foxit Reader.</li>
+                  <li><strong>2. Đo kiểm tra ô thước chuẩn (Test Square)</strong> — Đo lại vạch 3cm/5cm trên bản in để chắc chắn bước đục 3.38mm/4.0mm chính xác.</li>
+                  <li><strong>3. Đặt Rập Giấy / Rập Mica nếu không tiện tự in</strong> — Nhận bộ rập cắt CNC hoàn chỉnh giao tận nhà.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </details>
+
         <!-- 1. Thông tin đơn vị bán hàng / Xưởng -->
-        <article class="policy-card" id="thong-tin-xuong">
-          <div class="policy-icon">🏭</div>
-          <h3>1. Đơn Vị Vận Hành &amp; Xưởng Sản Xuất</h3>
-          <p>
-            <strong>Xưởng Rập Mẫu &amp; Khuôn Bế Đồ Da Eruco (RAPMAU.COM)</strong> — Đơn vị chuyên thiết kế bản vẽ kỹ thuật đồ da tỷ lệ 1:1 (PDF/DXF/CAD), gia công cắt CNC Rập Giấy 350gsm, Laser Rập Mica 2mm và chế tác Khuôn Bế Dao Thép.
-          </p>
-          <ul class="policy-list">
-            <li><strong>Người đại diện phụ trách kỹ thuật:</strong> Mr. Tuấn (Eruco Leather Hub)</li>
-            <li><strong>Hotline / Zalo hỗ trợ 24/7:</strong> <a href="tel:0971463768">0971.463.768 (Mr.Tuan)</a></li>
-            <li><strong>Email tiếp nhận bản vẽ &amp; CSKH:</strong> <a href="mailto:info@rapmau.com">info@rapmau.com</a></li>
-            <li><strong>Phạm vi phục vụ:</strong> Cung cấp file kỹ thuật số toàn cầu 24/7 &amp; giao rập vật lý / khuôn bế COD toàn quốc.</li>
-          </ul>
-        </article>
+        <details class="policy-acc-item" id="thong-tin-xuong">
+          <summary>
+            <span>🏭 <strong>1. Đơn Vị Vận Hành &amp; Xưởng Sản Xuất (Xưởng Rập &amp; Khuôn Bế Đồ Da Eruco)</strong></span>
+          </summary>
+          <div class="policy-acc-body">
+            <p>
+              <strong>Xưởng Rập Mẫu &amp; Khuôn Bế Đồ Da Eruco (RAPMAU.COM)</strong> — Đơn vị chuyên thiết kế bản vẽ kỹ thuật đồ da tỷ lệ 1:1 (PDF/DXF/CAD), gia công cắt CNC Rập Giấy 350gsm, Laser Rập Mica 2mm và chế tác Khuôn Bế Dao Thép.
+            </p>
+            <ul class="policy-list">
+              <li><strong>Người đại diện phụ trách kỹ thuật:</strong> Mr. Tuấn (Eruco Leather Hub)</li>
+              <li><strong>Hotline / Zalo hỗ trợ 24/7:</strong> <a href="tel:0971463768">0971.463.768 (Mr.Tuan)</a> • <strong>Email:</strong> <a href="mailto:info@rapmau.com">info@rapmau.com</a></li>
+              <li><strong>Phạm vi phục vụ:</strong> Cung cấp file kỹ thuật số toàn cầu 24/7 &amp; giao rập vật lý / khuôn bế COD toàn quốc.</li>
+            </ul>
+          </div>
+        </details>
 
         <!-- 2. Hướng dẫn nhận file sau thanh toán & xử lý khi file lỗi -->
-        <article class="policy-card" id="huong-dan-nhan-file">
-          <div class="policy-icon">⚡</div>
-          <h3>2. Nhận File Tự Động &amp; Xử Lý Khi File Lỗi</h3>
-          <p>
-            Quy trình nhận bản vẽ PDF/DXF minh bạch chỉ trong 30 giây sau khi đặt hàng:
-          </p>
-          <ul class="policy-list">
-            <li><strong>Bước 1:</strong> Chọn mẫu rập (biến thể <em>File PDF/DXF</em>), thêm vào giỏ và xác nhận đơn hàng.</li>
-            <li><strong>Bước 2:</strong> Hệ thống hiển thị mã <strong>VietQR</strong> tự động điền đúng số tiền &amp; mã đơn, đồng thời <strong>mở khóa ngay khung Tải File Gốc 1:1</strong> trực tiếp trên màn hình.</li>
-            <li><strong>Bước 3 (Bảo hành file trọn đời):</strong> Nếu file tải về không mở được, thiếu trang, lệch tỷ lệ hoặc bạn lỡ đóng trình duyệt, chỉ cần nhắn mã đơn qua Zalo <strong>0971.463.768</strong> — kỹ thuật viên sẽ gửi lại file chuẩn qua Zalo/Email trong vòng <strong>15 phút</strong>.</li>
-          </ul>
-        </article>
+        <details class="policy-acc-item" id="huong-dan-nhan-file">
+          <summary>
+            <span>⚡ <strong>2. Quy Trình Nhận File Tự Động 24/7 &amp; Bảo Hành Khi File Lỗi</strong></span>
+          </summary>
+          <div class="policy-acc-body">
+            <ul class="policy-list">
+              <li><strong>Bước 1:</strong> Chọn mẫu rập (biến thể <em>File PDF/DXF</em>), thêm vào giỏ và xác nhận đơn hàng.</li>
+              <li><strong>Bước 2:</strong> Mở khóa ngay khung <strong>Tải File Gốc 1:1</strong> trực tiếp trên màn hình (hoặc quét mã VietQR tự động đối với đơn có phí).</li>
+              <li><strong>Bước 3 (Bảo hành file trọn đời):</strong> Nếu file tải về không mở được hoặc bạn lỡ đóng trình duyệt, nhắn mã đơn qua Zalo <strong>0971.463.768</strong> để nhận lại file chuẩn trong vòng <strong>15 phút</strong>.</li>
+            </ul>
+          </div>
+        </details>
 
         <!-- 3. Quyền sử dụng thương mại & Điều khoản bản quyền file rập -->
-        <article class="policy-card" id="quyen-su-dung-thuong-mai">
-          <div class="policy-icon">📜</div>
-          <h3>3. Quyền Sử Dụng Thương Mại &amp; Bản Quyền</h3>
-          <p>
-            Quy định rõ ràng về quyền lợi của thợ làm da và xưởng sản xuất khi mua rập tại <strong>www.rapmau.com</strong>:
-          </p>
-          <ul class="policy-list">
-            <li><strong>✅ ĐƯỢC PHÉP (Quyền thương mại sản phẩm da):</strong> Người mua được toàn quyền sử dụng File PDF/DXF, Rập Giấy, Rập Mica và Khuôn Bế để <strong>cắt may, sản xuất và bán thương mại các sản phẩm đồ da hoàn thiện</strong> (ví, túi xách, balo, dây đồng hồ...) mang thương hiệu riêng của bạn mà không giới hạn số lượng.</li>
-            <li><strong>⛔ KHÔNG ĐƯỢC PHÉP:</strong> Không sao chép, bán lại hoặc phát tán công khai tệp kỹ thuật số gốc (file PDF/DXF/CAD) lên các sàn thương mại hoặc hội nhóm khác khi chưa có sự đồng ý của RAPMAU.COM.</li>
-          </ul>
-        </article>
+        <details class="policy-acc-item" id="quyen-su-dung-thuong-mai">
+          <summary>
+            <span>📜 <strong>3. Quyền Sử Dụng Thương Mại &amp; Bản Quyền File Rập</strong></span>
+          </summary>
+          <div class="policy-acc-body">
+            <ul class="policy-list">
+              <li><strong>✅ ĐƯỢC PHÉP (Quyền thương mại sản phẩm da):</strong> Người mua được toàn quyền sử dụng File PDF/DXF, Rập Giấy, Rập Mica và Khuôn Bế để <strong>cắt may, sản xuất và bán thương mại các sản phẩm đồ da hoàn thiện</strong> mang thương hiệu riêng mà không giới hạn số lượng.</li>
+              <li><strong>⛔ KHÔNG ĐƯỢC PHÉP:</strong> Không sao chép, bán lại hoặc phát tán công khai tệp kỹ thuật số gốc (file PDF/DXF/CAD) khi chưa có sự đồng ý của RAPMAU.COM.</li>
+            </ul>
+          </div>
+        </details>
 
         <!-- 4. Chính sách giao hàng, kiểm hàng & hoàn tiền 100% -->
-        <article class="policy-card" id="chinh-sach-giao-hang-hoan-tien">
-          <div class="policy-icon">🔄</div>
-          <h3>4. Chính Sách Giao Hàng, Đổi Mới &amp; Hoàn Tiền</h3>
-          <p>
-            Bảo vệ tuyệt đối rủi ro cho người mua đối với cả file kỹ thuật số và rập/khuôn vật lý:
-          </p>
-          <ul class="policy-list">
-            <li><strong>Đối với File PDF/DXF:</strong> Cam kết hoàn tiền <strong>100%</strong> hoặc chỉnh sửa lại bản vẽ miễn phí nếu file sai lệch tỷ lệ 1:1, thiếu chi tiết lắp ghép so với mô tả mà kỹ thuật viên không khắc phục được.</li>
-            <li><strong>Đối với Rập Giấy, Rập Mica &amp; Khuôn Bế:</strong> Giao hàng COD toàn quốc (1–3 ngày đối với Rập Giấy/Mica, 3–5 ngày đối với Khuôn Bế). Khách hàng <strong>được mở hộp kiểm tra hàng trước khi thanh toán</strong>.</li>
-            <li><strong>Đổi mới miễn phí 100%:</strong> Nếu Rập Mica bị nứt vỡ do vận chuyển hoặc cắt thiếu chi tiết, xưởng gửi bù bộ mới hoàn toàn miễn phí vận chuyển.</li>
-          </ul>
-        </article>
+        <details class="policy-acc-item" id="chinh-sach-giao-hang-hoan-tien">
+          <summary>
+            <span>🔄 <strong>4. Chính Sách Giao Hàng COD, Mở Hộp Kiểm Hàng &amp; Đổi Mới / Hoàn Tiền 100%</strong></span>
+          </summary>
+          <div class="policy-acc-body">
+            <ul class="policy-list">
+              <li><strong>Đối với File PDF/DXF:</strong> Cam kết chỉnh sửa bản vẽ miễn phí nếu file sai lệch tỷ lệ 1:1 hoặc thiếu chi tiết lắp ghép.</li>
+              <li><strong>Đối với Rập Giấy, Rập Mica &amp; Khuôn Bế:</strong> Giao hàng COD toàn quốc (1–3 ngày đối với Rập Giấy/Mica, 3–5 ngày đối với Khuôn Bế). Khách hàng <strong>được mở hộp kiểm tra hàng trước khi thanh toán</strong>.</li>
+              <li><strong>Đổi mới miễn phí 100%:</strong> Nếu Rập Mica bị nứt vỡ do vận chuyển hoặc cắt thiếu chi tiết, xưởng gửi bù bộ mới hoàn toàn miễn phí vận chuyển.</li>
+            </ul>
+          </div>
+        </details>
 
         <!-- 5. Chính sách bảo mật thông tin & bảo mật mẫu đặt riêng -->
-        <article class="policy-card policy-card-wide" id="chinh-sach-bao-mat">
-          <div class="policy-icon">🔒</div>
-          <div>
-            <h3>5. Chính Sách Bảo Mật Thông Tin &amp; Bảo Mật Mẫu Độc Quyền Của Xưởng</h3>
+        <details class="policy-acc-item" id="chinh-sach-bao-mat">
+          <summary>
+            <span>🔒 <strong>5. Chính Sách Bảo Mật Thông Tin Khách Hàng &amp; Cam Kết Bảo Mật Mẫu Đặt Riêng (NDA)</strong></span>
+          </summary>
+          <div class="policy-acc-body">
             <p>
-              <strong>Bảo mật dữ liệu cá nhân:</strong> Thông tin Họ tên, Số điện thoại/Zalo, Email và Địa chỉ giao hàng của quý khách chỉ được sử dụng duy nhất cho mục đích gửi file rập, giao đơn hàng và hỗ trợ kỹ thuật; cam kết không chia sẻ cho bất kỳ bên thứ ba nào.<br />
-              <strong>Cam kết bảo mật mẫu đặt riêng (NDA):</strong> Đối với khách hàng và xưởng đặt thiết kế rập riêng hoặc gia công Khuôn Bế theo mẫu độc quyền, <strong>RAPMAU.COM</strong> cam kết lưu trữ riêng biệt và <strong>tuyệt đối không đăng bán hay chia sẻ bản vẽ độc quyền của quý khách</strong> cho đơn vị khác.
+              <strong>Bảo mật dữ liệu cá nhân:</strong> Họ tên, SĐT/Zalo, Email và Địa chỉ giao hàng của quý khách chỉ dùng để gửi file rập, giao đơn hàng và hỗ trợ kỹ thuật; tuyệt đối không chia sẻ cho bên thứ ba.<br />
+              <strong>Cam kết bảo mật mẫu độc quyền (NDA):</strong> Đối với khách hàng và xưởng đặt thiết kế rập riêng hoặc gia công Khuôn Bế theo mẫu độc quyền, <strong>RAPMAU.COM</strong> cam kết lưu trữ riêng biệt và <strong>tuyệt đối không đăng bán hay chia sẻ bản vẽ độc quyền của quý khách</strong>.
             </p>
           </div>
-        </article>
+        </details>
       </div>
     </div>
   </section>
