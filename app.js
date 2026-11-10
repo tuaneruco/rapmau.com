@@ -888,6 +888,31 @@ function renderTools() {
                 </button>
               </div>
             </div>
+            <div class="tool-affiliate-links" style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--border-soft); display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: wrap;">
+              <span style="font-size: 11px; color: var(--text-muted); font-weight: 700;">Mua qua sàn TMĐT:</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <a
+                  href="https://shopee.vn/dathungleather"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Mua ${item.title} trên Shopee Da Thủng Leather"
+                  style="display:inline-flex; align-items:center; gap:4px; background:#ee4d2d; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; transition:opacity .15s;"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
+                  <span>Shopee</span>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@rapmau.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Xem video và mua trên TikTok Shop @rapmau.com"
+                  style="display:inline-flex; align-items:center; gap:4px; background:#000000; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; transition:opacity .15s;"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.34 0 .66.06.96.17v-3.55a6.37 6.37 0 00-.96-.08A6.34 6.34 0 003 15.28a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.06a8.16 8.16 0 004.91 1.63v-3.5a4.86 4.86 0 01-1-.5z"/></svg>
+                  <span>TikTok</span>
+                </a>
+              </div>
+            </div>
           </div>
         </article>
       `;
@@ -1106,13 +1131,16 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
               .map(
                 (t) => `
               <div class="cross-sell-item">
-                <div>
-                  <strong>${t.title}</strong>
+                <div style="flex:1; min-width:0;">
+                  <strong style="display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${t.title}</strong>
                   <div style="font-size:12px; color:var(--accent-leather); font-weight:700;">${formatVND(t.price)}</div>
                 </div>
-                <button type="button" class="btn-sm btn-detail" data-action="add-tool" data-id="${t.id}">
-                  + Mua kèm
-                </button>
+                <div style="display:flex; gap:6px; align-items:center; flex-shrink:0;">
+                  <a href="https://shopee.vn/dathungleather" target="_blank" rel="noopener noreferrer" style="background:#ee4d2d; color:#fff; font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:2px;" title="Mua trên Shopee">Shopee</a>
+                  <button type="button" class="btn-sm btn-detail" data-action="add-tool" data-id="${t.id}">
+                    + Mua kèm
+                  </button>
+                </div>
               </div>
             `
               )
@@ -1237,9 +1265,37 @@ function openToolDetailModal(toolId) {
         <ul class="tool-specs-list" style="margin-bottom:20px;">
           ${tool.specs.map((s) => `<li>${s}</li>`).join('')}
         </ul>
-        <button type="button" class="btn btn-primary btn-full" data-action="add-tool" data-id="${tool.id}">
-          🛒 Thêm Dụng Cụ Này Vào Giỏ Hàng
-        </button>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
+          <button type="button" class="btn btn-primary btn-full" data-action="add-tool" data-id="${tool.id}">
+            🛒 Đặt Mua Trực Tiếp Tại Xưởng RAPMAU (${formatVND(tool.price)})
+          </button>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <a
+              href="https://shopee.vn/dathungleather"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              style="background:#ee4d2d; color:#fff; font-weight:700; text-align:center; padding:10px; border-radius:8px; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px; font-size:13.5px;"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
+              <span>Mua trên Shopee</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/@rapmau.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              style="background:#000000; color:#fff; font-weight:700; text-align:center; padding:10px; border-radius:8px; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px; font-size:13.5px;"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.34 0 .66.06.96.17v-3.55a6.37 6.37 0 00-.96-.08A6.34 6.34 0 003 15.28a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.06a8.16 8.16 0 004.91 1.63v-3.5a4.86 4.86 0 01-1-.5z"/></svg>
+              <span>Mua trên TikTok</span>
+            </a>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); text-align:center; margin:0;">
+            ✓ Miễn phí vận chuyển khi áp mã Shopee/TikTok &bull; Hỗ trợ đổi trả 7 ngày
+          </p>
+        </div>
       </div>
     </div>
   `;
@@ -1396,7 +1452,7 @@ function openInstantFreeDownloadModal(product) {
         </div>
       </div>
 
-      <div style="background:var(--bg-warm); padding:14px; border-radius:10px; text-align:left; font-size:13.5px;">
+      <div style="background:var(--bg-warm); padding:14px; border-radius:10px; text-align:left; font-size:13.5px; margin-bottom:18px;">
         <strong>💡 Bạn không tiện in hoặc muốn rập cắt sẵn bền đẹp?</strong>
         <p style="margin:4px 0 10px; color:var(--text-muted);">
           Đặt ngay <strong>Rập Giấy Cứng 350gsm</strong> hoặc <strong>Rập Mica 2mm Cắt Laser</strong> của mẫu ${product.sku} để áp lên da cắt ngay không cần dán ghép giấy:
@@ -1404,6 +1460,41 @@ function openInstantFreeDownloadModal(product) {
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <button type="button" class="btn-sm btn-add" id="upsellPaperBtn">+ Đặt Rập Giấy (${formatVND(product.variants[1]?.price || 55000)})</button>
           ${product.variants[2] ? `<button type="button" class="btn-sm btn-add" id="upsellMicaBtn">+ Đặt Rập Mica 2mm (${formatVND(product.variants[2].price)})</button>` : ''}
+        </div>
+      </div>
+
+      <!-- MỜI 1 LY CÀ PHÊ 25.000Đ (VIETQR TÙY TÂM) -->
+      <div class="coffee-donation-card" style="background: linear-gradient(135deg, #fffdf8 0%, #fff7eb 100%); border: 1.5px solid #f6d296; border-radius: 14px; padding: 16px 18px; text-align: left; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <span style="font-size: 26px; line-height: 1;">☕</span>
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: #78350f; font-weight: 800;">Mời Mr.Tuân 1 ly cà phê (25.000đ)</h4>
+            <p style="margin: 2px 0 0; font-size: 12.5px; color: #92400e;">
+              Bản vẽ PDF/DXF luôn <strong>100% MIỄN PHÍ</strong>. Nếu rập này hữu ích, 1 ly cà phê 25k sẽ tiếp thêm động lực rất lớn cho xưởng!
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 12px; padding: 12px; background: #ffffff; border-radius: 10px; border: 1px solid #fde68a;">
+          <div style="text-align: center;">
+            <img
+              src="https://img.vietqr.io/image/MB-0971463768-compact2.png?amount=25000&addInfo=CAFE%20${encodeURIComponent(product.sku)}&accountName=MR%20TUAN%20RAPMAU"
+              alt="Mã QR Chuyển 25.000đ MBBank"
+              style="width: 140px; height: 140px; display: block; border-radius: 8px; border: 1px solid #e5e7eb;"
+              loading="lazy"
+            />
+            <span style="font-size: 11px; color: #6b7280; display: block; margin-top: 4px; font-weight: 600;">Quét VietQR mọi App Bank</span>
+          </div>
+          <div style="font-size: 13px; line-height: 1.7; color: #374151; min-width: 210px;">
+            <div>🏦 Ngân hàng: <strong>MBBank (Quân Đội)</strong></div>
+            <div>🔢 Số TK: <strong style="font-size: 15px; color: #1e40af; letter-spacing: 0.5px;">0971463768</strong> <button type="button" onclick="navigator.clipboard.writeText('0971463768'); alert('Đã sao chép STK: 0971463768');" style="border:none; background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:4px; font-size:11px; cursor:pointer; font-weight:700;">Copy</button></div>
+            <div>👤 Chủ TK: <strong>MR TUAN RAPMAU</strong></div>
+            <div>☕ Số tiền: <strong style="color: #16a34a; font-size: 14px;">25.000 đ</strong></div>
+            <div>📝 Nội dung: <strong style="background: #fef3c7; padding: 2px 6px; border-radius: 4px; color: #92400e;">CAFE ${product.sku}</strong></div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 10px; font-size: 12px; color: #78350f; font-style: italic;">
+          ❤️ Ủng hộ hoàn toàn tùy tâm &bull; Chúc bạn hoàn thiện sản phẩm đồ da thật ưng ý!
         </div>
       </div>
     </div>
