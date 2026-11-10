@@ -1,0 +1,268 @@
+{
+  "categories": [
+    { "id": "all", "name": "Tất Cả Thảo Luận", "icon": "💬", "count": 7 },
+    { "id": "nhap-mon", "name": "Người Mới Nhập Môn", "icon": "🔨", "count": 1 },
+    { "id": "ky-thuat-may", "name": "Kỹ Thuật May & Đục", "icon": "🧵", "count": 1 },
+    { "id": "son-canh", "name": "Sơn Viền & Xử Lý Cạnh", "icon": "🎨", "count": 1 },
+    { "id": "rap-mau", "name": "Xin & Góp Ý Rập Mẫu", "icon": "📐", "count": 1 },
+    { "id": "da-keo", "name": "Da Thuộc & Phụ Liệu", "icon": "🐂", "count": 1 },
+    { "id": "khoe-tac-pham", "name": "Khoe Tác Phẩm & Bắt Bệnh", "icon": "🏆", "count": 1 },
+    { "id": "cho-do-da", "name": "Chợ Dụng Cụ & Da Vụn", "icon": "🏷️", "count": 1 }
+  ],
+  "threads": [
+    {
+      "id": "thread-001",
+      "categoryId": "ky-thuat-may",
+      "categoryName": "Kỹ Thuật May & Đục",
+      "title": "Tại sao đường may hai kim (Saddle Stitch) mặt sau lại bị zic-zac không thẳng hàng?",
+      "author": "Hoàng Nam",
+      "authorRole": "Thợ thủ công mới",
+      "authorAvatar": "👨‍🎨",
+      "createdAt": "2026-11-09T09:30:00Z",
+      "formattedDate": "Hôm qua lúc 09:30",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 32,
+      "views": 480,
+      "content": "Chào các bác, em mới tập may túi da veg-tan dày khoảng 2.2mm, dùng đục trám 3.85mm và chỉ sáp Galaces 0.45mm. Mặt trước đường chỉ may chéo rất đều và đẹp mắt, nhưng khi lật sang mặt sau thì các mũi chỉ cứ bị zic-zac, có mũi thụt mũi trồi không thẳng hàng. Em đã cố gắng giữ đục vuông góc 90 độ khi đóng rồi. Bác nào có kinh nghiệm bắt bệnh giúp em với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-001-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-09T10:15:00Z",
+          "formattedDate": "Hôm qua lúc 10:15",
+          "content": "Chào Nam! Lỗi này 90% anh em mới may hai kim (Saddle Stitch) đều gặp. Nguyên nhân cốt lõi là do: 1) Thứ tự xỏ kim tay trái và tay phải chưa nhất quán ở mỗi mũi (quy tắc: kim nào xỏ trước luôn xỏ trước, kim xỏ sau đâm trên hay dưới sợi chỉ thứ nhất phải cố định 100%). 2) Hướng kéo siết chỉ: Tay trái kéo chéo lên 45 độ, tay phải kéo chéo xuống 45 độ về phía lòng mình và duy trì lực kéo đều tay. Em kiểm tra lại chiều xỏ kim là mặt sau sẽ thẳng tắp ngay nhé!",
+          "likes": 18
+        },
+        {
+          "id": "c-001-2",
+          "author": "Bác Ba Đồ Da",
+          "authorRole": "Nghệ nhân Sài Gòn",
+          "authorAvatar": "👴",
+          "isStaff": false,
+          "createdAt": "2026-11-09T11:00:00Z",
+          "formattedDate": "Hôm qua lúc 11:00",
+          "content": "Bổ sung thêm với Tuân: Khi đục da dày 2.2mm, em nhớ bôi chút sáp ong vào răng đục để khi rút đục không làm xé lỗ hoặc méo miệng đục ở mặt sau. Ngoài ra khi khâu, nhớ dùng kẹp khâu da (stitching pony) giữ cố định miếng da ngang ngực thì lực tay mới đều được.",
+          "likes": 9
+        },
+        {
+          "id": "c-001-3",
+          "author": "Hoàng Nam",
+          "authorRole": "Tác giả",
+          "authorAvatar": "👨‍🎨",
+          "isStaff": false,
+          "createdAt": "2026-11-09T14:20:00Z",
+          "formattedDate": "Hôm qua lúc 14:20",
+          "content": "Dạ em cảm ơn anh Tuân và Bác Ba nhiều lắm! Em vừa chỉnh lại hướng siết chỉ chéo 45 độ và giữ nguyên thứ tự kim trên/dưới, mặt sau đã thẳng tắp rồi ạ!",
+          "likes": 5
+        }
+      ]
+    },
+    {
+      "id": "thread-002",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Bí quyết pha và kỹ thuật sơn cạnh da Epsom / Nappa không bao giờ bị nứt gãy sau 1 năm",
+      "author": "Lê Minh Craft",
+      "authorRole": "Thợ xưởng da cao cấp",
+      "authorAvatar": "✂️",
+      "createdAt": "2026-11-08T14:10:00Z",
+      "formattedDate": "2 ngày trước",
+      "badge": "Mẹo xưởng hay ★",
+      "badgeType": "featured",
+      "likes": 58,
+      "views": 940,
+      "content": "Sau nhiều năm thử qua các dòng sơn cạnh từ Đài Loan, Fenice của Ý cho đến Giardini, mình xin tổng hợp quy trình 5 bước sơn cạnh da Epsom/Nappa bao bền, kể cả uốn gập mép ví bifold cũng không lo nứt:\n1. Gọt vát mép cạnh 45 độ bằng dao gọt mép số 1 (0.8mm).\n2. Quét 1 lớp lót Base coat (hoặc keo se cạnh) để khóa sợi xơ da.\n3. Xả nhám khô từ P400 -> P800 cho phẳng lì trước khi lên sơn màu.\n4. Sơn màu từ 2-3 lớp thật mỏng (tuyệt đối không sơn 1 cục dày vì lớp trong không thoát ẩm sẽ bị bở).\n5. Dùng mỏ hàn nhiệt (nhiệt độ 75-85 độ C) vuốt nhẹ cạnh giữa các lớp sơn để sơn bám sâu vào chân da.",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-002-1",
+          "author": "Trần Đăng",
+          "authorRole": "Thợ da Đà Nẵng",
+          "authorAvatar": "👞",
+          "isStaff": false,
+          "createdAt": "2026-11-08T15:30:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "Bài viết cực kỳ tâm huyết! Trước đây em toàn sơn 1 lớp dày để đỡ tốn công xả nhám, kết quả khách dùng 2 tháng là bị bong tróc từng mảng. Cảm ơn anh Minh đã chia sẻ!",
+          "likes": 12
+        },
+        {
+          "id": "c-002-2",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-08T16:00:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "Chuẩn chỉ luôn anh Minh ơi. Anh em lưu ý thêm: mùa nồm ẩm ở miền Bắc thì sau khi sơn nên để khô tự nhiên 4-6 tiếng trước khi quét lớp tiếp theo, tránh dùng máy sấy nhiệt quá cao làm mặt sơn bị sùi bọt khí nhé.",
+          "likes": 15
+        }
+      ]
+    },
+    {
+      "id": "thread-003",
+      "categoryId": "nhap-mon",
+      "categoryName": "Người Mới Nhập Môn",
+      "title": "Mới học làm đồ da handmade cần mua bộ dụng cụ nào để không bị lãng phí?",
+      "author": "Minh Trí",
+      "authorRole": "Học viên mới",
+      "authorAvatar": "🎒",
+      "createdAt": "2026-11-07T08:15:00Z",
+      "formattedDate": "3 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 41,
+      "views": 680,
+      "content": "Em có ngân sách khoảng 1.5 triệu - 2 triệu, muốn tự may được ví sen, ví gập bifold và bao da kính mắt. Trên mạng bán nhiều combo 30-40 món thấy hơi rối mà sợ nhiều món không dùng đến. Các anh chị đi trước tư vấn giúp em những món thực sự thiết yếu nhất với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-003-1",
+          "author": "Quốc Huy",
+          "authorRole": "Thợ thủ công tự do",
+          "authorAvatar": "🧢",
+          "isStaff": false,
+          "createdAt": "2026-11-07T09:20:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Khuyên thật lòng: Đừng mua mấy combo 30 món giá rẻ trên Shopee vì dao lạng với đục rất cùn, đóng vài bữa là cùn méo mó. Nên mua lẻ từng món chất lượng tốt: 1 dao trổ OLFA Nhật (~90k), 1 thước thép 30cm (~40k), 1 bộ đục trám 4mm loại thép tốt (cây 2 răng + cây 6 răng khoảng 250k), 1 búa cao su hoặc búa nylon đầm tay (~120k), 1 tấm thớt lót cắt đục A3 (~90k), kim may rãnh cùn John James số 4 (~80k/vỉ), chỉ sáp 0.45mm (~60k/cuộn), keo dán B7000 hoặc keo sữa (~50k). Tổng chưa tới 900k mà xài bền bỉ 2-3 năm!",
+          "likes": 26
+        },
+        {
+          "id": "c-003-2",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-07T10:05:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Em tham khảo bài cẩm nang chi tiết ở mục Cẩm Nang của website nhé: 'Người Mới Học Làm Đồ Da Cần Chuẩn Bị Dụng Cụ Gì'. Ngoài ra trên trang chủ mục Dụng Cụ có bộ Combo Cơ Bản 12 Món tuyển chọn đúng chuẩn, giá chỉ từ 480k - 850k kèm rập mẫu ví tặng kèm để em tập may ngay.",
+          "likes": 14
+        }
+      ]
+    },
+    {
+      "id": "thread-004",
+      "categoryId": "rap-mau",
+      "categoryName": "Xin & Góp Ý Rập Mẫu",
+      "title": "Bác nào có rập Balo nữ phom đứng quai phối khoen đồng cho em xin file in tỉ lệ 1:1 với ạ",
+      "author": "Thảo Nguyên Leather",
+      "authorRole": "Thợ may túi thủ công",
+      "authorAvatar": "👩‍💼",
+      "createdAt": "2026-11-06T11:45:00Z",
+      "formattedDate": "4 ngày trước",
+      "badge": "Chia sẻ rập free",
+      "badgeType": "info",
+      "likes": 23,
+      "views": 410,
+      "content": "Em đang có khách đặt may balo nữ kích thước khoảng 28x24x10cm phom hộp đứng quai may chéo có nắp gập khóa bấm. Tìm trên mạng toàn bản vẽ tiếng Nga tải về in bị sai tỉ lệ. Bác nào có file PDF hoặc rập giấy chuẩn khổ A4 chia sẻ cho em với nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-004-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-06T12:30:00Z",
+          "formattedDate": "4 ngày trước",
+          "content": "Chào Thảo Nguyên! Đúng mẫu bạn đang tìm là mã RM-BALO-002 trên kho rập của website nhé: 'Rập Balo Da Thủ Công Phom Chuẩn'. Bản vẽ đã căn chuẩn tỉ lệ 1:1 có ô kiểm tra kích thước 50x50mm, tải miễn phí 100% file PDF/DXF trên trang chủ hoặc nhắn Zalo 0971.463.768 mình gửi trực tiếp qua file PDF in A4 nhé!",
+          "likes": 11
+        }
+      ]
+    },
+    {
+      "id": "thread-005",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "So sánh keo dán da gốc nước (Renia Aquilim) và keo gốc dung môi (Keo vàng P66 / Keo Dog X66)",
+      "author": "Tuấn Anh Workshop",
+      "authorRole": "Chủ xưởng gia công",
+      "authorAvatar": "🧪",
+      "createdAt": "2026-11-05T16:20:00Z",
+      "formattedDate": "5 ngày trước",
+      "badge": "Kiến thức hữu ích",
+      "badgeType": "featured",
+      "likes": 47,
+      "views": 820,
+      "content": "Nhiều anh em làm da trong phòng kín hay bị đau đầu chóng mặt do mùi keo con chó (X66/P66). Mình xin chia sẻ trải nghiệm sau 2 năm chuyển hẳn sang keo gốc nước Renia Aquilim 315 của Đức:\n- Về mùi & sức khỏe: Renia hoàn toàn không mùi, làm trong phòng máy lạnh cả ngày không sợ độc hại.\n- Về độ bám dính: Keo vàng dính ngay lập tức khó căn chỉnh, còn keo gốc nước có thời gian mở 10-15 phút, khi ép chặt bằng con lăn thì độ dính cực kỳ chắc và không bị cộm mép khi may chỉ.\n- Giá thành: Renia đắt hơn gấp 3 lần keo con chó nhưng mỗi lọ 250ml dùng được cho hàng trăm chiếc ví, rất đáng đầu tư cho sức khỏe lâu dài.",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-005-1",
+          "author": "Hải Yến",
+          "authorRole": "Crafter",
+          "authorAvatar": "👩‍🎨",
+          "isStaff": false,
+          "createdAt": "2026-11-05T17:10:00Z",
+          "formattedDate": "5 ngày trước",
+          "content": "Rất chuẩn anh ạ! Hồi trước em dán P66 trong phòng ngủ mà mùi bay cả ngày không hết, chuyển qua keo gốc nước dễ chịu hơn hẳn.",
+          "likes": 8
+        }
+      ]
+    },
+    {
+      "id": "thread-006",
+      "categoryId": "khoe-tac-pham",
+      "categoryName": "Khoe Tác Phẩm & Bắt Bệnh",
+      "title": "Chiếc túi Tote da bò sáp ngựa điên đầu tay - Mời các tiền bối bắt bệnh đường bo góc đáy",
+      "author": "Hùng Cường",
+      "authorRole": "Thành viên mới",
+      "authorAvatar": "👜",
+      "createdAt": "2026-11-04T20:10:00Z",
+      "formattedDate": "6 ngày trước",
+      "badge": "Show thành phẩm",
+      "badgeType": "showcase",
+      "likes": 67,
+      "views": 1150,
+      "content": "Mất trọn vẹn 3 ngày cuối tuần đục tay và khâu từng mũi theo bản vẽ rập RM-TX-005 của website. Da bò sáp ngựa điên lên màu rất bụi bặm nhưng phần góc bo đáy túi em cảm giác bị hơi phồng nhẹ. Các bác có kinh nghiệm cho em hỏi cách lạng mỏng mép bo góc thế nào để khi lộn túi ra góc phẳng đẹp nhất ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-006-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-04T21:00:00Z",
+          "formattedDate": "6 ngày trước",
+          "content": "Đường may của Cường rất đều tay và đẹp! Để phần góc bo đáy túi may lộn (turn bag) không bị phồng cộm: 1) Dùng dao lạng mép (skiving knife) lạng vát từ mép vào trong 8-10mm về độ dày khoảng 0.7 - 0.9mm. 2) Ở các đường cong góc tròn, dùng kéo bấm các khía nhỏ hình chữ V cách nhau 5mm (chú ý không bấm phạm vào đường may). Khi lộn túi ra mép sẽ nở êm và bo tròn hoàn hảo nhé!",
+          "likes": 19
+        }
+      ]
+    },
+    {
+      "id": "thread-007",
+      "categoryId": "cho-do-da",
+      "categoryName": "Chợ Dụng Cụ & Da Vụn",
+      "title": "Thanh lý bộ đục xiên thép M390 cỡ 3.38mm còn bén + tặng kèm 3kg da veg vụn làm ví",
+      "author": "Dũng Leather",
+      "authorRole": "Thành viên",
+      "authorAvatar": "🔨",
+      "createdAt": "2026-11-03T15:00:00Z",
+      "formattedDate": "7 ngày trước",
+      "badge": "Đang giao lưu",
+      "badgeType": "market",
+      "likes": 19,
+      "views": 380,
+      "content": "Do xưởng em vừa sắm máy bế dập khuôn hàng loạt nên dư ra 1 bộ đục xiên thép M390 (gồm 1 cây 2 răng và 1 cây 8 răng bước 3.38mm) mới dùng 2 tháng còn bén ngót. Em tặng kèm 3kg da vụn veg-tan Ý đủ để các bạn mới tập may ví mini, bao da chìa khóa. Giá thanh lý công khai: 450k (freeship nội thành HCM). Bác nào cần nhắn Zalo em nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-007-1",
+          "author": "Văn Nam",
+          "authorRole": "Thành viên",
+          "authorAvatar": "🙋‍♂️",
+          "isStaff": false,
+          "createdAt": "2026-11-03T16:15:00Z",
+          "formattedDate": "7 ngày trước",
+          "content": "Đã nhắn tin Zalo cho bác chốt bộ này nhé!",
+          "likes": 3
+        }
+      ]
+    }
+  ]
+}

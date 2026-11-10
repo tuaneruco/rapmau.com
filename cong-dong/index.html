@@ -1,0 +1,1424 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cộng Đồng & Diễn Đàn Hỏi Đáp Đồ Da — RAPMAU.COM</title>
+  <meta
+    name="description"
+    content="Diễn đàn và cộng đồng hỏi đáp kỹ thuật làm đồ da thủ công Việt Nam: Trao đổi kinh nghiệm may hai kim, kỹ thuật sơn cạnh, chọn da thuộc, bắt bệnh lỗi sản phẩm và xin rập mẫu miễn phí."
+  />
+  <link rel="canonical" href="https://www.rapmau.com/cong-dong/" />
+  <link rel="icon" type="image/png" href="/assets/brand/logo-header.png" />
+  <meta property="og:title" content="Cộng Đồng & Diễn Đàn Hỏi Đáp Đồ Da — RAPMAU.COM" />
+  <meta property="og:description" content="Nơi thợ da giao lưu, học hỏi kinh nghiệm, chia sẻ bản vẽ rập và giải đáp kỹ thuật làm đồ da thủ công." />
+  <meta property="og:image" content="https://www.rapmau.com/assets/brand/hero-workbench.jpg" />
+  <meta property="og:url" content="https://www.rapmau.com/cong-dong/" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg-espresso: #1c130c;
+      --bg-saddle: #2b1810;
+      --bg-parchment: #fcfaf7;
+      --bg-card: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #f3eadc;
+      --accent-leather: #c25e1a;
+      --accent-gold: #f59e0b;
+      --accent-gold-light: #fef3c7;
+      --accent-green: #15803d;
+      --accent-zalo: #0068ff;
+      --border-soft: #e2d9cc;
+      --border-stitch: #d4a373;
+      --shadow-sm: 0 2px 8px rgba(28, 19, 12, 0.06);
+      --shadow-md: 0 8px 24px rgba(28, 19, 12, 0.1);
+      --shadow-lg: 0 16px 36px rgba(28, 19, 12, 0.14);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-parchment);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 1. Topbar */
+    .topbar {
+      background: var(--bg-espresso);
+      color: var(--text-light);
+      font-size: 12px;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .topbar-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .domain-pill {
+      background: var(--accent-gold);
+      color: #1c130c;
+      font-weight: 900;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+
+    .topbar-cta {
+      color: #fde68a;
+      text-decoration: none;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* 2. Header */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-soft);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 9px;
+      background: #fff;
+      border: 1.5px solid var(--border-soft);
+      padding: 2px;
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--bg-saddle);
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .forum-pill {
+      background: #ecfdf5;
+      color: #065f46;
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 99px;
+      border: 1px solid #a7f3d0;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .nav-pill {
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--bg-saddle);
+      padding: 7px 11px;
+      border-radius: 8px;
+      background: var(--bg-parchment);
+      border: 1px solid var(--border-soft);
+      white-space: nowrap;
+      transition: all 0.16s ease;
+    }
+
+    .nav-pill:hover,
+    .nav-pill.active {
+      background: var(--bg-saddle);
+      color: #ffffff;
+      border-color: var(--bg-saddle);
+    }
+
+    .nav-pill-studio {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn-new-post {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-leather);
+      color: #ffffff;
+      padding: 8px 15px;
+      border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(194, 94, 26, 0.3);
+      transition: all 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .btn-new-post:hover {
+      background: #a44d13;
+      transform: translateY(-1px);
+    }
+
+    /* 3. Community Hero */
+    .community-hero {
+      background:
+        linear-gradient(135deg, rgba(28, 19, 12, 0.94) 0%, rgba(56, 33, 17, 0.9) 60%, rgba(36, 21, 11, 0.95) 100%),
+        url('/assets/brand/hero-workbench.jpg') center/cover no-repeat;
+      color: var(--text-light);
+      padding: 38px 0 32px;
+      border-bottom: 2px dashed var(--accent-gold);
+    }
+
+    .hero-content {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.18);
+      color: #fde68a;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 13px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-size: clamp(24px, 3.8vw, 36px);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .text-gold {
+      color: var(--accent-gold);
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 5px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: #e2d5c5;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--accent-gold);
+      color: #1c130c;
+      padding: 10px 20px;
+      border-radius: 99px;
+      font-size: 13.5px;
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      transition: all 0.16s ease;
+    }
+
+    .hero-btn-primary:hover {
+      background: #fbbf24;
+      transform: translateY(-2px);
+    }
+
+    .hero-btn-zalo {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid #93c5fd;
+      color: #dbeafe;
+      padding: 10px 18px;
+      border-radius: 99px;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.16s ease;
+    }
+
+    .hero-btn-zalo:hover {
+      background: var(--accent-zalo);
+      color: #ffffff;
+      border-color: var(--accent-zalo);
+    }
+
+    /* 4. Main Layout (Feed + Sidebar) */
+    .community-body {
+      padding: 28px 0 60px;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    /* Search & Category Filter */
+    .forum-toolbar {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .search-row {
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 38px 10px 14px;
+      border-radius: 99px;
+      border: 1.5px solid var(--border-stitch);
+      background: var(--bg-parchment);
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent-leather);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(194, 94, 26, 0.15);
+    }
+
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .cat-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cat-btn {
+      background: var(--bg-parchment);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .cat-btn:hover {
+      background: #f1ede4;
+      border-color: var(--border-stitch);
+    }
+
+    .cat-btn.active {
+      background: var(--bg-saddle);
+      color: #ffffff;
+      border-color: var(--bg-saddle);
+    }
+
+    .cat-count {
+      font-size: 11px;
+      background: rgba(0, 0, 0, 0.08);
+      padding: 1px 6px;
+      border-radius: 99px;
+      font-weight: 800;
+    }
+
+    .cat-btn.active .cat-count {
+      background: var(--accent-gold);
+      color: #1c130c;
+    }
+
+    /* Thread Feed */
+    .threads-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .thread-card {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .thread-card:hover {
+      border-color: var(--border-stitch);
+      box-shadow: var(--shadow-md);
+    }
+
+    .thread-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .author-name-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--bg-saddle);
+    }
+
+    .author-role {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .thread-time {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    .thread-badge-pill {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .badge-solved {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+    }
+
+    .badge-featured {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .badge-info {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .badge-showcase {
+      background: #f3e8ff;
+      color: #6b21a8;
+      border: 1px solid #e9d5ff;
+    }
+
+    .badge-market {
+      background: #ffedd5;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+    }
+
+    .thread-title {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--bg-saddle);
+      line-height: 1.35;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .thread-title:hover {
+      color: var(--accent-leather);
+    }
+
+    .thread-excerpt {
+      font-size: 13.8px;
+      line-height: 1.6;
+      color: #334155;
+      margin-bottom: 14px;
+      white-space: pre-line;
+    }
+
+    .thread-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-soft);
+      font-size: 12.5px;
+    }
+
+    .thread-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .action-btn {
+      background: var(--bg-parchment);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      padding: 5px 11px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .action-btn:hover {
+      border-color: var(--border-stitch);
+      background: #f8f3eb;
+    }
+
+    .action-btn.liked {
+      background: #fee2e2;
+      color: #b91c1c;
+      border-color: #fca5a5;
+    }
+
+    .action-btn-primary {
+      background: var(--bg-saddle);
+      color: #ffffff;
+      border-color: var(--bg-saddle);
+    }
+
+    .action-btn-primary:hover {
+      background: var(--accent-leather);
+      color: #fff;
+    }
+
+    .thread-cat-tag {
+      color: var(--accent-leather);
+      font-weight: 800;
+      background: #fff8f1;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(194, 94, 26, 0.2);
+    }
+
+    /* Comments Section inside Thread Card */
+    .comments-wrapper {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1.5px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .comment-item {
+      background: #faf7f2;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+    }
+
+    .comment-item.staff-comment {
+      background: #fffdf5;
+      border: 1.5px solid #f59e0b;
+      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.1);
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .comment-author-name {
+      font-weight: 800;
+      color: var(--bg-saddle);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .staff-badge {
+      background: #d97706;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .comment-text {
+      line-height: 1.55;
+      color: #334155;
+      white-space: pre-line;
+    }
+
+    /* Add Comment Form */
+    .add-comment-box {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comment-inputs-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 8px;
+    }
+
+    .comment-name-input,
+    .comment-text-input {
+      padding: 8px 12px;
+      border: 1px solid var(--border-stitch);
+      border-radius: 6px;
+      background: #ffffff;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .comment-text-input {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .comment-submit-btn {
+      align-self: flex-end;
+      background: var(--bg-saddle);
+      color: #ffffff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.16s ease;
+    }
+
+    .comment-submit-btn:hover {
+      background: var(--accent-leather);
+    }
+
+    /* Sidebar */
+    .sidebar-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .side-widget {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .side-widget-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--bg-saddle);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zalo-widget {
+      background: linear-gradient(145deg, #1e3a8a, #0369a1);
+      color: #ffffff;
+      border: none;
+    }
+
+    .zalo-widget .side-widget-title {
+      color: #fde68a;
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .zalo-widget p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #e0f2fe;
+      margin-bottom: 14px;
+    }
+
+    .btn-side-zalo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: #ffffff;
+      color: #0369a1;
+      padding: 10px 14px;
+      border-radius: 99px;
+      font-weight: 900;
+      font-size: 13px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.16s ease;
+    }
+
+    .btn-side-zalo:hover {
+      transform: translateY(-2px);
+    }
+
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #475569;
+    }
+
+    .rules-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .rules-list li::before {
+      content: "•";
+      color: var(--accent-leather);
+      font-weight: 900;
+    }
+
+    .quick-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .quick-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--bg-saddle);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 6px;
+      background: var(--bg-parchment);
+      transition: all 0.15s ease;
+    }
+
+    .quick-link-item:hover {
+      background: var(--bg-saddle);
+      color: #ffffff;
+    }
+
+    /* Modal Create Question */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 19, 12, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-dialog {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px 26px;
+      box-shadow: var(--shadow-lg);
+      border: 1.5px solid var(--border-stitch);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-soft);
+    }
+
+    .modal-title {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--bg-saddle);
+    }
+
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--bg-saddle);
+      margin-bottom: 5px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-stitch);
+      background: var(--bg-parchment);
+      font-size: 13.5px;
+      color: var(--text-main);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-leather);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(194, 94, 26, 0.15);
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .modal-foot {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-soft);
+    }
+
+    .btn-cancel {
+      background: var(--bg-parchment);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-submit-post {
+      background: var(--accent-leather);
+      color: #ffffff;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 13.5px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(194, 94, 26, 0.35);
+    }
+
+    .btn-submit-post:hover {
+      background: #a44d13;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--bg-espresso);
+      color: #c7b9a8;
+      font-size: 13px;
+      padding: 36px 0 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .footer-brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: #e2d5c5;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 12.5px;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bot {
+      padding-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: #948472;
+    }
+
+    /* Floating Contact */
+    .floating-contact {
+      position: fixed;
+      right: 16px;
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .float-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 15px;
+      border-radius: 99px;
+      font-weight: 800;
+      font-size: 12.5px;
+      text-decoration: none;
+      color: #ffffff;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.16s ease;
+    }
+
+    .float-pill:hover {
+      transform: scale(1.04);
+    }
+
+    .float-zalo {
+      background: var(--accent-zalo);
+      border: 2px solid #ffffff;
+    }
+
+    .float-ask {
+      background: var(--accent-leather);
+      border: 2px solid #fde68a;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .community-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .sidebar-col {
+        order: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        padding: 4px 0;
+        font-size: 11px;
+      }
+      .header-inner {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .header-nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-top: 4px;
+        border-top: 1px dashed var(--border-soft);
+      }
+      .header-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .header-actions {
+        margin-left: auto;
+      }
+      .community-hero {
+        padding: 26px 0 22px;
+      }
+      .hero-title {
+        font-size: 21px;
+      }
+      .hero-sub {
+        font-size: 13px;
+      }
+      .cat-strip {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+      }
+      .cat-strip::-webkit-scrollbar {
+        display: none;
+      }
+      .cat-btn {
+        flex-shrink: 0;
+      }
+      .comment-inputs-row {
+        grid-template-columns: 1fr;
+      }
+      .floating-contact {
+        left: 10px;
+        right: 10px;
+        bottom: max(8px, env(safe-area-inset-bottom));
+        flex-direction: row;
+      }
+      .float-pill {
+        flex: 1;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Topbar -->
+  <div class="topbar">
+    <div class="container topbar-flex">
+      <div class="topbar-left">
+        <span class="domain-pill">WWW.RAPMAU.COM</span>
+        <span>Diễn Đàn Giao Lưu &amp; Hỏi Đáp Kỹ Thuật Đồ Da Việt Nam</span>
+      </div>
+      <div>
+        <a href="tel:0971463768" class="topbar-cta">📞 Hotline/Zalo: 0971.463.768 (Mr.Tuân)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/cong-dong/" class="brand-logo">
+        <img src="/assets/brand/logo-header.png" alt="Logo RAPMAU.COM" class="brand-logo-img" />
+        <div class="brand-title-wrap">
+          <span class="brand-title">
+            RAPMAU.COM
+            <span class="forum-pill">CỘNG ĐỒNG</span>
+          </span>
+          <span class="brand-sub">Hỏi Đáp Kỹ Thuật &amp; Giao Lưu Nghề Da</span>
+        </div>
+      </a>
+
+      <!-- Quick Nav -->
+      <nav class="header-nav" aria-label="Điều hướng chính">
+        <a href="https://www.rapmau.com/" class="nav-pill">📐 Rập Mẫu (258+)</a>
+        <a href="https://www.rapmau.com/#phu-kien-dung-cu" class="nav-pill">🛠️ Dụng Cụ (68+)</a>
+        <a href="https://www.rapmau.com/bai-viet" class="nav-pill">📰 Cẩm Nang Kỹ Thuật</a>
+        <a href="https://www.rapmau.com/rapmau-studio/" class="nav-pill nav-pill-studio">🪄 Studio AI</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-new-post" id="openNewPostModalBtn">
+          <span>＋ Đặt Câu Hỏi Mới</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Community Hero -->
+  <section class="community-hero">
+    <div class="container hero-content">
+      <div class="hero-tag">🪵 GIAO LƯU NGHỀ DA · CHIA SẺ KINH NGHIỆM · HỖ TRỢ KỸ THUẬT</div>
+      <h1 class="hero-title">
+        Cộng Đồng &amp; Diễn Đàn <span class="text-gold">Hỏi Đáp Làm Đồ Da</span>
+      </h1>
+      <p class="hero-sub">
+        Nơi kết nối thợ thủ công, người mới nhập môn và các chủ xưởng da trên toàn quốc.
+        Hỏi đáp bắt bệnh đường may, bí quyết sơn cạnh, kinh nghiệm chọn da thuộc và chia sẻ bản vẽ rập miễn phí.
+      </p>
+      <div class="hero-buttons">
+        <button type="button" class="hero-btn-primary" id="heroOpenModalBtn">
+          <span>＋ Đặt Câu Hỏi / Tạo Thảo Luận Mới</span>
+        </button>
+        <a href="https://zalo.me/0971463768" target="_blank" rel="noopener" class="hero-btn-zalo">
+          <span>💬 Tham Gia Nhóm Zalo Giao Lưu</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Main Body: Feed & Sidebar -->
+  <main class="community-body">
+    <div class="container">
+      <div class="community-grid">
+        <!-- Main Feed Column -->
+        <div class="feed-col">
+          <!-- Toolbar: Search & Categories -->
+          <div class="forum-toolbar">
+            <div class="search-row">
+              <input
+                type="search"
+                class="search-input"
+                id="threadSearchInput"
+                placeholder="🔍 Tìm nhanh câu hỏi, kỹ thuật may hai kim, sơn cạnh, rập balo, keo dán..."
+                aria-label="Tìm kiếm thảo luận"
+              />
+              <button type="button" class="clear-search-btn hidden" id="clearSearchBtn">✕</button>
+            </div>
+
+            <!-- Categories Tabs Strip -->
+            <div class="cat-strip" id="catFilterStrip">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Feed Result Count -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:13px; color:var(--text-muted);">
+            <span id="resultCountLabel">Đang tải danh sách thảo luận...</span>
+            <span style="font-weight:700; color:var(--accent-leather);">Mới nhất cập nhật liên tục</span>
+          </div>
+
+          <!-- Threads List Container -->
+          <div class="threads-list" id="threadsListContainer">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <aside class="sidebar-col">
+          <!-- Zalo Group Widget -->
+          <div class="side-widget zalo-widget">
+            <div class="side-widget-title">💬 NHÓM ZALO GIAO LƯU</div>
+            <p>
+              Gia nhập nhóm Zalo thợ làm đồ da RAPMAU để được hỗ trợ kỹ thuật trực tiếp, xem video thao tác và nhận thông báo rập mẫu mới mỗi ngày.
+            </p>
+            <a href="https://zalo.me/0971463768" target="_blank" rel="noopener" class="btn-side-zalo">
+              <span>👉 Nhắn Zalo: 0971.463.768</span>
+            </a>
+          </div>
+
+          <!-- Rules Widget -->
+          <div class="side-widget">
+            <div class="side-widget-title">📜 VĂN HÓA DIỄN ĐÀN</div>
+            <ul class="rules-list">
+              <li>Chia sẻ cởi mở, tôn trọng tay nghề và tinh thần học hỏi của nhau.</li>
+              <li>Khi hỏi lỗi sản phẩm, nên miêu tả rõ: loại da, độ dày, cỡ đục, loại chỉ và keo dán đang dùng.</li>
+              <li>Khuyến khích đăng ảnh chi tiết mặt trước/sau để anh em dễ "bắt bệnh".</li>
+              <li>Nghiêm cấm spam quảng cáo lừa đảo hoặc xúc phạm thành viên khác.</li>
+            </ul>
+          </div>
+
+          <!-- Quick Links Widget -->
+          <div class="side-widget">
+            <div class="side-widget-title">🔗 TIỆN ÍCH CHO THỢ DA</div>
+            <div class="quick-links-list">
+              <a href="https://www.rapmau.com/" class="quick-link-item">
+                <span>📐 Kho 258+ Rập Mẫu Chuẩn 1:1</span>
+                <span>→</span>
+              </a>
+              <a href="https://www.rapmau.com/rapmau-studio/" class="quick-link-item">
+                <span>🪄 Studio Dập Chìm Logo AI</span>
+                <span>→</span>
+              </a>
+              <a href="https://www.rapmau.com/bai-viet" class="quick-link-item">
+                <span>📰 8 Cẩm Nang Kỹ Thuật Đồ Da</span>
+                <span>→</span>
+              </a>
+              <a href="https://www.rapmau.com/#nhan-sach-mien-phi" class="quick-link-item">
+                <span>📚 26 Sách Giáo Trình Làm Da Free</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- 5. Modal Đặt Câu Hỏi Mới -->
+  <div class="modal-backdrop hidden" id="postModal">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 class="modal-title">Đặt Câu Hỏi / Chia Sẻ Kinh Nghiệm</h3>
+        <button type="button" class="modal-close-btn" id="closeModalBtn">&times;</button>
+      </div>
+
+      <form id="newPostForm">
+        <div class="form-group">
+          <label class="form-label" for="postTitle">Tiêu đề câu hỏi / Chủ đề (*)</label>
+          <input
+            type="text"
+            id="postTitle"
+            class="form-input"
+            placeholder="Ví dụ: Làm sao để sơn cạnh da bò sáp không bị lem?"
+            required
+            maxlength="160"
+          />
+        </div>
+
+        <div class="form-group" style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+          <div>
+            <label class="form-label" for="postAuthor">Tên của bạn / Tên xưởng (*)</label>
+            <input
+              type="text"
+              id="postAuthor"
+              class="form-input"
+              placeholder="Ví dụ: Hoàng Long Craft"
+              required
+              maxlength="40"
+            />
+          </div>
+          <div>
+            <label class="form-label" for="postCategory">Chuyên mục (*)</label>
+            <select id="postCategory" class="form-select" required>
+              <option value="nhap-mon">🔨 Người Mới Nhập Môn</option>
+              <option value="ky-thuat-may" selected>🧵 Kỹ Thuật May &amp; Đục</option>
+              <option value="son-canh">🎨 Sơn Viền &amp; Xử Lý Cạnh</option>
+              <option value="rap-mau">📐 Xin &amp; Góp Ý Rập Mẫu</option>
+              <option value="da-keo">🐂 Da Thuộc &amp; Phụ Liệu</option>
+              <option value="khoe-tac-pham">🏆 Khoe Tác Phẩm &amp; Bắt Bệnh</option>
+              <option value="cho-do-da">🏷️ Chợ Dụng Cụ &amp; Da Vụn</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="postContent">Nội dung chi tiết câu hỏi / kinh nghiệm (*)</label>
+          <textarea
+            id="postContent"
+            class="form-textarea"
+            placeholder="Mô tả cụ thể trường hợp của bạn: loại da đang làm, độ dày, loại đục, chỉ khâu hoặc lỗi bạn đang gặp phải..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="modal-foot">
+          <button type="button" class="btn-cancel" id="cancelPostBtn">Hủy</button>
+          <button type="submit" class="btn-submit-post" id="submitPostBtn">Đăng Câu Hỏi Lên Diễn Đàn</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-flex">
+        <a href="https://www.rapmau.com/" class="footer-brand">
+          <img src="/assets/brand/logo-header.png" alt="Logo RAPMAU.COM" />
+          <div>
+            <strong style="display:block; font-size:15px; color:#fff;">RAPMAU.COM</strong>
+            <span style="font-size:11.5px; color:#a89988;">Cộng Đồng Đồ Da &amp; Kho Rập Đồ Da Chuẩn 1:1 Việt Nam</span>
+          </div>
+        </a>
+
+        <div class="footer-nav">
+          <a href="https://www.rapmau.com/">Trang Chủ</a>
+          <a href="/cong-dong/">Diễn Đàn Hỏi Đáp</a>
+          <a href="/rapmau-studio/">Studio Ảnh AI</a>
+          <a href="https://www.rapmau.com/#phu-kien-dung-cu">Dụng Cụ Đồ Da</a>
+          <a href="https://www.rapmau.com/bai-viet">Cẩm Nang Kỹ Thuật</a>
+          <a href="https://zalo.me/0971463768" target="_blank" rel="noopener">Zalo Mr.Tuân: 0971.463.768</a>
+        </div>
+      </div>
+
+      <div class="footer-bot">
+        <p>© 2026 RAPMAU.COM — Nền tảng chia sẻ Rập Mẫu, Khuôn Bế &amp; Cộng Đồng Nghề Đồ Da Việt Nam.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact">
+    <button type="button" class="float-pill float-ask" id="floatingAskBtn">
+      <span>＋ Đặt Câu Hỏi</span>
+    </button>
+    <a href="https://zalo.me/0971463768" target="_blank" rel="noopener" class="float-pill float-zalo">
+      <span>💬 Zalo Hỗ Trợ</span>
+    </a>
+  </div>
+
+  <!-- 7. JavaScript logic -->
+  <script src="/cong-dong/community.js"></script>
+</body>
+</html>
