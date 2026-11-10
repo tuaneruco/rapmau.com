@@ -428,6 +428,10 @@
           <span>📚 Tủ Sách &amp; Nhóm Zalo</span>
           <span id="sideCountBooks">26</span>
         </button>
+        <button type="button" class="admin-nav-btn" data-tab="tab-articles" id="navBtnArticles">
+          <span>📰 Bài Viết SEO &amp; AEO</span>
+          <span id="sideCountArticles">8</span>
+        </button>
         <button type="button" class="admin-nav-btn" data-tab="tab-settings" id="navBtnSettings">
           <span id="navSettingsLabel">⚙️ Nội Dung, VietQR &amp; Mật Khẩu</span>
         </button>
@@ -771,6 +775,75 @@
               <button type="button" id="btnResetVendorForm" class="btn btn-outline">
                 Làm mới
               </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- TAB 4C: QUẢN LÝ HỆ THỐNG BÀI VIẾT TỐI ƯU SEO & AEO -->
+      <section id="tab-articles" class="admin-tab-panel hidden">
+        <div class="detail-grid">
+          <div class="cms-card">
+            <h3 style="color:var(--bg-saddle); margin-bottom:8px;">📰 Danh Sách Bài Viết Cẩm Nang SEO &amp; AEO</h3>
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px;">
+              Mỗi bài viết tự động xuất bản trang tĩnh riêng tại <code>/bai-viet/&lt;slug&gt;</code> kèm hộp trả lời trực diện AEO và dữ liệu cấu trúc Schema.org (<code>Article</code> + <code>FAQPage</code> + <code>BreadcrumbList</code>).
+            </p>
+            <div style="overflow-x:auto;">
+              <table class="cms-table">
+                <thead>
+                  <tr>
+                    <th>Mã</th>
+                    <th>Tiêu Đề &amp; URL Slug</th>
+                    <th>Chuyên Mục</th>
+                    <th>Câu Trả Lời Trực Diện (AEO)</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody id="adminArticlesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <form id="articleCmsForm" class="cms-card" style="border:1.5px solid var(--accent-leather);">
+            <h3 id="articleFormHeading" style="color:var(--bg-saddle); margin-bottom:10px;">➕ Thêm / Chỉnh Sửa Bài Viết SEO &amp; AEO</h3>
+            <input type="hidden" id="artFormId" value="" />
+            <div class="form-row">
+              <div class="form-field">
+                <label>Tiêu đề bài viết chuẩn SEO (H1) *</label>
+                <input type="text" id="artFormTitle" required placeholder="VD: Hướng dẫn cách in rập PDF tỷ lệ 1:1 chuẩn A4..." />
+              </div>
+              <div class="form-field">
+                <label>Chuyên mục *</label>
+                <select id="artFormCategory">
+                  <option value="Kỹ Thuật Rập & Bản Vẽ">Kỹ Thuật Rập &amp; Bản Vẽ</option>
+                  <option value="Tư Vấn Chọn Rập">Tư Vấn Chọn Rập</option>
+                  <option value="Cẩm Nang Người Mới">Cẩm Nang Người Mới</option>
+                  <option value="Kỹ Thuật Khâu Da">Kỹ Thuật Khâu Da</option>
+                  <option value="Kiến Thức Da Thuộc">Kiến Thức Da Thuộc</option>
+                  <option value="Hướng Dẫn Thực Hành">Hướng Dẫn Thực Hành</option>
+                  <option value="Hoàn Thiện & Bảo Dưỡng">Hoàn Thiện &amp; Bảo Dưỡng</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field" style="margin-bottom:10px;">
+              <label>Câu hỏi chính người dùng hỏi AI / Google (AEO Question) *</label>
+              <input type="text" id="artFormAeoQuestion" required placeholder="VD: Làm thế nào để in file rập đồ da PDF đúng tỷ lệ 1:1?" />
+            </div>
+            <div class="form-field" style="margin-bottom:10px;">
+              <label>Câu trả lời trực diện 45–65 từ (AEO Direct Answer Box) *</label>
+              <textarea id="artFormAeoAnswer" rows="3" required placeholder="Tóm tắt câu trả lời chính xác, súc tích để Google AI Overview & ChatGPT trích dẫn..."></textarea>
+            </div>
+            <div class="form-field" style="margin-bottom:10px;">
+              <label>Mô tả ngắn Meta Description (140–160 ký tự)</label>
+              <input type="text" id="artFormExcerpt" placeholder="Mô tả hiển thị trên kết quả tìm kiếm Google..." />
+            </div>
+            <div class="form-field" style="margin-bottom:12px;">
+              <label>Nội dung chi tiết (HTML: H2, Bảng thông số, Các bước thực hiện)</label>
+              <textarea id="artFormContentHtml" rows="6" placeholder="<h2>1. Tiêu đề mục</h2><p>Nội dung...</p>"></textarea>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button type="submit" class="btn btn-primary" style="flex:1;">💾 Lưu Bài Viết SEO/AEO</button>
+              <button type="button" id="btnResetArticleForm" class="btn btn-outline">Làm mới</button>
             </div>
           </form>
         </div>

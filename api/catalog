@@ -27372,5 +27372,315 @@
       "allowTools": true,
       "active": true
     }
+  ],
+  "articles": [
+    {
+      "id": "ART-01",
+      "slug": "huong-dan-in-rap-pdf-ty-le-1-1-chuan-kich-thuoc-a4-a3",
+      "title": "Hướng Dẫn Cách In Rập Đồ Da File PDF Tỷ Lệ 1:1 Chuẩn Kích Thước Trên Giấy A4, A3 & Ghép Trang",
+      "category": "Kỹ Thuật Rập & Bản Vẽ",
+      "readTime": "6 phút đọc",
+      "publishedAt": "2026-11-01",
+      "updatedAt": "2026-11-10",
+      "author": "Kỹ Sư Thiết Kế Rập RAPMAU.COM",
+      "image": "/assets/tools/dc-05-dao-cat-da.svg",
+      "excerpt": "Hướng dẫn chi tiết cách in file rập đồ da PDF chuẩn tỷ lệ 1:1 (Actual Size 100%) trên máy in A4, A3 tại nhà không bị sai lệch đường đục lỗ và cách ghép rập túi xách, balo lớn.",
+      "aeoQuestion": "Làm thế nào để in file rập đồ da PDF đúng tỷ lệ 1:1 không bị co giãn kích thước?",
+      "aeoAnswer": "Để in file rập đồ da PDF chuẩn tỷ lệ 1:1 trên giấy A4 hoặc A3, bạn hãy mở file bằng Adobe Acrobat Reader hoặc Foxit Reader, nhấn Ctrl+P (Print), tại mục Page Sizing & Handling bắt buộc chọn 'Actual Size' (hoặc Custom Scale: 100%), tắt chế độ 'Fit to Page', sau đó dùng thước thép đo ô vuông kiểm chuẩn (Scale Box 3x3cm hoặc 5x5cm) trên trang in trước khi cắt.",
+      "keyTakeaways": [
+        "Luôn chọn chế độ 'Actual Size' hoặc 'Custom Scale: 100%' trong hộp thoại Print.",
+        "Tuyệt đối KHÔNG chọn 'Fit' hoặc 'Shrink oversized pages' vì sẽ làm thu nhỏ bước đục lỗ từ 4.0mm xuống ~3.7mm.",
+        "Kiểm tra thước đo đối chiếu (Scale Check 30mm / 50mm / 1 inch) in sẵn trên bản vẽ rập bằng thước thép.",
+        "Dùng băng dính trong hoặc hồ khô ghép các đường lưới (Grid लाइन / dấu cộng trùng nhau) đối với mẫu túi xách, balo khổ lớn."
+      ],
+      "relatedCategorySlug": "rap-vi-da",
+      "relatedToolSkus": [
+        "PK-19",
+        "PK-03",
+        "DH-15"
+      ],
+      "contentHtml": "\n<h2>1. Tại sao in rập PDF bị lệch kích thước và lệch lỗ đục?</h2>\n<p>Khi làm đồ da thủ công (leathercraft), chỉ cần bản in bị co nhỏ <strong>3% – 5%</strong> do chế độ tự căn lề của máy in (<em>Fit to printable area</em>), toàn bộ hệ thống lỗ đục định vị sẵn trên rập (ví dụ bước đục <code>3.38mm</code> hoặc <code>4.0mm</code>) sẽ bị lệch dây chuyền. Khi ghép 2 mảnh thân ví hoặc hông túi xách sẽ bị thừa/thiếu mép da và không trùng lỗ khâu.</p>\n\n<h2>2. Bảng thông số cài đặt máy in chuẩn 1:1 cho từng phần mềm</h2>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Phần mềm mở PDF</th>\n        <th>Thiết lập bắt buộc (Tỷ lệ 1:1)</th>\n        <th>Thiết lập cần TẮT</th>\n        <th>Khổ giấy khuyến nghị</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Adobe Acrobat Reader</strong> (Khuyên dùng)</td>\n        <td>Page Sizing: <code>Actual Size</code> hoặc <code>Custom Scale: 100%</code></td>\n        <td>Bỏ chọn <em>Fit</em> &amp; <em>Shrink oversized pages</em></td>\n        <td>A4 (210 × 297mm) hoặc A3</td>\n      </tr>\n      <tr>\n        <td><strong>Foxit PDF Reader</strong></td>\n        <td>Print Handling: <code>None</code> / <code>Tile Large Pages (100%)</code></td>\n        <td>Bỏ chọn <em>Fit to printer margins</em></td>\n        <td>A4 (210 × 297mm)</td>\n      </tr>\n      <tr>\n        <td><strong>Trình duyệt Chrome / Edge</strong></td>\n        <td>More settings → Scale: <code>Default</code> hoặc <code>Custom: 100</code></td>\n        <td>Không chọn <em>Fit to printable area</em></td>\n        <td>A4 (210 × 297mm)</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>3. Quy trình 4 bước in và ghép rập PDF chuẩn xưởng</h2>\n<ol>\n  <li><strong>Bước 1 – Tải file PDF chuẩn Vector:</strong> Tải miễn phí bộ 258+ mẫu rập tại <a href=\"/danh-muc/rap-vi-da\">Thư Viện Rập Ví Da</a> hoặc <a href=\"/danh-muc/rap-tui-xach\">Rập Túi Xách</a> của RAPMAU.COM.</li>\n  <li><strong>Bước 2 – In thử 1 trang có thước kiểm chuẩn:</strong> Chọn in trang đầu tiên ở chế độ <code>Actual Size (100%)</code>. Dùng thước thép đo vạch kiểm tra trên giấy xem đúng chuẩn <code>5.0 cm</code> (hoặc <code>1 inch = 2.54 cm</code>) hay chưa.</li>\n  <li><strong>Bước 3 – Dán bồi lên giấy bìa cứng hoặc cắt trực tiếp:</strong> Để rập bền và lấy dấu chính xác nhiều lần, bạn nên dùng hồ khô hoặc keo xịt dán tờ giấy A4 vừa in lên bìa cứng Kraft 300gsm–350gsm.</li>\n  <li><strong>Bước 4 – Ghép rập khổ lớn (Túi xách, Cặp táp, Balo):</strong> Với các chi tiết dài hơn tờ A4, các trang PDF đều có ký hiệu tâm dấu cộng <code>(+)</code> hoặc đường kẻ trùng mép (<em>Alignment Line</em>). Đặt 2 trang chồng khít dấu cộng rồi cố định bằng băng keo trong trước khi rọc đường viền bằng dao rọc giấy mũi nhọn 30 độ.</li>\n</ol>\n\n<h2>4. Khi nào nên nâng cấp từ Rập PDF tự in sang Rập Giấy Cứng 350gsm hoặc Rập Mica 2mm?</h2>\n<p>Nếu bạn chỉ làm 1–2 sản phẩm trải nghiệm, file PDF miễn phí là lựa chọn tối ưu. Tuy nhiên, nếu bạn làm quà tặng cần độ chính xác tuyệt đối ở các góc bo hoặc sản xuất lặp lại nhiều lần, bạn có thể chọn phiên bản <strong>Rập Giấy Cứng 350gsm (bế sẵn lỗ đục)</strong> hoặc <strong>Rập Mica 2mm cắt Laser CNC</strong> ngay trong từng trang sản phẩm của RAPMAU.COM.</p>\n",
+      "faqs": [
+        {
+          "q": "File rập PDF trên RAPMAU.COM được thiết kế cho khổ giấy gì?",
+          "a": "Tất cả 258+ file rập PDF trên RAPMAU.COM đều đã được tách trang chuẩn khổ giấy A4 (210x297mm) thông dụng, bạn có thể in ngay trên mọi máy in văn phòng hoặc tiệm photocopy mà không cần chỉnh sửa bản vẽ."
+        },
+        {
+          "q": "Làm sao xử lý khi file rập PDF không có ô vuông thước đo kiểm chuẩn?",
+          "a": "Nếu bản vẽ không in ô vuông kiểm chuẩn, bạn hãy chọn chế độ 'Actual Size' (100%), sau đó dùng thước đo khoảng cách giữa 10 lỗ đục liên tiếp trên giấy in: nếu tổng chiều dài 10 bước đục bằng đúng 30mm (bước 3.0), 33.8mm (bước 3.38) hoặc 40mm (bước 4.0) thì bản in đã chuẩn 100%."
+        },
+        {
+          "q": "Nên dùng loại giấy gì để in rập đồ da tại nhà bền nhất?",
+          "a": "Nếu máy in gia đình kéo được giấy dày, bạn hãy dùng giấy bìa cứng định lượng 180gsm - 250gsm hoặc giấy bìa Kraft. Nếu in giấy A4 thường (70-80gsm), hãy dán bồi lên bìa carton mỏng hoặc bìa hồ sơ trước khi cắt."
+        }
+      ]
+    },
+    {
+      "id": "ART-02",
+      "slug": "so-sanh-rap-pdf-rap-giay-cung-350gsm-rap-mica-2mm-va-khuon-be",
+      "title": "So Sánh Rập PDF, Rập Giấy Cứng 350gsm, Rập Mica 2mm Cắt Laser Và Khuôn Bế Thép: Nên Chọn Loại Nào?",
+      "category": "Tư Vấn Chọn Rập",
+      "readTime": "7 phút đọc",
+      "publishedAt": "2026-11-02",
+      "updatedAt": "2026-11-10",
+      "author": "Xưởng Gia Công Khuôn Rập RAPMAU.COM",
+      "image": "/assets/tools/dc-03-duc-lo-4mm.svg",
+      "excerpt": "Bảng so sánh chi tiết ưu nhược điểm, độ bền, độ chính xác và chi phí giữa 4 loại rập làm đồ da: File PDF miễn phí, Rập giấy bìa 350gsm, Rập Mica 2mm khắc Laser và Khuôn bế thép.",
+      "aeoQuestion": "Nên dùng rập PDF, rập giấy cứng 350gsm, rập mica 2mm hay khuôn bế thép khi làm đồ da?",
+      "aeoAnswer": "Việc chọn loại rập phụ thuộc vào số lượng sản phẩm bạn định làm: (1) File PDF miễn phí phù hợp làm thử nghiệm 1–2 chiếc tại nhà; (2) Rập giấy cứng Kraft 350gsm phù hợp làm 3–15 chiếc với chi phí thấp, không mất công in ghép; (3) Rập Mica 2mm cắt Laser phù hợp làm từ 15–200 chiếc nhờ cạnh cứng cáp giúp đi mũi dao thẳng tắp; (4) Khuôn bế thép phù hợp sản xuất hàng loạt trên 200 chiếc.",
+      "keyTakeaways": [
+        "Rập File PDF (0đ): Tải về ngay lập tức, tự in A4 và tự cắt thủ công.",
+        "Rập Giấy Cứng 350gsm (từ 35.000đ): Đã cắt laser chính xác viền và lỗ định vị, nhận hàng dùng ngay.",
+        "Rập Mica 2mm Trong Suốt (từ 110.000đ): Cứng cáp, nhìn xuyên thấu bề mặt da để né sẹo da và canh vân da cực chuẩn.",
+        "Khuôn Bế Thép Lưỡi Nhật (từ 650.000đ): Dập 1 lần ra phôi da trong 3 giây bằng máy bế, năng suất gấp 30 lần cắt tay."
+      ],
+      "relatedCategorySlug": "rap-tui-xach",
+      "relatedToolSkus": [
+        "PK-19",
+        "DH-13",
+        "PK-03"
+      ],
+      "contentHtml": "\n<h2>1. Bảng so sánh chi tiết 4 định dạng rập đồ da tại RAPMAU.COM</h2>\n<p>Mỗi mẫu thiết kế trên hệ thống <strong>RAPMAU.COM</strong> đều hỗ trợ đầy đủ 4 tùy chọn định dạng từ bản vẽ kỹ thuật số đến khuôn gia công vật lý:</p>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Tiêu chí so sánh</th>\n        <th>1. File PDF (Tự In)</th>\n        <th>2. Rập Giấy Cứng 350gsm</th>\n        <th>3. Rập Mica 2mm Laser</th>\n        <th>4. Khuôn Bế Thép</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Chi phí</strong></td>\n        <td><strong>Miễn phí (0đ)</strong></td>\n        <td>35.000đ – 110.000đ</td>\n        <td>110.000đ – 310.000đ</td>\n        <td>650.000đ – 1.450.000đ</td>\n      </tr>\n      <tr>\n        <td><strong>Độ bền sử dụng</strong></td>\n        <td>1 – 3 lần (dễ sờn mép)</td>\n        <td>10 – 25 lần</td>\n        <td>Trên 500 lần (không mòn)</td>\n        <td>Trên 5.000 lần dập</td>\n      </tr>\n      <tr>\n        <td><strong>Độ chính xác khi cắt da</strong></td>\n        <td>Phụ thuộc tay nghề cắt giấy</td>\n        <td>Chuẩn 99% (cắt máy Laser)</td>\n        <td>Chuẩn 100%, tỳ dao trực tiếp</td>\n        <td>Tuyệt đối 100% giữa các phôi</td>\n      </tr>\n      <tr>\n        <td><strong>Khả năng soi vân / né lỗi da</strong></td>\n        <td>Không (giấy đục)</td>\n        <td>Không (bìa Kraft nâu)</td>\n        <td><strong>Có (Mica trong suốt)</strong></td>\n        <td>Có (khung thép hở lòng)</td>\n      </tr>\n      <tr>\n        <td><strong>Đối tượng phù hợp</strong></td>\n        <td>Người mới thử nghiệm mẫu</td>\n        <td>Thợ DIY làm quà tặng, mẫu lẻ</td>\n        <td>Thợ chuyên nghiệp, Workshop</td>\n        <td>Xưởng sản xuất số lượng lớn</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>2. Vì sao thợ làm đồ da chuyên nghiệp ưu tiên Rập Mica 2mm trong suốt?</h2>\n<ul>\n  <li><strong>Cắt da trực tiếp không cần lấy dấu bút nhũ:</strong> Với độ dày 2mm cứng cáp, bạn chỉ cần đè tấm rập Mica lên mặt da và lướt lưỡi dao dọc theo thành rập, tiết kiệm 50% thời gian lấy dấu và xóa mực nhũ.</li>\n  <li><strong>Nhìn xuyên thấu bề mặt tấm da:</strong> Da bò thật hay da cá sấu luôn có vùng vân đẹp, vùng bụng giãn hoặc vết sẹo tự nhiên. Rập Mica trong suốt giúp bạn đặt vị trí mặt tiền ví/túi ngay vùng vân đẹp nhất.</li>\n  <li><strong>Rãnh định vị lỗ khâu chuẩn xác:</strong> Các lỗ lấy dấu mũi dùi trên rập Mica được tia Laser CO2 khoan mịn, giúp đánh dấu đường may đồng đều tuyệt đối.</li>\n</ul>\n\n<h2>3. Lời khuyên kết hợp tối ưu chi phí cho người làm đồ da</h2>\n<p>Chiến lược được hơn 80% khách hàng tại <strong>RAPMAU.COM</strong> áp dụng là: <strong>Tải File PDF miễn phí về in nháp trước</strong> để ướm thử kích thước thực tế; sau khi ưng ý kiểu dáng mới đặt gia công <a href=\"/danh-muc/rap-vi-da\">Rập Giấy Cứng 350gsm hoặc Rập Mica 2mm</a> cho những mẫu bán chạy nhất của mình.</p>\n",
+      "faqs": [
+        {
+          "q": "Rập giấy cứng 350gsm và Rập Mica 2mm có đục sẵn lỗ khâu trên rập không?",
+          "a": "Có. Cả Rập giấy cứng Kraft 350gsm và Rập Mica 2mm tại RAPMAU.COM đều được máy cắt Laser CNC đục sẵn các lỗ tròn/rãnh định vị đường may và vị trí gắn nút bấm, khóa kéo theo đúng bản vẽ 1:1."
+        },
+        {
+          "q": "Thời gian gia công Rập Mica 2mm và Khuôn bế thép mất bao lâu?",
+          "a": "Rập giấy cứng 350gsm và Rập Mica 2mm được cắt Laser và gửi đi trong vòng 24h. Khuôn bế thép uốn lưỡi theo yêu cầu mất từ 2 - 4 ngày làm việc trước khi bàn giao."
+        }
+      ]
+    },
+    {
+      "id": "ART-03",
+      "slug": "nguoi-moi-hoc-lam-do-da-handmade-can-chuan-bi-dung-cu-gi",
+      "title": "Người Mới Bắt Đầu Học Làm Đồ Da Handmade Cần Chuẩn Bị Những Dụng Cụ Cơ Bản Nào? (Checklist Tiết Kiệm)",
+      "category": "Cẩm Nang Người Mới",
+      "readTime": "8 phút đọc",
+      "publishedAt": "2026-11-03",
+      "updatedAt": "2026-11-10",
+      "author": "Chuyên Gia Dụng Cụ Đạt Hưng & RAPMAU",
+      "image": "/assets/tools/phukien/pk-01.jpg",
+      "excerpt": "Danh sách 10 dụng cụ làm đồ da handmade cơ bản bắt buộc phải có cho người mới bắt đầu theo từng công đoạn: Cắt da, Dán keo, Đục lỗ, Khâu tay Saddle Stitch và Xử lý cạnh.",
+      "aeoQuestion": "Người mới bắt đầu học làm đồ da handmade cần mua những dụng cụ cơ bản nào?",
+      "aeoAnswer": "Người mới học làm đồ da handmade chỉ cần chuẩn bị 8–10 dụng cụ cơ bản chia theo 4 nhóm công đoạn: (1) Nhóm cắt & lấy dấu: Bảng tự liền A4, dao rọc giấy mũi 30 độ, thước thép, bút nhũ bạc; (2) Nhóm kết dính: Keo dán da và que phết keo; (3) Nhóm đục lỗ & khâu: Bộ đục trám 4mm (1-2-4-6 răng), búa cao su, tấm kê đục, kim khâu tù đầu và chỉ sáp 0.5mm; (4) Nhóm hoàn thiện cạnh: Ke tỉa viền, gọt cạnh, giấy nhám và gỗ đánh cạnh + sáp/se cạnh.",
+      "keyTakeaways": [
+        "Ngân sách khởi đầu tiết kiệm chỉ từ 260.000đ – 550.000đ với các Combo dụng cụ cơ bản ghép sẵn.",
+        "Không nên mua lẻ từng món rời rạc dễ thiếu hoặc lệch thông số giữa đục lỗ, kim và cỡ chỉ.",
+        "Ưu tiên bộ đục trám bước 4.0mm hoặc 3.38mm vì dễ đục xuyên da và hợp với hầu hết mẫu rập ví, túi.",
+        "Bắt buộc phải có tấm bảng cắt tự liền (Cutting Mat) và tấm nhựa kê đục để bảo vệ mũi dao, mũi đục không bị mẻ."
+      ],
+      "relatedCategorySlug": "rap-vi-da",
+      "relatedToolSkus": [
+        "PK-01",
+        "PK-03",
+        "PK-06",
+        "DH-13",
+        "DH-14"
+      ],
+      "contentHtml": "\n<h2>1. Checklist 10 dụng cụ làm đồ da cơ bản theo 4 công đoạn chuẩn</h2>\n<p>Nhiều bạn mới bắt đầu thường hoang mang trước hàng trăm món đồ nghề khác nhau. Thực tế, để hoàn thiện một chiếc ví da, bao thẻ hoặc túi xách từ rập, bạn chỉ cần đúng <strong>4 nhóm dụng cụ cốt lõi</strong> dưới đây:</p>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Công đoạn</th>\n        <th>Dụng cụ bắt buộc</th>\n        <th>Công dụng chính</th>\n        <th>Gợi ý thông số cho người mới</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>1. Lấy dấu &amp; Cắt phôi da</strong></td>\n        <td>Bảng tự liền, Dao mũi 30°, Thước thép, Bút nhũ bạc</td>\n        <td>Vẽ theo rập lên mặt da và cắt rời các chi tiết</td>\n        <td>Bảng A4/A3, Dao cán kim loại mũi 30 độ sắc bén</td>\n      </tr>\n      <tr>\n        <td><strong>2. Dán ghép &amp; Kẻ đường may</strong></td>\n        <td>Keo dán da (B7000 / Renia), Ke lấy dấu viền (Wing Divider)</td>\n        <td>Cố định mép da trước khi đục và kẻ đường thẳng cách mép 3–4mm</td>\n        <td>Keo tuýp B7000 110ml có đầu kim dễ tra keo mép nhỏ</td>\n      </tr>\n      <tr>\n        <td><strong>3. Đục lỗ &amp; Khâu tay</strong></td>\n        <td>Bộ đục lỗ (1-2-4-6 răng), Búa cao su, Tấm kê đục, Kim &amp; Chỉ sáp</td>\n        <td>Tạo hàng lỗ đều đặn và khâu khóa mũi đôi (Saddle Stitch)</td>\n        <td>Đục trám <code>4.0mm</code> + Chỉ sáp <code>0.5mm</code> + Kim John James</td>\n      </tr>\n      <tr>\n        <td><strong>4. Xử lý cạnh da</strong></td>\n        <td>Gọt cạnh (Edge Beveler), Gỗ mun đánh cạnh, Se cạnh / Sơn cạnh</td>\n        <td>Bo tròn mép da vuông góc, đánh bóng cạnh mượt và chống xơ</td>\n        <td>Gọt cạnh size #1 hoặc #2 + Se cạnh CMC / Tokonole</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>2. Top 3 Bộ Combo Dụng Cụ Cơ Bản tiết kiệm nhất tại RAPMAU.COM</h2>\n<p>Thay vì mua lẻ từng món tốn kém, bạn có thể chọn ngay các <strong>Bộ Combo Dụng Cụ Làm Đồ Da</strong> đã được kỹ thuật viên phối chuẩn thông số tại mục <a href=\"/#phu-kien-dung-cu\">Kho Dụng Cụ &amp; Nguyên Liệu Làm Đồ Da</a>:</p>\n<ul>\n  <li><strong>Bộ Dụng Cụ Cơ Bản Số 1 (260.000đ – Mã <code>PK-01</code>):</strong> Đầy đủ bảng cắt A4, bộ đục trám 4mm (4 cây), búa, kim, chỉ sáp, dao cắt, bút nhũ, thước và gỗ đánh cạnh — giải pháp tiết kiệm nhất để bắt đầu làm ví da, bao thẻ.</li>\n  <li><strong>Bộ Dụng Cụ Cơ Bản Số 3 (470.000đ – Mã <code>PK-03</code>):</strong> Bổ sung thêm tấm kê đục chuyên dụng, ke viền thép, gọt cạnh, đục lỗ tròn, bộ cúc bấm và giấy nhám.</li>\n  <li><strong>Bộ Dụng Cụ Cơ Bản Số 6 Full 24 Món (765.000đ – Mã <code>PK-06</code>):</strong> Bộ đầy đủ nhất cho người muốn làm từ ví da, dây đồng hồ đến túi xách, cặp da chuyên nghiệp.</li>\n</ul>\n\n<h2>3. 3 Sai lầm phổ biến của người mới khi mua dụng cụ làm đồ da</h2>\n<ol>\n  <li><strong>Dùng búa sắt đóng trực tiếp lên chuôi đục:</strong> Búa sắt làm tòe đầu đục và gây tiếng ồn lớn; hãy luôn dùng <em>búa cao su hoặc búa gỗ/nhựa Nylon</em>.</li>\n  <li><strong>Đục lỗ trực tiếp trên nền gạch hoặc mặt bàn gỗ cứng:</strong> Làm gãy hoặc cùn mũi răng đục ngay lần đầu; bắt buộc phải lót tấm nhựa kê đục (PP/Cao su vàng) bên dưới tấm da.</li>\n  <li><strong>Chọn sai kích thước kim và chỉ sáp so với bước đục:</strong> Dùng chỉ quá to cho lỗ đục nhỏ khiến đường chỉ bị cộm và rách lỗ da.</li>\n</ol>\n",
+      "faqs": [
+        {
+          "q": "Chi phí tối thiểu để bắt đầu học làm đồ da handmade tại nhà là bao nhiêu?",
+          "a": "Chỉ từ 260.000đ cho Bộ dụng cụ làm đồ da cơ bản số 1 (PK-01) kết hợp với kho 258+ file rập PDF miễn phí tại RAPMAU.COM và khoảng 100.000đ - 150.000đ da bò thật là bạn đã có thể tự tay hoàn thiện chiếc ví da hoặc bao thẻ đầu tiên."
+        },
+        {
+          "q": "Người mới nên chọn đục trám (thoi), đục xiên hay đục tròn?",
+          "a": "Người mới nên bắt đầu với Đục trám (Diamond Chisel) bước 4.0mm vì giá thành hợp lý, mũi nhọn dễ xuyên qua 2-3 lớp da dày và vẫn tạo được hiệu ứng đường chỉ nghiêng đẹp mắt khi khâu tay."
+        }
+      ]
+    },
+    {
+      "id": "ART-04",
+      "slug": "bang-quy-doi-buoc-duc-lo-3-0-3-38-4-0mm-va-co-chi-sap-khau-da",
+      "title": "Bảng Quy Đổi Bước Đục Lỗ Da (3.0mm, 3.38mm, 4.0mm, 5.0mm) Với Cỡ Chỉ Sáp & Kim Khâu Chuẩn Xưởng",
+      "category": "Kỹ Thuật Khâu Da",
+      "readTime": "6 phút đọc",
+      "publishedAt": "2026-11-04",
+      "updatedAt": "2026-11-10",
+      "author": "Nghệ Nhân Đồ Da Thủ Công RAPMAU.COM",
+      "image": "/assets/tools/dathung/dh-13-1.jpg",
+      "excerpt": "Bảng tra cứu chuẩn xác cách phối bước đục lỗ da (2.7mm, 3.0mm, 3.38mm, 3.85mm, 4.0mm, 5.0mm) với đường kính chỉ sáp tròn/dẹt (0.35mm - 0.8mm) và chiều dài chỉ cần cắt.",
+      "aeoQuestion": "Đục lỗ da 3.0mm, 3.38mm, 4.0mm thì dùng chỉ sáp cỡ bao nhiêu mm là chuẩn đẹp nhất?",
+      "aeoAnswer": "Quy tắc phối bước đục lỗ da và đường kính chỉ sáp chuẩn xưởng như sau: (1) Bước đục 2.7mm – 3.0mm dùng chỉ sáp 0.35mm – 0.45mm (phù hợp dây đồng hồ, ví nhỏ cao cấp); (2) Bước đục 3.38mm dùng chỉ sáp 0.45mm – 0.55mm (phù hợp ví da, clutch); (3) Bước đục 3.85mm – 4.0mm dùng chỉ sáp tròn 0.5mm – 0.65mm hoặc chỉ dẹt 0.6mm – 0.8mm (phù hợp túi xách, ví nam, thắt lưng); (4) Bước đục 5.0mm dùng chỉ 0.8mm – 1.0mm (balo, túi du lịch).",
+      "keyTakeaways": [
+        "Bước đục 3.0mm → Chỉ sáp 0.35mm – 0.45mm (Dây đồng hồ, Bao thẻ mảnh).",
+        "Bước đục 3.38mm → Chỉ sáp 0.45mm – 0.55mm (Ví da nam nữ, Clutch cầm tay).",
+        "Bước đục 4.0mm → Chỉ sáp tròn 0.50mm – 0.65mm hoặc chỉ dẹt 0.8mm (Túi đeo chéo, Cặp táp, Ví da).",
+        "Công thức tính chiều dài đoạn chỉ cần cắt = Chiều dài đường khâu × 3.5 đến 4 lần (đối với da dày thêm 4.5 lần)."
+      ],
+      "relatedCategorySlug": "rap-day-dong-ho",
+      "relatedToolSkus": [
+        "DH-13",
+        "DH-14",
+        "PK-22",
+        "PK-23"
+      ],
+      "contentHtml": "\n<h2>1. Bảng quy đổi Bước Đục Lỗ – Cỡ Chỉ Sáp – Cỡ Kim – Ứng Dụng</h2>\n<p>Đường chỉ khâu tay (<em>Saddle Stitch</em>) là linh hồn của sản phẩm đồ da handmade. Nếu chọn chỉ quá mảnh so với bước đục, lỗ đục sẽ bị hở trống; ngược lại chỉ quá dày sẽ làm chồng chéo nút thắt và phồng mép da. Hãy lưu lại bảng quy chuẩn dưới đây:</p>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Bước đục (Spacing)</th>\n        <th>Loại đục phổ biến</th>\n        <th>Cỡ chỉ sáp tròn</th>\n        <th>Cỡ chỉ sáp dẹt</th>\n        <th>Ứng dụng sản phẩm phù hợp nhất</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>2.7mm – 3.0mm</strong></td>\n        <td>Đục xiên Pháp / Đục trám nhỏ</td>\n        <td><code>0.35mm – 0.45mm</code></td>\n        <td><code>0.4mm – 0.5mm</code></td>\n        <td>Dây đồng hồ da, bao thẻ Card Holder siêu mỏng, ví cao cấp</td>\n      </tr>\n      <tr>\n        <td><strong>3.38mm (9 SPI)</strong></td>\n        <td>Đục xiên Pháp / Đục trám</td>\n        <td><code>0.45mm – 0.55mm</code></td>\n        <td><code>0.55mm – 0.65mm</code></td>\n        <td>Ví bóp nam nữ, ví dài, bao hộ chiếu, túi xách nữ thanh lịch</td>\n      </tr>\n      <tr>\n        <td><strong>3.85mm – 4.0mm</strong></td>\n        <td>Đục trám / Đục xiên / Đục tròn</td>\n        <td><code>0.50mm – 0.65mm</code></td>\n        <td><code>0.65mm – 0.80mm</code></td>\n        <td>Túi đeo chéo, cặp táp, thắt lưng, bao kính, ví da cá tính</td>\n      </tr>\n      <tr>\n        <td><strong>5.0mm – 6.0mm</strong></td>\n        <td>Đục lỗ tròn (1mm – 1.5mm)</td>\n        <td><code>0.80mm – 1.00mm</code></td>\n        <td><code>0.80mm – 1.20mm</code></td>\n        <td>Balo da lớn, túi trống du lịch, bao dao, đồ da bụi bặm</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>2. Công thức tính chiều dài sợi chỉ sáp trước khi xỏ kim</h2>\n<p>Khi khâu tay 2 kim, một câu hỏi kinh điển là: <em>\"Cắt đoạn chỉ dài bao nhiêu để không bị thiếu giữa chừng mà cũng không quá dài dễ rối?\"</em></p>\n<ul>\n  <li><strong>Với 2 lớp da mỏng (tổng độ dày dưới 2.5mm – ví dụ ngăn thẻ ví):</strong> Chiều dài chỉ = <code>3.5 × Chiều dài đường may</code> + <code>15cm</code> (đoạn dư để cầm kim khóa mũi).</li>\n  <li><strong>Với 2–3 lớp da trung bình (tổng độ dày 2.5mm – 4.5mm – ví dụ viền ngoài ví, túi xách):</strong> Chiều dài chỉ = <code>4.0 × Chiều dài đường may</code> + <code>15cm</code>.</li>\n  <li><strong>Với da dày hoặc đục lỗ tròn (trên 4.5mm – thắt lưng, quai túi):</strong> Chiều dài chỉ = <code>4.5 đến 5.0 × Chiều dài đường may</code>.</li>\n</ul>\n\n<h2>3. Gợi ý chọn Đục và Chỉ Sáp có sẵn tại RAPMAU.COM</h2>\n<p>Tại gian hàng dụng cụ của chúng tôi, bạn có thể đặt mua trực tiếp <a href=\"/#phu-kien-dung-cu\">Bộ Đục Lỗ Trám Thép Đen 3.0mm / 4.0mm (Mã DH-13)</a> kết hợp cùng <a href=\"/#phu-kien-dung-cu\">Chỉ Sáp Tròn 0.5mm Cao Cấp 110m (Mã DH-14)</a> để có đường chỉ sắc nét, đều tăm tắp ngay từ sản phẩm đầu tiên.</p>\n",
+      "faqs": [
+        {
+          "q": "Các file rập trên RAPMAU.COM đang thiết kế theo bước đục bao nhiêu mm?",
+          "a": "Đa số các mẫu rập túi xách, balo, ví da có chấm lỗ sẵn trên RAPMAU.COM sử dụng bước đục tiêu chuẩn 4.0mm (đối với đục tròn/đục trám phổ thông) hoặc có đường kẻ tâm liền mạch để bạn tự do dùng đục 3.0mm, 3.38mm hoặc 4.0mm tùy sở thích."
+        },
+        {
+          "q": "Nên dùng chỉ sáp tròn hay chỉ sáp dẹt khi khâu đồ da?",
+          "a": "Chỉ sáp tròn (0.45mm - 0.55mm) tạo đường chỉ nổi hạt thanh mảnh kiểu châu Âu (hợp với đục xiên 3.0mm - 3.38mm), còn chỉ sáp dẹt (0.6mm - 0.8mm) tạo bản chỉ dày dặn, ôm sát mặt da, rất hợp với đục trám 4.0mm và đục tròn."
+        }
+      ]
+    },
+    {
+      "id": "ART-05",
+      "slug": "cach-chon-da-bo-veg-tan-da-nappa-da-de-va-da-heo-lot-theo-mau-rap",
+      "title": "Cách Chọn Da Thuộc (Da Bò Veg-Tan Ý, Da Nappa, Da Dê, Da Heo Lót) & Độ Dày Da Chuẩn Theo Từng Mẫu Rập",
+      "category": "Kiến Thức Da Thuộc",
+      "readTime": "8 phút đọc",
+      "publishedAt": "2026-11-05",
+      "updatedAt": "2026-11-10",
+      "author": "Chuyên Gia Da Thuộc Đạt Hưng Leather",
+      "image": "/assets/tools/dathung/dh-01-1.jpg",
+      "excerpt": "Hướng dẫn phân biệt các dòng da thuộc phổ biến (Da bò Veg-Tan, Nappa, Saffiano, Epsom, Crazy Horse, Da dê Alran, Da heo lót) và bảng tra độ dày da (mm) chuẩn cho từng chi tiết ví, túi xách.",
+      "aeoQuestion": "Làm ví da, túi xách và dây đồng hồ nên chọn loại da thuộc nào và độ dày bao nhiêu mm?",
+      "aeoAnswer": "Độ dày và loại da thuộc chuẩn cho từng sản phẩm như sau: (1) Ví da nam/nữ: Mặt ngoài dùng da bò Veg-Tan, Epsom, Nappa hoặc Da dê dày 1.2mm – 1.6mm; ngăn thẻ bên trong dùng da dày 0.6mm – 0.8mm; da heo lót 0.5mm; (2) Túi xách & Clutch: Dùng da bò dày 1.6mm – 2.2mm (hoặc da 1.2mm bồi Salpa/Microfiber); (3) Thắt lưng & Quai túi: Dùng da bò Veg-Tan nguyên tấm dày 3.0mm – 4.0mm.",
+      "keyTakeaways": [
+        "Ví da (Bifold/Cardholder): Mặt ngoài 1.2–1.5mm, ngăn thẻ 0.6–0.8mm để khi gập không bị cộm dày.",
+        "Túi xách & Cặp da: Thân túi 1.6–2.2mm; nếu dùng da mềm (Nappa, da dê) cần bồi thêm cốt Salpa hoặc mút EVA.",
+        "Da bò Veg-Tan (thuộc thảo mộc): Đanh dẻo, dễ đánh bóng cạnh bằng nước/CMC, lên màu Patina theo thời gian.",
+        "Da bò Nappa / Da dê / Da Chrome-tan: Mềm mại, chống bám bẩn tốt, cần dùng sơn cạnh chuyên dụng khi hoàn thiện mép."
+      ],
+      "relatedCategorySlug": "rap-vi-da",
+      "relatedToolSkus": [
+        "DH-01",
+        "DH-02",
+        "DH-03",
+        "DH-05",
+        "DH-06"
+      ],
+      "contentHtml": "\n<h2>1. Bảng thông số độ dày da (mm) tiêu chuẩn cho từng dòng sản phẩm</h2>\n<p>Một bản vẽ rập chuẩn chỉ phát huy 100% vẻ đẹp khi bạn chọn đúng <strong>độ dày da (Thickness)</strong> và <strong>độ đanh dẻo (Temper)</strong> cho từng chi tiết:</p>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Sản phẩm / Chi tiết rập</th>\n        <th>Độ dày da mặt ngoài</th>\n        <th>Độ dày ngăn trong / Lót</th>\n        <th>Dòng da thuộc khuyên dùng</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Ví gập đôi (Bifold Wallet)</strong></td>\n        <td><code>1.2mm – 1.5mm</code></td>\n        <td>Ngăn thẻ: <code>0.6mm – 0.8mm</code><br>Lót heo: <code>0.4mm – 0.6mm</code></td>\n        <td>Da bò Veg-Tan Ý (mã <code>DH-03</code>), Epsom, Saffiano, Da dê (<code>DH-05</code>)</td>\n      </tr>\n      <tr>\n        <td><strong>Ví đựng thẻ (Card Holder)</strong></td>\n        <td><code>1.2mm – 1.4mm</code></td>\n        <td>Ngăn thẻ: <code>0.8mm – 1.0mm</code></td>\n        <td>Da bò Veg-Tan, Pueblo, Buttero, Da bò Nappa đanh</td>\n      </tr>\n      <tr>\n        <td><strong>Túi xách nữ / Clutch cầm tay</strong></td>\n        <td><code>1.4mm – 2.0mm</code></td>\n        <td>Lót da heo / da cừu: <code>0.5mm – 0.7mm</code></td>\n        <td>Da bò Nappa (<code>DH-02</code>), Da bò Hạt Togo, Da bò Epsom + Cốt Salpa</td>\n      </tr>\n      <tr>\n        <td><strong>Túi đeo chéo / Cặp táp / Balo</strong></td>\n        <td><code>1.8mm – 2.4mm</code></td>\n        <td>Vách ngăn: <code>1.0mm – 1.2mm</code></td>\n        <td>Da bò Sáp Ngựa Điên (Crazy Horse), Da bò Veg-Tan, Da bò Mill hạt</td>\n      </tr>\n      <tr>\n        <td><strong>Dây đồng hồ handmade</strong></td>\n        <td>Mặt trên: <code>1.2mm – 1.5mm</code></td>\n        <td>Lót Zermatt / Da bò: <code>0.8mm – 1.0mm</code></td>\n        <td>Da cá sấu, Da đà điểu, Da dê Alran, Da bò Veg-Tan kèm cốt độn</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>2. Phân biệt nhanh 4 dòng da thuộc có sẵn tại Kho Da Thuộc RAPMAU.COM</h2>\n<ul>\n  <li><strong>Da Bò Veg-Tan Ý (Thuộc thảo mộc – Mã <code>DH-03</code>):</strong> Được thuộc tự nhiên từ tannin vỏ cây, thớ da đanh chắc, giữ form cực tốt, có thể chạm khắc (carving), nhuộm màu thủ công và đánh bóng cạnh mượt như gương chỉ bằng sáp ong hoặc CMC.</li>\n  <li><strong>Da Bò Nappa Cao Cấp (Mã <code>DH-02</code>):</strong> Bề mặt mịn màng, dẻo dai, ít nhăn, màu sắc hiện đại. Cực kỳ thích hợp làm túi xách, ví mềm, bao kính và phụ kiện thời trang.</li>\n  <li><strong>Da Dê Thuộc Cao Cấp (Goat Leather – Mã <code>DH-05</code>):</strong> Vân hạt tự nhiên sang trọng, mỏng nhẹ nhưng chịu lực kéo cực cao, chống trầy xước tốt, chuyên dùng cho nội thất ví cao cấp và túi nữ.</li>\n  <li><strong>Da Heo Lót &amp; Da Cừu Lót (Mã <code>DH-06</code>, <code>DH-08</code>):</strong> Giải pháp lót mặt trong ví, túi xách và giày da giúp sản phẩm sạch sẽ, sang trọng mà không làm tăng độ dày tổng thể.</li>\n</ul>\n",
+      "faqs": [
+        {
+          "q": "Người mới tập làm đồ da nên mua da nguyên tấm theo Pia hay mua da tấm lẻ cắt sẵn?",
+          "a": "Người mới nên bắt đầu bằng 'Combo Da Bò Thật Tấm Nhỏ Nhiều Màu' (Mã DH-01 giá chỉ từ 25.000đ) hoặc mua lẻ từ 2-3 Pia da bò Veg-Tan/Nappa để tập cắt, đục và khâu trước khi đầu tư nguyên con da lớn."
+        },
+        {
+          "q": "Tại sao khi làm ví da từ rập chuẩn mà ví gập lại bị phồng và cộm dày?",
+          "a": "Nguyên nhân 90% là do bạn dùng da dày trên 1.4mm cho cả các ngăn đựng thẻ xếp chồng lên nhau (4-6 lớp ngăn thẻ x 1.4mm = 8mm mỗi bên). Hãy lạng mỏng mép da (skiving) hoặc chọn da dày 0.6mm - 0.8mm cho phần ngăn thẻ bên trong."
+        }
+      ]
+    },
+    {
+      "id": "ART-06",
+      "slug": "quy-trinh-7-buoc-lam-vi-da-handmade-tu-ban-ve-rap-den-hoan-thien-son-canh",
+      "title": "Quy Trình 7 Bước Tự Làm Ví Da Handmade Tại Nhà Từ Bản Vẽ Rập 1:1 Đến Đánh Bóng & Sơn Cạnh",
+      "category": "Hướng Dẫn Thực Hành",
+      "readTime": "9 phút đọc",
+      "publishedAt": "2026-11-06",
+      "updatedAt": "2026-11-10",
+      "author": "Kỹ Sư Thiết Kế Rập RAPMAU.COM",
+      "image": "/assets/tools/dc-04-kim-chi-sap.svg",
+      "excerpt": "Hướng dẫn thực hành từng bước quy trình 7 bước làm ví da handmade chuẩn xưởng tại nhà: Từ in rập 1:1, cắt phôi da, lạng mỏng mép, dán keo, đục lỗ, khâu Saddle Stitch đến xử lý cạnh.",
+      "aeoQuestion": "Quy trình làm một chiếc ví da handmade từ bản vẽ rập gồm mấy bước?",
+      "aeoAnswer": "Quy trình tiêu chuẩn để hoàn thiện một chiếc ví da handmade từ bản vẽ rập gồm 7 bước theo thứ tự: (1) In rập tỷ lệ 1:1 và cắt bộ rập; (2) Áp rập lấy dấu bằng bút nhũ và cắt phôi da bằng dao 30 độ; (3) Lạng mỏng mép da (Skiving) và đánh bóng trước những cạnh khuất (ngăn thẻ); (4) Bôi keo dán da và ép khít các chi tiết theo thứ tự từ trong ra ngoài; (5) Kẻ đường biên và đục lỗ thẳng góc 90 độ; (6) Khâu tay 2 kim Saddle Stitch và gõ phẳng đường chỉ; (7) Gọt cạnh, chà nhám và đánh bóng cạnh (hoặc sơn cạnh).",
+      "keyTakeaways": [
+        "Luôn xử lý cạnh (gọt cạnh + đánh bóng/sơn) cho miệng các ngăn thẻ TRƯỚC khi dán ráp vào thân ví.",
+        "Cầm cây đục lỗ vuông góc 90 độ với mặt da để mặt sau không bị lệch hàng lỗ.",
+        "Sau khi khâu xong một đường chỉ, dùng búa gõ nhẹ dọc đường may để sợi chỉ sáp lún đều vào rãnh da.",
+        "Chà nhám từ độ nhám #240 → #400 → #800 → #1000 cùng kem se cạnh tạo nên phần viền bóng mượt như gương."
+      ],
+      "relatedCategorySlug": "rap-vi-da",
+      "relatedToolSkus": [
+        "PK-03",
+        "DH-13",
+        "DH-15",
+        "DH-16"
+      ],
+      "contentHtml": "\n<h2>Quy trình 7 bước chế tác ví da handmade chuẩn xưởng</h2>\n<h3>Bước 1: Chuẩn bị bản rập tỷ lệ 1:1</h3>\n<p>Tải mẫu rập yêu thích tại chuyên mục <a href=\"/danh-muc/rap-vi-da\">Rập Ví Da (55 mẫu miễn phí)</a>. Kiểm tra số lượng từng chi tiết ghi trên bản vẽ (ví dụ: <code>Thân ngoài ×1</code>, <code>Thân trong ×1</code>, <code>Ngăn thẻ chữ T ×4</code>, <code>Ngăn ẩn ×2</code>).</p>\n\n<h3>Bước 2: Lấy dấu và cắt phôi da vuông góc</h3>\n<p>Đặt rập lên tấm da, dùng bút nhũ bạc lấy dấu viền. Khi cắt bằng dao rọc giấy mũi 30°, luôn giữ lưỡi dao <strong>vuông góc 90° với mặt tấm da</strong> (nếu nghiêng dao sẽ làm mép da bị vát chéo, khi ghép cạnh sẽ bị hở).</p>\n\n<h3>Bước 3: Lạng mỏng mép (Skiving) &amp; Xử lý sớm các cạnh khuất</h3>\n<p>Dùng dao lạng mỏng phần chân chữ T của ngăn thẻ xuống còn khoảng <code>0.4mm</code> để khi xếp 3–4 tầng thẻ không bị cộm. Đặc biệt, hãy <strong>đánh bóng hoặc sơn cạnh miệng ngăn thẻ ngay ở bước này</strong> vì sau khi dán vào ví sẽ không thể chà cạnh được nữa.</p>\n\n<h3>Bước 4: Dán keo định vị bằng Keo Renia hoặc B7000</h3>\n<p>Nhám nhẹ <code>3mm</code> mép da cần dán để tạo độ bám, phết một lớp mỏng <a href=\"/#phu-kien-dung-cu\">Keo Dán Da Renia Italy (Mã DH-16) hoặc Keo B7000 (Mã DH-15)</a>, đợi 2–3 phút cho keo se mặt rồi ép chặt hai mép da.</p>\n\n<h3>Bước 5: Kẻ đường biên &amp; Đục lỗ khâu</h3>\n<p>Dùng ke viền kẻ một đường cách mép da <code>3.0mm – 3.5mm</code>. Đặt đục lỗ thẳng đứng 90°, khi chuyển sang nhịp đục tiếp theo hãy <strong>cài lại 2 răng đục cuối vào 2 lỗ vừa đục trước đó</strong> để hàng lỗ luôn thẳng tắp.</p>\n\n<h3>Bước 6: Khâu tay 2 kim (Saddle Stitch)</h3>\n<p>Xỏ 2 đầu sợi chỉ sáp vào 2 cây kim đầu tù. Thực hiện động tác khâu chéo đều tay (kim trái đi trước, kim phải đi sau theo đúng một quy luật duy nhất từ đầu đến cuối đường may). Kết thúc đường may bằng cách khâu lùi 2–3 mũi rồi hơ nhẹ đầu chỉ sáp.</p>\n\n<h3>Bước 7: Hoàn thiện cạnh da (Edge Finishing)</h3>\n<p>Dùng gọt cạnh (Edge Beveler) vát nhẹ góc nhọn 2 bên mép da. Nếu dùng da Veg-Tan: bôi kem se cạnh rồi dùng thanh gỗ mun chà nhanh kết hợp giấy nhám mịn tăng dần từ <code>#400 → #1000</code>. Nếu dùng da Nappa/Epsom: bôi sơn lót cạnh, xả nhám mịn rồi phủ 2–3 lớp sơn màu cạnh.</p>\n",
+      "faqs": [
+        {
+          "q": "Làm sao để mặt sau tấm da khi đục lỗ không bị ngoằn ngoèo lệch hàng?",
+          "a": "Mặt sau bị lệch là do cây đục bị nghiêng sang trái hoặc phải khi gõ búa. Hãy đặt tấm da ngay trước tầm mắt, giữ thân đục vuông góc 90 độ theo cả 2 phương (trước-sau và trái-phải), đồng thời nếu tổng các lớp da quá dày (>3mm), hãy đục riêng từng mặt theo lỗ định vị trên rập rồi mới dán ghép."
+        },
+        {
+          "q": "Mất bao lâu để người mới hoàn thành chiếc ví da đầu tiên?",
+          "a": "Với bản vẽ rập 1:1 có sẵn tại RAPMAU.COM, một người mới chỉ mất khoảng 1.5 - 2 giờ cho mẫu Bao thẻ (Card Holder) và khoảng 3 - 4 giờ cho mẫu Ví gập đôi (Bifold Wallet)."
+        }
+      ]
+    },
+    {
+      "id": "ART-07",
+      "slug": "cach-tinh-dien-tich-da-thuoc-pia-sf-can-mua-cho-vi-da-tui-xach",
+      "title": "1 Pia (SF) Da Bằng Bao Nhiêu Cm²? Công Thức Tính Diện Tích Da Thuộc Cần Mua Cho Ví, Túi Xách & Thắt Lưng",
+      "category": "Kiến Thức Da Thuộc",
+      "readTime": "5 phút đọc",
+      "publishedAt": "2026-11-07",
+      "updatedAt": "2026-11-10",
+      "author": "Chuyên Gia Da Thuộc Đạt Hưng Leather",
+      "image": "/assets/tools/dathung/dh-03-1.jpg",
+      "excerpt": "Giải đáp 1 Pia da (1 Square Foot - SF) bằng bao nhiêu cm2 và bảng định mức số Pia da bò, da dê cần mua chính xác để làm ví nam, ví dài, túi đeo chéo, cặp táp, balo không bị thiếu hoặc lãng phí.",
+      "aeoQuestion": "1 Pia (1 SF) da thuộc bằng bao nhiêu cm2 và làm 1 chiếc ví hay túi xách hết bao nhiêu Pia da?",
+      "aeoAnswer": "Trong ngành da thuộc, 1 Pia (viết tắt là 1 SF – Square Foot) tương đương một hình vuông kích thước 30.48cm × 30.48cm, tức bằng khoảng 929 cm² (thường làm tròn là 30cm × 30cm = 900 cm²). Định mức da trung bình gồm cả hao hụt: Bao thẻ cần 1–1.5 Pia; Ví gập đôi cần 2.5–3.5 Pia; Ví dài/Clutch cần 4–6 Pia; Túi đeo chéo nữ cần 7–10 Pia; Cặp công sở hoặc Balo cần 15–22 Pia.",
+      "keyTakeaways": [
+        "1 Pia da = 1 Square Foot (1 SF) ≈ 30cm × 30cm = 900 cm² (chính xác 929.03 cm²).",
+        "Công thức tính số Pia từ bản rập: Tổng diện tích các mảnh rập (cm²) ÷ 900 × 1.25 (hệ số hao hụt 25%).",
+        "Làm 1 chiếc ví gập đôi (Bifold) cần khoảng 3 Pia da (tương đương tấm 30cm × 90cm hoặc 45cm × 60cm).",
+        "Làm 1 chiếc túi xách đeo chéo trung bình cần từ 7 – 12 Pia da tùy thiết kế dây đeo và vách ngăn."
+      ],
+      "relatedCategorySlug": "rap-tui-xach",
+      "relatedToolSkus": [
+        "DH-02",
+        "DH-03",
+        "DH-04",
+        "DH-05"
+      ],
+      "contentHtml": "\n<h2>1. Đơn vị \"Pia\" (SF) trong mua bán da thuộc là gì?</h2>\n<p>Do tấm da bò, da dê hay da cừu tự nhiên có hình dáng uốn lượn không vuông vức như vải dệt, ngành thuộc da thế giới sử dụng đơn vị diện tích <strong>Square Foot (ký hiệu: SF)</strong>, tại Việt Nam các xưởng quen gọi là <strong>\"Pia\"</strong>:</p>\n<ul>\n  <li><code>1 Pia (1 SF) = 30.48 cm × 30.48 cm = 929.03 cm²</code> (Thực tế dễ hình dung nhất là <strong>1 ô gạch 30cm × 30cm = 900 cm²</strong>).</li>\n  <li><code>10 Pia da ≈ 0.93 m²</code> (gần bằng 1 mét vuông da).</li>\n  <li>Một tấm <strong>da dê thuộc</strong> thường rộng từ <code>4 – 7 Pia</code>; một tấm <strong>da cừu/da heo</strong> từ <code>7 – 12 Pia</code>; và một <strong>nửa con da bò (Side)</strong> thường từ <code>18 – 26 Pia</code>.</li>\n</ul>\n\n<h2>2. Bảng định mức số Pia da cần chuẩn bị theo từng danh mục Rập</h2>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Loại sản phẩm trên RAPMAU.COM</th>\n        <th>Diện tích rập tịnh</th>\n        <th>Số Pia da cần mua (Đã tính hao hụt 20–25%)</th>\n        <th>Kích thước tấm da gợi ý</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Bao thẻ (Card Holder) / Móc khóa</strong></td>\n        <td>450 – 800 cm²</td>\n        <td><strong>1.0 – 1.5 Pia</strong></td>\n        <td>30 × 30cm hoặc 30 × 45cm</td>\n      </tr>\n      <tr>\n        <td><strong>Ví gập đôi nam/nữ (Bifold Wallet)</strong></td>\n        <td>1.800 – 2.400 cm²</td>\n        <td><strong>2.5 – 3.5 Pia</strong></td>\n        <td>30 × 90cm hoặc 45 × 60cm</td>\n      </tr>\n      <tr>\n        <td><strong>Ví dài (Long Wallet) / Clutch cầm tay</strong></td>\n        <td>3.200 – 4.500 cm²</td>\n        <td><strong>4.5 – 6.0 Pia</strong></td>\n        <td>60 × 90cm</td>\n      </tr>\n      <tr>\n        <td><strong>Túi đeo chéo / Túi xách nữ cỡ vừa</strong></td>\n        <td>5.500 – 8.500 cm²</td>\n        <td><strong>7.5 – 11.0 Pia</strong></td>\n        <td>75 × 100cm (hoặc 2 tấm da dê)</td>\n      </tr>\n      <tr>\n        <td><strong>Cặp táp công sở / Balo da / Túi trống</strong></td>\n        <td>11.000 – 16.500 cm²</td>\n        <td><strong>15.0 – 22.0 Pia</strong></td>\n        <td>Nguyên tấm nửa con da bò (18–22 Pia)</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>3. Cách tự tính chính xác lượng da ngay sau khi tải Rập PDF</h2>\n<p>Sau khi tải file PDF miễn phí trên <strong>RAPMAU.COM</strong>, bạn chỉ cần đếm số trang A4 chứa các chi tiết rập:</p>\n<p><strong>Mẹo tính nhanh:</strong> 1 tờ giấy A4 (<code>21cm × 29.7cm = 623 cm²</code>) tương đương khoảng <strong>0.7 Pia da</strong>. Như vậy, nếu bộ rập của bạn trải đều trên <strong>4 trang giấy A4</strong>, bạn cần mua khoảng <code>4 × 0.7 × 1.25 (hao hụt khoảng trống) ≈ 3.5 Pia da</code>.</p>\n",
+      "faqs": [
+        {
+          "q": "Tại sao phải cộng thêm 20% - 25% hao hụt khi tính diện tích da thuộc?",
+          "a": "Vì các chi tiết rập có hình chữ T, bo góc hoặc dải dài (như dây đeo), khi xếp lên tấm da tự nhiên sẽ có những khoảng trống giữa các chi tiết và vùng rìa bụng da không sử dụng được. Cộng thêm 20-25% giúp bạn không bị thiếu da giữa chừng."
+        },
+        {
+          "q": "RAPMAU.COM có bán lẻ da thuộc theo từng Pia không?",
+          "a": "Có! Trong mục Nguyên Liệu Da Thuộc, bạn có thể đặt mua lẻ từng Pia (từ 45.000đ - 95.000đ/Pia cho Da bò Nappa, Da bò Veg-Tan Ý, Da dê, Da cừu, Da heo lót) hoặc mua theo tấm nhỏ cắt sẵn rất tiện lợi."
+        }
+      ]
+    },
+    {
+      "id": "ART-08",
+      "slug": "cach-su-dung-keo-dan-da-b7000-keo-renia-va-dau-duong-leather-balm",
+      "title": "Kỹ Thuật Dán Mép Da Bằng Keo Renia Italy, Keo B7000 & Bảo Dưỡng Đồ Da Bằng Dầu Dưỡng Leather Balm",
+      "category": "Hoàn Thiện & Bảo Dưỡng",
+      "readTime": "6 phút đọc",
+      "publishedAt": "2026-11-08",
+      "updatedAt": "2026-11-10",
+      "author": "Chuyên Gia Dụng Cụ Đạt Hưng & RAPMAU",
+      "image": "/assets/tools/dathung/dh-16-1.jpg",
+      "excerpt": "Hướng dẫn phân biệt và sử dụng đúng kỹ thuật Keo dán da Renia Colle De Cologne (Đức/Ý), Keo trong suốt B7000 đầu kim, Keo sữa Ecostick và cách dưỡng bóng chống mốc đồ da bằng Leather Balm.",
+      "aeoQuestion": "Nên dùng keo dán da loại nào tốt nhất và cách bôi keo không bị lem bẩn mặt da?",
+      "aeoAnswer": "Trong làm đồ da handmade, 2 loại keo tốt và tiện dụng nhất là: (1) Keo Renia / Keo vàng chuyên dụng (dán tiếp xúc 2 mặt cho lực kết dính cực mạnh, đàn hồi tốt, phù hợp dán lót toàn bề mặt, đế giày, quai túi chịu lực); và (2) Keo trong suốt B7000 có vòi kim nhỏ (phù hợp tra chính xác vào đường biên 2–3mm của ngăn thẻ ví, dây đồng hồ mà không lo lem vàng mặt da). Sau khi hoàn thiện sản phẩm, thoa một lớp mỏng dầu dưỡng Leather Balm giúp da mềm bóng và chống ẩm mốc.",
+      "keyTakeaways": [
+        "Keo Renia (Mã DH-16): Bôi mỏng lên CẢ 2 MẶT cần dán, chờ 3–5 phút cho keo se khô rồi mới áp vào nhau và gõ búa.",
+        "Keo B7000 (Mã DH-15): Có đầu kim inox siêu nhỏ, keo trong suốt, dễ lau sạch nếu lỡ lem ra mặt da.",
+        "Luôn dùng nhám hoặc mũi dao cạo xước nhẹ bề mặt da trơn (Grain side) tại vùng mép dán để keo bám chắc gấp 3 lần.",
+        "Dầu dưỡng Leather Balm (Mã DH-17) cấp ẩm cho sợi collagen của da thật, xóa vết xước dăm trên da sáp và da Veg-Tan."
+      ],
+      "relatedCategorySlug": "rap-vi-da",
+      "relatedToolSkus": [
+        "DH-15",
+        "DH-16",
+        "DH-17",
+        "PK-29"
+      ],
+      "contentHtml": "\n<h2>1. So sánh Keo Renia, Keo B7000 và Keo Sữa Gốc Nước</h2>\n<div class=\"article-table-wrap\">\n  <table class=\"article-table\">\n    <thead>\n      <tr>\n        <th>Loại keo dán da</th>\n        <th>Đặc tính kết dính</th>\n        <th>Cách sử dụng chuẩn</th>\n        <th>Ứng dụng tốt nhất</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Keo Renia Italy / Đức</strong><br>(Mã <code>DH-16</code>)</td>\n        <td>Keo tiếp xúc (Contact Cement), siêu dính, đàn hồi cao, chịu nhiệt</td>\n        <td>Bôi mỏng cả 2 mặt → Đợi 3–5 phút se khô → Ép mạnh</td>\n        <td>Dán bồi lót ví/túi, dán dây đồng hồ, thắt lưng, đế giày da</td>\n      </tr>\n      <tr>\n        <td><strong>Keo B7000 Đầu Kim</strong><br>(Mã <code>DH-15</code>)</td>\n        <td>Keo gel trong suốt, có vòi kim 1mm kiểm soát lượng keo cực dễ</td>\n        <td>Tra 1 đường mảnh 2mm sát mép → Đợi 1 phút → Kẹp cố định</td>\n        <td>Dán định vị mép ngăn thẻ ví, chi tiết nhỏ trước khi đục lỗ khâu</td>\n      </tr>\n      <tr>\n        <td><strong>Keo Sữa Gốc Nước</strong><br>(Ecostick / S301)</td>\n        <td>Không mùi, thân thiện môi trường, khô chậm hơn keo dung môi</td>\n        <td>Phết bằng que nhựa mỏng → Đợi chuyển sang màu trong → Dán</td>\n        <td>Làm việc trong phòng kín máy lạnh, dán da thuộc thảo mộc</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2>2. 4 Bí quyết dán mép da phẳng đẹp, đánh cạnh không lộ vệt keo</h2>\n<ol>\n  <li><strong>Chỉ bôi keo trong phạm vi đường đục lỗ (rộng 2.5mm – 3.5mm):</strong> Nếu bôi keo tràn sâu vào lòng ngăn thẻ, thẻ ATM khi đút vào sẽ bị dính keo hoặc không lọt hết ngăn.</li>\n  <li><strong>Không bôi lớp keo quá dày:</strong> Lớp keo dày sẽ tạo thành một vệt đen/vàng ở giữa 2 lớp da khi bạn gọt cạnh và đánh bóng. Hãy dùng que nhựa gạt thật mỏng.</li>\n  <li><strong>Tạo nhám khi dán mặt da trơn (Grain) với mặt thịt (Flesh):</strong> Ở các bậc xếp ngăn thẻ chữ T, mặt thịt dán lên mặt trơn rất dễ bong nếu không dùng bút nhám hoặc dao rọc giấy cạo xước nhẹ phần mép mặt trơn <code>3mm</code>.</li>\n  <li><strong>Dùng con lăn ép da hoặc búa cao su gõ đều sau khi dán:</strong> Keo tiếp xúc phát huy lực dính theo <em>áp lực ép tức thời</em> chứ không phải thời gian giữ lâu.</li>\n</ol>\n\n<h2>3. Quy trình bảo dưỡng thành phẩm bằng Dầu Dưỡng Leather Balm (Mã DH-17)</h2>\n<p>Trong quá trình chế tác (cắt, đục, khâu, chà nhám), bề mặt da thường bị khô hoặc bám bụi. Trước khi đóng gói giao cho khách hàng:</p>\n<ul>\n  <li>Dùng khăn cotton mềm lấy một lượng nhỏ <a href=\"/#phu-kien-dung-cu\">Dầu Dưỡng Đồ Da Leather Balm (Mã DH-17)</a> thoa đều theo vòng tròn.</li>\n  <li>Để dưỡng chất thấm tự nhiên trong 5–10 phút, sau đó dùng bàn chải lông ngựa hoặc khăn khô đánh bóng lại. Bề mặt da sẽ lập tức lên màu sâu, mềm mại và có lớp màng sáp tự nhiên chống bám nước nhẹ.</li>\n</ul>\n",
+      "faqs": [
+        {
+          "q": "Nếu lỡ làm keo Renia hoặc B7000 lem ra mặt ngoài tấm da thì tẩy bằng cách nào?",
+          "a": "Đừng lau ngay khi keo còn ướt vì sẽ làm keo loang rộng hơn. Hãy đợi 3-5 phút cho vết keo se khô lại thành màng dẻo, sau đó dùng cục tẩy cao su sống (Crepe Eraser) hoặc đầu ngón tay miết nhẹ là lớp keo sẽ cuộn tròn và bong sạch khỏi mặt da."
+        },
+        {
+          "q": "Đã dùng keo dán da siêu dính rồi thì có cần khâu chỉ nữa không?",
+          "a": "Có. Trong đồ da thủ công, keo có vai trò giữ cố định mép da không xê dịch khi đục lỗ và làm kín khít 2 lớp da để đánh cạnh đẹp, còn đường chỉ khâu Saddle Stitch mới là kết cấu chịu lực vĩnh viễn theo năm tháng."
+        }
+      ]
+    }
   ]
 }

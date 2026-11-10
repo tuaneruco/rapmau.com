@@ -1,4 +1,4 @@
-const CMS_OVERRIDE_KEY = 'rapmau_cms_catalog_override_v3';
+const CMS_OVERRIDE_KEY = 'rapmau_cms_catalog_override_v4';
 const ADMIN_SESSION_KEY = 'rapmau_admin_auth_session_v2';
 const ADMIN_CUSTOM_CRED_KEY = 'rapmau_admin_custom_cred';
 const DEFAULT_ADMIN_USERS = ['admin', 'tuaneruco'];
@@ -69,6 +69,7 @@ const adminState = {
   categories: [],
   accessories: [],
   freeBooks: [],
+  articles: [],
   vendors: [],
   orders: [],
   consultations: [],
@@ -332,6 +333,7 @@ function applyRolePermissionsToUI() {
   const navBtnTools = document.getElementById('navBtnTools');
   const navBtnVendors = document.getElementById('navBtnVendors');
   const navBtnBooks = document.getElementById('navBtnBooks');
+  const navBtnArticles = document.getElementById('navBtnArticles');
   const fullSiteSettingsForm = document.getElementById('fullSiteSettingsForm');
   const adminLeadsCard = document.getElementById('adminLeadsCard');
   const vendorFilterSel = document.getElementById('adminToolVendorFilter');
@@ -363,6 +365,7 @@ function applyRolePermissionsToUI() {
     if (toolFormVendorRow) toolFormVendorRow.classList.add('hidden');
     if (navBtnVendors) navBtnVendors.classList.add('hidden');
     if (navBtnBooks) navBtnBooks.classList.add('hidden');
+    if (navBtnArticles) navBtnArticles.classList.add('hidden');
     if (fullSiteSettingsForm) fullSiteSettingsForm.classList.add('hidden');
     if (adminLeadsCard) adminLeadsCard.classList.add('hidden');
 
@@ -392,6 +395,7 @@ function applyRolePermissionsToUI() {
     if (navBtnTools) navBtnTools.classList.remove('hidden');
     if (navBtnVendors) navBtnVendors.classList.remove('hidden');
     if (navBtnBooks) navBtnBooks.classList.remove('hidden');
+    if (navBtnArticles) navBtnArticles.classList.remove('hidden');
     if (fullSiteSettingsForm) fullSiteSettingsForm.classList.remove('hidden');
     if (adminLeadsCard) adminLeadsCard.classList.remove('hidden');
 
@@ -536,6 +540,7 @@ async function initAdmin() {
   adminState.categories = catData.categories || [];
   adminState.accessories = catData.accessories || [];
   adminState.freeBooks = catData.freeBooks || [];
+  adminState.articles = catData.articles || [];
   adminState.vendors =
     catData.vendors && catData.vendors.length ? catData.vendors : DEFAULT_VENDORS_FALLBACK;
   adminState.orders = Array.from(orderMap.values());
@@ -548,6 +553,7 @@ async function initAdmin() {
   renderPatternsTable();
   renderToolsTable();
   renderBooksTable();
+  renderArticlesTable();
   renderOrdersAndLeads();
   renderVendorsTable();
   populateSiteSettings();
@@ -591,6 +597,8 @@ function renderKPIs() {
   document.getElementById('sideCountBooks').textContent = adminState.freeBooks.length;
   const sideVendors = document.getElementById('sideCountVendors');
   if (sideVendors) sideVendors.textContent = adminState.vendors.filter((v) => v.role === 'vendor').length;
+  const sideArticles = document.getElementById('sideCountArticles');
+  if (sideArticles) sideArticles.textContent = (adminState.articles || []).length;
 
   const site = adminState.catalog.site || {};
   document.getElementById('topHotlineText').textContent =
@@ -893,6 +901,38 @@ function renderBooksTable() {
               👁️ Xem
             </a>
             <button type="button" class="btn-danger-sm" data-delete-book="${b.id}">🗑️ Xoá</button>
+          </div>
+        </td>
+      </tr>
+    `
+    )
+    .join('');
+}
+
+function renderArticlesTable() {
+  const tbody = document.getElementById('adminArticlesTableBody');
+  if (!tbody) return;
+  const articles = adminState.articles || [];
+  tbody.innerHTML = articles
+    .map(
+      (a) => `
+      <tr>
+        <td><strong>${a.id}</strong></td>
+        <td>
+          <strong style="color:var(--bg-saddle);">${a.title}</strong>
+          <div style="font-size:11.5px; color:var(--text-muted);">
+            URL: <a href="/bai-viet/${a.slug}" target="_blank" style="color:var(--accent-leather);">/bai-viet/${a.slug}</a>
+          </div>
+        </td>
+        <td><span class="size-badge">${a.category || 'Cẩm Nang'}</span></td>
+        <td style="max-width:310px; font-size:12px; color:#334155;">
+          ${(a.aeoAnswer || a.excerpt || '').slice(0, 140)}...
+        </td>
+        <td>
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button type="button" class="btn-edit-sm" data-edit-art="${a.id}">✏️ Sửa</button>
+            <a href="/bai-viet/${a.slug}" target="_blank" class="btn-sm btn-detail" style="text-decoration:none;">👁️ Xem</a>
+            <button type="button" class="btn-danger-sm" data-del-art="${a.id}">🗑️ Xoá</button>
           </div>
         </td>
       </tr>
@@ -1906,6 +1946,138 @@ function bindAdminEvents() {
       showToast(`🗑️ Đã xoá sách [${id}]!`);
     }
   });
+
+  // ==================== TAB 4C: QUẢN LÝ BÀI VIẾT SEO & AEO ====================
+  const articlesTbody = document.getElementById('adminArticlesTableBody');
+  const articleForm = document.getElementById('articleCmsForm');
+  const resetArtBtn = document.getElementById('btnResetArticleForm');
+
+  if (resetArtBtn && articleForm) {
+    resetArtBtn.addEventListener('click', () => {
+      articleForm.reset();
+      document.getElementById('artFormId').value = '';
+      document.getElementById('articleFormHeading').textContent = '➕ Thêm / Chỉnh Sửa Bài Viết SEO & AEO';
+    });
+  }
+
+  if (articlesTbody) {
+    articlesTbody.addEventListener('click', async (e) => {
+      const editBtn = e.target.closest('[data-edit-art]');
+      if (editBtn) {
+        const art = (adminState.articles || []).find((a) => a.id === editBtn.dataset.editArt);
+        if (!art) return;
+        document.getElementById('artFormId').value = art.id;
+        document.getElementById('artFormTitle').value = art.title || '';
+        document.getElementById('artFormCategory').value = art.category || 'Kỹ Thuật Rập & Bản Vẽ';
+        document.getElementById('artFormAeoQuestion').value = art.aeoQuestion || '';
+        document.getElementById('artFormAeoAnswer').value = art.aeoAnswer || '';
+        document.getElementById('artFormExcerpt').value = art.excerpt || '';
+        document.getElementById('artFormContentHtml').value = art.contentHtml || '';
+        document.getElementById('articleFormHeading').textContent = `✏️ Đang sửa bài viết [${art.id}]`;
+        articleForm?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      const delBtn = e.target.closest('[data-del-art]');
+      if (delBtn) {
+        const id = delBtn.dataset.delArt;
+        const art = (adminState.articles || []).find((a) => a.id === id);
+        if (!window.confirm(`Bạn có chắc muốn XOÁ bài viết [${id}] "${art?.title || ''}"?`)) return;
+        adminState.articles = (adminState.articles || []).filter((a) => a.id !== id);
+        adminState.catalog.articles = adminState.articles;
+        try {
+          await fetch(`/api/article/${encodeURIComponent(id)}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+          });
+        } catch {
+          // offline
+        }
+        syncCatalogStatsAndPersistLocal();
+        renderKPIs();
+        renderArticlesTable();
+        showToast(`🗑️ Đã xoá bài viết [${id}]!`);
+      }
+    });
+  }
+
+  if (articleForm) {
+    articleForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const existingId = document.getElementById('artFormId').value.trim();
+      const payload = {
+        id: existingId || `ART-${String((adminState.articles?.length || 0) + 1).padStart(2, '0')}`,
+        title: document.getElementById('artFormTitle').value.trim(),
+        category: document.getElementById('artFormCategory').value,
+        aeoQuestion: document.getElementById('artFormAeoQuestion').value.trim(),
+        aeoAnswer: document.getElementById('artFormAeoAnswer').value.trim(),
+        excerpt: document.getElementById('artFormExcerpt').value.trim(),
+        contentHtml: document.getElementById('artFormContentHtml').value
+      };
+
+      if (existingId) {
+        const idx = adminState.articles.findIndex((a) => a.id === existingId);
+        if (idx !== -1) {
+          adminState.articles[idx] = {
+            ...adminState.articles[idx],
+            ...payload,
+            updatedAt: new Date().toISOString().slice(0, 10)
+          };
+        }
+        try {
+          await fetch(`/api/article/${encodeURIComponent(existingId)}`, {
+            method: 'PUT',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(payload)
+          });
+        } catch {
+          // offline
+        }
+      } else {
+        const slug = payload.title
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/đ/g, 'd')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '');
+        const newArt = {
+          ...payload,
+          slug,
+          readTime: '6 phút đọc',
+          publishedAt: new Date().toISOString().slice(0, 10),
+          updatedAt: new Date().toISOString().slice(0, 10),
+          author: 'Kỹ Sư Thiết Kế Rập RAPMAU.COM',
+          image: '/assets/brand/hero-workbench.jpg',
+          keyTakeaways: [],
+          faqs: []
+        };
+        try {
+          const res = await fetch('/api/article', {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(newArt)
+          });
+          if (res.ok) {
+            const json = await res.json();
+            if (json.article) Object.assign(newArt, json.article);
+          }
+        } catch {
+          // offline
+        }
+        adminState.articles.unshift(newArt);
+      }
+
+      adminState.catalog.articles = adminState.articles;
+      syncCatalogStatsAndPersistLocal();
+      renderKPIs();
+      renderArticlesTable();
+      articleForm.reset();
+      document.getElementById('artFormId').value = '';
+      document.getElementById('articleFormHeading').textContent = '➕ Thêm / Chỉnh Sửa Bài Viết SEO & AEO';
+      showToast(`✅ Đã lưu bài viết [${payload.id}] thành công!`);
+    });
+  }
 
   // ==================== TAB 5: CẤU HÌNH NỘI DUNG, VIETQR & MẬT KHẨU ====================
   document.getElementById('fullSiteSettingsForm').addEventListener('submit', async (e) => {

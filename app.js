@@ -3,6 +3,7 @@ const state = {
   products: [],
   accessories: [],
   freeBooks: [],
+  articles: [],
   categories: [],
   selectedCategory: 'all',
   selectedVariantMode: 'pdf_dxf',
@@ -13,6 +14,7 @@ const state = {
   searchQuery: '',
   visibleCount: 24,
   selectedToolCat: 'all',
+  selectedArticleCat: 'all',
   selectedBookFolder: 'all',
   zaloBooksUnlocked: localStorage.getItem('rapmau_zalo_books_unlocked') === '1',
   cart: JSON.parse(localStorage.getItem('rapmau_cart') || '[]'),
@@ -58,7 +60,7 @@ async function initApp() {
     }
     let data = await res.json();
     if (!fromApi) {
-      const localOverride = localStorage.getItem('rapmau_cms_catalog_override_v3');
+      const localOverride = localStorage.getItem('rapmau_cms_catalog_override_v4');
       if (localOverride) {
         try {
           data = JSON.parse(localOverride);
@@ -71,6 +73,7 @@ async function initApp() {
     state.products = data.products || [];
     state.accessories = data.accessories || [];
     state.freeBooks = data.freeBooks || [];
+    state.articles = data.articles || [];
     state.categories = data.categories || [];
 
     hydrateSiteMetadata();
@@ -79,6 +82,8 @@ async function initApp() {
     renderProducts();
     renderFreeBooks();
     renderTools();
+    renderArticles();
+    renderGlobalFaqs();
     updateCartBadge();
     bindEvents();
   } catch (err) {
@@ -222,9 +227,114 @@ function syncCategorySeoAndUrl(catKey, { pushUrl = true } = {}) {
   });
 }
 
+function buildArticleJsonLd(article) {
+  const artUrl = `https://www.rapmau.com/bai-viet/${article.slug}`;
+  const imgUrl = article.image?.startsWith('http')
+    ? article.image
+    : `https://www.rapmau.com${encodeURI(article.image || '/assets/brand/hero-workbench.jpg')}`;
+
+  const graph = [
+    {
+      '@type': 'Article',
+      '@id': `${artUrl}#article`,
+      headline: article.title,
+      description: article.excerpt || article.aeoAnswer,
+      image: [imgUrl],
+      datePublished: article.publishedAt || '2026-11-01',
+      dateModified: article.updatedAt || '2026-11-10',
+      author: {
+        '@type': 'Organization',
+        name: article.author || 'Xưởng Rập Mẫu Đồ Da RAPMAU.COM',
+        url: 'https://www.rapmau.com/'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'RAPMAU.COM',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.rapmau.com/assets/brand/logo-header.png'
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': artUrl
+      }
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Trang chủ RAPMAU.COM', item: 'https://www.rapmau.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Cẩm Nang Kỹ Thuật Đồ Da', item: 'https://www.rapmau.com/bai-viet' },
+        { '@type': 'ListItem', position: 3, name: article.title, item: artUrl }
+      ]
+    }
+  ];
+
+  const faqEntities = [];
+  if (article.aeoQuestion && article.aeoAnswer) {
+    faqEntities.push({
+      '@type': 'Question',
+      name: article.aeoQuestion,
+      acceptedAnswer: { '@type': 'Answer', text: article.aeoAnswer }
+    });
+  }
+  if (Array.isArray(article.faqs)) {
+    for (const f of article.faqs) {
+      faqEntities.push({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a }
+      });
+    }
+  }
+  if (faqEntities.length > 0) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${artUrl}#faq`,
+      mainEntity: faqEntities
+    });
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': graph
+  };
+}
+
 function applyRouteFromLocation({ initial = false } = {}) {
   const rawPath = decodeURIComponent(window.location.pathname).replace(/\/+$/, '') || '/';
   const preRoute = window.__INITIAL_ROUTE__;
+
+  if (preRoute?.type === 'article' || rawPath.startsWith('/bai-viet/')) {
+    const slug = preRoute?.slug || rawPath.replace('/bai-viet/', '').split('/')[0];
+    const foundArt = state.articles.find((a) => a.slug === slug || a.id === slug);
+    if (foundArt) {
+      if (initial) {
+        setTimeout(() => {
+          openArticleModal(foundArt.slug, { pushUrl: false });
+        }, 0);
+      } else {
+        openArticleModal(foundArt.slug, { pushUrl: false });
+      }
+      return;
+    }
+  }
+
+  if (preRoute?.type === 'articles_hub' || rawPath === '/bai-viet') {
+    document.getElementById('articleModalBackdrop')?.classList.add('hidden');
+    setDocumentMeta({
+      title: 'Cẩm Nang Kỹ Thuật Làm Đồ Da Handmade, In Rập 1:1 & Bảng Quy Đổi Thông Số | RAPMAU.COM',
+      description: 'Hệ thống bài viết chuyên sâu và hỏi đáp trực tiếp (AEO/FAQ) về cách in rập PDF tỷ lệ 1:1, chọn đục lỗ & cỡ chỉ sáp, định mức Pia da thuộc và quy trình làm đồ da.',
+      canonical: 'https://www.rapmau.com/bai-viet',
+      h1Text: 'Cẩm Nang Kỹ Thuật Làm Đồ Da & Hỏi Đáp Chuẩn Xưởng'
+    });
+    if (initial) {
+      setTimeout(() => {
+        document.getElementById('cam-nang-bai-viet')?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
+    return;
+  }
 
   if (preRoute?.type === 'category' || rawPath.startsWith('/danh-muc/')) {
     const slug = preRoute?.slug || rawPath.replace('/danh-muc/', '').split('/')[0];
@@ -268,6 +378,8 @@ function hydrateSiteMetadata() {
     document.getElementById('navToolsCount').textContent = stats.totalToolsAndAccessories;
     const fbCountEl = document.getElementById('navFreeBooksCount');
     if (fbCountEl) fbCountEl.textContent = stats.freeBooksCount || state.freeBooks.length;
+    const artCountEl = document.getElementById('navArticlesCount');
+    if (artCountEl) artCountEl.textContent = state.articles.length || 8;
     document.getElementById('statPatterns').textContent = `${stats.totalPatterns}+`;
     document.getElementById('statCategories').textContent = stats.totalCategories;
   }
@@ -1654,6 +1766,243 @@ async function openAdminModal() {
   };
 }
 
+function renderArticles() {
+  const grid = document.getElementById('articlesGrid');
+  if (!grid) return;
+
+  const list = state.articles.filter((art) => {
+    if (state.selectedArticleCat === 'all') return true;
+    if (state.selectedArticleCat === 'Hướng Dẫn Thực Hành') {
+      return art.category === 'Hướng Dẫn Thực Hành' || art.category === 'Hoàn Thiện & Bảo Dưỡng';
+    }
+    return art.category === state.selectedArticleCat;
+  });
+
+  if (list.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1; padding:24px; text-align:center; color:#64748b;">Chưa có bài viết trong chuyên mục này.</div>`;
+    return;
+  }
+
+  grid.innerHTML = list
+    .map((art) => {
+      const faqCount = (art.faqs?.length || 0) + (art.aeoQuestion ? 1 : 0);
+      return `
+        <article class="article-card" itemscope itemtype="https://schema.org/Article">
+          <div>
+            <div class="art-card-top">
+              <span class="art-cat-badge" itemprop="articleSection">${art.category || 'Cẩm Nang Đồ Da'}</span>
+              <span class="art-read-time">⏱️ ${art.readTime || '6 phút đọc'}</span>
+            </div>
+            <h3 class="art-card-title" itemprop="headline">
+              <a href="/bai-viet/${art.slug}" data-art-slug="${art.slug}" onclick="event.preventDefault();">${art.title}</a>
+            </h3>
+            <div class="art-aeo-snippet" itemprop="abstract">
+              <strong>💡 Tóm tắt nhanh (AEO):</strong>
+              ${art.aeoAnswer || art.excerpt || ''}
+            </div>
+          </div>
+          <div class="art-card-footer">
+            <span class="art-faq-count">✅ ${faqCount} câu hỏi giải đáp</span>
+            <a href="/bai-viet/${art.slug}" class="btn btn-primary btn-sm" data-art-slug="${art.slug}" onclick="event.preventDefault();">
+              Đọc chi tiết →
+            </a>
+          </div>
+        </article>
+      `;
+    })
+    .join('');
+}
+
+function renderGlobalFaqs() {
+  const container = document.getElementById('globalFaqList');
+  if (!container) return;
+
+  const allFaqs = [];
+  for (const art of state.articles) {
+    if (art.aeoQuestion && art.aeoAnswer) {
+      allFaqs.push({
+        q: art.aeoQuestion,
+        a: art.aeoAnswer,
+        slug: art.slug,
+        title: art.title
+      });
+    }
+    if (Array.isArray(art.faqs)) {
+      for (const f of art.faqs.slice(0, 1)) {
+        allFaqs.push({
+          q: f.q,
+          a: f.a,
+          slug: art.slug,
+          title: art.title
+        });
+      }
+    }
+  }
+
+  container.innerHTML = allFaqs
+    .slice(0, 12)
+    .map(
+      (item, idx) => `
+      <details class="aeo-faq-item" ${idx < 2 ? 'open' : ''} itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">${item.q}</summary>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">
+            ${item.a}
+            <br />
+            <a href="/bai-viet/${item.slug}" data-art-slug="${item.slug}" onclick="event.preventDefault();" style="display:inline-block; margin-top:6px; font-weight:800; color:var(--accent-leather); font-size:12px;">
+              📖 Xem bài phân tích &amp; bảng thông số đầy đủ →
+            </a>
+          </p>
+        </div>
+      </details>
+    `
+    )
+    .join('');
+}
+
+function openArticleModal(slug, { pushUrl = true } = {}) {
+  const art = state.articles.find((a) => a.slug === slug || a.id === slug);
+  if (!art) return;
+
+  const targetPath = `/bai-viet/${art.slug}`;
+  if (pushUrl && window.location.pathname !== targetPath) {
+    window.history.pushState({ type: 'article', slug: art.slug }, '', targetPath);
+  }
+
+  setDocumentMeta({
+    title: `${art.title} | Cẩm Nang Đồ Da RAPMAU.COM`,
+    description: art.excerpt || art.aeoAnswer,
+    canonical: `https://www.rapmau.com${targetPath}`,
+    h1Text: art.title,
+    jsonLd: buildArticleJsonLd(art)
+  });
+
+  const relatedTools = (art.relatedToolSkus || [])
+    .map((sku) => state.accessories.find((t) => t.id === sku))
+    .filter(Boolean);
+
+  const takeawaysHtml =
+    Array.isArray(art.keyTakeaways) && art.keyTakeaways.length > 0
+      ? `
+        <div class="article-takeaways-box">
+          <h4>📌 Điểm Cốt Lõi Cần Nhớ (Key Takeaways)</h4>
+          <ul>
+            ${art.keyTakeaways.map((k) => `<li>${k}</li>`).join('')}
+          </ul>
+        </div>
+      `
+      : '';
+
+  const faqsHtml =
+    Array.isArray(art.faqs) && art.faqs.length > 0
+      ? `
+        <div style="margin-top:22px; padding-top:16px; border-top:2px solid var(--border-soft);">
+          <h2 style="font-size:18px; color:var(--bg-saddle); margin-bottom:12px;">❓ Câu Hỏi Thường Gặp Về Chủ Đề Này (FAQ)</h2>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            ${art.faqs
+              .map(
+                (f) => `
+              <details class="aeo-faq-item" open>
+                <summary>${f.q}</summary>
+                <p>${f.a}</p>
+              </details>
+            `
+              )
+              .join('')}
+          </div>
+        </div>
+      `
+      : '';
+
+  const relatedToolsHtml =
+    relatedTools.length > 0
+      ? `
+        <div class="detail-cross-sell-bottom" style="margin-top:22px;">
+          <div class="cross-sell-header">
+            <strong>🛠️ Dụng Cụ &amp; Nguyên Liệu Liên Quan Trong Bài Viết</strong>
+            <span>Đặt kèm để thực hành ngay tại nhà</span>
+          </div>
+          <div class="cross-sell-grid">
+            ${relatedTools
+              .map(
+                (t) => `
+              <div class="cross-sell-card">
+                <div class="csc-info">
+                  <strong>${t.name}</strong>
+                  <span>${formatVND(t.price)} / ${t.unit || 'bộ'}</span>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" data-art-add-tool="${t.id}">+ Thêm giỏ</button>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </div>
+      `
+      : '';
+
+  const contentEl = document.getElementById('articleModalContent');
+  contentEl.innerHTML = `
+    <article class="article-reader-wrap">
+      <div class="article-reader-meta">
+        <span class="art-cat-badge">${art.category || 'Cẩm Nang Đồ Da'}</span>
+        <span>✍️ ${art.author || 'Kỹ Sư RAPMAU.COM'}</span>
+        <span>📅 Cập nhật: ${art.updatedAt || '2026-11-10'}</span>
+        <span>⏱️ ${art.readTime || '6 phút đọc'}</span>
+      </div>
+
+      <h1 class="article-reader-title">${art.title}</h1>
+
+      ${
+        art.aeoAnswer
+          ? `
+        <div class="aeo-direct-answer-box">
+          <span class="aeo-label">⚡ Câu Trả Lời Trực Diện (Chuẩn Kỹ Thuật Xưởng)</span>
+          ${art.aeoQuestion ? `<div class="aeo-q">Hỏi: ${art.aeoQuestion}</div>` : ''}
+          <div class="aeo-a">${art.aeoAnswer}</div>
+        </div>
+      `
+          : ''
+      }
+
+      ${takeawaysHtml}
+
+      <div class="article-body-content">
+        ${art.contentHtml || ''}
+      </div>
+
+      ${faqsHtml}
+      ${relatedToolsHtml}
+
+      <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; background:#f8f4ec; padding:14px 16px; border-radius:12px; border:1px solid var(--border-soft);">
+        <div>
+          <strong style="color:var(--bg-saddle);">Cần tư vấn thêm hoặc tải 258+ Rập PDF Miễn Phí?</strong>
+          <div style="font-size:12.5px; color:var(--text-muted);">Liên hệ trực tiếp Mr.Tuan (0971.463.768) để được hỗ trợ 1-1.</div>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <a href="/danh-muc/${art.relatedCategorySlug || 'rap-vi-da'}" class="btn btn-primary btn-sm">📐 Xem Kho Rập Liên Quan</a>
+          <a href="https://zalo.me/0971463768" target="_blank" rel="noopener" class="btn btn-zalo btn-sm">💬 Hỏi Zalo Mr.Tuan</a>
+        </div>
+      </div>
+    </article>
+  `;
+
+  contentEl.querySelectorAll('[data-art-add-tool]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      addToolToCart(btn.dataset.artAddTool);
+    });
+  });
+
+  document.getElementById('articleModalBackdrop').classList.remove('hidden');
+}
+
+function closeArticleModal({ restoreUrl = true } = {}) {
+  document.getElementById('articleModalBackdrop')?.classList.add('hidden');
+  if (restoreUrl && window.location.pathname.startsWith('/bai-viet')) {
+    syncCategorySeoAndUrl(state.selectedCategory, { pushUrl: true });
+  }
+}
+
 function resetAllFilters() {
   state.selectedCategory = 'all';
   state.paperSizeFilter = 'all';
@@ -1805,6 +2154,36 @@ function bindEvents() {
     });
   });
 
+  // Tab lọc Bài viết Cẩm nang SEO & AEO
+  document.querySelectorAll('#articlesFilterTabs .tool-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('#articlesFilterTabs .tool-tab').forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      state.selectedArticleCat = tab.dataset.artcat;
+      renderArticles();
+    });
+  });
+
+  const articlesGrid = document.getElementById('articlesGrid');
+  if (articlesGrid) {
+    articlesGrid.addEventListener('click', (e) => {
+      const link = e.target.closest('[data-art-slug]');
+      if (!link) return;
+      e.preventDefault();
+      openArticleModal(link.dataset.artSlug, { pushUrl: true });
+    });
+  }
+
+  const globalFaqList = document.getElementById('globalFaqList');
+  if (globalFaqList) {
+    globalFaqList.addEventListener('click', (e) => {
+      const link = e.target.closest('[data-art-slug]');
+      if (!link) return;
+      e.preventDefault();
+      openArticleModal(link.dataset.artSlug, { pushUrl: true });
+    });
+  }
+
   // Tab lọc 3 thư mục Sách Miễn Phí (Ebook / Bộ sách nhật / Ebook China)
   document.querySelectorAll('#booksFolderTabs .book-tab').forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -1839,6 +2218,14 @@ function bindEvents() {
     document.getElementById('cartModalBackdrop').classList.add('hidden');
   document.getElementById('closeAdminModalBtn').onclick = () =>
     document.getElementById('adminModalBackdrop').classList.add('hidden');
+  const closeArtBtn = document.getElementById('closeArticleModalBtn');
+  if (closeArtBtn) closeArtBtn.onclick = () => closeArticleModal({ restoreUrl: true });
+  const artBackdrop = document.getElementById('articleModalBackdrop');
+  if (artBackdrop) {
+    artBackdrop.addEventListener('click', (e) => {
+      if (e.target.id === 'articleModalBackdrop') closeArticleModal({ restoreUrl: true });
+    });
+  }
 
   document.getElementById('openCartBtn').onclick = openCartModal;
   const openAdminBtn = document.getElementById('openAdminBtn');
