@@ -1,13 +1,53 @@
 {
   "categories": [
-    { "id": "all", "name": "Tất Cả Thảo Luận", "icon": "💬", "count": 17 },
-    { "id": "nhap-mon", "name": "Người Mới Nhập Môn", "icon": "🔨", "count": 3 },
-    { "id": "ky-thuat-may", "name": "Kỹ Thuật May & Đục", "icon": "🧵", "count": 3 },
-    { "id": "son-canh", "name": "Sơn Viền & Xử Lý Cạnh", "icon": "🎨", "count": 3 },
-    { "id": "rap-mau", "name": "Xin & Góp Ý Rập Mẫu", "icon": "📐", "count": 2 },
-    { "id": "da-keo", "name": "Da Thuộc & Phụ Liệu", "icon": "🐂", "count": 2 },
-    { "id": "khoe-tac-pham", "name": "Khoe Tác Phẩm & Bắt Bệnh", "icon": "🏆", "count": 2 },
-    { "id": "cho-do-da", "name": "Chợ Dụng Cụ & Da Vụn", "icon": "🏷️", "count": 2 }
+    {
+      "id": "all",
+      "name": "Tất Cả Thảo Luận",
+      "icon": "💬",
+      "count": 49
+    },
+    {
+      "id": "nhap-mon",
+      "name": "Người Mới Nhập Môn",
+      "icon": "🔨",
+      "count": 8
+    },
+    {
+      "id": "ky-thuat-may",
+      "name": "Kỹ Thuật May & Đục",
+      "icon": "🧵",
+      "count": 8
+    },
+    {
+      "id": "son-canh",
+      "name": "Sơn Viền & Xử Lý Cạnh",
+      "icon": "🎨",
+      "count": 8
+    },
+    {
+      "id": "rap-mau",
+      "name": "Xin & Góp Ý Rập Mẫu",
+      "icon": "📐",
+      "count": 7
+    },
+    {
+      "id": "da-keo",
+      "name": "Da Thuộc & Phụ Liệu",
+      "icon": "🐂",
+      "count": 6
+    },
+    {
+      "id": "khoe-tac-pham",
+      "name": "Khoe Tác Phẩm & Bắt Bệnh",
+      "icon": "🏆",
+      "count": 6
+    },
+    {
+      "id": "cho-do-da",
+      "name": "Chợ Dụng Cụ & Da Vụn",
+      "icon": "🏷️",
+      "count": 6
+    }
   ],
   "threads": [
     {
@@ -561,6 +601,966 @@
           "formattedDate": "8 ngày trước",
           "content": "Chào bạn! Xưởng RAPMAU.COM chuyên uốn khuôn bế dao thép Nhật/Đài Loan trên đế gỗ laser chuẩn xác 100% theo bản vẽ CAD/PDF, nhận từ 1 bộ:\n- Khuôn chi tiết nhỏ (ví, móc khóa, bao thẻ): từ 180k - 260k/bộ.\n- Khuôn túi xách, balo: từ 280k - 450k/bộ.\n- Thời gian uốn dao chỉ 2-3 ngày, bảo hành dao bế > 50.000 lượt dập, giao hàng toàn quốc. Bạn nhắn Zalo 0971.463.768 gửi bản vẽ mình tư vấn trực tiếp nhé!",
           "likes": 18
+        }
+      ]
+    },
+    {
+      "id": "thread-018",
+      "categoryId": "ky-thuat-may",
+      "categoryName": "Kỹ Thuật May & Đục",
+      "title": "Kỹ thuật may góc chữ L và góc vuông 90 độ nắp túi ví sao cho mũi chỉ không bị xéo lệch",
+      "author": "Đức Thuận",
+      "authorRole": "Thợ may túi xách",
+      "authorAvatar": "📐",
+      "createdAt": "2026-11-09T16:20:00Z",
+      "formattedDate": "Hôm qua lúc 16:20",
+      "badge": "Chuẩn kỹ thuật ★",
+      "badgeType": "featured",
+      "likes": 28,
+      "views": 490,
+      "content": "Khi may hai kim đến góc vuông 90 độ của nắp ví hoặc đáy túi, mũi chỉ ở góc hay bị kéo xiên chéo làm mất thẩm mỹ. Bác nào có kinh nghiệm chuyển hướng kim ở góc 90 độ chia sẻ cho em với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-018-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-09T17:00:00Z",
+          "formattedDate": "Hôm qua lúc 17:00",
+          "content": "Chào Thuận! Để góc 90 độ sắc nét: 1) Lỗ đục ngay góc bắt buộc phải dùng cây đục 1 răng đục chính xác tại giao điểm của 2 đường cữ mép. 2) Khi may đến lỗ góc, xỏ 1 mũi chỉ kép vòng qua mép hoặc luồn kim thẳng vào cạnh tiếp theo rồi kéo thẳng tay theo hướng cạnh mới. Tuyệt đối không siết chỉ chéo hướng cũ sẽ làm mũi góc bị kéo lệch.",
+          "likes": 16
+        }
+      ]
+    },
+    {
+      "id": "thread-019",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Khắc phục lỗi con lăn sơn cạnh (Edge roller pen) bị vón cục hoặc chảy lem vào mặt cật da",
+      "author": "Mỹ Duyên",
+      "authorRole": "Thợ thủ công",
+      "authorAvatar": "🖌️",
+      "createdAt": "2026-11-09T14:40:00Z",
+      "formattedDate": "Hôm qua lúc 14:40",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 22,
+      "views": 410,
+      "content": "Em dùng bút lăn sơn cạnh bánh xe đồng, lúc lăn thì sơn ra không đều, chỗ bị đọng giọt phồng to rồi chảy lem vào bề mặt da mộc lau không kịp. Làm sao để kiểm soát lượng sơn đều nhất ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-019-1",
+          "author": "Trần Đăng",
+          "authorRole": "Thợ da Đà Nẵng",
+          "authorAvatar": "👞",
+          "isStaff": false,
+          "createdAt": "2026-11-09T15:10:00Z",
+          "formattedDate": "Hôm qua lúc 15:10",
+          "content": "Nguyên nhân do sơn quá đặc hoặc bánh xe dính cặn sơn cũ. Sau khi nhúng bút vào lọ sơn, em gạt nhẹ đầu lăn vào miệng lọ 2 lần để loại bỏ sơn thừa, chỉ giữ lại 1 lớp mỏng trên rãnh bánh xe. Đặt bút nghiêng 45 độ và lăn dứt khoát 1 chiều từ đầu này sang đầu kia, không lăn qua lăn lại nhé!",
+          "likes": 14
+        }
+      ]
+    },
+    {
+      "id": "thread-020",
+      "categoryId": "nhap-mon",
+      "categoryName": "Người Mới Nhập Môn",
+      "title": "Cách chọn thước cắt da: Thước nhôm hay thước thép inox? Cách cắt không bị dao chém lẹm vào thước",
+      "author": "Thanh Bình",
+      "authorRole": "Học viên mới",
+      "authorAvatar": "📏",
+      "createdAt": "2026-11-09T11:15:00Z",
+      "formattedDate": "Hôm qua lúc 11:15",
+      "badge": "An toàn nghề da",
+      "badgeType": "info",
+      "likes": 35,
+      "views": 580,
+      "content": "Em dùng thước nhôm học sinh để kê dao trổ cắt da bò 2mm, nhiều lúc đè mạnh tay lưỡi dao trèo lên gờ thước chém xước cả thước nhôm, suýt vào ngón tay. Anh em thợ chuyên nghiệp hay dùng loại thước nào an toàn nhất ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-020-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-09T11:45:00Z",
+          "formattedDate": "Hôm qua lúc 11:45",
+          "content": "Tuyệt đối không dùng thước nhôm mềm hoặc thước nhựa nhé Bình! Rất nguy hiểm vì lưỡi dao thép dễ chém vẹt mép thước trượt vào tay. Em nên dùng: 1) Thước thép inox dày 1.5mm - 2mm. 2) Tốt nhất là 'Thước nhôm có gờ chắn bảo vệ ngón tay' (Safety Ruler có rãnh chống trượt bên dưới). Khi cắt, lưỡi dao hơi nghiêng áp sát vào thành thước, tay giữ thước luôn thụt sâu vào trong gờ bảo vệ.",
+          "likes": 24
+        }
+      ]
+    },
+    {
+      "id": "thread-021",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "Phân biệt da bò Epsom dập vân tự nhiên của xưởng Haas (Pháp) và da PU dập vân công nghiệp",
+      "author": "Vĩnh Phát",
+      "authorRole": "Chủ shop túi xách",
+      "authorAvatar": "👜",
+      "createdAt": "2026-11-08T21:00:00Z",
+      "formattedDate": "2 ngày trước",
+      "badge": "Kiến thức da thuộc",
+      "badgeType": "featured",
+      "likes": 49,
+      "views": 820,
+      "content": "Thị trường hiện nay có rất nhiều dòng da dập vân Epsom (vân hạt nổi đặc trưng như túi Hermès). Nhờ các bác phân tích giúp cách phân biệt da Epsom bò thật của xưởng Haas/Du Puy và da vi sợi Microfiber hoặc Simili dập vân.",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-021-1",
+          "author": "Lê Minh Craft",
+          "authorRole": "Thợ xưởng da cao cấp",
+          "authorAvatar": "✂️",
+          "isStaff": false,
+          "createdAt": "2026-11-08T21:40:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "3 điểm nhận diện nhanh nhất: 1) Mùi hương: Da Epsom thật có mùi thuộc thảo mộc/khoáng chất thơm đặc trưng, không có mùi nhựa hắc. 2) Cạnh cắt: Soi mặt cắt ngang, da thật thấy rõ các lớp sợi collagen đan xen tự nhiên, còn giả da là lớp bông xơ đồng nhất dán ép. 3) Độ đàn hồi: Khi uốn gập mép, da Epsom thật giữ nguyên phom hạt vân đanh chắc, thả ra đàn hồi ngay mà không bị nhăn gãy nếp trắng.",
+          "likes": 31
+        }
+      ]
+    },
+    {
+      "id": "thread-022",
+      "categoryId": "rap-mau",
+      "categoryName": "Xin & Góp Ý Rập Mẫu",
+      "title": "Xin bản vẽ rập Ví Dài Kéo Khóa Nữ (Long Zip Around Wallet) 8 ngăn thẻ, 2 ngăn tiền và 1 ngăn khóa",
+      "author": "Thu Hương",
+      "authorRole": "Thợ may ví nữ",
+      "authorAvatar": "👛",
+      "createdAt": "2026-11-08T16:30:00Z",
+      "formattedDate": "2 ngày trước",
+      "badge": "Chia sẻ rập free",
+      "badgeType": "info",
+      "likes": 37,
+      "views": 640,
+      "content": "Em đang nhận may ví dài kéo khóa kích thước khoảng 20x10.5x2.5cm cho khách công sở. Anh em nào có bản vẽ rập chuẩn tỉ lệ 1:1 có chi tiết các ngăn xếp quạt (gusset) cho em xin file PDF với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-022-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-08T17:15:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "Chào Hương! Đúng mẫu bạn cần là mã RM-VI-009 trên kho rập của website: 'Rập Ví Dài Nữ Kéo Khóa Phom Hộp'. Bản vẽ có đầy đủ chi tiết hông quạt lạng mỏng 0.6mm và ô căn cữ dán dây khóa số 5. Bạn tải miễn phí trực tiếp trên web hoặc nhắn Zalo 0971.463.768 mình gửi bản PDF in khổ A3/A4 chuẩn nhé!",
+          "likes": 19
+        }
+      ]
+    },
+    {
+      "id": "thread-023",
+      "categoryId": "khoe-tac-pham",
+      "categoryName": "Khoe Tác Phẩm & Bắt Bệnh",
+      "title": "Bắt bệnh lỗi may khóa kéo răng đồng số 3: Kéo bị sượng hoặc mép vải khóa bị lượn sóng nhấp nhô",
+      "author": "Văn Tân",
+      "authorRole": "Thợ ví da",
+      "authorAvatar": "🤐",
+      "createdAt": "2026-11-08T12:00:00Z",
+      "formattedDate": "2 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 29,
+      "views": 530,
+      "content": "Em dán dây khóa kéo kim loại YKK số 3 vào ví dài, may xong kéo con trượt rất sượng, nhìn nghiêng mép vải khóa cứ bị phồng lượn sóng chứ không phẳng lì. Bác nào chỉ em kỹ thuật dán khóa chuẩn với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-023-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-08T12:45:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "Lỗi lượn sóng là do khi dán keo em kéo căng tay mép vải khóa quá mức! Khi may chỉ rút lại làm vải co dồn tạo sóng. Quy tắc dán khóa kéo:\n1. Dùng băng keo 2 mặt chuyên dụng ngành da (chiều rộng 4mm) dán mép cữ.\n2. Đặt dây khóa thả lỏng tự nhiên, dùng con lăn miết nhẹ từ giữa sang hai bên.\n3. Khoảng cách từ răng khóa đến đường mép da cố định đúng 2.5mm để củ khóa trượt không cạ vào da.\n4. Sau khi may, bôi chút sáp nến hoặc sáp ong vào răng đồng kéo 5-10 lượt là êm ru như bơ!",
+          "likes": 22
+        }
+      ]
+    },
+    {
+      "id": "thread-024",
+      "categoryId": "cho-do-da",
+      "categoryName": "Chợ Dụng Cụ & Da Vụn",
+      "title": "Cần tìm mua thanh lý máy lạng mép da cơ bàn ngắn (máy lạng rùa 801 cũ) giá dưới 5 triệu tại miền Bắc",
+      "author": "Xưởng Da Hưng Yên",
+      "authorRole": "Chủ xưởng",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-08T07:30:00Z",
+      "formattedDate": "2 ngày trước",
+      "badge": "Cần mua",
+      "badgeType": "market",
+      "likes": 16,
+      "views": 360,
+      "content": "Bên em mới mở rộng xưởng may ví và thắt lưng, cần tìm 1 con máy lạng mép da cơ (kiểu máy lạng chén 801 hoặc máy lạng rùa để bàn) động cơ êm, chén dao còn dày, đá mài chuẩn. Bác nào lên đời máy cần sang nhượng để lại thông tin kèm giá giúp em nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-024-1",
+          "author": "Minh Khang Leather",
+          "authorRole": "Thành viên",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-08T08:20:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "Mình ở Long Biên có 1 con máy lạng 801 Đài Loan motor servo 550W êm ru không ồn, vừa thay chén dao mới. Giá hữu nghị 4.8tr tặng kèm đá mài sơ cua. Bạn nhắn Zalo 0983.xxx nhé!",
+          "likes": 7
+        }
+      ]
+    },
+    {
+      "id": "thread-025",
+      "categoryId": "nhap-mon",
+      "categoryName": "Người Mới Nhập Môn",
+      "title": "Dùng thớt đục bằng chất liệu gì để đục không bị mẻ răng? Thớt cao su trắng PU hay thớt gỗ nghiến?",
+      "author": "Phương Nam",
+      "authorRole": "Học viên",
+      "authorAvatar": "🪵",
+      "createdAt": "2026-11-07T19:00:00Z",
+      "formattedDate": "3 ngày trước",
+      "badge": "Kinh nghiệm dụng cụ",
+      "badgeType": "info",
+      "likes": 33,
+      "views": 570,
+      "content": "Em đục da trên thớt gỗ cứng hay bị mẻ gãy mũi đục xiên đắt tiền. Chuyển sang thớt nhựa trắng nhà bếp thì cảm giác đục bị lún sâu khó rút. Nhờ anh em tư vấn loại thớt kê đục chuẩn nhất cho đồ da thủ công ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-025-1",
+          "author": "Bác Ba Đồ Da",
+          "authorRole": "Nghệ nhân Sài Gòn",
+          "authorAvatar": "👴",
+          "isStaff": false,
+          "createdAt": "2026-11-07T19:40:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Thớt chuẩn nhất hiện nay là tấm nhựa kỹ thuật PU hoặc cao su tái sinh mật độ cao (loại màu vàng ngà hoặc đen dày 15-20mm). Độ đàn hồi của thớt PU vừa đủ để mũi đục xuyên qua da cắm nhẹ vào thớt 0.5mm mà không làm quăn mũi thép. Thớt gỗ nghiến quá cứng dễ gãy răng đục, còn thớt nhựa PE nhà bếp quá mềm bẫy dính răng đục.",
+          "likes": 25
+        }
+      ]
+    },
+    {
+      "id": "thread-026",
+      "categoryId": "ky-thuat-may",
+      "categoryName": "Kỹ Thuật May & Đục",
+      "title": "Kỹ thuật lại mũi khâu (Backstitch) giấu mối chỉ khóa đuôi túi ví sao cho chắc mà không cộm cục",
+      "author": "Gia Bảo",
+      "authorRole": "Thợ ví da",
+      "authorAvatar": "🧵",
+      "createdAt": "2026-11-07T14:15:00Z",
+      "formattedDate": "3 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 39,
+      "views": 660,
+      "content": "Mỗi lần may xong 1 đường chỉ, đoạn lại mũi khóa đuôi em may lùi 2-3 mũi thường bị 2 sợi chỉ đè lên nhau phồng to cộm cục, cắt chỉ hơ lửa bị vệt đen sì. Có cách nào khóa mối chỉ kín đáo chuẩn xưởng cao cấp không các bác?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-026-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-07T15:00:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Bí quyết khóa chỉ tàng hình:\n1. Khi may đến mũi cuối cùng, may lùi lại đúng 2 mũi. Chú ý: Đâm kim vào cùng 1 lỗ nhưng né sợi chỉ cũ ra, không đâm xuyên tim sợi chỉ.\n2. Đưa cả 2 đầu kim ra mặt sau (hoặc luồn vào giữa 2 lớp da ở mép lót).\n3. Cắt chỉ chừa lại 1.5mm, dùng mỏ hàn nhiệt (hoặc bật lửa đầu khò mini) hơ nhẹ đầu sợi chỉ chảy thành hạt tròn nhỏ rồi lấy thân kim ấn bẹp hạt nhựa lún vào đúng miệng lỗ đục. Mặt ngoài phẳng lì không tì vết!",
+          "likes": 29
+        }
+      ]
+    },
+    {
+      "id": "thread-027",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Cách mài bóng cạnh da veg-tan nhuộm màu đen/nâu: Dùng cồn nhuộm Fiebing's hay sơn lót?",
+      "author": "Bảo Long",
+      "authorRole": "Crafter",
+      "authorAvatar": "🎨",
+      "createdAt": "2026-11-07T11:00:00Z",
+      "formattedDate": "3 ngày trước",
+      "badge": "Mẹo xưởng hay ★",
+      "badgeType": "featured",
+      "likes": 27,
+      "views": 470,
+      "content": "Em làm ví da veg mộc nhuộm màu nâu cà phê, phần cạnh em muốn nhuộm đen bóng tự nhiên chứ không muốn sơn cạnh phủ cao su. Các bác cho em xin quy trình nhuộm cạnh kết hợp đánh Tokonole sao cho màu không bị phai ra quần áo ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-027-1",
+          "author": "Quang Huy Leather",
+          "authorRole": "Chuyên da mộc Veg-tan",
+          "authorAvatar": "🍶",
+          "isStaff": false,
+          "createdAt": "2026-11-07T11:45:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Dùng phẩm nhuộm gốc cồn Fiebing's Leather Dye hoặc Pro Dye nhé bạn! Quy trình: 1) Gọt mép, xả nhám phẳng. 2) Dùng tăm bông chấm phẩm nhuộm quét nhẹ dọc cạnh. 3) Đợi 10 phút cồn bay hơi khô hoàn toàn. 4) Quét 1 lớp mỏng Tokonole đen (hoặc trong suốt) miết gỗ trắc bóng lì. 5) Quét lớp Resolene hoặc sáp ong khóa màu, bao quẹt cọ xát không bao giờ phai màu ra vải trắng!",
+          "likes": 18
+        }
+      ]
+    },
+    {
+      "id": "thread-028",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "Keo sữa dán da (PVA craft glue) có bền không? Khi nào nên dùng keo sữa thay cho keo B7000 / Renia?",
+      "author": "Nguyễn Hoàng",
+      "authorRole": "Thợ thủ công mới",
+      "authorAvatar": "🥛",
+      "createdAt": "2026-11-06T20:30:00Z",
+      "formattedDate": "4 ngày trước",
+      "badge": "So sánh phụ liệu",
+      "badgeType": "info",
+      "likes": 31,
+      "views": 540,
+      "content": "Em thấy các thợ da Nhật Bản rất hay dùng hũ keo sữa màu trắng (PVA Leather Glue) để dán gấp mép da và dán lót vải. Loại này có ưu điểm gì so với keo dán B7000 hoặc keo con chó vậy các anh?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-028-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-06T21:15:00Z",
+          "formattedDate": "4 ngày trước",
+          "content": "Ưu điểm vượt trội của keo sữa PVA ngành da:\n1. Không làm đanh cứng mép da: Keo sữa khô dạng màng dẻo trong suốt, giữ nguyên độ mềm tự nhiên của da sau khi dán.\n2. Dán lót vải lụa / vải canvas không bị ố loang màu mặt vải như keo vàng.\n3. Rất dễ vệ sinh: Keo dính lem ra mặt cật da lấy ngón tay xoa nhẹ là tróc sạch, không để lại vết dính.\nNhược điểm duy nhất: Thời gian khô lâu hơn (cần kẹp ép 15-30 phút) và không chịu nước tốt bằng keo gốc nước Renia.",
+          "likes": 23
+        }
+      ]
+    },
+    {
+      "id": "thread-029",
+      "categoryId": "rap-mau",
+      "categoryName": "Xin & Góp Ý Rập Mẫu",
+      "title": "Rập Bao Da Hộ Chiếu (Passport Cover) kèm 2 ngăn thẻ CCCD và ngăn vé máy bay - Xin góp ý kích thước",
+      "author": "Thành Trung",
+      "authorRole": "Crafter",
+      "authorAvatar": "🛂",
+      "createdAt": "2026-11-06T17:00:00Z",
+      "formattedDate": "4 ngày trước",
+      "badge": "Chia sẻ rập free",
+      "badgeType": "info",
+      "likes": 25,
+      "views": 440,
+      "content": "Em tự vẽ rập bao passport mở phẳng kích thước 200 x 142mm (khi gập đôi lại là 100 x 142mm). Nhưng khi nhét cuốn hộ chiếu mới bìa xanh vào gập lại thì thấy phần gáy bị cấn kích hơi căng. Kích thước chuẩn mở phẳng nên cộng thêm mấy mm độ dày gáy ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-029-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-06T17:40:00Z",
+          "formattedDate": "4 ngày trước",
+          "content": "Chào Trung! Kích thước mở phẳng chuẩn quốc tế của bao hộ chiếu có lót thẻ là:\n- Chiều ngang mở phẳng: 206mm - 210mm (mỗi bên cộng thêm 4mm trừ hao bán kính cong khi gập đôi).\n- Chiều cao: 145mm - 148mm (cuốn hộ chiếu chuẩn cao 125mm, chừa mép mỗi đầu 10mm may chỉ).\nBạn vào kho rập của website tải mã rập RM-BP-001 'Rập Bao Hộ Chiếu Phom Chuẩn', mình đã tính sẵn độ trừ hao gập không bao giờ bị căng kích nhé!",
+          "likes": 18
+        }
+      ]
+    },
+    {
+      "id": "thread-030",
+      "categoryId": "khoe-tac-pham",
+      "categoryName": "Khoe Tác Phẩm & Bắt Bệnh",
+      "title": "Chiếc túi đeo chéo da Nappa phối khóa bấm nam châm chìm - Xin tư vấn mùng lót Salpa",
+      "author": "Quốc An",
+      "authorRole": "Chủ xưởng túi",
+      "authorAvatar": "👜",
+      "createdAt": "2026-11-06T09:30:00Z",
+      "formattedDate": "4 ngày trước",
+      "badge": "Show thành phẩm",
+      "badgeType": "showcase",
+      "likes": 42,
+      "views": 720,
+      "content": "Túi đeo chéo nữ da bò Nappa Ý mềm mượt, em phối nam châm âm bên trong nắp. Nhưng sau 1 tuần dùng thì vị trí cục nam châm bị hằn tròn gồ lên mặt da ngoài trông hơi thô. Có cách nào lót mùng đệm để giấu hoàn toàn vết hằn nam châm không các bác?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-030-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-06T10:15:00Z",
+          "formattedDate": "4 ngày trước",
+          "content": "Mẹo xưởng may túi cao cấp:\n1. Dùng mùng Salpa (da ép tái chế) hoặc giấy sừng Texon dày 0.6mm làm lớp phom định hình giữa nắp.\n2. Dùng đục lỗ khoét 1 lỗ tròn trên miếng Salpa đúng bằng đường kính cục nam châm (14mm hoặc 18mm).\n3. Đặt nam châm lọt thỏm vào lỗ khoét đó, rồi dán 1 lớp mút xốp EVA 0.5mm (hoặc vải nhung) phủ lên trên. Mặt ngoài túi sẽ phẳng lì 100%, sờ tay vào không thấy gờ nam châm!",
+          "likes": 27
+        }
+      ]
+    },
+    {
+      "id": "thread-031",
+      "categoryId": "cho-do-da",
+      "categoryName": "Chợ Dụng Cụ & Da Vụn",
+      "title": "Gom chung đơn mua da bò Veg-tan mộc Ý khổ nguyên con (Side) độ dày 1.8 - 2.0mm giá sỉ",
+      "author": "Minh Khôi Leather",
+      "authorRole": "Crafter Sài Gòn",
+      "authorAvatar": "📦",
+      "createdAt": "2026-11-05T21:00:00Z",
+      "formattedDate": "5 ngày trước",
+      "badge": "Gom đơn sỉ",
+      "badgeType": "market",
+      "likes": 24,
+      "views": 430,
+      "content": "Anh em khu vực TP.HCM có ai cần mua da veg-tan mộc Ý đanh dẻo độ dày 1.8mm - 2.0mm làm balo, túi xách không ạ? Mình đang liên hệ kho sỉ mua nguyên kiện 5 con giá 68k/pia (mua lẻ ngoài tiệm toàn 85k-95k/pia). Bác nào chung đơn ghép từ 1 con (khoảng 22-25 pia) thì nhắn Zalo mình nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-031-1",
+          "author": "Hoàng Nam",
+          "authorRole": "Thành viên",
+          "authorAvatar": "👨‍🎨",
+          "isStaff": false,
+          "createdAt": "2026-11-05T21:40:00Z",
+          "formattedDate": "5 ngày trước",
+          "content": "Cho mình đăng ký 1 con nhé Khôi ơi, vừa nhắn tin Zalo cho bạn xong!",
+          "likes": 4
+        }
+      ]
+    },
+    {
+      "id": "thread-032",
+      "categoryId": "nhap-mon",
+      "categoryName": "Người Mới Nhập Môn",
+      "title": "Cách tính độ dài sợi chỉ may cần cắt: May đoạn dài 20cm thì cắt chỉ dài gấp mấy lần?",
+      "author": "Mai Anh",
+      "authorRole": "Người mới học may",
+      "authorAvatar": "✂️",
+      "createdAt": "2026-11-05T15:00:00Z",
+      "formattedDate": "5 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 46,
+      "views": 790,
+      "content": "Em may túi da thường xuyên bị tình trạng: lúc thì cắt sợi chỉ quá dài khâu bị rối xoắn chỉ, lúc thì cắt ngắn quá may đến gần cuối bị hụt chỉ phải nối chắp vá rất xấu. Có công thức nào tính độ dài chỉ chuẩn xác không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-032-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-05T15:45:00Z",
+          "formattedDate": "5 ngày trước",
+          "content": "Công thức vàng tính độ dài chỉ may hai kim (Saddle Stitch):\n- Da mỏng (dày < 2.5mm, ví sen, cardholder): Cắt chỉ dài gấp 4 lần chiều dài đường may + 15cm (phần xỏ kim và lại mũi).\n- Da trung bình (dày 2.5mm - 3.5mm, ví bifold, bao da): Cắt chỉ dài gấp 4.5 lần + 15cm.\n- Da dày (dày > 4mm, thắt lưng, túi xách dày): Cắt chỉ dài gấp 5 lần đến 5.5 lần.\nVí dụ: Đường may dài 20cm trên ví da 3mm -> Chiều dài chỉ = (20 x 4.5) + 15 = 105cm. Đảm bảo may xong vừa khít mũi khóa đuôi!",
+          "likes": 36
+        }
+      ]
+    },
+    {
+      "id": "thread-033",
+      "categoryId": "ky-thuat-may",
+      "categoryName": "Kỹ Thuật May & Đục",
+      "title": "Cách xử lý khi đục lỗ bị lệch xiên xẹo sang mặt sau: Dùng dùi nắn chỉnh hay dán lại?",
+      "author": "Huy Cường",
+      "authorRole": "Thợ thủ công",
+      "authorAvatar": "🔨",
+      "createdAt": "2026-11-05T11:20:00Z",
+      "formattedDate": "5 ngày trước",
+      "badge": "Khắc phục lỗi",
+      "badgeType": "solved",
+      "likes": 28,
+      "views": 510,
+      "content": "Miếng da thân sau balo dày 3.5mm em lỡ tay gõ đục bị nghiêng, mặt trước lỗ thẳng tắp nhưng mặt sau lỗ bị chệch ra sát mép viền. Bỏ miếng da đi thì tiếc tiền quá. Có cách nào cứu vãn không các bác?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-033-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-05T12:00:00Z",
+          "formattedDate": "5 ngày trước",
+          "content": "Cách cứu miếng da:\n1. Lấy búa cao su gõ nhẹ từ mặt sau để miệng lỗ xẹp bớt lại.\n2. Dùng cây dùi tròn (awl) mũi trơn nhúng chút sáp ong, cắm từ mặt trước xuyên qua mặt sau theo góc vuông 90 độ chuẩn, dùng tay nắn nhẹ ép thớ da về vị trí thẳng hàng.\n3. Khi may, chỉ cần giữ hướng kéo kim vuông góc là sợi chỉ sẽ che phủ hoàn toàn khuyết điểm cũ.",
+          "likes": 20
+        }
+      ]
+    },
+    {
+      "id": "thread-034",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Nhiệt độ ke viền nhiệt (creasing line) trên các loại da: Da Veg-tan, Da Sáp, Da Epsom để bao nhiêu độ?",
+      "author": "Hoàng Khang",
+      "authorRole": "Thợ da chuyên nghiệp",
+      "authorAvatar": "🔥",
+      "createdAt": "2026-11-04T18:30:00Z",
+      "formattedDate": "6 ngày trước",
+      "badge": "Thông số nhiệt chuẩn",
+      "badgeType": "featured",
+      "likes": 47,
+      "views": 840,
+      "content": "Em dùng máy ke viền nhiệt M20 đầu F2 tạo rãnh chỉ trang trí mép ví. Nhưng chỉnh nhiệt lúc thì không thấy hằn rãnh, lúc thì làm cháy sun queo mặt da cật. Xin bảng nhiệt độ chuẩn cho từng chất liệu da ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-034-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-04T19:15:00Z",
+          "formattedDate": "6 ngày trước",
+          "content": "Bảng nhiệt độ ke viền chuẩn xưởng RAPMAU:\n- Da mộc Veg-tan: 65°C - 80°C (quệt ẩm nhẹ mép trước khi ke đường rãnh sẽ bóng đậm màu caramel rất đẹp).\n- Da sáp Pull-up / Crazy Horse: 90°C - 105°C (nhiệt làm tan lớp sáp tạo rãnh sẫm màu tự nhiên).\n- Da Epsom / Saffiano (da dập vân phủ hạt): 110°C - 125°C (cần nhiệt đủ cao để làm nóng chảy lớp phủ polyurethane định hình rãnh).\n- Da dê Alran Sully / da Nappa mềm: 80°C - 95°C (đi tay nhanh và dứt khoát không ngâm đầu nhiệt một chỗ).",
+          "likes": 35
+        }
+      ]
+    },
+    {
+      "id": "thread-035",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "Cách bảo quản kho da bò trong mùa mưa nồm tránh mốc trắng và mùi hôi ẩm",
+      "author": "Kho Da Hóc Môn",
+      "authorRole": "Đại lý da thuộc",
+      "authorAvatar": "🛡️",
+      "createdAt": "2026-11-04T16:00:00Z",
+      "formattedDate": "6 ngày trước",
+      "badge": "Bảo quản kho da",
+      "badgeType": "info",
+      "likes": 38,
+      "views": 690,
+      "content": "Cứ đến mùa mưa ẩm là kho da tấm của em rất dễ bị lên mốc trắng dạng phấn hoa li ti và bốc mùi ẩm mốc. Các xưởng lớn có mẹo gì xử lý và bảo quản da an toàn không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-035-1",
+          "author": "Bác Ba Đồ Da",
+          "authorRole": "Nghệ nhân Sài Gòn",
+          "authorAvatar": "👴",
+          "isStaff": false,
+          "createdAt": "2026-11-04T16:45:00Z",
+          "formattedDate": "6 ngày trước",
+          "content": "1) Không cuộn da quá chặt và tuyệt đối không bọc nilon kín mít (da bị hấp hơi sinh nấm mốc). Cuộn lỏng tay hoặc treo thẳng trên giàn sào gỗ thoáng khí.\n2) Cách sàn nhà tối thiểu 30cm, không kê da sát tường xi măng.\n3) Nếu da đã bị mốc phấn: Pha cồn y tế 70 độ với giấm trắng tỷ lệ 1:1, thấm khăn lau sạch nấm mốc, để khô tự nhiên trong phòng máy lạnh bật chế độ Dry (hút ẩm). Sau đó quét 1 lớp mỏng dầu bảo dưỡng là da sạch bóng như mới.",
+          "likes": 26
+        }
+      ]
+    },
+    {
+      "id": "thread-036",
+      "categoryId": "rap-mau",
+      "categoryName": "Xin & Góp Ý Rập Mẫu",
+      "title": "Xin file rập Bao Da Laptop Macbook Air / Pro 13-14 inch có quai cài nam châm và lót nỉ nhung",
+      "author": "Việt Anh",
+      "authorRole": "Crafter công nghệ",
+      "authorAvatar": "💻",
+      "createdAt": "2026-11-04T10:30:00Z",
+      "formattedDate": "6 ngày trước",
+      "badge": "Chia sẻ rập free",
+      "badgeType": "info",
+      "likes": 41,
+      "views": 750,
+      "content": "Em muốn tự may bao da đựng Macbook Pro 14 inch M3 phom bao thư có nắp cài nam châm. Bác nào có bản vẽ rập chuẩn tỉ lệ 1:1 đã tính độ trừ hao cấn phom máy cho em xin với nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-036-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-04T11:15:00Z",
+          "formattedDate": "6 ngày trước",
+          "content": "Trên website RAPMAU đã có sẵn mẫu mã RM-BDLT-001 'Rập Bao Da Laptop Macbook Chuẩn 1:1' nhé Việt Anh! Bản vẽ thiết kế đúng kích thước máy 31.3 x 22.1 x 1.55cm, cộng thêm mỗi bên 15mm trừ hao đường may và độ dày máy. Bạn tải miễn phí file PDF/DXF in trên giấy A3 trên trang chủ nhé!",
+          "likes": 21
+        }
+      ]
+    },
+    {
+      "id": "thread-037",
+      "categoryId": "khoe-tac-pham",
+      "categoryName": "Khoe Tác Phẩm & Bắt Bệnh",
+      "title": "Bắt bệnh quai xách túi bị vặn xoắn gợn sóng sau khi may kẹp ruột ống cao su",
+      "author": "Trọng Nhân",
+      "authorRole": "Thợ may túi xách",
+      "authorAvatar": "👜",
+      "createdAt": "2026-11-03T18:20:00Z",
+      "formattedDate": "7 ngày trước",
+      "badge": "Bắt bệnh lỗi",
+      "badgeType": "solved",
+      "likes": 25,
+      "views": 480,
+      "content": "Em may quai xách tròn (rolled handle) cho túi du lịch, bên trong luồn ống cao su dẻo 8mm. May xong nhìn quai xách bị xoắn hình ruột gà và nhăn nheo chứ không cong tròn đều. Nhờ các bác bắt bệnh giúp em!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-037-1",
+          "author": "Lê Minh Craft",
+          "authorRole": "Thợ xưởng da cao cấp",
+          "authorAvatar": "✂️",
+          "isStaff": false,
+          "createdAt": "2026-11-03T19:00:00Z",
+          "formattedDate": "7 ngày trước",
+          "content": "Lỗi do 2 mép da khi bọc ống cao su bị xô lệch trước khi may! Cách làm chuẩn:\n1. Phải lạng mỏng 2 mép da về 0.7mm, chỉ giữ dày ở sống lưng quai.\n2. Quét keo dán ép chặt da ôm khít ống cao su, dùng kẹp hàm phẳng miết dính sát chân ruột ống.\n3. Dùng cữ đục đánh dấu lỗ khi quai đang ở tư thế uốn cong tự nhiên hình chữ U (không duỗi thẳng đơ để đục vì khi uốn cong mép trong sẽ bị đùn nhăn).",
+          "likes": 19
+        }
+      ]
+    },
+    {
+      "id": "thread-038",
+      "categoryId": "cho-do-da",
+      "categoryName": "Chợ Dụng Cụ & Da Vụn",
+      "title": "Nhượng lại 5 cuộn chỉ sáp dẹt Galaces 0.45mm các màu Vintage (nâu cà phê, vàng bò, xanh rêu)",
+      "author": "Hải Phong",
+      "authorRole": "Thành viên",
+      "authorAvatar": "🧵",
+      "createdAt": "2026-11-03T14:10:00Z",
+      "formattedDate": "7 ngày trước",
+      "badge": "Đang giao lưu",
+      "badgeType": "market",
+      "likes": 18,
+      "views": 390,
+      "content": "Em dọn xưởng dư 5 cuộn chỉ Galaces sáp dẹt 0.45mm (mỗi cuộn 120m) còn mới nguyên màng bọc nilong: 2 cuộn nâu cafe, 2 cuộn vàng bò patina, 1 cuộn xanh rêu quân đội. Thanh lý combo cả 5 cuộn: 220k (giá gốc 65k/cuộn). Bác nào lấy nhắn em nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-038-1",
+          "author": "Đức Thuận",
+          "authorRole": "Thành viên",
+          "authorAvatar": "📐",
+          "isStaff": false,
+          "createdAt": "2026-11-03T14:50:00Z",
+          "formattedDate": "7 ngày trước",
+          "content": "Mình chốt combo 5 cuộn này nhé bạn, đã inbox địa chỉ nhận hàng!",
+          "likes": 5
+        }
+      ]
+    },
+    {
+      "id": "thread-039",
+      "categoryId": "nhap-mon",
+      "categoryName": "Người Mới Nhập Môn",
+      "title": "Cách ngồi và cầm kẹp khâu da (Stitching Pony) đúng tư thế không bị mỏi lưng kẹt đùi",
+      "author": "Thu Trang",
+      "authorRole": "Crafter nữ",
+      "authorAvatar": "🪑",
+      "createdAt": "2026-11-02T16:30:00Z",
+      "formattedDate": "8 ngày trước",
+      "badge": "Tư thế chuẩn",
+      "badgeType": "info",
+      "likes": 39,
+      "views": 620,
+      "content": "Em kẹp đế kẹp khâu da dưới đùi ngồi may khoảng 2 tiếng là đau thắt lưng và tê buốt chân. Bác nào có kinh nghiệm setup bàn ghế và góc để kẹp khâu chuẩn chia sẻ giúp em với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-039-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-02T17:15:00Z",
+          "formattedDate": "8 ngày trước",
+          "content": "Bí quyết chống đau lưng khi làm da:\n1. Chiều cao kẹp khâu: Miếng da phải nằm ngang tầm ức hoặc ngực dưới, để 2 khuỷu tay gập góc 90 độ buông lỏng tự nhiên (không cúi gập cổ hay rướn vai).\n2. Không kẹp đế dưới đùi lâu: Hãy bắt vít chân kẹp khâu trực tiếp vào mép bàn làm việc bằng cữ kẹp chữ C (C-clamp). Bạn có thể ngồi thẳng lưng trên ghế có tựa, chân đặt vuông góc trên sàn, khâu 6 tiếng liền vẫn cực kỳ thoải mái!",
+          "likes": 31
+        }
+      ]
+    },
+    {
+      "id": "thread-040",
+      "categoryId": "ky-thuat-may",
+      "categoryName": "Kỹ Thuật May & Đục",
+      "title": "Kỹ thuật may gân viền (Piping) bọc ruột dây dù cho balo và túi du lịch phom cứng cáp",
+      "author": "Hùng Mạnh",
+      "authorRole": "Thợ xưởng balo",
+      "authorAvatar": "🎒",
+      "createdAt": "2026-11-02T10:00:00Z",
+      "formattedDate": "8 ngày trước",
+      "badge": "Kỹ thuật chuyên sâu",
+      "badgeType": "featured",
+      "likes": 33,
+      "views": 590,
+      "content": "May gân viền (piping) bọc cọng nhựa hoặc dây dù quanh thân balo làm sao để khi ráp thân trước và thân sau đường chỉ áp sát gân viền mà không bị hở khe chân chỉ vậy các anh em?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-040-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-02T10:45:00Z",
+          "formattedDate": "8 ngày trước",
+          "content": "Quy tắc 2 bước may gân viền Piping:\n1. Bước may định hình: Dùng da lạng mỏng 0.6mm quét keo bọc ôm sát sợi dù 3mm, may 1 đường chỉ tạm cách mép gân 1.5mm.\n2. Bước ráp thân túi: Đặt gân viền kẹp giữa 2 lớp da thân túi. Khi đục lỗ may chính thức, đường đục phải nằm SÁT RẠT chân gân viền (đè sát hơn đường may tạm 0.5mm). Khi lộn túi ra, đường may chính sẽ ép căng gân viền tròn trịa và che lấp 100% đường may tạm bên trong.",
+          "likes": 22
+        }
+      ]
+    },
+    {
+      "id": "thread-041",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Sơn cạnh màu đen và nâu bò bị xỉn màu sau khi khô - Cách pha dầu bóng Top Coat",
+      "author": "Đặng Khoa",
+      "authorRole": "Crafter",
+      "authorAvatar": "🎨",
+      "createdAt": "2026-11-01T15:20:00Z",
+      "formattedDate": "9 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 26,
+      "views": 460,
+      "content": "Em dùng sơn cạnh Fenice màu đen bóng, lúc sơn ướt thì bóng lộn nhưng để khô qua đêm mặt sơn lại chuyển sang mờ đục và bám bụi. Làm sao để giữ độ bóng satin cao cấp như hàng hiệu?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-041-1",
+          "author": "Lê Minh Craft",
+          "authorRole": "Thợ xưởng da cao cấp",
+          "authorAvatar": "✂️",
+          "isStaff": false,
+          "createdAt": "2026-11-01T16:00:00Z",
+          "formattedDate": "9 ngày trước",
+          "content": "Sau khi sơn đủ 2-3 lớp màu và xả nhám phẳng lì, bước cuối cùng bắt buộc phải phủ 1 lớp 'Top Coat Gloss' (dầu bóng bảo vệ cạnh). Lớp này trong suốt có tác dụng chống tia UV, kháng nước và tạo độ bóng sâu sang trọng.",
+          "likes": 17
+        }
+      ]
+    },
+    {
+      "id": "thread-042",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "Da thuộc thảo mộc (Veg-tan) và da thuộc Chrome: So sánh mùi hương, độ mềm và khả năng chạm khắc",
+      "author": "Thanh Hải",
+      "authorRole": "Học viên",
+      "authorAvatar": "🌿",
+      "createdAt": "2026-11-01T11:00:00Z",
+      "formattedDate": "9 ngày trước",
+      "badge": "Kiến thức da thuộc",
+      "badgeType": "info",
+      "likes": 48,
+      "views": 880,
+      "content": "Em thấy giá da Veg-tan đắt gấp 2-3 lần da Chrome. Vì sao nghệ nhân làm đồ da thủ công lại chuộng da Veg-tan đến thế? Hai loại này khác nhau cơ bản ở những điểm nào ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-042-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-01T11:45:00Z",
+          "formattedDate": "9 ngày trước",
+          "content": "So sánh cốt lõi:\n1. Phương pháp thuộc: Veg-tan thuộc bằng tannin từ vỏ cây tự nhiên thân thiện môi trường; Chrome thuộc bằng muối crôm khoáng sản công nghiệp.\n2. Đặc tính duy nhất của Veg-tan: Hấp thụ nước để đúc phom 3D (wet molding), chạm khắc hoa văn hoa lá tây (leather tooling) và tự lên nước bóng ngả màu thời gian (Patina) càng xài càng bóng đẹp.\n3. Da Chrome: Mềm mại, màu sắc đa dạng sặc sỡ, không thấm nước và không đổi màu theo thời gian, phù hợp may áo da, bọc ghế sofa và túi xách thời trang mềm.",
+          "likes": 34
+        }
+      ]
+    },
+    {
+      "id": "thread-043",
+      "categoryId": "rap-mau",
+      "categoryName": "Xin & Góp Ý Rập Mẫu",
+      "title": "Rập Bao Da Bật Lửa Zippo dập phom nổi có khoen đeo thắt lưng - Mẹo trừ hao co rút khi ngâm nước",
+      "author": "Quang Tuấn",
+      "authorRole": "Thợ thủ công",
+      "authorAvatar": "🔥",
+      "createdAt": "2026-10-31T17:00:00Z",
+      "formattedDate": "10 ngày trước",
+      "badge": "Chia sẻ rập free",
+      "badgeType": "info",
+      "likes": 32,
+      "views": 580,
+      "content": "Em ngâm nước da veg-tan 2.0mm dập phom hộp Zippo, lúc còn ướt ép vào phom gỗ thì vừa vặn, nhưng sau khi sấy khô da bị co rút lại khoảng 5% khiến nhét bật lửa vào bị chật cứng. Có mẹo nào trừ hao không các bác?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-043-1",
+          "author": "Bác Ba Đồ Da",
+          "authorRole": "Nghệ nhân Sài Gòn",
+          "authorAvatar": "👴",
+          "isStaff": false,
+          "createdAt": "2026-10-31T17:45:00Z",
+          "formattedDate": "10 ngày trước",
+          "content": "Phom gỗ làm dưỡng dập Zippo em phải làm to hơn kích thước thật của chiếc bật lửa 1mm mỗi chiều (Zippo chuẩn 57x38x13mm -> Phom gỗ làm 58x39x14mm). Khi da khô co lại là vừa khít ôm êm ru!",
+          "likes": 21
+        }
+      ]
+    },
+    {
+      "id": "thread-044",
+      "categoryId": "khoe-tac-pham",
+      "categoryName": "Khoe Tác Phẩm & Bắt Bệnh",
+      "title": "Thắt lưng nam da bò sáp nguyên tấm dày 3.8mm khóa đồng đúc - Khoảng cách lỗ xỏ kim chuẩn nhất?",
+      "author": "Hoàng Sơn",
+      "authorRole": "Thợ làm thắt lưng",
+      "authorAvatar": "👖",
+      "createdAt": "2026-10-31T13:20:00Z",
+      "formattedDate": "10 ngày trước",
+      "badge": "Tiêu chuẩn đồ da",
+      "badgeType": "featured",
+      "likes": 37,
+      "views": 690,
+      "content": "Em may dây nịt da sáp dập 5 lỗ cài khóa. Nhiều khách đeo kêu lỗ quá xa nhau, nới ra thì lỏng mà cài vào thì chật bụng. Khoảng cách tim giữa 2 lỗ đục tiêu chuẩn là bao nhiêu cm vậy các bác?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-044-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-10-31T14:00:00Z",
+          "formattedDate": "10 ngày trước",
+          "content": "Tiêu chuẩn quốc tế cho thắt lưng nam:\n1. Số lượng lỗ: Đục 5 lỗ (hoặc tối đa 7 lỗ). Vị trí lỗ chính giữa (lỗ số 3) phải đúng bằng vòng eo chuẩn của khách.\n2. Khoảng cách tim giữa 2 lỗ: Chuẩn nhất là đúng 2.54cm (1 inch). Không đục khoảng cách 3cm - 3.5cm vì bước nhảy eo quá lớn.\n3. Đường kính lỗ đục: Dùng đục lỗ hình bầu dục (oval punch 4x6mm) hoặc lỗ tròn 4mm để kim khóa gập vào nằm phẳng lì không bị cấn cong mép da.",
+          "likes": 28
+        }
+      ]
+    },
+    {
+      "id": "thread-045",
+      "categoryId": "cho-do-da",
+      "categoryName": "Chợ Dụng Cụ & Da Vụn",
+      "title": "Cần mua bộ đóng đinh tán đinh rệp (Rivets) đồng thau nguyên chất các cỡ 6mm, 8mm kèm cối đóng",
+      "author": "Duy Khánh",
+      "authorRole": "Crafter",
+      "authorAvatar": "🔩",
+      "createdAt": "2026-10-30T16:00:00Z",
+      "formattedDate": "11 ngày trước",
+      "badge": "Cần mua",
+      "badgeType": "market",
+      "likes": 15,
+      "views": 330,
+      "content": "Em đóng đinh tán sắt mạ si hay bị han rỉ xanh sau 3 tháng. Cần tìm nguồn mua sỉ đinh tán 2 mặt bằng đồng thau nguyên chất (Solid Brass không hút nam châm) cỡ mũ 6mm, 8mm, 10mm kèm cây tán chuẩn không bẹp đầu đinh. Bác nào bán inbox em nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-045-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-10-30T16:30:00Z",
+          "formattedDate": "11 ngày trước",
+          "content": "Bạn vào danh mục 'Dụng Cụ & Phụ Kiện' trên trang chủ RAPMAU.COM có sẵn Combo đinh tán đồng đúc nguyên chất kèm cây tán cối lõm chuẩn size nhé. Đảm bảo đồng thau thật 100% đánh bóng lên màu sáng bóng vĩnh viễn.",
+          "likes": 12
+        }
+      ]
+    },
+    {
+      "id": "thread-046",
+      "categoryId": "nhap-mon",
+      "categoryName": "Người Mới Nhập Môn",
+      "title": "Cách tẩy vết mực bút vẽ lấy dấu trên mặt da thật mà không làm bay màu cật da",
+      "author": "Yến Nhi",
+      "authorRole": "Học viên mới",
+      "authorAvatar": "🖊️",
+      "createdAt": "2026-10-30T10:15:00Z",
+      "formattedDate": "11 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 44,
+      "views": 810,
+      "content": "Em dùng bút nhũ bạc vẽ lấy dấu đường cắt trên da bò veg mộc, cắt xong lấy khăn ướt lau thì mực nhũ bạc bị loang lem thành vệt xám xịt chùi mãi không ra. Bác nào có mẹo tẩy sạch mực vẽ dấu cứu em với ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-046-1",
+          "author": "Bác Ba Đồ Da",
+          "authorRole": "Nghệ nhân Sài Gòn",
+          "authorAvatar": "👴",
+          "isStaff": false,
+          "createdAt": "2026-10-30T11:00:00Z",
+          "formattedDate": "11 ngày trước",
+          "content": "Đừng lấy nước lã lau nhũ bạc nhé con! Dung môi của mực nhũ tan trong dầu. Con mua cục cao su sống tẩy mực da (Crepe Eraser) chà nhẹ như tẩy chì là gôm sạch 100%. Nếu không có, chấm chút dầu dưỡng da hoặc cồn nhẹ 50 độ lau nhanh tay là sạch bong.",
+          "likes": 29
+        }
+      ]
+    },
+    {
+      "id": "thread-047",
+      "categoryId": "ky-thuat-may",
+      "categoryName": "Kỹ Thuật May & Đục",
+      "title": "May da lộn (Suede) và da lợn lót (Pigskin): Mẹo chống dính rít đục và xơ lỗ chỉ",
+      "author": "Công Thành",
+      "authorRole": "Thợ may túi ví",
+      "authorAvatar": "🧥",
+      "createdAt": "2026-10-29T15:40:00Z",
+      "formattedDate": "12 ngày trước",
+      "badge": "Mẹo xưởng hay ★",
+      "badgeType": "featured",
+      "likes": 27,
+      "views": 490,
+      "content": "Khi may lót da lợn hoặc da lộn bên trong ví, mỗi lần đóng đục xiên xuyên qua lớp da lộn là răng đục bị dính rít kẹt cứng rút rất khó, rút ra làm lông da bị tưa xơ ngược lên. Anh em có mẹo gì xử lý không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-047-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-10-29T16:15:00Z",
+          "formattedDate": "12 ngày trước",
+          "content": "Mẹo cực kỳ đơn giản mà hiệu quả 100%:\n1. Bôi sáp paraffin hoặc cắm răng đục vào cục sáp ong trước mỗi 5 nhát gõ.\n2. Dán 1 lớp băng keo giấy mỏng (Masking tape) đè lên đường chuẩn bị đục trên mặt da lộn. Lớp băng keo giấy sẽ nén chặt sợi lông da lại. Bạn gõ đục xuyên qua băng keo ngọt lịm, may xong lột băng keo ra mép chỉ thẳng tắp không tưa 1 sợi lông!",
+          "likes": 24
+        }
+      ]
+    },
+    {
+      "id": "thread-048",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Khắc phục vết sơn cạnh bị lem ra mặt cật da: Cách tẩy sạch mà không làm tróc màu da gốc",
+      "author": "Minh Nhật",
+      "authorRole": "Crafter",
+      "authorAvatar": "🩹",
+      "createdAt": "2026-10-29T11:00:00Z",
+      "formattedDate": "12 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 35,
+      "views": 630,
+      "content": "Lỡ tay làm rớt 1 giọt sơn cạnh màu đen dính vào mặt da Epsom màu be nhạt! Nếu lấy khăn chùi ngay thì sợ sơn bị quệt bệt loang rộng ra. Trường hợp này xử lý thế nào để sạch tinh tươm ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-048-1",
+          "author": "Lê Minh Craft",
+          "authorRole": "Thợ xưởng da cao cấp",
+          "authorAvatar": "✂️",
+          "isStaff": false,
+          "createdAt": "2026-10-29T11:35:00Z",
+          "formattedDate": "12 ngày trước",
+          "content": "Bình tĩnh! TUYỆT ĐỐI KHÔNG LẤY TAY HOẶC KHĂN CHÙI NGAY LÚC SƠN ƯỚT!\nHãy để yên cho giọt sơn khô se mặt khoảng 10-15 phút thành màng cao su dẻo. Sau đó lấy tăm nhọn hoặc đầu nhíp gắp nhẹ 1 góc rồi lột nguyên giọt sơn ra như lột miếng keo dán, mặt da Epsom bên dưới sẽ nguyên vẹn 100%!",
+          "likes": 31
+        }
+      ]
+    },
+    {
+      "id": "thread-049",
+      "categoryId": "rap-mau",
+      "categoryName": "Xin & Góp Ý Rập Mẫu",
+      "title": "Chia sẻ rập Túi Đeo Chéo Nam đựng vừa iPad Pro 11 inch phom hộp phong cách Retro Vintage",
+      "author": "Trần Tuấn",
+      "authorRole": "Thợ thiết kế rập",
+      "authorAvatar": "💼",
+      "createdAt": "2026-10-28T14:00:00Z",
+      "formattedDate": "13 ngày trước",
+      "badge": "Chia sẻ rập free",
+      "badgeType": "info",
+      "likes": 56,
+      "views": 1020,
+      "content": "Mình vừa hoàn thiện bộ rập túi đeo chéo nam kích thước 28x22x8cm, đựng vừa khít iPad Pro 11 inch kèm sổ tay và sạc dự phòng. Thiết kế phom hộp đáy may lật, quai đeo phối tăng đơ đồng đúc. Chia sẻ miễn phí file PDF A3/A4 chuẩn tỉ lệ 1:1 cho anh em xưởng đóng mẫu bán mùa Tết này nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-049-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-10-28T14:40:00Z",
+          "formattedDate": "13 ngày trước",
+          "content": "Cảm ơn Tuấn đã chia sẻ bộ rập rất xuất sắc! Đội ngũ RAPMAU đã đồng bộ và đưa mẫu này lên kho rập trực tiếp mã RM-TDC-008 để anh em có thể bấm tải tự động 24/7 hoặc đặt cắt rập mica/khuôn bế thép dập máy nhé!",
+          "likes": 25
         }
       ]
     }
