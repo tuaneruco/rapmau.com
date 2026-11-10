@@ -336,17 +336,22 @@
       <div id="loginErrorBox" class="login-error hidden"></div>
 
       <form id="adminLoginForm">
-        <div class="form-field" style="margin-bottom:14px;">
-          <label style="font-weight:800; color:var(--bg-saddle);">Tên đăng nhập Quản trị viên</label>
+        <div class="form-field" style="margin-bottom:10px;">
+          <label style="font-weight:800; color:var(--bg-saddle);">Tên đăng nhập (Admin hoặc Nhà Cung Cấp)</label>
           <input
             type="text"
             id="loginUsernameInput"
             value="admin"
-            placeholder="Nhập tên tài khoản (VD: admin)"
+            placeholder="VD: admin, dathungleather, phukienlamdoda..."
             required
             autocomplete="username"
             style="width:100%; padding:11px 14px; border-radius:9px; border:1.5px solid var(--border-stitch); font-size:14px; font-weight:700;"
           />
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;">
+            <button type="button" class="btn-edit-sm" data-quick-user="admin" style="font-size:11.5px;">👑 Admin Tổng (admin)</button>
+            <button type="button" class="btn-edit-sm" data-quick-user="dathungleather" style="font-size:11.5px;">🏢 Đạt Hưng Leather</button>
+            <button type="button" class="btn-edit-sm" data-quick-user="phukienlamdoda" style="font-size:11.5px;">🏢 Phụ Kiện Đồ Da</button>
+          </div>
         </div>
 
         <div class="form-field" style="margin-bottom:14px;">
@@ -403,24 +408,28 @@
       </a>
 
       <div class="admin-nav" id="adminTabNav">
-        <button type="button" class="admin-nav-btn active" data-tab="tab-patterns">
+        <button type="button" class="admin-nav-btn active" data-tab="tab-patterns" id="navBtnPatterns">
           <span>📐 Quản Lý Mẫu Rập</span>
           <span id="sideCountPatterns">258</span>
         </button>
-        <button type="button" class="admin-nav-btn" data-tab="tab-tools">
-          <span>🛠️ Quản Lý Dụng Cụ &amp; Phụ Kiện</span>
-          <span id="sideCountTools">48</span>
+        <button type="button" class="admin-nav-btn" data-tab="tab-tools" id="navBtnTools">
+          <span id="navToolsLabel">🛠️ Quản Lý Dụng Cụ &amp; Phụ Kiện</span>
+          <span id="sideCountTools">68</span>
         </button>
-        <button type="button" class="admin-nav-btn" data-tab="tab-books">
+        <button type="button" class="admin-nav-btn" data-tab="tab-orders" id="navBtnOrders">
+          <span id="navOrdersLabel">📦 Đơn Hàng &amp; Zalo Leads</span>
+          <span id="sideCountOrders">0</span>
+        </button>
+        <button type="button" class="admin-nav-btn" data-tab="tab-vendors" id="navBtnVendors">
+          <span>👥 Phân Quyền Nhà Cung Cấp</span>
+          <span id="sideCountVendors">4</span>
+        </button>
+        <button type="button" class="admin-nav-btn" data-tab="tab-books" id="navBtnBooks">
           <span>📚 Tủ Sách &amp; Nhóm Zalo</span>
           <span id="sideCountBooks">26</span>
         </button>
-        <button type="button" class="admin-nav-btn" data-tab="tab-orders">
-          <span>📦 Đơn Hàng &amp; Zalo Leads</span>
-          <span id="sideCountOrders">0</span>
-        </button>
-        <button type="button" class="admin-nav-btn" data-tab="tab-settings">
-          <span>⚙️ Nội Dung, VietQR &amp; Mật Khẩu</span>
+        <button type="button" class="admin-nav-btn" data-tab="tab-settings" id="navBtnSettings">
+          <span id="navSettingsLabel">⚙️ Nội Dung, VietQR &amp; Mật Khẩu</span>
         </button>
       </div>
 
@@ -589,6 +598,9 @@
           </div>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+            <select id="adminToolVendorFilter" style="padding:8px 12px; border-radius:8px; border:1.5px solid var(--accent-leather); background:#fffbeb; font-weight:800; color:var(--bg-saddle);">
+              <option value="all">🏢 Tất cả Nhà Cung Cấp</option>
+            </select>
             <select id="adminToolCatFilter" style="padding:8px 12px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;">
               <option value="all">Tất cả nhóm dụng cụ, da thuộc &amp; phụ kiện</option>
               <option value="Combo Người Mới">Combo Người Mới</option>
@@ -668,13 +680,99 @@
       <!-- TAB 4: ĐƠN HÀNG & KHÁCH ĐĂNG KÝ NHÓM ZALO -->
       <section id="tab-orders" class="admin-tab-panel hidden">
         <div class="cms-card">
-          <h3 style="color:var(--bg-saddle); margin-bottom:12px;">📦 Danh Sách Đơn Đặt Hàng Từ Website</h3>
+          <h3 id="ordersSectionTitle" style="color:var(--bg-saddle); margin-bottom:12px;">📦 Danh Sách Đơn Đặt Hàng Từ Website</h3>
           <div id="adminOrdersContainer"></div>
         </div>
 
-        <div class="cms-card">
+        <div class="cms-card" id="adminLeadsCard">
           <h3 style="color:var(--bg-saddle); margin-bottom:12px;">💬 Danh Sách SĐT Zalo Nhận Sách Miễn Phí &amp; Hỏi Mẫu Tư Vấn</h3>
           <div id="adminLeadsContainer"></div>
+        </div>
+      </section>
+
+      <!-- TAB 4B: QUẢN LÝ & PHÂN QUYỀN TÀI KHOẢN NHÀ CUNG CẤP (CHỈ DÀNH CHO SUPER ADMIN) -->
+      <section id="tab-vendors" class="admin-tab-panel hidden">
+        <div class="detail-grid">
+          <div class="cms-card">
+            <h3 style="color:var(--bg-saddle); margin-bottom:8px;">👥 Danh Sách Tài Khoản Nhà Cung Cấp Đang Hoạt Động</h3>
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px;">
+              Mỗi Nhà cung cấp khi đăng nhập chỉ được phép <strong>xem, thêm, sửa, xoá sản phẩm của chính họ</strong> và <strong>xem các đơn hàng có chứa sản phẩm của họ</strong> (không nhìn thấy sản phẩm hay doanh thu của nhà cung cấp khác).
+            </p>
+            <div style="overflow-x:auto;">
+              <table class="cms-table">
+                <thead>
+                  <tr>
+                    <th>Nhà Cung Cấp</th>
+                    <th>Tài Khoản Đăng Nhập</th>
+                    <th>Quyền Truy Cập</th>
+                    <th>Số Sản Phẩm</th>
+                    <th>Đơn Hàng</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody id="adminVendorsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <form id="vendorAccountForm" class="cms-card" style="border:1.5px solid var(--accent-leather);">
+            <h3 id="vendorFormHeading" style="color:var(--bg-saddle); margin-bottom:8px;">➕ Cấp Tài Khoản Mới Cho Nhà Cung Cấp</h3>
+            <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px;">
+              Tạo tài khoản riêng hoặc cấp lại mật khẩu cho đối tác/nhà cung cấp trên <code>www.rapmau.com/admin</code>:
+            </p>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Tên Nhà Cung Cấp / Cửa Hàng *</label>
+                <input type="text" id="vFormName" placeholder="VD: Đạt Hưng Leather" required />
+              </div>
+              <div class="form-field">
+                <label>Mã định danh (vendorId) *</label>
+                <input type="text" id="vFormVendorId" placeholder="VD: dathungleather" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Tên đăng nhập (Username) *</label>
+                <input type="text" id="vFormUsername" placeholder="VD: dathungleather" required />
+              </div>
+              <div class="form-field">
+                <label>Mật khẩu đăng nhập *</label>
+                <input type="text" id="vFormPassword" placeholder="VD: Dathung@2026" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Tiền tố mã SKU</label>
+                <input type="text" id="vFormSkuPrefix" value="NCC" placeholder="VD: DH, PK..." />
+              </div>
+              <div class="form-field">
+                <label>Số điện thoại / Zalo NCC</label>
+                <input type="text" id="vFormPhone" placeholder="VD: 0936.298.765" />
+              </div>
+            </div>
+            <div class="form-field" style="margin-bottom:12px;">
+              <label>Link Website / Gian hàng Shopee của NCC</label>
+              <input type="text" id="vFormWebsite" placeholder="https://shopee.vn/..." />
+            </div>
+            <div style="display:flex; gap:18px; flex-wrap:wrap; margin-bottom:14px; font-size:13px; font-weight:700;">
+              <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                <input type="checkbox" id="vFormAllowTools" checked style="width:16px; height:16px;" />
+                Cho phép quản lý Dụng cụ / Da thuộc / Phụ kiện
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                <input type="checkbox" id="vFormAllowPatterns" style="width:16px; height:16px;" />
+                Cho phép quản lý Mẫu Rập
+              </label>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button type="submit" class="btn btn-primary" style="flex:1;">
+                💾 Lưu Tài Khoản Nhà Cung Cấp
+              </button>
+              <button type="button" id="btnResetVendorForm" class="btn btn-outline">
+                Làm mới
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -896,6 +994,10 @@
             <label>Giá gốc gạch ngang (VNĐ)</label>
             <input type="number" id="toolFormOriginalPrice" value="195000" />
           </div>
+        </div>
+        <div class="form-field" style="margin-bottom:12px;" id="toolFormVendorRow">
+          <label>Nhà Cung Cấp sở hữu sản phẩm này</label>
+          <select id="toolFormVendorSelect" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;"></select>
         </div>
         <div class="form-field" style="margin-bottom:12px;">
           <label>Ảnh sản phẩm (Dán URL hoặc tải ảnh từ máy tính/điện thoại)</label>

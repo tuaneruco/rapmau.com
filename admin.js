@@ -1,9 +1,67 @@
-const CMS_OVERRIDE_KEY = 'rapmau_cms_catalog_override_v2';
-const ADMIN_SESSION_KEY = 'rapmau_admin_auth_session';
+const CMS_OVERRIDE_KEY = 'rapmau_cms_catalog_override_v3';
+const ADMIN_SESSION_KEY = 'rapmau_admin_auth_session_v2';
 const ADMIN_CUSTOM_CRED_KEY = 'rapmau_admin_custom_cred';
-// SHA-256("Rapmau@2026")
 const DEFAULT_ADMIN_USERS = ['admin', 'tuaneruco'];
 const DEFAULT_ADMIN_PASS_PLAIN = 'Rapmau@2026';
+
+const DEFAULT_VENDORS_FALLBACK = [
+  {
+    id: 'vendor-admin',
+    vendorId: 'all',
+    vendorName: 'Quản Trị Tổng RAPMAU.COM (Mr.Tuan)',
+    username: 'admin',
+    plainPassDefault: 'Rapmau@2026',
+    role: 'super_admin',
+    skuPrefix: 'RM',
+    phone: '0971.463.768',
+    website: 'https://www.rapmau.com',
+    allowPatterns: true,
+    allowTools: true,
+    active: true
+  },
+  {
+    id: 'vendor-phukien',
+    vendorId: 'phukienlamdoda',
+    vendorName: 'Phụ Kiện Làm Đồ Da',
+    username: 'phukienlamdoda',
+    plainPassDefault: 'Phukien@2026',
+    role: 'vendor',
+    skuPrefix: 'PK',
+    phone: '0938.369.234',
+    website: 'https://phukienlamdoda.com',
+    allowPatterns: false,
+    allowTools: true,
+    active: true
+  },
+  {
+    id: 'vendor-dathung',
+    vendorId: 'dathungleather',
+    vendorName: 'Đạt Hưng Leather',
+    username: 'dathungleather',
+    plainPassDefault: 'Dathung@2026',
+    role: 'vendor',
+    skuPrefix: 'DH',
+    phone: '0936.298.765',
+    website: 'https://shopee.vn/dathungleather',
+    allowPatterns: false,
+    allowTools: true,
+    active: true
+  },
+  {
+    id: 'vendor-rapmau',
+    vendorId: 'rapmau',
+    vendorName: 'Xưởng RAPMAU.COM',
+    username: 'xuongrapmau',
+    plainPassDefault: 'Xuong@2026',
+    role: 'vendor',
+    skuPrefix: 'DC',
+    phone: '0971.463.768',
+    website: 'https://www.rapmau.com',
+    allowPatterns: true,
+    allowTools: true,
+    active: true
+  }
+];
 
 const adminState = {
   catalog: null,
@@ -11,10 +69,12 @@ const adminState = {
   categories: [],
   accessories: [],
   freeBooks: [],
+  vendors: [],
   orders: [],
   consultations: [],
   selectedCat: 'all',
   searchQuery: '',
+  selectedToolVendor: 'all',
   selectedToolCat: 'all',
   toolSearchQuery: '',
   selectedPatternSkus: new Set(),
@@ -58,10 +118,9 @@ function getAuthSession() {
   }
 }
 
-function setAuthSession(username, token, remember = true) {
+function setAuthSession(sessionData, remember = true) {
   const payload = JSON.stringify({
-    username,
-    token,
+    ...sessionData,
     loggedAt: new Date().toISOString()
   });
   if (remember) {
@@ -76,6 +135,19 @@ function clearAuthSession() {
   sessionStorage.removeItem(ADMIN_SESSION_KEY);
 }
 
+function isVendorSession() {
+  const sess = getAuthSession();
+  return Boolean(sess && sess.role === 'vendor' && sess.vendorId && sess.vendorId !== 'all');
+}
+
+function getActiveVendorId() {
+  const sess = getAuthSession();
+  if (sess && sess.role === 'vendor' && sess.vendorId && sess.vendorId !== 'all') {
+    return sess.vendorId;
+  }
+  return null;
+}
+
 function getAuthHeaders() {
   const sess = getAuthSession();
   return {
@@ -84,11 +156,31 @@ function getAuthHeaders() {
   };
 }
 
+function inferItemVendorId(item) {
+  if (item.vendorId) return item.vendorId;
+  const sku = String(item.sku || '').toUpperCase();
+  const id = String(item.id || '').toLowerCase();
+  if (sku.startsWith('DH-') || id.startsWith('dh-')) return 'dathungleather';
+  if (sku.startsWith('PK-') || id.startsWith('pk-')) return 'phukienlamdoda';
+  return 'rapmau';
+}
+
+function inferItemVendorName(item) {
+  if (item.vendorName) return item.vendorName;
+  const vid = inferItemVendorId(item);
+  const found = adminState.vendors.find((v) => v.vendorId === vid);
+  if (found) return found.vendorName;
+  if (vid === 'dathungleather') return 'Đạt Hưng Leather';
+  if (vid === 'phukienlamdoda') return 'Phụ Kiện Làm Đồ Da';
+  return 'Xưởng RAPMAU.COM';
+}
+
 function syncCatalogStatsAndPersistLocal() {
   if (!adminState.catalog) return;
   adminState.catalog.products = adminState.products;
   adminState.catalog.accessories = adminState.accessories;
   adminState.catalog.freeBooks = adminState.freeBooks;
+  adminState.catalog.vendors = adminState.vendors;
 
   const counts = {};
   for (const p of adminState.products) {
@@ -128,18 +220,57 @@ async function verifyAdminCredentials(username, password) {
       const data = await res.json();
       if (data.ok) {
         adminState.isLocalBackend = true;
-        return { ok: true, username: data.username || cleanUser, token: data.token };
+        return {
+          ok: true,
+          username: data.username || cleanUser,
+          role: data.role || 'super_admin',
+          vendorId: data.vendorId || 'all',
+          vendorName: data.vendorName || 'Quản Trị Tổng RAPMAU.COM',
+          allowPatterns: data.allowPatterns !== false,
+          allowTools: data.allowTools !== false,
+          token: data.token
+        };
       }
     } else if (res.status === 401) {
       const errData = await res.json().catch(() => ({}));
-      return { ok: false, error: errData.error || 'Sai tài khoản hoặc mật khẩu quản trị!' };
+      return { ok: false, error: errData.error || 'Sai tài khoản hoặc mật khẩu đăng nhập!' };
     }
   } catch {
     // Offline / Cloudflare static mode
   }
 
-  // 2. Fallback xác thực trực tiếp trên trình duyệt (khi mở trên www.rapmau.com)
+  // 2. Xác thực trực tiếp trên trình duyệt (Cloudflare Pages static mode)
   const inputHash = await sha256HexBrowser(cleanPass);
+
+  // Kiểm tra danh sách Nhà cung cấp & Admin trong adminState.vendors
+  const vendorList =
+    adminState.vendors && adminState.vendors.length
+      ? adminState.vendors
+      : DEFAULT_VENDORS_FALLBACK;
+
+  for (const v of vendorList) {
+    if (v.active === false) continue;
+    if (String(v.username || '').toLowerCase() === cleanUser) {
+      const expectedHash =
+        v.passwordHash ||
+        (v.plainPassDefault ? await sha256HexBrowser(v.plainPassDefault) : '');
+      if (inputHash === expectedHash || cleanPass === v.plainPassDefault) {
+        return {
+          ok: true,
+          username: v.username,
+          role: v.role || 'vendor',
+          vendorId: v.vendorId || 'rapmau',
+          vendorName: v.vendorName || v.username,
+          allowPatterns: Boolean(v.allowPatterns),
+          allowTools: v.allowTools !== false,
+          token: inputHash
+        };
+      }
+      return { ok: false, error: 'Sai mật khẩu của tài khoản Nhà cung cấp / Quản trị!' };
+    }
+  }
+
+  // Kiểm tra tài khoản Super Admin dự phòng
   const customCredRaw = localStorage.getItem(ADMIN_CUSTOM_CRED_KEY);
   if (customCredRaw) {
     try {
@@ -148,9 +279,17 @@ async function verifyAdminCredentials(username, password) {
         cleanUser === String(customCred.username || 'admin').toLowerCase() ||
         DEFAULT_ADMIN_USERS.includes(cleanUser);
       if (validUser && inputHash === customCred.passwordHash) {
-        return { ok: true, username: customCred.username || cleanUser, token: inputHash };
+        return {
+          ok: true,
+          username: customCred.username || cleanUser,
+          role: 'super_admin',
+          vendorId: 'all',
+          vendorName: 'Quản Trị Tổng RAPMAU.COM',
+          allowPatterns: true,
+          allowTools: true,
+          token: inputHash
+        };
       }
-      return { ok: false, error: 'Sai tên đăng nhập hoặc mật khẩu quản trị!' };
     } catch {
       // ignore
     }
@@ -158,19 +297,127 @@ async function verifyAdminCredentials(username, password) {
 
   const defaultHash = await sha256HexBrowser(DEFAULT_ADMIN_PASS_PLAIN);
   if (DEFAULT_ADMIN_USERS.includes(cleanUser) && inputHash === defaultHash) {
-    return { ok: true, username: cleanUser, token: defaultHash };
+    return {
+      ok: true,
+      username: cleanUser,
+      role: 'super_admin',
+      vendorId: 'all',
+      vendorName: 'Quản Trị Tổng RAPMAU.COM',
+      allowPatterns: true,
+      allowTools: true,
+      token: defaultHash
+    };
   }
 
-  return { ok: false, error: 'Sai tên đăng nhập hoặc mật khẩu quản trị!' };
+  return { ok: false, error: 'Sai tên đăng nhập hoặc mật khẩu!' };
+}
+
+function activateTab(tabId) {
+  document.querySelectorAll('#adminTabNav .admin-nav-btn').forEach((b) => {
+    b.classList.toggle('active', b.dataset.tab === tabId);
+  });
+  document.querySelectorAll('.admin-tab-panel').forEach((p) => {
+    p.classList.toggle('hidden', p.id !== tabId);
+  });
+}
+
+function applyRolePermissionsToUI() {
+  const sess = getAuthSession();
+  if (!sess) return;
+
+  const isVendor = isVendorSession();
+  const userBadge = document.getElementById('adminUserBadge');
+  const modeIndicator = document.getElementById('localModeIndicator');
+  const navBtnPatterns = document.getElementById('navBtnPatterns');
+  const navBtnTools = document.getElementById('navBtnTools');
+  const navBtnVendors = document.getElementById('navBtnVendors');
+  const navBtnBooks = document.getElementById('navBtnBooks');
+  const fullSiteSettingsForm = document.getElementById('fullSiteSettingsForm');
+  const adminLeadsCard = document.getElementById('adminLeadsCard');
+  const vendorFilterSel = document.getElementById('adminToolVendorFilter');
+  const toolFormVendorRow = document.getElementById('toolFormVendorRow');
+  const pwdNewUsername = document.getElementById('pwdNewUsername');
+
+  if (userBadge) {
+    userBadge.textContent = isVendor ? `${sess.vendorName}` : `${sess.username} (Admin Tổng)`;
+  }
+  if (modeIndicator) {
+    modeIndicator.textContent = isVendor
+      ? `🏢 Nhà Cung Cấp: ${sess.vendorName}`
+      : `👑 Quản Trị Tổng (${sess.username})`;
+    modeIndicator.style.background = isVendor ? '#fef3c7' : '#dcfce7';
+    modeIndicator.style.color = isVendor ? '#92400e' : '#166534';
+  }
+  if (pwdNewUsername) {
+    pwdNewUsername.value = sess.username || 'admin';
+    pwdNewUsername.readOnly = isVendor;
+  }
+
+  if (isVendor) {
+    // Khoá bộ lọc Nhà cung cấp đúng vào vendorId của tài khoản đang đăng nhập
+    adminState.selectedToolVendor = sess.vendorId;
+    if (vendorFilterSel) {
+      vendorFilterSel.value = sess.vendorId;
+      vendorFilterSel.disabled = true;
+    }
+    if (toolFormVendorRow) toolFormVendorRow.classList.add('hidden');
+    if (navBtnVendors) navBtnVendors.classList.add('hidden');
+    if (navBtnBooks) navBtnBooks.classList.add('hidden');
+    if (fullSiteSettingsForm) fullSiteSettingsForm.classList.add('hidden');
+    if (adminLeadsCard) adminLeadsCard.classList.add('hidden');
+
+    const navToolsLabel = document.getElementById('navToolsLabel');
+    if (navToolsLabel) navToolsLabel.textContent = `🛠️ Sản Phẩm Của ${sess.vendorName}`;
+    const navOrdersLabel = document.getElementById('navOrdersLabel');
+    if (navOrdersLabel) navOrdersLabel.textContent = `📦 Đơn Hàng Của ${sess.vendorName}`;
+    const navSettingsLabel = document.getElementById('navSettingsLabel');
+    if (navSettingsLabel) navSettingsLabel.textContent = '🔑 Đổi Mật Khẩu Nhà Cung Cấp';
+
+    if (!sess.allowPatterns) {
+      if (navBtnPatterns) navBtnPatterns.classList.add('hidden');
+      activateTab('tab-tools');
+    } else {
+      if (navBtnPatterns) navBtnPatterns.classList.remove('hidden');
+      activateTab('tab-patterns');
+    }
+  } else {
+    // Super Admin
+    adminState.selectedToolVendor = 'all';
+    if (vendorFilterSel) {
+      vendorFilterSel.disabled = false;
+      vendorFilterSel.value = 'all';
+    }
+    if (toolFormVendorRow) toolFormVendorRow.classList.remove('hidden');
+    if (navBtnPatterns) navBtnPatterns.classList.remove('hidden');
+    if (navBtnTools) navBtnTools.classList.remove('hidden');
+    if (navBtnVendors) navBtnVendors.classList.remove('hidden');
+    if (navBtnBooks) navBtnBooks.classList.remove('hidden');
+    if (fullSiteSettingsForm) fullSiteSettingsForm.classList.remove('hidden');
+    if (adminLeadsCard) adminLeadsCard.classList.remove('hidden');
+
+    const navToolsLabel = document.getElementById('navToolsLabel');
+    if (navToolsLabel) navToolsLabel.textContent = '🛠️ Quản Lý Dụng Cụ & Phụ Kiện';
+    const navOrdersLabel = document.getElementById('navOrdersLabel');
+    if (navOrdersLabel) navOrdersLabel.textContent = '📦 Đơn Hàng & Zalo Leads';
+    const navSettingsLabel = document.getElementById('navSettingsLabel');
+    if (navSettingsLabel) navSettingsLabel.textContent = '⚙️ Nội Dung, VietQR & Mật Khẩu';
+  }
+
+  renderKPIs();
+  populateVendorSelects();
+  renderPatternsTable();
+  renderToolsTable();
+  renderOrdersAndLeads();
+  renderVendorsTable();
 }
 
 function setupLoginGate() {
   const overlay = document.getElementById('adminLoginOverlay');
   const form = document.getElementById('adminLoginForm');
   const errBox = document.getElementById('loginErrorBox');
+  const userInput = document.getElementById('loginUsernameInput');
   const pwdInput = document.getElementById('loginPasswordInput');
   const toggleBtn = document.getElementById('toggleShowPwdBtn');
-  const userBadge = document.getElementById('adminUserBadge');
 
   if (toggleBtn && pwdInput) {
     toggleBtn.addEventListener('click', () => {
@@ -180,10 +427,17 @@ function setupLoginGate() {
     });
   }
 
+  // Nút chọn nhanh tên tài khoản mẫu
+  document.querySelectorAll('[data-quick-user]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      userInput.value = btn.dataset.quickUser;
+      pwdInput.focus();
+    });
+  });
+
   const existing = getAuthSession();
   if (existing && existing.token) {
     overlay.classList.add('hidden');
-    if (userBadge) userBadge.textContent = existing.username || 'admin';
   } else {
     overlay.classList.remove('hidden');
   }
@@ -191,7 +445,7 @@ function setupLoginGate() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     errBox.classList.add('hidden');
-    const username = document.getElementById('loginUsernameInput').value.trim();
+    const username = userInput.value.trim();
     const password = pwdInput.value;
     const remember = document.getElementById('loginRememberChk').checked;
 
@@ -202,10 +456,14 @@ function setupLoginGate() {
       return;
     }
 
-    setAuthSession(result.username, result.token, remember);
-    if (userBadge) userBadge.textContent = result.username;
+    setAuthSession(result, remember);
     overlay.classList.add('hidden');
-    showToast(`🔐 Xin chào Quản trị viên ${result.username}!`);
+    applyRolePermissionsToUI();
+    showToast(
+      result.role === 'vendor'
+        ? `🏢 Xin chào Nhà cung cấp: ${result.vendorName}!`
+        : `👑 Xin chào Quản trị viên tổng: ${result.username}!`
+    );
   });
 
   const logoutBtn = document.getElementById('btnAdminLogout');
@@ -214,14 +472,12 @@ function setupLoginGate() {
       clearAuthSession();
       pwdInput.value = '';
       overlay.classList.remove('hidden');
-      showToast('🔒 Đã đăng xuất tài khoản quản trị');
+      showToast('🔒 Đã đăng xuất tài khoản');
     });
   }
 }
 
 async function initAdmin() {
-  setupLoginGate();
-
   let catData = null;
   let admData = { orders: [], consultations: [] };
 
@@ -240,7 +496,6 @@ async function initAdmin() {
     catData = await staticRes.json();
   }
 
-  // Nếu không chạy qua server local mà có bản lưu cục bộ trên trình duyệt thì ưu tiên nạp
   if (!adminState.isLocalBackend) {
     const savedOverride = localStorage.getItem(CMS_OVERRIDE_KEY);
     if (savedOverride) {
@@ -251,7 +506,6 @@ async function initAdmin() {
       }
     }
   } else {
-    // Đồng bộ bản mới nhất từ server vào localStorage
     try {
       localStorage.setItem(CMS_OVERRIDE_KEY, JSON.stringify(catData));
     } catch {
@@ -268,44 +522,114 @@ async function initAdmin() {
     // ignore on static host
   }
 
+  // Gộp thêm đơn hàng lưu trên trình duyệt (nếu có)
+  const localOrders = JSON.parse(localStorage.getItem('rapmau_local_orders') || '[]');
+  const orderMap = new Map();
+  for (const o of [...(admData.orders || []), ...localOrders]) {
+    if (o && o.orderCode && !orderMap.has(o.orderCode)) {
+      orderMap.set(o.orderCode, o);
+    }
+  }
+
   adminState.catalog = catData;
   adminState.products = catData.products || [];
   adminState.categories = catData.categories || [];
   adminState.accessories = catData.accessories || [];
   adminState.freeBooks = catData.freeBooks || [];
-  adminState.orders = admData.orders || [];
+  adminState.vendors =
+    catData.vendors && catData.vendors.length ? catData.vendors : DEFAULT_VENDORS_FALLBACK;
+  adminState.orders = Array.from(orderMap.values());
   adminState.consultations = admData.consultations || [];
 
-  renderKPIs();
+  setupLoginGate();
   populateCategorySelects();
+  populateVendorSelects();
+  renderKPIs();
   renderPatternsTable();
   renderToolsTable();
   renderBooksTable();
   renderOrdersAndLeads();
+  renderVendorsTable();
   populateSiteSettings();
+  applyRolePermissionsToUI();
   bindAdminEvents();
 }
 
+function getOrdersForCurrentRole() {
+  const vendorId = getActiveVendorId();
+  if (!vendorId) return adminState.orders;
+  return adminState.orders.filter((o) =>
+    (o.items || []).some((it) => inferItemVendorId(it) === vendorId)
+  );
+}
+
 function renderKPIs() {
-  const freeCount = adminState.products.filter((p) => p.isFreePdf).length;
-  document.getElementById('kpiTotalPatterns').textContent = adminState.products.length;
+  const vendorId = getActiveVendorId();
+  const visiblePatterns = vendorId
+    ? adminState.products.filter((p) => (p.vendorId || 'rapmau') === vendorId)
+    : adminState.products;
+  const visibleTools = vendorId
+    ? adminState.accessories.filter((a) => inferItemVendorId(a) === vendorId)
+    : adminState.accessories;
+  const visibleOrders = getOrdersForCurrentRole();
+
+  const freeCount = visiblePatterns.filter((p) => p.isFreePdf).length;
+  document.getElementById('kpiTotalPatterns').textContent = visiblePatterns.length;
   document.getElementById('kpiFreePatterns').textContent = freeCount;
   const kpiTools = document.getElementById('kpiToolsCount');
-  if (kpiTools) kpiTools.textContent = `${adminState.accessories.length} món`;
+  if (kpiTools) kpiTools.textContent = `${visibleTools.length} món`;
   document.getElementById('kpiBooks').textContent = `${adminState.freeBooks.length} cuốn`;
-  document.getElementById('kpiOrders').textContent =
-    adminState.orders.length + adminState.consultations.length;
+  document.getElementById('kpiOrders').textContent = vendorId
+    ? visibleOrders.length
+    : visibleOrders.length + adminState.consultations.length;
 
-  document.getElementById('sideCountPatterns').textContent = adminState.products.length;
-  document.getElementById('sideCountOrders').textContent =
-    adminState.orders.length + adminState.consultations.length;
-  document.getElementById('sideCountTools').textContent = adminState.accessories.length;
+  document.getElementById('sideCountPatterns').textContent = visiblePatterns.length;
+  document.getElementById('sideCountOrders').textContent = vendorId
+    ? visibleOrders.length
+    : visibleOrders.length + adminState.consultations.length;
+  document.getElementById('sideCountTools').textContent = visibleTools.length;
   document.getElementById('sideCountBooks').textContent = adminState.freeBooks.length;
+  const sideVendors = document.getElementById('sideCountVendors');
+  if (sideVendors) sideVendors.textContent = adminState.vendors.filter((v) => v.role === 'vendor').length;
 
   const site = adminState.catalog.site || {};
   document.getElementById('topHotlineText').textContent =
     site.hotline || '0971.463.768 (Mr.Tuan)';
   document.getElementById('topEmailText').textContent = site.email || 'info@rapmau.com';
+}
+
+function populateVendorSelects() {
+  const vendorFilter = document.getElementById('adminToolVendorFilter');
+  const formVendorSel = document.getElementById('toolFormVendorSelect');
+  const lockedVendorId = getActiveVendorId();
+
+  const vendorCounts = {};
+  for (const a of adminState.accessories) {
+    const vid = inferItemVendorId(a);
+    vendorCounts[vid] = (vendorCounts[vid] || 0) + 1;
+  }
+
+  const vendorEntries = adminState.vendors.filter((v) => v.vendorId && v.vendorId !== 'all');
+
+  if (vendorFilter) {
+    let html = `<option value="all">🏢 Tất cả Nhà Cung Cấp (${adminState.accessories.length} SP)</option>`;
+    for (const v of vendorEntries) {
+      const cnt = vendorCounts[v.vendorId] || 0;
+      html += `<option value="${v.vendorId}">🏢 ${v.vendorName} (${cnt} SP)</option>`;
+    }
+    vendorFilter.innerHTML = html;
+    vendorFilter.value = lockedVendorId || adminState.selectedToolVendor || 'all';
+    vendorFilter.disabled = Boolean(lockedVendorId);
+  }
+
+  if (formVendorSel) {
+    formVendorSel.innerHTML = vendorEntries
+      .map((v) => `<option value="${v.vendorId}">${v.vendorName} (${v.vendorId})</option>`)
+      .join('');
+    if (lockedVendorId) {
+      formVendorSel.value = lockedVendorId;
+    }
+  }
 }
 
 function populateCategorySelects() {
@@ -348,7 +672,9 @@ function updateSelectedToolsCounter() {
 
 function getFilteredPatterns() {
   const q = adminState.searchQuery.trim().toLowerCase();
+  const lockedVendorId = getActiveVendorId();
   return adminState.products.filter((p) => {
+    if (lockedVendorId && (p.vendorId || 'rapmau') !== lockedVendorId) return false;
     if (adminState.selectedCat !== 'all' && p.categoryKey !== adminState.selectedCat) return false;
     if (q) {
       const hay = `${p.sku} ${p.title} ${p.categoryShort} ${p.folderPath || ''}`.toLowerCase();
@@ -418,12 +744,19 @@ function renderPatternsTable() {
 
 function getFilteredTools() {
   const q = adminState.toolSearchQuery.trim().toLowerCase();
+  const lockedVendorId = getActiveVendorId();
+  const effectiveVendorFilter = lockedVendorId || adminState.selectedToolVendor;
+
   return adminState.accessories.filter((a) => {
+    const itemVendorId = inferItemVendorId(a);
+    if (effectiveVendorFilter !== 'all' && itemVendorId !== effectiveVendorFilter) {
+      return false;
+    }
     if (adminState.selectedToolCat !== 'all' && a.category !== adminState.selectedToolCat) {
       return false;
     }
     if (q) {
-      const hay = `${a.sku} ${a.title} ${a.category} ${a.badge || ''}`.toLowerCase();
+      const hay = `${a.sku} ${a.title} ${a.category} ${a.badge || ''} ${inferItemVendorName(a)}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -440,6 +773,7 @@ function renderToolsTable() {
     .map((a) => {
       const thumb = encodeURI((a.images && a.images[0]) || '/assets/tools/tool-1.svg');
       const checked = adminState.selectedToolIds.has(a.id) ? 'checked' : '';
+      const vName = inferItemVendorName(a);
       return `
       <tr data-tool-id="${a.id}">
         <td style="text-align:center;">
@@ -451,6 +785,7 @@ function renderToolsTable() {
         <td>
           <strong>${a.sku}</strong>
           <div style="font-size:11px; color:var(--text-muted);">${a.category || ''}</div>
+          <span style="display:inline-block; margin-top:2px; padding:1px 6px; border-radius:4px; background:#fef3c7; color:#92400e; font-size:10.5px; font-weight:800;">🏢 ${vName}</span>
         </td>
         <td><input type="text" class="cms-input-title" data-tfield="title" value="${String(a.title || '').replace(/"/g, '&quot;')}" /></td>
         <td><input type="text" class="cms-input-sm" style="width:135px;" data-tfield="badge" value="${String(a.badge || '').replace(/"/g, '&quot;')}" /></td>
@@ -469,6 +804,69 @@ function renderToolsTable() {
     .join('');
 
   updateSelectedToolsCounter();
+}
+
+function renderVendorsTable() {
+  const tbody = document.getElementById('adminVendorsTableBody');
+  if (!tbody) return;
+
+  tbody.innerHTML = adminState.vendors
+    .map((v) => {
+      const isSuper = v.role === 'super_admin' || v.vendorId === 'all';
+      const toolCount = isSuper
+        ? adminState.accessories.length
+        : adminState.accessories.filter((a) => inferItemVendorId(a) === v.vendorId).length;
+      const patCount = isSuper
+        ? adminState.products.length
+        : adminState.products.filter((p) => (p.vendorId || 'rapmau') === v.vendorId).length;
+      const orderCount = isSuper
+        ? adminState.orders.length
+        : adminState.orders.filter((o) =>
+            (o.items || []).some((it) => inferItemVendorId(it) === v.vendorId)
+          ).length;
+
+      return `
+        <tr>
+          <td>
+            <strong style="color:var(--bg-saddle);">${v.vendorName}</strong>
+            <div style="font-size:11.5px; color:var(--text-muted);">Mã: <code>${v.vendorId}</code> • SKU: <strong>${v.skuPrefix || 'NCC'}</strong></div>
+            ${v.website ? `<a href="${v.website}" target="_blank" style="font-size:11px; color:var(--accent-leather);">${v.website}</a>` : ''}
+          </td>
+          <td>
+            <code style="font-weight:800; font-size:13px; color:#1e40af;">${v.username}</code>
+            <div style="font-size:11px; color:var(--text-muted);">${v.phone || ''}</div>
+          </td>
+          <td>
+            ${
+              isSuper
+                ? '<span class="size-badge" style="background:#dcfce7; color:#166534;">👑 Toàn quyền Admin Tổng</span>'
+                : `
+                  <div style="font-size:12px;">
+                    ${v.allowTools !== false ? '✅ Quản lý Dụng cụ/SP riêng' : '❌ Không QL Dụng cụ'}<br/>
+                    ${v.allowPatterns ? '✅ Quản lý Mẫu rập riêng' : '🔒 Chỉ xem SP & Đơn hàng riêng'}
+                  </div>
+                `
+            }
+          </td>
+          <td>
+            <strong>${toolCount}</strong> SP dụng cụ
+            ${patCount > 0 ? `<div style="font-size:11px; color:var(--text-muted);">+ ${patCount} mẫu rập</div>` : ''}
+          </td>
+          <td><strong>${orderCount}</strong> đơn</td>
+          <td>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="btn-edit-sm" data-edit-vendor="${v.vendorId}">✏️ Sửa / Đổi MK</button>
+              ${
+                !isSuper
+                  ? `<button type="button" class="btn-danger-sm" data-delete-vendor="${v.vendorId}">🗑️ Xoá</button>`
+                  : ''
+              }
+            </div>
+          </td>
+        </tr>
+      `;
+    })
+    .join('');
 }
 
 function renderBooksTable() {
@@ -506,9 +904,20 @@ function renderBooksTable() {
 function renderOrdersAndLeads() {
   const ordBox = document.getElementById('adminOrdersContainer');
   const leadBox = document.getElementById('adminLeadsContainer');
+  const titleEl = document.getElementById('ordersSectionTitle');
+  const activeVendorId = getActiveVendorId();
+  const sess = getAuthSession();
 
-  if (adminState.orders.length === 0) {
-    ordBox.innerHTML = `<p style="color:var(--text-muted); font-size:13.5px;">Chưa có đơn đặt hàng nào.</p>`;
+  if (titleEl) {
+    titleEl.textContent = activeVendorId
+      ? `📦 Đơn Đặt Hàng Có Sản Phẩm Của Nhà Cung Cấp: ${sess?.vendorName || activeVendorId}`
+      : '📦 Toàn Bộ Đơn Đặt Hàng Từ Website (Tất Cả Nhà Cung Cấp)';
+  }
+
+  const visibleOrders = getOrdersForCurrentRole();
+
+  if (visibleOrders.length === 0) {
+    ordBox.innerHTML = `<p style="color:var(--text-muted); font-size:13.5px;">Chưa có đơn đặt hàng nào${activeVendorId ? ' cho sản phẩm của bạn' : ''}.</p>`;
   } else {
     ordBox.innerHTML = `
       <table class="cms-table">
@@ -517,15 +926,22 @@ function renderOrdersAndLeads() {
             <th>Mã Đơn</th>
             <th>Thời Gian</th>
             <th>Khách Hàng &amp; SĐT Zalo</th>
-            <th>Sản Phẩm Đặt Mua</th>
-            <th>Tổng Tiền</th>
+            <th>${activeVendorId ? 'Sản Phẩm Của Nhà Cung Cấp Trong Đơn' : 'Sản Phẩm Đặt Mua (Kèm NCC)'}</th>
+            <th>${activeVendorId ? 'Doanh Thu Của NCC' : 'Tổng Tiền Đơn'}</th>
             <th>Thanh Toán</th>
           </tr>
         </thead>
         <tbody>
-          ${adminState.orders
-            .map(
-              (o) => `
+          ${visibleOrders
+            .map((o) => {
+              const relevantItems = activeVendorId
+                ? (o.items || []).filter((i) => inferItemVendorId(i) === activeVendorId)
+                : o.items || [];
+              const displayTotal = activeVendorId
+                ? relevantItems.reduce((sum, i) => sum + Number(i.price || 0) * Number(i.qty || 1), 0)
+                : o.totalAmount;
+
+              return `
             <tr>
               <td><strong style="color:var(--accent-leather);">#${o.orderCode}</strong></td>
               <td>${new Date(o.createdAt).toLocaleString('vi-VN')}</td>
@@ -534,15 +950,18 @@ function renderOrdersAndLeads() {
                 <div style="font-size:12px; color:var(--text-muted);">${o.customer?.address || ''}</div>
               </td>
               <td>
-                ${(o.items || [])
-                  .map((i) => `<div>• [${i.sku}] ${i.title} (<em>${i.variantName}</em> × ${i.qty})</div>`)
+                ${relevantItems
+                  .map(
+                    (i) =>
+                      `<div>• <strong>[${i.sku}]</strong> ${i.title} (<em>${i.variantName || 'Sản phẩm'}</em> × ${i.qty}) <span style="font-size:11px; color:#92400e; font-weight:700;">[${inferItemVendorName(i)}]</span></div>`
+                  )
                   .join('')}
               </td>
-              <td><strong style="color:var(--accent-leather); font-size:15px;">${formatVND(o.totalAmount)}</strong></td>
+              <td><strong style="color:var(--accent-leather); font-size:15px;">${formatVND(displayTotal)}</strong></td>
               <td><span class="size-badge">${(o.paymentMethod || 'vietqr').toUpperCase()}</span></td>
             </tr>
-          `
-            )
+          `;
+            })
             .join('')}
         </tbody>
       </table>
@@ -680,10 +1099,7 @@ function bindAdminEvents() {
   // Chuyển Tab Sidebar
   document.querySelectorAll('#adminTabNav .admin-nav-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#adminTabNav .admin-nav-btn').forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.admin-tab-panel').forEach((p) => p.classList.add('hidden'));
-      document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      activateTab(btn.dataset.tab);
     });
   });
 
@@ -729,12 +1145,17 @@ function bindAdminEvents() {
           adminState.categories = parsed.categories || [];
           adminState.accessories = parsed.accessories || [];
           adminState.freeBooks = parsed.freeBooks || [];
+          if (parsed.vendors && parsed.vendors.length) {
+            adminState.vendors = parsed.vendors;
+          }
           syncCatalogStatsAndPersistLocal();
           renderKPIs();
           populateCategorySelects();
+          populateVendorSelects();
           renderPatternsTable();
           renderToolsTable();
           renderBooksTable();
+          renderVendorsTable();
           populateSiteSettings();
           showToast('📤 Đã khôi phục dữ liệu từ file JSON thành công!');
         } catch {
@@ -779,7 +1200,6 @@ function bindAdminEvents() {
   });
 
   document.getElementById('adminProductsTableBody').addEventListener('click', async (e) => {
-    // 1. Lưu mẫu rập
     const saveBtn = e.target.closest('[data-save-sku]');
     if (saveBtn) {
       const sku = saveBtn.dataset.saveSku;
@@ -818,7 +1238,6 @@ function bindAdminEvents() {
       return;
     }
 
-    // 2. Xoá 1 mẫu rập
     const delBtn = e.target.closest('[data-delete-sku]');
     if (delBtn) {
       const sku = delBtn.dataset.deleteSku;
@@ -893,6 +1312,9 @@ function bindAdminEvents() {
 
   document.getElementById('addPatternForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const sess = getAuthSession();
+    const vendorId = getActiveVendorId() || 'rapmau';
+    const vendorName = isVendorSession() ? sess.vendorName : 'Xưởng RAPMAU.COM';
     const title = document.getElementById('newPatTitle').value.trim();
     const categoryKey = document.getElementById('newPatCategory').value;
     const skuInput = document.getElementById('newPatSku').value.trim();
@@ -922,9 +1344,14 @@ function bindAdminEvents() {
           categoryKey,
           sku: skuInput,
           paperSizes,
-          imageUrl,
-          pdfDownloadUrl,
-          variantPrices
+          images: [imageUrl],
+          pdfFiles: pdfDownloadUrl ? [pdfDownloadUrl] : [],
+          pdfPrice: variantPrices.pdf_dxf,
+          paperPrice: variantPrices.rap_giay,
+          micaPrice: variantPrices.rap_mica,
+          diePrice: variantPrices.khuon_be,
+          vendorId,
+          vendorName
         })
       });
       if (res.ok) {
@@ -944,6 +1371,8 @@ function bindAdminEvents() {
         sku,
         slug: `${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${sku.toLowerCase()}`,
         title,
+        vendorId,
+        vendorName,
         categoryKey: catObj ? catObj.key : 'vi-da',
         categoryName: catObj ? catObj.name : 'Rập Ví Da',
         categoryShort: catObj ? catObj.shortName : 'Ví Da',
@@ -1010,6 +1439,15 @@ function bindAdminEvents() {
   });
 
   // ==================== TAB 2: QUẢN LÝ DỤNG CỤ & PHỤ KIỆN ====================
+  const vendorFilterEl = document.getElementById('adminToolVendorFilter');
+  if (vendorFilterEl) {
+    vendorFilterEl.addEventListener('change', (e) => {
+      if (isVendorSession()) return;
+      adminState.selectedToolVendor = e.target.value;
+      renderToolsTable();
+    });
+  }
+
   document.getElementById('adminToolCatFilter').addEventListener('change', (e) => {
     adminState.selectedToolCat = e.target.value;
     renderToolsTable();
@@ -1042,9 +1480,16 @@ function bindAdminEvents() {
 
   const toolModal = document.getElementById('toolFormModal');
   document.getElementById('btnOpenAddToolModal').addEventListener('click', () => {
-    document.getElementById('toolModalHeading').textContent = '➕ Thêm Dụng Cụ / Phụ Kiện Mới';
+    const sess = getAuthSession();
+    document.getElementById('toolModalHeading').textContent = isVendorSession()
+      ? `➕ Thêm Sản Phẩm Mới (${sess.vendorName})`
+      : '➕ Thêm Dụng Cụ / Phụ Kiện Mới';
     document.getElementById('editToolId').value = '';
     document.getElementById('toolModalForm').reset();
+    const vSel = document.getElementById('toolFormVendorSelect');
+    if (vSel) {
+      vSel.value = getActiveVendorId() || 'dathungleather';
+    }
     toolModal.classList.remove('hidden');
   });
   document.getElementById('closeToolModalBtn').addEventListener('click', () => {
@@ -1055,7 +1500,6 @@ function bindAdminEvents() {
   });
 
   document.getElementById('adminToolsTableBody').addEventListener('click', async (e) => {
-    // 1. Lưu nhanh trên dòng
     const saveBtn = e.target.closest('[data-save-tool]');
     if (saveBtn) {
       const id = saveBtn.dataset.saveTool;
@@ -1083,11 +1527,10 @@ function bindAdminEvents() {
       }
 
       syncCatalogStatsAndPersistLocal();
-      showToast(`✅ Đã lưu dụng cụ ${item?.sku || id}!`);
+      showToast(`✅ Đã lưu sản phẩm ${item?.sku || id}!`);
       return;
     }
 
-    // 2. Mở form sửa chi tiết dụng cụ
     const editBtn = e.target.closest('[data-edit-tool]');
     if (editBtn) {
       const id = editBtn.dataset.editTool;
@@ -1104,11 +1547,12 @@ function bindAdminEvents() {
       document.getElementById('toolFormImageUrl').value = (item.images && item.images[0]) || '';
       document.getElementById('toolFormDesc').value = item.description || '';
       document.getElementById('toolFormSpecs').value = (item.specs || []).join('\n');
+      const vSel = document.getElementById('toolFormVendorSelect');
+      if (vSel) vSel.value = inferItemVendorId(item);
       toolModal.classList.remove('hidden');
       return;
     }
 
-    // 3. Xoá 1 dụng cụ / phụ kiện không cần thiết
     const delBtn = e.target.closest('[data-delete-tool]');
     if (delBtn) {
       const id = delBtn.dataset.deleteTool;
@@ -1131,8 +1575,10 @@ function bindAdminEvents() {
 
       syncCatalogStatsAndPersistLocal();
       renderKPIs();
+      populateVendorSelects();
       renderToolsTable();
-      showToast(`🗑️ Đã xoá dụng cụ [${item?.sku || id}]!`);
+      renderVendorsTable();
+      showToast(`🗑️ Đã xoá sản phẩm [${item?.sku || id}]!`);
     }
   });
 
@@ -1140,10 +1586,10 @@ function bindAdminEvents() {
   document.getElementById('btnBulkDeleteTools').addEventListener('click', async () => {
     const ids = Array.from(adminState.selectedToolIds);
     if (ids.length === 0) {
-      showToast('⚠️ Vui lòng tích chọn ít nhất 1 dụng cụ để xoá!', true);
+      showToast('⚠️ Vui lòng tích chọn ít nhất 1 sản phẩm để xoá!', true);
       return;
     }
-    if (!window.confirm(`Bạn có chắc chắn muốn XOÁ ${ids.length} dụng cụ / phụ kiện đã chọn không?`)) {
+    if (!window.confirm(`Bạn có chắc chắn muốn XOÁ ${ids.length} sản phẩm đã chọn không?`)) {
       return;
     }
 
@@ -1163,23 +1609,36 @@ function bindAdminEvents() {
 
     syncCatalogStatsAndPersistLocal();
     renderKPIs();
+    populateVendorSelects();
     renderToolsTable();
-    showToast(`🗑️ Đã xoá ${ids.length} dụng cụ không cần thiết!`);
+    renderVendorsTable();
+    showToast(`🗑️ Đã xoá ${ids.length} sản phẩm không cần thiết!`);
   });
 
   // Lưu form Thêm / Sửa chi tiết dụng cụ
   document.getElementById('toolModalForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const editId = document.getElementById('editToolId').value.trim();
+    const sess = getAuthSession();
+    const chosenVendorId = isVendorSession()
+      ? sess.vendorId
+      : document.getElementById('toolFormVendorSelect')?.value || 'rapmau';
+    const vendorObj = adminState.vendors.find((v) => v.vendorId === chosenVendorId);
+    const chosenVendorName = isVendorSession()
+      ? sess.vendorName
+      : vendorObj?.vendorName || 'Xưởng RAPMAU.COM';
+
     const payload = {
       title: document.getElementById('toolFormTitle').value.trim(),
       sku: document.getElementById('toolFormSku').value.trim(),
-      category: document.getElementById('toolFormCategory').value.trim() || 'Dụng cụ làm đồ da',
-      badge: document.getElementById('toolFormBadge').value.trim() || 'Sẵn hàng giao ngay',
+      category: document.getElementById('toolFormCategory').value.trim() || 'Dụng Cụ Đục & Khâu',
+      badge: document.getElementById('toolFormBadge').value.trim() || `Sẵn hàng • ${chosenVendorName}`,
       price: Number(document.getElementById('toolFormPrice').value) || 0,
       originalPrice: Number(document.getElementById('toolFormOriginalPrice').value) || 0,
       imageUrl: document.getElementById('toolFormImageUrl').value.trim() || '/assets/tools/tool-1.svg',
       description: document.getElementById('toolFormDesc').value.trim(),
+      vendorId: chosenVendorId,
+      vendorName: chosenVendorName,
       specs: document
         .getElementById('toolFormSpecs')
         .value.split('\n')
@@ -1204,11 +1663,18 @@ function bindAdminEvents() {
       showToast(`✅ Đã cập nhật chi tiết [${payload.sku}]!`);
     } else {
       let createdItem = null;
+      const prefix = vendorObj?.skuPrefix || 'NCC';
+      const skuFinal =
+        payload.sku || `${prefix}-${String(adminState.accessories.length + 1).padStart(3, '0')}`;
       try {
         const res = await fetch('/api/accessory', {
           method: 'POST',
           headers: getAuthHeaders(),
-          body: JSON.stringify(payload)
+          body: JSON.stringify({
+            ...payload,
+            sku: skuFinal,
+            images: [payload.imageUrl]
+          })
         });
         if (res.ok) {
           const data = await res.json();
@@ -1218,30 +1684,163 @@ function bindAdminEvents() {
         // offline
       }
       if (!createdItem) {
-        const nextNum = adminState.accessories.length + 1;
         createdItem = {
-          id: `tool-custom-${Date.now()}`,
-          sku: payload.sku || `PK-NEW-${String(nextNum).padStart(3, '0')}`,
+          id: `${chosenVendorId}-tool-${Date.now()}`,
+          sku: skuFinal,
           title: payload.title,
           category: payload.category,
+          vendorId: chosenVendorId,
+          vendorName: chosenVendorName,
           price: payload.price,
           originalPrice: payload.originalPrice || Math.round(payload.price * 1.25),
           unit: 'Bộ / Sản phẩm',
           badge: payload.badge,
           images: [payload.imageUrl],
-          specs: payload.specs.length ? payload.specs : ['Dụng cụ làm đồ da thủ công chọn lọc'],
+          specs: payload.specs.length ? payload.specs : [`Cung cấp bởi ${chosenVendorName}`],
           description: payload.description || payload.title
         };
       }
       adminState.accessories.unshift(createdItem);
-      showToast(`✅ Đã thêm dụng cụ mới [${createdItem.sku}]!`);
+      showToast(`✅ Đã thêm sản phẩm mới [${createdItem.sku}] cho ${chosenVendorName}!`);
     }
 
     syncCatalogStatsAndPersistLocal();
     renderKPIs();
+    populateVendorSelects();
     renderToolsTable();
+    renderVendorsTable();
     toolModal.classList.add('hidden');
   });
+
+  // ==================== TAB 4B: QUẢN LÝ & PHÂN QUYỀN NHÀ CUNG CẤP ====================
+  const vendorForm = document.getElementById('vendorAccountForm');
+  const resetVendorBtn = document.getElementById('btnResetVendorForm');
+  if (resetVendorBtn && vendorForm) {
+    resetVendorBtn.addEventListener('click', () => {
+      vendorForm.reset();
+      document.getElementById('vendorFormHeading').textContent =
+        '➕ Cấp Tài Khoản Mới Cho Nhà Cung Cấp';
+    });
+  }
+
+  if (vendorForm) {
+    vendorForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const vendorName = document.getElementById('vFormName').value.trim();
+      const vendorId = document
+        .getElementById('vFormVendorId')
+        .value.trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9_-]+/g, '-');
+      const username = document.getElementById('vFormUsername').value.trim().toLowerCase();
+      const password = document.getElementById('vFormPassword').value.trim();
+      const skuPrefix = document.getElementById('vFormSkuPrefix').value.trim().toUpperCase() || 'NCC';
+      const phone = document.getElementById('vFormPhone').value.trim();
+      const website = document.getElementById('vFormWebsite').value.trim();
+      const allowTools = document.getElementById('vFormAllowTools').checked;
+      const allowPatterns = document.getElementById('vFormAllowPatterns').checked;
+
+      const pwdHash = await sha256HexBrowser(password);
+      const existingIdx = adminState.vendors.findIndex(
+        (v) => v.vendorId === vendorId || String(v.username).toLowerCase() === username
+      );
+      const newVendorObj = {
+        id: existingIdx !== -1 ? adminState.vendors[existingIdx].id : `vendor-${Date.now()}`,
+        vendorId,
+        vendorName,
+        username,
+        passwordHash: pwdHash,
+        role: vendorId === 'all' ? 'super_admin' : 'vendor',
+        skuPrefix,
+        phone,
+        website,
+        allowTools,
+        allowPatterns,
+        active: true
+      };
+
+      if (existingIdx !== -1) {
+        adminState.vendors[existingIdx] = newVendorObj;
+      } else {
+        adminState.vendors.push(newVendorObj);
+      }
+
+      try {
+        await fetch('/api/vendors', {
+          method: 'POST',
+          headers: getAuthHeaders(),
+          body: JSON.stringify({
+            vendorId,
+            vendorName,
+            username,
+            password,
+            skuPrefix,
+            phone,
+            website,
+            allowTools,
+            allowPatterns
+          })
+        });
+      } catch {
+        // offline fallback
+      }
+
+      syncCatalogStatsAndPersistLocal();
+      renderKPIs();
+      populateVendorSelects();
+      renderVendorsTable();
+      vendorForm.reset();
+      showToast(`✅ Đã lưu tài khoản Nhà cung cấp [${vendorName}] (User: ${username})!`);
+    });
+  }
+
+  const vendorsTbody = document.getElementById('adminVendorsTableBody');
+  if (vendorsTbody) {
+    vendorsTbody.addEventListener('click', async (e) => {
+      const editBtn = e.target.closest('[data-edit-vendor]');
+      if (editBtn) {
+        const vid = editBtn.dataset.editVendor;
+        const v = adminState.vendors.find((x) => x.vendorId === vid);
+        if (!v) return;
+        document.getElementById('vendorFormHeading').textContent = `✏️ Cập Nhật / Đổi MK: ${v.vendorName}`;
+        document.getElementById('vFormName').value = v.vendorName || '';
+        document.getElementById('vFormVendorId').value = v.vendorId || '';
+        document.getElementById('vFormUsername').value = v.username || '';
+        document.getElementById('vFormPassword').value = '';
+        document.getElementById('vFormPassword').placeholder = 'Nhập mật khẩu mới cho NCC...';
+        document.getElementById('vFormSkuPrefix').value = v.skuPrefix || 'NCC';
+        document.getElementById('vFormPhone').value = v.phone || '';
+        document.getElementById('vFormWebsite').value = v.website || '';
+        document.getElementById('vFormAllowTools').checked = v.allowTools !== false;
+        document.getElementById('vFormAllowPatterns').checked = Boolean(v.allowPatterns);
+        document.getElementById('vFormPassword').focus();
+        return;
+      }
+
+      const delBtn = e.target.closest('[data-delete-vendor]');
+      if (delBtn) {
+        const vid = delBtn.dataset.deleteVendor;
+        const v = adminState.vendors.find((x) => x.vendorId === vid);
+        if (!window.confirm(`Bạn có chắc muốn xoá tài khoản Nhà cung cấp "${v?.vendorName || vid}" không?`)) {
+          return;
+        }
+        adminState.vendors = adminState.vendors.filter((x) => x.vendorId !== vid);
+        try {
+          await fetch(`/api/vendors/${encodeURIComponent(vid)}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+          });
+        } catch {
+          // offline
+        }
+        syncCatalogStatsAndPersistLocal();
+        renderKPIs();
+        populateVendorSelects();
+        renderVendorsTable();
+        showToast(`🗑️ Đã xoá tài khoản Nhà cung cấp [${v?.vendorName || vid}]!`);
+      }
+    });
+  }
 
   // ==================== TAB 3: TỦ SÁCH & NHÓM ZALO ====================
   document.getElementById('quickZaloGroupForm').addEventListener('submit', async (e) => {
@@ -1343,10 +1942,13 @@ function bindAdminEvents() {
     showToast('✅ Đã lưu nội dung Website & cấu hình VietQR thành công!');
   });
 
-  // Đổi mật khẩu quản trị
+  // Đổi mật khẩu (hỗ trợ cả Super Admin và từng Nhà Cung Cấp tự đổi mật khẩu riêng)
   document.getElementById('changePasswordForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const newUsername = document.getElementById('pwdNewUsername').value.trim() || 'admin';
+    const sess = getAuthSession();
+    const targetUsername = isVendorSession()
+      ? sess.username
+      : document.getElementById('pwdNewUsername').value.trim() || 'admin';
     const currentPassword = document.getElementById('pwdCurrentInput').value;
     const newPassword = document.getElementById('pwdNewInput').value;
     const confirmPassword = document.getElementById('pwdConfirmInput').value;
@@ -1360,7 +1962,7 @@ function bindAdminEvents() {
       return;
     }
 
-    const check = await verifyAdminCredentials(newUsername, currentPassword);
+    const check = await verifyAdminCredentials(targetUsername, currentPassword);
     if (!check.ok) {
       showToast('❌ Mật khẩu hiện tại không đúng!', true);
       return;
@@ -1370,22 +1972,30 @@ function bindAdminEvents() {
       await fetch('/api/admin/change-password', {
         method: 'POST',
         headers: getAuthHeaders(),
-        body: JSON.stringify({ currentPassword, newUsername, newPassword })
+        body: JSON.stringify({ currentPassword, newUsername: targetUsername, newPassword })
       });
     } catch {
       // offline fallback
     }
 
     const newHash = await sha256HexBrowser(newPassword);
-    localStorage.setItem(
-      ADMIN_CUSTOM_CRED_KEY,
-      JSON.stringify({ username: newUsername, passwordHash: newHash })
+    const vIdx = adminState.vendors.findIndex(
+      (v) => String(v.username || '').toLowerCase() === targetUsername.toLowerCase()
     );
-    setAuthSession(newUsername, newHash, true);
-    document.getElementById('adminUserBadge').textContent = newUsername;
+    if (vIdx !== -1) {
+      adminState.vendors[vIdx].passwordHash = newHash;
+    }
+    if (!isVendorSession()) {
+      localStorage.setItem(
+        ADMIN_CUSTOM_CRED_KEY,
+        JSON.stringify({ username: targetUsername, passwordHash: newHash })
+      );
+    }
+    syncCatalogStatsAndPersistLocal();
+    setAuthSession({ ...(sess || check), username: targetUsername, token: newHash }, true);
     e.target.reset();
-    document.getElementById('pwdNewUsername').value = newUsername;
-    showToast('🔑 Đã cập nhật mật khẩu quản trị thành công!');
+    document.getElementById('pwdNewUsername').value = targetUsername;
+    showToast(`🔑 Đã cập nhật mật khẩu cho tài khoản [${targetUsername}] thành công!`);
   });
 
   ['cfgBankId', 'cfgAccountNo', 'cfgAccountName'].forEach((id) => {

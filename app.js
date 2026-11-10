@@ -58,7 +58,7 @@ async function initApp() {
     }
     let data = await res.json();
     if (!fromApi) {
-      const localOverride = localStorage.getItem('rapmau_cms_catalog_override_v2');
+      const localOverride = localStorage.getItem('rapmau_cms_catalog_override_v3');
       if (localOverride) {
         try {
           data = JSON.parse(localOverride);
@@ -1125,6 +1125,8 @@ function addPatternToCart(sku, variantId) {
       itemType: 'pattern',
       sku: product.sku,
       title: product.title,
+      vendorId: product.vendorId || 'rapmau',
+      vendorName: product.vendorName || 'Xưởng RAPMAU.COM',
       variantId: variant.id,
       variantName: variant.name,
       deliveryType: variant.deliveryType,
@@ -1152,6 +1154,8 @@ function addToolToCart(toolId) {
       itemType: 'tool',
       sku: tool.sku,
       title: tool.title,
+      vendorId: tool.vendorId || 'rapmau',
+      vendorName: tool.vendorName || 'Xưởng RAPMAU.COM',
       variantId: 'physical_tool',
       variantName: 'Phụ kiện / Dụng cụ làm đồ da',
       deliveryType: 'physical',
