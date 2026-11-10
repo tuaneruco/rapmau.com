@@ -733,7 +733,8 @@ function renderPatternsTable() {
           </td>
           <td>
             <div style="display:flex; gap:6px; align-items:center; flex-wrap:nowrap;">
-              <button type="button" class="btn-sm btn-add" data-save-sku="${p.sku}">💾 Lưu</button>
+              <button type="button" class="btn-sm btn-add" data-save-sku="${p.sku}" title="Lưu nhanh giá & tiêu đề">💾 Lưu</button>
+              <button type="button" class="btn-edit-sm" data-edit-sku="${p.sku}" title="Chỉnh sửa chi tiết, ảnh đại diện, file PDF/CAD & mô tả">✏️ Sửa</button>
               <a href="/studio?sku=${encodeURIComponent(p.sku)}" class="btn-sm btn-detail" style="text-decoration:none; white-space:nowrap;" title="Đóng dấu Logo">
                 🏷️ Logo
               </a>
@@ -1085,7 +1086,7 @@ function updateVietQrPreview() {
   document.getElementById('previewVietQrText').textContent = `${bankId} • STK: ${accountNo} (${accountName})`;
 }
 
-async function handleImageFileUpload(fileInputEl, targetUrlInputEl) {
+async function handleImageFileUpload(fileInputEl, targetUrlInputEl, onSuccess) {
   const file = fileInputEl.files && fileInputEl.files[0];
   if (!file) return;
   const reader = new FileReader();
@@ -1099,8 +1100,10 @@ async function handleImageFileUpload(fileInputEl, targetUrlInputEl) {
       });
       if (res.ok) {
         const data = await res.json();
-        if (data.ok && data.url) {
-          targetUrlInputEl.value = data.url;
+        const uploaded = data.url || data.imageUrl;
+        if (data.ok && uploaded) {
+          targetUrlInputEl.value = uploaded;
+          if (onSuccess) onSuccess(uploaded);
           showToast('📷 Đã tải ảnh lên máy chủ thành công!');
           return;
         }
@@ -1109,7 +1112,38 @@ async function handleImageFileUpload(fileInputEl, targetUrlInputEl) {
       // fallback dataUrl
     }
     targetUrlInputEl.value = dataUrl;
+    if (onSuccess) onSuccess(dataUrl);
     showToast('📷 Đã nạp ảnh vào biểu mẫu!');
+  };
+  reader.readAsDataURL(file);
+}
+
+async function handleGenericFileUpload(fileInputEl, targetUrlInputEl, label = 'file') {
+  const file = fileInputEl.files && fileInputEl.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async () => {
+    const dataUrl = reader.result;
+    try {
+      const res = await fetch('/api/upload-file', {
+        method: 'POST',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ fileName: file.name, dataUrl })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const uploaded = data.fileUrl || data.url;
+        if (data.ok && uploaded) {
+          targetUrlInputEl.value = uploaded;
+          showToast(`📁 Đã tải ${label} "${file.name}" lên máy chủ!`);
+          return;
+        }
+      }
+    } catch {
+      // fallback
+    }
+    targetUrlInputEl.value = `/media/uploads/${file.name}`;
+    showToast(`📁 Đã nạp đường dẫn ${label}: ${file.name}!`);
   };
   reader.readAsDataURL(file);
 }
@@ -1279,6 +1313,15 @@ function bindAdminEvents() {
       return;
     }
 
+    const editBtn = e.target.closest('[data-edit-sku]');
+    if (editBtn) {
+      const sku = editBtn.dataset.editSku;
+      const prod = adminState.products.find((p) => p.sku === sku);
+      if (!prod) return;
+      openEditPatternModal(prod);
+      return;
+    }
+
     const delBtn = e.target.closest('[data-delete-sku]');
     if (delBtn) {
       const sku = delBtn.dataset.deleteSku;
@@ -1339,23 +1382,104 @@ function bindAdminEvents() {
     showToast(`🗑️ Đã xoá ${skus.length} mẫu rập không cần thiết!`);
   });
 
-  // Mở / Đóng Modal Thêm Mẫu Rập Mới
+  // Mở / Đóng Modal Thêm / Chỉnh Sửa Mẫu Rập
   const addPatModal = document.getElementById('addPatternModal');
+
+  function openEditPatternModal(p) {
+    document.getElementById('patternModalHeading').textContent = `✏️ Chỉnh Sửa Chi Tiết Mẫu Rập [${p.sku}]`;
+    document.getElementById('editPatternSku').value = p.sku;
+    document.getElementById('newPatTitle').value = p.title || '';
+
+    const catSel = document.getElementById('newPatCategory');
+    if (catSel) catSel.value = p.categoryKey || '';
+
+    const skuInput = document.getElementById('newPatSku');
+    skuInput.value = p.sku || '';
+    skuInput.readOnly = true;
+    skuInput.style.backgroundColor = '#f1f5f9';
+
+    document.getElementById('newPatPaperSizes').value = (p.paperSizes || ['A4']).join(', ');
+    document.getElementById('newPatLeatherThickness').value = p.leatherThickness || '';
+    document.getElementById('newPatChiselPitch').value = p.chiselPitch || '';
+    document.getElementById('newPatLeatherEstimate').value = p.leatherEstimate || '';
+    document.getElementById('newPatDifficulty').value = p.difficulty || 'Cơ bản';
+
+    const vMap = {};
+    for (const v of p.variants || []) vMap[v.id] = v.price;
+    document.getElementById('newPatPricePdf').value = vMap.pdf_dxf ?? 0;
+    document.getElementById('newPatPricePaper').value = vMap.rap_giay ?? 55000;
+    document.getElementById('newPatPriceMica').value = vMap.rap_mica ?? 135000;
+    document.getElementById('newPatPriceDie').value = vMap.khuon_be ?? 450000;
+
+    const firstImg = (p.images && p.images[0]) || '';
+    document.getElementById('newPatImageUrl').value = firstImg;
+    const preview = document.getElementById('newPatImgPreview');
+    if (preview) preview.src = firstImg || '/assets/tools/pattern-placeholder.svg';
+
+    const moreImages = (p.images || []).slice(1);
+    document.getElementById('newPatMoreImages').value = moreImages.join('\n');
+
+    document.getElementById('newPatPdfUrl').value = (p.pdfFiles && p.pdfFiles[0]) || '';
+    document.getElementById('newPatCadUrl').value = (p.cadFiles && p.cadFiles[0]) || '';
+    document.getElementById('newPatDescription').value = p.description || '';
+
+    const submitBtn = document.getElementById('submitPatternBtn');
+    if (submitBtn) submitBtn.textContent = `💾 Lưu Thay Đổi Mẫu Rập [${p.sku}]`;
+
+    addPatModal.classList.remove('hidden');
+  }
+
   document.getElementById('btnOpenAddPatternModal').addEventListener('click', () => {
+    document.getElementById('patternModalHeading').textContent = '➕ Thêm Mẫu Rập Đồ Da Mới';
+    document.getElementById('editPatternSku').value = '';
+    document.getElementById('addPatternForm').reset();
+    const skuInput = document.getElementById('newPatSku');
+    skuInput.readOnly = false;
+    skuInput.style.backgroundColor = '#fff';
+    const preview = document.getElementById('newPatImgPreview');
+    if (preview) preview.src = '/assets/tools/pattern-placeholder.svg';
+    const submitBtn = document.getElementById('submitPatternBtn');
+    if (submitBtn) submitBtn.textContent = '💾 Tạo Mẫu Rập Mới';
     addPatModal.classList.remove('hidden');
   });
+
   document.getElementById('closeAddPatternModalBtn').addEventListener('click', () => {
     addPatModal.classList.add('hidden');
   });
+
   document.getElementById('newPatImageFile').addEventListener('change', (e) => {
-    handleImageFileUpload(e.target, document.getElementById('newPatImageUrl'));
+    handleImageFileUpload(e.target, document.getElementById('newPatImageUrl'), (uploaded) => {
+      const prev = document.getElementById('newPatImgPreview');
+      if (prev) prev.src = uploaded;
+    });
   });
+
+  document.getElementById('newPatImageUrl').addEventListener('input', (e) => {
+    const prev = document.getElementById('newPatImgPreview');
+    if (prev) prev.src = e.target.value.trim() || '/assets/tools/pattern-placeholder.svg';
+  });
+
+  const pdfFileInput = document.getElementById('newPatPdfFile');
+  if (pdfFileInput) {
+    pdfFileInput.addEventListener('change', (e) => {
+      handleGenericFileUpload(e.target, document.getElementById('newPatPdfUrl'), 'file PDF');
+    });
+  }
+
+  const cadFileInput = document.getElementById('newPatCadFile');
+  if (cadFileInput) {
+    cadFileInput.addEventListener('change', (e) => {
+      handleGenericFileUpload(e.target, document.getElementById('newPatCadUrl'), 'file CAD/DXF');
+    });
+  }
 
   document.getElementById('addPatternForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const editSku = document.getElementById('editPatternSku').value.trim();
     const sess = getAuthSession();
     const vendorId = getActiveVendorId() || 'rapmau';
     const vendorName = isVendorSession() ? sess.vendorName : 'Xưởng RAPMAU.COM';
+
     const title = document.getElementById('newPatTitle').value.trim();
     const categoryKey = document.getElementById('newPatCategory').value;
     const skuInput = document.getElementById('newPatSku').value.trim();
@@ -1364,16 +1488,97 @@ function bindAdminEvents() {
       .value.split(',')
       .map((s) => s.trim())
       .filter(Boolean);
-    const imageUrl =
-      document.getElementById('newPatImageUrl').value.trim() ||
-      '/assets/tools/pattern-placeholder.svg';
+    const leatherThickness = document.getElementById('newPatLeatherThickness').value.trim();
+    const chiselPitch = document.getElementById('newPatChiselPitch').value.trim();
+    const leatherEstimate = document.getElementById('newPatLeatherEstimate').value.trim();
+    const difficulty = document.getElementById('newPatDifficulty').value;
+    const description = document.getElementById('newPatDescription').value.trim();
+
+    const primaryImg = document.getElementById('newPatImageUrl').value.trim() || '/assets/tools/pattern-placeholder.svg';
+    const moreImgs = document
+      .getElementById('newPatMoreImages')
+      .value.split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const images = [primaryImg, ...moreImgs].filter(Boolean);
+
     const pdfDownloadUrl = document.getElementById('newPatPdfUrl').value.trim();
+    const cadDownloadUrl = document.getElementById('newPatCadUrl').value.trim();
+    const pdfFiles = pdfDownloadUrl ? [pdfDownloadUrl] : [];
+    const cadFiles = cadDownloadUrl ? [cadDownloadUrl] : [];
+
     const variantPrices = {
       pdf_dxf: Number(document.getElementById('newPatPricePdf').value) || 0,
       rap_giay: Number(document.getElementById('newPatPricePaper').value) || 55000,
       rap_mica: Number(document.getElementById('newPatPriceMica').value) || 135000,
       khuon_be: Number(document.getElementById('newPatPriceDie').value) || 450000
     };
+
+    if (editSku) {
+      const p = adminState.products.find((prod) => prod.sku === editSku);
+      if (p) {
+        p.title = title;
+        p.paperSizes = paperSizes.length ? paperSizes : ['A4'];
+        p.leatherThickness = leatherThickness;
+        p.chiselPitch = chiselPitch;
+        p.leatherEstimate = leatherEstimate;
+        p.difficulty = difficulty;
+        p.description = description;
+        p.images = images;
+        p.imageCount = images.length;
+        p.pdfFiles = pdfFiles;
+        p.pdfCount = pdfFiles.length;
+        p.cadFiles = cadFiles;
+        p.cadCount = cadFiles.length;
+
+        const catObj = adminState.categories.find((c) => c.key === categoryKey);
+        if (catObj) {
+          p.categoryKey = catObj.key;
+          p.categoryName = catObj.name;
+          p.categoryShort = catObj.shortName;
+          p.categorySlug = catObj.slug;
+        }
+
+        for (const v of p.variants || []) {
+          if (variantPrices[v.id] !== undefined) v.price = variantPrices[v.id];
+          if (v.id === 'pdf_dxf') {
+            v.badge = variantPrices.pdf_dxf === 0 ? 'Miễn phí tải ngay' : 'Tải tự động 24/7';
+          }
+        }
+        p.isFreePdf = variantPrices.pdf_dxf === 0;
+      }
+
+      try {
+        await fetch(`/api/product/${encodeURIComponent(editSku)}`, {
+          method: 'PUT',
+          headers: getAuthHeaders(),
+          body: JSON.stringify({
+            title,
+            categoryKey,
+            paperSizes,
+            leatherThickness,
+            chiselPitch,
+            leatherEstimate,
+            difficulty,
+            description,
+            images,
+            pdfFiles,
+            cadFiles,
+            variantPrices
+          })
+        });
+      } catch {
+        // offline fallback
+      }
+
+      syncCatalogStatsAndPersistLocal();
+      renderKPIs();
+      populateCategorySelects();
+      renderPatternsTable();
+      addPatModal.classList.add('hidden');
+      showToast(`✅ Đã cập nhật chi tiết mẫu rập [${editSku}] thành công!`);
+      return;
+    }
 
     let createdProduct = null;
     try {
@@ -1385,8 +1590,14 @@ function bindAdminEvents() {
           categoryKey,
           sku: skuInput,
           paperSizes,
-          images: [imageUrl],
-          pdfFiles: pdfDownloadUrl ? [pdfDownloadUrl] : [],
+          leatherThickness,
+          chiselPitch,
+          leatherEstimate,
+          difficulty,
+          description,
+          images,
+          pdfFiles,
+          cadFiles,
           pdfPrice: variantPrices.pdf_dxf,
           paperPrice: variantPrices.rap_giay,
           micaPrice: variantPrices.rap_mica,
@@ -1418,10 +1629,19 @@ function bindAdminEvents() {
         categoryName: catObj ? catObj.name : 'Rập Ví Da',
         categoryShort: catObj ? catObj.shortName : 'Ví Da',
         folderPath: 'Mẫu mới',
-        images: [imageUrl],
+        images,
+        imageCount: images.length,
         paperSizes: paperSizes.length ? paperSizes : ['A4'],
+        leatherThickness,
+        chiselPitch,
+        leatherEstimate,
+        difficulty,
+        description,
         isFreePdf: variantPrices.pdf_dxf === 0,
-        pdfDownloadUrl,
+        pdfFiles,
+        pdfCount: pdfFiles.length,
+        cadFiles,
+        cadCount: cadFiles.length,
         variants: [
           { id: 'pdf_dxf', name: 'File PDF / DXF (Tải ngay 1:1)', price: variantPrices.pdf_dxf },
           { id: 'rap_giay', name: 'Rập Giấy Cứng 350gsm (Cắt máy sẵn)', price: variantPrices.rap_giay },

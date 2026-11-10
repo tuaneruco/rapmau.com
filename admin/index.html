@@ -952,47 +952,76 @@
     </main>
   </div>
 
-  <!-- MODAL 1: THÊM MẪU RẬP MỚI -->
+  <!-- MODAL 1: THÊM / CHỈNH SỬA CHI TIẾT MẪU RẬP -->
   <div id="addPatternModal" class="admin-modal-backdrop hidden">
-    <div class="admin-modal-card">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-        <h3 style="color:var(--bg-saddle); font-size:18px;">➕ Thêm Mẫu Rập Đồ Da Mới</h3>
+    <div class="admin-modal-card" style="max-width: 760px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid var(--border-soft); padding-bottom:10px;">
+        <h3 id="patternModalHeading" style="color:var(--bg-saddle); font-size:18px;">➕ Thêm Mẫu Rập Đồ Da Mới</h3>
         <button type="button" id="closeAddPatternModalBtn" class="btn-danger-sm">✕ Đóng</button>
       </div>
       <form id="addPatternForm">
+        <input type="hidden" id="editPatternSku" value="" />
+
+        <!-- 1. Tên & Danh mục -->
         <div class="form-row">
-          <div class="form-field">
-            <label>Tên mẫu rập hiển thị *</label>
+          <div class="form-field" style="flex:1.5;">
+            <label>Tên mẫu rập hiển thị trên Web *</label>
             <input type="text" id="newPatTitle" placeholder="VD: Rập Ví Đứng Handmade 6 Ngăn Thẻ" required />
           </div>
-          <div class="form-field">
+          <div class="form-field" style="flex:1;">
             <label>Danh mục sản phẩm *</label>
             <select id="newPatCategory" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-weight:700;"></select>
           </div>
         </div>
+
+        <!-- 2. Mã SKU & Khổ giấy -->
         <div class="form-row">
           <div class="form-field">
-            <label>Mã SKU (để trống sẽ tự tạo)</label>
+            <label>Mã SKU (định danh sản phẩm)</label>
             <input type="text" id="newPatSku" placeholder="VD: RM-VI-069" />
           </div>
           <div class="form-field">
-            <label>Khổ giấy in (cách nhau dấu phẩy)</label>
-            <input type="text" id="newPatPaperSizes" value="A4" placeholder="A4, A3" />
+            <label>Khổ giấy in (A4, A3, A0...)</label>
+            <input type="text" id="newPatPaperSizes" value="A4" placeholder="VD: A4, A3" />
           </div>
         </div>
+
+        <!-- 3. Thông số kỹ thuật làm đồ da -->
+        <div class="form-row" style="background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e2e8f0; margin-bottom:14px;">
+          <div class="form-field">
+            <label style="font-size:12px; color:#475569;">Độ dày da khuyên dùng</label>
+            <input type="text" id="newPatLeatherThickness" placeholder="VD: 1.4mm - 1.8mm" />
+          </div>
+          <div class="form-field">
+            <label style="font-size:12px; color:#475569;">Bước đục lỗ khâu</label>
+            <input type="text" id="newPatChiselPitch" placeholder="VD: 3.85mm hoặc 4.0mm" />
+          </div>
+          <div class="form-field">
+            <label style="font-size:12px; color:#475569;">Định mức da dự kiến</label>
+            <input type="text" id="newPatLeatherEstimate" placeholder="VD: 4.5 - 6.0 Pia (SF)" />
+          </div>
+          <div class="form-field">
+            <label style="font-size:12px; color:#475569;">Độ khó thực hiện</label>
+            <select id="newPatDifficulty" style="width:100%; padding:9px; border-radius:6px; border:1px solid #cbd5e1; font-size:13px;">
+              <option value="Cơ bản">Cơ bản (Người mới)</option>
+              <option value="Trung bình">Trung bình</option>
+              <option value="Nâng cao">Nâng cao (Xưởng/Thợ cứng)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 4. Giá 4 Biến Thể -->
         <div class="form-row">
           <div class="form-field">
-            <label>Giá File PDF/DXF (0 = Miễn phí)</label>
-            <input type="number" id="newPatPricePdf" value="0" />
+            <label>Giá File PDF/DXF (0 = Free 0đ) *</label>
+            <input type="number" id="newPatPricePdf" value="0" required />
           </div>
           <div class="form-field">
             <label>Giá Rập Giấy Cứng 350gsm (đ)</label>
             <input type="number" id="newPatPricePaper" value="55000" />
           </div>
-        </div>
-        <div class="form-row">
           <div class="form-field">
-            <label>Giá Rập Mica Trong 2mm (đ)</label>
+            <label>Giá Rập Mica 2mm Laser (đ)</label>
             <input type="number" id="newPatPriceMica" value="135000" />
           </div>
           <div class="form-field">
@@ -1000,21 +1029,59 @@
             <input type="number" id="newPatPriceDie" value="450000" />
           </div>
         </div>
-        <div class="form-field" style="margin-bottom:12px;">
-          <label>Ảnh đại diện sản phẩm (Chọn file ảnh từ máy hoặc dán URL)</label>
-          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-            <input type="text" id="newPatImageUrl" placeholder="/assets/tools/pattern-placeholder.svg" style="flex:1;" />
-            <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0;">
-              📷 Tải ảnh từ máy
-              <input type="file" id="newPatImageFile" accept="image/*" style="display:none;" />
-            </label>
+
+        <!-- 5. Ảnh đại diện & Thư viện ảnh -->
+        <div style="background:#fffbeb; padding:12px; border-radius:8px; border:1px solid #fde68a; margin-bottom:14px;">
+          <div class="form-field" style="margin-bottom:10px;">
+            <label style="color:#92400e; font-weight:800;">🖼️ Ảnh đại diện sản phẩm chính (Dán link hoặc tải từ máy)</label>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <img id="newPatImgPreview" src="/assets/tools/pattern-placeholder.svg" style="width:44px; height:44px; object-fit:cover; border-radius:6px; border:1px solid #d97706; background:#fff;" alt="Preview" />
+              <input type="text" id="newPatImageUrl" placeholder="/media/..." style="flex:1;" />
+              <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0; background:#fff;">
+                📷 Tải ảnh từ máy
+                <input type="file" id="newPatImageFile" accept="image/*" style="display:none;" />
+              </label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label style="color:#92400e; font-size:12px; font-weight:700;">📸 Thư viện ảnh chi tiết (Mỗi dòng 1 link ảnh):</label>
+            <textarea id="newPatMoreImages" rows="3" style="width:100%; padding:8px; border-radius:6px; border:1px solid #fcd34d; font-family:monospace; font-size:12px;" placeholder="/media/Balo/01/22.jpg&#10;/media/Balo/01/4.jpg"></textarea>
           </div>
         </div>
-        <div class="form-field" style="margin-bottom:14px;">
-          <label>Link tải File PDF/DXF (nếu có)</label>
-          <input type="text" id="newPatPdfUrl" placeholder="/media/patterns/..." />
+
+        <!-- 6. File tải lên (File PDF & File CAD) -->
+        <div style="background:#ecfdf5; padding:12px; border-radius:8px; border:1px solid #a7f3d0; margin-bottom:14px;">
+          <div class="form-field" style="margin-bottom:10px;">
+            <label style="color:#065f46; font-weight:800;">📁 File Rập PDF tải về (Dán URL hoặc tải file từ máy tính):</label>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <input type="text" id="newPatPdfUrl" placeholder="/media/Balo/01/ban-ve.pdf" style="flex:1;" />
+              <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0; background:#fff; border-color:#059669; color:#065f46;">
+                📄 Tải file PDF từ máy
+                <input type="file" id="newPatPdfFile" accept=".pdf" style="display:none;" />
+              </label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label style="color:#065f46; font-size:12px; font-weight:700;">📐 File Vector CAD / DXF tải về (tùy chọn):</label>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <input type="text" id="newPatCadUrl" placeholder="/media/.../ban-ve.dxf" style="flex:1;" />
+              <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0; background:#fff; border-color:#059669; color:#065f46;">
+                📐 Tải file CAD từ máy
+                <input type="file" id="newPatCadFile" accept=".dxf,.dwg,.ai,.cdr" style="display:none;" />
+              </label>
+            </div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">💾 Tạo Mẫu Rập Mới</button>
+
+        <!-- 7. Nội dung mô tả & Hướng dẫn may ráp -->
+        <div class="form-field" style="margin-bottom:14px;">
+          <label style="font-weight:700;">📝 Nội dung mô tả mẫu rập &amp; Hướng dẫn may ráp:</label>
+          <textarea id="newPatDescription" rows="3" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-family:inherit; font-size:13px;" placeholder="Mô tả cấu trúc ngăn, cách xử lý mép cạnh da, lưu ý khi dán ghép và cắt dưỡng..."></textarea>
+        </div>
+
+        <button type="submit" id="submitPatternBtn" class="btn btn-primary btn-full" style="padding:12px; font-size:15px; font-weight:800;">
+          💾 Lưu Thông Tin Mẫu Rập
+        </button>
       </form>
     </div>
   </div>
