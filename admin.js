@@ -1,4 +1,4 @@
-const CMS_OVERRIDE_KEY = 'rapmau_cms_catalog_override';
+const CMS_OVERRIDE_KEY = 'rapmau_cms_catalog_override_v2';
 const ADMIN_SESSION_KEY = 'rapmau_admin_auth_session';
 const ADMIN_CUSTOM_CRED_KEY = 'rapmau_admin_custom_cred';
 // SHA-256("Rapmau@2026")

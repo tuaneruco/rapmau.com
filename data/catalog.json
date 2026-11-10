@@ -27,7 +27,7 @@
   "stats": {
     "totalPatterns": 258,
     "totalCategories": 21,
-    "totalToolsAndAccessories": 48,
+    "totalToolsAndAccessories": 68,
     "freePatternsCount": 258,
     "freeBooksCount": 26
   },
@@ -25966,6 +25966,413 @@
         "/assets/tools/phukien/pk-36-1.jpg",
         "/assets/tools/phukien/pk-36-2.jpg"
       ]
+    },
+    {
+      "id": "dh-tool-01",
+      "sku": "DH-KC-01",
+      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn 0.6mm Màu Thông Dụng (Kèm Dùi)",
+      "category": "Dụng Cụ Đục & Khâu",
+      "price": 180000,
+      "originalPrice": 225000,
+      "unit": "Combo 14 món",
+      "badge": "Best Seller • Đạt Hưng Leather",
+      "images": [
+        "/assets/tools/dathung/dh-01-1.jpg",
+        "/assets/tools/dathung/dh-01-2.jpg",
+        "/assets/tools/dathung/dh-01-3.jpg",
+        "/assets/tools/dathung/dh-01-4.jpg"
+      ],
+      "specs": [
+        "Gồm 5 cuộn chỉ sáp tròn 0.6mm (~90m/cuộn): Đen, Trắng, Nâu Đỏ, Bò, Xanh Olive",
+        "Kèm 4 kim khâu da đầu tù size nhỏ + 4 kim đầu tù size trung + 1 cây dùi lỗ cán gỗ",
+        "Tiết kiệm ~20% so với mua lẻ từng món, phù hợp khâu ví da, túi xách, bao da"
+      ],
+      "description": "Combo kim đầu tù, chỉ sáp may tay 0.6mm màu trung tính đa dụng và cây dùi lỗ chuyên dụng từ Đạt Hưng Leather."
+    },
+    {
+      "id": "dh-tool-02",
+      "sku": "DH-KC-02",
+      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn 0.5mm Màu Thông Dụng (Kèm Dùi)",
+      "category": "Dụng Cụ Đục & Khâu",
+      "price": 180000,
+      "originalPrice": 225000,
+      "unit": "Combo 14 món",
+      "badge": "Bán chạy • Đạt Hưng Leather",
+      "images": [
+        "/assets/tools/dathung/dh-02-1.jpg",
+        "/assets/tools/dathung/dh-02-2.jpg",
+        "/assets/tools/dathung/dh-02-3.jpg",
+        "/assets/tools/dathung/dh-02-4.jpg"
+      ],
+      "specs": [
+        "Gồm 5 cuộn chỉ sáp tròn 0.5mm (~120m/cuộn): Đen, Trắng, Nâu Đỏ, Bò, Xanh Olive",
+        "Kèm 8 kim khâu da đầu tù (4 nhỏ + 4 trung) và 1 cây dùi lỗ thủ công",
+        "Cỡ chỉ 0.5mm chuẩn đẹp cho cả đục xiên 3.38mm và đục trám 4.0mm"
+      ],
+      "description": "Bộ combo chỉ sáp 0.5mm kèm kim đầu tù và dùi lỗ chuyên dụng may đồ da handmade."
+    },
+    {
+      "id": "dh-tool-03",
+      "sku": "DH-KC-03",
+      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn 0.4mm Khâu Ví & Dây Đồng Hồ",
+      "category": "Dụng Cụ Đục & Khâu",
+      "price": 180000,
+      "originalPrice": 225000,
+      "unit": "Combo 14 món",
+      "badge": "Khâu tinh xảo • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-03-1.jpg",
+        "/assets/tools/dathung/dh-03-2.jpg",
+        "/assets/tools/dathung/dh-03-3.jpg",
+        "/assets/tools/dathung/dh-03-4.jpg"
+      ],
+      "specs": [
+        "Gồm 5 cuộn chỉ sáp tròn 0.4mm (~140m/cuộn): Đen, Trắng, Nâu Đỏ, Bò, Xanh Olive",
+        "Kèm 4 kim đầu tù size nhỏ + 4 kim size trung + 1 cây dùi lỗ",
+        "Sợi chỉ mảnh 0.4mm cực đẹp khi khâu dây đồng hồ, ví thẻ mỏng và đồ da cao cấp"
+      ],
+      "description": "Combo chỉ sáp 0.4mm mảnh tinh tế kèm kim khâu đầu tù và dùi lỗ làm đồ da thủ công."
+    },
+    {
+      "id": "dh-tool-04",
+      "sku": "DH-DL-04",
+      "title": "Set 10 Cây Đục Lỗ Tròn Thông Dụng Đủ Size Từ 0.5mm Đến 5.0mm Thép Carbon",
+      "category": "Dụng Cụ Đục & Khâu",
+      "price": 130000,
+      "originalPrice": 145000,
+      "unit": "Bộ 10 cây",
+      "badge": "Đủ 10 size • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-04-1.jpg",
+        "/assets/tools/dathung/dh-04-2.jpg",
+        "/assets/tools/dathung/dh-04-3.jpg",
+        "/assets/tools/dathung/dh-04-4.jpg"
+      ],
+      "specs": [
+        "Trọn bộ 10 cây đục lỗ tròn: 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5 và 5.0mm",
+        "Thép công cụ carbon chịu lực cao, lưỡi sắc bén, bền bỉ dùng lâu dài",
+        "Đục lỗ dây đồng hồ, dây thắt lưng, lỗ tán đinh rivet, khuy bấm và lỗ khâu"
+      ],
+      "description": "Set 10 cây đục lỗ tròn thép carbon chất lượng cao đủ kích thước từ 0.5mm đến 5.0mm."
+    },
+    {
+      "id": "dh-tool-05",
+      "sku": "DH-DL-05",
+      "title": "Bộ Đục Trám 4 Cây Chuyên Dụng Làm Đồ Da Handmade (1 - 2 - 4 - 6 Răng)",
+      "category": "Dụng Cụ Đục & Khâu",
+      "price": 85000,
+      "originalPrice": 110000,
+      "unit": "Bộ 4 cây",
+      "badge": "Chuẩn bước đục rập",
+      "images": [
+        "/assets/tools/dathung/dh-04-2.jpg",
+        "/assets/tools/dathung/dh-04-1.jpg"
+      ],
+      "specs": [
+        "Bộ 4 cây đục lỗ hình trám (1 răng, 2 răng, 4 răng, 6 răng) thép chịu lực",
+        "Răng đục sắc ngọt, thoát da dễ dàng, tạo đường chỉ chéo đều đặn",
+        "Tương thích hoàn toàn với các bản vẽ rập ví da và túi xách trên RAPMAU.COM"
+      ],
+      "description": "Bộ đục trám 4 cây thép đen cứng cáp dành cho người mới bắt đầu và thợ làm đồ da thủ công."
+    },
+    {
+      "id": "dh-tool-06",
+      "sku": "DH-KM-06",
+      "title": "Set Kim May Da & Khâu Vá Thủ Công Đủ Size Kèm Ống Đựng Bảo Quản",
+      "category": "Dụng Cụ Đục & Khâu",
+      "price": 35000,
+      "originalPrice": 50000,
+      "unit": "Hộp / Bộ đủ size",
+      "badge": "Tiện lợi • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-01-2.jpg",
+        "/assets/tools/dathung/dh-01-1.jpg"
+      ],
+      "specs": [
+        "Đầy đủ các kích cỡ kim khâu da đầu tù và kim khâu thủ công thông dụng",
+        "Thép không gỉ cứng cáp, lỗ xỏ chỉ mượt không làm xước sợi chỉ sáp",
+        "Kèm ống đựng bảo quản gọn gàng, chống thất lạc kim khi làm việc"
+      ],
+      "description": "Bộ kim khâu da và may vá thủ công đủ kích cỡ kèm ống đựng tiện dụng."
+    },
+    {
+      "id": "dh-tool-07",
+      "sku": "DH-SP-07",
+      "title": "Bàn Chải Vệ Sinh Da Lộn, Da Nubuck & Đồ Da 3 Đầu Đa Năng",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 27000,
+      "originalPrice": 40000,
+      "unit": "1 cây",
+      "badge": "Chăm sóc đồ da • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-05-1.jpg",
+        "/assets/tools/dathung/dh-05-2.jpg",
+        "/assets/tools/dathung/dh-05-3.jpg",
+        "/assets/tools/dathung/dh-05-4.jpg"
+      ],
+      "specs": [
+        "Thiết kế 3 đầu thông minh: Đầu cao su Silicon + Lông nhựa PP + Lông cước đồng",
+        "Làm sạch bụi bẩn, phục hồi tuyết da lộn (Suede), da Nubuck và vệ sinh cạnh rãnh",
+        "Dụng cụ không thể thiếu khi hoàn thiện và vệ sinh túi ví, giày da handmade"
+      ],
+      "description": "Bàn chải 3 đầu đa năng chuyên dụng vệ sinh đồ da lộn, da nubuck và chăm sóc giày túi da."
+    },
+    {
+      "id": "dh-tool-08",
+      "sku": "DH-KEO-08",
+      "title": "Keo Dán Da & Phụ Kiện B7000 15ml (Keo Trong Đầu Kim Nhọn Chống Tràn)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 11000,
+      "originalPrice": 18000,
+      "unit": "Tuýp 15ml",
+      "badge": "Đầu kim chính xác",
+      "images": [
+        "/assets/tools/dathung/dh-06-1.jpg",
+        "/assets/tools/dathung/dh-06-2.jpg",
+        "/assets/tools/dathung/dh-06-3.jpg",
+        "/assets/tools/dathung/dh-06-4.jpg"
+      ],
+      "specs": [
+        "Keo trong suốt không màu, độ bám dính cao và đàn hồi tốt, không làm cứng da như keo 502",
+        "Đầu tuýp thiết kế kim nhọn giúp tra keo chính xác vào mép da nhỏ, chân đinh tán, phụ kiện",
+        "Dung tích 15ml nhỏ gọn, có kim thông nắp chống khô keo"
+      ],
+      "description": "Keo B7000 15ml trong suốt có đầu mũi kim nhọn chuyên dán mép da, phụ kiện và chi tiết nhỏ."
+    },
+    {
+      "id": "dh-tool-09",
+      "sku": "DH-KEO-09",
+      "title": "Keo Dán Da & Phụ Kiện B7000 50ml (Keo Trong Đa Năng Bám Dính Chắc)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 18000,
+      "originalPrice": 28000,
+      "unit": "Tuýp 50ml",
+      "badge": "Phổ biến nhất • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-07-1.jpg",
+        "/assets/tools/dathung/dh-07-2.jpg",
+        "/assets/tools/dathung/dh-07-3.jpg",
+        "/assets/tools/dathung/dh-07-4.jpg"
+      ],
+      "specs": [
+        "Dung tích 50ml vừa vặn cho thợ làm đồ da thủ công và DIY tại nhà",
+        "Keo trong không màu, cố định mép da trước khi đục lỗ khâu cực kỳ chắc chắn",
+        "Đầu mũi kim nhỏ giúp kiểm soát lượng keo không bị lem ra bề mặt da"
+      ],
+      "description": "Tuýp keo trong B7000 50ml chuyên dán mép đồ da, đinh tán và phụ kiện handmade."
+    },
+    {
+      "id": "dh-tool-10",
+      "sku": "DH-KEO-10",
+      "title": "Keo Dán Da & Phụ Kiện B7000 110ml (Tuýp Lớn Tiết Kiệm Cho Xưởng)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 32000,
+      "originalPrice": 45000,
+      "unit": "Tuýp 110ml",
+      "badge": "Hot • Siêu tiết kiệm",
+      "images": [
+        "/assets/tools/dathung/dh-08-1.jpg",
+        "/assets/tools/dathung/dh-08-2.jpg",
+        "/assets/tools/dathung/dh-08-3.jpg",
+        "/assets/tools/dathung/dh-08-4.jpg"
+      ],
+      "specs": [
+        "Tuýp lớn 110ml siêu tiết kiệm dành cho người làm nhiều sản phẩm hoặc xưởng đồ da",
+        "Độ kết dính cao, chịu lực tốt trên da thuộc, vải, kim loại, gỗ và phụ kiện",
+        "Không làm cháy hay giòn bề mặt da, dễ dàng vệ sinh phần keo thừa"
+      ],
+      "description": "Keo B7000 dung tích lớn 110ml chính hãng Đạt Hưng Leather chuyên dụng dán đồ da và phụ kiện."
+    },
+    {
+      "id": "dh-tool-11",
+      "sku": "DH-KEO-11",
+      "title": "Keo Dán Da Chuyên Dụng Renia Italy Cao Cấp (Kết Dính Mép Da Chuyên Nghiệp)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 224000,
+      "originalPrice": 280000,
+      "unit": "Lon tiêu chuẩn",
+      "badge": "Nhập khẩu Italy • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-08-1.jpg",
+        "/assets/tools/phukien/pk-15-1.jpg"
+      ],
+      "specs": [
+        "Dòng keo dán da cao cấp Renia thương hiệu Italy nổi tiếng trong ngành chế tác đồ da",
+        "Lực kết dính cực mạnh nhưng vẫn giữ độ mềm dẻo tự nhiên của mép da sau khi dán",
+        "Chuyên dùng dán lót da heo, da dê, dán gập mép ví, túi xách và dây đồng hồ cao cấp"
+      ],
+      "description": "Keo dán da Renia Italy chuyên nghiệp giúp liên kết các lớp da bền chặt vượt trội."
+    },
+    {
+      "id": "dh-tool-12",
+      "sku": "DH-HC-12",
+      "title": "Dầu Dưỡng Da & Phục Hồi Bề Mặt Đồ Da Leather Balm Cao Cấp",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 250000,
+      "originalPrice": 300000,
+      "unit": "Hộp dưỡng da",
+      "badge": "Dưỡng bóng & Mềm da",
+      "images": [
+        "/assets/tools/dathung/dh-13-1.jpg"
+      ],
+      "specs": [
+        "Cung cấp độ ẩm tự nhiên giúp da bò Veg-tan, Nappa, da sáp luôn mềm mịn, chống nứt gãy",
+        "Tạo lớp màng bảo vệ nhẹ và lên màu patina sang trọng sau khi hoàn thiện sản phẩm",
+        "Sử dụng cho ví da, túi xách, cặp táp, giày da và dây đồng hồ"
+      ],
+      "description": "Sáp/Dầu dưỡng da Leather Balm cao cấp giúp bảo dưỡng và hoàn thiện bề mặt sản phẩm đồ da thủ công."
+    },
+    {
+      "id": "dh-tool-13",
+      "sku": "DH-NK-13",
+      "title": "Set Khuy Bấm Inox Chống Gỉ Cao Cấp Làm Ví Da & Túi Xách",
+      "category": "Phụ Kiện Kim Loại",
+      "price": 52000,
+      "originalPrice": 65000,
+      "unit": "Set khuy bấm",
+      "badge": "Inox chống gỉ • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-11-1.jpg"
+      ],
+      "specs": [
+        "Chất liệu Inox / hợp kim mạ cao cấp chống gỉ sét, bấm êm và giữ nắp chắc chắn",
+        "Đầy đủ 4 thành phần (mặt nút, cối âm, đực, chân tán) chuẩn kích thước làm ví và bao da",
+        "Dễ dàng đóng lắp cùng bộ cối đóng nút bấm thông dụng"
+      ],
+      "description": "Set khuy bấm inox chống gỉ độ bền cao chuyên dùng cho ví da, bóp cầm tay và bao chìa khoá."
+    },
+    {
+      "id": "dh-tool-14",
+      "sku": "DH-NK-14",
+      "title": "Khóa Túi Xách & Cặp Da Ngũ Kim Cao Cấp Chống Gỉ Sét",
+      "category": "Phụ Kiện Kim Loại",
+      "price": 76000,
+      "originalPrice": 95000,
+      "unit": "Bộ khóa",
+      "badge": "Ngũ kim cao cấp",
+      "images": [
+        "/assets/tools/dathung/dh-12-1.jpg"
+      ],
+      "specs": [
+        "Khóa cài/khóa vặn hợp kim mạ điện dày dặn, bề mặt sáng bóng chống oxy hoá",
+        "Phù hợp lắp cho các mẫu rập túi đeo chéo, túi xách nữ, clutch và cặp da",
+        "Kèm đầy đủ ngàm và vít/đinh cố định dễ dàng thao tác"
+      ],
+      "description": "Khóa túi xách ngũ kim cao cấp giúp nâng tầm thẩm mỹ cho các sản phẩm túi da handmade."
+    },
+    {
+      "id": "dh-tool-15",
+      "sku": "DH-DA-15",
+      "title": "Da Heo Lót Mặt Trong Ví & Túi Xách (Độ Dày 0.6–0.8mm Mềm Thoáng)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 10000,
+      "originalPrice": 15000,
+      "unit": "Tính theo Pia (SF)",
+      "badge": "Da lót thông dụng • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-09-1.jpg"
+      ],
+      "specs": [
+        "Da heo thuộc chuyên dùng làm lớp lót mặt trong cho ví da, túi xách, dây đồng hồ",
+        "Bề mặt lỗ chân lông 3 chấm đặc trưng, mỏng nhẹ (0.6-0.8mm), dai bền và thoáng khí",
+        "Giá tính theo đơn vị Pia (1 Pia ~ 30x30cm), dễ dàng đặt mua theo diện tích rập"
+      ],
+      "description": "Da heo lót mặt trong dẻo dai, mỏng nhẹ giúp hoàn thiện mặt trái sản phẩm đồ da sạch đẹp."
+    },
+    {
+      "id": "dh-tool-16",
+      "sku": "DH-DA-16",
+      "title": "Da Dê Thuộc Cao Cấp Vân Tự Nhiên (Chế Tác Ví Thẻ, Ví Đứng & Túi Nhỏ)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 25000,
+      "originalPrice": 35000,
+      "unit": "Tính theo Pia (SF)",
+      "badge": "Vân tự nhiên • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-10-1.jpg"
+      ],
+      "specs": [
+        "Da dê thuộc chất lượng cao với hạt vân tự nhiên sắc nét, đanh dẻo và chống trầy tốt",
+        "Độ dày vừa phải (1.0–1.3mm), cực kỳ lý tưởng để làm ngăn thẻ ví, ví gập và bóp nữ",
+        "Đơn giá tính theo Pia (SF) tiện lợi cho khách mua lẻ làm đồ handmade"
+      ],
+      "description": "Da dê thuộc cao cấp vân hạt tự nhiên sang trọng từ Đạt Hưng Leather."
+    },
+    {
+      "id": "dh-tool-17",
+      "sku": "DH-DA-17",
+      "title": "Da Heo Thuộc Mềm Nguyên Tấm Cao Cấp (Lót Túi Xách & Ví Da)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 280000,
+      "originalPrice": 350000,
+      "unit": "Tấm chọn lọc",
+      "badge": "Nguyên tấm tiết kiệm",
+      "images": [
+        "/assets/tools/dathung/dh-16-1.jpg"
+      ],
+      "specs": [
+        "Tấm da heo thuộc mềm mịn, diện tích lớn dùng lót toàn bộ túi xách, cặp da hoặc nhiều ví",
+        "Dễ cắt theo rập, bám keo tốt, không bị bùng nhùng khi gập mép",
+        "Đạt Hưng Leather tuyển chọn tấm da ít sẹo, hiệu suất sử dụng cao"
+      ],
+      "description": "Da heo thuộc mềm nguyên tấm chuyên dùng làm lót trong túi xách, cặp táp và ví da cao cấp."
+    },
+    {
+      "id": "dh-tool-18",
+      "sku": "DH-DA-18",
+      "title": "Da Bò Nappa Mềm Cao Cấp (Làm Túi Xách, Ví Cầm Tay & Phụ Kiện)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 650000,
+      "originalPrice": 800000,
+      "unit": "Tấm / Phần tư con",
+      "badge": "Da bò thật 100%",
+      "images": [
+        "/assets/tools/dathung/dh-18-1.jpg"
+      ],
+      "specs": [
+        "Da bò Nappa thuộc mềm mượt, bề mặt đanh mịn, cảm giác chạm êm ái sang trọng",
+        "Độ dày 1.4–1.8mm phù hợp hầu hết các mẫu rập túi đeo chéo, túi tote, clutch và ví da",
+        "Dễ xử lý sơn cạnh và khâu tay chuẩn xác theo bản vẽ rập"
+      ],
+      "description": "Da bò Nappa mềm cao cấp tuyển chọn chuyên dùng chế tác túi xách và ví da thủ công."
+    },
+    {
+      "id": "dh-tool-19",
+      "sku": "DH-DA-19",
+      "title": "Da Bò Thuộc Thảo Mộc Veg-Tan Ý Cao Cấp (Làm Ví, Thắt Lưng, Chạm Khắc)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 680000,
+      "originalPrice": 850000,
+      "unit": "Tấm tiêu chuẩn",
+      "badge": "Veg-Tan Italy • Đạt Hưng",
+      "images": [
+        "/assets/tools/dathung/dh-17-1.jpg"
+      ],
+      "specs": [
+        "Da bò thuộc thảo mộc (Vegetable Tanned Leather) nhập khẩu Ý, giữ phom cứng cáp tuyệt vời",
+        "Có thể nhuộm màu thủ công, đóng dấu nhiệt/dấu đồng sắc nét và đánh bóng cạnh bằng gôm/gỗ",
+        "Lý tưởng cho các mẫu rập bao kiếm, bao dao, bao zippo, ví nam, túi hộp và thắt lưng"
+      ],
+      "description": "Da bò thuộc thảo mộc Veg-tan Ý cao cấp chuyên dùng làm đồ da thủ công, chạm khắc và nhuộm màu."
+    },
+    {
+      "id": "dh-tool-20",
+      "sku": "DH-DA-20",
+      "title": "Da Cừu Italy Mềm Mịn Thượng Hạng (Chế Tác Túi Xách & Đồ Da Cao Cấp)",
+      "category": "Da Thuộc & Hoá Chất",
+      "price": 960000,
+      "originalPrice": 1200000,
+      "unit": "Tấm nguyên bản",
+      "badge": "Thượng hạng • Italy",
+      "images": [
+        "/assets/tools/dathung/dh-15-1.jpg"
+      ],
+      "specs": [
+        "Da cừu thật nhập khẩu Italy với bề mặt siêu mềm mịn, nhẹ và bóng tự nhiên",
+        "Thích hợp may các mẫu túi xách thời trang cao cấp, bóp đầm, bao kính và phụ kiện sang trọng",
+        "Tuyển chọn bởi Đạt Hưng Leather (shopee.vn/dathungleather)"
+      ],
+      "description": "Da cừu Italy mềm mịn thượng hạng dành cho các dòng túi xách và phụ kiện đồ da cao cấp."
     }
   ],
   "freeBooks": [

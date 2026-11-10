@@ -58,7 +58,7 @@ async function initApp() {
     }
     let data = await res.json();
     if (!fromApi) {
-      const localOverride = localStorage.getItem('rapmau_cms_catalog_override');
+      const localOverride = localStorage.getItem('rapmau_cms_catalog_override_v2');
       if (localOverride) {
         try {
           data = JSON.parse(localOverride);
@@ -691,6 +691,9 @@ function renderTools() {
   }
   const list = state.accessories.filter((item) => {
     if (state.selectedToolCat === 'all') return true;
+    if (state.selectedToolCat === 'Da Thuộc & Hoá Chất') {
+      return item.category.includes('Da Thuộc') || item.category.includes('Hoá Chất');
+    }
     if (state.selectedToolCat === 'Dụng Cụ & Máy Móc') {
       return item.category.includes('Máy Móc') || item.category.includes('Cắt Rập');
     }
@@ -698,7 +701,7 @@ function renderTools() {
       return item.category.includes('Đục') || item.category.includes('Kim Chỉ');
     }
     if (state.selectedToolCat === 'Phụ Kiện Kim Loại') {
-      return item.category.includes('Phụ Kiện') || item.category.includes('Hoá Chất');
+      return item.category.includes('Phụ Kiện');
     }
     return item.category === state.selectedToolCat;
   });
