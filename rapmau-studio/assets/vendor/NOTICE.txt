@@ -1,0 +1,10 @@
+ONNX Runtime Web 1.20.1 — Microsoft Corporation, MIT License.
+https://github.com/microsoft/onnxruntime
+Distributed files: ort.wasm.min.js, ort-wasm-simd-threaded.mjs, ort-wasm-simd-threaded.wasm.
+
+U2-Net / U2NetP — Xuebin Qin et al., Apache License 2.0.
+https://github.com/xuebinqin/U-2-Net
+Model distributed from official rembg release:
+https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2netp.onnx
+MD5: 8e83ca70e441ab06c318d82300c84806
+The model is unmodified. Its license is included at /models/LICENSE-U2NET.txt.

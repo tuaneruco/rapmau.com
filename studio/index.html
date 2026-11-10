@@ -147,18 +147,19 @@
       </a>
 
       <div class="studio-tabs" id="studioMainTabs">
-        <button type="button" class="st-tab active" data-panel="panel-watermark">
-          🏷️ 1. Xử Lý Ảnh &amp; In Chìm Logo
+        <button type="button" class="st-tab active" data-panel="panel-custom">
+          🪄 1. Bộ 3 Công Cụ RAPMAU Studio (In Chìm Logo • Tách Nền AI • Nén Ảnh)
         </button>
         <button type="button" class="st-tab" data-panel="panel-sketch">
           📐 2. Phác Thảo Rập &amp; Tính Lỗ Đục 1:1
         </button>
-        <button type="button" class="st-tab" data-panel="panel-custom">
-          🔌 3. Nhúng Công Cụ Riêng Của Bạn
+        <button type="button" class="st-tab" data-panel="panel-watermark">
+          🏷️ 3. Đóng Dấu Nhanh Kho 258 SKU
         </button>
       </div>
 
       <div style="display:flex; gap:8px;">
+        <a href="/rapmau-studio/" class="btn-sm" style="background:#15803d; color:#fff; text-decoration:none;">🚀 Mở Toàn Màn Hình (/rapmau-studio/)</a>
         <a href="/admin" class="btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; text-decoration:none;">⚙️ Về Quản Trị CMS</a>
         <a href="/" class="btn-sm" style="background:var(--accent-gold); color:#1c130c; text-decoration:none;">🌐 Về Trang Chủ</a>
       </div>
@@ -167,7 +168,7 @@
 
   <main class="studio-workspace container">
     <!-- CÔNG CỤ 1: XỬ LÝ ẢNH SẢN PHẨM & IN CHÌM LOGO RAPMAU.COM / DẬP CHÌM LÊN DA -->
-    <section id="panel-watermark" class="studio-panel">
+    <section id="panel-watermark" class="studio-panel hidden">
       <div class="studio-grid">
         <div class="studio-controls">
           <h3 style="color:var(--bg-saddle); font-size:17px;">🏷️ Xử Lý Ảnh &amp; In Chìm Logo</h3>
@@ -321,44 +322,43 @@
       </div>
     </section>
 
-    <!-- CÔNG CỤ 3: HƯỚNG DẪN & KHUNG NHÚNG CÔNG CỤ CÓ SẴN CỦA BẠN -->
-    <section id="panel-custom" class="studio-panel hidden">
-      <div class="cms-card" style="background:#fff; padding:26px; border-radius:14px; border:1px solid var(--border-soft);">
-        <span class="section-eyebrow">CỔNG TÍCH HỢP MỞ (CUSTOM TOOL CONNECTOR)</span>
-        <h2 style="color:var(--bg-saddle); margin:6px 0 10px;">Kết Nối Các File Công Cụ HTML/JS Sẵn Có Của Bạn Vào Website</h2>
-        <p style="font-size:14px; color:var(--text-muted); margin-bottom:18px;">
-          Ngoài 2 bộ công cụ Canvas đã tích hợp sẵn ở Tab 1 và Tab 2, bạn có thể đưa nguyên bản các công cụ xử lý ảnh, in chìm logo, phác thảo rập mà bạn đã code trước đó vào website <strong>www.rapmau.com</strong> theo 2 cách cực kỳ đơn giản:
-        </p>
-
-        <div class="guide-grid" style="margin-bottom:20px;">
-          <div style="background:var(--bg-parchment); padding:18px; border-radius:12px; border:1px solid var(--border-soft);">
-            <h4 style="color:var(--bg-saddle); margin-bottom:6px;">Cách 1: Chép file vào thư mục <code>public/custom-tools/</code></h4>
-            <p style="font-size:13px; color:var(--text-muted);">
-              Bạn chỉ cần copy các file <code>.html</code>, <code>.js</code>, <code>.css</code> của công cụ bạn đã viết vào thư mục:<br/>
-              <code>/Users/tuaneruco/Desktop/CTY/Mẫu tổng hợp -PDF/public/custom-tools/</code><br/>
-              Hoặc gửi tên đường dẫn file cho tôi trong khung chat để tôi gắn trực tiếp vào các Tab này.
+    <!-- CÔNG CỤ 3: BỘ 3 CÔNG CỤ RAPMAU STUDIO (IN CHÌM LOGO, TÁCH NỀN U2NET AI, NÉN ẢNH) -->
+    <section id="panel-custom" class="studio-panel">
+      <div class="cms-card" style="background:#fff; padding:22px; border-radius:14px; border:1px solid var(--border-soft);">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px;">
+          <div>
+            <span class="section-eyebrow">ĐÃ TÍCH HỢP GÓI RAPMAU-STUDIO-3-CONG-CU (ERUCO v285)</span>
+            <h2 style="color:var(--bg-saddle); margin:4px 0 4px;">Bộ 3 Công Cụ Xử Lý Ảnh Đồ Da Chuyên Nghiệp (Chạy Trực Tiếp Trên Trình Duyệt)</h2>
+            <p style="font-size:13.5px; color:var(--text-muted); margin:0;">
+              Chọn công cụ bên dưới để làm việc ngay trong khung hoặc mở toàn màn hình tại <a href="/rapmau-studio/" target="_blank" style="font-weight:800; color:var(--accent-leather);">/rapmau-studio/ ↗</a>
             </p>
           </div>
-
-          <div style="background:var(--bg-parchment); padding:18px; border-radius:12px; border:1px solid var(--border-soft);">
-            <h4 style="color:var(--bg-saddle); margin-bottom:6px;">Cách 2: Dán đường dẫn URL / File Local để chạy ngay bên dưới</h4>
-            <div style="display:flex; gap:8px; margin-top:8px;">
-              <input
-                type="text"
-                id="customToolUrlInput"
-                placeholder="Nhập đường dẫn (VD: /custom-tools/index.html hoặc https://...)"
-                style="flex:1; padding:9px 12px; border-radius:8px; border:1px solid var(--border-stitch);"
-              />
-              <button type="button" class="btn btn-primary" id="loadCustomToolBtn">Mở Công Cụ</button>
-            </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('customToolIframe').src='/rapmau-studio/in-chim-logo/'">
+              01 · 🏷️ In Chìm Logo Lên Da
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('customToolIframe').src='/rapmau-studio/tach-nen/'">
+              02 · ✂️ Tách Nền AI (U²-Net)
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('customToolIframe').src='/rapmau-studio/nen-anh/'">
+              03 · ⚡ Nén Ảnh Chuẩn Web
+            </button>
+            <a href="/rapmau-studio/" target="_blank" class="btn btn-zalo btn-sm">
+              ↗ Mở Trang Độc Lập
+            </a>
           </div>
+        </div>
+
+        <div style="display:none;">
+          <input type="text" id="customToolUrlInput" value="/rapmau-studio/in-chim-logo/" />
+          <button type="button" id="loadCustomToolBtn">Mở</button>
         </div>
 
         <iframe
           id="customToolIframe"
-          src="about:blank"
-          style="width:100%; height:600px; border:2px dashed var(--border-stitch); border-radius:12px; background:#faf6f0;"
-          title="Khung nhúng công cụ tùy chỉnh"
+          src="/rapmau-studio/in-chim-logo/"
+          style="width:100%; height:780px; border:2px solid var(--border-stitch); border-radius:12px; background:#f4f6f1;"
+          title="RAPMAU Studio — In chìm logo, Tách nền AI, Nén ảnh"
         ></iframe>
       </div>
     </section>

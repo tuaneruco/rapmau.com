@@ -1,0 +1,45 @@
+html{height:100%;overflow:hidden}body[data-module="compress"]{height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#f2f3f5}
+body[data-module="compress"]>header.studio-header{flex:none;min-height:58px;padding:8px 16px!important;gap:8px 12px!important;align-items:center;justify-content:flex-start;flex-wrap:wrap}
+body[data-module="compress"]>header.studio-header>nav.studio-groups{display:none!important}
+body[data-module="compress"]>header.studio-header>.brand{order:0}body[data-module="compress"]>header.studio-header>.brand:not(:has(img)){display:none}
+.design-name{order:1;font-size:15px;margin:0;padding-right:12px;border-right:1px solid #dce3de;white-space:nowrap}
+body[data-module="compress"]>header.studio-header>.studio-tools{order:2;flex:1;flex-basis:auto!important;width:auto!important;border:0;padding:0!important;gap:8px}
+body[data-module="compress"] .studio-breadcrumb{display:none}
+.design-history{order:3;display:flex;gap:3px}.design-history button{border:0;font-size:12px;padding:8px}
+body[data-module="compress"]>header.studio-header>.studio-export{order:4;background:#245640;color:white;border-radius:8px;font-size:12px}
+body[data-module="compress"] main.design-layout{flex:1;min-height:0;height:auto;display:grid;grid-template-columns:76px 292px minmax(0,1fr);grid-template-rows:minmax(0,1fr);overflow:hidden}
+body[data-module="compress"] main.panel-collapsed{grid-template-columns:76px 0 minmax(0,1fr)}
+.design-rail{grid-column:1;grid-row:1;background:#f9fafb;border-right:1px solid #e1e5e9;display:flex;flex-direction:column;padding:12px 5px;min-height:0;overflow:auto}
+.design-tabs{display:flex;flex-direction:column;gap:6px}.design-tabs button{display:flex;flex-direction:column;align-items:center;gap:7px;min-height:64px;padding:8px 3px;background:transparent;border:0;font-size:11px;border-radius:10px;color:#5c6862}.tool-icon{font-size:25px;line-height:26px}.design-tabs button[aria-selected=true]{background:#e4efe8;color:#1d573c;font-weight:bold}
+.panel-toggle{margin:auto 12px 0;font-size:24px;min-height:36px;padding:0;background:#fff}
+body[data-module="compress"] aside.design-properties{grid-column:2;grid-row:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:0 16px;border-right:1px solid #e1e5e9}
+.panel-collapsed .design-properties{visibility:hidden;padding:0!important}.properties-title{padding:20px 0 16px;font-weight:bold;font-size:16px;border-bottom:1px solid #edf0ee;flex:none}.design-panels{overflow:auto;min-height:0;flex:1;padding:16px 2px 12px 0;overscroll-behavior:contain}.design-panels section{border:0;margin:0;padding:0}.design-panels h2{font-size:13px;letter-spacing:0;color:#53655a}.design-panels fieldset{display:block!important}.design-panels .upload{padding:20px 12px;border-radius:10px}.design-panels [data-brand-manager-open]{width:100%}.design-panels .danger{color:#a23838;width:100%}.design-panels #props:not([data-kind=text]) label:has(#text),.design-panels #props:not([data-kind=text]) label:has(#font),.design-panels #props:not([data-kind=text]) label:has(#color){display:none}
+body[data-module="compress"] .workspace{grid-column:3;grid-row:1;min-height:0;padding:14px 20px 0;overflow:hidden;background:#f2f3f5}
+.design-context{flex:none;align-self:center;max-width:100%;display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:6px 10px;margin-bottom:12px;border:1px solid #e2e6e9;background:white;border-radius:12px;box-shadow:0 2px 8px #26392e12}.design-context button{border:0;font-size:12px;padding:7px 10px}.selection-label{font-size:12px;color:#64756b;padding-right:12px;border-right:1px solid #e6e8e7}
+body[data-module="compress"] .stage{min-height:0;flex:1;height:auto;border-radius:0;background:#f2f3f5;padding:35px;place-items:safe center;overscroll-behavior:contain}
+.design-bottom{flex:none;display:flex;align-items:center;gap:12px;border-top:1px solid #dde2df;min-height:48px}.design-bottom #status{font-size:10px;line-height:1.4;max-width:55%}.design-bottom .zoom{margin:0 0 0 auto;flex-wrap:nowrap;gap:6px;font-size:12px}.zoom label{font-size:0}.zoom input{width:90px}.zoom button{padding:6px 10px;font-size:12px}
+@media(min-width:761px) and (max-width:1100px){body[data-module="compress"] main.design-layout{grid-template-columns:66px 250px minmax(0,1fr)}body[data-module="compress"] main.panel-collapsed{grid-template-columns:66px 0 minmax(0,1fr)}body[data-module="compress"] .workspace{padding:10px 12px 0}.design-bottom #status{max-width:40%}}
+@media(max-width:760px){
+ body[data-module="compress"]>header.studio-header{padding:6px 8px!important;gap:4px 7px!important;min-height:48px}.design-name{font-size:12px;border:0;flex:1;padding:0}.design-history button{font-size:10px;padding:5px}body[data-module="compress"]>header.studio-header>.studio-tools{order:5;flex-basis:100%!important}
+ body[data-module="compress"] main.design-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(180px,1fr) 58px minmax(0,.7fr)}body[data-module="compress"] main.panel-collapsed{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(180px,1fr) 58px 0}
+ body[data-module="compress"] .workspace{grid-column:1;grid-row:1;padding:6px 8px 0;order:initial}.design-rail{grid-column:1;grid-row:2;flex-direction:row;padding:3px;border-top:1px solid #dce3df;overflow:hidden}.design-tabs{flex:1;flex-direction:row;gap:1px}.design-tabs button{flex:1;min-height:50px;padding:3px 2px;font-size:9px;gap:1px}.tool-icon{font-size:21px;line-height:23px}.panel-toggle{margin:5px;width:24px;font-size:20px;min-height:30px;transform:rotate(90deg)}
+ body[data-module="compress"] aside.design-properties{grid-column:1;grid-row:3;padding:0 12px}.properties-title{display:none}.design-panels{padding:10px 0}.design-context{align-self:stretch;padding:3px 6px;margin-bottom:5px;gap:2px}.design-context button{font-size:10px;padding:5px}.selection-label{font-size:10px;border:0;padding:0}.design-bottom{min-height:35px}.design-bottom #status{display:none}.zoom input{width:85px}body[data-module="compress"] .stage{padding:35px}
+}
+
+body[data-module="compress"]>header.studio-header{height:auto;min-height:58px}
+body[data-module="compress"] .design-panels>section{border:0;margin:0;padding:0}
+body[data-module="compress"] .design-panels>section[hidden]{display:none!important}
+body[data-module="compress"] #download{order:4;font-size:12px;padding:10px 14px}
+body[data-module="compress"] .export-actions{display:none}
+body[data-module="compress"] .stage{display:flex;align-items:center;justify-content:center;padding:0;border:0;min-height:0;overflow:hidden;background-color:#f2f3f5}
+body[data-module="compress"] .stage canvas{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 3px 16px #1729201f}
+body[data-module="compress"] .design-context{justify-content:flex-start;flex-wrap:wrap}
+body[data-module="compress"] .design-context>div{font-size:12px;color:#667a6d;border-right:1px solid #e1e6e2;padding-right:10px}
+body[data-module="compress"] .design-context #compress{width:auto;margin:0;color:white;background:#245640}
+.compression-summary{margin:0 0 10px;font-size:11px;color:#48624e;line-height:1.5;text-align:center;flex:none}
+body[data-module="compress"] .canvas-footer{margin-top:8px;gap:6px 12px;font-size:10px;flex-wrap:wrap}
+body[data-module="compress"] .canvas-footer #dimensions{margin-left:auto;color:#738477}
+body[data-module="compress"] .metric{font-size:13px;line-height:1.8;padding:16px;background:#eef5ef;border-radius:10px}
+body[data-module="compress"] .design-panels .field{display:block;margin-top:16px;font-size:12px}
+body[data-module="compress"] .design-panels .field select,body[data-module="compress"] .design-panels .field input[type=number]{width:100%;margin-top:8px}
+@media(max-width:760px){body[data-module="compress"] article.workspace{height:auto;min-height:0}body[data-module="compress"] .stage{min-height:0}body[data-module="compress"] .editor-empty{padding:10px}body[data-module="compress"] .editor-empty h2{font-size:16px}body[data-module="compress"] .editor-empty p{font-size:11px;margin:6px}body[data-module="compress"] .empty-mark{display:none}.compression-summary{font-size:10px;margin-bottom:5px}body[data-module="compress"] #download{padding:7px 10px;font-size:11px}}

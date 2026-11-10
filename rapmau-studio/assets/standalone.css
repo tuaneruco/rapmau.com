@@ -1,0 +1,10 @@
+.rapmau-brand{text-decoration:none;color:#214f39;display:flex;align-items:center;min-width:125px}
+.rapmau-brand strong{font:800 20px/1.1 Arial,sans-serif;letter-spacing:1px}
+.rapmau-brand span{display:block;font-size:10px;letter-spacing:3px;margin-top:5px}
+body>header .module-nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+body>header .module-nav a{padding:8px 11px;border:1px solid #d2dfd6;border-radius:8px;font-size:12px;text-decoration:none;color:#244b37}
+body>header .module-nav a[aria-current=page]{background:#214f39;color:#fff}
+.rapmau-local-note{font-size:11px;color:#5e6c63;line-height:1.5;margin:12px 0;padding:10px;border:1px solid #d2dfd6;border-radius:8px;background:#f3f7f3}
+.rapmau-local-note button{font-size:11px;margin-top:7px}
+.rapmau-status{display:block;color:#8c3e21}
+@media(max-width:680px){body>header .module-nav{width:100%;flex-wrap:nowrap;overflow:auto}body>header .module-nav a{white-space:nowrap;flex-shrink:0}.rapmau-brand strong{font-size:17px}}
