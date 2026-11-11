@@ -142,7 +142,66 @@
     <div id="kho-rap-mau"></div>
     <div class="container workspace-layout">
       <!-- CỘT TRÁI: SIDEBAR DANH MỤC & BỘ LỌC NHANH CỐ ĐỊNH -->
-      <aside class="workspace-sidebar">
+      <aside class="workspace-sidebar" aria-label="Thanh công cụ chọn nhanh danh mục">
+        <div class="ws-box ws-hub-box" id="sidebarQuickCatalogHub">
+          <div class="ws-box-title">🧭 CHỌN NHANH ĐẦY ĐỦ</div>
+          <div class="ws-hub-group-label">Mẫu rập, Rập cứng &amp; Khuôn bế</div>
+          <div class="ws-hub-grid">
+            <button type="button" class="ws-hub-btn active" data-sidebar-variant="pdf_dxf">
+              <span class="ws-hub-ico">📄</span>
+              <span>Mẫu &amp; PDF 0đ</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-variant="rap_giay">
+              <span class="ws-hub-ico">📦</span>
+              <span>Rập Giấy 350g</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-variant="rap_mica">
+              <span class="ws-hub-ico">💎</span>
+              <span>Rập Mica 2mm</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-variant="khuon_be">
+              <span class="ws-hub-ico">⚙️</span>
+              <span>Khuôn Bế Thép</span>
+            </button>
+          </div>
+
+          <div class="ws-hub-group-label" style="margin-top:8px;">Công cụ, Dụng cụ, Nguyên liệu &amp; Sách</div>
+          <div class="ws-hub-grid">
+            <button type="button" class="ws-hub-btn" data-sidebar-tool="Combo Người Mới">
+              <span class="ws-hub-ico">🧰</span>
+              <span>Bộ Dụng Cụ</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-tool="Dụng Cụ Đục & Khâu">
+              <span class="ws-hub-ico">🛠️</span>
+              <span>Đục &amp; Khâu</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-tool="Dụng Cụ & Máy Móc">
+              <span class="ws-hub-ico">🗜️</span>
+              <span>Máy &amp; Dấu</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-tool="Da Thuộc & Hoá Chất">
+              <span class="ws-hub-ico">🐄</span>
+              <span>Da &amp; Hoá Chất</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-tool="Phụ Kiện Kim Loại">
+              <span class="ws-hub-ico">🔩</span>
+              <span>Ngũ Kim &amp; Khay</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-section="nhan-sach-mien-phi">
+              <span class="ws-hub-ico">📚</span>
+              <span>Sách Free (26)</span>
+            </button>
+            <button type="button" class="ws-hub-btn" data-sidebar-section="cam-nang-bai-viet">
+              <span class="ws-hub-ico">📰</span>
+              <span>Cẩm Nang (8)</span>
+            </button>
+            <a href="/rapmau-studio/" class="ws-hub-btn ws-hub-link">
+              <span class="ws-hub-ico">✨</span>
+              <span>Studio AI 1:1</span>
+            </a>
+          </div>
+        </div>
+
         <div class="ws-box">
           <div class="ws-box-title">🎯 LỌC NHANH THEO NHU CẦU</div>
           <div class="ws-quick-list">
@@ -170,8 +229,16 @@
           <div class="ws-box-title">
             <span>📂 <span id="statCategories">21</span> DANH MỤC ĐỒ DA</span>
           </div>
+          <div class="ws-cat-search-wrap">
+            <input
+              type="search"
+              id="sidebarCatSearchInput"
+              placeholder="🔎 Tìm nhanh danh mục (ví, túi, balo...)"
+              aria-label="Tìm nhanh trong 21 danh mục đồ da"
+            />
+          </div>
           <div class="ws-cat-list" id="categoryPillsContainer">
-            <!-- Render động danh sách 21 danh mục -->
+            <!-- Render động danh sách 21 danh mục đầy đủ -->
           </div>
         </div>
 

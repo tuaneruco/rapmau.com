@@ -407,24 +407,49 @@ function hydrateSiteMetadata() {
   }
 }
 
+function normalizeSearchText(str) {
+  return String(str || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .trim();
+}
+
 function renderCategoryPills() {
   const container = document.getElementById('categoryPillsContainer');
+  const searchInput = document.getElementById('sidebarCatSearchInput');
+  const query = normalizeSearchText(searchInput ? searchInput.value : '');
   const total = state.products.length;
-  let html = `
-    <button type="button" class="cat-pill ${state.selectedCategory === 'all' ? 'active' : ''}" data-cat="all">
-      <span>Tất cả 21 danh mục</span>
-      <span class="cat-pill-count">${total}</span>
-    </button>
-  `;
+  let html = '';
 
+  if (!query) {
+    html += `
+      <button type="button" class="cat-pill ${state.selectedCategory === 'all' ? 'active' : ''}" data-cat="all">
+        <span>Tất cả 21 danh mục</span>
+        <span class="cat-pill-count">${total}</span>
+      </button>
+    `;
+  }
+
+  let matchedCount = 0;
   for (const cat of state.categories) {
+    if (query) {
+      const hay = normalizeSearchText(`${cat.shortName} ${cat.name} ${cat.key}`);
+      if (!hay.includes(query)) continue;
+    }
+    matchedCount++;
     const active = state.selectedCategory === cat.key ? 'active' : '';
     html += `
-      <button type="button" class="cat-pill ${active}" data-cat="${cat.key}">
+      <button type="button" class="cat-pill ${active}" data-cat="${cat.key}" title="${cat.name} (${cat.count} mẫu)">
         <span>${cat.shortName}</span>
         <span class="cat-pill-count">${cat.count}</span>
       </button>
     `;
+  }
+
+  if (query && matchedCount === 0) {
+    html += '<div class="ws-cat-empty">Không tìm thấy danh mục phù hợp.</div>';
   }
   container.innerHTML = html;
 
@@ -447,7 +472,7 @@ function renderCategoryPills() {
       renderProducts();
       const activeBtn = container.querySelector('.cat-pill.active');
       if (activeBtn) {
-        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
       }
     });
   });
@@ -2175,18 +2200,70 @@ function resetAllFilters() {
   syncCategorySeoAndUrl('all', { pushUrl: true });
 }
 
+function setGlobalVariantMode(variantKey) {
+  if (!VARIANT_LABELS[variantKey]) return;
+  document.querySelectorAll('#globalVariantSelector .variant-mode-card').forEach((c) => {
+    c.classList.toggle('active', c.dataset.variant === variantKey);
+  });
+  document.querySelectorAll('#sidebarQuickCatalogHub .ws-hub-btn').forEach((b) => {
+    b.classList.toggle('active', b.dataset.sidebarVariant === variantKey);
+  });
+  state.selectedVariantMode = variantKey;
+  state.cardVariantOverrides = {};
+  const labelEl = document.getElementById('currentVariantModeLabel');
+  if (labelEl) labelEl.textContent = VARIANT_LABELS[state.selectedVariantMode];
+  renderProducts();
+}
+
 function bindEvents() {
   // Chuyển đổi chế độ hiển thị giá 4 biến thể toàn cục ở Hero
   document.querySelectorAll('#globalVariantSelector .variant-mode-card').forEach((card) => {
     card.addEventListener('click', () => {
-      document.querySelectorAll('#globalVariantSelector .variant-mode-card').forEach((c) => c.classList.remove('active'));
-      card.classList.add('active');
-      state.selectedVariantMode = card.dataset.variant;
-      state.cardVariantOverrides = {};
-      document.getElementById('currentVariantModeLabel').textContent = VARIANT_LABELS[state.selectedVariantMode];
-      renderProducts();
+      setGlobalVariantMode(card.dataset.variant);
     });
   });
+
+  // Thanh công cụ chọn nhanh đầy đủ (Mẫu • Rập • Khuôn • Dụng cụ • Nguyên liệu • Sách) ở Sidebar
+  const sidebarHub = document.getElementById('sidebarQuickCatalogHub');
+  if (sidebarHub) {
+    sidebarHub.addEventListener('click', (e) => {
+      const btn = e.target.closest('button.ws-hub-btn');
+      if (!btn) return;
+      sidebarHub.querySelectorAll('.ws-hub-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (btn.dataset.sidebarVariant) {
+        setGlobalVariantMode(btn.dataset.sidebarVariant);
+        const ws = document.getElementById('ban-lam-viec');
+        if (ws) ws.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (btn.dataset.sidebarTool) {
+        const targetTab = document.querySelector(
+          `#toolsFilterTabs .tool-tab[data-toolcat="${CSS.escape(btn.dataset.sidebarTool)}"]`
+        );
+        if (targetTab) {
+          targetTab.click();
+        }
+        const toolsSec = document.getElementById('phu-kien-dung-cu');
+        if (toolsSec) toolsSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (btn.dataset.sidebarSection) {
+        const secId = btn.dataset.sidebarSection;
+        if (secId === 'nhan-sach-mien-phi' && state.visibleBooksCount <= 4) {
+          state.visibleBooksCount = 999;
+          renderFreeBooks();
+        }
+        const targetSec = document.getElementById(secId);
+        if (targetSec) targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  // Ô tìm nhanh ngay trong hộp 21 danh mục đồ da ở Sidebar
+  const sidebarCatSearchInput = document.getElementById('sidebarCatSearchInput');
+  if (sidebarCatSearchInput) {
+    sidebarCatSearchInput.addEventListener('input', () => {
+      renderCategoryPills();
+    });
+  }
 
   // Sự kiện uỷ quyền trên lưới sản phẩm Rập Mẫu
   document.getElementById('productGrid').addEventListener('click', (e) => {
