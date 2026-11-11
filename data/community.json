@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 79
+      "count": 85
     },
     {
       "id": "nhap-mon",
@@ -22,7 +22,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 30
+      "count": 36
     },
     {
       "id": "son-canh",
@@ -56,6 +56,198 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-080",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "title": "So sánh Máy lạng mép NIPPY Nhật Bản (NP-2 / NP-202 / NP-301) với máy lạng 801 thường: Có đáng đầu tư & kiểm tra gì khi mua máy bãi?",
+      "author": "Hoàng Long Craft",
+      "authorRole": "Chủ xưởng ví nam & dây đồng hồ",
+      "authorAvatar": "🔪",
+      "createdAt": "2026-11-11T10:11:00Z",
+      "formattedDate": "Hôm nay lúc 10:11",
+      "badge": "So sánh NIPPY ★",
+      "badgeType": "featured",
+      "likes": 47,
+      "views": 960,
+      "content": "Mình làm chuyên ví da siêu mỏng, dây đồng hồ da cá sấu / Epsom phải lạng mép xuống 0.25mm - 0.35mm. Đang chạy máy lạng 801 Trung Quốc thấy trục hơi rơ, thỉnh thoảng ăn lẹm mép da mỏng. Mình muốn nâng cấp lên dòng máy lạng NIPPY của Nhật (thấy anh em nhắc NP-2, NP-202 hoặc NP-301). Cho mình hỏi sự khác biệt thực tế của NIPPY và cách kiểm tra máy Nippy bãi Nhật để không mua nhầm máy nát trục ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-080-1",
+          "author": "Vũ Long Workshop",
+          "authorRole": "Chuyên dây đồng hồ",
+          "authorAvatar": "💎",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:12:00Z",
+          "formattedDate": "Hôm nay lúc 10:12",
+          "content": "Ai đã từng chạy qua **NIPPY (NP-2 / NP-202 / NP-301)** rồi thì gần như không quay lại máy 801 thường được nữa đâu bác!\n1. **Độ chính xác trục dao chuông**: Trục bi thép của Nippy Nhật độ rơ gần như bằng `0`, quay cực kỳ êm không rung giật nên bạn có thể **lạng mép da dê Alran / da Epsom mỏng tới 0.2mm mà không hề bị sứt gờ hay lẹm vào mặt cật**.\n2. **Phân biệt đời máy Nippy**:\n   - **NP-2 / NP-202**: Dòng tiêu chuẩn cực phổ biến cho xưởng ví & dây đồng hồ, dễ thay phụ tùng (dao chuông Nippy, đá mài, chân vịt chính hãng lắp vừa khít 100%). Bản NP-202 có cải tiến cụm dẫn hướng bụi sạch hơn.\n   - **NP-3 / NP-301**: Khung đúc lớn tốc độ cao, chuyên cho dây chuyền chạy liên tục.\n3. **4 điểm kiểm tra sống còn khi mua Nippy bãi Nhật**:\n   - Quay nhẹ dao chuông bằng tay xem có tiếng rào bạc đạn không và áp đồng hồ so kiểm tra độ đảo vành dao (`< 0.03mm`).\n   - Kiểm tra xem ốc chỉnh **cụm đá mài dưới (grinding shaft)** có bị kẹt rỉ sét hay mòn rãnh trượt không.\n   - Nên lắp kèm **motor Servo tiết kiệm điện chỉnh tốc độ số** + trục lăn đá mịn / cao su để chạy được cả da cứng lẫn da mềm!",
+          "likes": 36
+        }
+      ]
+    },
+    {
+      "id": "thread-081",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "title": "Sửa Máy lạng NIPPY NP-2 / NP-202 bị lượn sóng độ dày, rít đường dẫn bụi & cháy xanh mép dao chuông khi mài",
+      "author": "Minh Nhật Leather",
+      "authorRole": "Thợ kỹ thuật ví túi",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-11T10:08:00Z",
+      "formattedDate": "Hôm nay lúc 10:08",
+      "badge": "Bắt bệnh NIPPY ✓",
+      "badgeType": "solved",
+      "likes": 29,
+      "views": 540,
+      "content": "Con Nippy NP-202 ở xưởng em dạo gần đây lạng một dải ngăn thẻ dài 20cm thì đầu này dày 0.3mm nhưng tới đoạn giữa lại dày lên 0.5mm (bị lượn sóng), đồng thời lúc bật cần gạt mài dao thì nghe tiếng rít lớn và viền lưỡi dao chuông hơi bị ám màu xanh cháy thép! Xin hỏi cách căn lại cụm đá mài và lò xo chân vịt trên Nippy ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-081-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T10:10:00Z",
+          "formattedDate": "Hôm nay lúc 10:10",
+          "content": "Khắc phục ngay 2 lỗi này trên máy Nippy để tránh hỏng phôi & chai cứng lưỡi dao nhé Nhật:\n1. **Cháy xanh thép khi mài**: Nguyên nhân là bạn vặn vít ép đá mài quá mạnh hoặc đá mài lâu ngày bị **chai bóng bám đầy mạt da & keo nhiệt** nên ma sát sinh nhiệt thay vì ăn thép!\n   - *Xử lý*: Tháo làm sạch hoặc dùng **thỏi đá sửa mặt (Dressing stone)** mài mở lại bề mặt nhám cho đá mài dưới, chỉnh áp lực đá vừa đủ thấy **chùm tia lửa nhỏ tơi mịn** (không ép rít khét). Mài ngắt quãng 3-5 giây rồi nhả ra cho dao nguội, sau đó gạt nhẹ cây lấy bavia lòng trong dao.\n2. **Lạng bị lượn sóng độ dày**: Kiểm tra bên dưới rãnh giữ thanh ép (Presser foot holder) và khe kẹp trục lăn trên Nippy — vụn da mỏng + dầu sáp thường ép chặt làm **lò xo nhún của trục lăn dưới bị kẹt một bên**, khi da đi qua không đàn hồi kịp sẽ bị dày mỏng thất thường! Hãy tháo cụm trục cuốn ra vệ sinh sạch, nhỏ dầu vào chốt lò xo dẫn hướng và thay lưỡi gạt sạch trục cuốn ngay bên dưới.",
+          "likes": 24
+        }
+      ]
+    },
+    {
+      "id": "thread-082",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "title": "Đánh giá Máy dập cắt da thủy lực ATOM Ý (SE20 / SE25 / Atom S): Chỉnh cữ chiều cao khuôn & cách giữ bền lưỡi khuôn bế thép CNC",
+      "author": "Xưởng Gia Công Bình Tân",
+      "authorRole": "Xưởng cắt dập B2B",
+      "authorAvatar": "🏭",
+      "createdAt": "2026-11-11T10:05:00Z",
+      "formattedDate": "Hôm nay lúc 10:05",
+      "badge": "Kinh nghiệm máy ATOM ★",
+      "badgeType": "featured",
+      "likes": 53,
+      "views": 1120,
+      "content": "Bên mình đang cân nhắc đầu tư máy dập cắt da cánh tay xoay **ATOM SE20 / SE25 (20-25 tấn)** của Ý (hoặc hàng bãi Ý) để dập khuôn bế thép hàng loạt ví và quai túi. Nghe nói Atom có nút cài độ sâu hành trình cực chính xác giúp lưỡi khuôn chỉ vừa chạm thớt nhựa 0.2mm mà không bị lún nát thớt! Nhờ anh em chia sẻ cách lấy cữ chiều cao khuôn trên Atom SE20/SE25 chuẩn nhất ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-082-1",
+          "author": "Quốc Bảo Bag Factory",
+          "authorRole": "Xưởng balo Tân Phú",
+          "authorAvatar": "🏢",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:07:00Z",
+          "formattedDate": "Hôm nay lúc 10:07",
+          "content": "Đúng danh 'vua máy bế da' luôn bác! Ở xưởng mình chạy **Atom SE20** gần 8 năm nay vẫn cực kỳ ổn định và sướng nhất ở hệ thống **chỉnh hành trình điện tử/cơ vi chỉnh chính xác**:\n1. **Quy trình cài cữ chuẩn khi đổi khuôn mới (19mm sang 32mm hoặc ngược lại)**:\n   - Đặt tấm da + khuôn bế lên thớt nhựa PP, xoay búa cánh tay về giữa khuôn.\n   - Xoay nút vặn cài hành trình (Depth adjustment knob) ngược chiều kim đồng hồ lên cao nhất trước, sau đó **vặn hạ từ từ từng nấc 0.2mm** kết hợp dập thử cho đến khi **toàn bộ viền da vừa đứt ngọt mà bề mặt thớt chỉ có vết hằn mảnh như sợi tóc**.\n2. **Lợi ích thực tế**: Thớt nhựa PP trên máy Atom lâu phải đi bào gấp **3-4 lần** máy bế thường, lưỡi khuôn bế thép CNC của RAPMAU giữ độ sắc bén cả chục vạn nhát dập không bị quăn mép dao.\n3. Khi mua Atom bãi Ý, ưu tiên kiểm tra **bộ timer 2 nút bấm an toàn (Two-hand control)**, rơ-le thủy lực và xem mâm búa trên (Aluminum/Steel striking plate) có bị lõm võng tâm hay chưa!",
+          "likes": 41
+        }
+      ]
+    },
+    {
+      "id": "thread-083",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "title": "Sửa lỗi Máy dập ATOM SE20 / SE25 ấn cả 2 nút mà búa không xuống, hoặc dập xong búa bị kẹt giữ luôn dưới thớt không hồi lên",
+      "author": "Cơ Sở Da Thành Công",
+      "authorRole": "Kỹ thuật bảo trì xưởng",
+      "authorAvatar": "🔧",
+      "createdAt": "2026-11-11T10:00:00Z",
+      "formattedDate": "Hôm nay lúc 10:00",
+      "badge": "Bắt bệnh máy ATOM ✓",
+      "badgeType": "solved",
+      "likes": 31,
+      "views": 610,
+      "content": "Máy bế thủy lực ATOM SE25 bên xưởng em sáng nay tự dưng bấm 2 nút đỏ trên tay nắm cánh tay xoay mà mô-tơ vẫn chạy nhưng đầu búa đứng im không chịu hạ xuống! Có hôm lại bị tình trạng búa dập xuống cắt đứt da rồi nhưng kẹt dính ở dưới 3-4 giây mới nhả hồi lên. Xin các bác thợ điện/thủy lực bắt bệnh giúp ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-083-1",
+          "author": "Kỹ Thuật Thủy Lực Q12",
+          "authorRole": "Chuyên sửa máy bế ATOM / CNC",
+          "authorAvatar": "⚡",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:04:00Z",
+          "formattedDate": "Hôm nay lúc 10:04",
+          "content": "Đây là 2 bệnh rất hay gặp trên máy Atom SE20 / SE25 dùng lâu năm:\n1. **Bấm 2 nút nhưng búa không xuống**:\n   - Atom bắt buộc mạch an toàn **2 tay nhấn đồng thời trong khoảng lệch < 0.5 giây**! Nếu 1 trong 2 **công tắc hành trình (Microswitch)** bên trong tay nắm bấm nhiều bị mòn tiếp điểm hoặc chậm pha 0.6 giây -> Rơ-le an toàn khóa không cấp điện cho van điện từ (Solenoid Valve)!\n   - *Cách xử lý*: Mở chụp 2 tay nắm vệ sinh xịt RP7/contact cleaner hoặc thay cặp microswitch mới đồng bộ. Đồng thời kiểm tra **cảm biến từ (Proximity sensor / công tắc hồi vị trí trên)** xem có bị lỏng dây báo chưa về điểm đỉnh không.\n2. **Búa dập xong bị kẹt dưới không nhả lên ngay**:\n   - Kiểm tra ngay **van điện từ thủy lực (Directional valve)** bị kẹt mạt bẩn trong dầu nhớt khiến ti van hồi chậm, HOẶC **vặn núm chỉnh áp suất/thời gian giữ (Potentiometer)** xuống mức quá sâu làm áp suất dầu bị ngâm tại điểm chết dưới. Thay lọc hồi dầu & thay nhớt thủy lực chuẩn **ISO VG 46 (AW46)** sạch là máy nảy hồi tức thì!",
+          "likes": 26
+        }
+      ]
+    },
+    {
+      "id": "thread-084",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "title": "Vận hành Máy lạng da khổ lớn Camoga (C420 / C420R / C520) xẻ da Veg-tan, Nappa xuống 0.5mm: Chỉnh thanh tỳ cố định vs con lăn bi sao cho chuẩn 0.05mm?",
+      "author": "Nam Hải Leather Supply",
+      "authorRole": "Xưởng xẻ phôi & gia công da",
+      "authorAvatar": "🔪",
+      "createdAt": "2026-11-11T09:54:00Z",
+      "formattedDate": "Hôm nay lúc 09:54",
+      "badge": "Chuẩn Camoga Ý ★",
+      "badgeType": "featured",
+      "likes": 56,
+      "views": 1180,
+      "content": "Xưởng mình đang chạy máy xẻ mỏng da khổ lớn **Camoga C420** (khổ dao 420mm) để xẻ hạ độ dày nguyên tấm làm ví mỏng 0.5mm - 0.8mm. Nhưng khi đổi qua lại giữa da bò Veg cứng và da bò Nappa / da dê mềm rất dễ bị sai số trái-phải lệch 0.15mm hoặc da mềm bị kẹt cuộn ngay trước lưỡi băng dao! Nhờ anh em có kinh nghiệm chạy Camoga chia sẻ cách setup chuẩn thanh tỳ (guide bar / top roller) và cân mép dao ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-084-1",
+          "author": "Tùng Lâm Leather Lab",
+          "authorRole": "Kỹ thuật viên xử lý da",
+          "authorAvatar": "🧪",
+          "isStaff": false,
+          "createdAt": "2026-11-11T09:57:00Z",
+          "formattedDate": "Hôm nay lúc 09:57",
+          "content": "Làm chủ con **Camoga C420 / C420R / C520** cực kỳ sướng nếu bạn nắm đúng 3 nguyên tắc vàng của hãng Camoga Ý:\n1. **Chọn đúng bộ dẫn hướng trên (Top Feeding Assembly)**:\n   - Chạy **da mềm, da dê, da Nappa mỏng xuống < 0.8mm**: BẮT BUỘC lắp **Thanh tỳ cố định mài vát (Fixed guide bar)** với mép trước thanh tỳ đặt **lùi/tiến chuẩn 0.3-0.5mm so với mũi băng dao** để chống phôi mềm bị cuốn nhảy vào khe dao.\n   - Chạy **da cứng dày (Veg-tan, Bridle > 1.2mm) hoặc da sáp dính**: Dùng **Trục con lăn bi tự xoay (Ring/Spring Roller)** để giảm ma sát mặt cật da, không bị rít cháy thanh dẫn.\n2. **Cân mép băng dao (Optical Knife Position Gauge)**: Luôn nhìn qua kính lúp quang học của Camoga để vạch mép lưỡi băng dao nằm ĐÚNG giữa 2 vạch chuẩn (cách tâm trục cuốn dưới ~0.8mm) — chỉ cần để dao thụt hoặc thò quá 0.5mm là độ dày thực tế sẽ sai khác so với đồng hồ số ngay!\n3. **Cân đồng đều trái-phải**: Xẻ thử 1 băng da rộng 5cm ở mép trái và mép phải trước khi cho cả tấm lớn qua; nếu lệch 0.1mm thì chỉnh nhẹ 2 ốc bù vi chỉnh (Micro leveling screws) dưới bệ trục dưới là phẳng tăm tắp toàn khổ 420mm!",
+          "likes": 43
+        }
+      ]
+    },
+    {
+      "id": "thread-085",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "title": "Sửa lỗi Máy lạng khổ lớn Camoga bị vệt sọc dọc mặt trái, lưỡi băng dao bị sứt rìa & rung khi bật cặp đá mài CBN",
+      "author": "Phú Mỹ Leather OEM",
+      "authorRole": "Kỹ thuật vận hành máy Camoga",
+      "authorAvatar": "🛠️",
+      "createdAt": "2026-11-11T09:46:00Z",
+      "formattedDate": "Hôm nay lúc 09:46",
+      "badge": "Bắt bệnh Camoga ✓",
+      "badgeType": "solved",
+      "likes": 33,
+      "views": 645,
+      "content": "Máy Camoga C420 của xưởng mình mấy hôm nay khi xẻ da bò sáp thấy mặt trái tấm da xuất hiện 2-3 đường vệt sọc dài dọc theo chiều đẩy da, nhìn kỹ vào lưỡi băng dao đang quay thấy mép dao hơi rung nhẹ và có vết mẻ nhỏ. Có phải do cặp đá mài bị mòn lệch mặt trên/dưới hoặc do má dẫn hướng (knife guides) bị rơ không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-085-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T09:52:00Z",
+          "formattedDate": "Hôm nay lúc 09:52",
+          "content": "Bạn kiểm tra đúng tuần tự 4 điểm sau trên máy Camoga để triệt tiêu vệt sọc & rung băng dao:\n1. **Lưỡi gạt sạch bánh đà (Flywheel Scrapers) & Bụi sáp đóng cục**: Sáp + mạt da bám thành từng cục nhỏ trên 2 bánh đà quay băng dao sẽ làm băng dao nhịp lắc lên xuống theo vòng quay -> sinh vệt sọc! Mở nắp chụp, cạo sạch & chỉnh lại lưỡi dao gạt đồng/nhựa áp sát bánh đà.\n2. **Thay/đảo má dẫn hướng băng dao (Knife Guides)**: Khe dẫn hướng kẹp thân băng dao sau nhiều tháng chạy sẽ bị mòn rộng ra, mất khả năng giữ phẳng lưng dao khi gặp phần da cứng gân cổ bò.\n3. **Cân xứng cặp đá mài trên & dưới (Grinding Wheels Alignment)**: Khi mài dao, nếu đá trên ăn mạnh hơn đá dưới sẽ làm mũi dao **lệch tâm (dài một mép)** khiến dao tự vểnh lên ăn lẹm vào mặt cật hoặc cắm xuống làm sứt mẻ rìa thép. Bật mài cho đến khi thấy dải vát mặt trên = mặt dưới đều nhau, sạch bavia.\n4. **Vệ sinh thùng hút bụi mạt thép Camoga hàng tuần**: Bụi da pha tia lửa thép khi mài dễ âm ỉ cháy nếu hộc hút bụi để quá đầy, nhớ đổ sạch và kiểm tra túi lọc thường xuyên để đảm bảo an toàn xưởng!",
+          "likes": 28
+        }
+      ]
+    },
     {
       "id": "thread-074",
       "categoryId": "may-moc-xuong",
