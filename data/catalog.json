@@ -27336,7 +27336,7 @@
       "folderKey": "Bộ sách nhật",
       "collection": "Bộ Sách Nhật",
       "format": "PDF",
-      "sizeMB": 61.0,
+      "sizeMB": 61,
       "cover": "/previews/books/book-15.jpg",
       "downloadUrl": "/media/Sách/Bộ sách nhật/9.PDF"
     },
@@ -27347,7 +27347,7 @@
       "folderKey": "Bộ sách nhật",
       "collection": "Bộ Sách Nhật",
       "format": "PDF",
-      "sizeMB": 33.0,
+      "sizeMB": 33,
       "cover": "/previews/books/book-16.jpg",
       "downloadUrl": "/media/Sách/Bộ sách nhật/10.PDF"
     },
@@ -27818,5 +27818,237 @@
         }
       ]
     }
-  ]
+  ],
+  "b2b": {
+    "hero": {
+      "tag": "🏭 XƯỞNG SẢN XUẤT ĐỒ DA & CHẾ TÁC THEO YÊU CẦU",
+      "titleHtml": "Gia Công Đồ Da B2B, <span class=\"text-gold\">Quà Tặng Doanh Nghiệp</span> & Sản Xuất OEM/ODM",
+      "descHtml": "Nhận thiết kế mẫu rập độc quyền, may mẫu thử (Sample) trong 48h, ép dập logo thương hiệu nhiệt độ cao, uốn khuôn bế thép CNC và cắt rập mica công nghiệp. Làm việc <strong>trực tiếp với xưởng thợ không qua trung gian</strong>, tối ưu chi phí từ 20 đến 10.000 sản phẩm.",
+      "image": "/assets/brand/hero-workbench.jpg",
+      "badgeHtml": "<strong>🪵 Năng lực xưởng RAPMAU.COM:</strong> Cắt laser CO2, dập nổi thủy lực, bế da cơ khí chính xác & hoàn thiện thủ công tỉ mỉ từng đường kim mũi chỉ.",
+      "stats": [
+        {
+          "num": "48 Giờ",
+          "label": "Lên mẫu thử cầm tay"
+        },
+        {
+          "num": "Từ 20 Cái",
+          "label": "MOQ linh hoạt cho Brand"
+        },
+        {
+          "num": "100%",
+          "label": "Da bò, dê, sáp cao cấp"
+        },
+        {
+          "num": "Xuất VAT",
+          "label": "Hợp đồng kinh tế đầy đủ"
+        }
+      ]
+    },
+    "servicesSection": {
+      "tag": "NĂNG LỰC SẢN XUẤT",
+      "title": "4 Hạng Mục Gia Công & Sản Xuất Thế Mạnh",
+      "desc": "Từ các đơn hàng quà tặng sự kiện cao cấp đến sản xuất đồng bộ cho các thương hiệu thời trang local brand, chúng tôi đáp ứng trọn gói quy trình.",
+      "items": [
+        {
+          "badge": "Quà Doanh Nghiệp",
+          "icon": "🎁",
+          "title": "Quà Tặng Da Doanh Nghiệp",
+          "body": "Ví da namecard, sổ tay bìa da A5, móc khóa da dập logo, kẹp cà vạt, bao da đựng thẻ nhân viên, bao da chìa khóa ô tô thiết kế theo nhận diện thương hiệu.",
+          "features": [
+            "Miễn phí ép nhiệt / in chìm logo thương hiệu 3D",
+            "Hộp quà kraft / xi mạ thắt nơ sang trọng kèm thiệp",
+            "Đầy đủ chất da Veg-tan Ý, Epsom, Sáp phong trần",
+            "Thời gian giao hàng đúng cam kết hợp đồng"
+          ],
+          "ctaText": "Nhận báo giá quà tặng →"
+        },
+        {
+          "badge": "OEM / ODM",
+          "icon": "👜",
+          "title": "Sản Xuất Gia Công Túi & Ví",
+          "body": "Hợp tác sản xuất gia công cho các Local Brand thời trang: Túi đeo chéo, balo da công sở, ví gập, ví dài cầm tay, clutch dự tiệc, dây lưng da thật.",
+          "features": [
+            "Nhận làm từ 20 chiếc/mẫu (hỗ trợ brand khởi nghiệp)",
+            "May mẫu thử 48h để đối tác cầm kiểm tra phom dáng",
+            "Tư vấn tối ưu nguyên phụ liệu đồng đúc, khoá kéo YKK",
+            "Bảo mật tuyệt đối bản quyền thiết kế độc quyền"
+          ],
+          "ctaText": "Hợp tác làm nhãn riêng →"
+        },
+        {
+          "badge": "Khuôn & Rập CNC",
+          "icon": "⚙️",
+          "title": "Khuôn Bế Thép & Rập Mica Công Nghiệp",
+          "body": "Gia công uốn khuôn bế thép dao Nhật sắc bén gắn ván ép gỗ hoặc đế mica trong, cắt rập mica chịu lực và rập giấy cứng 350gsm cho xưởng sản xuất dây chuyền.",
+          "features": [
+            "Khuôn dập thủy lực & máy dập tay độ chính xác 0.1mm",
+            "Lưỡi dao thép hợp kim độ bền cao, không loè mép da",
+            "Rập mica 2mm khắc laser đầy đủ tim canh đường đục",
+            "Giao hàng tận nơi toàn quốc trong 24h - 48h"
+          ],
+          "ctaText": "Đặt khuôn bế & rập →"
+        },
+        {
+          "badge": "R&D Kỹ Thuật",
+          "icon": "📐",
+          "title": "Bóc Tách Rập & R&D Sản Phẩm Mới",
+          "body": "Dịch vụ bóc tách bản vẽ kỹ thuật từ hình ảnh mẫu chụp, ảnh 3D hoặc bản vẽ tay của khách hàng thành file CAD/DXF/PDF chuẩn may công nghiệp.",
+          "features": [
+            "Tính toán tỷ lệ lạng mép da, bồi lót eva & đường may",
+            "Tính định mức da thuộc và phụ liệu cho đơn hàng lớn",
+            "Xuất file vector chuẩn cho máy cắt laser & máy CNC",
+            "Chuyển giao công nghệ may ráp cho tổ thợ của bạn"
+          ],
+          "ctaText": "Tư vấn bóc tách rập →"
+        }
+      ]
+    },
+    "networkSection": {
+      "tag": "LIÊN MINH XƯỞNG CHUYÊN BIỆT",
+      "title": "Mạng Lưới Xưởng Sản Xuất \"Mỗi Xưởng 1 Thế Mạnh Đỉnh Cao\"",
+      "desc": "Thay vì một xưởng làm mọi thứ ở mức trung bình, RAPMAU.COM chuẩn hóa bản vẽ CAD & Tech Pack từ đầu nguồn và điều phối từng đơn hàng về đúng xưởng chuyên sâu nhất để đảm bảo chất lượng đồng nhất.",
+      "workshops": [
+        {
+          "cap": "3.000 – 10.000 sp/tháng",
+          "title": "💳 Xưởng Chuyên Ví Da & SLG",
+          "specHtml": "<strong>Mặt hàng:</strong> Cardholder, Bifold, Long Wallet, Bao Passport, Kẹp tiền.<br /><strong>Thiết bị:</strong> Máy lạng chuông/lạng băng chính xác 0.4mm, máy gấp mép, ép nhiệt logo.<br /><strong>Ưu thế:</strong> Sơn cạnh nhiều lớp bền mịn, độ tinh xảo đạt chuẩn quà tặng cao cấp."
+        },
+        {
+          "cap": "800 – 3.000 sp/tháng",
+          "title": "👜 Xưởng Chuyên Túi Xách Thời Trang",
+          "specHtml": "<strong>Mặt hàng:</strong> Túi đeo chéo nữ, túi xách tay, Clutch dự tiệc, Tote da thật.<br /><strong>Thiết bị:</strong> Máy may trụ, máy bước, hệ thống dựng cốt phom hàng hiệu.<br /><strong>Ưu thế:</strong> Thợ ra mẫu (Pattern Maker) 5–10 năm kinh nghiệm xử lý da mềm Nappa/Togo/Epsom."
+        },
+        {
+          "cap": "1.000 – 5.000 sp/tháng",
+          "title": "🎒 Xưởng Chuyên Balo & Cặp Công Sở",
+          "specHtml": "<strong>Mặt hàng:</strong> Balo da thật, Cặp táp Laptop, Túi du lịch Weekender.<br /><strong>Thiết bị:</strong> Máy may công nghiệp lực đâm xuyên mạnh, máy đính bọ chịu lực (Bartack).<br /><strong>Ưu thế:</strong> Gia cố điểm chịu tải nặng, đệm chống sốc và kiểm thử kéo đứt quai đeo."
+        },
+        {
+          "cap": "500 – 2.500 sp/tháng",
+          "title": "⌚ Xưởng Dây Đồng Hồ & Bespoke",
+          "specHtml": "<strong>Mặt hàng:</strong> Dây đồng hồ khâu tay, Bao da chìa khóa ô tô, Phụ kiện Artisan.<br /><strong>Thiết bị:</strong> Chế tác thủ công 100% Saddle Stitch, lót Zermatt chống mồ hôi.<br /><strong>Ưu thế:</strong> Chuyên hàng tinh xảo trên da Veg-tan Ý, Shell Cordovan, Cá sấu cho thị trường Nhật & Mỹ."
+        },
+        {
+          "cap": "5.000 – 50.000 sp/tháng",
+          "title": "🎁 Xưởng Khuôn Bế & Quà Tặng Lớn",
+          "specHtml": "<strong>Mặt hàng:</strong> Sổ tay bìa da, Móc khóa, Thẻ hành lý, Bộ Giftset sự kiện.<br /><strong>Thiết bị:</strong> Máy dập thủy lực hành trình lớn, máy cắt CNC laser & KCS tự động.<br /><strong>Ưu thế:</strong> Đồng nhất 100% trên lô hàng hàng chục ngàn chiếc, đóng gói hộp quà xuất VAT."
+        }
+      ]
+    },
+    "standardsSection": {
+      "tag": "EXPORT COMPLIANCE READY",
+      "title": "Tiêu Chuẩn Nguyên Phụ Liệu Xuất Khẩu (Mỹ • EU • Anh • Nhật)",
+      "desc": "Kết nối nguồn cung da thuộc, hóa chất hoàn thiện và phụ kiện kim loại đáp ứng đầy đủ các quy chuẩn kiểm định khắt khe của thị trường quốc tế.",
+      "markets": [
+        {
+          "flag": "🇪🇺🇬🇧",
+          "title": "Thị Trường EU & Vương Quốc Anh",
+          "sub": "REACH • LWG • GPSR Compliance",
+          "itemsHtml": [
+            "✓ <strong>REACH (SVHC):</strong> Da thuộc, sơn cạnh và keo dán không chứa hóa chất cấm, kiểm soát nghiêm <strong>Chromium VI &lt; 3 ppm</strong>, không Azo dyes, Formaldehyde, Phthalates.",
+            "✓ <strong>LWG (Leather Working Group):</strong> Kết nối các xưởng thuộc da có chứng nhận <strong>LWG Gold / Silver</strong> đảm bảo truy xuất nguồn gốc và môi trường.",
+            "✓ <strong>GPSR Ready:</strong> Đầy đủ hồ sơ thông số vật liệu chứng minh an toàn sản phẩm tiêu dùng."
+          ]
+        },
+        {
+          "flag": "🇺🇸",
+          "title": "Thị Trường Hoa Kỳ (USA)",
+          "sub": "California Prop 65 • CPSIA • CITES",
+          "itemsHtml": [
+            "✓ <strong>California Prop 65:</strong> Kiểm soát hàm lượng Chì (Lead) &amp; Cadmium trong khoen khóa kim loại, đinh tán và lớp phủ bề mặt da.",
+            "✓ <strong>CPSIA:</strong> Đáp ứng tiêu chuẩn an toàn hóa chất cho phân khúc cặp học sinh, phụ kiện gia đình.",
+            "✓ <strong>Hỗ trợ CITES:</strong> Tư vấn thủ tục nguồn gốc hợp pháp khi xuất khẩu dòng sản phẩm da ngoại lai (cá sấu, đà điểu)."
+          ]
+        },
+        {
+          "flag": "🇯🇵",
+          "title": "Thị Trường Nhật Bản (Japan)",
+          "sub": "JIS Standards • Kaken/Boken • YKK & Nickel-Free",
+          "itemsHtml": [
+            "✓ <strong>Độ bền màu ma sát (Kaken/Boken):</strong> Xử lý chốt màu chống phai lem ra trang phục sáng màu khi gặp mồ hôi/nước mưa.",
+            "✓ <strong>Kiểm kim 100% (Needle Detection):</strong> Quy trình rà kim gãy và dị vật kim loại bắt buộc trước khi đóng thùng xuất đi Nhật.",
+            "✓ <strong>Phụ kiện chuẩn Nhật:</strong> Sử dụng dây kéo <strong>YKK chính hãng</strong>, hợp kim đồng đúc &amp; mạ PVD không chứa Nickel (Nickel-free)."
+          ]
+        }
+      ],
+      "materialPills": [
+        "Da Veg-tan Ý & Da LWG",
+        "Sơn cạnh Ý (Fenice / Uniters)",
+        "Keo gốc nước Renia (Đức)",
+        "Khóa kéo YKK Excella / Metal",
+        "Phụ kiện Đồng đúc / Inox 304",
+        "Chỉ sáp Polyester / Linen Pháp"
+      ]
+    },
+    "highlightsSection": {
+      "tag": "CAM KẾT CỦA XƯỞNG",
+      "title": "Tại Sao Các Doanh Nghiệp Chọn RAPMAU.COM?",
+      "items": [
+        {
+          "icon": "🛡️",
+          "title": "Bảo Hành Đường Chỉ 12–24 Tháng",
+          "desc": "Mọi sản phẩm da thật của xưởng đều được bảo hành kỹ thuật đường may và phụ kiện trọn vẹn."
+        },
+        {
+          "icon": "⚡",
+          "title": "Mẫu Thử Thật Tay Trong 48 Giờ",
+          "desc": "Không lo rủi ro khi sản xuất số lượng lớn: Bạn luôn được cầm trên tay mẫu thực tế trước khi bấm máy chạy hàng loạt."
+        },
+        {
+          "icon": "🏷️",
+          "title": "Dập Chìm & In Logo Chuẩn Brand",
+          "desc": "Sở hữu máy dập nhiệt cao tầng và máy khắc laser hiện đại, đảm bảo từng đường nét logo sắc sảo, không cháy xém mép da."
+        },
+        {
+          "icon": "🧾",
+          "title": "Hợp Đồng & Xuất Hóa Đơn VAT",
+          "desc": "Pháp lý minh bạch, xuất hóa đơn VAT đầy đủ theo quy định của nhà nước, thuận tiện cho phòng kế toán doanh nghiệp."
+        }
+      ]
+    },
+    "articlesSection": {
+      "tag": "TIN TỨC & CASE STUDY B2B",
+      "title": "Bài Viết Năng Lực Xưởng & Cẩm Nang Đặt Gia Công",
+      "desc": "Chia sẻ kinh nghiệm thực tế về định mức nguyên liệu, tiêu chuẩn xuất khẩu và các dự án quà tặng, gia công OEM/ODM đã triển khai tại RAPMAU.COM."
+    },
+    "articles": [
+      {
+        "id": "B2B-ART-01",
+        "slug": "quy-trinh-dat-may-qua-tang-da-doanh-nghiep-48h",
+        "title": "Quy Trình Đặt May Quà Tặng Da Doanh Nghiệp & Dập Logo Chuẩn Brand Trong 48 Giờ",
+        "category": "Quà Tặng Doanh Nghiệp",
+        "image": "/assets/brand/hero-workbench.jpg",
+        "author": "Mr.Tuân - Xưởng RAPMAU.COM",
+        "readTime": "4 phút đọc",
+        "updatedAt": "2026-11-11",
+        "excerpt": "Hướng dẫn chi tiết 4 bước chốt chất da, duyệt mockup logo 3D, làm mẫu thực tế 48h và tối ưu chi phí theo từng mốc số lượng từ 20 đến 5.000 bộ quà tặng.",
+        "contentHtml": "<h2>1. Chọn dòng sản phẩm & chất liệu da phù hợp ngân sách</h2><p>Đối với các sự kiện hội nghị khách hàng, kỷ niệm thành lập công ty hay quà tặng đối tác VIP cuối năm, các nhóm sản phẩm được đặt nhiều nhất gồm: <strong>bao da thẻ nhân viên, ví namecard, móc khóa dập nổi, bìa sổ da A5 và bao da hộ chiếu</strong>.</p><ul><li><strong>Phân khúc tiết kiệm (65.000đ – 145.000đ):</strong> Da bò Mill hoặc da Split phủ PU cao cấp, bền bỉ, đồng màu tuyệt đối cho lô hàng lớn.</li><li><strong>Phân khúc cao cấp / VIP (180.000đ – 650.000đ):</strong> Da bò sáp Pull-up, da Epsom vân hạt hoặc da Veg-tan thảo mộc Ý đánh cạnh thủ công.</li></ul><h2>2. Kỹ thuật dập logo thương hiệu sắc nét</h2><p>Xưởng sử dụng khuôn đồng khắc CNC sắc nét kết hợp máy ép nhiệt ổn định áp suất để <strong>dập chìm (Debossing)</strong>, <strong>ép kim nhũ vàng/bạc (Foil Stamping)</strong> hoặc khắc laser đồng bộ nhận diện thương hiệu trên cả sản phẩm và hộp quà.</p><h2>3. Lên mẫu thực tế (Sample) trong 48 giờ</h2><p>Trước khi sản xuất hàng loạt, doanh nghiệp luôn được duyệt bản vẽ mockup kèm 01 mẫu may hoàn chỉnh để kiểm tra độ sắc nét của logo, chất da và quy cách đóng gói.</p>"
+      },
+      {
+        "id": "B2B-ART-02",
+        "slug": "chuan-bi-nguyen-lieu-dat-chuan-lwg-reach-prop65-xuat-khau",
+        "title": "Cẩm Nang Kiểm Soát Nguyên Phụ Liệu Đạt Chuẩn Xuất Khẩu Mỹ, EU, Anh & Nhật Bản",
+        "category": "Tiêu Chuẩn Xuất Khẩu",
+        "image": "/assets/brand/leather-rolls.jpg",
+        "author": "Bộ Phận KCS & Sourcing RAPMAU.COM",
+        "readTime": "6 phút đọc",
+        "updatedAt": "2026-11-11",
+        "excerpt": "Những chỉ số quan trọng về Chromium VI, Lead/Cadmium, độ bền màu ma sát Kaken và kiểm kim 100% mà các xưởng gia công và thương hiệu cần nắm trước khi nhận đơn xuất khẩu.",
+        "contentHtml": "<h2>1. Tiêu chuẩn REACH & LWG cho thị trường Châu Âu (EU) & Anh</h2><p>Các nhà nhập khẩu EU và UK yêu cầu chặt chẽ chứng nhận <strong>Leather Working Group (LWG)</strong> của nhà máy thuộc da và kết quả test hàm lượng hóa chất <strong>Chromium VI dưới 3 ppm</strong>, không chứa chất nhuộm Azo hay Phthalates vượt ngưỡng.</p><h2>2. Quy định California Prop 65 cho thị trường Mỹ</h2><p>Không chỉ phần da mà toàn bộ <strong>khoen khóa hợp kim, đinh tán, nút bấm và sơn cạnh</strong> khi xuất vào Hoa Kỳ phải đạt giới hạn an toàn về Chì (Lead) và Cadmium.</p><h2>3. KCS 100% & Kiểm kim cho đơn hàng Nhật Bản</h2><p>Thị trường Nhật Bản đánh giá rất cao sự đồng đều đường chỉ, xử lý chống phai màu (test ma sát Kaken/Boken) và bắt buộc chạy qua <strong>máy dò kim loại (Needle Detector)</strong> trước khi niêm phong thùng carton.</p>"
+      },
+      {
+        "id": "B2B-ART-03",
+        "slug": "toi-uu-dinh-muc-da-va-khuon-be-cnc-cho-local-brand",
+        "title": "Cách Bóc Tách Rập CAD & Làm Khuôn Bế Thép Giúp Giảm 15–20% Hao Hụt Da Cho Local Brand",
+        "category": "Gia Công OEM / ODM",
+        "image": "/assets/brand/tools-kit-pro.jpg",
+        "author": "Kỹ Sư Rập RAPMAU.COM",
+        "readTime": "5 phút đọc",
+        "updatedAt": "2026-11-11",
+        "excerpt": "Khi chuyển từ cắt tay từng mẫu nhỏ sang sản xuất đồng bộ 50–1.000 sản phẩm, chuẩn hóa file rập CAD và uốn khuôn bế thép CNC là chìa khóa hạ giá thành đơn vị.",
+        "contentHtml": "<h2>1. Tại sao phải chuẩn hóa Tech Pack & File Rập CAD?</h2><p>Khi giao cho thợ tự ước lượng hoặc cắt rập giấy thủ công, sai số cộng dồn giữa các chi tiết thân, hông và ngăn thẻ khiến sản phẩm bị vênh phom. Việc <strong>bóc tách rập 1:1 trên phần mềm CAD</strong> giúp kiểm soát chính xác độ lạng mép và tim lỗ đục.</p><h2>2. Xếp sơ đồ cắt tối ưu Pia da (Nesting)</h2><p>Nhờ sắp xếp hình học các chi tiết trên phần mềm trước khi đưa ra khuôn bế, xưởng có thể tận dụng tối đa vùng da bụng/cổ cho chi tiết lót trong và giữ vùng lưng da đẹp nhất cho mặt chính, giúp <strong>tiết kiệm 15–20% chi phí nguyên liệu da</strong>.</p>"
+      }
+    ]
+  }
 }

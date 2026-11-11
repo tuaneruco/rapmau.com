@@ -334,6 +334,7 @@ function applyRolePermissionsToUI() {
   const navBtnVendors = document.getElementById('navBtnVendors');
   const navBtnBooks = document.getElementById('navBtnBooks');
   const navBtnArticles = document.getElementById('navBtnArticles');
+  const navBtnB2b = document.getElementById('navBtnB2b');
   const fullSiteSettingsForm = document.getElementById('fullSiteSettingsForm');
   const adminLeadsCard = document.getElementById('adminLeadsCard');
   const vendorFilterSel = document.getElementById('adminToolVendorFilter');
@@ -366,6 +367,7 @@ function applyRolePermissionsToUI() {
     if (navBtnVendors) navBtnVendors.classList.add('hidden');
     if (navBtnBooks) navBtnBooks.classList.add('hidden');
     if (navBtnArticles) navBtnArticles.classList.add('hidden');
+    if (navBtnB2b) navBtnB2b.classList.add('hidden');
     if (fullSiteSettingsForm) fullSiteSettingsForm.classList.add('hidden');
     if (adminLeadsCard) adminLeadsCard.classList.add('hidden');
 
@@ -396,6 +398,7 @@ function applyRolePermissionsToUI() {
     if (navBtnVendors) navBtnVendors.classList.remove('hidden');
     if (navBtnBooks) navBtnBooks.classList.remove('hidden');
     if (navBtnArticles) navBtnArticles.classList.remove('hidden');
+    if (navBtnB2b) navBtnB2b.classList.remove('hidden');
     if (fullSiteSettingsForm) fullSiteSettingsForm.classList.remove('hidden');
     if (adminLeadsCard) adminLeadsCard.classList.remove('hidden');
 
@@ -541,6 +544,7 @@ async function initAdmin() {
   adminState.accessories = catData.accessories || [];
   adminState.freeBooks = catData.freeBooks || [];
   adminState.articles = catData.articles || [];
+  adminState.b2b = catData.b2b || {};
   adminState.vendors =
     catData.vendors && catData.vendors.length ? catData.vendors : DEFAULT_VENDORS_FALLBACK;
   adminState.orders = Array.from(orderMap.values());
@@ -554,11 +558,19 @@ async function initAdmin() {
   renderToolsTable();
   renderBooksTable();
   renderArticlesTable();
+  renderB2bArticlesTable();
+  populateB2bSectionsForm();
   renderOrdersAndLeads();
   renderVendorsTable();
   populateSiteSettings();
   applyRolePermissionsToUI();
   bindAdminEvents();
+
+  // Deep link ?tab=tab-b2b hoặc #tab-b2b
+  const urlTab = new URLSearchParams(window.location.search).get('tab') || (window.location.hash || '').replace(/^#/, '');
+  if (urlTab && document.getElementById(urlTab)) {
+    activateTab(urlTab);
+  }
 }
 
 function getOrdersForCurrentRole() {
@@ -599,6 +611,8 @@ function renderKPIs() {
   if (sideVendors) sideVendors.textContent = adminState.vendors.filter((v) => v.role === 'vendor').length;
   const sideArticles = document.getElementById('sideCountArticles');
   if (sideArticles) sideArticles.textContent = (adminState.articles || []).length;
+  const sideB2b = document.getElementById('sideCountB2bArticles');
+  if (sideB2b) sideB2b.textContent = ((adminState.catalog?.b2b?.articles) || []).length;
 
   const site = adminState.catalog.site || {};
   document.getElementById('topHotlineText').textContent =
@@ -943,6 +957,138 @@ function renderArticlesTable() {
     .join('');
 }
 
+function getB2bState() {
+  if (!adminState.catalog) adminState.catalog = {};
+  if (!adminState.catalog.b2b) adminState.catalog.b2b = {};
+  return adminState.catalog.b2b;
+}
+
+function renderB2bArticlesTable() {
+  const tbody = document.getElementById('adminB2bArticlesTableBody');
+  if (!tbody) return;
+  const b2b = getB2bState();
+  const list = Array.isArray(b2b.articles) ? b2b.articles : [];
+  if (list.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:18px;">Chưa có bài viết B2B nào. Hãy thêm bài viết mới ở biểu mẫu bên phải!</td></tr>';
+    return;
+  }
+  tbody.innerHTML = list
+    .map(
+      (a) => `
+      <tr>
+        <td style="width:68px;">
+          <img src="${a.image || '/assets/brand/hero-workbench.jpg'}" alt="${a.title}" style="width:56px; height:42px; object-fit:cover; border-radius:6px; border:1px solid var(--border-soft);" />
+        </td>
+        <td>
+          <strong style="color:var(--bg-saddle);">${a.title}</strong>
+          <div style="font-size:11.5px; color:var(--text-muted);">
+            [${a.id}] • Cập nhật: ${a.updatedAt || '2026-11-11'} • ${a.readTime || '5 phút đọc'}
+          </div>
+        </td>
+        <td><span class="size-badge">${a.category || 'B2B'}</span></td>
+        <td>
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button type="button" class="btn-edit-sm" data-edit-b2b-art="${a.id}">✏️ Sửa</button>
+            <a href="/b2b/#bai-viet-b2b" target="_blank" class="btn-sm btn-detail" style="text-decoration:none;">👁️ Xem</a>
+            <button type="button" class="btn-danger-sm" data-del-b2b-art="${a.id}">🗑️ Xoá</button>
+          </div>
+        </td>
+      </tr>
+    `
+    )
+    .join('');
+}
+
+function populateB2bSectionsForm() {
+  const b2b = getB2bState();
+  const hero = b2b.hero || {};
+  const setVal = (id, v) => {
+    const el = document.getElementById(id);
+    if (el) el.value = v || '';
+  };
+
+  setVal('b2bHeroTag', hero.tag || '🏭 XƯỞNG SẢN XUẤT ĐỒ DA & CHẾ TÁC THEO YÊU CẦU');
+  setVal('b2bHeroTitleHtml', hero.titleHtml || 'Gia Công Đồ Da B2B, <span class="text-gold">Quà Tặng Doanh Nghiệp</span> & Sản Xuất OEM/ODM');
+  setVal('b2bHeroDescHtml', hero.descHtml || '');
+  setVal('b2bHeroImage', hero.image || '/assets/brand/hero-workbench.jpg');
+  setVal('b2bHeroBadgeHtml', hero.badgeHtml || '');
+  const stats = Array.isArray(hero.stats) ? hero.stats : [];
+  setVal('b2bHeroStatsLines', stats.map((s) => `${s.num || ''} | ${s.label || ''}`).join('\n'));
+
+  const artSec = b2b.articlesSection || {};
+  setVal('b2bArticlesSecTag', artSec.tag || 'TIN TỨC & CASE STUDY B2B');
+  setVal('b2bArticlesSecTitle', artSec.title || 'Bài Viết Năng Lực Xưởng & Cẩm Nang Đặt Gia Công');
+  setVal('b2bArticlesSecDesc', artSec.desc || '');
+
+  const svcSec = b2b.servicesSection || {};
+  setVal('b2bServicesTitle', svcSec.title || '4 Hạng Mục Gia Công & Sản Xuất Thế Mạnh');
+  setVal('b2bServicesDesc', svcSec.desc || '');
+  const svcBox = document.getElementById('b2bServicesEditorList');
+  if (svcBox) {
+    const items = Array.isArray(svcSec.items) ? svcSec.items : [];
+    svcBox.innerHTML = items
+      .map(
+        (it, idx) => `
+        <div style="border:1px solid var(--border-soft); border-radius:8px; padding:10px; background:#fff;" data-b2b-svc-idx="${idx}">
+          <div style="font-size:12px; font-weight:800; color:var(--accent-leather); margin-bottom:6px;">Hạng mục #${idx + 1}</div>
+          <div class="form-row">
+            <div class="form-field"><label>Nhãn góc</label><input type="text" class="b2b-svc-badge" value="${(it.badge || '').replace(/"/g, '&quot;')}" /></div>
+            <div class="form-field"><label>Icon</label><input type="text" class="b2b-svc-icon" value="${(it.icon || '').replace(/"/g, '&quot;')}" /></div>
+          </div>
+          <div class="form-field" style="margin-bottom:6px;"><label>Tiêu đề dịch vụ</label><input type="text" class="b2b-svc-title" value="${(it.title || '').replace(/"/g, '&quot;')}" /></div>
+          <div class="form-field" style="margin-bottom:6px;"><label>Mô tả ngắn</label><textarea class="b2b-svc-body" rows="2">${it.body || ''}</textarea></div>
+          <div class="form-field" style="margin-bottom:6px;"><label>4 Điểm nổi bật (mỗi dòng 1 ý)</label><textarea class="b2b-svc-features" rows="3">${(it.features || []).join('\n')}</textarea></div>
+          <div class="form-field"><label>Chữ nút bấm</label><input type="text" class="b2b-svc-cta" value="${(it.ctaText || '').replace(/"/g, '&quot;')}" /></div>
+        </div>
+      `
+      )
+      .join('');
+  }
+
+  const netSec = b2b.networkSection || {};
+  setVal('b2bNetworkTitle', netSec.title || '');
+  setVal('b2bNetworkDesc', netSec.desc || '');
+  const netBox = document.getElementById('b2bWorkshopsEditorList');
+  if (netBox) {
+    const wks = Array.isArray(netSec.workshops) ? netSec.workshops : [];
+    netBox.innerHTML = wks
+      .map(
+        (w, idx) => `
+        <div style="border:1px solid var(--border-soft); border-radius:8px; padding:10px; background:#fff;" data-b2b-wk-idx="${idx}">
+          <div class="form-row">
+            <div class="form-field"><label>Tên xưởng #${idx + 1}</label><input type="text" class="b2b-wk-title" value="${(w.title || '').replace(/"/g, '&quot;')}" /></div>
+            <div class="form-field"><label>Công suất / tháng</label><input type="text" class="b2b-wk-cap" value="${(w.cap || '').replace(/"/g, '&quot;')}" /></div>
+          </div>
+          <div class="form-field"><label>Mô tả mặt hàng, thiết bị &amp; ưu thế (HTML)</label><textarea class="b2b-wk-spec" rows="3">${w.specHtml || ''}</textarea></div>
+        </div>
+      `
+      )
+      .join('');
+  }
+
+  const stdSec = b2b.standardsSection || {};
+  setVal('b2bStandardsTitle', stdSec.title || '');
+  setVal('b2bStandardsDesc', stdSec.desc || '');
+  setVal('b2bMaterialPillsCsv', (stdSec.materialPills || []).join(', '));
+  const mktBox = document.getElementById('b2bMarketsEditorList');
+  if (mktBox) {
+    const mkts = Array.isArray(stdSec.markets) ? stdSec.markets : [];
+    mktBox.innerHTML = mkts
+      .map(
+        (m, idx) => `
+        <div style="border:1px solid var(--border-soft); border-radius:8px; padding:10px; background:#fff;" data-b2b-mkt-idx="${idx}">
+          <div class="form-row">
+            <div class="form-field"><label>Thị trường #${idx + 1}</label><input type="text" class="b2b-mkt-title" value="${(m.title || '').replace(/"/g, '&quot;')}" /></div>
+            <div class="form-field"><label>Chuẩn phụ đề</label><input type="text" class="b2b-mkt-sub" value="${(m.sub || '').replace(/"/g, '&quot;')}" /></div>
+          </div>
+          <div class="form-field"><label>Các dòng tiêu chuẩn (mỗi dòng 1 ý)</label><textarea class="b2b-mkt-items" rows="3">${(m.itemsHtml || []).join('\n')}</textarea></div>
+        </div>
+      `
+      )
+      .join('');
+  }
+}
+
 function renderOrdersAndLeads() {
   const ordBox = document.getElementById('adminOrdersContainer');
   const leadBox = document.getElementById('adminLeadsContainer');
@@ -1220,6 +1366,8 @@ function bindAdminEvents() {
           adminState.categories = parsed.categories || [];
           adminState.accessories = parsed.accessories || [];
           adminState.freeBooks = parsed.freeBooks || [];
+          adminState.articles = parsed.articles || adminState.articles || [];
+          if (parsed.b2b) adminState.b2b = parsed.b2b;
           if (parsed.vendors && parsed.vendors.length) {
             adminState.vendors = parsed.vendors;
           }
@@ -1230,6 +1378,9 @@ function bindAdminEvents() {
           renderPatternsTable();
           renderToolsTable();
           renderBooksTable();
+          renderArticlesTable();
+          renderB2bArticlesTable();
+          populateB2bSectionsForm();
           renderVendorsTable();
           populateSiteSettings();
           showToast('📤 Đã khôi phục dữ liệu từ file JSON thành công!');
@@ -2179,10 +2330,55 @@ function bindAdminEvents() {
   const articleForm = document.getElementById('articleCmsForm');
   const resetArtBtn = document.getElementById('btnResetArticleForm');
 
+  const artImgFile = document.getElementById('artFormImageFile');
+  const artImgUrl = document.getElementById('artFormImage');
+  if (artImgFile && artImgUrl) {
+    artImgFile.addEventListener('change', () => handleImageUpload(artImgFile, artImgUrl, 'article'));
+  }
+
+  // Công cụ chèn nhanh thẻ HTML & ảnh cho trình soạn thảo bài viết
+  const insertSnippetAtCursor = (textarea, beforeText, afterText = '') => {
+    if (!textarea) return;
+    const start = textarea.selectionStart ?? textarea.value.length;
+    const end = textarea.selectionEnd ?? textarea.value.length;
+    const selected = textarea.value.slice(start, end) || 'Nội dung';
+    const inserted = beforeText + selected + afterText;
+    textarea.value = textarea.value.slice(0, start) + inserted + textarea.value.slice(end);
+    textarea.focus();
+    textarea.selectionStart = start + beforeText.length;
+    textarea.selectionEnd = start + beforeText.length + selected.length;
+  };
+
+  document.querySelectorAll('.html-quick-bar [data-ins]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const bar = btn.closest('.html-quick-bar');
+      const targetId = bar?.dataset.target;
+      const ta = targetId ? document.getElementById(targetId) : null;
+      const parts = String(btn.dataset.ins || '|').split('|');
+      insertSnippetAtCursor(ta, parts[0] || '', parts[1] || '');
+    });
+  });
+
+  document.querySelectorAll('.html-insert-img-file').forEach((fileEl) => {
+    fileEl.addEventListener('change', () => {
+      const targetId = fileEl.dataset.target;
+      const ta = targetId ? document.getElementById(targetId) : null;
+      if (!ta || !fileEl.files?.[0]) return;
+      const fakeInput = { value: '' };
+      handleImageUpload(fileEl, fakeInput, 'article-inline', (uploadedUrl) => {
+        const imgTag = `\n<p><img src="${uploadedUrl}" alt="Hình minh họa" style="max-width:100%; border-radius:10px;" /></p>\n`;
+        const pos = ta.selectionStart ?? ta.value.length;
+        ta.value = ta.value.slice(0, pos) + imgTag + ta.value.slice(pos);
+        ta.focus();
+      });
+    });
+  });
+
   if (resetArtBtn && articleForm) {
     resetArtBtn.addEventListener('click', () => {
       articleForm.reset();
       document.getElementById('artFormId').value = '';
+      if (artImgUrl) artImgUrl.value = '/assets/brand/hero-workbench.jpg';
       document.getElementById('articleFormHeading').textContent = '➕ Thêm / Chỉnh Sửa Bài Viết SEO & AEO';
     });
   }
@@ -2196,6 +2392,9 @@ function bindAdminEvents() {
         document.getElementById('artFormId').value = art.id;
         document.getElementById('artFormTitle').value = art.title || '';
         document.getElementById('artFormCategory').value = art.category || 'Kỹ Thuật Rập & Bản Vẽ';
+        if (document.getElementById('artFormImage')) document.getElementById('artFormImage').value = art.image || '/assets/brand/hero-workbench.jpg';
+        if (document.getElementById('artFormAuthor')) document.getElementById('artFormAuthor').value = art.author || 'Kỹ Sư Thiết Kế Rập RAPMAU.COM';
+        if (document.getElementById('artFormReadTime')) document.getElementById('artFormReadTime').value = art.readTime || '6 phút đọc';
         document.getElementById('artFormAeoQuestion').value = art.aeoQuestion || '';
         document.getElementById('artFormAeoAnswer').value = art.aeoAnswer || '';
         document.getElementById('artFormExcerpt').value = art.excerpt || '';
@@ -2236,6 +2435,9 @@ function bindAdminEvents() {
         id: existingId || `ART-${String((adminState.articles?.length || 0) + 1).padStart(2, '0')}`,
         title: document.getElementById('artFormTitle').value.trim(),
         category: document.getElementById('artFormCategory').value,
+        image: (document.getElementById('artFormImage')?.value || '').trim() || '/assets/brand/hero-workbench.jpg',
+        author: (document.getElementById('artFormAuthor')?.value || '').trim() || 'Kỹ Sư Thiết Kế Rập RAPMAU.COM',
+        readTime: (document.getElementById('artFormReadTime')?.value || '').trim() || '6 phút đọc',
         aeoQuestion: document.getElementById('artFormAeoQuestion').value.trim(),
         aeoAnswer: document.getElementById('artFormAeoAnswer').value.trim(),
         excerpt: document.getElementById('artFormExcerpt').value.trim(),
@@ -2271,11 +2473,8 @@ function bindAdminEvents() {
         const newArt = {
           ...payload,
           slug,
-          readTime: '6 phút đọc',
           publishedAt: new Date().toISOString().slice(0, 10),
           updatedAt: new Date().toISOString().slice(0, 10),
-          author: 'Kỹ Sư Thiết Kế Rập RAPMAU.COM',
-          image: '/assets/brand/hero-workbench.jpg',
           keyTakeaways: [],
           faqs: []
         };
@@ -2301,9 +2500,271 @@ function bindAdminEvents() {
       renderArticlesTable();
       articleForm.reset();
       document.getElementById('artFormId').value = '';
+      if (artImgUrl) artImgUrl.value = '/assets/brand/hero-workbench.jpg';
       document.getElementById('articleFormHeading').textContent = '➕ Thêm / Chỉnh Sửa Bài Viết SEO & AEO';
       showToast(`✅ Đã lưu bài viết [${payload.id}] thành công!`);
     });
+  }
+
+  // ==================== TAB 4D: QUẢN LÝ BÀI VIẾT & NỘI DUNG TRANG B2B (/b2b/) ====================
+  const b2bArticlesTbody = document.getElementById('adminB2bArticlesTableBody');
+  const b2bArticleForm = document.getElementById('b2bArticleCmsForm');
+  const b2bSectionsForm = document.getElementById('b2bSectionsForm');
+  const b2bResetArtBtn = document.getElementById('btnResetB2bArticleForm');
+  const b2bArtImgFile = document.getElementById('b2bArtImageFile');
+  const b2bArtImgInput = document.getElementById('b2bArtImage');
+  const b2bArtImgPreview = document.getElementById('b2bArtImagePreview');
+  const b2bHeroImgFile = document.getElementById('b2bHeroImageFile');
+  const b2bHeroImgInput = document.getElementById('b2bHeroImage');
+
+  if (b2bArtImgInput && b2bArtImgPreview) {
+    b2bArtImgInput.addEventListener('input', () => {
+      b2bArtImgPreview.src = b2bArtImgInput.value.trim() || '/assets/brand/hero-workbench.jpg';
+    });
+  }
+  if (b2bArtImgFile && b2bArtImgInput) {
+    b2bArtImgFile.addEventListener('change', () =>
+      handleImageUpload(b2bArtImgFile, b2bArtImgInput, 'b2b-art', (url) => {
+        if (b2bArtImgPreview) b2bArtImgPreview.src = url;
+      })
+    );
+  }
+  if (b2bHeroImgFile && b2bHeroImgInput) {
+    b2bHeroImgFile.addEventListener('change', () => handleImageUpload(b2bHeroImgFile, b2bHeroImgInput, 'b2b-hero'));
+  }
+
+  if (b2bResetArtBtn && b2bArticleForm) {
+    b2bResetArtBtn.addEventListener('click', () => {
+      b2bArticleForm.reset();
+      document.getElementById('b2bArtId').value = '';
+      if (b2bArtImgInput) b2bArtImgInput.value = '/assets/brand/hero-workbench.jpg';
+      if (b2bArtImgPreview) b2bArtImgPreview.src = '/assets/brand/hero-workbench.jpg';
+      document.getElementById('b2bArticleFormHeading').textContent = '➕ Thêm / Chỉnh Sửa Bài Viết Trang B2B';
+    });
+  }
+
+  if (b2bArticlesTbody) {
+    b2bArticlesTbody.addEventListener('click', async (e) => {
+      const b2b = getB2bState();
+      b2b.articles = Array.isArray(b2b.articles) ? b2b.articles : [];
+
+      const editBtn = e.target.closest('[data-edit-b2b-art]');
+      if (editBtn) {
+        const art = b2b.articles.find((a) => a.id === editBtn.dataset.editB2bArt);
+        if (!art) return;
+        document.getElementById('b2bArtId').value = art.id;
+        document.getElementById('b2bArtTitle').value = art.title || '';
+        document.getElementById('b2bArtCategory').value = art.category || 'Quà Tặng Doanh Nghiệp';
+        document.getElementById('b2bArtAuthor').value = art.author || 'Mr.Tuân - Xưởng RAPMAU.COM';
+        document.getElementById('b2bArtReadTime').value = art.readTime || '5 phút đọc';
+        document.getElementById('b2bArtImage').value = art.image || '/assets/brand/hero-workbench.jpg';
+        if (b2bArtImgPreview) b2bArtImgPreview.src = art.image || '/assets/brand/hero-workbench.jpg';
+        document.getElementById('b2bArtExcerpt').value = art.excerpt || '';
+        document.getElementById('b2bArtContentHtml').value = art.contentHtml || '';
+        document.getElementById('b2bArticleFormHeading').textContent = `✏️ Đang sửa bài viết B2B [${art.id}]`;
+        b2bArticleForm?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      const delBtn = e.target.closest('[data-del-b2b-art]');
+      if (delBtn) {
+        const id = delBtn.dataset.delB2bArt;
+        const art = b2b.articles.find((a) => a.id === id);
+        if (!window.confirm(`Bạn có chắc muốn XOÁ bài viết B2B [${id}] "${art?.title || ''}"?`)) return;
+        b2b.articles = b2b.articles.filter((a) => a.id !== id);
+        try {
+          await fetch(`/api/b2b-article/${encodeURIComponent(id)}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+          });
+        } catch {
+          // offline
+        }
+        syncCatalogStatsAndPersistLocal();
+        renderKPIs();
+        renderB2bArticlesTable();
+        showToast(`🗑️ Đã xoá bài viết B2B [${id}]!`);
+      }
+    });
+  }
+
+  if (b2bArticleForm) {
+    b2bArticleForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const b2b = getB2bState();
+      b2b.articles = Array.isArray(b2b.articles) ? b2b.articles : [];
+
+      const existingId = document.getElementById('b2bArtId').value.trim();
+      const payload = {
+        id: existingId || `B2B-ART-${String(b2b.articles.length + 1).padStart(2, '0')}`,
+        title: document.getElementById('b2bArtTitle').value.trim(),
+        category: document.getElementById('b2bArtCategory').value,
+        author: document.getElementById('b2bArtAuthor').value.trim() || 'Mr.Tuân - Xưởng RAPMAU.COM',
+        readTime: document.getElementById('b2bArtReadTime').value.trim() || '5 phút đọc',
+        image: document.getElementById('b2bArtImage').value.trim() || '/assets/brand/hero-workbench.jpg',
+        excerpt: document.getElementById('b2bArtExcerpt').value.trim(),
+        contentHtml: document.getElementById('b2bArtContentHtml').value
+      };
+
+      if (existingId) {
+        const idx = b2b.articles.findIndex((a) => a.id === existingId);
+        if (idx !== -1) {
+          b2b.articles[idx] = {
+            ...b2b.articles[idx],
+            ...payload,
+            updatedAt: new Date().toISOString().slice(0, 10)
+          };
+        }
+        try {
+          await fetch(`/api/b2b-article/${encodeURIComponent(existingId)}`, {
+            method: 'PUT',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(payload)
+          });
+        } catch {
+          // offline
+        }
+      } else {
+        const slug = payload.title
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/đ/g, 'd')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '');
+        const newArt = {
+          ...payload,
+          slug,
+          updatedAt: new Date().toISOString().slice(0, 10)
+        };
+        try {
+          const res = await fetch('/api/b2b-article', {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(newArt)
+          });
+          if (res.ok) {
+            const json = await res.json();
+            if (json.article) Object.assign(newArt, json.article);
+          }
+        } catch {
+          // offline
+        }
+        b2b.articles.unshift(newArt);
+      }
+
+      syncCatalogStatsAndPersistLocal();
+      renderKPIs();
+      renderB2bArticlesTable();
+      b2bArticleForm.reset();
+      document.getElementById('b2bArtId').value = '';
+      if (b2bArtImgInput) b2bArtImgInput.value = '/assets/brand/hero-workbench.jpg';
+      if (b2bArtImgPreview) b2bArtImgPreview.src = '/assets/brand/hero-workbench.jpg';
+      document.getElementById('b2bArticleFormHeading').textContent = '➕ Thêm / Chỉnh Sửa Bài Viết Trang B2B';
+      showToast(`✅ Đã lưu bài viết B2B [${payload.id}] thành công!`);
+    });
+  }
+
+  const saveB2bSections = async (shouldPublish = false) => {
+    const b2b = getB2bState();
+    const statsLines = (document.getElementById('b2bHeroStatsLines')?.value || '')
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .map((line) => {
+        const [num, ...rest] = line.split('|');
+        return { num: (num || '').trim(), label: rest.join('|').trim() };
+      });
+
+    b2b.hero = {
+      ...(b2b.hero || {}),
+      tag: document.getElementById('b2bHeroTag')?.value.trim() || '',
+      titleHtml: document.getElementById('b2bHeroTitleHtml')?.value.trim() || '',
+      descHtml: document.getElementById('b2bHeroDescHtml')?.value.trim() || '',
+      image: document.getElementById('b2bHeroImage')?.value.trim() || '/assets/brand/hero-workbench.jpg',
+      badgeHtml: document.getElementById('b2bHeroBadgeHtml')?.value.trim() || '',
+      stats: statsLines
+    };
+
+    b2b.articlesSection = {
+      tag: document.getElementById('b2bArticlesSecTag')?.value.trim() || 'TIN TỨC & CASE STUDY B2B',
+      title: document.getElementById('b2bArticlesSecTitle')?.value.trim() || '',
+      desc: document.getElementById('b2bArticlesSecDesc')?.value.trim() || ''
+    };
+
+    const existingSvcItems = b2b.servicesSection?.items || [];
+    const editedSvcItems = Array.from(document.querySelectorAll('#b2bServicesEditorList [data-b2b-svc-idx]')).map((el, idx) => ({
+      ...(existingSvcItems[idx] || {}),
+      badge: el.querySelector('.b2b-svc-badge')?.value.trim() || '',
+      icon: el.querySelector('.b2b-svc-icon')?.value.trim() || '🎁',
+      title: el.querySelector('.b2b-svc-title')?.value.trim() || '',
+      body: el.querySelector('.b2b-svc-body')?.value.trim() || '',
+      features: (el.querySelector('.b2b-svc-features')?.value || '').split('\n').map((s) => s.trim()).filter(Boolean),
+      ctaText: el.querySelector('.b2b-svc-cta')?.value.trim() || 'Nhận báo giá →'
+    }));
+    b2b.servicesSection = {
+      ...(b2b.servicesSection || { tag: 'NĂNG LỰC SẢN XUẤT' }),
+      title: document.getElementById('b2bServicesTitle')?.value.trim() || '',
+      desc: document.getElementById('b2bServicesDesc')?.value.trim() || '',
+      items: editedSvcItems.length ? editedSvcItems : existingSvcItems
+    };
+
+    const existingWks = b2b.networkSection?.workshops || [];
+    const editedWks = Array.from(document.querySelectorAll('#b2bWorkshopsEditorList [data-b2b-wk-idx]')).map((el, idx) => ({
+      ...(existingWks[idx] || {}),
+      title: el.querySelector('.b2b-wk-title')?.value.trim() || '',
+      cap: el.querySelector('.b2b-wk-cap')?.value.trim() || '',
+      specHtml: el.querySelector('.b2b-wk-spec')?.value.trim() || ''
+    }));
+    b2b.networkSection = {
+      ...(b2b.networkSection || { tag: 'LIÊN MINH XƯỞNG CHUYÊN BIỆT' }),
+      title: document.getElementById('b2bNetworkTitle')?.value.trim() || '',
+      desc: document.getElementById('b2bNetworkDesc')?.value.trim() || '',
+      workshops: editedWks.length ? editedWks : existingWks
+    };
+
+    const existingMkts = b2b.standardsSection?.markets || [];
+    const editedMkts = Array.from(document.querySelectorAll('#b2bMarketsEditorList [data-b2b-mkt-idx]')).map((el, idx) => ({
+      ...(existingMkts[idx] || {}),
+      title: el.querySelector('.b2b-mkt-title')?.value.trim() || '',
+      sub: el.querySelector('.b2b-mkt-sub')?.value.trim() || '',
+      itemsHtml: (el.querySelector('.b2b-mkt-items')?.value || '').split('\n').map((s) => s.trim()).filter(Boolean)
+    }));
+    const pillsCsv = document.getElementById('b2bMaterialPillsCsv')?.value || '';
+    b2b.standardsSection = {
+      ...(b2b.standardsSection || { tag: 'EXPORT COMPLIANCE READY' }),
+      title: document.getElementById('b2bStandardsTitle')?.value.trim() || '',
+      desc: document.getElementById('b2bStandardsDesc')?.value.trim() || '',
+      markets: editedMkts.length ? editedMkts : existingMkts,
+      materialPills: pillsCsv.split(',').map((s) => s.trim()).filter(Boolean)
+    };
+
+    try {
+      await fetch('/api/b2b-config', {
+        method: 'POST',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ b2b })
+      });
+    } catch {
+      // offline
+    }
+    syncCatalogStatsAndPersistLocal();
+    showToast('✅ Đã lưu toàn bộ nội dung trang /b2b/ thành công!');
+    if (shouldPublish) {
+      await publishWebsiteChanges();
+    }
+  };
+
+  if (b2bSectionsForm) {
+    b2bSectionsForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      await saveB2bSections(false);
+    });
+  }
+
+  const btnTopSavePublishB2b = document.getElementById('btnTopSavePublishB2b');
+  if (btnTopSavePublishB2b) {
+    btnTopSavePublishB2b.addEventListener('click', () => saveB2bSections(true));
   }
 
   // ==================== TAB 5: CẤU HÌNH NỘI DUNG, VIETQR & MẬT KHẨU ====================

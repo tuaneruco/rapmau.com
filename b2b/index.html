@@ -718,6 +718,132 @@
       color: #9ca3af;
     }
 
+    /* 8a. B2B Articles & Reader Modal */
+    .b2b-articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .b2b-article-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .b2b-article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-gold);
+    }
+    .b2b-article-thumb {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background: #f5ece0;
+    }
+    .b2b-article-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .b2b-article-cat {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #92400e;
+      background: #fef3c7;
+      padding: 3px 10px;
+      border-radius: 99px;
+      align-self: flex-start;
+    }
+    .b2b-article-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--bg-saddle);
+      line-height: 1.4;
+    }
+    .b2b-article-excerpt {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .b2b-article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border-color);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+    .b2b-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .b2b-modal-overlay.open {
+      display: flex;
+    }
+    .b2b-modal-box {
+      background: #ffffff;
+      width: 100%;
+      max-width: 820px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 28px 30px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+      position: relative;
+    }
+    .b2b-modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-weight: 800;
+      font-size: 12.5px;
+      cursor: pointer;
+    }
+    .b2b-modal-content h2 {
+      font-size: 19px;
+      color: var(--bg-saddle);
+      margin: 18px 0 8px;
+    }
+    .b2b-modal-content h3 {
+      font-size: 16px;
+      color: var(--accent-leather);
+      margin: 14px 0 6px;
+    }
+    .b2b-modal-content p, .b2b-modal-content li {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+    .b2b-modal-content ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
     /* 8b. Specialized Alliance & Export Standards */
     .alliance-grid {
       display: grid;
@@ -953,18 +1079,18 @@
     <div class="container hero-grid">
       <div>
         <div class="hero-tag">
-          <span>🏭 XƯỞNG SẢN XUẤT ĐỒ DA &amp; CHẾ TÁC THEO YÊU CẦU</span>
+          <span id="b2bHeroTag">🏭 XƯỞNG SẢN XUẤT ĐỒ DA &amp; CHẾ TÁC THEO YÊU CẦU</span>
         </div>
-        <h1 class="hero-title">
+        <h1 class="hero-title" id="b2bHeroTitle">
           Gia Công Đồ Da B2B, <span class="text-gold">Quà Tặng Doanh Nghiệp</span> &amp; Sản Xuất OEM/ODM
         </h1>
-        <p class="hero-desc">
+        <p class="hero-desc" id="b2bHeroDesc">
           Nhận thiết kế mẫu rập độc quyền, may mẫu thử (Sample) trong 48h, ép dập logo thương hiệu nhiệt độ cao, uốn khuôn bế thép CNC và cắt rập mica công nghiệp.
           Làm việc <strong>trực tiếp với xưởng thợ không qua trung gian</strong>, tối ưu chi phí từ 20 đến 10.000 sản phẩm.
         </p>
 
         <!-- Stats -->
-        <div class="hero-stats-row">
+        <div class="hero-stats-row" id="b2bHeroStatsRow">
           <div class="hero-stat-card">
             <span class="hero-stat-num">48 Giờ</span>
             <span class="hero-stat-label">Lên mẫu thử cầm tay</span>
@@ -997,12 +1123,13 @@
       <!-- Hero Workbench Visual -->
       <div class="hero-card-img-wrap">
         <img
+          id="b2bHeroImage"
           src="/assets/brand/hero-workbench.jpg"
           alt="Bàn làm việc và chế tác đồ da thủ công xưởng RAPMAU"
           class="hero-card-img"
           loading="eager"
         />
-        <div class="hero-card-badge">
+        <div class="hero-card-badge" id="b2bHeroBadge">
           <strong>🪵 Năng lực xưởng RAPMAU.COM:</strong> Cắt laser CO2, dập nổi thủy lực, bế da cơ khí chính xác &amp; hoàn thiện thủ công tỉ mỉ từng đường kim mũi chỉ.
         </div>
       </div>
@@ -1014,13 +1141,13 @@
     <div class="container">
       <div class="section-head">
         <span class="section-tag">NĂNG LỰC SẢN XUẤT</span>
-        <h2 class="section-title">4 Hạng Mục Gia Công &amp; Sản Xuất Thế Mạnh</h2>
-        <p class="section-desc">
+        <h2 class="section-title" id="b2bServicesTitle">4 Hạng Mục Gia Công &amp; Sản Xuất Thế Mạnh</h2>
+        <p class="section-desc" id="b2bServicesDesc">
           Từ các đơn hàng quà tặng sự kiện cao cấp đến sản xuất đồng bộ cho các thương hiệu thời trang local brand, chúng tôi đáp ứng trọn gói quy trình.
         </p>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid" id="b2bServicesGrid">
         <!-- Service 1 -->
         <article class="service-card">
           <span class="service-badge">Quà Doanh Nghiệp</span>
@@ -1180,13 +1307,13 @@
     <div class="container">
       <div class="section-head">
         <span class="section-tag">LIÊN MINH XƯỞNG CHUYÊN BIỆT</span>
-        <h2 class="section-title">Mạng Lưới Xưởng Sản Xuất "Mỗi Xưởng 1 Thế Mạnh Đỉnh Cao"</h2>
-        <p class="section-desc">
+        <h2 class="section-title" id="b2bNetworkTitle">Mạng Lưới Xưởng Sản Xuất "Mỗi Xưởng 1 Thế Mạnh Đỉnh Cao"</h2>
+        <p class="section-desc" id="b2bNetworkDesc">
           Thay vì một xưởng làm mọi thứ ở mức trung bình, RAPMAU.COM chuẩn hóa bản vẽ CAD &amp; Tech Pack từ đầu nguồn và điều phối từng đơn hàng về đúng xưởng chuyên sâu nhất để đảm bảo chất lượng đồng nhất.
         </p>
       </div>
 
-      <div class="alliance-grid">
+      <div class="alliance-grid" id="b2bAllianceGrid">
         <article class="alliance-card">
           <span class="alliance-cap">3.000 – 10.000 sp/tháng</span>
           <h3 class="alliance-title">💳 Xưởng Chuyên Ví Da &amp; SLG</h3>
@@ -1251,13 +1378,13 @@
     <div class="container">
       <div class="section-head">
         <span class="section-tag">EXPORT COMPLIANCE READY</span>
-        <h2 class="section-title">Tiêu Chuẩn Nguyên Phụ Liệu Xuất Khẩu (Mỹ • EU • Anh • Nhật)</h2>
-        <p class="section-desc">
+        <h2 class="section-title" id="b2bStandardsTitle">Tiêu Chuẩn Nguyên Phụ Liệu Xuất Khẩu (Mỹ • EU • Anh • Nhật)</h2>
+        <p class="section-desc" id="b2bStandardsDesc">
           Kết nối nguồn cung da thuộc, hóa chất hoàn thiện và phụ kiện kim loại đáp ứng đầy đủ các quy chuẩn kiểm định khắt khe của thị trường quốc tế.
         </p>
       </div>
 
-      <div class="compliance-grid">
+      <div class="compliance-grid" id="b2bComplianceGrid">
         <!-- EU & UK -->
         <article class="compliance-card">
           <div class="compliance-header">
@@ -1312,7 +1439,7 @@
         <div style="font-size:13.5px; font-weight:800; color:var(--bg-saddle);">
           📦 Nguồn nguyên phụ liệu đối tác đang kết nối:
         </div>
-        <div class="material-pills">
+        <div class="material-pills" id="b2bMaterialPills">
           <span class="mat-pill">Da Veg-tan Ý &amp; Da LWG</span>
           <span class="mat-pill">Sơn cạnh Ý (Fenice / Uniters)</span>
           <span class="mat-pill">Keo gốc nước Renia (Đức)</span>
@@ -1492,6 +1619,63 @@
     </div>
   </section>
 
+  <!-- 8A. Bài Viết Năng Lực Xưởng & Case Study B2B (Chỉnh sửa trực tiếp trong Admin) -->
+  <section class="section-wrap" id="bai-viet-b2b" style="background:var(--bg-parchment);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" id="b2bArticlesTag">TIN TỨC &amp; CASE STUDY B2B</span>
+        <h2 class="section-title" id="b2bArticlesTitle">Bài Viết Năng Lực Xưởng &amp; Cẩm Nang Đặt Gia Công</h2>
+        <p class="section-desc" id="b2bArticlesDesc">
+          Chia sẻ kinh nghiệm thực tế về định mức nguyên liệu, tiêu chuẩn xuất khẩu và các dự án quà tặng, gia công OEM/ODM đã triển khai tại RAPMAU.COM.
+        </p>
+        <div style="margin-top:12px;">
+          <a href="/admin/?tab=tab-b2b" style="display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:800; color:#78350f; background:#fef3c7; border:1px solid #f59e0b; padding:7px 14px; border-radius:99px; text-decoration:none;">
+            <span>✏️ Quản trị: Thêm / Chỉnh sửa bài viết &amp; nội dung trang này</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="b2b-articles-grid" id="b2bArticlesGrid">
+        <article class="b2b-article-card" data-b2b-art-id="B2B-ART-01">
+              <img src="/assets/brand/hero-workbench.jpg" alt="Quy Trình Đặt May Quà Tặng Da Doanh Nghiệp &amp; Dập Logo Chuẩn Brand Trong 48 Giờ" class="b2b-article-thumb" loading="lazy" />
+              <div class="b2b-article-body">
+                <span class="b2b-article-cat">Quà Tặng Doanh Nghiệp</span>
+                <h3 class="b2b-article-title">Quy Trình Đặt May Quà Tặng Da Doanh Nghiệp &amp; Dập Logo Chuẩn Brand Trong 48 Giờ</h3>
+                <p class="b2b-article-excerpt">Hướng dẫn chi tiết 4 bước chốt chất da, duyệt mockup logo 3D, làm mẫu thực tế 48h và tối ưu chi phí theo từng mốc số lượng từ 20 đến 5.000 bộ quà tặng.</p>
+                <div class="b2b-article-meta">
+                  <span>⏱️ 4 phút đọc</span>
+                  <span style="font-weight:800; color:var(--accent-leather);">Đọc chi tiết →</span>
+                </div>
+              </div>
+            </article>
+<article class="b2b-article-card" data-b2b-art-id="B2B-ART-02">
+              <img src="/assets/brand/leather-rolls.jpg" alt="Cẩm Nang Kiểm Soát Nguyên Phụ Liệu Đạt Chuẩn Xuất Khẩu Mỹ, EU, Anh &amp; Nhật Bản" class="b2b-article-thumb" loading="lazy" />
+              <div class="b2b-article-body">
+                <span class="b2b-article-cat">Tiêu Chuẩn Xuất Khẩu</span>
+                <h3 class="b2b-article-title">Cẩm Nang Kiểm Soát Nguyên Phụ Liệu Đạt Chuẩn Xuất Khẩu Mỹ, EU, Anh &amp; Nhật Bản</h3>
+                <p class="b2b-article-excerpt">Những chỉ số quan trọng về Chromium VI, Lead/Cadmium, độ bền màu ma sát Kaken và kiểm kim 100% mà các xưởng gia công và thương hiệu cần nắm trước khi nhận đơn xuất khẩu.</p>
+                <div class="b2b-article-meta">
+                  <span>⏱️ 6 phút đọc</span>
+                  <span style="font-weight:800; color:var(--accent-leather);">Đọc chi tiết →</span>
+                </div>
+              </div>
+            </article>
+<article class="b2b-article-card" data-b2b-art-id="B2B-ART-03">
+              <img src="/assets/brand/tools-kit-pro.jpg" alt="Cách Bóc Tách Rập CAD &amp; Làm Khuôn Bế Thép Giúp Giảm 15–20% Hao Hụt Da Cho Local Brand" class="b2b-article-thumb" loading="lazy" />
+              <div class="b2b-article-body">
+                <span class="b2b-article-cat">Gia Công OEM / ODM</span>
+                <h3 class="b2b-article-title">Cách Bóc Tách Rập CAD &amp; Làm Khuôn Bế Thép Giúp Giảm 15–20% Hao Hụt Da Cho Local Brand</h3>
+                <p class="b2b-article-excerpt">Khi chuyển từ cắt tay từng mẫu nhỏ sang sản xuất đồng bộ 50–1.000 sản phẩm, chuẩn hóa file rập CAD và uốn khuôn bế thép CNC là chìa khóa hạ giá thành đơn vị.</p>
+                <div class="b2b-article-meta">
+                  <span>⏱️ 5 phút đọc</span>
+                  <span style="font-weight:800; color:var(--accent-leather);">Đọc chi tiết →</span>
+                </div>
+              </div>
+            </article>
+      </div>
+    </div>
+  </section>
+
   <!-- 8B. Đăng Ký Trở Thành Xưởng Liên Kết / Nhà Cung Cấp Nguyên Liệu -->
   <section class="partner-section" id="dang-ky-doi-tac">
     <div class="container">
@@ -1611,9 +1795,24 @@
     </div>
 
     <div class="container footer-bottom">
-      <p>© 2026 RAPMAU.COM — Giữ toàn quyền bản quyền thiết kế &amp; sản xuất. Hotline hỗ trợ 24/7: 0971.463.768</p>
+      <p>© 2026 RAPMAU.COM — Giữ toàn quyền bản quyền thiết kế &amp; sản xuất. Hotline hỗ trợ 24/7: 0971.463.768 • <a href="/admin/?tab=tab-b2b" style="color:var(--accent-gold-light); text-decoration:underline;">✏️ Chỉnh sửa bài viết &amp; nội dung B2B (Admin)</a></p>
     </div>
   </footer>
+
+  <!-- Modal đọc bài viết B2B -->
+  <div id="b2bArticleModal" class="b2b-modal-overlay" role="dialog" aria-modal="true">
+    <div class="b2b-modal-box">
+      <button type="button" id="b2bModalCloseBtn" class="b2b-modal-close">✕ Đóng bài viết</button>
+      <div id="b2bModalMeta" style="font-size:12px; color:var(--text-muted); margin-bottom:8px;"></div>
+      <h2 id="b2bModalTitle" style="font-size:22px; font-weight:900; color:var(--bg-saddle); line-height:1.35; margin-bottom:14px;"></h2>
+      <img id="b2bModalImg" src="" alt="" style="width:100%; max-height:320px; object-fit:cover; border-radius:12px; margin-bottom:18px; display:none;" />
+      <div id="b2bModalContent" class="b2b-modal-content"></div>
+      <div style="margin-top:24px; padding-top:16px; border-top:1px dashed var(--border-color); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <a href="#bao-gia-b2b" id="b2bModalQuoteCta" class="hero-btn-primary" style="padding:10px 18px; font-size:13.5px;">📩 Nhận Báo Giá Dự Án Tương Tự</a>
+        <a href="/admin/?tab=tab-b2b" style="font-size:12.5px; color:var(--accent-leather); font-weight:700; text-decoration:underline;">✏️ Sửa bài viết này trong Admin</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Floating Contact Buttons -->
   <div class="floating-b2b">
@@ -1712,6 +1911,221 @@
 
       document.getElementById('partnerSuccessAlert').scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
+
+    // ==================== HYDRATE NỘI DUNG & BÀI VIẾT B2B TỪ CATALOG / ADMIN ====================
+    let __b2bArticlesList = [];
+
+    function openB2bArticleModal(idOrSlug) {
+      const art = __b2bArticlesList.find((a) => a.id === idOrSlug || a.slug === idOrSlug);
+      if (!art) return;
+      const modal = document.getElementById('b2bArticleModal');
+      document.getElementById('b2bModalMeta').textContent = `${art.category || 'B2B'} • ${art.author || 'RAPMAU.COM'} • ${art.readTime || '5 phút đọc'} • Cập nhật ${art.updatedAt || ''}`;
+      document.getElementById('b2bModalTitle').textContent = art.title || '';
+      const img = document.getElementById('b2bModalImg');
+      if (art.image) {
+        img.src = art.image;
+        img.alt = art.title || '';
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+      document.getElementById('b2bModalContent').innerHTML = art.contentHtml || `<p>${art.excerpt || ''}</p>`;
+      modal.classList.add('open');
+    }
+
+    function applyB2bData(b2b) {
+      if (!b2b || typeof b2b !== 'object') return;
+      const setHtml = (id, htmlStr) => {
+        const el = document.getElementById(id);
+        if (el && htmlStr) el.innerHTML = htmlStr;
+      };
+      const setText = (id, txt) => {
+        const el = document.getElementById(id);
+        if (el && txt) el.textContent = txt;
+      };
+
+      if (b2b.hero) {
+        setText('b2bHeroTag', b2b.hero.tag);
+        setHtml('b2bHeroTitle', b2b.hero.titleHtml);
+        setHtml('b2bHeroDesc', b2b.hero.descHtml);
+        setHtml('b2bHeroBadge', b2b.hero.badgeHtml);
+        const heroImg = document.getElementById('b2bHeroImage');
+        if (heroImg && b2b.hero.image) heroImg.src = b2b.hero.image;
+        if (Array.isArray(b2b.hero.stats) && b2b.hero.stats.length) {
+          const statsRow = document.getElementById('b2bHeroStatsRow');
+          if (statsRow) {
+            statsRow.innerHTML = b2b.hero.stats
+              .map(
+                (s) => `
+              <div class="hero-stat-card">
+                <span class="hero-stat-num">${s.num || ''}</span>
+                <span class="hero-stat-label">${s.label || ''}</span>
+              </div>`
+              )
+              .join('');
+          }
+        }
+      }
+
+      if (b2b.servicesSection) {
+        setText('b2bServicesTitle', b2b.servicesSection.title);
+        setText('b2bServicesDesc', b2b.servicesSection.desc);
+        if (Array.isArray(b2b.servicesSection.items) && b2b.servicesSection.items.length) {
+          const svcGrid = document.getElementById('b2bServicesGrid');
+          if (svcGrid) {
+            svcGrid.innerHTML = b2b.servicesSection.items
+              .map(
+                (it) => `
+              <article class="service-card">
+                <span class="service-badge">${it.badge || ''}</span>
+                <div class="service-icon">${it.icon || '🎁'}</div>
+                <h3 class="service-title">${it.title || ''}</h3>
+                <p class="service-body">${it.body || ''}</p>
+                <ul class="service-features">
+                  ${(it.features || []).map((f) => `<li>${f}</li>`).join('')}
+                </ul>
+                <a href="#bao-gia-b2b" class="service-cta-link">${it.ctaText || 'Nhận báo giá →'}</a>
+              </article>`
+              )
+              .join('');
+          }
+        }
+      }
+
+      if (b2b.networkSection) {
+        setText('b2bNetworkTitle', b2b.networkSection.title);
+        setText('b2bNetworkDesc', b2b.networkSection.desc);
+        if (Array.isArray(b2b.networkSection.workshops) && b2b.networkSection.workshops.length) {
+          const wkGrid = document.getElementById('b2bAllianceGrid');
+          if (wkGrid) {
+            wkGrid.innerHTML = b2b.networkSection.workshops
+              .map(
+                (w) => `
+              <article class="alliance-card">
+                <span class="alliance-cap">${w.cap || ''}</span>
+                <h3 class="alliance-title">${w.title || ''}</h3>
+                <p class="alliance-spec">${w.specHtml || ''}</p>
+              </article>`
+              )
+              .join('');
+          }
+        }
+      }
+
+      if (b2b.standardsSection) {
+        setText('b2bStandardsTitle', b2b.standardsSection.title);
+        setText('b2bStandardsDesc', b2b.standardsSection.desc);
+        if (Array.isArray(b2b.standardsSection.markets) && b2b.standardsSection.markets.length) {
+          const mktGrid = document.getElementById('b2bComplianceGrid');
+          if (mktGrid) {
+            mktGrid.innerHTML = b2b.standardsSection.markets
+              .map(
+                (m) => `
+              <article class="compliance-card">
+                <div class="compliance-header">
+                  <span class="compliance-flag">${m.flag || '🌍'}</span>
+                  <div>
+                    <div class="compliance-market">${m.title || ''}</div>
+                    <div style="font-size:11.5px; color:var(--text-muted);">${m.sub || ''}</div>
+                  </div>
+                </div>
+                <ul class="compliance-list">
+                  ${(m.itemsHtml || []).map((li) => `<li>${li}</li>`).join('')}
+                </ul>
+              </article>`
+              )
+              .join('');
+          }
+        }
+        if (Array.isArray(b2b.standardsSection.materialPills)) {
+          const pillsEl = document.getElementById('b2bMaterialPills');
+          if (pillsEl) {
+            pillsEl.innerHTML = b2b.standardsSection.materialPills.map((p) => `<span class="mat-pill">${p}</span>`).join('');
+          }
+        }
+      }
+
+      if (b2b.articlesSection) {
+        setText('b2bArticlesTag', b2b.articlesSection.tag);
+        setText('b2bArticlesTitle', b2b.articlesSection.title);
+        setText('b2bArticlesDesc', b2b.articlesSection.desc);
+      }
+
+      if (Array.isArray(b2b.articles)) {
+        __b2bArticlesList = b2b.articles;
+        const artGrid = document.getElementById('b2bArticlesGrid');
+        if (artGrid) {
+          artGrid.innerHTML = __b2bArticlesList
+            .map(
+              (a) => `
+            <article class="b2b-article-card" data-b2b-art-id="${a.id}">
+              <img src="${a.image || '/assets/brand/hero-workbench.jpg'}" alt="${a.title || ''}" class="b2b-article-thumb" loading="lazy" />
+              <div class="b2b-article-body">
+                <span class="b2b-article-cat">${a.category || 'B2B'}</span>
+                <h3 class="b2b-article-title">${a.title || ''}</h3>
+                <p class="b2b-article-excerpt">${a.excerpt || ''}</p>
+                <div class="b2b-article-meta">
+                  <span>⏱️ ${a.readTime || '5 phút đọc'}</span>
+                  <span style="font-weight:800; color:var(--accent-leather);">Đọc chi tiết →</span>
+                </div>
+              </div>
+            </article>`
+            )
+            .join('');
+        }
+      }
+    }
+
+    (async function initB2bCmsHydration() {
+      const modal = document.getElementById('b2bArticleModal');
+      const closeBtn = document.getElementById('b2bModalCloseBtn');
+      const quoteCta = document.getElementById('b2bModalQuoteCta');
+      if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('open');
+        });
+      }
+      if (quoteCta && modal) {
+        quoteCta.addEventListener('click', () => modal.classList.remove('open'));
+      }
+      document.getElementById('b2bArticlesGrid')?.addEventListener('click', (e) => {
+        const card = e.target.closest('[data-b2b-art-id]');
+        if (card) openB2bArticleModal(card.dataset.b2bArtId);
+      });
+
+      let catalog = null;
+      try {
+        const res = await fetch('/api/catalog');
+        if (res.ok) catalog = await res.json();
+      } catch {
+        // fallback static json
+      }
+      if (!catalog) {
+        try {
+          const res2 = await fetch('/data/catalog.json');
+          if (res2.ok) catalog = await res2.json();
+        } catch {
+          // ignore
+        }
+      }
+
+      try {
+        const overrideRaw = localStorage.getItem('rapmau_cms_override_v1');
+        if (overrideRaw) {
+          const overrideCat = JSON.parse(overrideRaw);
+          if (overrideCat && overrideCat.b2b) {
+            catalog = { ...(catalog || {}), b2b: overrideCat.b2b };
+          }
+        }
+      } catch {
+        // ignore
+      }
+
+      if (catalog && catalog.b2b) {
+        applyB2bData(catalog.b2b);
+      }
+    })();
   </script>
 </body>
 </html>

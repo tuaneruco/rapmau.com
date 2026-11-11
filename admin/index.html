@@ -432,6 +432,10 @@
           <span>📰 Bài Viết SEO &amp; AEO</span>
           <span id="sideCountArticles">8</span>
         </button>
+        <button type="button" class="admin-nav-btn" data-tab="tab-b2b" id="navBtnB2b">
+          <span>🏭 Bài Viết &amp; Trang B2B</span>
+          <span id="sideCountB2bArticles">3</span>
+        </button>
         <button type="button" class="admin-nav-btn" data-tab="tab-settings" id="navBtnSettings">
           <span id="navSettingsLabel">⚙️ Nội Dung, VietQR &amp; Mật Khẩu</span>
         </button>
@@ -441,6 +445,7 @@
         <button type="button" id="btnPublishToWeb" class="btn btn-primary btn-full" style="font-size:13px; background:#15803d; border-color:#15803d;">
           🚀 Xuất Bản Lên RAPMAU.COM
         </button>
+        <a href="/b2b/" target="_blank" class="btn btn-outline btn-full" style="font-size:13px;">🏭 Xem Trang B2B (/b2b/)</a>
         <a href="/rapmau-studio/" target="_blank" class="btn btn-secondary btn-full" style="font-size:13px;">🪄 RAPMAU Studio (3 Công Cụ AI)</a>
         <a href="/studio" class="btn btn-outline btn-full" style="font-size:13px;">📐 Phác Thảo Rập &amp; Đóng Dấu SKU</a>
         <a href="/" class="btn btn-outline btn-full" style="font-size:13px;">🌐 Xem Trang Chủ Website</a>
@@ -783,6 +788,15 @@
 
       <!-- TAB 4C: QUẢN LÝ HỆ THỐNG BÀI VIẾT TỐI ƯU SEO & AEO -->
       <section id="tab-articles" class="admin-tab-panel hidden">
+        <div class="cms-card" style="margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fffbeb; border:1px solid #fcd34d;">
+          <div style="font-size:13px; color:#78350f;">
+            💡 <strong>Mẹo:</strong> Tại đây bạn sửa các bài <strong>Cẩm Nang Kỹ Thuật SEO (/bai-viet/...)</strong>. Nếu muốn sửa bài viết &amp; nội dung hiển thị trên trang <strong>/b2b/</strong>, bấm nút bên phải.
+          </div>
+          <button type="button" class="btn btn-secondary" style="font-size:12.5px;" onclick="document.getElementById('navBtnB2b')?.click()">
+            🏭 Chuyển sang Sửa Bài Viết &amp; Nội Dung B2B (/b2b/)
+          </button>
+        </div>
+
         <div class="detail-grid">
           <div class="cms-card">
             <h3 style="color:var(--bg-saddle); margin-bottom:8px;">📰 Danh Sách Bài Viết Cẩm Nang SEO &amp; AEO</h3>
@@ -826,6 +840,25 @@
                 </select>
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Ảnh đại diện bài viết (URL hoặc tải ảnh)</label>
+                <div style="display:flex; gap:6px; align-items:center;">
+                  <input type="text" id="artFormImage" value="/assets/brand/hero-workbench.jpg" style="flex:1;" />
+                  <label class="btn btn-outline" style="margin:0; font-size:12px; padding:7px 10px; cursor:pointer; white-space:nowrap;">
+                    📷 Tải ảnh
+                    <input type="file" id="artFormImageFile" accept="image/*" style="display:none;" />
+                  </label>
+                </div>
+              </div>
+              <div class="form-field">
+                <label>Tác giả &amp; Thời gian đọc</label>
+                <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:6px;">
+                  <input type="text" id="artFormAuthor" value="Kỹ Sư Thiết Kế Rập RAPMAU.COM" placeholder="Tác giả" />
+                  <input type="text" id="artFormReadTime" value="6 phút đọc" placeholder="Thời gian đọc" />
+                </div>
+              </div>
+            </div>
             <div class="form-field" style="margin-bottom:10px;">
               <label>Câu hỏi chính người dùng hỏi AI / Google (AEO Question) *</label>
               <input type="text" id="artFormAeoQuestion" required placeholder="VD: Làm thế nào để in file rập đồ da PDF đúng tỷ lệ 1:1?" />
@@ -839,12 +872,259 @@
               <input type="text" id="artFormExcerpt" placeholder="Mô tả hiển thị trên kết quả tìm kiếm Google..." />
             </div>
             <div class="form-field" style="margin-bottom:12px;">
-              <label>Nội dung chi tiết (HTML: H2, Bảng thông số, Các bước thực hiện)</label>
-              <textarea id="artFormContentHtml" rows="6" placeholder="<h2>1. Tiêu đề mục</h2><p>Nội dung...</p>"></textarea>
+              <label>Nội dung chi tiết (Hỗ trợ chèn nhanh thẻ định dạng bên dưới)</label>
+              <div class="html-quick-bar" data-target="artFormContentHtml" style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:6px;">
+                <button type="button" class="btn-sm btn-detail" data-ins="<b>|</b>"><b>B</b> Đậm</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<h2>|</h2>">H2 Tiêu đề</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<h3>|</h3>">H3 Mục con</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<p>|</p>">Đoạn văn</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<ul>\n  <li>|</li>\n  <li>Ý 2</li>\n</ul>">Danh sách</button>
+                <label class="btn-sm btn-detail" style="cursor:pointer; margin:0;">
+                  🖼️ Chèn ảnh
+                  <input type="file" accept="image/*" class="html-insert-img-file" data-target="artFormContentHtml" style="display:none;" />
+                </label>
+              </div>
+              <textarea id="artFormContentHtml" rows="7" placeholder="<h2>1. Tiêu đề mục</h2><p>Nội dung...</p>"></textarea>
             </div>
             <div style="display:flex; gap:8px;">
               <button type="submit" class="btn btn-primary" style="flex:1;">💾 Lưu Bài Viết SEO/AEO</button>
               <button type="button" id="btnResetArticleForm" class="btn btn-outline">Làm mới</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- TAB 4D: QUẢN LÝ BÀI VIẾT & NỘI DUNG TRANG B2B (/b2b/) -->
+      <section id="tab-b2b" class="admin-tab-panel hidden">
+        <div class="cms-card" style="margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:linear-gradient(135deg,#fff8ec 0%,#fef3c7 100%); border:1.5px solid #f59e0b;">
+          <div>
+            <h3 style="color:#78350f; margin-bottom:2px;">🏭 Trung Tâm Chỉnh Sửa Bài Viết &amp; Nội Dung Trang /b2b/</h3>
+            <p style="font-size:12.5px; color:#92400e; margin:0;">
+              Tự do thêm/sửa/xoá các bài viết giới thiệu dự án, năng lực xưởng và chỉnh sửa toàn bộ nội dung chữ, ảnh hiển thị trên <strong>rapmau.com/b2b/</strong>.
+            </p>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="/b2b/#bai-viet-b2b" target="_blank" class="btn btn-secondary" style="font-size:12.5px;">👁️ Xem Trang /b2b/</a>
+            <button type="button" id="btnTopSavePublishB2b" class="btn btn-primary" style="font-size:12.5px; background:#15803d; border-color:#15803d;">🚀 Lưu &amp; Xuất Bản</button>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <!-- Cột trái: Danh sách Bài viết B2B + Chỉnh sửa các khối nội dung trang B2B -->
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div class="cms-card">
+              <h3 style="color:var(--bg-saddle); margin-bottom:8px;">📰 Danh Sách Bài Viết Trên Trang B2B (/b2b/#bai-viet-b2b)</h3>
+              <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:12px;">
+                Các bài viết này hiển thị trực tiếp thành từng thẻ đẹp mắt trên trang <code>/b2b/</code>, khách bấm vào sẽ mở hộp đọc toàn bộ bài viết.
+              </p>
+              <div style="overflow-x:auto;">
+                <table class="cms-table">
+                  <thead>
+                    <tr>
+                      <th>Ảnh</th>
+                      <th>Tiêu Đề Bài Viết</th>
+                      <th>Chuyên Mục</th>
+                      <th>Thao Tác</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminB2bArticlesTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <form id="b2bSectionsForm" class="cms-card" style="border:1.5px solid var(--bg-saddle);">
+              <h3 style="color:var(--bg-saddle); margin-bottom:8px;">✏️ Chỉnh Sửa Toàn Bộ Các Khối Nội Dung Trang /b2b/</h3>
+              <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px;">
+                Mở từng mục bên dưới để sửa tiêu đề, mô tả, ảnh xưởng, danh sách dịch vụ, mạng lưới 5 xưởng hoặc tiêu chuẩn xuất khẩu theo ý muốn.
+              </p>
+
+              <!-- 1. Hero -->
+              <details open style="border:1px solid var(--border-soft); border-radius:10px; padding:12px; margin-bottom:10px; background:#fffcf8;">
+                <summary style="font-weight:800; color:var(--bg-saddle); cursor:pointer; font-size:13.5px;">1️⃣ Banner Đầu Trang (Hero) &amp; Ảnh Xưởng</summary>
+                <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+                  <div class="form-field">
+                    <label>Nhãn trên tiêu đề (Hero Tag)</label>
+                    <input type="text" id="b2bHeroTag" />
+                  </div>
+                  <div class="form-field">
+                    <label>Tiêu đề lớn (H1 - hỗ trợ &lt;span class="text-gold"&gt;tô vàng&lt;/span&gt;)</label>
+                    <textarea id="b2bHeroTitleHtml" rows="2"></textarea>
+                  </div>
+                  <div class="form-field">
+                    <label>Đoạn mô tả dưới tiêu đề chính</label>
+                    <textarea id="b2bHeroDescHtml" rows="3"></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Ảnh xưởng bên phải Hero (URL hoặc tải ảnh mới)</label>
+                      <div style="display:flex; gap:6px; align-items:center;">
+                        <input type="text" id="b2bHeroImage" style="flex:1;" />
+                        <label class="btn btn-outline" style="margin:0; font-size:12px; padding:7px 10px; cursor:pointer;">
+                          📷 Đổi ảnh
+                          <input type="file" id="b2bHeroImageFile" accept="image/*" style="display:none;" />
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <label>Chú thích đè góc dưới ảnh Hero</label>
+                      <input type="text" id="b2bHeroBadgeHtml" />
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label>4 Ô Thông Số Hero (mỗi dòng 1 ô: Số liệu | Mô tả)</label>
+                    <textarea id="b2bHeroStatsLines" rows="4" placeholder="48 Giờ | Lên mẫu thử cầm tay"></textarea>
+                  </div>
+                </div>
+              </details>
+
+              <!-- 2. Tiêu đề Mục Bài viết B2B -->
+              <details style="border:1px solid var(--border-soft); border-radius:10px; padding:12px; margin-bottom:10px; background:#fffcf8;">
+                <summary style="font-weight:800; color:var(--bg-saddle); cursor:pointer; font-size:13.5px;">2️⃣ Tiêu Đề Mục Bài Viết B2B</summary>
+                <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Nhãn mục (Section Tag)</label>
+                      <input type="text" id="b2bArticlesSecTag" />
+                    </div>
+                    <div class="form-field">
+                      <label>Tiêu đề mục bài viết</label>
+                      <input type="text" id="b2bArticlesSecTitle" />
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label>Mô tả ngắn dưới tiêu đề mục bài viết</label>
+                    <textarea id="b2bArticlesSecDesc" rows="2"></textarea>
+                  </div>
+                </div>
+              </details>
+
+              <!-- 3. 4 Hạng mục Gia công -->
+              <details style="border:1px solid var(--border-soft); border-radius:10px; padding:12px; margin-bottom:10px; background:#fffcf8;">
+                <summary style="font-weight:800; color:var(--bg-saddle); cursor:pointer; font-size:13.5px;">3️⃣ 4 Hạng Mục Gia Công &amp; Sản Xuất Thế Mạnh</summary>
+                <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Tiêu đề mục dịch vụ</label>
+                      <input type="text" id="b2bServicesTitle" />
+                    </div>
+                    <div class="form-field">
+                      <label>Mô tả mục dịch vụ</label>
+                      <input type="text" id="b2bServicesDesc" />
+                    </div>
+                  </div>
+                  <div id="b2bServicesEditorList" style="display:flex; flex-direction:column; gap:10px;"></div>
+                </div>
+              </details>
+
+              <!-- 4. Mạng lưới 5 xưởng -->
+              <details style="border:1px solid var(--border-soft); border-radius:10px; padding:12px; margin-bottom:10px; background:#fffcf8;">
+                <summary style="font-weight:800; color:var(--bg-saddle); cursor:pointer; font-size:13.5px;">4️⃣ Mạng Lưới Xưởng Chuyên Sâu ("Mỗi Xưởng 1 Mặt Hàng")</summary>
+                <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Tiêu đề mục Liên minh xưởng</label>
+                      <input type="text" id="b2bNetworkTitle" />
+                    </div>
+                    <div class="form-field">
+                      <label>Mô tả mục Liên minh xưởng</label>
+                      <input type="text" id="b2bNetworkDesc" />
+                    </div>
+                  </div>
+                  <div id="b2bWorkshopsEditorList" style="display:flex; flex-direction:column; gap:10px;"></div>
+                </div>
+              </details>
+
+              <!-- 5. Tiêu chuẩn xuất khẩu -->
+              <details style="border:1px solid var(--border-soft); border-radius:10px; padding:12px; margin-bottom:14px; background:#fffcf8;">
+                <summary style="font-weight:800; color:var(--bg-saddle); cursor:pointer; font-size:13.5px;">5️⃣ Tiêu Chuẩn Xuất Khẩu (Mỹ • EU • Anh • Nhật) &amp; Nguyên Liệu</summary>
+                <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label>Tiêu đề mục Tiêu chuẩn xuất khẩu</label>
+                      <input type="text" id="b2bStandardsTitle" />
+                    </div>
+                    <div class="form-field">
+                      <label>Mô tả mục Tiêu chuẩn xuất khẩu</label>
+                      <input type="text" id="b2bStandardsDesc" />
+                    </div>
+                  </div>
+                  <div id="b2bMarketsEditorList" style="display:flex; flex-direction:column; gap:10px;"></div>
+                  <div class="form-field">
+                    <label>Danh sách thẻ Nguyên phụ liệu kết nối (cách nhau bởi dấu phẩy)</label>
+                    <input type="text" id="b2bMaterialPillsCsv" />
+                  </div>
+                </div>
+              </details>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                💾 Lưu Toàn Bộ Nội Dung Các Khối Trang /b2b/
+              </button>
+            </form>
+          </div>
+
+          <!-- Cột phải: Form Thêm / Sửa 1 Bài viết B2B -->
+          <form id="b2bArticleCmsForm" class="cms-card" style="border:1.5px solid var(--accent-leather); align-self:start;">
+            <h3 id="b2bArticleFormHeading" style="color:var(--bg-saddle); margin-bottom:10px;">➕ Thêm / Chỉnh Sửa Bài Viết Trang B2B</h3>
+            <input type="hidden" id="b2bArtId" value="" />
+            <div class="form-field" style="margin-bottom:10px;">
+              <label>Tiêu đề bài viết *</label>
+              <input type="text" id="b2bArtTitle" required placeholder="VD: Dự án 500 bộ quà tặng ví da khắc logo cho Techcombank..." />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Chuyên mục / Nhãn bài viết *</label>
+                <select id="b2bArtCategory">
+                  <option value="Quà Tặng Doanh Nghiệp">Quà Tặng Doanh Nghiệp</option>
+                  <option value="Gia Công OEM / ODM">Gia Công OEM / ODM</option>
+                  <option value="Tiêu Chuẩn Xuất Khẩu">Tiêu Chuẩn Xuất Khẩu</option>
+                  <option value="Case Study Dự Án">Case Study Dự Án</option>
+                  <option value="Năng Lực Xưởng B2B">Năng Lực Xưởng B2B</option>
+                  <option value="Mạng Lưới Xưởng & NCC">Mạng Lưới Xưởng &amp; NCC</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Tác giả &amp; Thời gian đọc</label>
+                <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:6px;">
+                  <input type="text" id="b2bArtAuthor" value="Mr.Tuân - Xưởng RAPMAU.COM" />
+                  <input type="text" id="b2bArtReadTime" value="5 phút đọc" />
+                </div>
+              </div>
+            </div>
+            <div class="form-field" style="margin-bottom:10px;">
+              <label>Ảnh đại diện bài viết (Dán URL hoặc tải ảnh từ máy)</label>
+              <div style="display:flex; gap:8px; align-items:center;">
+                <input type="text" id="b2bArtImage" value="/assets/brand/hero-workbench.jpg" style="flex:1;" />
+                <label class="btn btn-outline" style="margin:0; font-size:12px; padding:7px 10px; cursor:pointer; white-space:nowrap;">
+                  📷 Tải ảnh
+                  <input type="file" id="b2bArtImageFile" accept="image/*" style="display:none;" />
+                </label>
+              </div>
+              <div style="margin-top:6px;">
+                <img id="b2bArtImagePreview" src="/assets/brand/hero-workbench.jpg" alt="Preview" style="height:64px; border-radius:8px; border:1px solid var(--border-soft); object-fit:cover;" />
+              </div>
+            </div>
+            <div class="form-field" style="margin-bottom:10px;">
+              <label>Đoạn tóm tắt ngắn hiển thị trên thẻ bài viết *</label>
+              <textarea id="b2bArtExcerpt" rows="3" required placeholder="Mô tả 2-3 dòng giới thiệu nội dung chính của bài viết..."></textarea>
+            </div>
+            <div class="form-field" style="margin-bottom:12px;">
+              <label>Nội dung chi tiết bài viết (Bấm nút bên dưới để chèn nhanh tiêu đề, chữ đậm, danh sách hoặc chèn ảnh)</label>
+              <div class="html-quick-bar" data-target="b2bArtContentHtml" style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:6px;">
+                <button type="button" class="btn-sm btn-detail" data-ins="<strong>|</strong>"><b>B</b> In đậm</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<h2>|</h2>">H2 Tiêu đề</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<h3>|</h3>">H3 Mục con</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<p>|</p>">Đoạn văn</button>
+                <button type="button" class="btn-sm btn-detail" data-ins="<ul>\n  <li>|</li>\n  <li>Ý tiếp theo</li>\n</ul>">Danh sách</button>
+                <label class="btn-sm btn-detail" style="cursor:pointer; margin:0;">
+                  🖼️ Chèn ảnh
+                  <input type="file" accept="image/*" class="html-insert-img-file" data-target="b2bArtContentHtml" style="display:none;" />
+                </label>
+              </div>
+              <textarea id="b2bArtContentHtml" rows="10" required placeholder="<h2>1. Bối cảnh dự án / Nội dung chính</h2>&#10;<p>Nhập nội dung chi tiết bài viết tại đây...</p>"></textarea>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button type="submit" class="btn btn-primary" style="flex:1;">💾 Lưu Bài Viết B2B</button>
+              <button type="button" id="btnResetB2bArticleForm" class="btn btn-outline">Làm mới</button>
             </div>
           </form>
         </div>
