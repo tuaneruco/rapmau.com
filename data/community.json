@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 73
+      "count": 79
     },
     {
       "id": "nhap-mon",
@@ -22,7 +22,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 24
+      "count": 30
     },
     {
       "id": "son-canh",
@@ -56,6 +56,209 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-074",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "So sánh Máy may Trụ Ngang Juki (LS-341 / LS-1341 / DSC-246) vs Sunstar (KM-340BL / KM-380BL): Chọn máy nào bền & dễ kiếm phụ tùng?",
+      "author": "Việt Anh Workshop",
+      "authorRole": "Chủ xưởng túi ví HCM",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-11T09:58:00Z",
+      "formattedDate": "Hôm nay lúc 09:58",
+      "badge": "So sánh Juki & Sunstar ★",
+      "badgeType": "featured",
+      "likes": 52,
+      "views": 1080,
+      "content": "Mình đang cần mua thêm 2 máy may trụ ngang (máy ống cánh tay) để may ráp hông túi hộp, balo và vào viền ống piping. Thợ máy đang chào 2 dòng phổ biến nhất là Juki (LS-341 cũ hoặc LS-1341 / DSC-246 cổ nhỏ) và Sunstar Hàn Quốc (KM-340BL / KM-380BL ổ lớn). Nhờ các anh em thợ máy & chủ xưởng đánh giá thực tế về lực kéo da dày, độ ồn, ổ chao và độ sẵn có của chân vịt phụ tùng giữa hai hãng này ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-074-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:01:00Z",
+          "formattedDate": "Hôm nay lúc 10:01",
+          "content": "Đánh giá thực tế từ góc độ thợ sửa máy 18 năm cho xưởng chọn đúng:\n1. **Juki LS-1341 / LS-341 (Ổ đứng lớn gấp đôi)**:\n   - *Điểm mạnh*: Cơ khí Nhật cực kỳ đầm chắc, chạy chỉ lớn #138/#207 rất ổn định, giữ bước mũi đều khi leo dốc dày 4-6mm. Phụ tùng thay thế & các bộ chân vịt rãnh ống piping, chân vịt cữ mép có sẵn **100%** ở mọi tiệm phụ tùng từ HCM đến Hà Nội.\n   - **Juki DSC-245 / DSC-246**: Đường kính ống siêu nhỏ (~46mm) cực kỳ lợi hại khi may túi mini, bóp hộp góc hẹp hoặc bọc viền, nhưng ổ nhỏ hơn LS-1341 một chút (phù hợp chỉ #69 - #92).\n2. **Sunstar KM-340BL / KM-380BL (Hàn Quốc)**:\n   - *Điểm mạnh*: Giá đầu tư mềm hơn Juki mới ~25-35%, lực đâm kim rất khỏe (đặc biệt bản **KM-380BL** dùng ổ lớn tải chỉ dù mượt), chạy êm khi lên motor Servo liền trục.\n   - *Lưu ý*: Khi mua máy Sunstar cũ, phải kiểm tra kỹ **ly hợp bảo vệ ổ (safety clutch)** và trục cam cào bơi dưới gầm — phụ tùng zin Hàn Quốc ít đại trà bằng Juki nhưng khu vực Tân Bình / Q12 vẫn đặt đầy đủ.",
+          "likes": 37
+        },
+        {
+          "id": "c-074-2",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T10:03:00Z",
+          "formattedDate": "Hôm nay lúc 10:03",
+          "content": "Tóm tắt nhanh để chọn: Nếu xưởng làm túi xách cao cấp chạy đơn đều quanh năm, ưu tiên giữ giá và dễ gọi thợ bất kỳ đâu -> chọn **Juki LS-1341** (hoặc **DSC-246** nếu chuyên túi nhỏ/ví). Nếu cần tối ưu vốn đầu tư ban đầu mà vẫn chạy hàng dày chuẩn công nghiệp -> **Sunstar KM-380BL** là lựa chọn rất đáng tiền!",
+          "likes": 21
+        }
+      ]
+    },
+    {
+      "id": "thread-075",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Sửa Máy Trụ Ngang Sunstar KM-340BL / KM-380BL bị trượt ly hợp (kêu cạch cạch) và sai bước mũi khi lại mối",
+      "author": "Xưởng Da Hồng Quân",
+      "authorRole": "Xưởng balo Bình Chánh",
+      "authorAvatar": "🛠️",
+      "createdAt": "2026-11-11T09:50:00Z",
+      "formattedDate": "Hôm nay lúc 09:50",
+      "badge": "Bắt bệnh Sunstar ✓",
+      "badgeType": "solved",
+      "likes": 34,
+      "views": 670,
+      "content": "Con Sunstar KM-380BL trụ ngang ở xưởng em dạo này cứ may qua góc dày hoặc bấm cần lại mũi là nghe tiếng kêu 'cạch cạch' dưới trụ ống rồi trục ổ đứng im không quay nữa, dù kim vẫn đâm lên xuống! Ngoài ra khi may tiến và lùi mũi, bước chỉ lùi bị ngắn hơn bước tiến làm xén nát lỗ chỉ. Bác nào từng chỉnh bệnh này trên Sunstar chỉ em xử lý với!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-075-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-11T09:56:00Z",
+          "formattedDate": "Hôm nay lúc 09:56",
+          "content": "Đúng bệnh kinh điển trên Sunstar KM-340BL / KM-380BL rồi:\n1. **Kêu cạch cạch & ổ ngừng quay**: Bộ **Ly hợp an toàn (Safety Clutch)** dưới gầm trục chính vừa bị nhảy để cứu ổ khỏi kẹt gãy! Nguyên nhân thường do có đoạn chỉ vụn hoặc mẩu keo khô kẹt kẹt vào rãnh ổ dưới, hoặc lò xo bi của ly hợp bị yếu.\n   - *Cách xử lý*: Tắt máy, dùng nhíp móc sạch chỉ kẹt trong ổ, nhỏ 2 giọt dầu trắng, sau đó **nhấn nút chốt cài ly hợp ở gầm thân máy (hoặc bệ dưới)** rồi xoay nhẹ puli ngược chiều một chút là bi sập vào khớp kêu 'tách' và chạy lại bình thường. Nếu bật lại mà vẫn trượt dễ dàng khi qua da 4 lớp -> tháo ốc chỉnh tăng nhẹ lực ép lò xo lá ly hợp.\n2. **Lùi mũi không trùng lỗ (bước lùi ngắn hơn bước tiến)**: Mở nắp chụp bên hông cụm cần lại mũi, chỉnh ốc **cam cân bằng hành trình tiến/lùi (feed regulator eccentric)** sao cho ở cùng nấc số 4, khoảng cách dịch chuyển kim + răng cưa khi kéo cần lại mũi trùng khít **100%** với mũi tiến, tránh đâm nát mũi chỉ đầu/cuối quai túi!",
+          "likes": 28
+        }
+      ]
+    },
+    {
+      "id": "thread-076",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Chỉnh Máy Trụ Ngang Juki LS-1341 / LS-341 bị rối chỉ tổ chim ở mặt dưới và rớt cữ góc cua đường kính nhỏ",
+      "author": "Ngọc Hân Leather",
+      "authorRole": "Thợ may túi xách",
+      "authorAvatar": "🪡",
+      "createdAt": "2026-11-11T09:40:00Z",
+      "formattedDate": "Hôm nay lúc 09:40",
+      "badge": "Kinh nghiệm Juki ✓",
+      "badgeType": "solved",
+      "likes": 41,
+      "views": 790,
+      "content": "Con Juki LS-1341 bên mình may đường thẳng thì cực mướt, nhưng cứ gạt tay giữ chỉ đầu mũi hoặc chạy đường cong R15mm quanh hông túi đeo chéo là hay bị rối 1 cục chỉ dưới suốt, thỉnh thoảng xước đứt chỉ nylon #138 ngay tại mắt ổ. Cách kiểm tra rãnh ổ đứng và chỉnh cữ đỡ kim (needle guard) trên LS-1341 chuẩn nhất là thế nào ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-076-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T09:48:00Z",
+          "formattedDate": "Hôm nay lúc 09:48",
+          "content": "Với dòng **Juki LS-1341 / LS-341** dùng ổ đứng trục dọc (Vertical-axis hook), 3 bước kiểm tra sau giải quyết 95% lỗi rối chỉ & sờn đứt:\n1. **Vệ sinh bụi sáp & keo đóng kẹt ở thanh giữ cổ ổ (Bobbin case opener / Lẫy hãm ổ)**: Rất nhiều thợ quên tháo mặt nguyệt kiểm tra cái lẫy nhỏ gạt nhẹ cổ ổ tạo khe thoát chỉ trên — nếu bụi da + keo dán bám đầy ở khe đó, vòng chỉ trên không thoát qua được cổ ổ sẽ cuộn thành ổ chim ngay dưới đáy!\n2. **Chỉnh cữ giữ vòng chỉ dưới & khoảng hở đỡ kim (Needle guard)**: Khe hở giữa mũi mỏ ổ Juki và mặt vát kim chỉnh **0.05mm**, còn lá thép đỡ kim phía sau chỉ vừa chạm nhẹ vào mặt kim (0 - 0.03mm) để kim không bị rung đá vào mỏ ổ khi leo qua lớp da dày ở góc R15mm.\n3. **Chỉnh lá giữ đầu chỉ (Bobbin spring)**: Đảm bảo lá thép hãm suốt bên trong thuyền suốt còn đàn hồi tốt, không để suốt quay tự do theo quán tính lúc bạn dừng chân ga đột ngột khi xoay góc cua hẹp!",
+          "likes": 31
+        }
+      ]
+    },
+    {
+      "id": "thread-077",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Máy may Trụ Đứng (Post-Bed) Sunstar KM-590BL / KM-591BL (Bánh xe lăn) vs Juki PLC-2710 / PLW-1261: Khi nào dùng loại nào?",
+      "author": "Hoàng Minh Shoes & Bags",
+      "authorRole": "Xưởng giày & túi đứng",
+      "authorAvatar": "🥾",
+      "createdAt": "2026-11-11T09:22:00Z",
+      "formattedDate": "Hôm nay lúc 09:22",
+      "badge": "Phân tích Post-Bed ★",
+      "badgeType": "featured",
+      "likes": 58,
+      "views": 1190,
+      "content": "Cùng gọi là máy may trụ đứng (Post-Bed), nhưng mình thấy có loại dùng **chân vịt bánh xe lăn (Roller foot)** như Sunstar KM-590BL / KM-591BL, Juki PLW-1261 và loại dùng **chân vịt bước đôi cào bơi trên trụ cao** như Juki PLC-2710 / PLC-2760! Xưởng mình làm cả ví zip quanh, túi đứng dáng hộp cứng và một ít giày lười da bò thì sự khác biệt thực tế giữa 2 dòng trụ đứng này là gì ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-077-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-11T09:34:00Z",
+          "formattedDate": "Hôm nay lúc 09:34",
+          "content": "Phân biệt cực kỳ rõ để xưởng khỏi đầu tư nhầm nhé:\n1. **Trụ đứng Bánh Xe Lăn (Sunstar KM-590BL 1 kim / KM-591BL 2 kim, Juki PLW-1261 / 1262)**:\n   - *Cơ chế*: Không dùng bàn lừa răng cưa trượt mà dùng **bánh xe chủ động xoay trên + dưới (Driven roller feed)** ôm gọn đường may hẹp sát trụ cọc.\n   - *Sở trường*: **May giày dép, mũ giày, ví khóa kéo 360°, túi xô dáng tròn, vào cổ túi góc R4-R6mm**! Đường quay cực kỳ linh hoạt, mũi chỉ chạy sát mép dây kéo chỉ 1.5mm vẫn đẹp mướt. Thường chạy chỉ #40/#69/#92 (tối đa #138 mỏng).\n2. **Trụ đứng Cào Bơi Bước Đôi (Juki PLC-2710 1 kim / PLC-2760 2 kim, Sunstar KM-250 / dòng cào bơi trụ đứng)**:\n   - *Cơ chế*: Chân vịt bước đôi nâng cao kết hợp kim đẩy & răng cưa dưới trên trụ cọc cao 18-20cm.\n   - *Sở trường*: **May túi xách phom cứng bản dày 5-8mm, ghế sofa da, balo quân đội, gắn quai hông dày nhiều lớp**, kéo được **chỉ dù siêu thô #138 - #207 (0.6mm-0.8mm)** mà bánh xe lăn không kéo nổi vì sẽ bị trượt bánh xe!",
+          "likes": 46
+        }
+      ]
+    },
+    {
+      "id": "thread-078",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Sửa Máy Trụ Đứng Sunstar KM-590BL / KM-591BL bánh xe lăn bị hằn vết răng trên da Nappa/Epsom và trượt mũi khi leo gờ dày",
+      "author": "Lâm Phong Craft",
+      "authorRole": "Xưởng ví da & dây kéo",
+      "authorAvatar": "🎡",
+      "createdAt": "2026-11-11T09:08:00Z",
+      "formattedDate": "Hôm nay lúc 09:08",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 35,
+      "views": 685,
+      "content": "Máy trụ đứng Sunstar KM-590BL (1 kim) bên mình may ví khóa kéo quanh và túi bucket da Nappa / Epsom mềm. Bánh xe lăn thép đi qua để lại một đường dấu bánh răng nhỏ trên mặt da, còn khi gặp đoạn giáp mí dày 3 lớp thì bánh xe đứng quay tại chỗ làm mũi chỉ bị dồn cục 1mm! Có cách thay loại bánh xe khác và chỉnh khe bánh xe dưới cho chuẩn không?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-078-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T09:18:00Z",
+          "formattedDate": "Hôm nay lúc 09:18",
+          "content": "Để con Sunstar KM-590BL / KM-591BL chạy da Nappa, Epsom, Box Calf cao cấp không để lại một vết hằn nào:\n1. **Thay bánh xe lăn**: Tháo bánh xe thép răng thưa (dành cho da bò giày cứng) ra, lắp **bánh xe thép vân kim cương siêu mịn (Fine grit)** hoặc **bánh xe bọc cao su Urethane / Teflon** cho bánh xe tỳ trên, giữ bánh xe dưới nhô cao hơn mặt nguyệt đúng **0.3 - 0.5mm**.\n2. **Chỉnh độ nghiêng & khe hở trục bánh xe trên**: Bánh xe tỳ trên đặt hơi nghiêng ra ngoài **3° - 5°** và sát ngay bên hông kim (cách kim 0.3-0.5mm, không đè quá xa kim khiến lớp dày bên cạnh đẩy kênh bánh xe lên khỏi mặt da!).\n3. **Khắc phục dồn chỉ khi leo gờ dày**: Kiểm tra lại khớp truyền động trục nhám dưới (khớp một chiều / one-way clutch bearing trong trụ đứng) xem có bị trượt mòn không, đồng thời tăng nhẹ áp lực lò xo trụ chân vịt thêm nửa vòng và giữ tốc độ đạp ga vừa phải lúc leo gờ 3 lớp.",
+          "likes": 29
+        }
+      ]
+    },
+    {
+      "id": "thread-079",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Chỉnh Máy Trụ Đứng Juki PLC-2710 / PLC-2760 (1 & 2 kim) bị lệch 2 hàng chỉ song song và bỏ mũi kim bên trái khi may góc hộp",
+      "author": "Quốc Huy Luxury Bags",
+      "authorRole": "Chủ xưởng túi công sở",
+      "authorAvatar": "💼",
+      "createdAt": "2026-11-11T08:50:00Z",
+      "formattedDate": "Hôm nay lúc 08:50",
+      "badge": "Bắt bệnh Juki PLC ✓",
+      "badgeType": "solved",
+      "likes": 43,
+      "views": 830,
+      "content": "Xưởng mình chạy Juki PLC-2760 (2 kim trụ đứng bước đôi, cự ly kim 6.4mm) để diễu chỉ nổi 2 hàng song song trên cặp da và túi du lịch. Khi xoay góc vuông hộp hoặc leo qua gờ gấp nối, kim bên trái thỉnh thoảng bị bỏ 1 mũi, còn 2 đường chỉ ở khúc cua hơi bị so le nhau không cân! Anh em thợ máy chuyên dòng Juki PLC bắt bệnh giúp mình nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-079-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-11T09:02:00Z",
+          "formattedDate": "Hôm nay lúc 09:02",
+          "content": "Đoán trúng bệnh trên con Juki PLC-2760 (2 kim trụ đứng) của xưởng Huy rồi:\n1. **Kim trái bỏ mũi khi xoay góc hoặc leo gờ**: Khi bạn xoay phôi qua trái/phải quanh trụ kim lúc kim chưa rút khỏi điểm chết, chỉ của kim ngoài (kim trái) bị xoay xoắn mất vòng chỉ (loop) khiến mỏ ổ bên trái bắt hụt!\n   - *Khắc phục*: Chỉ được xoay hướng túi khi kim vừa **đâm xuống qua điểm chết dưới và bắt đầu nhích lên ~2mm** (hoặc chỉnh chế độ **kim trái tắt/nâng trụ kim góc** nếu máy có chức năng tách kim Corner Stitch, nhưng PLC-2760 tiêu chuẩn phải chọn chân vịt giữ gọn & kiểm tra riêng **timing ổ trái** ở khe 0.05mm gần mặt vát kim hơn một chút so với đường thẳng).\n2. **Chỉnh nút xoay độ cao bước chân vịt (Alternating Vertical Movement Dial)**: Vặn núm trên đầu máy Juki PLC tăng hành trình nâng chân vịt bước đôi lên nấc **4.0mm - 5.0mm** trước khi qua góc gấp dày 4 lớp để chân vịt nhấc dứt khoát không bị kéo lệch mũi so le giữa kim trái & kim phải!",
+          "likes": 35
+        }
+      ]
+    },
     {
       "id": "thread-062",
       "categoryId": "may-moc-xuong",
