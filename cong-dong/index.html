@@ -48,7 +48,7 @@
 
     html {
       scroll-behavior: smooth;
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100%;
     }
 
@@ -57,7 +57,7 @@
       background-color: var(--bg-parchment);
       color: var(--text-main);
       line-height: 1.6;
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100%;
     }
 
@@ -1260,7 +1260,7 @@
       </h1>
       <p class="hero-sub">
         Nơi kết nối thợ thủ công, người mới nhập môn và các chủ xưởng da trên toàn quốc.
-        Hỏi đáp bắt bệnh đường may, bí quyết sơn cạnh, kinh nghiệm chọn da thuộc và chia sẻ bản vẽ rập miễn phí.
+        Hỏi đáp bắt bệnh đường may, sửa máy may cào bơi, máy lạng da, gấp mép, cắt dây, ép kim/ép nhũ, máy ép cao tần và chia sẻ bản vẽ rập miễn phí.
       </p>
       <div class="hero-buttons">
         <button type="button" class="hero-btn-primary" id="heroOpenModalBtn">
@@ -1286,7 +1286,7 @@
                 type="search"
                 class="search-input"
                 id="threadSearchInput"
-                placeholder="🔍 Tìm nhanh câu hỏi, kỹ thuật may hai kim, sơn cạnh, rập balo, keo dán..."
+                placeholder="🔍 Tìm nhanh: sửa máy may cào bơi, máy lạng da, gấp mép, cắt dây, ép kim, ép cao tần, sơn cạnh..."
                 aria-label="Tìm kiếm thảo luận"
               />
               <button type="button" class="clear-search-btn hidden" id="clearSearchBtn">✕</button>
@@ -1424,6 +1424,7 @@
             <select id="postCategory" class="form-select" required>
               <option value="nhap-mon">🔨 Người Mới Nhập Môn</option>
               <option value="ky-thuat-may" selected>🧵 Kỹ Thuật May &amp; Đục</option>
+              <option value="may-moc-xuong">⚙️ Máy Móc &amp; Sửa Chữa Xưởng</option>
               <option value="son-canh">🎨 Sơn Viền &amp; Xử Lý Cạnh</option>
               <option value="rap-mau">📐 Xin &amp; Góp Ý Rập Mẫu</option>
               <option value="da-keo">🐂 Da Thuộc &amp; Phụ Liệu</option>
