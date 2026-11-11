@@ -445,6 +445,68 @@
       color: #1c130c;
     }
 
+    .stage-filter-box {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stage-filter-label {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent-leather);
+      letter-spacing: 0.2px;
+    }
+
+    .stage-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .stage-pill {
+      background: #fff8ed;
+      border: 1px solid #f4d6a8;
+      color: #7c2d12;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .stage-pill:hover {
+      background: #ffedd5;
+      border-color: var(--accent-leather);
+    }
+
+    .stage-pill.active {
+      background: var(--accent-leather);
+      color: #ffffff;
+      border-color: var(--accent-leather);
+    }
+
+    .thread-stage-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
     /* Thread Feed */
     .threads-list {
       display: flex;
@@ -1295,6 +1357,14 @@
             <!-- Categories Tabs Strip -->
             <div class="cat-strip" id="catFilterStrip">
               <!-- Rendered via JS -->
+            </div>
+
+            <!-- Stage Quick-Filter Strip for Machinery by Production Step -->
+            <div class="stage-filter-box">
+              <div class="stage-filter-label">🏭 Lọc nhanh máy móc theo công đoạn sản xuất:</div>
+              <div class="stage-strip" id="stageFilterStrip">
+                <!-- Rendered via JS -->
+              </div>
             </div>
           </div>
 

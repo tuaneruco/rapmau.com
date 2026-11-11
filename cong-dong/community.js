@@ -9,8 +9,18 @@
   let categories = [];
   let threads = [];
   let activeCategory = 'all';
+  let activeStage = 'all';
   let searchQuery = '';
   let likedThreadIds = new Set();
+
+  const STAGE_FILTERS = [
+    { id: 'all', name: 'Tất cả công đoạn' },
+    { id: 'cat-dap', name: '1. Cắt & Dập Da' },
+    { id: 'lang-keo-gap', name: '2. Lạng, Keo & Gấp Mép' },
+    { id: 'in-ep-logo', name: '3. In, Khắc & Ép Logo' },
+    { id: 'may-da', name: '4. Các Dòng Máy May Da' },
+    { id: 'hoan-thien', name: '5. Sơn Cạnh & Hoàn Thiện' }
+  ];
 
   try {
     const savedLikes = JSON.parse(localStorage.getItem(STORAGE_KEY_LIKES) || '[]');
@@ -18,6 +28,7 @@
   } catch {}
 
   const catFilterStrip = document.getElementById('catFilterStrip');
+  const stageFilterStrip = document.getElementById('stageFilterStrip');
   const threadsListContainer = document.getElementById('threadsListContainer');
   const resultCountLabel = document.getElementById('resultCountLabel');
   const threadSearchInput = document.getElementById('threadSearchInput');
@@ -45,6 +56,7 @@
     setupEventListeners();
     await loadData();
     renderCategories();
+    renderStageFilters();
     renderThreads();
   }
 
@@ -143,6 +155,25 @@
       .join('');
   }
 
+  function renderStageFilters() {
+    if (!stageFilterStrip) return;
+    const stageCounts = {};
+    for (const t of threads) {
+      if (t.stage) stageCounts[t.stage] = (stageCounts[t.stage] || 0) + 1;
+    }
+    const totalStage = Object.values(stageCounts).reduce((a, b) => a + b, 0);
+
+    stageFilterStrip.innerHTML = STAGE_FILTERS.map((s) => {
+      const cnt = s.id === 'all' ? totalStage : stageCounts[s.id] || 0;
+      return `
+        <button type="button" class="stage-pill ${s.id === activeStage ? 'active' : ''}" data-stage="${s.id}">
+          <span>${s.name}</span>
+          <span>(${cnt})</span>
+        </button>
+      `;
+    }).join('');
+  }
+
   function renderThreads() {
     if (!threadsListContainer) return;
 
@@ -150,6 +181,10 @@
 
     if (activeCategory !== 'all') {
       filtered = filtered.filter((t) => t.categoryId === activeCategory);
+    }
+
+    if (activeStage !== 'all') {
+      filtered = filtered.filter((t) => t.stage === activeStage);
     }
 
     if (searchQuery.trim()) {
@@ -225,6 +260,7 @@
           <div>${badgeHtml}</div>
         </div>
 
+        ${thread.stageLabel ? `<div class="thread-stage-tag">🏭 Công đoạn: ${escapeHtml(thread.stageLabel)}</div>` : ''}
         <h2 class="thread-title" onclick="window.__toggleThreadComments('${thread.id}')">${escapeHtml(thread.title)}</h2>
         <div class="thread-excerpt">${escapeHtml(thread.content)}</div>
 
@@ -430,7 +466,29 @@
         const catId = btn.getAttribute('data-cat');
         if (catId) {
           activeCategory = catId;
+          if (catId !== 'all' && catId !== 'may-moc-xuong') {
+            activeStage = 'all';
+          }
           renderCategories();
+          renderStageFilters();
+          renderThreads();
+        }
+      });
+    }
+
+    // Production stage quick-filter click
+    if (stageFilterStrip) {
+      stageFilterStrip.addEventListener('click', (e) => {
+        const btn = e.target.closest('.stage-pill');
+        if (!btn) return;
+        const stageId = btn.getAttribute('data-stage');
+        if (stageId) {
+          activeStage = stageId;
+          if (stageId !== 'all' && activeCategory !== 'all' && activeCategory !== 'may-moc-xuong') {
+            activeCategory = 'may-moc-xuong';
+          }
+          renderCategories();
+          renderStageFilters();
           renderThreads();
         }
       });

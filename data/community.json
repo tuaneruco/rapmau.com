@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 61
+      "count": 73
     },
     {
       "id": "nhap-mon",
@@ -22,7 +22,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 12
+      "count": 24
     },
     {
       "id": "son-canh",
@@ -56,6 +56,166 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-062",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "title": "Công đoạn pha phôi cắt da: Nên chọn Máy bế thủy lực, Máy cắt CNC dao rung hay Máy cắt Laser CO2?",
+      "author": "Hoàng Tùng OEM",
+      "authorRole": "Giám đốc xưởng túi xách",
+      "authorAvatar": "✂️",
+      "createdAt": "2026-11-11T09:30:00Z",
+      "formattedDate": "Hôm nay lúc 09:30",
+      "badge": "So sánh theo công đoạn ★",
+      "badgeType": "featured",
+      "likes": 64,
+      "views": 1340,
+      "content": "Mình đang chuẩn bị mở xưởng gia công B2B vừa làm đơn hàng mẫu nhỏ 20-50 cái, vừa nhận đơn 500-2.000 cái/mẫu. Ở công đoạn cắt phôi đầu tiên nên đầu tư Máy bế da thủy lực (kết hợp khuôn bế thép), Máy cắt CNC dao rung (Oscillating Knife) hay Máy cắt Laser CO2? Ưu nhược điểm từng loại với da bò Veg-tan, da Chrome mềm và da PU thế nào ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-062-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T09:42:00Z",
+          "formattedDate": "Hôm nay lúc 09:42",
+          "content": "Tùy theo giai đoạn đơn hàng mà chọn đúng máy ở công đoạn Cắt Pha Phôi nhé Tùng:\n1. **Máy cắt CNC Dao Rung (Oscillating Knife)**: Phù hợp nhất để **làm hàng mẫu (Sample 1-50 cái), hàng bespoke đa dạng mẫu hoặc cắt da đắt tiền cần né sẹo tự động bằng camera** — đưa file DXF/AI là cắt ngay không tốn chi phí làm khuôn thép, cạnh cắt sạch đẹp không cháy!\n2. **Máy bế da thủy lực (Tay xoay 12-15 tấn / 4 trụ 25-40 tấn + Khuôn bế thép CNC)**: BẮT BUỘC cho **đơn sản xuất hàng loạt từ 100 - 10.000 cái/mã**! Tốc độ dập nhanh gấp 8-12 lần máy dao rung, dập xuyên cả lỗ đục, lỗ khóa, dấu lấy cữ chỉ với 1 lần nhấn bàn đạp.\n3. **Máy cắt Laser CO2**: Chỉ nên dùng cho **cắt rập mica/giấy cứng hoặc khắc họa tiết trên da Veg**, hạn chế cắt phôi da Chrome/da sáp màu sáng vì tia nhiệt làm cháy đen viền mép cắt và gây mùi khét rất khó tẩy khi sơn cạnh.",
+          "likes": 45
+        }
+      ]
+    },
+    {
+      "id": "thread-063",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "title": "Công đoạn cắt dây thắt lưng, quai túi & chặt bo đầu dây: Chọn máy cắt dây 1 lưỡi, nhiều lưỡi hay máy dập bo góc?",
+      "author": "Xưởng Dây Nịt Gia Bảo",
+      "authorRole": "Sản xuất thắt lưng & phụ kiện",
+      "authorAvatar": "🪚",
+      "createdAt": "2026-11-11T08:55:00Z",
+      "formattedDate": "Hôm nay lúc 08:55",
+      "badge": "Hỏi đáp công đoạn",
+      "badgeType": "info",
+      "likes": 31,
+      "views": 620,
+      "content": "Nếu làm chuyên dây thắt lưng, quai đeo balo, dây đồng hồ nhiều bản rộng khác nhau (18mm, 20mm, 30mm, 35mm, 38mm) thì có cần làm khuôn bế thép dài cho từng cỡ không hay đầu tư máy cắt dây chuyên dụng + máy chặt đầu dây riêng sẽ kinh tế hơn?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-063-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T09:10:00Z",
+          "formattedDate": "Hôm nay lúc 09:10",
+          "content": "Làm khuôn bế thép dài 1.3m cho từng size dây rất tốn kém và dễ cong khuôn! Giải pháp chuẩn xưởng là tách làm 2 máy gọn nhẹ:\n- **Cắt thân dây**: Dùng **Máy xẻ dây trục tròn nhiều lưỡi** (thay ống căn long-đền là đổi được ngay khổ 18/20/25/35/38mm) hoặc **Máy xẻ dây 1 lưỡi có thanh cữ** cho đơn nhỏ.\n- **Bo đầu nhọn, đuôi tròn & đục lỗ đầu khóa**: Dùng **Máy chặt bo góc / đục lỗ đầu dây thủy lực hoặc tay đòn** lắp khuôn ngắn 15cm! Vừa linh hoạt đổi chiều dài dây 105-125cm, vừa tiết kiệm 70% tiền khuôn bế.",
+          "likes": 24
+        }
+      ]
+    },
+    {
+      "id": "thread-064",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "title": "Công đoạn xử lý độ dày da: Khi nào dùng Máy xẻ mỏng nguyên tấm (Splitting) và khi nào dùng Máy lạng mép 801?",
+      "author": "Minh Quân Leather",
+      "authorRole": "Chủ brand túi ví thủ công",
+      "authorAvatar": "📏",
+      "createdAt": "2026-11-11T08:10:00Z",
+      "formattedDate": "Hôm nay lúc 08:10",
+      "badge": "Kiến thức xưởng ★",
+      "badgeType": "featured",
+      "likes": 49,
+      "views": 980,
+      "content": "Em mới mở xưởng nhỏ làm ví nam và túi xách, ngân sách đầu tư ban đầu có hạn. Thấy trên thị trường có cả Máy lạng mép dao chuông (801/NP-4 ~ 8-12 triệu) và Máy lạng xẻ mỏng nguyên tấm bản rộng (Camoga/Fortuna ~ 40-150 triệu). Có thể dùng máy lạng mép 801 để lạng mỏng toàn bộ miếng ngăn thẻ ví được không hay bắt buộc phải có máy xẻ nguyên tấm ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-064-1",
+          "author": "Bác Ba Đồ Da",
+          "authorRole": "Nghệ nhân Sài Gòn",
+          "authorAvatar": "👴",
+          "isStaff": false,
+          "createdAt": "2026-11-11T08:30:00Z",
+          "formattedDate": "Hôm nay lúc 08:30",
+          "content": "Tách bạch rõ 2 máy theo công đoạn để không lãng phí tiền nhé Quân:\n1. **Máy xẻ nguyên tấm (Splitting)**: Nhiệm vụ là hạ độ dày ĐỀU toàn bộ tấm da (ví dụ tấm da bò gốc dày 1.8mm xẻ xuống 0.6mm để làm lót túi, hoặc 0.8mm làm ngăn thẻ ví). Nếu mới mở vốn ít chưa mua máy này, bạn có thể **nhờ chính nhà cung cấp da thuộc chạy máy xẻ hộ** theo độ dày yêu cầu (chi phí chỉ 5k-10k/pia).\n2. **Máy lạng mép dao chuông (801 / NP-4)**: Chuyên dụng để **lạng vát mép (edge skiving) từ 1.2mm xuống 0.4mm ở đúng rìa 6-10mm** trước khi gấp mép hoặc ghép 3-4 lớp da vào nhau cho khỏi cộm! Máy này GIÁ RẺ, BẮT BUỘC PHẢI CÓ ở mọi xưởng ví túi (máy xẻ nguyên tấm không làm được việc lạng vát viền cục bộ này). Bạn cũng có thể lạng mỏng nguyên miếng nhỏ <35mm trên máy 801 bằng chân vịt phẳng, nhưng bản lớn >50mm thì sẽ bị nối vệt dao.",
+          "likes": 39
+        }
+      ]
+    },
+    {
+      "id": "thread-065",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "title": "Công đoạn dán lót & bồi form: Dùng Máy bôi keo con lăn (keo sữa Latex / keo vàng) bị khô đóng màng tắc trục xử lý sao?",
+      "author": "Xưởng Túi An Nhiên",
+      "authorRole": "Gia công túi xách nữ",
+      "authorAvatar": "🧴",
+      "createdAt": "2026-11-11T07:15:00Z",
+      "formattedDate": "Hôm nay lúc 07:15",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 27,
+      "views": 495,
+      "content": "Để tăng tốc độ dán vải lót và mút EVA lót túi, xưởng mình dùng máy lăn keo tự động (Roller Gluing Machine) bản 30cm chạy keo sữa gốc nước không mùi chuẩn xuất khẩu. Nhưng nghỉ trưa 1 tiếng quay lại là keo sữa đóng màng bám trên trục lăn làm dính lệch keo ra mặt phải! Anh em chia sẻ mẹo chạy và vệ sinh máy lăn keo nhanh gọn ạ.",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-065-1",
+          "author": "Anh Hùng Xưởng Quà Tặng Q12",
+          "authorRole": "Quản đốc chuyền sản xuất",
+          "authorAvatar": "🏭",
+          "isStaff": false,
+          "createdAt": "2026-11-11T07:40:00Z",
+          "formattedDate": "Hôm nay lúc 07:40",
+          "content": "Bí quyết dùng máy lăn keo sữa/Latex không tốn công rửa giữa buổi:\n- Giờ nghỉ trưa (60-90 phút), không cần tháo máng xả hết keo: lấy ngay **khăn ẩm vắt ráo nước đậy kín phủ lên toàn bộ rulo lăn** + quấn màng bọc PE giữ ẩm là trưa xong bật máy chạy tiếp êm ru.\n- Cuối ngày bắt buộc xả khay keo qua phễu lọc, đổ nước ấm vào chạy không tải 30 giây và dùng bàn chải mềm rửa sạch khe dao gạt (đặc biệt vị trí 2 bên phớt chặn trục, để keo Latex đóng cục ở đó rất nhanh mòn phớt gây rỉ keo!).\n- Căn ốc chỉnh khe gạt keo chỉ cho lớp keo ướt vừa đủ mỏng 0.05mm, vừa tiết kiệm keo vừa không bị thấm xuyên qua vải lót mỏng.",
+          "likes": 21
+        }
+      ]
+    },
+    {
+      "id": "thread-066",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "in-ep-logo",
+      "stageLabel": "3. In, Khắc & Ép Logo",
+      "title": "Công đoạn làm thương hiệu: So sánh 5 dòng Máy In & Dập Logo lên da (Ép kim, Cao tần, In UV, In Lụa, Khắc Laser)",
+      "author": "Thảo Vy Branding",
+      "authorRole": "Xưởng quà tặng doanh nghiệp",
+      "authorAvatar": "🏷️",
+      "createdAt": "2026-11-11T06:10:00Z",
+      "formattedDate": "Hôm nay lúc 06:10",
+      "badge": "Cẩm nang chọn máy ★",
+      "badgeType": "featured",
+      "likes": 86,
+      "views": 1920,
+      "content": "Khách hàng doanh nghiệp hiện nay yêu cầu đủ kiểu in logo lên ví da, bìa sổ, dây nịt, tag hành lý: lúc thì ép chìm không màu, lúc thì ép nhũ vàng sang trọng, lúc lại yêu cầu in logo nhiều màu chuyển sắc! Xin các anh chị tổng hợp rõ: mỗi dòng máy in/dập logo phù hợp với chất liệu da và dòng sản phẩm nào để bên em đầu tư chuẩn xác?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-066-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T06:35:00Z",
+          "formattedDate": "Hôm nay lúc 06:35",
+          "content": "Gửi Vy & các xưởng bảng phân loại chuẩn 5 công nghệ In/Dập Logo theo sản phẩm:\n1. **Máy dập nhiệt / Ép kim & Ép nhũ (Khuôn đồng CNC)**: *Phổ biến nhất & bắt buộc có* — chuyên dập chìm mộc (Veg-tan), ép nhũ vàng/bạc/đen bóng lên ví da, dây đồng hồ, tag thương hiệu, bìa sổ. Độ bền vĩnh viễn.\n2. **Máy ép cao tần (High Frequency)**: Chuyên **dập nổi 3D logo lồi cao, dập lún sắc nét hoặc hàn mép không cần chỉ** cho bao da iPad, ví PU/da bò lót TPU, móc khóa.\n3. **Máy In UV Phẳng (Flatbed UV Printer)**: Chuyên **in logo nhiều màu, gradient, hình ảnh sắc nét** trực tiếp lên bìa sổ, bao da, thẻ hành lý, ví quà tặng số lượng ít (từ 1 cái không cần khuôn).\n4. **Máy In Lụa / Bàn in lưới**: Kinh tế nhất khi cần **in logo đơn sắc / 2 màu kích thước lớn** trên hàng ngàn túi canvas phối da, balo vải hoặc lót hộp.\n5. **Máy Khắc Laser (CO2 / Diode / Fiber)**: Dùng khắc **mã QR, tên cá nhân hóa từng người (Personalization)** trên da Veg-tan, tag gỗ, hoặc khắc **Fiber** lên khoá đồng/inox ngũ kim túi xách!",
+          "likes": 69
+        }
+      ]
+    },
     {
       "id": "thread-050",
       "categoryId": "may-moc-xuong",
@@ -95,7 +255,9 @@
           "content": "Bổ sung thêm mẹo cho anh em chạy máy trụ đứng (post-bed) và cào bơi: nếu chân vịt thép có răng cưa hằn sâu lên mặt da Veg-tan hay Nappa mềm, hãy mài bo tròn nhẹ răng chân vịt bằng giấy nhám mịn P800 hoặc dán 1 lớp băng keo Teflon / bọc chân vịt nhựa giảm ma sát, giảm bớt lực ép lò xo trụ chân vịt khoảng 15% là mặt da láng mịn đẹp như may tay!",
           "likes": 19
         }
-      ]
+      ],
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da"
     },
     {
       "id": "thread-051",
@@ -125,7 +287,9 @@
           "content": "Lỗi ăn lẹm & cuốn da ở máy 801/NP-4 đến 95% nằm ở 3 điểm này:\n1. Trục cuốn (feed roller) sai loại: Da mềm dẻo (Nappa, dê, Epsom mỏng) MÀ chạy trục nhám sắt răng thưa sẽ bị kẹp kéo giật gây rách. Đổi ngay sang TRỤC ĐÁ MỊN (stone roller) hoặc TRỤC CAO SU SILICON + hạ tốc độ motor Servo xuống 600-800 vòng/phút.\n2. Khoảng cách mép dao chuông tới chân vịt: Mép dao tiến quá sát hoặc thụt quá sâu! Chuẩn xưởng là kéo mép lưỡi dao chuông chỉ vừa thò qua chân vịt đè khoảng 0.2mm - 0.3mm, và chân vịt ép nghiêng đúng góc vát.\n3. Khi mài dao bằng đá mài dưới: Chỉnh đá mài quay ép thật nhẹ đủ chạm vào mặt vát ngoài dao chuông, tuyệt đối không siết mạnh làm cháy xanh thép mất độ tôi! Sau khi mài nhớ lấy cây đánh bavia (deburring stick) gạt nhẹ bên trong lòng dao để rụng bavia thép, lạng da ngọt như cắt bơ luôn.",
           "likes": 38
         }
-      ]
+      ],
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép"
     },
     {
       "id": "thread-052",
@@ -155,7 +319,9 @@
           "content": "Quy trình chuẩn để mép gấp phẳng tăm tắp không nhăn góc:\n1. Độ dày mép lạng trước khi vào máy gấp: Da bò làm ví gập mép BẮT BUỘC phải lạng mép 8mm còn đúng 0.35mm - 0.45mm (không để dày 0.7mm sẽ cứng bật keo).\n2. Nhiệt độ bể keo & vòi phun: Da bò thật/Veg-tan chỉ để 115°C - 125°C; nếu chạy simili/PU mới hạ xuống 100°C - 110°C.\n3. Góc bo cong R8-R12mm: Phải bật lưỡi dao bấm răng cưa tự động của máy gấp để băm nhuyễn mép cong trước khi gập, kết hợp tăng nhẹ lực búa đập mép ngay đầu ra của máy.\n4. Với da dầu/da sáp khó bám keo nóng, quét trước 1 lớp keo sữa/keo nhiệt lạnh khô mặt rồi hãy cho qua máy gấp mép là dính chết 100%!",
           "likes": 26
         }
-      ]
+      ],
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép"
     },
     {
       "id": "thread-053",
@@ -185,7 +351,9 @@
           "content": "Đây là 4 lỗi kinh điển khi chạy máy xẻ dây thắt lưng nhiều lưỡi, Khánh rà soát từng bước nhé:\n1. Đảo thứ tự lưỡi & kiểm tra long-đền căn khổ (spacers): Chỉ cần 1 lưỡi dao bị cùn nhẹ hơn các lưỡi bên cạnh thì lực cản không đều sẽ kéo lệch cả tấm da tạo hình chữ C! Luôn thay đồng bộ cả dàn dao lam 2 mặt hoặc mài lại cùng 1 lần.\n2. Xén bỏ 2cm cạnh biên (cạnh bụng da mềm nhão) bằng thước thẳng trước khi ép vào cữ dẫn hướng của máy cắt dây — vì cạnh bụng da co giãn khác cạnh sống lưng.\n3. Kiểm tra khe hở trục cao su ép trên với trục lưỡi cắt dưới: Phải siết 2 bên ốc ép cân bằng tuyệt đối bằng thước lá, nếu lệch một bên thì sợi dây sẽ xẻ vát nghiêng mép ngay.\n4. Mẹo giữ thẳng 100%: Không xẻ 1 lần quá 4-5 dây nếu da dẻo đàn hồi cao; chạy 3 dây/lượt và dùng bàn đẩy phẳng dẫn hướng dài ít nhất 40cm trước miệng máy!",
           "likes": 29
         }
-      ]
+      ],
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da"
     },
     {
       "id": "thread-054",
@@ -215,7 +383,9 @@
           "content": "Chia sẻ luôn bảng thông số thực chiến tại xưởng RAPMAU.COM (với máy dập nhiệt tay đòn / khí nén khuôn đồng dày 8-10mm):\n- **Ép chìm mộc (Deboss không nhũ) trên da Veg-tan**: Nhiệt 115°C - 135°C, giữ 2 - 4 giây (xịt ẩm sương mỏng lên mặt da trước khi dập giúp chữ cháy nâu trầm sang trọng cực nét).\n- **Ép nhũ vàng/bạc (Hot Foil) trên da trơn / da Epsom**: Nhiệt 100°C - 110°C, nhấn dứt khoát 0.8 - 1.2 giây.\n- **Ép nhũ trên da Mill / Togo / Nappa mềm**: Nhiệt 95°C - 105°C, giữ 1.0 - 1.5 giây; nếu vân hạt sâu thì ép trước 1 nhịp KHÔNG nhũ (làm phẳng hạt) rồi lót màng nhũ ép nhịp thứ 2 siêu nét!\n- **Ép nhũ trên giả da PU / Simili**: Hạ nhiệt còn 85°C - 95°C, giữ dưới 1 giây để không chảy mặt nhựa.\n\n**3 bí quyết sống còn:**\n1) Lót 1 tấm cao su silicon đỏ chịu nhiệt (dày 2mm-3mm) hoặc tấm da cứng dưới sản phẩm khi ép các vùng có nhiều lớp chỉ/cạnh gấp.\n2) Chọn đúng cuộn giấy foil nhũ **mã chuyên da thật (low-temp release)**, foil dùng cho giấy/bìa cứng ép lên da sẽ bị bong ngay!\n3) Luôn kiểm tra độ phẳng mâm nhiệt bằng tờ giấy than trước khi cố định con dấu đồng.",
           "likes": 62
         }
-      ]
+      ],
+      "stage": "in-ep-logo",
+      "stageLabel": "3. In, Khắc & Ép Logo"
     },
     {
       "id": "thread-055",
@@ -244,6 +414,232 @@
           "formattedDate": "Hôm qua lúc 16:00",
           "content": "Xử lý triệt để bệnh đánh lửa (arcing) máy ép cao tần theo 5 bước kiểm tra sau:\n1. **Kiểm tra bộ chống đánh lửa (Spark Suppressor / 5557 tube)** xem ống đèn có bị già hoặc độ nhạy tụ bảo vệ đang vặn quá thấp không.\n2. **Vệ sinh & đánh bóng bề mặt khuôn đồng + mâm dưới**: Chỉ cần 1 vảy keo khô, bụi kim loại hoặc bọt mồ hôi trên mặt mâm nhôm cũng là điểm tập trung phóng tia lửa! Sau đó lót **tấm phim cách điện Mylar (Polyester) hoặc Kapton / Bakelite** còn nguyên vẹn không thủng lỗ kim.\n3. **Giảm góc nhọn khuôn & kiểm tra da ẩm**: Khuôn đồng phay CNC góc vuông quá sắc sẽ tích tụ điện trường mạnh — nên bo R0.2mm nhẹ chân khuôn. Nếu da thuộc đang ẩm (trời mưa nồm), BẮT BUỘC sấy sơ ở 50°C hoặc hạ Ampe dòng cao tần (từ 0.5A xuống 0.35A) và kéo dài nhẹ thời gian ép + giữ nguội 2-3 giây.\n4. **Vật liệu lót dập nổi 3D**: Khi ép cao tần dập nổi 3D trên da bò thật, mặt sau da bắt buộc phải dán **màng TPU / PVC / keo nhiệt cao tần** thay vì dùng keo sữa thông thường (keo nước còn ẩm rất dễ phóng lửa).",
           "likes": 34
+        }
+      ],
+      "stage": "in-ep-logo",
+      "stageLabel": "3. In, Khắc & Ép Logo"
+    },
+    {
+      "id": "thread-067",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "in-ep-logo",
+      "stageLabel": "3. In, Khắc & Ép Logo",
+      "title": "In logo nhiều màu lên ví da & sổ tay bằng Máy In UV Phẳng hay bị bong tróc nứt mực khi gập da?",
+      "author": "In Ấn Quốc Việt",
+      "authorRole": "Xưởng in UV quà tặng",
+      "authorAvatar": "🖨️",
+      "createdAt": "2026-11-10T20:05:00Z",
+      "formattedDate": "Hôm qua lúc 20:05",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 34,
+      "views": 680,
+      "content": "Bên mình chạy máy in UV phẳng đầu XP600 / i3200 in logo full màu cho khách trên bìa sổ PU và ví da bò Nappa. Khi mới in xong nhìn cực sắc nét, nhưng khách dùng gập ví vài chục lần hoặc cào nhẹ móng tay ở rìa chữ là mực UV bị tách mảng bong ra! Cách chỉnh mực và xử lý bề mặt da trước khi in UV thế nào cho bám chắc ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-067-1",
+          "author": "Kỹ Thuật In UV Thành Công",
+          "authorRole": "Chuyên viên máy in UV",
+          "authorAvatar": "🎨",
+          "isStaff": false,
+          "createdAt": "2026-11-10T20:30:00Z",
+          "formattedDate": "Hôm qua lúc 20:30",
+          "content": "Mực UV in gỗ/mica là **Mực Cứng (Hard UV Ink)** — mang đi in lên da dẻo gập qua lại sẽ nứt gãy bong mảng ngay!\nCách khắc phục triệt để:\n1. Chuyển ngay sang **Mực UV Dẻo chuyên dụng cho da/bạt (Flexible / Soft UV Ink)** — chịu uốn gập 180 độ không gãy màng mực.\n2. **Lau sạch lớp dầu/sáp & quét dung dịch lót (Leather UV Primer)** bằng khăn không bụi trước khi đưa phôi lên bàn hút chân không máy UV 5 phút -> độ bám tăng gấp 5 lần.\n3. In 1 lớp **lót Trắng (White base)** mỏng 60-70% kết hợp màu CMYK và phủ **bóng mờ (Varnish)** bảo vệ (nếu không cần bóng thì giảm đèn UV pass cuối để tránh mực quá giòn).\n4. Nhớ căn khe hở đầu phun 1.5-2mm và ép phẳng phôi da bằng băng dính nhiệt nếu da hơi cong mép để tránh quệt trầy đầu phun i3200!",
+          "likes": 27
+        }
+      ]
+    },
+    {
+      "id": "thread-068",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "in-ep-logo",
+      "stageLabel": "3. In, Khắc & Ép Logo",
+      "title": "Khắc Laser tên cá nhân hóa & logo lên da Veg-tan, da sáp bị ám khói đen quanh nét chữ: Chỉnh thông số sao cho sạch?",
+      "author": "Tú Anh Personalized",
+      "authorRole": "Shop ví khắc tên laser",
+      "authorAvatar": "✨",
+      "createdAt": "2026-11-10T17:10:00Z",
+      "formattedDate": "Hôm qua lúc 17:10",
+      "badge": "Mẹo sản xuất ✓",
+      "badgeType": "solved",
+      "likes": 39,
+      "views": 740,
+      "content": "Shop mình dùng máy khắc Laser CO2 40W và Diode 10W để khắc tên + ngày kỷ niệm cho khách mua ví da Veg-tan màu vàng bò & da bò sáp. Khi khắc xong hay có quầng khói đen bám lem nhem xung quanh nét chữ rất mất thẩm mỹ, lấy khăn ướt lau thì loang vết bẩn! Anh em có mẹo khắc sạch bong không khói không?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-068-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-10T17:35:00Z",
+          "formattedDate": "Hôm qua lúc 17:35",
+          "content": "Mẹo siêu đơn giản mà thợ khắc Laser chuyên nghiệp 100% đều làm:\n1. **Dán 1 lớp băng keo giấy sơn tường (Masking tape)** phẳng mịn lên đúng vùng chuẩn bị khắc! Laser bắn xuyên qua băng keo giấy xuống da, toàn bộ khói dầu sinh ra chỉ bám lên mặt băng keo -> khắc xong lột băng keo ra là nét chữ sạch tinh tươm không dính một hạt muội than nào!\n2. Bật **bơm thổi khí (Air Assist)** thổi thẳng vào điểm bắn để tống khói ngay lập tức và tránh bén lửa.\n3. Hạ công suất xuống **12-18%** và tăng tốc độ chạy lên **250-350mm/s** (khắc 2 lượt nhẹ đẹp hơn bắn 1 lượt công suất cao cháy sâu).\n4. **Cảnh báo an toàn**: Tuyệt đối KHÔNG cho giả da **PVC** vào máy khắc Laser vì PVC khi cháy sinh khí **Clo (HCl)** cực độc hại cho phổi thợ và làm rỉ sét sạch thanh trượt, thấu kính máy trong vài tuần!",
+          "likes": 33
+        }
+      ]
+    },
+    {
+      "id": "thread-069",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Chọn đúng 5 dòng Máy May Đồ Da theo từng dòng sản phẩm (Ví, Túi Hộp, Balo, Dây Nịt, Giày): Tránh mua nhầm máy!",
+      "author": "Phước Thịnh Leather",
+      "authorRole": "Setup xưởng may mới",
+      "authorAvatar": "🧵",
+      "createdAt": "2026-11-10T13:50:00Z",
+      "formattedDate": "Hôm qua lúc 13:50",
+      "badge": "Hướng dẫn toàn diện ★",
+      "badgeType": "featured",
+      "likes": 97,
+      "views": 2150,
+      "content": "Mình chuyển từ may vải sang may đồ da công nghiệp, thấy nhiều máy quá: máy cào bơi mặt phẳng (1508/GC6-7), máy ống cánh tay (1341/335), máy trụ đứng (Post-bed 591/810), máy chỉ siêu dày (441), máy lập trình CNC... Nhờ các anh chị đi trước phân loại giúp: mỗi loại máy sinh ra để xử lý công đoạn & sản phẩm nào là chuẩn nhất, tránh mua về rồi không đưa được sản phẩm vào may!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-069-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-10T14:20:00Z",
+          "formattedDate": "Hôm qua lúc 14:20",
+          "content": "Rất chuẩn! Rất nhiều xưởng mới bị sai lầm khi mua máy may mặt phẳng về rồi không may nối hông túi hộp được. Mình tóm tắt 5 dòng máy may đồ da theo công đoạn như sau:\n1. **Máy May 1 Kim Chân Vịt Bước Đôi Cào Bơi Mặt Phẳng (Flatbed Walking Foot - Juki LU-1508 / 1541 / Typical GC6-7)**:\n   - *Chuyên cho*: Các chi tiết **phẳng** như ví bifold, ví dài, thắt lưng mỏng, quai xách, mặt trước/sau túi, đệm ghế sofa & bọc nội thất ô tô.\n2. **Máy May Ống / Cánh Tay Trụ Ngang (Cylinder Arm - Juki LS-1341 / Pfaff 335 / Techsew 2750)**:\n   - *Chuyên cho*: **May ráp hông túi hộp, may miệng balo, chạy dây viền ống (piping), may túi trống, bọc góc hẹp** nơi bàn phẳng không thể luồn thân túi qua!\n3. **Máy May Trụ Đứng / Đầu Cọc Bánh Xe Lăn (Post-Bed Roller Foot - Pfaff 591 / Golden Wheel CS-810 / 820)**:\n   - *Chuyên cho*: **May mũ giày/giày dép, bóp khóa zip quanh 360°, túi xách dáng đứng đáy hẹp, các đường may lộn góc gắt R3-R5mm** (chân vịt bánh xe lăn xoay hướng siêu mượt không vướng da).\n4. **Máy May Siêu Dày Chỉ Lớn Cánh Tay Dài (Heavy Duty Cylinder Arm - Juki TSC-441 / Cowboy CB4500 / Adler 205)**:\n   - *Chuyên cho*: **Da bò Veg dày 5-12mm, dùng chỉ dù siêu lớn 1.0mm - 1.4mm** làm thắt lưng khâu máy lộ chỉ to như khâu tay, bao súng, bao dao, dây cương/yên ngựa.\n5. **Máy May Lập Trình CNC Tự Động (Pattern Sewer - 3020 / 2210)**:\n   - *Chuyên cho*: Chạy hàng loạt chi tiết nhỏ đồng bộ cao (may kẹp ví passport, gắn tag da logo, đóng hình chữ X/vuông gia cố quai balo, may dây đồng hồ) — cài gá mica vào là thợ không cần tay nghề cao vẫn may đều 1000 cái như 1!",
+          "likes": 78
+        }
+      ]
+    },
+    {
+      "id": "thread-070",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Máy may ống (Cylinder Arm LS-1341 / Pfaff 335) chạy dây viền ống (Piping) túi xách hay bị lệch gân & gãy kim ở góc bo",
+      "author": "Lan Anh Bag Maker",
+      "authorRole": "Thợ may mẫu túi xách",
+      "authorAvatar": "👜",
+      "createdAt": "2026-11-10T10:15:00Z",
+      "formattedDate": "Hôm qua lúc 10:15",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 36,
+      "views": 640,
+      "content": "Khi dùng máy may trụ ống nhỏ LS-1341 để may ráp thân túi với hông có nẹp dây viền ống (piping lõi nhựa 2.5mm-3mm), cứ đi qua góc cua R18mm là chân vịt hay leo lên đỉnh ống làm đường chỉ đi lệch ra ngoài rìa hoặc đá gãy kim ngay chỗ giao nhau dày 5 lớp! Có loại chân vịt & cữ dẫn hướng nào chuyên trị đường piping túi hộp không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-070-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-10T10:45:00Z",
+          "formattedDate": "Hôm qua lúc 10:45",
+          "content": "Chạy viền ống Piping bắt buộc phải thay đúng bộ **Chân vịt rãnh ống (Piping Foot Set)** kích thước chuẩn đúng bằng đường kính dây (ví dụ rãnh 3.2mm hoặc 4.0mm) thay cho chân vịt phẳng tiêu chuẩn! Rãnh lòng máng bên dưới chân vịt sẽ ôm chặt dẫn sợi piping đi thẳng tắp không bao giờ trượt leo đỉnh.\nNgoài ra ở các góc cong & đoạn nối dày 5 lớp:\n- Bấm hình chữ V nhỏ (notching) dọc mép vải/da bọc dây piping tại đoạn bo cong R18mm trước khi may ráp để không bị cộm xếp ly đẩy kim.\n- Lắp thêm **thước cữ lật 2 tầng** (swing-away binder/guide) và dùng **kim mũi vát chống cong (DPx17 #20 Titanium)**, nhích từng mũi chậm khi leo gờ nối ống là hết hẳn gãy kim!",
+          "likes": 29
+        }
+      ]
+    },
+    {
+      "id": "thread-071",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Vận hành Máy may siêu dày Juki TSC-441 / Cowboy CB4500 may chỉ 1.2mm làm thắt lưng & bao da dày 8mm hay trầy mặt sau",
+      "author": "Sơn Tùng Saddlery",
+      "authorRole": "Thợ đồ da thủ công & máy nặng",
+      "authorAvatar": "🐎",
+      "createdAt": "2026-11-09T14:00:00Z",
+      "formattedDate": "2 ngày trước",
+      "badge": "Kinh nghiệm máy 441",
+      "badgeType": "info",
+      "likes": 32,
+      "views": 590,
+      "content": "Mình mới rước con máy may trụ lớn dòng 441 để may dây thắt lưng da Veg 4mm chập đôi (tổng 8mm) bằng chỉ sáp bện 1.0mm - 1.2mm cho đường chỉ to hầm hố như may tay. Nhưng răng cưa bàn lừa dưới (feed dog) đẩy da nặng quá làm hằn vết răng khá sâu ở mặt trái dây nịt, và suốt dưới hay hết bất chợt. Anh em dùng dòng 441 chia sẻ mẹo xử lý nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-071-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-09T14:30:00Z",
+          "formattedDate": "2 ngày trước",
+          "content": "Dòng 441 lực kéo cực khỏe chuyên trị chỉ 1.0-1.4mm và độ dày lên tới 12-16mm, nhưng muốn mặt sau Veg-tan không hằn răng cưa thì áp dụng ngay 3 tinh chỉnh sau:\n1. Thay bộ **Mặt nguyệt phẳng (Flat needle plate) + Bàn lừa trơn không răng hoặc răng phủ cao su urethane** (chế độ kéo bằng chân vịt bước đôi & kim đẩy - needle feed là chính).\n2. Giảm bớt lực nén lò xo lá chân vịt ngoài xuống mức vừa đủ giữ phôi khi kim rút lên.\n3. Khi đánh suốt chỉ #277/#346-#415 to (tương đương 0.8-1.2mm), nhớ xỏ thêm 1 giọt silicone dầu bôi chỉ ở cốc giữ chỉ trên để chống rối suốt dưới, và dùng **kim 794 (DYx3) #24 hoặc #25** đầu S/LR để mũi chỉ nằm nghiêng thẳng đẹp như may tay Saddle Stitch!",
+          "likes": 25
+        }
+      ]
+    },
+    {
+      "id": "thread-072",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "title": "Công đoạn gia cố quai balo & cặp công sở bằng Máy đóng bọ (Bar-tack): Cài số mũi bao nhiêu để không bị 'xé đứt da'?",
+      "author": "Quốc Bảo Bag Factory",
+      "authorRole": "Xưởng balo Tân Phú",
+      "authorAvatar": "🎒",
+      "createdAt": "2026-11-08T19:45:00Z",
+      "formattedDate": "3 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 30,
+      "views": 560,
+      "content": "Trước đây may balo vải thì đóng bọ (bar-tack) 42 mũi khít rịt rất chắc. Nhưng khi chuyển sang gia cố đầu quai da bò phối balo hay cặp táp bằng máy đóng bọ điện tử (LK-1900), đóng 42 mũi xong giật thử lực mạnh là nguyên đoạn quai da đứt lìa dọc theo hàng lỗ kim như xé tem bưu chính luôn! Nên chỉnh thông số bọ thế nào cho quai da chịu tải 25kg ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-072-1",
+          "author": "Anh Bảy Thợ Máy Tân Bình",
+          "authorRole": "Kỹ thuật sửa máy da 18 năm",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-08T20:15:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Đồ da khác hoàn toàn với vải dệt (vải có sợi đan tách ra khi kim đâm, còn da là tấm collagen liền khối — kim đâm sát nhau quá sẽ thành đường cắt đục lỗ!).\nThông số an toàn cho máy đóng bọ trên quai da:\n- Giảm chương trình từ 42 mũi xuống **21 hoặc 28 mũi thưa** (tăng bước rộng X lên 14-18mm để khoảng cách giữa các lỗ kim tối thiểu >= 2.2mm).\n- Lót thêm **1 miếng vải không dệt chịu lực / webbing mỏng hoặc miếng da lót** ở mặt dưới vị trí đóng bọ.\n- Dùng **chỉ Bonded Nylon #69/#92 (210D/3)** kết hợp kim đầu tròn **R / S** cỡ vừa (#18-#19) — hoặc chuyển sang **may hình vuông gạch chéo chữ X (Box-X stitch)** trên máy may lập trình CNC để phân tán lực kéo đều lên 4 cạnh thay vì dồn vào 1 đường thẳng!",
+          "likes": 24
+        }
+      ]
+    },
+    {
+      "id": "thread-073",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "stage": "hoan-thien",
+      "stageLabel": "5. Sơn Cạnh & Hoàn Thiện",
+      "title": "Công đoạn đóng khoen, cúc bấm, đinh tán bằng Máy dập khí nén / đạp chân: Khắc phục móp mặt cúc & tróc xi mạ PVD",
+      "author": "Minh Tâm Hardware",
+      "authorRole": "Xưởng phụ kiện & ví túi",
+      "authorAvatar": "🔩",
+      "createdAt": "2026-11-08T11:20:00Z",
+      "formattedDate": "3 ngày trước",
+      "badge": "Đã có lời giải ✓",
+      "badgeType": "solved",
+      "likes": 40,
+      "views": 775,
+      "content": "Khâu cuối lắp phụ kiện ngũ kim đóng nút bấm đồng (cúc 4 chi tiết 12.5mm/15mm), khoen mắt cáo, đinh tán mũ tròn bằng máy dập cúc khí nén (hoặc cối dập bàn ép tay). Dạo này đóng nút mạ vàng PVD rất hay bị trầy xước vòng tròn trên chỏm nút, hoặc đóng lệch làm bẹp chân nút không gài khít được. Xin anh em mẹo chọn cối và căn áp lực khí nén chuẩn!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-073-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-08T11:50:00Z",
+          "formattedDate": "3 ngày trước",
+          "content": "Để phụ kiện đồng/ngũ kim PVD bóng đẹp 100% không tì vết sau khi dập:\n1. **Chọn đúng cối khớp 100% với hãng nút (Snap Die Match)**: Nút 12.5mm (Alpha/633) và nút Nhật Hasi Hato 15mm có độ cong chỏm mũ khác nhau! Tuyệt đối không dùng cối nút rẻ tiền dập cho nút đồng mạ cao cấp.\n2. **Lót lớp đệm bảo vệ mũ nút**: Đặt 1 miếng **màng nilon PE mỏng / miếng vải nỉ mịn hoặc da bụng mềm** lên lòng cối dưới trước khi đặt mũ nút vào — cối thép không bao giờ tiếp xúc trực tiếp làm trầy lớp mạ PVD.\n3. **Đục lỗ vừa khít chân nút & căn áp suất khí nén 3.5 - 4.5 bar**: Lỗ đục quá to sẽ làm chân nút bị xô nghiêng dẫn đến gãy gập lệch tâm; ngược lại lỗ đục đúng đường kính trụ nút (ví dụ trụ 3.0mm thì đục lỗ 3.0mm) và để tia laser định tâm của máy dập rọi chuẩn trục thẳng đứng trước khi đạp bàn dập!",
+          "likes": 32
         }
       ]
     },
@@ -1789,7 +2185,9 @@
           "content": "Đừng tăng áp lực thủy lực quá cao sẽ nhanh làm tù và cong lưỡi khuôn bế thép bạn nhé! Nguyên nhân góc ngoài không đứt hết chủ yếu là:\n1. **Thớt bế nhựa PP bị lõm ở giữa**: Do công nhân hay dập 1 vị trí cố định làm mặt thớt lồi lõm không đều -> mang thớt đi **bào phẳng lại mặt** (hoặc xoay đảo góc thớt mỗi tuần).\n2. **Cân độ song song của cánh tay bế**: Mặt dưới búa tay xoay lâu ngày có thể bị xệ nhẹ đầu ngoài (khoảng 0.3-0.5mm) — mở nắp ốc căn hành trình trên đỉnh trụ búa để chỉnh lại độ song song với mặt thớt.\n3. **Vị trí đặt khuôn**: Luôn đặt tâm khuôn bế nằm gọn bên dưới tâm trụ ép của cánh tay xoay. Nếu khuôn cặp lớn vượt quá bản rộng tay xoay, nên chia bế từng nửa hoặc nâng cấp lên **máy bế 4 trụ (Four-pillar Hydraulic Press)** sẽ phân bổ lực đều 4 góc chuẩn 100%!",
           "likes": 22
         }
-      ]
+      ],
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da"
     },
     {
       "id": "thread-057",
@@ -1819,7 +2217,9 @@
           "content": "Mặt trái bị sọc gợn sóng khi chạy máy splitting nguyên tấm có 3 nguyên nhân:\n1. **Lưỡi băng dao bị chùng hoặc đảo vị trí**: Kiểm tra lực căng thủy lực/lò xo băng dao, đồng thời vệ sinh sạch vụn sáp bám trên 2 bánh đà quay dao (nếu sáp đóng cục trên bánh đà sẽ làm dao rung tạo gợn sóng).\n2. **Da bò sáp nhiều dầu**: Trước khi xẻ, rắc thật mỏng bột Talc (hoặc lau khô sơ bụi sáp dưới thanh tỳ cố định — guide bar) và thay **thanh tỳ bi / con lăn tự xoay** thay vì thanh tỳ thép trượt cố định nếu chạy nhiều da Pull-up mềm.\n3. **Đá mài kim cương (CBN/Diamond wheels)**: Khi thấy rìa mép dao mài có vệt bóng không đều, cần rửa đá mài bằng dung môi chuyên dụng (hoặc thỏi tẩy đá) để mở lại hạt nhám trước khi chạy lô da mới.",
           "likes": 25
         }
-      ]
+      ],
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép"
     },
     {
       "id": "thread-058",
@@ -1849,7 +2249,9 @@
           "content": "Quá đúng chuyên môn mình luôn:\n1. **Chống rối chỉ dưới 3 mũi đầu (Bird's nest)**: Mở chế độ **Slow Start (Khởi động chậm 3-5 mũi đầu)** trên bảng điều khiển ở tốc độ 300-400 vòng/phút, đồng thời cắt đuôi chỉ trên sau khi cắt chỉ không để quá ngắn (<20mm) hoặc quá dài (>45mm), và bật kẹp giữ đầu chỉ điện từ (thread wiper / clamp) cho 2 mũi đầu tiên.\n2. **Góc bo R3mm không đều mũi**: Khi thiết kế trên phần mềm lập trình (Brother PS / Juki PM-1), nhớ đổi chế độ chia mũi ở các cung tròn nhỏ thành **3.0mm đều nhau** hoặc hạ tốc độ riêng cho 4 đoạn góc bo (giảm tốc trước góc R 2 mũi) để trục X-Y kịp đồng bộ với kim!\n3. **Gá kẹp Mica**: Mặt dưới khuôn gá mica đặt da nên dán 1 lớp nhám mỏng hoặc da lộn chống trượt để phôi không xê dịch 0.2mm khi bàn trượt giật nhanh.",
           "likes": 24
         }
-      ]
+      ],
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da"
     },
     {
       "id": "thread-059",
@@ -1879,7 +2281,9 @@
           "content": "Mẹo chạy máy sơn cạnh con lăn không bao giờ nổi bọt và lem viền:\n1. **Lắc sơn trước tối thiểu 30 phút (hoặc để qua đêm lắng bọt)** trước khi đổ vào khay, KHÔNG khuấy mạnh bằng máy ngay trước lúc chạy.\n2. **Điều chỉnh gạt mực (Doctor blade)**: Siết ốc thanh gạt mực vừa đủ giữ một màng sơn mỏng quanh bánh răng con lăn (chỉ đủ ướt đều đỉnh rãnh chứ không đọng giọt).\n3. **Tốc độ con lăn vừa phải (40% - 50% chiết áp)**: Quay quá nhanh sẽ đánh bọt khí thẳng vào mép da và văng sơn ra 2 bên! Tốt nhất chạy 1 lớp sơn lót mỏng trước trên máy mài/sơn, sấy nhẹ bằng máy sấy đối lưu (50°C), chà nhám P600 bằng trống mài tốc độ chậm rồi mới chạy 2 lượt sơn phủ bóng.",
           "likes": 28
         }
-      ]
+      ],
+      "stage": "hoan-thien",
+      "stageLabel": "5. Sơn Cạnh & Hoàn Thiện"
     },
     {
       "id": "thread-060",
@@ -1910,7 +2314,9 @@
           "content": "Rất hữu ích! Xưởng mình cứ 6 tháng thay nhớt thủy lực máy bế 1 lần và tra mỡ chịu nhiệt vào cốt cánh tay xoay, dùng 5 năm nay máy vẫn êm ru chưa phải thay phớt ty ben lần nào. Khu vực Tân Bình - Bình Tân anh em cần căn chỉnh ổ máy cào bơi hoặc lên servo tiết kiệm điện cho máy lạng 801 thì cứ inbox giao lưu nhé!",
           "likes": 30
         }
-      ]
+      ],
+      "stage": "hoan-thien",
+      "stageLabel": "5. Sơn Cạnh & Hoàn Thiện"
     },
     {
       "id": "thread-061",
@@ -1940,7 +2346,9 @@
           "content": "Sản lượng 300-500 phôi/ngày mà có dập hàng B2B quà tặng thì NÊN LÊN **MÁY ÉP KHÍ NÉN (Pneumatic Heat Press)** kết hợp đồng hồ đếm giây (Timer) & cảm biến nhiệt PID ngay bạn nhé!\nLý do:\n- Lực ép ổn định tuyệt đối 100% từ cái đầu tiên đến cái thứ 500 (không phụ thuộc sức tay công nhân).\n- Cài sẵn Timer (ví dụ 1.2 giây cho ép nhũ, 3.0 giây cho ép chìm) -> hạn chế tối đa cháy da hoặc bong nhũ.\n- Bàn trượt (sliding tray) đưa phôi ra ngoài đặt cữ rập mica cực kỳ an toàn, không sợ thợ lỡ tay bị bỏng đầu đốt nhiệt 120°C!\nChi phí đầu tư máy khí nén mini kèm máy nén khí giảm âm chỉ cao hơn máy tay tốt tầm 4-6 triệu nhưng năng suất tăng gấp 2.5 lần và tỷ lệ hàng lỗi giảm gần như bằng 0.",
           "likes": 36
         }
-      ]
+      ],
+      "stage": "in-ep-logo",
+      "stageLabel": "3. In, Khắc & Ép Logo"
     }
   ]
 }
