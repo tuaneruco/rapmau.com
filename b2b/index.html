@@ -718,6 +718,132 @@
       color: #9ca3af;
     }
 
+    /* 8b. Specialized Alliance & Export Standards */
+    .alliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .alliance-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--bg-saddle);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .alliance-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-top-color: var(--accent-gold);
+    }
+    .alliance-cap {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 2px 8px;
+      border-radius: 99px;
+      align-self: flex-start;
+    }
+    .alliance-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--bg-saddle);
+    }
+    .alliance-spec {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .compliance-card {
+      background: #ffffff;
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .compliance-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .compliance-flag {
+      font-size: 26px;
+      line-height: 1;
+    }
+    .compliance-market {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--bg-saddle);
+    }
+    .compliance-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: #374151;
+    }
+    .compliance-list li strong {
+      color: #065f46;
+    }
+    .material-bar {
+      margin-top: 24px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .material-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .mat-pill {
+      font-size: 12px;
+      font-weight: 700;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .partner-section {
+      background: linear-gradient(135deg, #1f140e 0%, #2b1810 100%);
+      color: #ffffff;
+      padding: 56px 0;
+      border-top: 3px solid var(--accent-gold);
+    }
+    .partner-box {
+      background: #ffffff;
+      color: var(--text-main);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--accent-gold);
+    }
+
     /* Floating Buttons */
     .floating-b2b {
       position: fixed;
@@ -1049,6 +1175,155 @@
     </div>
   </section>
 
+  <!-- 5B. Mạng Lưới Xưởng Liên Kết Chuyên Môn Hóa -->
+  <section class="section-wrap" id="mang-luoi-xuong" style="background:#ffffff;">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">LIÊN MINH XƯỞNG CHUYÊN BIỆT</span>
+        <h2 class="section-title">Mạng Lưới Xưởng Sản Xuất "Mỗi Xưởng 1 Thế Mạnh Đỉnh Cao"</h2>
+        <p class="section-desc">
+          Thay vì một xưởng làm mọi thứ ở mức trung bình, RAPMAU.COM chuẩn hóa bản vẽ CAD &amp; Tech Pack từ đầu nguồn và điều phối từng đơn hàng về đúng xưởng chuyên sâu nhất để đảm bảo chất lượng đồng nhất.
+        </p>
+      </div>
+
+      <div class="alliance-grid">
+        <article class="alliance-card">
+          <span class="alliance-cap">3.000 – 10.000 sp/tháng</span>
+          <h3 class="alliance-title">💳 Xưởng Chuyên Ví Da &amp; SLG</h3>
+          <p class="alliance-spec">
+            <strong>Mặt hàng:</strong> Cardholder, Bifold, Long Wallet, Bao Passport, Kẹp tiền.<br />
+            <strong>Thiết bị:</strong> Máy lạng chuông/lạng băng chính xác 0.4mm, máy gấp mép, ép nhiệt logo.<br />
+            <strong>Ưu thế:</strong> Sơn cạnh nhiều lớp bền mịn, độ tinh xảo đạt chuẩn quà tặng cao cấp.
+          </p>
+        </article>
+
+        <article class="alliance-card">
+          <span class="alliance-cap">800 – 3.000 sp/tháng</span>
+          <h3 class="alliance-title">👜 Xưởng Chuyên Túi Xách Thời Trang</h3>
+          <p class="alliance-spec">
+            <strong>Mặt hàng:</strong> Túi đeo chéo nữ, túi xách tay, Clutch dự tiệc, Tote da thật.<br />
+            <strong>Thiết bị:</strong> Máy may trụ, máy bước, hệ thống dựng cốt phom hàng hiệu.<br />
+            <strong>Ưu thế:</strong> Thợ ra mẫu (Pattern Maker) 5–10 năm kinh nghiệm xử lý da mềm Nappa/Togo/Epsom.
+          </p>
+        </article>
+
+        <article class="alliance-card">
+          <span class="alliance-cap">1.000 – 5.000 sp/tháng</span>
+          <h3 class="alliance-title">🎒 Xưởng Chuyên Balo &amp; Cặp Công Sở</h3>
+          <p class="alliance-spec">
+            <strong>Mặt hàng:</strong> Balo da thật, Cặp táp Laptop, Túi du lịch Weekender.<br />
+            <strong>Thiết bị:</strong> Máy may công nghiệp lực đâm xuyên mạnh, máy đính bọ chịu lực (Bartack).<br />
+            <strong>Ưu thế:</strong> Gia cố điểm chịu tải nặng, đệm chống sốc và kiểm thử kéo đứt quai đeo.
+          </p>
+        </article>
+
+        <article class="alliance-card">
+          <span class="alliance-cap">500 – 2.500 sp/tháng</span>
+          <h3 class="alliance-title">⌚ Xưởng Dây Đồng Hồ &amp; Bespoke</h3>
+          <p class="alliance-spec">
+            <strong>Mặt hàng:</strong> Dây đồng hồ khâu tay, Bao da chìa khóa ô tô, Phụ kiện Artisan.<br />
+            <strong>Thiết bị:</strong> Chế tác thủ công 100% Saddle Stitch, lót Zermatt chống mồ hôi.<br />
+            <strong>Ưu thế:</strong> Chuyên hàng tinh xảo trên da Veg-tan Ý, Shell Cordovan, Cá sấu cho thị trường Nhật &amp; Mỹ.
+          </p>
+        </article>
+
+        <article class="alliance-card">
+          <span class="alliance-cap">5.000 – 50.000 sp/tháng</span>
+          <h3 class="alliance-title">🎁 Xưởng Khuôn Bế &amp; Quà Tặng Lớn</h3>
+          <p class="alliance-spec">
+            <strong>Mặt hàng:</strong> Sổ tay bìa da, Móc khóa, Thẻ hành lý, Bộ Giftset sự kiện.<br />
+            <strong>Thiết bị:</strong> Máy dập thủy lực hành trình lớn, máy cắt CNC laser &amp; KCS tự động.<br />
+            <strong>Ưu thế:</strong> Đồng nhất 100% trên lô hàng hàng chục ngàn chiếc, đóng gói hộp quà xuất VAT.
+          </p>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top:26px;">
+        <a href="#dang-ky-doi-tac" style="display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:800; color:#92400e; background:#fef3c7; border:1px solid #fcd34d; padding:10px 18px; border-radius:8px; text-decoration:none;">
+          <span>🤝 Bạn là chủ xưởng chuyên 1 mặt hàng chất lượng cao? Đăng ký gia nhập Liên Minh Xưởng →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5C. Tiêu Chuẩn Nguyên Phụ Liệu Xuất Khẩu Quốc Tế -->
+  <section class="section-wrap" id="tieu-chuan-xuat-khau" style="background:var(--bg-parchment);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">EXPORT COMPLIANCE READY</span>
+        <h2 class="section-title">Tiêu Chuẩn Nguyên Phụ Liệu Xuất Khẩu (Mỹ • EU • Anh • Nhật)</h2>
+        <p class="section-desc">
+          Kết nối nguồn cung da thuộc, hóa chất hoàn thiện và phụ kiện kim loại đáp ứng đầy đủ các quy chuẩn kiểm định khắt khe của thị trường quốc tế.
+        </p>
+      </div>
+
+      <div class="compliance-grid">
+        <!-- EU & UK -->
+        <article class="compliance-card">
+          <div class="compliance-header">
+            <span class="compliance-flag">🇪🇺🇬🇧</span>
+            <div>
+              <div class="compliance-market">Thị Trường EU &amp; Vương Quốc Anh</div>
+              <div style="font-size:11.5px; color:var(--text-muted);">REACH • LWG • GPSR Compliance</div>
+            </div>
+          </div>
+          <ul class="compliance-list">
+            <li>✓ <strong>REACH (SVHC):</strong> Da thuộc, sơn cạnh và keo dán không chứa hóa chất cấm, kiểm soát nghiêm <strong>Chromium VI &lt; 3 ppm</strong>, không Azo dyes, Formaldehyde, Phthalates.</li>
+            <li>✓ <strong>LWG (Leather Working Group):</strong> Kết nối các xưởng thuộc da có chứng nhận <strong>LWG Gold / Silver</strong> đảm bảo truy xuất nguồn gốc và môi trường.</li>
+            <li>✓ <strong>GPSR Ready:</strong> Đầy đủ hồ sơ thông số vật liệu chứng minh an toàn sản phẩm tiêu dùng.</li>
+          </ul>
+        </article>
+
+        <!-- USA -->
+        <article class="compliance-card">
+          <div class="compliance-header">
+            <span class="compliance-flag">🇺🇸</span>
+            <div>
+              <div class="compliance-market">Thị Trường Hoa Kỳ (USA)</div>
+              <div style="font-size:11.5px; color:var(--text-muted);">California Prop 65 • CPSIA • CITES</div>
+            </div>
+          </div>
+          <ul class="compliance-list">
+            <li>✓ <strong>California Prop 65:</strong> Kiểm soát hàm lượng Chì (Lead) &amp; Cadmium trong khoen khóa kim loại, đinh tán và lớp phủ bề mặt da.</li>
+            <li>✓ <strong>CPSIA:</strong> Đáp ứng tiêu chuẩn an toàn hóa chất cho phân khúc cặp học sinh, phụ kiện gia đình.</li>
+            <li>✓ <strong>Hỗ trợ CITES:</strong> Tư vấn thủ tục nguồn gốc hợp pháp khi xuất khẩu dòng sản phẩm da ngoại lai (cá sấu, đà điểu).</li>
+          </ul>
+        </article>
+
+        <!-- Japan -->
+        <article class="compliance-card">
+          <div class="compliance-header">
+            <span class="compliance-flag">🇯🇵</span>
+            <div>
+              <div class="compliance-market">Thị Trường Nhật Bản (Japan)</div>
+              <div style="font-size:11.5px; color:var(--text-muted);">JIS Standards • Kaken/Boken • YKK &amp; Nickel-Free</div>
+            </div>
+          </div>
+          <ul class="compliance-list">
+            <li>✓ <strong>Độ bền màu ma sát (Kaken/Boken):</strong> Xử lý chốt màu chống phai lem ra trang phục sáng màu khi gặp mồ hôi/nước mưa.</li>
+            <li>✓ <strong>Kiểm kim 100% (Needle Detection):</strong> Quy trình rà kim gãy và dị vật kim loại bắt buộc trước khi đóng thùng xuất đi Nhật.</li>
+            <li>✓ <strong>Phụ kiện chuẩn Nhật:</strong> Sử dụng dây kéo <strong>YKK chính hãng</strong>, hợp kim đồng đúc &amp; mạ PVD không chứa Nickel (Nickel-free).</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Certified Materials Bar -->
+      <div class="material-bar">
+        <div style="font-size:13.5px; font-weight:800; color:var(--bg-saddle);">
+          📦 Nguồn nguyên phụ liệu đối tác đang kết nối:
+        </div>
+        <div class="material-pills">
+          <span class="mat-pill">Da Veg-tan Ý &amp; Da LWG</span>
+          <span class="mat-pill">Sơn cạnh Ý (Fenice / Uniters)</span>
+          <span class="mat-pill">Keo gốc nước Renia (Đức)</span>
+          <span class="mat-pill">Khóa kéo YKK Excella / Metal</span>
+          <span class="mat-pill">Phụ kiện Đồng đúc / Inox 304</span>
+          <span class="mat-pill">Chỉ sáp Polyester / Linen Pháp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 6. Quy Trình 5 Bước Làm Việc Minh Bạch -->
   <section class="section-wrap" style="background:#ffffff;">
     <div class="container">
@@ -1217,6 +1492,86 @@
     </div>
   </section>
 
+  <!-- 8B. Đăng Ký Trở Thành Xưởng Liên Kết / Nhà Cung Cấp Nguyên Liệu -->
+  <section class="partner-section" id="dang-ky-doi-tac">
+    <div class="container">
+      <div class="partner-box">
+        <div style="text-align:center; margin-bottom:20px;">
+          <span class="section-tag">GIA NHẬP MẠNG LƯỚI CUNG ỨNG</span>
+          <h3 style="font-size:24px; font-weight:900; color:var(--bg-saddle); margin-top:6px;">
+            Đăng Ký Trở Thành Xưởng Liên Kết / Nhà Cung Cấp Nguyên Liệu
+          </h3>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-top:4px;">
+            RAPMAU.COM tìm kiếm các <strong>xưởng chuyên sâu từng dòng sản phẩm</strong> và <strong>nhà cung cấp da thuộc, phụ kiện, hóa chất đạt chuẩn xuất khẩu (Mỹ, EU, Anh, Nhật)</strong> để cùng nhận và điều phối các đơn hàng B2B lớn.
+          </p>
+        </div>
+
+        <form id="partnerRegisterForm">
+          <div class="quote-form-grid">
+            <div class="form-group">
+              <label for="partnerName">Tên Chủ Xưởng / Người Phụ Trách: *</label>
+              <input type="text" id="partnerName" class="form-input" placeholder="Ví dụ: Lê Minh Thành" required />
+            </div>
+
+            <div class="form-group">
+              <label for="partnerPhone">Số Điện Thoại / Zalo Trực Tiếp: *</label>
+              <input type="tel" id="partnerPhone" class="form-input" placeholder="Ví dụ: 0912345678" required />
+            </div>
+
+            <div class="form-group">
+              <label for="partnerOrg">Tên Xưởng / Công Ty &amp; Khu Vực (Tỉnh/TP): *</label>
+              <input type="text" id="partnerOrg" class="form-input" placeholder="Ví dụ: Xưởng Da Thành Công - Q.12, TP.HCM" required />
+            </div>
+
+            <div class="form-group">
+              <label for="partnerSpecialty">Vai Trò &amp; Thế Mạnh Cốt Lõi: *</label>
+              <select id="partnerSpecialty" class="form-select" required>
+                <option value="Xưởng chuyên Ví da & SLG tinh xảo">💳 Xưởng chuyên Ví da &amp; Small Leather Goods (SLG)</option>
+                <option value="Xưởng chuyên Túi xách Nữ & Thời trang cao cấp">👜 Xưởng chuyên Túi xách &amp; Hàng thời trang cao cấp</option>
+                <option value="Xưởng chuyên Balo, Cặp táp & Túi Du lịch">🎒 Xưởng chuyên Balo, Cặp táp &amp; Túi Du lịch</option>
+                <option value="Xưởng chuyên Dây đồng hồ & Khâu tay Bespoke">⌚ Xưởng chuyên Dây đồng hồ &amp; Khâu tay Bespoke</option>
+                <option value="Xưởng chuyên Khuôn bế & Quà tặng số lượng lớn">🎁 Xưởng dập khuôn bế &amp; Quà tặng doanh nghiệp SL lớn</option>
+                <option value="Nhà cung cấp Da thuộc (LWG / Ý / Nhật)">🐄 Nhà cung cấp Da thuộc đạt chuẩn xuất khẩu (LWG / Veg-tan)</option>
+                <option value="Nhà cung cấp Phụ kiện kim loại / Hóa chất (REACH / YKK)">🔩 Nhà cung cấp Phụ kiện kim loại (YKK / Đồng đúc) &amp; Hóa chất REACH</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="partnerCapacity">Năng Lực Sản Xuất / Kho Hàng Hàng Tháng:</label>
+              <input type="text" id="partnerCapacity" class="form-input" placeholder="VD: 3.000 ví/tháng hoặc Kho sẵn 50.000 Pia da" />
+            </div>
+
+            <div class="form-group">
+              <label for="partnerStandards">Chứng Chỉ / Tiêu Chuẩn Đáp Ứng Được:</label>
+              <input type="text" id="partnerStandards" class="form-input" placeholder="VD: LWG, REACH, Prop 65, Kiểm kim Nhật, Xuất VAT" />
+            </div>
+
+            <div class="form-group full">
+              <label for="partnerNotes">Mô tả máy móc chủ lực, mặt hàng tự tin nhất hoặc link Facebook/Shopee/Website:</label>
+              <textarea id="partnerNotes" class="form-textarea" rows="3" placeholder="Ví dụ: Có 2 máy lạng chuông, 6 máy trụ, chuyên làm ví xuất Nhật từ năm 2018..."></textarea>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <button type="submit" class="btn-submit-quote" id="submitPartnerBtn" style="background:linear-gradient(135deg, #065f46 0%, #047857 100%); box-shadow:0 4px 12px rgba(6,95,70,0.3);">
+              <span>🤝 Gửi Hồ Sơ Gia Nhập Mạng Lưới Đối Tác</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="partnerSuccessAlert" style="display:none; margin-top:20px; padding:18px; background:#ecfdf5; border:1.5px solid #a7f3d0; border-radius:10px; text-align:center;">
+          <h4 style="color:#065f46; font-size:16px; margin-bottom:6px;">🎉 Đã Ghi Nhận Hồ Sơ Đối Tác!</h4>
+          <p style="font-size:13px; color:#047857; margin-bottom:12px;">
+            Cảm ơn Quý Đối Tác! Mr.Tuân sẽ liên hệ trao đổi trực tiếp về quy trình cấp bản vẽ Tech Pack, tiêu chuẩn KCS và kết nối đơn hàng phù hợp.
+          </p>
+          <a id="partnerZaloForwardBtn" href="https://zalo.me/0971463768" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; background:#0284c7; color:#fff; font-size:13px; font-weight:800; padding:8px 16px; border-radius:6px; text-decoration:none;">
+            <span>💬 Gửi ảnh xưởng / bảng test da qua Zalo ngay</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 9. Site Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -1236,10 +1591,10 @@
         <h4 class="footer-h4">Dịch Vụ B2B Trọng Tâm</h4>
         <ul class="footer-links-list">
           <li><a href="#bao-gia-b2b">Quà Tặng Doanh Nghiệp Dập Logo</a></li>
-          <li><a href="#bao-gia-b2b">Gia Công Túi Xách &amp; Ví Da Local Brand</a></li>
+          <li><a href="#mang-luoi-xuong">Mạng Lưới 5 Xưởng Chuyên Sâu</a></li>
+          <li><a href="#tieu-chuan-xuat-khau">Tiêu Chuẩn Xuất Khẩu Mỹ • EU • Nhật</a></li>
           <li><a href="#bao-gia-b2b">Làm Khuôn Bế Thép CNC &amp; Rập Mica</a></li>
-          <li><a href="#bao-gia-b2b">Bóc Tách Bản Vẽ Kỹ Thuật May Da</a></li>
-          <li><a href="#bao-gia-b2b">Sản Xuất Đồ Da Theo Thiết Kế Riêng</a></li>
+          <li><a href="#dang-ky-doi-tac">🤝 Đăng Ký Đối Tác Xưởng &amp; NCC</a></li>
         </ul>
       </div>
 
@@ -1314,6 +1669,48 @@
 
       // Cuộn nhẹ xuống thông báo
       document.getElementById('quoteSuccessAlert').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    // Xử lý Form Đăng Ký Xưởng Liên Kết / Nhà Cung Cấp Nguyên Liệu
+    document.getElementById('partnerRegisterForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitPartnerBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>⏳ Đang gửi hồ sơ đối tác...</span>';
+
+      const name = document.getElementById('partnerName').value.trim();
+      const phone = document.getElementById('partnerPhone').value.trim();
+      const org = document.getElementById('partnerOrg').value.trim();
+      const specialty = document.getElementById('partnerSpecialty').value;
+      const capacity = document.getElementById('partnerCapacity').value.trim();
+      const standards = document.getElementById('partnerStandards').value.trim();
+      const notes = document.getElementById('partnerNotes').value.trim();
+
+      const partnerMessage = `[PARTNER NETWORK] Xưởng/NCC: ${org} | Chuyên môn: ${specialty} | Năng lực: ${capacity || 'Chưa ghi'} | Tiêu chuẩn: ${standards || 'Nội địa'} | Ghi chú: ${notes}`;
+
+      try {
+        await fetch('/api/consultations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            phone,
+            needType: `🤝 Đối tác: ${specialty}`,
+            skuRef: 'PARTNER-HUB',
+            message: partnerMessage
+          })
+        });
+      } catch (err) {
+        // Fallback static
+      }
+
+      document.getElementById('partnerSuccessAlert').style.display = 'block';
+      submitBtn.innerHTML = '<span>✓ Đã gửi hồ sơ thành công</span>';
+
+      const zaloText = encodeURIComponent(`Chào Mr.Tuân, tôi là ${name} đại diện ${org}. Tôi muốn đăng ký gia nhập Mạng lưới Đối tác RAPMAU với thế mạnh: ${specialty} (Năng lực: ${capacity || 'Trao đổi thêm'}).`);
+      document.getElementById('partnerZaloForwardBtn').href = `https://zalo.me/0971463768?text=${zaloText}`;
+
+      document.getElementById('partnerSuccessAlert').scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   </script>
 </body>
