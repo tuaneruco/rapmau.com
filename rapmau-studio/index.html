@@ -844,6 +844,27 @@
     }
 
     /* Responsive */
+    @media (max-width: 1240px) {
+      .header-inner {
+        flex-wrap: wrap;
+        padding: 9px 16px;
+        gap: 8px 12px;
+      }
+      .nav-links {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-top: 6px;
+        border-top: 1px dashed var(--border-soft);
+      }
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
     @media (max-width: 1024px) {
       .tools-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -859,12 +880,33 @@
     @media (max-width: 768px) {
       .studio-topbar {
         padding: 4px 0;
-        font-size: 11px;
+        font-size: 10.5px;
+      }
+      .topbar-left span:not(.domain-badge) {
+        display: none;
+      }
+      .domain-badge {
+        font-size: 10px;
+        padding: 2px 6px;
+      }
+      .topbar-hotline {
+        font-size: 10.5px;
       }
       .header-inner {
-        padding: 8px 12px;
+        padding: 7px 12px;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 7px 6px;
+      }
+      .brand-logo-img {
+        width: 32px;
+        height: 32px;
+      }
+      .brand-name {
+        font-size: 14.5px;
+      }
+      .studio-pill {
+        font-size: 9.5px;
+        padding: 1px 6px;
       }
       .brand-desc {
         display: none;
@@ -883,9 +925,12 @@
       }
       .header-actions {
         margin-left: auto;
+        gap: 5px;
       }
-      .back-home-btn span {
-        display: none;
+      .zalo-cta-btn,
+      .back-home-btn {
+        padding: 5px 8px;
+        font-size: 11px;
       }
       .studio-hero {
         padding: 32px 0 28px;
