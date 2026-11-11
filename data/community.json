@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 85
+      "count": 91
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "son-canh",
       "name": "Sơn Viền & Xử Lý Cạnh",
       "icon": "🎨",
-      "count": 8
+      "count": 11
     },
     {
       "id": "rap-mau",
@@ -40,7 +40,7 @@
       "id": "da-keo",
       "name": "Da Thuộc & Phụ Liệu",
       "icon": "🐂",
-      "count": 6
+      "count": 9
     },
     {
       "id": "khoe-tac-pham",
@@ -56,6 +56,186 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-086",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "So sánh keo Bujio và keo Napao khi dán ví da Nappa, da dê Alran & bồi vải lót: Loại nào dẻo hơn, ít bung mép hơn?",
+      "author": "Quang Huy Craft",
+      "authorRole": "Thợ làm ví thủ công",
+      "authorAvatar": "🧴",
+      "createdAt": "2026-11-11T10:19:00Z",
+      "formattedDate": "Hôm nay lúc 10:19",
+      "badge": "So sánh Keo Bujio & Napao ★",
+      "badgeType": "featured",
+      "likes": 48,
+      "views": 940,
+      "content": "Em hay dùng keo gốc nước không mùi để làm ví da Nappa, da dê và dán lót vải trong phòng kín máy lạnh. Thấy anh em giới thiệu nhiều về **keo Bujio** và **keo Napao**, cho em hỏi độ bám dính thực tế, độ dẻo sau khi khô (có làm cứng giòn phôi ví không), thời gian chờ mở và nên chọn loại nào cho hàng da mềm mỏng ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-086-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T10:20:00Z",
+          "formattedDate": "Hôm nay lúc 10:20",
+          "content": "Cả **Bujio** và **Napao** đều là keo sữa gốc nước cao cấp chuyên đồ da không mùi độc hại, rất an toàn khi làm trong phòng kín hoặc hàng xuất khẩu! Kinh nghiệm dùng thực tế tại xưởng:\n1. **Keo Bujio**: Độ đặc vừa mịn, **thời gian chờ mở nhanh (chỉ 3-5 phút se mặt)** và lực bám ban đầu (initial tack) khá tốt — cực hợp dán cố định ngăn thẻ ví, dán lót Alcantara / da heo lót, gập mép nhanh không cần chờ lâu.\n2. **Keo Napao**: Độ dẻo màng keo sau khi khô hoàn toàn rất cao, **không làm cứng đơ hay giòn mặt da mỏng (0.4-0.6mm)** và ít bị rít bẩn kim khi đục may hay chạy máy cào bơi! Rất thích hợp dán **da bò Nappa mềm, da dê Alran, da bê Swift** hoặc bồi diện tích lớn toàn thân túi xách.\n- *Mẹo chung*: Quét mỏng đều cả 2 mặt bằng thước nhựa/bút gạt keo, đợi chuyển từ trắng sữa sang hơi trong se mặt rồi mới ép dính và gõ nhẹ búa đầu bọc da hoặc lăn con lăn phẳng!",
+          "likes": 36
+        }
+      ]
+    },
+    {
+      "id": "thread-087",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "Kinh nghiệm xử lý keo Bujio / Napao bị tách nước, vón cục & mẹo dán da bò sáp nhiều dầu không bị nhả mép",
+      "author": "Minh Khôi Leather",
+      "authorRole": "Chủ shop đồ da handmade",
+      "authorAvatar": "🧪",
+      "createdAt": "2026-11-11T10:15:00Z",
+      "formattedDate": "Hôm nay lúc 10:15",
+      "badge": "Mẹo bảo quản keo ✓",
+      "badgeType": "solved",
+      "likes": 33,
+      "views": 610,
+      "content": "Mình mua can keo Bujio và chai keo Napao về chiết dùng dần, nhưng gần hết chai thấy keo hơi đặc sánh vón hạt nhỏ ở miệng nắp, với lại lúc mang dán da bò sáp Pull-up nhiều dầu ở góc ví cứ bị bật mép lên dù đã ép kỹ! Xin hỏi cách bảo quản keo gốc nước chuẩn và mẹo xử lý bề mặt da sáp trước khi bôi Bujio/Napao ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-087-1",
+          "author": "Lê Minh Craft",
+          "authorRole": "Thợ xưởng da cao cấp",
+          "authorAvatar": "✂️",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:18:00Z",
+          "formattedDate": "Hôm nay lúc 10:18",
+          "content": "2 lưu ý cực kỳ quan trọng khi dùng keo gốc nước **Bujio / Napao**:\n1. **Bảo quản tránh đóng màng & tách nước**: Tuyệt đối không để chai/can keo dưới ánh nắng hoặc sát sàn lạnh ẩm `< 10°C`. Khi chiết ra hũ nhỏ dùng hàng ngày, nhớ **lau sạch keo dính trên ren nắp vặn** trước khi đóng để không khí không lọt vào làm khô vón cục màng keo.\n2. **Dán da bò sáp / da dầu nhiều mỡ**: Keo gốc nước rất kỵ lớp dầu sáp trơn bóng trên mặt cật! Bắt buộc dùng **giấy nhám P180 - P240 đánh xước nhám nhẹ đúng dải mép cần dán** (cách rìa 3-4mm), dùng khăn khô hoặc chút cồn vệ sinh tẩy dầu trên vị trí gấp mép đó rồi mới quét **2 lượt mỏng keo Bujio/Napao**, đảm bảo dính chặt không bao giờ nhả mép!",
+          "likes": 25
+        }
+      ]
+    },
+    {
+      "id": "thread-088",
+      "categoryId": "da-keo",
+      "categoryName": "Da Thuộc & Phụ Liệu",
+      "title": "Dùng keo Bujio / Napao dán dây đồng hồ & ví gấp mép có chịu được nhiệt khi ke viền 110°C-120°C không? Bao lâu thì đục may cho khỏi bết chỉ?",
+      "author": "Thanh Tùng",
+      "authorRole": "Thợ da cao cấp",
+      "authorAvatar": "⌚",
+      "createdAt": "2026-11-11T10:10:00Z",
+      "formattedDate": "Hôm nay lúc 10:10",
+      "badge": "Hỏi đáp kỹ thuật",
+      "badgeType": "info",
+      "likes": 29,
+      "views": 525,
+      "content": "Khi dán 2-3 lớp da dây đồng hồ hoặc gấp mép ví bằng keo Bujio / Napao, mình hay ke đường viền nhiệt ở 115°C trước khi đục may. Nếu vừa dán xong gõ phẳng rồi ke viền ngay thì rất hay bị phồng rộp keo nhẹ ở mép hoặc lúc đục xong kéo chỉ qua bị rít dính keo trắng vào sợi chỉ gai! Thời gian chờ chuẩn giữa lúc dán, ke viền và khâu tay là bao lâu?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-088-1",
+          "author": "Vũ Long Workshop",
+          "authorRole": "Chuyên dây đồng hồ",
+          "authorAvatar": "💎",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:13:00Z",
+          "formattedDate": "Hôm nay lúc 10:13",
+          "content": "Do keo gốc nước Bujio / Napao cần thời gian để **hơi ẩm nước bên trong thoát hết hoàn toàn** bạn nhé! Khi keo mới dính vẫn còn ẩm: đưa mỏ nhiệt 115°C vào nước bốc hơi sẽ làm phồng tách mép ngay, còn đục kim qua thì keo chưa khô bám chặt vào mắt kim làm đen bết chỉ gai.\n- **Chuẩn thời gian thực tế**: Sau khi ép dán & gõ phẳng, để phôi nghỉ tự nhiên **15 - 20 phút** (hoặc dùng máy sấy ấm 45°C thổi qua 2 phút) rồi mới **gọt bằng mép -> ke viền nhiệt -> đục lỗ & khâu**. Khi keo đã kết tinh khô hoàn toàn, đường ke viền cực kỳ sắc nét và mũi kim đâm qua nhẹ tênh không dính 1 chút keo!",
+          "likes": 23
+        }
+      ]
+    },
+    {
+      "id": "thread-089",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "So sánh Sơn cạnh D&A và Sơn cạnh Hữu Liên: Độ dẻo, độ bám trên da Epsom/Veg-tan & chọn loại nào cho hàng handmade vs sản xuất xưởng?",
+      "author": "Hoàng Nam Bags",
+      "authorRole": "Chủ xưởng túi ví thời trang",
+      "authorAvatar": "🎨",
+      "createdAt": "2026-11-11T10:17:00Z",
+      "formattedDate": "Hôm nay lúc 10:17",
+      "badge": "So sánh D&A & Hữu Liên ★",
+      "badgeType": "featured",
+      "likes": 71,
+      "views": 1490,
+      "content": "Hiện xưởng mình làm song song 2 phân khúc: một dòng túi ví B2B số lượng lớn giá hợp lý và một dòng ví da Epsom / dây đồng hồ cao cấp bán lẻ. Đang phân vân giữa **Sơn cạnh Hữu Liên** và **Sơn cạnh D&A**! Nhờ các anh chị đánh giá công tâm độ mịn, độ dẻo chống nứt khi uốn gập, độ bền màu và chi phí giữa hai dòng sơn cạnh này ạ!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-089-1",
+          "author": "Mr. Tuân",
+          "authorRole": "Kỹ thuật RAPMAU.COM",
+          "authorAvatar": "⭐",
+          "isStaff": true,
+          "createdAt": "2026-11-11T10:19:00Z",
+          "formattedDate": "Hôm nay lúc 10:19",
+          "content": "Phân tích chuẩn xác theo từng phân khúc xưởng để bạn tối ưu cả chất lượng lẫn giá thành:\n1. **Sơn cạnh D&A (Gồm lót Primer D&A + Sơn màu D&A / Topcoat)**:\n   - *Ưu điểm*: Màng sơn sau khô **cực kỳ dẻo dai như cao su cao cấp**, chịu uốn gập liên tục 180° trên dây đồng hồ hay nếp gập ví Epsom/Togo/Veg-tan mà không nứt gãy, bề mặt sơn lỳ hoặc bóng rất sang, gần như tương đương chuẩn hàng hiệu Ý (Fenice/Uniters).\n   - *Phù hợp*: **Hàng handmade cao cấp, ví da thật giá trị cao, dây đồng hồ, đơn hàng xuất khẩu US/EU/Nhật**.\n2. **Sơn cạnh Hữu Liên**:\n   - *Ưu điểm*: **Giá thành cực kỳ kinh tế (chỉ bằng 1/3 - 1/4 sơn ngoại nhập)**, độ đặc vừa phải dễ lấp đầy khe rãnh cạnh da nhanh chỉ sau 2-3 lượt lăn máy con lăn, bảng màu đa dạng và sẵn hàng số lượng lớn.\n   - *Lưu ý kỹ thuật*: Khi chạy sơn Hữu Liên trên chỗ gập hay da có dầu bóng, cần chà nhám & đi **1 lớp sơn lót nền (Base/Primer)** thật mỏng và để khô hoàn toàn giữa các lớp — tránh sơn quá dày 1 lượt sẽ dễ rạn nứt khi gặp gấp mép gắt!\n- *Phù hợp*: **Xưởng chạy hàng B2B quà tặng, thắt lưng, sổ da, túi xách sản lượng lớn tối ưu chi phí**.",
+          "likes": 54
+        }
+      ]
+    },
+    {
+      "id": "thread-090",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Quy trình 4 bước sơn cạnh D&A (Primer + D&A Base + Sơn màu + Mỏ là nhiệt) lên viền tròn mướt, không bọt khí & không bong lột mảng",
+      "author": "Lan Anh Bag Maker",
+      "authorRole": "Thợ may mẫu túi xách",
+      "authorAvatar": "🖌️",
+      "createdAt": "2026-11-11T10:12:00Z",
+      "formattedDate": "Hôm nay lúc 10:12",
+      "badge": "Chuẩn kỹ thuật D&A ✓",
+      "badgeType": "solved",
+      "likes": 52,
+      "views": 1030,
+      "content": "Mình mới chuyển qua dùng **Sơn cạnh D&A**, nghe nói sơn rất bám và dẻo nhưng không hiểu sao mình sơn lên cạnh ví da Epsom sau 1 tuần bẻ mạnh hoặc lấy móng tay cạy ở góc vẫn bị lột theo sợi, với lại bề mặt thỉnh thoảng bị lỗ bọt khí li ti! Anh em đang dùng trọn bộ D&A chia sẻ quy trình chuẩn từng bước giúp mình nhé!",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-090-1",
+          "author": "Vũ Long Workshop",
+          "authorRole": "Chuyên dây đồng hồ",
+          "authorAvatar": "💎",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:16:00Z",
+          "formattedDate": "Hôm nay lúc 10:16",
+          "content": "Sơn D&A muốn bám chết vĩnh viễn và tròn viền như đúc khuôn, TUYỆT ĐỐI KHÔNG BỎ QUA **LỚP LÓT PRIMER** và nhớ đừng lắc chai sơn ngay trước khi dùng:\n1. **Bước 1 — Xử lý phôi & Primer**: Chà phẳng cạnh bằng giấy nhám P320 -> P600. Quét **1 lớp thật mỏng D&A Primer (chất tăng bám)** để nó thấm sâu vào từng thớ sợi da -> đợi khô hoàn toàn 15 phút.\n2. **Bước 2 — Lớp nền san phẳng (D&A Basecoat)**: Lăn 1 lớp Basecoat lấp kẽ hở giữa 2 lớp da, đợi khô -> dùng nhám P800 chà thật nhẹ làm phẳng gờ.\n3. **Bước 3 — Sơn màu D&A (2-3 lượt mỏng)**: Khuấy nhẹ bằng que gỗ (KHÔNG lắc mạnh tạo bọt khí!) rồi lăn từng lớp mỏng cách nhau 20-30 phút. Giữa các lớp có thể dùng **mỏ hàn nhiệt / đầu là cạnh ở 120°C - 135°C** là nhẹ qua bề mặt sơn đã khô để làm tan bọt khí và nén chặt sơn xuống cạnh (lưu ý dán đầu đồng sạch, không để quá nóng cháy sơn).\n4. **Bước 4 — Khóa bề mặt (Matte/Gloss Topcoat)**: Đi 1 lượt phủ khóa D&A cuối cùng để chống trầy, chống mồ hôi tay & không bao giờ bị dính khi thời tiết nóng ẩm!",
+          "likes": 41
+        }
+      ]
+    },
+    {
+      "id": "thread-091",
+      "categoryId": "son-canh",
+      "categoryName": "Sơn Viền & Xử Lý Cạnh",
+      "title": "Xử lý Sơn cạnh Hữu Liên bị nứt chân chim ở chỗ gập ví, bị dính tay ngày nồm ẩm & cách pha chạy máy sơn con lăn",
+      "author": "Cơ Sở Da Bảo An",
+      "authorRole": "Xưởng gia công túi cặp",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-11T10:07:00Z",
+      "formattedDate": "Hôm nay lúc 10:07",
+      "badge": "Bắt bệnh Hữu Liên ✓",
+      "badgeType": "solved",
+      "likes": 37,
+      "views": 745,
+      "content": "Xưởng mình chuyên chạy **sơn cạnh Hữu Liên** cho dây thắt lưng và bìa sổ/ví công sở số lượng lớn. Tuy nhiên gặp 2 vấn đề nhờ anh em tư vấn: 1) Ở nếp gập giữa của ví nam sau khi sơn vài ngày bị nứt rạn nhẹ hình chân chim; 2) Trời mưa độ ẩm cao sơn xong bỏ túi nilon bị dính bết vào túi bóng! Khi đổ vào máy sơn con lăn thì có cần pha thêm gì cho mượt không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "c-091-1",
+          "author": "Thanh Hà Craft",
+          "authorRole": "Chủ xưởng dây nịt",
+          "authorAvatar": "🎡",
+          "isStaff": false,
+          "createdAt": "2026-11-11T10:11:00Z",
+          "formattedDate": "Hôm nay lúc 10:11",
+          "content": "Mình chạy sơn Hữu Liên mấy nghìn dây nịt & bìa sổ mỗi tháng, xử lý 3 bệnh này cực kỳ đơn giản:\n1. **Chống nứt chân chim ở nếp gập**: Nguyên nhân do quét **1 lớp quá dày** khiến bề mặt ngoài khô trước còn bên trong rút co gây rạn! Hãy chia làm **2-3 lượt mỏng**, pha loãng nhẹ lượt 1 bằng **5-8% nước cất sạch (hoặc dung môi lót hãng)** cho thấm bám chặt vào thớ da trước, rồi mới đi lượt phủ mỏng.\n2. **Chống dính túi nilon mùa mưa nồm**: Sau khi sơn lượt cuối, cho khay sản phẩm qua **tủ sấy ấm tuần hoàn 45°C - 50°C khoảng 20 phút** cho bay hết ẩm, sau đó đánh qua **1 lớp sáp ong / sáp carnauba hoặc phủ bóng/mờ (Topcoat)** dọc viền cạnh -> bề mặt trơn lì tuyệt đối, đóng gói túi OPP không bao giờ dính!\n3. **Chạy máy sơn cạnh con lăn**: Pha thêm tối đa 5% nước sạch nếu sơn trong hộp để qua đêm bị bay hơi đặc, khuấy đều chậm và chỉnh dao gạt mực máy con lăn thật sát để kéo màng mỏng mịn.",
+          "likes": 31
+        }
+      ]
+    },
     {
       "id": "thread-080",
       "categoryId": "may-moc-xuong",
