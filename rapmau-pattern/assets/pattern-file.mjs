@@ -1,0 +1,12 @@
+export function validatePatternFile(doc){
+ if(doc?.schema!==1||doc.units!=='mm'||!doc.state||!Array.isArray(doc.state.pieces)||!doc.state.pieces.length||doc.state.pieces.length>250)throw Error('Không đúng định dạng bản rập RAPMAU.');
+ const a=doc.state.paperWatermark;if(a&&(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(a.src||'')||a.src.length>2000000||!['x','y','w','h','opacity'].every(k=>Number.isFinite(a[k]))||a.w<=0||a.h<=0||a.opacity<.05||a.opacity>1))throw Error('Logo watermark trong file không hợp lệ.');
+ const s=doc.state;if(!Number.isInteger(s.active)||s.active<0||s.active>=s.pieces.length)throw Error('Chi tiết đang chọn không hợp lệ.');
+ if(!['A0','A1','A2','A3','A4'].includes(s.paperSize)||!['portrait','landscape'].includes(s.orientation))throw Error('Khổ giấy không hợp lệ.');
+ const point=q=>q&&Number.isFinite(q.x)&&Number.isFinite(q.y)&&Math.abs(q.x)<1e7&&Math.abs(q.y)<1e7;
+ for(const p of [...s.pieces,...(s.staged?.pieces||[])]){if(!Array.isArray(p.points)||p.points.length>10000||!p.points.every(point)||!Number.isInteger(p.quantity)||p.quantity<1||typeof p.name!=='string')throw Error('Dữ liệu chi tiết không hợp lệ.');for(const h of p.handles||[])if(!point(h.in)||!point(h.out))throw Error('Điểm cong không hợp lệ.');for(const key of ['holes','notches'])if(!(p[key]||[]).every(point))throw Error('Điểm kỹ thuật không hợp lệ.');for(const key of ['folds','stitches'])for(const l of p[key]||[])if(!Array.isArray(l.points)||!l.points.every(point))throw Error('Đường kỹ thuật không hợp lệ.');for(const e of p.production?.entities||[])if(!['sew','fold','skive','hole','logo','note'].includes(e.layer)||!Array.isArray(e.points)||!e.points.length||e.points.length>2000||!e.points.every(q=>point(q)&&q.x>=0&&q.x<=1&&q.y>=0&&q.y<=1)||e.layer==='hole'&&!(e.diameter>0))throw Error('Lớp kỹ thuật không hợp lệ.');}
+ if(s.staged&&(!(s.staged.scale>0)||!Array.isArray(s.staged.pieces)||s.staged.pieces.length>250))throw Error('Bố trí giấy không hợp lệ.');
+ if(doc.imageInfo&&(!Number.isFinite(doc.imageInfo.width)||!Number.isFinite(doc.imageInfo.height)||doc.imageInfo.width<=0||doc.imageInfo.height<=0||doc.imageInfo.width>20000||doc.imageInfo.height>20000))throw Error('Kích thước ảnh tham chiếu không hợp lệ.');
+ if(doc.referenceDataUrl&&!/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(doc.referenceDataUrl))throw Error('Ảnh tham chiếu không hợp lệ.');
+ return doc;
+}

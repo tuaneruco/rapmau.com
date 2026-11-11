@@ -12,3 +12,5 @@
   Cache-Control: public, max-age=604800, immutable
 /rapmau-studio/assets/vendor/*.wasm
   Content-Type: application/wasm
+/rapmau-pattern/assets/*
+  Cache-Control: public, max-age=604800

@@ -1,0 +1,356 @@
+/* Dedicated workbench: navigation and properties never consume drawing height. */
+/* Keep the compact tool directory; remove the full cross-module navigation row. */
+body.pattern-workbench>header.studio-header>nav.studio-groups{display:none!important}
+body.pattern-workbench .layout{display:grid;grid-template-columns:64px 250px minmax(0,1fr) 260px;height:calc(100dvh - var(--workbench-top,56px));min-height:610px;overflow:hidden;position:relative}
+body.pattern-workbench .app-rail{grid-column:1;grid-row:1;padding:8px 3px;overflow:auto}
+body.pattern-workbench .side{grid-column:2;grid-row:1;padding:12px;min-width:0;overflow:auto;background:#fff;border-right:1px solid #dce5df}
+body.pattern-workbench .pattern-inspector{grid-column:4;grid-row:1;min-width:0;padding:12px;overflow:auto;background:#fff;border-left:1px solid #dce5df}
+body.pattern-workbench .workspace,body.pattern-workbench .workspace.reviewing{grid-column:3;grid-row:1;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto minmax(300px,1fr) auto;gap:6px;padding:10px;min-width:0;min-height:0;overflow:hidden}
+body.pattern-workbench .workspace>.heading,body.pattern-workbench .workspace>.help{display:none}
+body.pattern-workbench .pattern-steps{grid-row:1;grid-column:1/-1;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;padding-bottom:3px}
+body.pattern-workbench .pattern-steps button{font-size:12px;padding:8px;border-radius:7px;flex:none}
+body.pattern-workbench .pattern-steps button[aria-pressed=true]{background:#245740;color:#fff;border-color:#245740}
+body.pattern-workbench .workspace>.quick-bar{grid-row:2;grid-column:1/-1;gap:4px;margin:0;padding:5px;flex-wrap:wrap;overflow:visible;min-height:0}
+body.pattern-workbench .quick-bar>button{padding:6px;font-size:11px;min-height:30px}
+body.pattern-workbench .workspace>.workflow{grid-row:3;grid-column:1/-1;min-height:0;margin:0;padding:0;font-size:11px}
+body.pattern-workbench #editTab,body.pattern-workbench #paperTab{display:none}
+body.pattern-workbench .workspace>.draft-viewbar{grid-row:4;grid-column:1/-1;margin:0;padding:5px;gap:5px;min-height:34px;flex-wrap:wrap}
+body.pattern-workbench .draft-viewbar button{font-size:11px;padding:5px 7px}
+body.pattern-workbench .pattern-zoom-slider{display:none}
+body.pattern-workbench .workspace>.editing-surface{grid-row:5;grid-column:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+body.pattern-workbench .editing-surface .canvas-wrap{display:flex;justify-content:center;align-items:center;flex:1 1 0;min-height:0;padding:8px;overflow:hidden}
+body.pattern-workbench .canvas-wrap #draft{max-width:100%;max-height:100%;flex:none;object-fit:contain}
+body.pattern-workbench .editing-surface>.summary{flex:none;font-size:11px;margin:0;padding:5px 8px}
+body.pattern-workbench .pattern-transfer{grid-row:6;grid-column:1/-1;display:flex;align-items:center;gap:8px;min-width:0}
+body.pattern-workbench .pattern-transfer button{flex:none;font-size:12px;padding:8px}
+body.pattern-workbench .pattern-transfer #status{font-size:11px;margin:0;max-height:36px;overflow:auto}
+body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper){grid-template-columns:minmax(0,var(--draft-fr,1fr)) 8px minmax(0,1fr)}
+body.pattern-workbench .workspace>.paper-surface{grid-row:5;grid-column:3;min-height:0;overflow:auto}
+body.pattern-workbench .workspace>.pane-divider{grid-row:5;grid-column:2}
+body.pattern-workbench .workspace.focus-paper>.paper-surface{grid-column:1}
+body.pattern-workbench .workspace.focus-paper>.editing-surface,body.pattern-workbench .workspace.focus-draft>.paper-surface{display:none}
+body.pattern-workbench .paper canvas{width:100%;height:auto;max-height:58dvh;object-fit:contain}
+body.pattern-workbench .panel-title{display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:13px;margin-bottom:12px}
+body.pattern-workbench .pattern-inspector .stage-actions{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:0;max-height:none;overflow:visible}
+body.pattern-workbench .pattern-inspector .stage-actions>[hidden]{display:none!important}
+body.pattern-workbench .pattern-inspector .piece-editor,body.pattern-workbench .pattern-inspector .text-editor{flex:none;max-height:none;overflow:visible;gap:7px;padding:8px 0;border-bottom:1px solid #e5ebe7}
+body.pattern-workbench .pattern-inspector label{font-size:12px;flex-wrap:wrap;max-width:100%}
+body.pattern-workbench .pattern-inspector input{max-width:100%}
+body.pattern-workbench .pattern-inspector button{font-size:12px;padding:7px;white-space:normal}
+body.pattern-workbench .pattern-inspector .compact-list>.annotation-strip{position:static;width:100%;max-height:220px}
+body.pattern-workbench .pattern-input-fold>summary{font-weight:700;font-size:13px;cursor:pointer;padding:12px 0}
+body.pattern-workbench .pattern-input-fold>.eyebrow,body.pattern-workbench .pattern-input-fold>h1,body.pattern-workbench .pattern-input-fold>.intro{display:none}
+body.pattern-workbench .pattern-piece-panel h2{font-size:14px;margin:16px 0 10px}
+body.pattern-workbench .piece-carousel{display:flex;flex-wrap:wrap}
+body.pattern-workbench #pieceStrip,body.pattern-workbench .pattern-tiny-list{display:flex;flex-direction:column;align-items:stretch;gap:7px;width:100%;overflow:visible;max-height:none;flex:1 1 100%}
+body.pattern-workbench .piece-carousel>button{display:none}
+body.pattern-workbench #piecePageInfo{order:-1;white-space:normal;font-size:11px;padding-bottom:6px}
+body.pattern-workbench .piece-chip-wrap{display:grid;grid-template-columns:18px 44px minmax(0,1fr) 26px;grid-template-rows:auto auto;gap:3px;align-items:center;max-width:none;min-width:0;width:100%;border-radius:8px;padding:6px;white-space:normal}
+body.pattern-workbench .piece-chip-wrap input{grid-column:1;grid-row:1/3;margin:0;width:15px}
+body.pattern-workbench .pattern-thumb{grid-column:2;grid-row:1/3;width:44px;height:36px;background:#f6f9f7;border-radius:4px}
+body.pattern-workbench .piece-chip{grid-column:3;grid-row:1;max-width:100%;min-width:0;border:0;background:none;padding:2px!important;text-align:left;font-size:12px;white-space:normal!important;overflow-wrap:anywhere}
+body.pattern-workbench .pattern-piece-info{grid-column:3/5;grid-row:2;font-size:10px;line-height:1.5;color:#5b7062}
+body.pattern-workbench .pattern-piece-zoom{grid-column:4;grid-row:1;padding:3px;font-size:18px}
+body.pattern-workbench .piece-chip-delete{display:none}
+body.pattern-workbench .pattern-tiny{margin-top:12px;border-top:1px solid #e0e7e2;padding-top:10px}
+body.pattern-workbench .pattern-tiny summary{font-size:12px;color:#925c34;cursor:pointer;margin-bottom:8px}
+body.pattern-workbench .pattern-list-actions{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+body.pattern-workbench .pattern-list-actions button{font-size:11px;padding:6px}
+body.pattern-workbench .pattern-more,body.pattern-workbench .pattern-zoom-help{position:relative;font-size:11px;cursor:pointer}
+body.pattern-workbench .pattern-more summary,body.pattern-workbench .pattern-zoom-help summary{padding:7px}
+body.pattern-workbench .pattern-more-body,body.pattern-workbench .pattern-zoom-help .viewbar-help{position:absolute;right:0;top:100%;z-index:40;background:#fff;padding:12px;border:1px solid #ccd9d0;box-shadow:0 8px 25px #19392c25;border-radius:8px;width:min(360px,75vw)}
+body.pattern-workbench .pattern-more-body{display:flex;flex-wrap:wrap;gap:6px}
+body.pattern-workbench .pattern-zoom-help[open] .viewbar-help{display:block;line-height:1.6}
+body.pattern-workbench .pattern-more:not([open]) .pattern-more-body{display:none}
+body.pattern-workbench.hide-pattern-left .layout{grid-template-columns:64px 0 minmax(0,1fr) 260px}
+body.pattern-workbench.hide-pattern-right .layout{grid-template-columns:64px 250px minmax(0,1fr) 0}
+body.pattern-workbench.hide-pattern-left.hide-pattern-right .layout{grid-template-columns:64px 0 minmax(0,1fr) 0}
+body.pattern-workbench.hide-pattern-left .side,body.pattern-workbench.hide-pattern-right .pattern-inspector{display:none}
+body.pattern-workbench.drawing-focus .layout{grid-template-columns:0 0 minmax(0,1fr) 0;height:100dvh}
+body.pattern-workbench.drawing-focus .side,body.pattern-workbench.drawing-focus .pattern-inspector{display:none}
+@media(max-width:1099px){
+ body.pattern-workbench .layout,body.pattern-workbench.hide-pattern-left .layout,body.pattern-workbench.hide-pattern-right .layout,body.pattern-workbench.hide-pattern-left.hide-pattern-right .layout{grid-template-columns:56px 0 minmax(0,1fr) 0}
+ body.pattern-workbench .side,body.pattern-workbench .pattern-inspector{position:absolute;top:0;bottom:0;z-index:50;width:280px;box-shadow:0 8px 30px #173e2d35}
+ body.pattern-workbench .side{left:56px}body.pattern-workbench .pattern-inspector{right:0}
+ body.pattern-workbench .app-rail{position:static;display:flex;flex-direction:column;justify-content:flex-start}
+ body.pattern-workbench .app-rail button{min-width:0;width:100%;font-size:10px}
+}
+@media(max-width:600px){
+ body.pattern-workbench .layout{height:calc(100dvh - var(--workbench-top,48px));min-height:630px}
+ body.pattern-workbench .workspace,body.pattern-workbench .workspace.reviewing{padding:5px;gap:4px;grid-template-rows:auto auto auto auto minmax(300px,1fr) auto}
+ body.pattern-workbench .quick-shapes{display:none}
+ body.pattern-workbench #draftPaperLabel{display:none}
+ body.pattern-workbench .pattern-transfer{flex-wrap:wrap}
+ body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper){grid-template-columns:minmax(0,1fr);overflow:auto}
+ body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper)>.paper-surface{grid-column:1;grid-row:6;max-height:65dvh}
+ body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper)>.pattern-transfer{grid-row:7}
+}
+
+/* Adaptive editing workspace, with a narrow tool rail and on-demand panels. */
+body.pattern-workbench{margin:0;overflow:hidden}
+body.pattern-workbench .layout{min-height:0;height:calc(100dvh - var(--workbench-top,64px));height:max(260px,calc(100dvh - var(--workbench-top,64px)))}
+body.pattern-workbench .workspace,body.pattern-workbench .workspace.reviewing{grid-template-rows:auto auto auto auto minmax(0,1fr) auto;min-height:0}
+body.pattern-workbench .pattern-steps{scrollbar-width:thin}
+body.pattern-workbench .pattern-steps button{min-height:36px}
+body.pattern-workbench .pattern-drawing-tools{display:flex;flex-direction:column;gap:4px;border-top:1px solid #ccd7cf;margin-top:10px;padding-top:8px}
+body.pattern-workbench .pattern-drawing-tools button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:44px;padding:4px;width:100%;border:1px solid transparent;border-radius:6px;background:transparent;color:#304d3c}
+body.pattern-workbench .pattern-drawing-tools button span{font-size:20px;line-height:1}
+body.pattern-workbench .pattern-drawing-tools small{font-size:9px;line-height:1.3}
+body.pattern-workbench .pattern-drawing-tools button.selected{background:#28583f;color:white;border-color:#28583f}
+body.pattern-workbench .app-rail{overscroll-behavior:contain;scrollbar-width:thin}
+body.pattern-workbench .quick-bar{align-items:center}
+body.pattern-workbench .quick-bar .quick-shapes{display:flex}
+body.pattern-workbench .pattern-more-body,body.pattern-workbench .pattern-zoom-help .viewbar-help{position:fixed;right:auto;bottom:auto;width:min(360px,calc(100vw - 16px));box-sizing:border-box;overflow:auto;overscroll-behavior:contain;z-index:100}
+body.pattern-workbench .pattern-more-body .quick-shapes{display:flex;flex-wrap:wrap;max-width:100%}
+body.pattern-workbench .pattern-more-body button{min-height:36px}
+body.pattern-workbench .pattern-panel-backdrop{position:absolute;inset:0;z-index:45;background:#13251c55;border:0;border-radius:0;font-size:0;padding:0}
+body.pattern-workbench .pattern-panel-backdrop[hidden]{display:none}
+body.pattern-workbench .panel-title{position:sticky;top:-12px;background:white;z-index:2;padding:10px 0}
+body.pattern-workbench .side,body.pattern-workbench .pattern-inspector{overscroll-behavior:contain;scrollbar-width:thin;box-sizing:border-box}
+body.pattern-workbench .pattern-inspector input[type=text]{width:100%}
+body.pattern-workbench .pattern-inspector input[type=number]{width:85px}
+body.pattern-workbench #validationMessage{font-size:12px;line-height:1.5}
+body.pattern-workbench .paper-surface .review-panel{padding:10px}
+body.pattern-workbench .paper-surface .actions{display:flex;flex-wrap:wrap;gap:6px}
+body.pattern-workbench .paper-surface .actions>*{max-width:100%}
+body.pattern-workbench .paper canvas{height:auto;max-height:none;width:100%;object-fit:contain}
+body.pattern-workbench button:focus-visible,body.pattern-workbench summary:focus-visible{outline:2px solid #327e58;outline-offset:2px}
+body.pattern-workbench.drawing-focus .workspace{height:auto}
+@media(max-width:1099px){
+ body.pattern-workbench .side,body.pattern-workbench .pattern-inspector{width:min(340px,calc(100vw - 68px));max-width:100%;height:100%;padding-bottom:max(16px,env(safe-area-inset-bottom))}
+ body.pattern-workbench .pattern-steps button{font-size:11px;padding:6px}
+ body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper){grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto minmax(0,1fr) minmax(0,1fr) auto}
+ body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper)>.paper-surface{grid-column:1;grid-row:6;min-height:0;max-height:none}
+ body.pattern-workbench .workspace.reviewing:not(.focus-draft):not(.focus-paper)>.pattern-transfer{grid-row:7}
+ body.pattern-workbench .pane-divider{display:none}
+ body.pattern-workbench .pattern-inspector button,body.pattern-workbench .side button{min-height:40px}
+}
+@media(max-width:600px){
+ body.pattern-workbench>header.studio-header{padding:4px 8px!important;gap:4px!important;flex-wrap:nowrap!important;min-height:44px}
+ body.pattern-workbench>header.studio-header .brand{display:none}
+ body.pattern-workbench>header.studio-header .studio-tools{padding:0!important;min-width:0;flex-wrap:nowrap}
+ body.pattern-workbench>header.studio-header button{font-size:11px;min-height:36px;padding:5px 7px}
+ body.pattern-workbench .workspace,body.pattern-workbench .workspace.reviewing{padding:4px;grid-template-rows:auto auto auto auto minmax(0,1fr) auto}
+ body.pattern-workbench .pattern-steps button{min-height:40px}
+ body.pattern-workbench .draft-viewbar{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:thin}
+ body.pattern-workbench .draft-viewbar>*{flex-shrink:0}
+ body.pattern-workbench .draft-viewbar button{min-height:40px}
+ body.pattern-workbench .draft-viewbar #draftZoomPreset{min-height:40px}
+ body.pattern-workbench .pattern-transfer{flex-wrap:nowrap;align-items:center;padding-bottom:env(safe-area-inset-bottom)}
+ body.pattern-workbench .pattern-transfer button{min-height:40px;font-size:11px;white-space:normal;max-width:55%}
+ body.pattern-workbench .pattern-transfer #status{font-size:10px;max-height:44px;line-height:1.4}
+ body.pattern-workbench #workflowStatus{display:none}
+ body.pattern-workbench .editing-surface>.summary{font-size:10px;max-height:30px;overflow:auto}
+ body.pattern-workbench .view-controls{flex-wrap:nowrap;overflow-x:auto}
+ body.pattern-workbench .view-controls button{white-space:nowrap;min-height:36px}
+ body.pattern-workbench .pattern-thumb{width:44px;height:36px}
+}
+@media(max-height:550px){
+ body.pattern-workbench .pattern-steps button,body.pattern-workbench .draft-viewbar button{min-height:30px;padding:4px 6px}
+ body.pattern-workbench .workspace,body.pattern-workbench .workspace.reviewing{gap:2px;padding:3px}
+ body.pattern-workbench .editing-surface>.summary{display:none}
+ body.pattern-workbench .pattern-transfer #status{max-height:28px}
+}
+@media(pointer:coarse){
+ body.pattern-workbench .pattern-piece-zoom{min-width:32px;min-height:40px}
+ body.pattern-workbench .piece-chip-wrap{grid-template-columns:22px 44px minmax(0,1fr) 34px;min-height:56px}
+ body.pattern-workbench .piece-chip-wrap input{width:20px;height:20px}
+ body.pattern-workbench .pattern-inspector input,body.pattern-workbench .pattern-inspector select,body.pattern-workbench .side input:not([type=checkbox]):not([type=range]),body.pattern-workbench .side select{font-size:16px;min-height:36px}
+}
+body.pattern-workbench .pattern-context-hint{font-size:11px;color:#566a5d;flex:1;min-width:80px;max-width:420px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin:0}
+body.pattern-workbench.drawing-focus .layout{grid-template-columns:64px 0 minmax(0,1fr) 0}
+body.pattern-workbench.drawing-focus .app-rail{display:flex;flex-direction:column}
+@media(max-width:600px){body.pattern-workbench .pattern-context-hint{display:none}}
+.pattern-shortcut-dialog{width:min(650px,calc(100vw - 24px));max-height:85dvh;overflow:auto;border:1px solid #b9cdbf;border-radius:12px;padding:20px;color:#234632;background:white;box-sizing:border-box}.pattern-shortcut-dialog::backdrop{background:#10261b88}.pattern-shortcut-dialog h2{font-size:20px;margin:0 0 12px}.pattern-shortcut-dialog p{font-size:12px;line-height:1.6}.pattern-shortcut-dialog table{width:100%;border-collapse:collapse;font-size:13px}.pattern-shortcut-dialog td,.pattern-shortcut-dialog th{padding:9px 6px;text-align:left;border-bottom:1px solid #dce5df}.pattern-shortcut-dialog td:first-child{font-weight:600;width:43%}.pattern-shortcut-dialog>button{margin-top:14px;min-height:40px}
+.production-panel{margin:12px 0;border-top:1px solid #d7e2db;padding-top:10px;font-size:12px}.production-panel>summary{font-weight:700;cursor:pointer;padding:8px 0}.production-panel>label{display:flex;flex-direction:column;align-items:stretch;gap:5px;margin:8px 0}.production-panel input,.production-panel select{width:100%;box-sizing:border-box;padding:7px;border:1px solid #c9d8ce;border-radius:6px;background:white;color:#234632}.production-panel input[type=checkbox]{width:18px;height:18px}.production-panel>button{margin:5px 4px 5px 0;min-height:36px}.production-layer{display:grid;grid-template-columns:1fr auto auto;gap:6px;padding:8px 0;align-items:center;border-bottom:1px solid #edf1ee}.production-layer label{display:flex;align-items:center;gap:3px;font-size:10px}.production-entity{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:6px;overflow-wrap:anywhere}.production-entity span{min-width:0}.production-panel p{line-height:1.6}.production-panel .hint{font-size:11px}
+body.pattern-compact-menu>header.studio-header{display:flex;align-items:center;flex-wrap:nowrap;gap:8px!important;padding:5px 10px!important;min-height:46px;box-sizing:border-box}
+body.pattern-compact-menu>header.studio-header>.brand{display:none}
+body.pattern-compact-menu .pattern-menubar{display:flex;align-items:center;gap:3px;flex:none;order:0}
+body.pattern-compact-menu .pattern-menu>summary{padding:9px 10px;cursor:pointer;font-size:12px;border-radius:5px;list-style:none}
+body.pattern-compact-menu .pattern-menu[open]>summary{background:#e2ece6}
+body.pattern-compact-menu .pattern-menu-body{position:fixed;z-index:120;width:280px;max-width:calc(100vw - 16px);overflow:auto;box-sizing:border-box;padding:8px;background:white;border:1px solid #c8d7ce;border-radius:8px;box-shadow:0 12px 30px #163e2b33}
+body.pattern-compact-menu .pattern-menu-body>button{display:block;width:100%;text-align:left;min-height:38px;padding:9px;border:0;background:white;color:#244a34;font-size:12px;border-radius:5px}
+body.pattern-compact-menu .pattern-menu-body>button:hover{background:#eef4f0}
+body.pattern-compact-menu .pattern-menu-body .hint{font-size:11px;padding:8px;line-height:1.6;white-space:normal}
+body.pattern-compact-menu .pattern-document-name{order:1;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#526b5b}
+body.pattern-compact-menu .pattern-file-actions{order:2;display:flex;gap:5px;flex:none}
+body.pattern-compact-menu .pattern-file-actions button{font-size:12px;padding:7px 10px;min-height:34px}
+body.pattern-compact-menu>header.studio-header>.studio-tools{order:3;padding:0!important;flex:none;width:auto!important}
+body.pattern-compact-menu .studio-breadcrumb{display:none}
+body.pattern-compact-menu .app-rail>.pattern-source-command{display:none}
+body.pattern-compact-menu .pattern-drawing-tools{margin-top:5px;padding-top:5px}
+body.pattern-compact-menu .pattern-steps{padding:0}
+body.pattern-compact-menu .pattern-steps>button{flex:1;min-height:32px}
+body.pattern-compact-menu .workspace>.workflow{display:none}
+body.pattern-compact-menu .workspace,body.pattern-compact-menu .workspace.reviewing{grid-template-rows:auto auto 0 auto minmax(0,1fr) auto}
+body.pattern-compact-menu .pattern-menu-body button[aria-expanded=true]{background:#e5f0e8}
+@media(max-width:1099px){body.pattern-compact-menu .workspace.reviewing:not(.focus-draft):not(.focus-paper){grid-template-rows:auto auto 0 auto minmax(0,1fr) minmax(0,1fr) auto}}
+@media(max-width:700px){body.pattern-compact-menu .pattern-document-name,body.pattern-compact-menu .pattern-file-actions{display:none}body.pattern-compact-menu>header.studio-header{justify-content:space-between}body.pattern-compact-menu .pattern-menu>summary{padding:10px 7px;min-height:36px;box-sizing:border-box}body.pattern-compact-menu .pattern-menu-body>button{min-height:44px}body.pattern-compact-menu .studio-directory-button{max-width:110px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+body.pattern-compact-menu>header.studio-header>.brand{display:inline-flex;order:-1;flex:none;margin:0}
+body.pattern-compact-menu>header.studio-header>.brand img{width:54px!important;height:28px!important;object-fit:contain}
+body.pattern-compact-menu .pattern-menu-body>label{display:flex;flex-wrap:wrap;gap:5px;font-size:12px;padding:10px}
+@media(max-width:430px){body.pattern-compact-menu>header.studio-header>.brand{display:none}}
+
+/* Explicit selection and sheet scope stay available with collapsed panels. */
+body.pattern-workbench .pattern-transfer{flex-wrap:wrap}
+.pattern-transfer-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;width:100%}
+.pattern-transfer-controls label{display:flex;align-items:center;gap:5px;font-size:12px}
+.pattern-transfer-controls select{max-width:260px;min-height:36px;font-size:12px}
+.pattern-transfer-summary{font-size:12px;color:#416452}
+.pattern-selection-actions{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.pattern-piece-panel input[type=checkbox]{width:20px;height:20px;cursor:pointer}
+@media(max-width:700px){.pattern-transfer-controls{gap:5px}.pattern-transfer-controls label{flex:1 1 45%;display:grid}.pattern-transfer-controls select{width:100%;min-width:0;max-width:100%;min-height:40px}.pattern-transfer-controls>button{min-height:44px}.pattern-transfer-summary{flex-basis:100%}}
+
+/* Editing-first layout: persistent actions stay compact; transfer options open on demand. */
+body.pattern-workbench .pattern-transfer{padding:5px 0;gap:6px}
+body.pattern-workbench .pattern-transfer #status{flex:1 1 100%;margin:0;max-height:30px}
+body.pattern-workbench .pattern-transfer-summary{margin-left:auto}
+body.pattern-workbench .pattern-panel-shortcuts{display:flex;gap:4px;margin-left:auto;flex:none}
+body.pattern-workbench .pattern-panel-shortcuts button{font-size:12px;padding:6px 10px;min-height:34px;white-space:nowrap}
+body.pattern-workbench .pattern-panel-shortcuts button[aria-expanded=true]{background:#e5f0e8;border-color:#609a77}
+body.pattern-workbench .pattern-context-hint{flex-basis:160px;max-width:280px}
+body.pattern-workbench .pattern-piece-finder{display:grid;gap:5px;margin:10px 0}
+body.pattern-workbench .pattern-piece-finder input{width:100%;box-sizing:border-box;border:1px solid #cad8cf;border-radius:7px;padding:9px;background:#f8faf9;font-size:13px}
+body.pattern-workbench .pattern-piece-finder small{font-size:11px;color:#65786c}
+body.pattern-workbench .piece-chip-wrap[hidden]{display:none!important}
+body.pattern-workbench .piece-chip-wrap.selected{border-color:#438360;background:#edf6ef}
+body.pattern-workbench .piece-chip-wrap.chosen{box-shadow:inset 3px 0 #c07b20}
+body.pattern-workbench .pattern-piece-panel h2{margin-top:8px}
+body.pattern-workbench .pattern-selection-actions button{font-size:11px;min-height:34px;padding:6px}
+.pattern-transfer-dialog{width:min(500px,calc(100vw - 24px));max-height:85dvh;overflow:auto;box-sizing:border-box;border:1px solid #bacdc1;border-radius:14px;padding:22px;color:#234632;background:#fff;box-shadow:0 20px 70px #102f2733}
+.pattern-transfer-dialog::backdrop{background:#10261b88}
+.pattern-transfer-dialog h2{font-size:20px;margin:0 0 10px}
+.pattern-transfer-dialog .hint{font-size:13px;line-height:1.6;margin-bottom:18px}
+.pattern-transfer-dialog .pattern-transfer-controls{display:grid;gap:16px}
+.pattern-transfer-dialog .pattern-transfer-controls label{display:grid;gap:7px;font-size:13px;font-weight:600}
+.pattern-transfer-dialog select{width:100%;max-width:none;min-height:44px;padding:8px;font-size:14px;border:1px solid #b8cfc0;border-radius:7px;background:#fff}
+.pattern-transfer-dialog button{min-height:44px;padding:10px 14px;font-size:13px;border-radius:7px}
+.pattern-transfer-dialog #stageToPaper{width:100%}
+.pattern-transfer-dialog>button{width:100%;background:#f1f5f2;color:#365f45;border:1px solid #d6e2da}
+.pattern-transfer-feedback{font-size:13px;line-height:1.6;color:#934820}
+.pattern-transfer-feedback:empty{display:none}
+@media(max-width:700px){
+ body.pattern-workbench .pattern-transfer-summary{flex-basis:100%;font-size:10px;margin-left:0}
+ body.pattern-workbench .pattern-panel-shortcuts button{min-height:40px;padding:5px 7px;font-size:11px}
+ body.pattern-workbench .pattern-context-hint{display:none}
+ body.pattern-workbench .pattern-transfer>button{min-height:40px;font-size:11px;max-width:none}
+ body.pattern-workbench .pattern-transfer #status{max-height:28px}
+ .pattern-transfer-dialog select{font-size:16px}
+}
+@media(max-height:550px){body.pattern-workbench .pattern-transfer-summary{display:none}body.pattern-workbench .pattern-transfer{padding:0}body.pattern-workbench .pattern-transfer #status{max-height:18px}}
+
+/* Keep help in tooltips and the Help menu, freeing sheet height. */
+body.pattern-workbench .pattern-context-hint,
+body.pattern-workbench .paper>p.hint,
+body.pattern-workbench .paper-text-controls>span{display:none}
+body.pattern-workbench .paper-text-controls[hidden]{display:none!important}
+body.pattern-workbench .paper-head{margin-bottom:5px}
+body.pattern-workbench .paper-tools,
+body.pattern-workbench .paper-edit-tools{gap:5px;margin:5px 0;padding:4px 0}
+body.pattern-workbench .paper-tools button,
+body.pattern-workbench .paper-edit-tools button{font-size:12px;min-height:34px;padding:6px 9px}
+body.pattern-workbench .pattern-transfer #status{order:2}
+@media(pointer:coarse){body.pattern-workbench .paper-tools button,body.pattern-workbench .paper-edit-tools button{min-height:44px}}
+/* Horizontal toolbox and resizable dual canvas. */
+body.pattern-dual-workspace .app-rail{display:none!important}
+body.pattern-dual-workspace .layout{grid-template-columns:0 250px minmax(0,1fr) 260px}
+body.pattern-dual-workspace.hide-pattern-left .layout{grid-template-columns:0 0 minmax(0,1fr) 260px}
+body.pattern-dual-workspace.hide-pattern-right .layout{grid-template-columns:0 250px minmax(0,1fr) 0}
+body.pattern-dual-workspace.hide-pattern-left.hide-pattern-right .layout,body.pattern-dual-workspace.drawing-focus .layout{grid-template-columns:0 0 minmax(0,1fr) 0}
+body.pattern-dual-workspace .workspace,body.pattern-dual-workspace .workspace.reviewing,body.pattern-dual-workspace .workspace.reviewing:not(.focus-draft):not(.focus-paper){grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto}
+body.pattern-dual-workspace .workspace>.quick-bar{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+body.pattern-dual-workspace .pattern-drawing-tools{display:flex;flex-direction:row;gap:4px;border:0;margin:0;padding:0;flex-wrap:wrap}
+body.pattern-dual-workspace .pattern-drawing-tools button{flex-direction:row;width:auto;min-height:34px;padding:5px 8px;gap:5px}
+body.pattern-dual-workspace .pattern-drawing-tools button small{font-size:11px}
+body.pattern-dual-workspace .pattern-inline-tools{display:flex;flex-wrap:wrap;position:static!important;max-height:none!important;width:auto!important;max-width:none;padding:0;border:0;box-shadow:none;gap:4px;overflow:visible;flex:1 1 100%;background:transparent}
+body.pattern-dual-workspace .pattern-inline-tools>*{font-size:11px;min-height:30px}
+body.pattern-dual-workspace .pattern-inline-tools button{padding:4px 7px;min-height:30px}
+body.pattern-dual-workspace .pattern-horizontal-paper-tools{display:flex;align-items:center;flex-wrap:wrap;gap:4px;width:100%;border-top:1px solid #dce5df;margin:0;padding:5px 0 0}
+body.pattern-dual-workspace .pattern-horizontal-paper-tools button{font-size:11px;min-height:30px;padding:4px 7px}
+.pattern-tool-group-label{font-size:11px;margin-right:5px;color:#315b45}
+body.pattern-dual-workspace .pattern-dual-panes{grid-column:1;grid-row:3;display:grid;grid-template-columns:minmax(0,var(--draft-fr,1fr)) 12px minmax(0,1fr);grid-template-rows:minmax(0,1fr);min-width:0;min-height:0;overflow:hidden;gap:0}
+body.pattern-dual-workspace .pattern-dual-panes>#editStage{grid-column:1;grid-row:1;display:flex!important;flex-direction:column;min-height:0;min-width:0;overflow:hidden;border:1px solid #d5e0d9;border-radius:9px;background:white}
+body.pattern-dual-workspace .pattern-dual-panes>#paperStage{grid-column:3;grid-row:1;display:block!important;min-height:0;min-width:0;overflow:auto;border:1px solid #d5e0d9;border-radius:9px;background:white}
+body.pattern-dual-workspace .pattern-dual-panes>#paneDivider{display:block!important;grid-column:2;grid-row:1;width:auto;height:auto;touch-action:none;cursor:col-resize;background:linear-gradient(90deg,transparent 4px,#9fb7a8 4px,#9fb7a8 8px,transparent 8px);border:0;min-width:0;min-height:0}
+body.pattern-dual-workspace .pattern-dual-panes>#paneDivider:hover,body.pattern-dual-workspace .pattern-dual-panes>#paneDivider:focus-visible{background:#a5c9b2}
+body.pattern-dual-workspace .pattern-pane-title{padding:9px 10px;font-size:13px;font-weight:700;flex:none}
+body.pattern-dual-workspace #editStage>.draft-viewbar{display:flex;flex-wrap:wrap;flex:none;gap:4px;margin:0;padding:5px 8px;border-radius:0}
+body.pattern-dual-workspace #editStage>.draft-viewbar button{font-size:11px;padding:4px 6px}
+body.pattern-dual-workspace #editStage .canvas-wrap{flex:1 1 0;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px}
+body.pattern-dual-workspace .paper{padding:8px}
+body.pattern-dual-workspace .paper-head{flex-wrap:wrap;font-size:12px}
+body.pattern-dual-workspace .paper canvas{display:block;width:100%;height:auto;max-height:max(180px,calc(100dvh - 400px));object-fit:contain}
+body.pattern-dual-workspace .pattern-transfer,body.pattern-dual-workspace .workspace.reviewing:not(.focus-draft):not(.focus-paper)>.pattern-transfer{grid-row:4}
+.pattern-empty-paper{padding:30px 20px;color:#667e6e;text-align:center;font-size:13px;line-height:1.7}
+body.pattern-dual-workspace .pattern-paper-empty>.paper,body.pattern-dual-workspace .pattern-paper-empty>.pattern-export-fold{display:none}
+.pattern-export-fold{margin:8px;border-top:1px solid #d5e0d9}.pattern-export-fold>summary{padding:12px;font-size:13px;font-weight:600;cursor:pointer;background:#edf4ef;border-radius:6px}
+body.pattern-dual-workspace .workspace.focus-draft .pattern-dual-panes,body.pattern-dual-workspace .workspace.focus-paper .pattern-dual-panes{grid-template-columns:minmax(0,1fr)}
+body.pattern-dual-workspace .workspace.focus-draft .pattern-dual-panes>#paperStage,body.pattern-dual-workspace .workspace.focus-paper .pattern-dual-panes>#editStage,body.pattern-dual-workspace .workspace.focus-draft .pattern-dual-panes>#paneDivider,body.pattern-dual-workspace .workspace.focus-paper .pattern-dual-panes>#paneDivider{display:none!important}
+body.pattern-dual-workspace .workspace.focus-paper .pattern-dual-panes>#paperStage{grid-column:1}
+@media(max-width:1099px){body.pattern-dual-workspace .layout,body.pattern-dual-workspace.hide-pattern-left .layout,body.pattern-dual-workspace.hide-pattern-right .layout{grid-template-columns:0 0 minmax(0,1fr) 0}body.pattern-dual-workspace .side{left:0}}
+@media(max-width:700px){
+ body.pattern-dual-workspace .workspace>.quick-bar{max-height:160px;overflow:auto}
+ body.pattern-dual-workspace .pattern-dual-panes{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,var(--draft-fr,1fr)) 14px minmax(0,1fr)}
+ body.pattern-dual-workspace .pattern-dual-panes>#paperStage{grid-column:1;grid-row:3}
+ body.pattern-dual-workspace .pattern-dual-panes>#paneDivider{grid-column:1;grid-row:2;cursor:row-resize;background:linear-gradient(transparent 5px,#9fb7a8 5px,#9fb7a8 9px,transparent 9px)}
+ body.pattern-dual-workspace .workspace.focus-draft .pattern-dual-panes,body.pattern-dual-workspace .workspace.focus-paper .pattern-dual-panes{grid-template-rows:minmax(0,1fr)}
+ body.pattern-dual-workspace .workspace.focus-paper .pattern-dual-panes>#paperStage{grid-row:1}
+ body.pattern-dual-workspace .pattern-pane-title{padding:5px 8px}
+}
+@media(pointer:coarse){body.pattern-dual-workspace .quick-bar button{min-height:40px}}
+
+body.pattern-dual-workspace .paper canvas{max-height:none;max-width:100%;margin:0 auto;flex:none}
+/* Functional sidebar: a narrow category rail opens one tool group at a time. */
+body.pattern-category-workspace .layout{grid-template-columns:68px 270px minmax(0,1fr) 260px}
+body.pattern-category-workspace.hide-pattern-left .layout{grid-template-columns:68px 0 minmax(0,1fr) 260px}
+body.pattern-category-workspace.hide-pattern-right .layout{grid-template-columns:68px 270px minmax(0,1fr) 0}
+body.pattern-category-workspace.hide-pattern-left.hide-pattern-right .layout,body.pattern-category-workspace.drawing-focus .layout{grid-template-columns:68px 0 minmax(0,1fr) 0}
+.pattern-function-rail{grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:5px;padding:8px 4px;overflow:auto;background:#f5f8f6;border-right:1px solid #dce5df;overscroll-behavior:contain}
+.pattern-function-rail button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex:none;min-height:62px;border:0;border-radius:9px;background:transparent;color:#52675a;cursor:pointer;padding:7px 2px}
+.pattern-function-rail button>span{font-size:22px;line-height:1}
+.pattern-function-rail button>small{font-size:10px;font-weight:600}
+.pattern-function-rail button[aria-pressed=true]{background:#e0eee5;color:#155d3e;box-shadow:inset 3px 0 #276947}
+body.pattern-category-workspace .side{padding:10px 12px;background:#fff}
+.pattern-category-title{font-size:16px;margin:14px 0;font-weight:700;color:#244d37}
+body.pattern-category-workspace .side>[hidden],body.pattern-category-workspace .pattern-category-panel[hidden]{display:none!important}
+.pattern-category-panel{display:flex;flex-direction:column;gap:9px}
+body.pattern-category-workspace .pattern-category-panel>button{width:100%;min-height:40px;text-align:left;padding:9px 10px;border:1px solid #d4e1d8;background:#f8faf9;border-radius:7px;font-size:12px;color:#244d37}
+body.pattern-category-workspace .pattern-category-panel button.selected{background:#235e40;color:#fff;border-color:#235e40}
+body.pattern-category-workspace .pattern-drawing-tools{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%}
+body.pattern-category-workspace .pattern-drawing-tools button{display:flex;flex-direction:column;width:100%;min-height:62px;border:1px solid #d5e2d9;border-radius:8px}
+body.pattern-category-workspace .pattern-drawing-tools small{font-size:12px}
+body.pattern-category-workspace .pattern-horizontal-paper-tools{display:flex;flex-direction:column;align-items:stretch;border:0;margin:0;padding:0;gap:8px}
+body.pattern-category-workspace .pattern-horizontal-paper-tools button{min-height:40px;text-align:left;font-size:12px;padding:9px;border-radius:7px}
+body.pattern-category-workspace .pattern-inline-tools{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+body.pattern-category-workspace .pattern-inline-tools>button{width:100%;min-height:38px;text-align:left;font-size:12px}
+.pattern-extra-tools{border-top:1px solid #dce5df;margin-top:8px;padding-top:8px}.pattern-extra-tools>summary{cursor:pointer;font-size:12px;padding:8px 0;font-weight:600}
+body.pattern-category-workspace .pattern-category-panel label{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;line-height:1.5}
+body.pattern-category-workspace .pattern-category-panel select,body.pattern-category-workspace .pattern-category-panel input[type=text]{max-width:100%;box-sizing:border-box;padding:8px;font-size:13px}
+body.pattern-category-workspace .pattern-category-panel .paper-text-controls{display:flex;flex-direction:column;align-items:stretch;gap:9px}
+body.pattern-category-workspace .pattern-category-panel .paper-text-controls[hidden]{display:none!important}
+body.pattern-category-workspace .pattern-category-panel .hint{font-size:12px;line-height:1.6;color:#687e6e}
+body.pattern-category-workspace .pattern-category-panel .quick-shapes{display:block;width:100%}
+body.pattern-category-workspace .pattern-category-panel .shape-menu{position:static;width:100%;box-shadow:none}
+body.pattern-category-workspace .workspace>.quick-bar{max-height:none;overflow:visible;min-height:38px}
+@media(max-width:1099px){body.pattern-category-workspace .layout,body.pattern-category-workspace.hide-pattern-left .layout,body.pattern-category-workspace.hide-pattern-right .layout{grid-template-columns:60px 0 minmax(0,1fr) 0}body.pattern-category-workspace .side{left:60px;width:min(300px,calc(100vw - 72px))}.pattern-function-rail button{min-height:58px}}
+@media(max-width:700px){body.pattern-category-workspace .layout,body.pattern-category-workspace.hide-pattern-left .layout,body.pattern-category-workspace.hide-pattern-right .layout,body.pattern-category-workspace.hide-pattern-left.hide-pattern-right .layout{grid-template-columns:52px 0 minmax(0,1fr) 0}body.pattern-category-workspace .side{left:52px}.pattern-function-rail{padding:5px 2px}.pattern-function-rail button{min-height:54px}.pattern-function-rail button>small{font-size:9px}body.pattern-category-workspace .pattern-panel-shortcuts button{padding:4px;font-size:10px}}
+body.pattern-category-workspace .pattern-category-panel .quick-shapes>div{position:static!important;inset:auto!important;width:auto!important;max-width:100%;box-shadow:none;grid-template-columns:1fr 1fr;box-sizing:border-box}
+body.pattern-category-workspace .pattern-category-panel .quick-shapes>div button{min-height:40px;font-size:11px;padding:7px}
+
+/* One entry point and a compact, grouped editor shell. */
+body.pattern-compact-menu>header.studio-header{gap:8px!important;padding:7px 12px!important;align-items:center}
+body.pattern-compact-menu .pattern-header-action,body.pattern-compact-menu .pattern-file-actions button{border:1px solid #d5dfd9;border-radius:8px;background:white;color:#244b37;font:600 12px/1.4 Arial,sans-serif;padding:8px 11px;min-height:34px;cursor:pointer}
+body.pattern-compact-menu .pattern-file-actions button:first-child{background:#205c40;color:white;border-color:#205c40}
+body.pattern-compact-menu .pattern-steps{gap:6px;justify-content:flex-start;flex:none}
+body.pattern-compact-menu .pattern-steps>button{flex:0 0 auto;min-height:30px;padding:6px 14px;border:1px solid #dce5df;border-radius:8px;background:white;font-size:11px}
+.pattern-open-card{padding:14px 12px;margin:10px 0 16px;background:#f1f7f3;border:1px dashed #a6c3b0;border-radius:12px;text-align:center}.pattern-open-card button{width:100%;min-height:42px;border:0;border-radius:8px;background:#205c40;color:white;font-size:13px;font-weight:600;cursor:pointer}.pattern-open-card p{font-size:12px;margin:10px 0 5px}.pattern-open-card small{font-size:11px;color:#687b6e;line-height:1.6;display:block}
+body.pattern-compact-menu .pattern-input-fold>summary{display:none}
+body.pattern-compact-menu .pattern-input-fold .eyebrow,body.pattern-compact-menu .pattern-input-fold>h1,body.pattern-compact-menu .pattern-input-fold>.intro{display:none}
+body.pattern-compact-menu #photoPanel>.upload,body.pattern-compact-menu #pdfPanel .upload{display:none!important}
+body.pattern-compact-menu:not([data-pattern-input-kind]) #photoPanel,body.pattern-compact-menu:not([data-pattern-input-kind]) #pdfPanel{display:none!important}
+body.pattern-compact-menu .draft-viewbar{gap:5px;padding:6px 8px}body.pattern-compact-menu .draft-viewbar button,body.pattern-compact-menu .draft-viewbar select{font-size:11px;min-height:30px;padding:4px 7px;border-radius:7px}
+body.pattern-compact-menu .pattern-category-title{font-size:15px;margin:10px 0}.pattern-drop-active{outline:3px dashed #2b8258;outline-offset:-5px;background:#e5f3ea!important}
+body.pattern-compact-menu .side .hint{font-size:11px;line-height:1.6}body.pattern-compact-menu .side h2{font-size:14px}
+@media(max-width:700px){body.pattern-compact-menu .pattern-file-actions{display:flex}.pattern-file-actions button:last-child{display:none}.pattern-header-action{display:none}.pattern-document-name{display:none!important}body.pattern-compact-menu .pattern-menu>summary{font-size:11px;padding:7px 5px}.pattern-open-card{padding:10px}}
+
+.paper-mark-toolbar{display:flex;gap:6px;flex-wrap:wrap;padding:8px;background:#f4f8f5;border-bottom:1px solid #dce5df}.paper-mark-toolbar label{display:flex;align-items:center;gap:6px;font-size:12px}.paper-mark-toolbar button,.paper-mark-toolbar select{border:1px solid #d2dfd6;background:white;color:#234d36;border-radius:7px;padding:7px;font-size:11px;min-height:32px}.paper-mark-properties{padding:5px 8px}.paper-mark-properties>small{font-size:10px;color:#677c6c}.paper-mark-properties .paper-text-controls,#placedLogoControls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:4px 0}.paper-mark-properties [hidden]{display:none!important}#placedLogoControls label{font-size:11px}#placedLogoControls input{width:72px;padding:5px}.paper-mark-properties #paperNoteText{min-width:130px;flex:1}.paper-mark-properties button{font-size:11px;padding:6px;border-radius:6px}
