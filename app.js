@@ -20,7 +20,7 @@ const state = {
   selectedToolCat: 'all',
   selectedArticleCat: 'all',
   selectedBookFolder: 'all',
-  zaloBooksUnlocked: localStorage.getItem('rapmau_zalo_books_unlocked') === '1',
+  zaloBooksUnlocked: true,
   cart: JSON.parse(localStorage.getItem('rapmau_cart') || '[]'),
   lastCompletedOrder: null
 };
@@ -98,7 +98,7 @@ async function initApp() {
 const DEFAULT_SEO = {
   title: 'RAPMAU.COM — Rập Mẫu Đồ Da PDF/DXF, Rập Giấy, Rập Mica, Khuôn Bế & Dụng Cụ Làm Đồ Da',
   description:
-    'Chọn rập PDF/DXF, rập giấy, rập mica hoặc khuôn theo mẫu; tìm phụ kiện và dụng cụ cơ bản để tự làm đồ da. Cần hỏi mẫu phù hợp, hãy liên hệ Hotline/Zalo: 0971.463.768 (Mr.Tuan) - Email: info@rapmau.com.',
+    'Kho kiến thức nghề da, rập PDF/DXF tỷ lệ 1:1 miễn phí, công cụ chế tác và diễn đàn kỹ thuật đồ da. Kết nối xưởng gia công, nhà cung cấp & khách hàng B2B qua Email: info@rapmau.com.',
   canonical: 'https://www.rapmau.com/',
   h1Html:
     'Chọn <span class="text-accent">rập PDF/DXF</span>, <span class="text-accent">rập giấy</span>, <span class="text-accent">rập mica</span> hoặc <span class="text-accent">khuôn theo mẫu</span>'
@@ -224,7 +224,7 @@ function syncCategorySeoAndUrl(catKey, { pushUrl = true } = {}) {
   const catProducts = state.products.filter((p) => p.categoryKey === catObj.key);
   setDocumentMeta({
     title: `${catObj.name} — ${catObj.count} Mẫu Rập PDF/DXF, Rập Giấy, Rập Mica 1:1 | RAPMAU.COM`,
-    description: `Chọn ngay ${catObj.count} mẫu ${catObj.name} chuẩn tỷ lệ 1:1: tải file PDF/DXF tự động 24/7, đặt cắt CNC Rập Giấy 350gsm, Rập Mica 2mm hoặc Khuôn Bế Thép. Liên hệ Mr.Tuan: 0971.463.768.`,
+    description: `Chọn ngay ${catObj.count} mẫu ${catObj.name} chuẩn tỷ lệ 1:1: tải file PDF/DXF miễn phí 24/7, đặt cắt CNC Rập Giấy 350gsm, Rập Mica 2mm hoặc Khuôn Bế Thép. Kết nối xưởng & nhà cung cấp qua Email: info@rapmau.com.`,
     canonical: `https://www.rapmau.com${targetPath}`,
     h1Text: `${catObj.name} (${catObj.count} Mẫu Chuẩn 1:1)`,
     jsonLd: buildCategoryJsonLd(catObj, catProducts)
@@ -390,16 +390,20 @@ function hydrateSiteMetadata() {
     document.getElementById('statCategories').textContent = stats.totalCategories;
   }
   if (site) {
-    document.getElementById('contactHotlineDisplay').textContent = site.hotline || '0971.463.768 (Mr.Tuan)';
-    document.getElementById('contactEmailDisplay').textContent = site.email || 'info@rapmau.com';
-    document.getElementById('contactAddressDisplay').textContent = site.address || '';
-    document.getElementById('topbarHotline').textContent = `📞 Hotline/Zalo: ${site.hotline || '0971.463.768 (Mr.Tuan)'}`;
-    const zaloClean = (site.zalo || site.hotline || '0971463768').replace(/[^0-9]/g, '');
-    document.getElementById('directZaloLink').href = `https://zalo.me/${zaloClean}`;
-    const groupBtn = document.getElementById('joinZaloGroupPrimaryBtn');
-    if (groupBtn) {
-      groupBtn.href = site.zaloGroupUrl || `https://zalo.me/${zaloClean}`;
+    const emailStr = site.email || 'info@rapmau.com';
+    const hotlineDisplay = document.getElementById('contactHotlineDisplay');
+    if (hotlineDisplay) hotlineDisplay.textContent = emailStr;
+    const emailDisplay = document.getElementById('contactEmailDisplay');
+    if (emailDisplay) emailDisplay.textContent = emailStr;
+    const addressDisplay = document.getElementById('contactAddressDisplay');
+    if (addressDisplay) addressDisplay.textContent = site.address || '';
+    const topbarEl = document.getElementById('topbarHotline');
+    if (topbarEl) {
+      topbarEl.textContent = `✉️ Email kết nối: ${emailStr}`;
+      topbarEl.href = `mailto:${emailStr}`;
     }
+    const directLink = document.getElementById('directZaloLink');
+    if (directLink) directLink.href = `mailto:${emailStr}`;
     if (site.ctaNote) {
       const subEl = document.querySelector('.ch-sub');
       if (subEl) subEl.textContent = site.ctaNote;
@@ -677,7 +681,7 @@ function renderFreeBooks() {
             <img src="${cover}" alt="${b.title}" loading="lazy" onerror="this.src='/assets/tools/pattern-placeholder.svg'" />
             <div class="card-badges-top">
               <span class="book-folder-badge">📁 ${b.folderKey}</span>
-              <span class="free-badge">🎁 FREE ZALO</span>
+              <span class="free-badge">🎁 FREE PDF</span>
             </div>
             <div class="card-meta-bottom">
               <span class="meta-chip">📄 ${b.format} • ${b.sizeMB} MB</span>
@@ -694,15 +698,9 @@ function renderFreeBooks() {
               ${b.title}
             </h3>
             <div class="card-footer" style="margin-top:auto;">
-              ${
-                state.zaloBooksUnlocked
-                  ? `<a href="${dlUrl}?download=1" class="btn-sm btn-add" style="width:100%; text-align:center; text-decoration:none; background:var(--accent-green);" download>
-                       ⬇ Tải Sách Ngay (${b.sizeMB} MB)
-                     </a>`
-                  : `<button type="button" class="btn-sm btn-add" style="width:100%; background:var(--accent-zalo);" data-book-action="open" data-book-id="${b.id}">
-                       💬 Tham Gia Nhóm Zalo Nhận Sách
-                     </button>`
-              }
+              <a href="${dlUrl}?download=1" class="btn-sm btn-add" style="width:100%; text-align:center; text-decoration:none; background:var(--accent-green);" download>
+                ⬇ Tải Sách Miễn Phí (${b.sizeMB} MB)
+              </a>
             </div>
           </div>
         </article>
@@ -715,19 +713,17 @@ function openZaloBookModal(bookId) {
   const book = state.freeBooks.find((b) => b.id === bookId) || state.freeBooks[0];
   const backdrop = document.getElementById('cartModalBackdrop');
   const content = document.getElementById('cartModalContent');
-  const site = state.catalog?.site || {};
-  const zaloGroupUrl = site.zaloGroupUrl || 'https://zalo.me/0971463768';
 
   content.innerHTML = `
     <div style="text-align:center; margin-bottom:16px;">
-      <span class="free-badge" style="background:var(--accent-zalo); font-size:12.5px; padding:5px 12px;">
-        🎁 QUÀ TẶNG THÀNH VIÊN NHÓM ZALO: CHIA SẺ MẪU VÀ SÁCH MIỄN PHÍ
+      <span class="free-badge" style="background:var(--accent-green); font-size:12.5px; padding:5px 12px;">
+        🎁 THƯ VIỆN SÁCH &amp; GIÁO TRÌNH ĐỒ DA CỘNG ĐỒNG MIỄN PHÍ
       </span>
       <h2 style="margin:10px 0 6px; color:var(--bg-saddle);">
         ${book ? book.title : 'Trọn Bộ 26 Sách & Giáo Trình Đồ Da Miễn Phí'}
       </h2>
       <p style="font-size:13.5px; color:var(--text-muted);">
-        Tham gia <strong>Nhóm Zalo Chia sẻ mẫu và sách miễn phí</strong> của <strong>Mr.Tuan (0971.463.768)</strong> để mở khoá tải toàn bộ 3 thư mục: <code>Ebook</code>, <code>Bộ sách nhật</code> và <code>Ebook China</code>.
+        Tải trực tiếp miễn phí 100% toàn bộ 3 thư mục tài liệu: <code>Ebook</code>, <code>Bộ sách nhật</code> và <code>Ebook China</code> dành cho cộng đồng thợ da Việt Nam.
       </p>
     </div>
 
@@ -744,70 +740,30 @@ function openZaloBookModal(bookId) {
         : ''
     }
 
-    <div style="background:#eff6ff; border:1.5px dashed #0068ff; border-radius:12px; padding:16px; margin-bottom:16px;">
-      <strong style="color:#1e40af; display:block; margin-bottom:8px;">
-        👉 Bước 1: Bấm tham gia Nhóm Zalo Chia Sẻ Mẫu &amp; Sách Miễn Phí
+    <div style="background:#f0fdf4; border:1.5px solid #16a34a; border-radius:12px; padding:16px;">
+      <strong style="color:#166534; display:block; margin-bottom:10px;">
+        ✅ Thư viện mở 100% — Bấm tải trực tiếp sách bên dưới:
       </strong>
-      <a
-        href="${zaloGroupUrl}"
-        target="_blank"
-        rel="noopener"
-        class="btn btn-zalo btn-full"
-        id="modalClickZaloGroupBtn"
-      >
-        💬 Mở Zalo Tham Gia Nhóm "Chia Sẻ Mẫu Và Sách Miễn Phí"
-      </a>
-    </div>
-
-    ${
-      !state.zaloBooksUnlocked
-        ? `
-      <form id="unlockBooksForm" style="background:var(--bg-warm); padding:16px; border-radius:12px;">
-        <strong style="color:var(--bg-saddle); display:block; margin-bottom:10px;">
-          👉 Bước 2: Nhập SĐT Zalo của bạn để mở khoá link tải 26 đầu sách ngay lập tức
-        </strong>
-        <div class="form-row">
-          <div class="form-field">
-            <label>Tên Zalo của bạn *</label>
-            <input type="text" id="zaloMemberName" required placeholder="VD: Anh Tuấn / Chị Lan..." />
-          </div>
-          <div class="form-field">
-            <label>Số điện thoại Zalo đã tham gia nhóm *</label>
-            <input type="tel" id="zaloMemberPhone" required placeholder="Nhập SĐT Zalo..." />
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full">
-          🔓 Xác Nhận &amp; Mở Khoá Tải Toàn Bộ 26 Sách Miễn Phí
-        </button>
-      </form>
-    `
-        : `
-      <div style="background:#f0fdf4; border:1.5px solid #16a34a; border-radius:12px; padding:16px;">
-        <strong style="color:#166534; display:block; margin-bottom:10px;">
-          ✅ Bạn đã mở khoá thư viện! Bấm tải trực tiếp sách bên dưới:
-        </strong>
-        ${
-          book
-            ? `<a href="${encodeURI(book.downloadUrl)}?download=1" class="btn btn-primary btn-full" download style="margin-bottom:12px;">
-                 ⬇ Tải Ngay: ${book.title} (${book.sizeMB} MB)
-               </a>`
-            : ''
-        }
-        <div style="max-height:220px; overflow-y:auto; display:flex; flex-direction:column; gap:6px; border-top:1px dashed #86efac; padding-top:10px;">
-          ${state.freeBooks
-            .map(
-              (fb) => `
-            <a href="${encodeURI(fb.downloadUrl)}?download=1" download style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#fff; border-radius:8px; border:1px solid #bbf7d0; text-decoration:none; color:var(--text-main); font-size:13px;">
-              <span><strong>[${fb.folderKey}]</strong> ${fb.title}</span>
-              <span style="color:var(--accent-green); font-weight:800; white-space:nowrap; margin-left:8px;">⬇ ${fb.sizeMB} MB</span>
-            </a>
-          `
-            )
-            .join('')}
-        </div>
+      ${
+        book
+          ? `<a href="${encodeURI(book.downloadUrl)}?download=1" class="btn btn-primary btn-full" download style="margin-bottom:12px;">
+               ⬇ Tải Ngay: ${book.title} (${book.sizeMB} MB)
+             </a>`
+          : ''
+      }
+      <div style="max-height:240px; overflow-y:auto; display:flex; flex-direction:column; gap:6px; border-top:1px dashed #86efac; padding-top:10px;">
+        ${state.freeBooks
+          .map(
+            (fb) => `
+          <a href="${encodeURI(fb.downloadUrl)}?download=1" download style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#fff; border-radius:8px; border:1px solid #bbf7d0; text-decoration:none; color:var(--text-main); font-size:13px;">
+            <span><strong>[${fb.folderKey}]</strong> ${fb.title}</span>
+            <span style="color:var(--accent-green); font-weight:800; white-space:nowrap; margin-left:8px;">⬇ ${fb.sizeMB} MB</span>
+          </a>
+        `
+          )
+          .join('')}
       </div>
-    `
-    }
+    </div>
   `;
 
   backdrop.classList.remove('hidden');
@@ -1488,39 +1444,8 @@ function openInstantFreeDownloadModal(product) {
         </div>
       </div>
 
-      <!-- MỜI 1 LY CÀ PHÊ 25.000Đ (VIETQR TÙY TÂM) -->
-      <div class="coffee-donation-card" style="background: linear-gradient(135deg, #fffdf8 0%, #fff7eb 100%); border: 1.5px solid #f6d296; border-radius: 14px; padding: 16px 18px; text-align: left; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);">
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-          <span style="font-size: 26px; line-height: 1;">☕</span>
-          <div>
-            <h4 style="margin: 0; font-size: 16px; color: #78350f; font-weight: 800;">Mời Mr.Tuân 1 ly cà phê (25.000đ)</h4>
-            <p style="margin: 2px 0 0; font-size: 12.5px; color: #92400e;">
-              Bản vẽ PDF/DXF luôn <strong>100% MIỄN PHÍ</strong>. Nếu rập này hữu ích, 1 ly cà phê 25k sẽ tiếp thêm động lực rất lớn cho xưởng!
-            </p>
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 12px; padding: 12px; background: #ffffff; border-radius: 10px; border: 1px solid #fde68a;">
-          <div style="text-align: center;">
-            <img
-              src="https://img.vietqr.io/image/MB-0971463768-compact2.png?amount=25000&addInfo=CAFE%20${encodeURIComponent(product.sku)}&accountName=MR%20TUAN%20RAPMAU"
-              alt="Mã QR Chuyển 25.000đ MBBank"
-              style="width: 140px; height: 140px; display: block; border-radius: 8px; border: 1px solid #e5e7eb;"
-              loading="lazy"
-            />
-            <span style="font-size: 11px; color: #6b7280; display: block; margin-top: 4px; font-weight: 600;">Quét VietQR mọi App Bank</span>
-          </div>
-          <div style="font-size: 13px; line-height: 1.7; color: #374151; min-width: 210px;">
-            <div>🏦 Ngân hàng: <strong>MBBank (Quân Đội)</strong></div>
-            <div>🔢 Số TK: <strong style="font-size: 15px; color: #1e40af; letter-spacing: 0.5px;">0971463768</strong> <button type="button" onclick="navigator.clipboard.writeText('0971463768'); alert('Đã sao chép STK: 0971463768');" style="border:none; background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:4px; font-size:11px; cursor:pointer; font-weight:700;">Copy</button></div>
-            <div>👤 Chủ TK: <strong>MR TUAN RAPMAU</strong></div>
-            <div>☕ Số tiền: <strong style="color: #16a34a; font-size: 14px;">25.000 đ</strong></div>
-            <div>📝 Nội dung: <strong style="background: #fef3c7; padding: 2px 6px; border-radius: 4px; color: #92400e;">CAFE ${product.sku}</strong></div>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 10px; font-size: 12px; color: #78350f; font-style: italic;">
-          ❤️ Ủng hộ hoàn toàn tùy tâm &bull; Chúc bạn hoàn thiện sản phẩm đồ da thật ưng ý!
-        </div>
+      <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:12px 14px; font-size:12.5px; color:#475569; text-align:left;">
+        💬 Trải nghiệm cắt may xong mẫu rập này, bạn có thể chia sẻ ảnh thành phẩm tại <a href="/cong-dong/" style="color:var(--accent-leather); font-weight:700;">Diễn Đàn Nghề Da</a> hoặc gửi Email <a href="mailto:info@rapmau.com" style="color:var(--accent-leather); font-weight:700;">info@rapmau.com</a> nếu cần tìm xưởng gia công / khuôn bế theo mẫu.
       </div>
     </div>
   `;
@@ -1591,19 +1516,19 @@ function openCartModal() {
           <input type="text" id="chkName" required placeholder="Nhập họ tên..." />
         </div>
         <div class="form-field">
-          <label>Số điện thoại / Zalo nhận file &amp; đơn hàng *</label>
-          <input type="tel" id="chkPhone" required placeholder="Nhập SĐT Zalo..." />
+          <label>Email hoặc thông tin liên hệ lại *</label>
+          <input type="text" id="chkPhone" required placeholder="Nhập Email hoặc thông tin liên hệ..." />
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
-          <label>Email nhận link tải dự phòng (Nếu mua PDF/DXF)</label>
+          <label>Email nhận link tải dự phòng (Nếu tải PDF/DXF)</label>
           <input type="email" id="chkEmail" placeholder="email@domain.com" />
         </div>
         <div class="form-field">
-          <label>Phương thức thanh toán</label>
+          <label>Phương thức xử lý</label>
           <select id="chkMethod">
-            <option value="vietqr">Quét mã VietQR (Mở khoá tải file PDF ngay &amp; ưu tiên gia công)</option>
+            <option value="email_b2b">Kết nối qua Email info@rapmau.com (Tải file ngay &amp; nhận báo giá gia công)</option>
             ${hasPhysical ? '<option value="cod">Thanh toán khi nhận hàng (COD cho Rập Giấy / Mica / Dụng cụ)</option>' : ''}
           </select>
         </div>
@@ -1695,35 +1620,34 @@ function openCartModal() {
 
 function renderOrderSuccessView(order, orderedItems) {
   const content = document.getElementById('cartModalContent');
-  const bank = state.catalog?.site?.bankInfo || {
-    bankId: 'MB',
-    bankName: 'MBBank',
-    accountNo: '0971463768',
-    accountName: 'MR TUAN RAPMAU'
-  };
-  const qrUrl = `https://img.vietqr.io/image/${bank.bankId}-${bank.accountNo}-compact2.png?amount=${order.totalAmount}&addInfo=${encodeURIComponent(order.orderCode)}&accountName=${encodeURIComponent(bank.accountName)}`;
   const digitalItems = orderedItems.filter((i) => i.deliveryType === 'digital' && i.pdfFiles?.length > 0);
+  const mailSubject = encodeURIComponent(`[ĐƠN ĐẶT GIA CÔNG #${order.orderCode}] ${order.customer.name}`);
+  const mailBody = encodeURIComponent(
+    `Mã yêu cầu: ${order.orderCode}\nKhách hàng: ${order.customer.name}\nLiên hệ: ${order.customer.phone}\nTổng dự kiến: ${formatVND(order.totalAmount)}\nSản phẩm:\n${orderedItems.map((i) => `- [${i.sku}] ${i.title} (${i.variantName}) x${i.qty}`).join('\n')}`
+  );
 
   content.innerHTML = `
     <div style="text-align:center;">
-      <span class="free-badge" style="font-size:13px; padding:5px 12px;">🎉 ĐẶT HÀNG THÀNH CÔNG • MÃ ĐƠN: ${order.orderCode}</span>
-      <h2 style="margin:10px 0 6px; color:var(--bg-saddle);">Cảm ơn ${order.customer.name} đã đặt hàng tại www.rapmau.com!</h2>
+      <span class="free-badge" style="font-size:13px; padding:5px 12px;">🎉 ĐÃ GHI NHẬN YÊU CẦU • MÃ: ${order.orderCode}</span>
+      <h2 style="margin:10px 0 6px; color:var(--bg-saddle);">Cảm ơn ${order.customer.name} đã gửi yêu cầu tại www.rapmau.com!</h2>
       <p style="font-size:13.5px; color:var(--text-muted);">
-        Thông tin đơn hàng đã được lưu vào hệ thống quản trị.
+        Thông tin đã được lưu. Các bản vẽ PDF/DXF (nếu có) sẵn sàng tải ngay bên dưới; yêu cầu gia công vật lý vui lòng xác nhận qua Email <strong>info@rapmau.com</strong>.
       </p>
     </div>
 
     ${
       order.totalAmount > 0
         ? `
-      <div class="vietqr-box">
-        <img src="${qrUrl}" alt="Mã thanh toán VietQR ${order.orderCode}" />
+      <div class="vietqr-box" style="justify-content:center; text-align:center; padding:16px;">
         <div>
-          <span class="sku-badge">THANH TOÁN VIETQR TỰ ĐỘNG</span>
-          <h4 style="margin:8px 0 4px; color:var(--bg-saddle);">${bank.bankName}</h4>
-          <p style="font-size:13.5px;">Số tài khoản: <strong>${bank.accountNo}</strong> (${bank.accountName})</p>
-          <p style="font-size:13.5px;">Số tiền: <strong style="color:var(--accent-leather); font-size:17px;">${formatVND(order.totalAmount)}</strong></p>
-          <p style="font-size:13.5px;">Nội dung CK: <strong style="background:#fef3c7; padding:2px 6px; border-radius:4px;">${order.orderCode}</strong></p>
+          <span class="sku-badge">KẾT NỐI XỬ LÝ QUA EMAIL</span>
+          <h4 style="margin:8px 0 6px; color:var(--bg-saddle);">Xác Nhận Báo Giá Gia Công / Dụng Cụ</h4>
+          <p style="font-size:13.5px; margin-bottom:10px;">
+            Tổng giá trị dự kiến: <strong style="color:var(--accent-leather); font-size:17px;">${formatVND(order.totalAmount)}</strong> • Mã tham chiếu: <strong style="background:#fef3c7; padding:2px 6px; border-radius:4px;">${order.orderCode}</strong>
+          </p>
+          <a href="mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}" class="btn btn-primary btn-sm">
+            ✉️ Gửi Chi Tiết Mã #${order.orderCode} Về info@rapmau.com
+          </a>
         </div>
       </div>
     `
@@ -1811,8 +1735,8 @@ async function openAdminModal() {
           </div>
         </div>
         <div class="form-field">
-          <label>Link Nhóm Zalo "Chia Sẻ Mẫu &amp; Sách Miễn Phí" (VD: https://zalo.me/g/...)</label>
-          <input type="text" id="admZaloGroupUrl" value="${site.zaloGroupUrl || 'https://zalo.me/0971463768'}" />
+          <label>Link Cộng Đồng / Ghi chú nhóm (Không bắt buộc)</label>
+          <input type="text" id="admZaloGroupUrl" value="${site.zaloGroupUrl || 'mailto:info@rapmau.com'}" />
         </div>
         <div class="form-field">
           <label>Địa chỉ xưởng / Ghi chú giao hàng</label>
@@ -1892,7 +1816,7 @@ async function openAdminModal() {
       ...site,
       hotline: document.getElementById('admHotline').value.trim(),
       zalo: document.getElementById('admZalo').value.trim(),
-      zaloGroupUrl: document.getElementById('admZaloGroupUrl')?.value.trim() || 'https://zalo.me/0971463768',
+      zaloGroupUrl: document.getElementById('admZaloGroupUrl')?.value.trim() || 'mailto:info@rapmau.com',
       email: document.getElementById('admEmail').value.trim(),
       address: document.getElementById('admAddress').value.trim(),
       bankInfo: {
@@ -2150,12 +2074,12 @@ function openArticleModal(slug, { pushUrl = true } = {}) {
 
       <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; background:#f8f4ec; padding:14px 16px; border-radius:12px; border:1px solid var(--border-soft);">
         <div>
-          <strong style="color:var(--bg-saddle);">Cần tư vấn thêm hoặc tải 258+ Rập PDF Miễn Phí?</strong>
-          <div style="font-size:12.5px; color:var(--text-muted);">Liên hệ trực tiếp Mr.Tuan (0971.463.768) để được hỗ trợ 1-1.</div>
+          <strong style="color:var(--bg-saddle);">Cần kết nối xưởng gia công hoặc tải 258+ Rập PDF Miễn Phí?</strong>
+          <div style="font-size:12.5px; color:var(--text-muted);">Gửi Email về info@rapmau.com hoặc trao đổi trực tiếp trên Diễn Đàn Nghề Da.</div>
         </div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           <a href="/danh-muc/${art.relatedCategorySlug || 'rap-vi-da'}" class="btn btn-primary btn-sm">📐 Xem Kho Rập Liên Quan</a>
-          <a href="https://zalo.me/0971463768" target="_blank" rel="noopener" class="btn btn-zalo btn-sm">💬 Hỏi Zalo Mr.Tuan</a>
+          <a href="mailto:info@rapmau.com?subject=%5BH%E1%BB%8EI%20K%E1%BB%B8%20THU%E1%BA%ACT%5D%20Trao%20%C4%91%E1%BB%95i%20b%C3%A0i%20vi%E1%BA%BFt" class="btn btn-zalo btn-sm">✉️ Email: info@rapmau.com</a>
         </div>
       </div>
     </article>
@@ -2564,7 +2488,7 @@ function bindEvents() {
       // Fallback trên bản Cloud Static
     }
     const fb = document.getElementById('consultFeedback');
-    fb.textContent = `✅ Đã nhận yêu cầu #${entryId}! Mr.Tuan (0971.463.768) sẽ liên hệ Zalo/SĐT ${payload.phone} trong ít phút.`;
+    fb.innerHTML = `✅ Đã ghi nhận yêu cầu <strong>#${entryId}</strong>! Hệ thống kết nối sẽ phản hồi qua Email <strong>info@rapmau.com</strong>. <a href="mailto:info@rapmau.com?subject=${encodeURIComponent(`[YÊU CẦU #${entryId}] ${payload.needType}`)}&body=${encodeURIComponent(`Người gửi: ${payload.name}\nLiên hệ lại: ${payload.phone}\nMã tham khảo: ${payload.skuRef || '-'}\nNội dung: ${payload.message}`)}" style="color:#0369a1; font-weight:700; text-decoration:underline; margin-left:6px;">Bấm để gửi kèm ảnh qua Email →</a>`;
     fb.classList.remove('hidden');
     e.target.reset();
   });

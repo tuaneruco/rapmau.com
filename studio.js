@@ -356,7 +356,7 @@ function renderSketchCanvas() {
   ctx.fillStyle = '#a85418';
   ctx.font = '800 13px sans-serif';
   ctx.fillText(
-    'WWW.RAPMAU.COM • HOTLINE/ZALO ĐẶT RẬP MICA & KHUÔN BẾ: 0971.463.768 (MR.TUAN)',
+    'WWW.RAPMAU.COM • KẾT NỐI XƯỞNG & KỸ THUẬT: INFO@RAPMAU.COM',
     canvas.width / 2,
     canvas.height - 18
   );
@@ -477,11 +477,9 @@ function bindStudioEvents() {
     const w = document.getElementById('sketchWidthMm').value;
     const h = document.getElementById('sketchHeightMm').value;
     const pitch = document.getElementById('sketchPitchMm').value;
-    window.open(
-      `https://zalo.me/0971463768`,
-      '_blank'
-    );
-    alert(`Đã mở Zalo Mr.Tuan (0971.463.768)! Bạn có thể gửi ảnh bản vẽ vừa tải kèm thông số: ${title} (${w}x${h}mm, bước đục ${pitch}mm).`);
+    const subject = encodeURIComponent(`[ĐẶT CẮT RẬP MICA / KHUÔN] ${title} (${w}x${h}mm)`);
+    const body = encodeURIComponent(`Xin chào Ban Kết Nối RAPMAU,\nTôi cần tìm xưởng cắt Rập Mica / Khuôn bế theo bản vẽ vừa thiết kế:\n- Tên chi tiết: ${title}\n- Kích thước: ${w} x ${h} mm\n- Bước đục: ${pitch} mm\n(Tôi sẽ đính kèm file ảnh/SVG bản vẽ trong email này).`);
+    window.location.href = `mailto:info@rapmau.com?subject=${subject}&body=${body}`;
   });
 
   // Mở công cụ tùy chỉnh trong iframe
