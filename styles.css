@@ -506,38 +506,44 @@ body {
 .forum-spotlight-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 11px;
+  gap: 6px;
+  font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: #065f46;
-  margin-bottom: 5px;
+  background: #dcfce7;
+  border: 1px solid #a7f3d0;
+  border-radius: 99px;
+  padding: 3px 10px;
+  margin-bottom: 7px;
+  max-width: 100%;
 }
 
 .forum-spotlight-info h2 {
-  font-size: 17px;
-  line-height: 1.3;
+  font-size: 16.5px;
+  line-height: 1.35;
   font-weight: 800;
   color: var(--bg-espresso);
   margin-bottom: 10px;
+  letter-spacing: -0.01em;
 }
 
 .forum-topic-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
 }
 
 .forum-topic-chip {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #064e3b;
   background: #ffffff;
   border: 1px solid #a7f3d0;
   border-radius: 99px;
-  padding: 5px 11px;
+  padding: 5px 10px;
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.15s;
@@ -610,23 +616,53 @@ body {
 @media (max-width: 768px) {
   .ch-actions {
     flex-direction: column;
+    gap: 7px;
+    margin-top: 10px;
   }
 
   .ch-forum-cta,
   .ch-catalog-cta {
     width: 100%;
     justify-content: center;
+    font-size: 12.5px;
+    padding: 8px 12px;
+  }
+
+  .forum-spotlight-section {
+    padding: 10px 0 2px;
+  }
+
+  .forum-spotlight-card {
+    padding: 12px 13px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .forum-spotlight-eyebrow {
+    font-size: 10px;
+    padding: 3px 9px;
+    margin-bottom: 6px;
   }
 
   .forum-spotlight-info h2 {
-    font-size: 15px;
+    font-size: 14.5px;
+    line-height: 1.35;
+    margin-bottom: 8px;
   }
 
   .forum-topic-chips {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .forum-topic-chip {
+    font-size: 11px;
+    padding: 4px 9px;
+  }
+
+  .btn-forum-spotlight {
+    font-size: 13px;
+    padding: 10px 14px;
   }
 }
 
@@ -2673,10 +2709,9 @@ body {
     padding: 0 12px;
   }
 
-  /* 1. Topbar gọn đúng 1 hàng không bị cắt chữ trên điện thoại */
+  /* 1. Ẩn thanh topbar trên di động để tiết kiệm không gian màn hình đầu */
   .topbar {
-    padding: 4px 0;
-    font-size: 10.5px;
+    display: none !important;
   }
 
   .topbar-inner {
