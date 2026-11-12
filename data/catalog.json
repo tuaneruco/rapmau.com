@@ -29,7 +29,10 @@
     "totalCategories": 21,
     "totalToolsAndAccessories": 68,
     "freePatternsCount": 258,
-    "freeBooksCount": 26
+    "freeBooksCount": 26,
+    "totalProducts": 253,
+    "totalAccessories": 56,
+    "totalFreeBooks": 25
   },
   "categories": [
     {
@@ -40,13 +43,14 @@
       "slug": "rap-vi-da",
       "group": "pattern",
       "icon": "wallet",
-      "count": 68,
+      "count": 64,
       "basePrices": {
         "pdf": 29000,
         "paper": 55000,
         "mica": 135000,
         "die": 450000
-      }
+      },
+      "description": "Tuyển tập rập ví da nam nữ chuẩn tỷ lệ 1:1 (ví ngang, ví đứng, ví dài, cardholder), chia ngăn thẻ chuẩn xác, dễ ghép và khâu tay."
     },
     {
       "key": "Túi xách",
@@ -56,13 +60,14 @@
       "slug": "rap-tui-xach",
       "group": "pattern",
       "icon": "shopping-bag",
-      "count": 52,
+      "count": 51,
       "basePrices": {
         "pdf": 49000,
         "paper": 120000,
         "mica": 320000,
         "die": 1250000
-      }
+      },
+      "description": "Bộ rập túi xách tay, tote bag và túi công sở chuẩn form, đầy đủ chi tiết thân, hông, đáy, quai và lớp lót theo kích thước thực tế."
     },
     {
       "key": "Túi đeo chéo",
@@ -78,7 +83,8 @@
         "paper": 95000,
         "mica": 250000,
         "die": 890000
-      }
+      },
+      "description": "Rập túi đeo chéo, messenger và sling bag gọn nhẹ cho nam nữ, tối ưu vị trí gắn khoen D, khóa kéo và dây đeo vai."
     },
     {
       "key": "SP khác",
@@ -94,7 +100,8 @@
         "paper": 65000,
         "mica": 165000,
         "die": 520000
-      }
+      },
+      "description": "Tổng hợp các mẫu rập phụ kiện da sáng tạo như bao đựng bình giữ nhiệt, lót ly, khay để bàn, bao đàn và đồ decor thủ công."
     },
     {
       "key": "Balo",
@@ -110,7 +117,8 @@
         "paper": 145000,
         "mica": 390000,
         "die": 1500000
-      }
+      },
+      "description": "Bộ bản vẽ rập balo da du lịch và công sở cỡ lớn, phân tách rõ phần lưng, mặt trước, ngăn laptop và quai đeo chịu lực."
     },
     {
       "key": "Bao Kinh",
@@ -126,7 +134,8 @@
         "paper": 49000,
         "mica": 115000,
         "die": 360000
-      }
+      },
+      "description": "Rập bao đựng kính mắt gập gọn và hộp kính form cứng bảo vệ tròng kính, phù hợp tận dụng da vụn hoặc làm quà tặng nhanh."
     },
     {
       "key": "Túi nữ",
@@ -142,7 +151,8 @@
         "paper": 115000,
         "mica": 290000,
         "die": 1100000
-      }
+      },
+      "description": "Rập túi xách nữ thời trang, túi kẹp nách và crossbody thanh lịch với tỷ lệ bo góc mềm mại, dễ phối da nappa hoặc epsom."
     },
     {
       "key": "Mũ, nón",
@@ -158,7 +168,8 @@
         "paper": 79000,
         "mica": 195000,
         "die": 620000
-      }
+      },
+      "description": "Bản vẽ rập mũ lưỡi trai, mũ baker boy và nón da thủ công chia múi chuẩn vòng đầu người lớn, dễ may ráp máy hoặc khâu tay."
     },
     {
       "key": "Cặp táp",
@@ -174,7 +185,8 @@
         "paper": 140000,
         "mica": 380000,
         "die": 1450000
-      }
+      },
+      "description": "Rập cặp táp da công sở, cặp tài liệu A4 và briefcase sang trọng có ngăn chống sốc laptop và chi tiết tay cầm gia cố."
     },
     {
       "key": "Bao da điện thoại",
@@ -190,7 +202,8 @@
         "paper": 55000,
         "mica": 125000,
         "die": 390000
-      }
+      },
+      "description": "Rập bao da điện thoại, túi đeo cổ đựng smartphone và ngăn thẻ phụ tiện dụng, dễ điều chỉnh kích thước theo từng dòng máy."
     },
     {
       "key": "Móc khóa",
@@ -206,7 +219,8 @@
         "paper": 39000,
         "mica": 89000,
         "die": 260000
-      }
+      },
+      "description": "Mẫu rập móc khóa da, bao chìa khóa xe hơi và smartkey nhỏ gọn, thích hợp cho người mới tập khâu hoặc sản xuất quà tặng doanh nghiệp."
     },
     {
       "key": "Bao pasport",
@@ -222,7 +236,8 @@
         "paper": 49000,
         "mica": 120000,
         "die": 390000
-      }
+      },
+      "description": "Rập ví đựng hộ chiếu (passport cover) kèm khe vé máy bay và thẻ ngân hàng chuẩn kích thước quốc tế."
     },
     {
       "key": "Hoa văn pattern",
@@ -238,7 +253,8 @@
         "paper": 49000,
         "mica": 120000,
         "die": 450000
-      }
+      },
+      "description": "Bộ mẫu hoa văn chạm khắc da thủ công (Sheridan, floral, hình học) in trực tiếp để can nét lên da mộc veg-tan."
     },
     {
       "key": "Máy ảnh",
@@ -254,7 +270,8 @@
         "paper": 75000,
         "mica": 180000,
         "die": 550000
-      }
+      },
+      "description": "Rập bao da half-case bảo vệ thân máy ảnh và dây đeo cổ vai chống mỏi cho nhiếp ảnh gia."
     },
     {
       "key": "Sách",
@@ -270,7 +287,8 @@
         "paper": 120000,
         "mica": 0,
         "die": 0
-      }
+      },
+      "description": "Tổng hợp 3 bộ sách và giáo trình kỹ thuật chế tác đồ da (Nhật Bản, Anh, Trung Quốc) chia sẻ miễn phí cho cộng đồng thợ da."
     },
     {
       "key": "Túi du lịch",
@@ -286,7 +304,8 @@
         "paper": 160000,
         "mica": 450000,
         "die": 1800000
-      }
+      },
+      "description": "Rập túi trống du lịch weekender và duffle bag cỡ lớn chuẩn form, phù hợp gia công xưởng hoặc làm túi da cao cấp."
     },
     {
       "key": "Giày dép",
@@ -302,7 +321,8 @@
         "paper": 85000,
         "mica": 210000,
         "die": 750000
-      }
+      },
+      "description": "Bộ rập làm giày da, dép lê và sandal thủ công kèm hướng dẫn ghép mũ giày và đế da."
     },
     {
       "key": "Dây đồng hồ",
@@ -318,7 +338,8 @@
         "paper": 45000,
         "mica": 95000,
         "die": 280000
-      }
+      },
+      "description": "Rập dây đồng hồ da thủ công chuẩn ngàm Apple Watch và khóa kim truyền thống (size 18mm–24mm), tối ưu cho đục 2.7mm–3.0mm."
     },
     {
       "key": "Áo da",
@@ -334,7 +355,8 @@
         "paper": 140000,
         "mica": 360000,
         "die": 1400000
-      }
+      },
+      "description": "Bản vẽ rập áo gile da (leather vest) và giáp da cosplay phân mảnh chi tiết, dễ căn chỉnh theo số đo vai và ngực."
     },
     {
       "key": "Bao da laptop",
@@ -350,7 +372,8 @@
         "paper": 79000,
         "mica": 195000,
         "die": 650000
-      }
+      },
+      "description": "Rập túi chống sốc và bao da MacBook / Laptop 13–16 inch thiết kế tối giản, bảo vệ cạnh máy an toàn."
     },
     {
       "key": "Tạp dề",
@@ -366,7 +389,8 @@
         "paper": 110000,
         "mica": 280000,
         "die": 950000
-      }
+      },
+      "description": "Rập tạp dề da nghệ nhân (craft apron) bảo vệ trang phục khi cắt gọt, đục lỗ, đánh cạnh và làm mộc tại xưởng."
     }
   ],
   "products": [
@@ -13997,103 +14021,6 @@
       "vendorName": "Xưởng RAPMAU.COM"
     },
     {
-      "id": "RM-TX-044",
-      "sku": "RM-TX-044",
-      "title": "Rập Túi Xách Thiết Kế Chuẩn 1:1 - Mã RM-TX-044",
-      "slug": "rap-tui-xach-thiet-ke-chuan-1-1-ma-rm-tx-044",
-      "categoryKey": "Túi xách",
-      "categoryName": "Rập Túi Xách Da (Handbag & Tote)",
-      "categoryShort": "Túi Xách",
-      "categorySlug": "rap-tui-xach",
-      "group": "pattern",
-      "folderPath": "Túi Xách / RM-TX-044",
-      "paperSizes": [
-        "A4"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "pdfCount": 1,
-      "cadCount": 0,
-      "imageCount": 4,
-      "fileSizeMB": 0.47,
-      "isFreePdf": true,
-      "isFeatured": false,
-      "difficulty": "Trung bình - Nâng cao",
-      "leatherThickness": "1.6mm - 2.2mm",
-      "chiselPitch": "3.85mm hoặc 4.0mm",
-      "leatherEstimate": "8.0 - 15.0 Pia (SF)",
-      "images": [
-        "/media/Túi xách/48/Screenshot_20200628_181519.jpg",
-        "/media/Túi xách/48/Screenshot_20200628_181549.jpg",
-        "/media/Túi xách/48/Screenshot_20200628_181600.jpg",
-        "/media/Túi xách/48/Screenshot_20200628_181611.jpg"
-      ],
-      "cadPreview": "",
-      "pdfFiles": [
-        "/media/Túi xách/48/Truly_BUCKET BAG _123.pdf"
-      ],
-      "pdfFileNames": [
-        "RM-TX-044-Ban-Ve-Rap-1-1-A4.pdf"
-      ],
-      "cadFiles": [],
-      "videos": [],
-      "variants": [
-        {
-          "id": "pdf_dxf",
-          "name": "File PDF (Khổ A4)",
-          "shortLabel": "File PDF/DXF",
-          "badge": "Miễn phí tải ngay",
-          "price": 0,
-          "originalPrice": 69000,
-          "deliveryType": "digital",
-          "leadTime": "Tải file ngay lập tức sau khi xác nhận",
-          "description": "File bản vẽ kỹ thuật tỷ lệ chuẩn 1:1 khổ A4, kèm đường đục lỗ và kích thước chi tiết. Tự in tại nhà hoặc mang ra tiệm in/cắt laser."
-        },
-        {
-          "id": "rap_giay",
-          "name": "Rập Giấy Cứng Kraft/Ivory 350gsm",
-          "shortLabel": "Rập Giấy Cứng",
-          "badge": "Cắt máy sẵn",
-          "price": 120000,
-          "originalPrice": 145000,
-          "deliveryType": "physical",
-          "leadTime": "Gia công 1 ngày - Ship COD toàn quốc",
-          "description": "Bộ rập cắt sẵn bằng máy CNC trên bìa cứng 350gsm dày dặn, đánh số từng chi tiết và vị trí lỗ đục. Nhận hàng áp lên da cắt ngay."
-        },
-        {
-          "id": "rap_mica",
-          "name": "Rập Mica Trong Suốt 2mm Cắt Laser",
-          "shortLabel": "Rập Mica 2mm",
-          "badge": "Bền vĩnh viễn - Bán chạy",
-          "price": 320000,
-          "originalPrice": 365000,
-          "deliveryType": "physical",
-          "leadTime": "Cắt Laser 1-2 ngày - Ship COD toàn quốc",
-          "description": "Mica Đài Loan trong suốt dày 2mm cắt laser chính xác 0.1mm, giúp nhìn xuyên thấu bề mặt da để né sẹo/lựa vân đẹp và dùng bền trọn đời."
-        },
-        {
-          "id": "khuon_be",
-          "name": "Khuôn Bế Dao Thép / Đặt Theo Mẫu Riêng",
-          "shortLabel": "Khuôn Bế Theo Mẫu",
-          "badge": "Cho xưởng SX",
-          "price": 1250000,
-          "originalPrice": 1400000,
-          "deliveryType": "custom_quote",
-          "leadTime": "Chế tác khuôn 3-5 ngày theo yêu cầu",
-          "description": "Gia công khuôn dao thép Nhật/Đài Loan trên đế gỗ hoặc mica để dập máy bế hàng loạt, có thể tuỳ chỉnh kích thước & gắn đục lỗ theo yêu cầu."
-        }
-      ],
-      "recommendedTools": [
-        "TOOL-CHISEL-400",
-        "TOOL-THREAD-055",
-        "ACC-ZIPPER-YKK",
-        "ACC-DRING-SET"
-      ],
-      "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
-    },
-    {
       "id": "RM-TX-045",
       "sku": "RM-TX-045",
       "title": "Rập Túi Xách Thiết Kế Chuẩn 1:1 - Mã RM-TX-045",
@@ -18224,100 +18151,6 @@
       "vendorName": "Xưởng RAPMAU.COM"
     },
     {
-      "id": "RM-VI-010",
-      "sku": "RM-VI-010",
-      "title": "Rập Ví Da Đựng Thẻ Mini (Cardholder) - Mã RM-VI-010",
-      "slug": "rap-vi-da-dung-the-mini-cardholder-ma-rm-vi-010",
-      "categoryKey": "Ví",
-      "categoryName": "Rập Ví Da (Wallet & Cardholder)",
-      "categoryShort": "Ví Da",
-      "categorySlug": "rap-vi-da",
-      "group": "pattern",
-      "folderPath": "Ví Da / RM-VI-010",
-      "paperSizes": [
-        "A4"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "pdfCount": 1,
-      "cadCount": 0,
-      "imageCount": 1,
-      "fileSizeMB": 0.1,
-      "isFreePdf": true,
-      "isFeatured": false,
-      "difficulty": "Cơ bản - Trung bình",
-      "leatherThickness": "1.0mm - 1.6mm (Vách ngoài 1.6mm, ngăn thẻ 1.0mm)",
-      "chiselPitch": "3.0mm hoặc 3.38mm",
-      "leatherEstimate": "1.5 - 3.0 Pia (SF)",
-      "images": [
-        "/previews/rm-vi-010-preview.jpg"
-      ],
-      "cadPreview": "/previews/rm-vi-010-preview.jpg",
-      "pdfFiles": [
-        "/media/Ví/10/makesupply_free-guitar-pick-card-wallet-A4.pdf"
-      ],
-      "pdfFileNames": [
-        "RM-VI-010-Ban-Ve-Rap-1-1-A4.pdf"
-      ],
-      "cadFiles": [],
-      "videos": [],
-      "variants": [
-        {
-          "id": "pdf_dxf",
-          "name": "File PDF (Khổ A4)",
-          "shortLabel": "File PDF/DXF",
-          "badge": "Miễn phí tải ngay",
-          "price": 0,
-          "originalPrice": 49000,
-          "deliveryType": "digital",
-          "leadTime": "Tải file ngay lập tức sau khi xác nhận",
-          "description": "File bản vẽ kỹ thuật tỷ lệ chuẩn 1:1 khổ A4, kèm đường đục lỗ và kích thước chi tiết. Tự in tại nhà hoặc mang ra tiệm in/cắt laser."
-        },
-        {
-          "id": "rap_giay",
-          "name": "Rập Giấy Cứng Kraft/Ivory 350gsm",
-          "shortLabel": "Rập Giấy Cứng",
-          "badge": "Cắt máy sẵn",
-          "price": 55000,
-          "originalPrice": 80000,
-          "deliveryType": "physical",
-          "leadTime": "Gia công 1 ngày - Ship COD toàn quốc",
-          "description": "Bộ rập cắt sẵn bằng máy CNC trên bìa cứng 350gsm dày dặn, đánh số từng chi tiết và vị trí lỗ đục. Nhận hàng áp lên da cắt ngay."
-        },
-        {
-          "id": "rap_mica",
-          "name": "Rập Mica Trong Suốt 2mm Cắt Laser",
-          "shortLabel": "Rập Mica 2mm",
-          "badge": "Bền vĩnh viễn - Bán chạy",
-          "price": 135000,
-          "originalPrice": 180000,
-          "deliveryType": "physical",
-          "leadTime": "Cắt Laser 1-2 ngày - Ship COD toàn quốc",
-          "description": "Mica Đài Loan trong suốt dày 2mm cắt laser chính xác 0.1mm, giúp nhìn xuyên thấu bề mặt da để né sẹo/lựa vân đẹp và dùng bền trọn đời."
-        },
-        {
-          "id": "khuon_be",
-          "name": "Khuôn Bế Dao Thép / Đặt Theo Mẫu Riêng",
-          "shortLabel": "Khuôn Bế Theo Mẫu",
-          "badge": "Cho xưởng SX",
-          "price": 450000,
-          "originalPrice": 600000,
-          "deliveryType": "custom_quote",
-          "leadTime": "Chế tác khuôn 3-5 ngày theo yêu cầu",
-          "description": "Gia công khuôn dao thép Nhật/Đài Loan trên đế gỗ hoặc mica để dập máy bế hàng loạt, có thể tuỳ chỉnh kích thước & gắn đục lỗ theo yêu cầu."
-        }
-      ],
-      "recommendedTools": [
-        "TOOL-COMBO-START",
-        "TOOL-CHISEL-338",
-        "TOOL-THREAD-045",
-        "ACC-SNAP-BUTTON"
-      ],
-      "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
-    },
-    {
       "id": "RM-VI-011",
       "sku": "RM-VI-011",
       "title": "Rập Ví Da Đựng Thẻ Mini (Cardholder) - Mã RM-VI-011",
@@ -22244,100 +22077,6 @@
       "vendorName": "Xưởng RAPMAU.COM"
     },
     {
-      "id": "RM-VI-051",
-      "sku": "RM-VI-051",
-      "title": "Rập Ví Da Thiết Kế Chuẩn 1:1 - Mã RM-VI-051",
-      "slug": "rap-vi-da-thiet-ke-chuan-1-1-ma-rm-vi-051",
-      "categoryKey": "Ví",
-      "categoryName": "Rập Ví Da (Wallet & Cardholder)",
-      "categoryShort": "Ví Da",
-      "categorySlug": "rap-vi-da",
-      "group": "pattern",
-      "folderPath": "Ví Da / RM-VI-051",
-      "paperSizes": [
-        "A4"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "pdfCount": 1,
-      "cadCount": 0,
-      "imageCount": 1,
-      "fileSizeMB": 0.3,
-      "isFreePdf": true,
-      "isFeatured": false,
-      "difficulty": "Cơ bản - Trung bình",
-      "leatherThickness": "1.0mm - 1.6mm (Vách ngoài 1.6mm, ngăn thẻ 1.0mm)",
-      "chiselPitch": "3.0mm hoặc 3.38mm",
-      "leatherEstimate": "1.5 - 3.0 Pia (SF)",
-      "images": [
-        "/media/Ví/52/IMG_20130907_095343.jpg"
-      ],
-      "cadPreview": "",
-      "pdfFiles": [
-        "/media/Ví/52/LZpatternCSL-01A3-01.pdf"
-      ],
-      "pdfFileNames": [
-        "RM-VI-051-Ban-Ve-Rap-1-1-A4.pdf"
-      ],
-      "cadFiles": [],
-      "videos": [],
-      "variants": [
-        {
-          "id": "pdf_dxf",
-          "name": "File PDF (Khổ A4)",
-          "shortLabel": "File PDF/DXF",
-          "badge": "Miễn phí tải ngay",
-          "price": 0,
-          "originalPrice": 49000,
-          "deliveryType": "digital",
-          "leadTime": "Tải file ngay lập tức sau khi xác nhận",
-          "description": "File bản vẽ kỹ thuật tỷ lệ chuẩn 1:1 khổ A4, kèm đường đục lỗ và kích thước chi tiết. Tự in tại nhà hoặc mang ra tiệm in/cắt laser."
-        },
-        {
-          "id": "rap_giay",
-          "name": "Rập Giấy Cứng Kraft/Ivory 350gsm",
-          "shortLabel": "Rập Giấy Cứng",
-          "badge": "Cắt máy sẵn",
-          "price": 55000,
-          "originalPrice": 80000,
-          "deliveryType": "physical",
-          "leadTime": "Gia công 1 ngày - Ship COD toàn quốc",
-          "description": "Bộ rập cắt sẵn bằng máy CNC trên bìa cứng 350gsm dày dặn, đánh số từng chi tiết và vị trí lỗ đục. Nhận hàng áp lên da cắt ngay."
-        },
-        {
-          "id": "rap_mica",
-          "name": "Rập Mica Trong Suốt 2mm Cắt Laser",
-          "shortLabel": "Rập Mica 2mm",
-          "badge": "Bền vĩnh viễn - Bán chạy",
-          "price": 135000,
-          "originalPrice": 180000,
-          "deliveryType": "physical",
-          "leadTime": "Cắt Laser 1-2 ngày - Ship COD toàn quốc",
-          "description": "Mica Đài Loan trong suốt dày 2mm cắt laser chính xác 0.1mm, giúp nhìn xuyên thấu bề mặt da để né sẹo/lựa vân đẹp và dùng bền trọn đời."
-        },
-        {
-          "id": "khuon_be",
-          "name": "Khuôn Bế Dao Thép / Đặt Theo Mẫu Riêng",
-          "shortLabel": "Khuôn Bế Theo Mẫu",
-          "badge": "Cho xưởng SX",
-          "price": 450000,
-          "originalPrice": 600000,
-          "deliveryType": "custom_quote",
-          "leadTime": "Chế tác khuôn 3-5 ngày theo yêu cầu",
-          "description": "Gia công khuôn dao thép Nhật/Đài Loan trên đế gỗ hoặc mica để dập máy bế hàng loạt, có thể tuỳ chỉnh kích thước & gắn đục lỗ theo yêu cầu."
-        }
-      ],
-      "recommendedTools": [
-        "TOOL-COMBO-START",
-        "TOOL-CHISEL-338",
-        "TOOL-THREAD-045",
-        "ACC-SNAP-BUTTON"
-      ],
-      "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
-    },
-    {
       "id": "RM-VI-052",
       "sku": "RM-VI-052",
       "title": "Rập Ví Da Đựng Thẻ Mini (Cardholder) - Mã RM-VI-052",
@@ -23245,194 +22984,6 @@
       ],
       "pdfFileNames": [
         "RM-VI-061-Ban-Ve-Rap-1-1-A4.pdf"
-      ],
-      "cadFiles": [],
-      "videos": [],
-      "variants": [
-        {
-          "id": "pdf_dxf",
-          "name": "File PDF (Khổ A4)",
-          "shortLabel": "File PDF/DXF",
-          "badge": "Miễn phí tải ngay",
-          "price": 0,
-          "originalPrice": 49000,
-          "deliveryType": "digital",
-          "leadTime": "Tải file ngay lập tức sau khi xác nhận",
-          "description": "File bản vẽ kỹ thuật tỷ lệ chuẩn 1:1 khổ A4, kèm đường đục lỗ và kích thước chi tiết. Tự in tại nhà hoặc mang ra tiệm in/cắt laser."
-        },
-        {
-          "id": "rap_giay",
-          "name": "Rập Giấy Cứng Kraft/Ivory 350gsm",
-          "shortLabel": "Rập Giấy Cứng",
-          "badge": "Cắt máy sẵn",
-          "price": 55000,
-          "originalPrice": 80000,
-          "deliveryType": "physical",
-          "leadTime": "Gia công 1 ngày - Ship COD toàn quốc",
-          "description": "Bộ rập cắt sẵn bằng máy CNC trên bìa cứng 350gsm dày dặn, đánh số từng chi tiết và vị trí lỗ đục. Nhận hàng áp lên da cắt ngay."
-        },
-        {
-          "id": "rap_mica",
-          "name": "Rập Mica Trong Suốt 2mm Cắt Laser",
-          "shortLabel": "Rập Mica 2mm",
-          "badge": "Bền vĩnh viễn - Bán chạy",
-          "price": 135000,
-          "originalPrice": 180000,
-          "deliveryType": "physical",
-          "leadTime": "Cắt Laser 1-2 ngày - Ship COD toàn quốc",
-          "description": "Mica Đài Loan trong suốt dày 2mm cắt laser chính xác 0.1mm, giúp nhìn xuyên thấu bề mặt da để né sẹo/lựa vân đẹp và dùng bền trọn đời."
-        },
-        {
-          "id": "khuon_be",
-          "name": "Khuôn Bế Dao Thép / Đặt Theo Mẫu Riêng",
-          "shortLabel": "Khuôn Bế Theo Mẫu",
-          "badge": "Cho xưởng SX",
-          "price": 450000,
-          "originalPrice": 600000,
-          "deliveryType": "custom_quote",
-          "leadTime": "Chế tác khuôn 3-5 ngày theo yêu cầu",
-          "description": "Gia công khuôn dao thép Nhật/Đài Loan trên đế gỗ hoặc mica để dập máy bế hàng loạt, có thể tuỳ chỉnh kích thước & gắn đục lỗ theo yêu cầu."
-        }
-      ],
-      "recommendedTools": [
-        "TOOL-COMBO-START",
-        "TOOL-CHISEL-338",
-        "TOOL-THREAD-045",
-        "ACC-SNAP-BUTTON"
-      ],
-      "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
-    },
-    {
-      "id": "RM-VI-062",
-      "sku": "RM-VI-062",
-      "title": "Rập Ví Da Thiết Kế Chuẩn 1:1 - Mã RM-VI-062",
-      "slug": "rap-vi-da-thiet-ke-chuan-1-1-ma-rm-vi-062",
-      "categoryKey": "Ví",
-      "categoryName": "Rập Ví Da (Wallet & Cardholder)",
-      "categoryShort": "Ví Da",
-      "categorySlug": "rap-vi-da",
-      "group": "pattern",
-      "folderPath": "Ví Da / RM-VI-062",
-      "paperSizes": [
-        "A4"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "pdfCount": 1,
-      "cadCount": 0,
-      "imageCount": 1,
-      "fileSizeMB": 0.33,
-      "isFreePdf": true,
-      "isFeatured": false,
-      "difficulty": "Cơ bản - Trung bình",
-      "leatherThickness": "1.0mm - 1.6mm (Vách ngoài 1.6mm, ngăn thẻ 1.0mm)",
-      "chiselPitch": "3.0mm hoặc 3.38mm",
-      "leatherEstimate": "1.5 - 3.0 Pia (SF)",
-      "images": [
-        "/media/Ví/63/19748368_753257284854101_4798452899986414376_n.jpg"
-      ],
-      "cadPreview": "",
-      "pdfFiles": [
-        "/media/Ví/63/LZpatternQQW-21-A4.pdf"
-      ],
-      "pdfFileNames": [
-        "RM-VI-062-Ban-Ve-Rap-1-1-A4.pdf"
-      ],
-      "cadFiles": [],
-      "videos": [],
-      "variants": [
-        {
-          "id": "pdf_dxf",
-          "name": "File PDF (Khổ A4)",
-          "shortLabel": "File PDF/DXF",
-          "badge": "Miễn phí tải ngay",
-          "price": 0,
-          "originalPrice": 49000,
-          "deliveryType": "digital",
-          "leadTime": "Tải file ngay lập tức sau khi xác nhận",
-          "description": "File bản vẽ kỹ thuật tỷ lệ chuẩn 1:1 khổ A4, kèm đường đục lỗ và kích thước chi tiết. Tự in tại nhà hoặc mang ra tiệm in/cắt laser."
-        },
-        {
-          "id": "rap_giay",
-          "name": "Rập Giấy Cứng Kraft/Ivory 350gsm",
-          "shortLabel": "Rập Giấy Cứng",
-          "badge": "Cắt máy sẵn",
-          "price": 55000,
-          "originalPrice": 80000,
-          "deliveryType": "physical",
-          "leadTime": "Gia công 1 ngày - Ship COD toàn quốc",
-          "description": "Bộ rập cắt sẵn bằng máy CNC trên bìa cứng 350gsm dày dặn, đánh số từng chi tiết và vị trí lỗ đục. Nhận hàng áp lên da cắt ngay."
-        },
-        {
-          "id": "rap_mica",
-          "name": "Rập Mica Trong Suốt 2mm Cắt Laser",
-          "shortLabel": "Rập Mica 2mm",
-          "badge": "Bền vĩnh viễn - Bán chạy",
-          "price": 135000,
-          "originalPrice": 180000,
-          "deliveryType": "physical",
-          "leadTime": "Cắt Laser 1-2 ngày - Ship COD toàn quốc",
-          "description": "Mica Đài Loan trong suốt dày 2mm cắt laser chính xác 0.1mm, giúp nhìn xuyên thấu bề mặt da để né sẹo/lựa vân đẹp và dùng bền trọn đời."
-        },
-        {
-          "id": "khuon_be",
-          "name": "Khuôn Bế Dao Thép / Đặt Theo Mẫu Riêng",
-          "shortLabel": "Khuôn Bế Theo Mẫu",
-          "badge": "Cho xưởng SX",
-          "price": 450000,
-          "originalPrice": 600000,
-          "deliveryType": "custom_quote",
-          "leadTime": "Chế tác khuôn 3-5 ngày theo yêu cầu",
-          "description": "Gia công khuôn dao thép Nhật/Đài Loan trên đế gỗ hoặc mica để dập máy bế hàng loạt, có thể tuỳ chỉnh kích thước & gắn đục lỗ theo yêu cầu."
-        }
-      ],
-      "recommendedTools": [
-        "TOOL-COMBO-START",
-        "TOOL-CHISEL-338",
-        "TOOL-THREAD-045",
-        "ACC-SNAP-BUTTON"
-      ],
-      "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
-    },
-    {
-      "id": "RM-VI-063",
-      "sku": "RM-VI-063",
-      "title": "Rập Ví Da Đựng Thẻ Mini (Cardholder) - Mã RM-VI-063",
-      "slug": "rap-vi-da-dung-the-mini-cardholder-ma-rm-vi-063",
-      "categoryKey": "Ví",
-      "categoryName": "Rập Ví Da (Wallet & Cardholder)",
-      "categoryShort": "Ví Da",
-      "categorySlug": "rap-vi-da",
-      "group": "pattern",
-      "folderPath": "Ví Da / RM-VI-063",
-      "paperSizes": [
-        "A4"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "pdfCount": 1,
-      "cadCount": 0,
-      "imageCount": 1,
-      "fileSizeMB": 0.1,
-      "isFreePdf": true,
-      "isFeatured": true,
-      "difficulty": "Cơ bản - Trung bình",
-      "leatherThickness": "1.0mm - 1.6mm (Vách ngoài 1.6mm, ngăn thẻ 1.0mm)",
-      "chiselPitch": "3.0mm hoặc 3.38mm",
-      "leatherEstimate": "1.5 - 3.0 Pia (SF)",
-      "images": [
-        "/previews/rm-vi-063-preview.jpg"
-      ],
-      "cadPreview": "/previews/rm-vi-063-preview.jpg",
-      "pdfFiles": [
-        "/media/Ví/38_simplecardwallet.pdf"
-      ],
-      "pdfFileNames": [
-        "RM-VI-063-Ban-Ve-Rap-1-1-A4.pdf"
       ],
       "cadFiles": [],
       "videos": [],
@@ -26678,7 +26229,7 @@
     {
       "id": "dh-tool-01",
       "sku": "DH-KC-01",
-      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn 0.6mm Màu Thông Dụng (Kèm Dùi)",
+      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn (0.4mm / 0.5mm / 0.6mm Kèm Dùi)",
       "category": "Dụng Cụ Đục & Khâu",
       "price": 180000,
       "originalPrice": 225000,
@@ -26696,58 +26247,6 @@
         "Tiết kiệm ~20% so với mua lẻ từng món, phù hợp khâu ví da, túi xách, bao da"
       ],
       "description": "Combo kim đầu tù, chỉ sáp may tay 0.6mm màu trung tính đa dụng và cây dùi lỗ chuyên dụng từ Đạt Hưng Leather.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-02",
-      "sku": "DH-KC-02",
-      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn 0.5mm Màu Thông Dụng (Kèm Dùi)",
-      "category": "Dụng Cụ Đục & Khâu",
-      "price": 180000,
-      "originalPrice": 225000,
-      "unit": "Combo 14 món",
-      "badge": "Bán chạy • Đạt Hưng Leather",
-      "images": [
-        "/assets/tools/dathung/dh-02-1.jpg",
-        "/assets/tools/dathung/dh-02-2.jpg",
-        "/assets/tools/dathung/dh-02-3.jpg",
-        "/assets/tools/dathung/dh-02-4.jpg"
-      ],
-      "specs": [
-        "Gồm 5 cuộn chỉ sáp tròn 0.5mm (~120m/cuộn): Đen, Trắng, Nâu Đỏ, Bò, Xanh Olive",
-        "Kèm 8 kim khâu da đầu tù (4 nhỏ + 4 trung) và 1 cây dùi lỗ thủ công",
-        "Cỡ chỉ 0.5mm chuẩn đẹp cho cả đục xiên 3.38mm và đục trám 4.0mm"
-      ],
-      "description": "Bộ combo chỉ sáp 0.5mm kèm kim đầu tù và dùi lỗ chuyên dụng may đồ da handmade.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-03",
-      "sku": "DH-KC-03",
-      "title": "Combo Kim May Da Đầu Tù & 5 Cuộn Chỉ Sáp Tròn 0.4mm Khâu Ví & Dây Đồng Hồ",
-      "category": "Dụng Cụ Đục & Khâu",
-      "price": 180000,
-      "originalPrice": 225000,
-      "unit": "Combo 14 món",
-      "badge": "Khâu tinh xảo • Đạt Hưng",
-      "images": [
-        "/assets/tools/dathung/dh-03-1.jpg",
-        "/assets/tools/dathung/dh-03-2.jpg",
-        "/assets/tools/dathung/dh-03-3.jpg",
-        "/assets/tools/dathung/dh-03-4.jpg"
-      ],
-      "specs": [
-        "Gồm 5 cuộn chỉ sáp tròn 0.4mm (~140m/cuộn): Đen, Trắng, Nâu Đỏ, Bò, Xanh Olive",
-        "Kèm 4 kim đầu tù size nhỏ + 4 kim size trung + 1 cây dùi lỗ",
-        "Sợi chỉ mảnh 0.4mm cực đẹp khi khâu dây đồng hồ, ví thẻ mỏng và đồ da cao cấp"
-      ],
-      "description": "Combo chỉ sáp 0.4mm mảnh tinh tế kèm kim khâu đầu tù và dùi lỗ làm đồ da thủ công.",
       "vendorId": "dathungleather",
       "vendorName": "Đạt Hưng Leather",
       "shopeeUrl": "https://shopee.vn/dathungleather",
@@ -26856,7 +26355,7 @@
     {
       "id": "dh-tool-08",
       "sku": "DH-KEO-08",
-      "title": "Keo Dán Da & Phụ Kiện B7000 15ml (Keo Trong Đầu Kim Nhọn Chống Tràn)",
+      "title": "Keo Dán Da & Phụ Kiện B7000 Đa Năng (15ml / 50ml / 110ml)",
       "category": "Da Thuộc & Hoá Chất",
       "price": 11000,
       "originalPrice": 18000,
@@ -26874,151 +26373,6 @@
         "Dung tích 15ml nhỏ gọn, có kim thông nắp chống khô keo"
       ],
       "description": "Keo B7000 15ml trong suốt có đầu mũi kim nhọn chuyên dán mép da, phụ kiện và chi tiết nhỏ.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-09",
-      "sku": "DH-KEO-09",
-      "title": "Keo Dán Da & Phụ Kiện B7000 50ml (Keo Trong Đa Năng Bám Dính Chắc)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 18000,
-      "originalPrice": 28000,
-      "unit": "Tuýp 50ml",
-      "badge": "Phổ biến nhất • Đạt Hưng",
-      "images": [
-        "/assets/tools/dathung/dh-07-1.jpg",
-        "/assets/tools/dathung/dh-07-2.jpg",
-        "/assets/tools/dathung/dh-07-3.jpg",
-        "/assets/tools/dathung/dh-07-4.jpg"
-      ],
-      "specs": [
-        "Dung tích 50ml vừa vặn cho thợ làm đồ da thủ công và DIY tại nhà",
-        "Keo trong không màu, cố định mép da trước khi đục lỗ khâu cực kỳ chắc chắn",
-        "Đầu mũi kim nhỏ giúp kiểm soát lượng keo không bị lem ra bề mặt da"
-      ],
-      "description": "Tuýp keo trong B7000 50ml chuyên dán mép đồ da, đinh tán và phụ kiện handmade.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-10",
-      "sku": "DH-KEO-10",
-      "title": "Keo Dán Da & Phụ Kiện B7000 110ml (Tuýp Lớn Tiết Kiệm Cho Xưởng)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 32000,
-      "originalPrice": 45000,
-      "unit": "Tuýp 110ml",
-      "badge": "Hot • Siêu tiết kiệm",
-      "images": [
-        "/assets/tools/dathung/dh-08-1.jpg",
-        "/assets/tools/dathung/dh-08-2.jpg",
-        "/assets/tools/dathung/dh-08-3.jpg",
-        "/assets/tools/dathung/dh-08-4.jpg"
-      ],
-      "specs": [
-        "Tuýp lớn 110ml siêu tiết kiệm dành cho người làm nhiều sản phẩm hoặc xưởng đồ da",
-        "Độ kết dính cao, chịu lực tốt trên da thuộc, vải, kim loại, gỗ và phụ kiện",
-        "Không làm cháy hay giòn bề mặt da, dễ dàng vệ sinh phần keo thừa"
-      ],
-      "description": "Keo B7000 dung tích lớn 110ml chính hãng Đạt Hưng Leather chuyên dụng dán đồ da và phụ kiện.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-11",
-      "sku": "DH-KEO-11",
-      "title": "Keo Dán Da Chuyên Dụng Renia Italy Cao Cấp (Kết Dính Mép Da Chuyên Nghiệp)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 224000,
-      "originalPrice": 280000,
-      "unit": "Lon tiêu chuẩn",
-      "badge": "Nhập khẩu Italy • Đạt Hưng",
-      "images": [
-        "/assets/tools/dathung/dh-08-1.jpg",
-        "/assets/tools/phukien/pk-15-1.jpg"
-      ],
-      "specs": [
-        "Dòng keo dán da cao cấp Renia thương hiệu Italy nổi tiếng trong ngành chế tác đồ da",
-        "Lực kết dính cực mạnh nhưng vẫn giữ độ mềm dẻo tự nhiên của mép da sau khi dán",
-        "Chuyên dùng dán lót da heo, da dê, dán gập mép ví, túi xách và dây đồng hồ cao cấp"
-      ],
-      "description": "Keo dán da Renia Italy chuyên nghiệp giúp liên kết các lớp da bền chặt vượt trội.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-12",
-      "sku": "DH-HC-12",
-      "title": "Dầu Dưỡng Da & Phục Hồi Bề Mặt Đồ Da Leather Balm Cao Cấp",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 250000,
-      "originalPrice": 300000,
-      "unit": "Hộp dưỡng da",
-      "badge": "Dưỡng bóng & Mềm da",
-      "images": [
-        "/assets/tools/dathung/dh-13-1.jpg"
-      ],
-      "specs": [
-        "Cung cấp độ ẩm tự nhiên giúp da bò Veg-tan, Nappa, da sáp luôn mềm mịn, chống nứt gãy",
-        "Tạo lớp màng bảo vệ nhẹ và lên màu patina sang trọng sau khi hoàn thiện sản phẩm",
-        "Sử dụng cho ví da, túi xách, cặp táp, giày da và dây đồng hồ"
-      ],
-      "description": "Sáp/Dầu dưỡng da Leather Balm cao cấp giúp bảo dưỡng và hoàn thiện bề mặt sản phẩm đồ da thủ công.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-13",
-      "sku": "DH-NK-13",
-      "title": "Set Khuy Bấm Inox Chống Gỉ Cao Cấp Làm Ví Da & Túi Xách",
-      "category": "Phụ Kiện Kim Loại",
-      "price": 52000,
-      "originalPrice": 65000,
-      "unit": "Set khuy bấm",
-      "badge": "Inox chống gỉ • Đạt Hưng",
-      "images": [
-        "/assets/tools/dathung/dh-11-1.jpg"
-      ],
-      "specs": [
-        "Chất liệu Inox / hợp kim mạ cao cấp chống gỉ sét, bấm êm và giữ nắp chắc chắn",
-        "Đầy đủ 4 thành phần (mặt nút, cối âm, đực, chân tán) chuẩn kích thước làm ví và bao da",
-        "Dễ dàng đóng lắp cùng bộ cối đóng nút bấm thông dụng"
-      ],
-      "description": "Set khuy bấm inox chống gỉ độ bền cao chuyên dùng cho ví da, bóp cầm tay và bao chìa khoá.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-14",
-      "sku": "DH-NK-14",
-      "title": "Khóa Túi Xách & Cặp Da Ngũ Kim Cao Cấp Chống Gỉ Sét",
-      "category": "Phụ Kiện Kim Loại",
-      "price": 76000,
-      "originalPrice": 95000,
-      "unit": "Bộ khóa",
-      "badge": "Ngũ kim cao cấp",
-      "images": [
-        "/assets/tools/dathung/dh-12-1.jpg"
-      ],
-      "specs": [
-        "Khóa cài/khóa vặn hợp kim mạ điện dày dặn, bề mặt sáng bóng chống oxy hoá",
-        "Phù hợp lắp cho các mẫu rập túi đeo chéo, túi xách nữ, clutch và cặp da",
-        "Kèm đầy đủ ngàm và vít/đinh cố định dễ dàng thao tác"
-      ],
-      "description": "Khóa túi xách ngũ kim cao cấp giúp nâng tầm thẩm mỹ cho các sản phẩm túi da handmade.",
       "vendorId": "dathungleather",
       "vendorName": "Đạt Hưng Leather",
       "shopeeUrl": "https://shopee.vn/dathungleather",
@@ -27065,98 +26419,6 @@
         "Đơn giá tính theo Pia (SF) tiện lợi cho khách mua lẻ làm đồ handmade"
       ],
       "description": "Da dê thuộc cao cấp vân hạt tự nhiên sang trọng từ Đạt Hưng Leather.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-17",
-      "sku": "DH-DA-17",
-      "title": "Da Heo Thuộc Mềm Nguyên Tấm Cao Cấp (Lót Túi Xách & Ví Da)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 280000,
-      "originalPrice": 350000,
-      "unit": "Tấm chọn lọc",
-      "badge": "Nguyên tấm tiết kiệm",
-      "images": [
-        "/assets/tools/dathung/dh-16-1.jpg"
-      ],
-      "specs": [
-        "Tấm da heo thuộc mềm mịn, diện tích lớn dùng lót toàn bộ túi xách, cặp da hoặc nhiều ví",
-        "Dễ cắt theo rập, bám keo tốt, không bị bùng nhùng khi gập mép",
-        "Đạt Hưng Leather tuyển chọn tấm da ít sẹo, hiệu suất sử dụng cao"
-      ],
-      "description": "Da heo thuộc mềm nguyên tấm chuyên dùng làm lót trong túi xách, cặp táp và ví da cao cấp.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-18",
-      "sku": "DH-DA-18",
-      "title": "Da Bò Nappa Mềm Cao Cấp (Làm Túi Xách, Ví Cầm Tay & Phụ Kiện)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 650000,
-      "originalPrice": 800000,
-      "unit": "Tấm / Phần tư con",
-      "badge": "Da bò thật 100%",
-      "images": [
-        "/assets/tools/dathung/dh-18-1.jpg"
-      ],
-      "specs": [
-        "Da bò Nappa thuộc mềm mượt, bề mặt đanh mịn, cảm giác chạm êm ái sang trọng",
-        "Độ dày 1.4–1.8mm phù hợp hầu hết các mẫu rập túi đeo chéo, túi tote, clutch và ví da",
-        "Dễ xử lý sơn cạnh và khâu tay chuẩn xác theo bản vẽ rập"
-      ],
-      "description": "Da bò Nappa mềm cao cấp tuyển chọn chuyên dùng chế tác túi xách và ví da thủ công.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-19",
-      "sku": "DH-DA-19",
-      "title": "Da Bò Thuộc Thảo Mộc Veg-Tan Ý Cao Cấp (Làm Ví, Thắt Lưng, Chạm Khắc)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 680000,
-      "originalPrice": 850000,
-      "unit": "Tấm tiêu chuẩn",
-      "badge": "Veg-Tan Italy • Đạt Hưng",
-      "images": [
-        "/assets/tools/dathung/dh-17-1.jpg"
-      ],
-      "specs": [
-        "Da bò thuộc thảo mộc (Vegetable Tanned Leather) nhập khẩu Ý, giữ phom cứng cáp tuyệt vời",
-        "Có thể nhuộm màu thủ công, đóng dấu nhiệt/dấu đồng sắc nét và đánh bóng cạnh bằng gôm/gỗ",
-        "Lý tưởng cho các mẫu rập bao kiếm, bao dao, bao zippo, ví nam, túi hộp và thắt lưng"
-      ],
-      "description": "Da bò thuộc thảo mộc Veg-tan Ý cao cấp chuyên dùng làm đồ da thủ công, chạm khắc và nhuộm màu.",
-      "vendorId": "dathungleather",
-      "vendorName": "Đạt Hưng Leather",
-      "shopeeUrl": "https://shopee.vn/dathungleather",
-      "tiktokUrl": "https://www.tiktok.com/@rapmau.com"
-    },
-    {
-      "id": "dh-tool-20",
-      "sku": "DH-DA-20",
-      "title": "Da Cừu Italy Mềm Mịn Thượng Hạng (Chế Tác Túi Xách & Đồ Da Cao Cấp)",
-      "category": "Da Thuộc & Hoá Chất",
-      "price": 960000,
-      "originalPrice": 1200000,
-      "unit": "Tấm nguyên bản",
-      "badge": "Thượng hạng • Italy",
-      "images": [
-        "/assets/tools/dathung/dh-15-1.jpg"
-      ],
-      "specs": [
-        "Da cừu thật nhập khẩu Italy với bề mặt siêu mềm mịn, nhẹ và bóng tự nhiên",
-        "Thích hợp may các mẫu túi xách thời trang cao cấp, bóp đầm, bao kính và phụ kiện sang trọng",
-        "Tuyển chọn bởi Đạt Hưng Leather (shopee.vn/dathungleather)"
-      ],
-      "description": "Da cừu Italy mềm mịn thượng hạng dành cho các dòng túi xách và phụ kiện đồ da cao cấp.",
       "vendorId": "dathungleather",
       "vendorName": "Đạt Hưng Leather",
       "shopeeUrl": "https://shopee.vn/dathungleather",
@@ -27229,17 +26491,6 @@
       "sizeMB": 25.2,
       "cover": "/previews/books/book-06.jpg",
       "downloadUrl": "/media/Sách/Ebook/MAKE Modern Leatherwork for Makers.pdf"
-    },
-    {
-      "id": "BOOK-07",
-      "title": "Tài Liệu Hướng Dẫn Thiết Kế Rập 3D Trên Phần Mềm Optitex",
-      "fileName": "tài liệu 3D optitex.docx",
-      "folderKey": "Ebook",
-      "collection": "Ebook Quốc Tế",
-      "format": "DOCX",
-      "sizeMB": 3.2,
-      "cover": "/assets/tools/pattern-placeholder.svg",
-      "downloadUrl": "/media/Sách/Ebook/tài liệu 3D optitex.docx"
     },
     {
       "id": "BOOK-08",

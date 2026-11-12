@@ -595,7 +595,7 @@ function renderProducts() {
       <div style="grid-column: 1 / -1; text-align:center; padding: 48px 20px; background:#fff; border-radius:14px; border:1px dashed var(--border-stitch);">
         <h3 style="margin-bottom:8px; color:var(--bg-saddle);">Không tìm thấy mẫu rập khớp bộ lọc</h3>
         <p style="color:var(--text-muted); margin-bottom:16px;">Bạn có thể xoá bộ lọc hoặc gửi yêu cầu để chúng tôi tìm mẫu từ kho lưu trữ riêng.</p>
-        <button type="button" class="btn btn-secondary" id="emptyResetBtn">Xem lại toàn bộ 258+ mẫu</button>
+        <button type="button" class="btn btn-secondary" id="emptyResetBtn">Xem lại toàn bộ ${state.products.length} mẫu</button>
       </div>
     `;
     const emptyBtn = document.getElementById('emptyResetBtn');
@@ -692,10 +692,10 @@ function renderFreeBooks() {
   const unlockBtn = document.getElementById('openBookUnlockModalBtn');
   if (state.zaloBooksUnlocked) {
     if (statusText) {
-      statusText.innerHTML = `<strong style="color:var(--accent-green);">✅ Thư viện 26 sách &amp; giáo trình mở tự do 100%!</strong> Bấm tải trực tiếp bên dưới (file nặng &gt;24 MB nhận link Google Drive qua Email <strong>info@rapmau.com</strong>):`;
+      statusText.innerHTML = `<strong style="color:var(--accent-green);">✅ Thư viện ${state.freeBooks.length} sách &amp; giáo trình mở tự do 100%!</strong> Bấm tải trực tiếp bên dưới (file nặng &gt;24 MB nhận link Google Drive qua Email <strong>info@rapmau.com</strong>):`;
     }
     if (unlockBtn) {
-      unlockBtn.textContent = '📂 Xem Danh Sách Tải Nhanh Toàn Bộ 26 Sách';
+      unlockBtn.textContent = `📂 Xem Danh Sách Tải Nhanh Toàn Bộ ${state.freeBooks.length} Sách`;
     }
   }
 
@@ -790,7 +790,7 @@ function openZaloBookModal(bookId) {
         🎁 THƯ VIỆN SÁCH &amp; GIÁO TRÌNH ĐỒ DA CỘNG ĐỒNG MIỄN PHÍ
       </span>
       <h2 style="margin:10px 0 6px; color:var(--bg-saddle);">
-        ${book ? book.title : 'Trọn Bộ 26 Sách & Giáo Trình Đồ Da Miễn Phí'}
+        ${book ? book.title : `Trọn Bộ ${state.freeBooks.length} Sách & Giáo Trình Đồ Da Miễn Phí`}
       </h2>
       <p style="font-size:13.5px; color:var(--text-muted);">
         Tải trực tiếp miễn phí 100% toàn bộ 3 thư mục tài liệu: <code>Ebook</code>, <code>Bộ sách nhật</code> và <code>Ebook China</code> dành cho cộng đồng thợ da Việt Nam.
@@ -2180,7 +2180,7 @@ function openArticleModal(slug, { pushUrl = true } = {}) {
 
       <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; background:#f8f4ec; padding:14px 16px; border-radius:12px; border:1px solid var(--border-soft);">
         <div>
-          <strong style="color:var(--bg-saddle);">Cần kết nối xưởng gia công hoặc tải 258+ Rập PDF Miễn Phí?</strong>
+          <strong style="color:var(--bg-saddle);">Cần kết nối xưởng gia công hoặc tải ${state.products.length}+ Rập PDF Miễn Phí?</strong>
           <div style="font-size:12.5px; color:var(--text-muted);">Gửi Email về info@rapmau.com hoặc trao đổi trực tiếp trên Diễn Đàn Nghề Da.</div>
         </div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">

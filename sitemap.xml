@@ -891,11 +891,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rapmau.com/rap-mau/rap-tui-xach-thiet-ke-chuan-1-1-ma-rm-tx-044</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.rapmau.com/rap-mau/rap-tui-xach-thiet-ke-chuan-1-1-ma-rm-tx-045</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1111,11 +1106,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rapmau.com/rap-mau/rap-vi-da-dung-the-mini-cardholder-ma-rm-vi-010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.rapmau.com/rap-mau/rap-vi-da-dung-the-mini-cardholder-ma-rm-vi-011</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1316,11 +1306,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rapmau.com/rap-mau/rap-vi-da-thiet-ke-chuan-1-1-ma-rm-vi-051</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.rapmau.com/rap-mau/rap-vi-da-dung-the-mini-cardholder-ma-rm-vi-052</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1367,16 +1352,6 @@
   </url>
   <url>
     <loc>https://www.rapmau.com/rap-mau/rap-vi-da-thiet-ke-chuan-1-1-ma-rm-vi-061</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.rapmau.com/rap-mau/rap-vi-da-thiet-ke-chuan-1-1-ma-rm-vi-062</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.rapmau.com/rap-mau/rap-vi-da-dung-the-mini-cardholder-ma-rm-vi-063</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
