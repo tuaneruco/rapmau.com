@@ -62,15 +62,22 @@
 
   async function loadData() {
     let remoteData = null;
-    try {
-      const res = await fetch('/api/community/threads');
-      if (res.ok) {
-        const json = await res.json();
-        if (json.ok && json.data) {
-          remoteData = json.data;
+    const isStaticHost =
+      location.hostname.endsWith('rapmau.com') ||
+      location.hostname.endsWith('.pages.dev') ||
+      location.port === '4173';
+
+    if (!isStaticHost) {
+      try {
+        const res = await fetch('/api/community/threads');
+        if (res.ok) {
+          const json = await res.json();
+          if (json.ok && json.data) {
+            remoteData = json.data;
+          }
         }
-      }
-    } catch {}
+      } catch {}
+    }
 
     if (!remoteData) {
       try {

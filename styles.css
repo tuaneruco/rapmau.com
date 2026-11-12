@@ -1422,6 +1422,9 @@ body {
 
 .table-responsive {
   overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .compare-table {
@@ -1662,6 +1665,14 @@ body {
   gap: 28px;
   padding-bottom: 22px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-grid > *,
+.guide-card,
+.consult-box,
+.consult-form {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .footer-brand .brand-title {
