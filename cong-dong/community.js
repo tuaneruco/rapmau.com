@@ -88,6 +88,7 @@
       categories = [
         { id: 'all', name: 'Tất Cả Thảo Luận', icon: '💬', count: 0 },
         { id: 'nhap-mon', name: 'Người Mới Nhập Môn', icon: '🔨', count: 0 },
+        { id: 'setup-xuong', name: 'Setup & Bố Trí Xưởng', icon: '🏗️', count: 0 },
         { id: 'ky-thuat-may', name: 'Kỹ Thuật May & Đục', icon: '🧵', count: 0 },
         { id: 'may-moc-xuong', name: 'Máy Móc & Sửa Chữa Xưởng', icon: '⚙️', count: 0 },
         { id: 'son-canh', name: 'Sơn Viền & Xử Lý Cạnh', icon: '🎨', count: 0 },

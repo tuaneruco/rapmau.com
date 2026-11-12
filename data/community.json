@@ -4,12 +4,18 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 91
+      "count": 99
     },
     {
       "id": "nhap-mon",
       "name": "Người Mới Nhập Môn",
       "icon": "🔨",
+      "count": 8
+    },
+    {
+      "id": "setup-xuong",
+      "name": "Setup & Bố Trí Xưởng",
+      "icon": "🏗️",
       "count": 8
     },
     {
@@ -56,6 +62,264 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-099",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Phòng 14m² ở nhà riêng: Nên đóng mấy bàn, kích thước và chiều cao bàn cắt - bàn khâu - ghế thế nào cho đỡ đau lưng?",
+      "author": "Hoàng Minh Khôi",
+      "authorRole": "Thợ bán chuyên • Q.7",
+      "authorAvatar": "🪑",
+      "createdAt": "2026-11-12T10:30:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Setup Tại Nhà",
+      "badgeType": "solved",
+      "likes": 34,
+      "views": 412,
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "content": "Mình mới dọn một phòng 3.5m x 4m (~14m²) để làm đồ da thủ công buổi tối và cuối tuần (chủ yếu ví, dây đồng hồ, túi tote nhỏ). Đang phân vân giữa đóng 1 bàn lớn làm tất cả hay tách riêng bàn cắt đứng và bàn khâu ngồi. Nhờ anh em đi trước tư vấn giúp:\n1. Chiều cao chuẩn cho người cao 1m70 khi đứng cắt da và khi ngồi khâu bằng kẹp ngựa (Stitching Pony).\n2. Loại ghế nào ngồi lâu không bị cấn khi kẹp Pony giữa hai đùi?\n3. Chiều sâu mặt bàn tối ưu để vươn tay lấy keo, dùi, sơn cạnh không bị mỏi vai?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-099-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-12T10:52:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Với phòng 14m² và người cao 1m70, tuyệt đối KHÔNG nên dùng 1 bàn chung một độ cao vì đứng cắt cần bàn cao để khỏi khom lưng, còn ngồi khâu/sơn cạnh lại cần bàn thấp để hạ vai.\n\nThông số chuẩn xưởng hay đóng:\n1. Bàn cắt đứng (kiêm bàn đục): cao 86–90cm (ngang xương chậu hoặc thấp hơn khuỷu tay gập ~10–12cm), kích thước 80x160cm hoặc 90x180cm đặt sát một vách hoặc góc L. Dưới gầm chia 2 tầng kệ để cuộn da, tấm PVC cắt.\n2. Bàn ngồi (keo, gập mép, khâu tay, sơn cạnh): cao 72–74cm, sâu 65–75cm là vừa tầm với (sâu 90cm sẽ phải rướn lưng lấy lọ keo rất mỏi).\n3. Ghế ngồi khâu: chọn ghế xoay lưới không tay vịn hoặc tay vịn gập lên được, đệm phẳng vừa phải (không quá lún), có đỡ thắt lưng (lumbar support). Khi kẹp Stitching Pony, ghế không tay vịn giúp đùi mở thoải mái và chỉnh cao độ sao cho đầu gối gập vuông 90°, khuỷu tay ngang tầm ngàm kẹp."
+        },
+        {
+          "id": "cmt-099-2",
+          "author": "Lâm Tùng Workshop",
+          "authorRole": "Xưởng Thủ Công • Thủ Đức",
+          "authorAvatar": "🧰",
+          "isStaff": false,
+          "createdAt": "2026-11-12T11:15:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Bổ sung thêm mẹo nhỏ cho phòng 14m²: phía trên bàn ngồi 74cm bạn gắn một bảng Pegboard tôn/gỗ cao 60cm cách mặt bàn 20cm để treo dao, compa, đục, nhíp, thước. Toàn bộ mặt bàn chỉ để đúng tấm thớt làm việc + 1 khay công cụ đang dùng, tránh bày bừa hết diện tích."
+        }
+      ]
+    },
+    {
+      "id": "thread-098",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Chọn đèn cho bàn cắt, bàn khâu và khu KCS: Chỉ số CRI bao nhiêu, nhiệt độ màu mấy K và treo góc nào để không bị lóa da bóng?",
+      "author": "Trần Bảo Ngọc",
+      "authorRole": "Thợ Khâu Tay • Đà Nẵng",
+      "authorAvatar": "💡",
+      "createdAt": "2026-11-12T09:40:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Ánh Sáng Chuẩn",
+      "badgeType": "featured",
+      "likes": 41,
+      "views": 528,
+      "stage": "hoan-thien",
+      "stageLabel": "5. Sơn Cạnh & Hoàn Thiện",
+      "content": "Mình mới lắp 2 bóng tuýp LED 6500K siêu sáng ngay trên đầu bàn khâu nhưng gặp 2 lỗi rất khó chịu: một là nhìn da Epsom / Box bóng bị lóa trắng xóa không thấy đường lấy dấu compa; hai là soi màu da Nâu Đỏ với Đen rất dễ lệch tông khi mang ra nắng tự nhiên. Anh em setup đèn xưởng lâu năm cho mình xin thông số đèn, độ cao treo và hướng chiếu chuẩn với ạ.",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-098-1",
+          "author": "Xưởng Da Anh Quân",
+          "authorRole": "Chuyên Gia QC & KCS",
+          "authorAvatar": "🔍",
+          "isStaff": false,
+          "createdAt": "2026-11-12T10:05:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Bệnh kinh điển của đèn 6500K CRI thấp (Ra < 80) là làm bệt màu và chói gắt trên da bóng.\n\nBạn chỉnh lại theo 4 thông số này đảm bảo dịu mắt hẳn:\n- Nhiệt độ màu: 4500K–5000K (trắng trung tính gần ánh sáng ban ngày). Nếu xưởng thiên về da Veg-tan màu ấm thì khu KCS nên có thêm 1 đèn 4000K kiểm màu.\n- Độ hoàn màu (CRI / Ra): bắt buộc >= 90 (tốt nhất 95–97) để phân biệt chuẩn đen/nâu sẫm/xanh navy và phát hiện vết xước dăm trên da.\n- Kiểu đèn & độ rọi: dùng máng đèn thanh dài có chóa tán quang (diffuser) chống chói UGR < 19, chiều dài đèn bằng ~70–80% chiều dài bàn để không tạo bóng tay.\n- Góc treo tránh lóa: không treo đèn ngay phía trước mặt rọi ngược vào mắt; treo lệch về phía trước mép bàn người ngồi ~15–20cm hoặc hơi chếch từ phía tay không thuận (thuận tay phải thì nguồn sáng phụ chếch bên trái), cách mặt bàn 85–100cm. Ngoài ra gắn thêm 1 đèn kẹp cổ ngỗng chiếu rọi xiên ngay kim máy may rất hiệu quả."
+        }
+      ]
+    },
+    {
+      "id": "thread-097",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Mặt bằng xưởng 50m² (5m x 10m) cho 5–6 thợ: Bố trí luồng 1 chiều các khu Cắt - Lạng - Keo - May - Hoàn thiện như thế nào?",
+      "author": "Nguyễn Đức Thịnh",
+      "authorRole": "Chủ Xưởng Gia Công • Tân Bình",
+      "authorAvatar": "🏗️",
+      "createdAt": "2026-11-12T08:50:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Layout Xưởng",
+      "badgeType": "featured",
+      "likes": 52,
+      "views": 640,
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "content": "Xưởng mình sắp chuyển sang mặt bằng mới ngang 5m dài 10m (50m²), team hiện có 5 người: 1 thợ cắt + bế, 1 thợ lạng + chuẩn bị bán thành phẩm, 2 thợ may (1 máy cào bơi bàn phẳng, 1 máy trụ), 1 bạn hoàn thiện/sơn cạnh/đóng gói. Trước đây xưởng cũ xếp bàn lộn xộn nên thợ cứ đi qua đi lại đụng nhau, bụi da bay sang khu sơn cạnh dính hết lên viền sơn. Nhờ các bác góp ý layout đi 1 chiều cho mặt bằng 5x10m ạ.",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-097-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-12T09:18:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Mặt bằng 5x10m với 5–6 người rất đẹp để chạy luồng chữ U (nhập nguyên liệu đầu cửa -> quay vòng về KCS/đóng gói gần cửa xuất):\n\n1. Cánh trái từ cửa vào (Khu Khô & Thô): Kệ treo da & giá rập/khuôn bế đặt sát tường, nối tiếp là Bàn Cắt chính (1m2 x 2m4) chừa lối đi quanh bàn ít nhất 80–90cm để trải nguyên con da không vướng. Đặt máy dập thủy lực (nếu có) ngay đầu hoặc cuối bàn cắt.\n2. Góc cuối xưởng (Khu Bụi & Ồn - tách biệt): Đặt máy lạng mép (Skiving), máy mài/đánh cạnh tốc độ cao và máy nén khí ở góc có quạt hút ra ngoài hoặc vách kính lửng ngăn bụi bay sang khu sơn.\n3. Cạnh đáy & Cánh phải quay ngược ra cửa (Khu Lắp Ráp): Bàn bôi keo & gập mép (đặt khay rổ chuyển bán thành phẩm theo từng đơn) -> Cụm 2 máy may đặt so le hoặc lưng đối lưng lối đi giữa >= 1.2m -> Bàn sơn cạnh & sấy nhiệt (khu sạch, kín gió bụi) -> Bàn KCS, chụp ảnh và kệ hàng thành phẩm ngay gần cửa ra.\n\nNguyên tắc vàng: thợ đứng tại trạm chỉ xoay người hoặc bước 1 bước lấy rổ hàng từ trạm trước, không cầm từng miếng da đi xuyên dọc xưởng."
+        }
+      ]
+    },
+    {
+      "id": "thread-096",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Đóng bàn cắt da bò nguyên tấm (45–55 pia): Nên chọn khổ mặt bàn bao nhiêu, khung sắt thế nào để cắt không bị rung?",
+      "author": "Phạm Quốc Vương",
+      "authorRole": "Thợ Cắt Rập • Bình Tân",
+      "authorAvatar": "📐",
+      "createdAt": "2026-11-12T07:55:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Bàn Cắt Chuẩn",
+      "badgeType": "solved",
+      "likes": 29,
+      "views": 374,
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "content": "Mình hay nhập nguyên tấm da bò half-hide và whole-hide cỡ 45–55 pia (hoặc cuộn da lót, Texon, đệm mút khổ 1m37–1m5). Đang định thuê thợ cơ khí hàn khung bàn cắt mới. Cho mình hỏi kích thước mặt bàn cắt tối ưu nhất là bao nhiêu (có cần rộng tới 1m4 không hay 1m2 đủ rồi?), mặt gỗ nên dùng loại gì và tấm thớt cắt PVC có loại nguyên tấm phủ kín mặt bàn không?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-096-1",
+          "author": "Cơ Khí & Dụng Cụ Gia Huy",
+          "authorRole": "Đối Tác Thiết Bị Xưởng",
+          "authorAvatar": "⚙️",
+          "isStaff": false,
+          "createdAt": "2026-11-12T08:22:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Nếu cắt nguyên tấm half-hide và cuộn lót/Texon khổ 1m4 thì kích thước chuẩn xưởng là **1m2 x 2m4** (vừa đúng 1 tấm ván công nghiệp tiêu chuẩn 1220 x 2440mm nên không bị hao ván ghép mối). Nếu phòng rộng và bạn hay trải nguyên con da lớn hoặc rọc dây nịt dài 1m3 theo chiều ngang thì lên **1m4 x 2m6** (lúc này cần đứng cắt được cả 2 bên chiều dài bàn vì tay với tối đa ~75cm).\n\nKết cấu khung & mặt bàn:\n- Khung sắt hộp 40x80mm hoặc 50x50mm dày >= 1.4mm, có giằng ngang mỗi 60cm và chân tăng đơ cao su chỉnh cân bằng (tránh bàn cập kênh khi tì lực cắt).\n- Mặt bàn: ván MDF lõi xanh chống ẩm hoặc Plywood 18–25mm, bắt vít chìm từ dưới lên để mặt trên phẳng tuyệt đối.\n- Thảm cắt: mua cuộn thớt PVC xanh/xám tự liền chuyên bàn cắt công nghiệp dày 3mm cắt đúng kích thước 1m2 x 2m4 trải phủ kín, tuyệt đối tránh ghép nhiều tấm A1 vì lưỡi dao hay bị khựng ở khe nối.\n- Gắn thêm trục ống tuýp phi 34mm ở đầu bàn để xỏ cuộn giấy kraft/lót kéo ra cắt cực nhanh."
+        }
+      ]
+    },
+    {
+      "id": "thread-095",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Bố trí dãy máy may da (1 kim bước, máy trụ, máy viền): Khoảng cách giữa 2 bàn máy bao nhiêu và đi dây điện, ống hơi thế nào cho gọn?",
+      "author": "Vũ Hoàng Nam",
+      "authorRole": "Kỹ Thuật Máy May • Gò Vấp",
+      "authorAvatar": "🪡",
+      "createdAt": "2026-11-12T07:10:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Cụm Máy May",
+      "badgeType": "info",
+      "likes": 23,
+      "views": 315,
+      "stage": "may-da",
+      "stageLabel": "4. Các Dòng Máy May Da",
+      "content": "Xưởng nhỏ của mình chuẩn bị kê 4 máy (2 máy cào bơi bàn phẳng, 1 máy trụ may túi, 1 máy lạng da) cùng bàn phụ kế bên máy. Mình muốn hỏi khoảng cách lối đi giữa 2 hàng máy khi 2 thợ ngồi quay lưng vào nhau là tối thiểu bao nhiêu cm? Có cần chừa bàn phụ bên trái hay bên phải máy may để đỡ sệ thân túi không, và đi ổ điện + dây hơi từ trên trần xuống hay chạy dọc chân bàn?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-095-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-12T07:38:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Chú ý 4 thông số thực tế khi kê máy may đồ da (khác may vải ở chỗ chi tiết da cứng và thân túi thường vươn rộng):\n1. Khoảng cách lưng đối lưng giữa 2 dãy bàn máy: tối thiểu **1m20 – 1m40** (nếu ngồi quay lưng nhau thì mỗi người cần ~55cm lùi ghế + 30cm lối đi người khác bưng khay hàng qua không quẹt khuỷu tay).\n2. Bàn phụ đỡ hàng: với máy trụ may túi hộp/balo, rất nên ghép thêm 1 bàn phụ nhỏ cao bằng mặt trụ hoặc bàn chữ L phía bên trái và phía sau đầu máy để đỡ thân túi nặng, tránh sệ mép kéo lệch đường chỉ.\n3. Đi điện & hơi: luôn ưu tiên **treo máng điện / thanh ray thả dây từ trên xuống** ngay phía sau đầu máy (có CB riêng cho từng cụm máy, ổ cắm gắn ngay dưới gầm mặt bàn máy cho đèn LED cổ ngỗng). Tuyệt đối tránh rải dây điện dưới sàn vì bánh xe ghế xoay cán qua rất nguy hiểm.\n4. Nếu dùng súng xịt hơi vệ sinh bụi hoặc máy cắt chỉ/ép hơi: máy nén khí nên đặt hẳn ngoài ban công hoặc trong thùng tiêu âm, dẫn ống PU phi 8 chạy theo máng trên cao và phải gắn bộ **lọc tách nước (Air Filter)** trước khi xuống bàn vì hơi ẩm dính lên da mộc (Veg-tan) sẽ tạo vết ố loang."
+        }
+      ]
+    },
+    {
+      "id": "thread-094",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Làm đồ da ở chung cư / nhà phố san sát: Setup bàn đục giảm chấn thế nào để đục lỗ ban đêm không dội tiếng xuống tầng dưới?",
+      "author": "Lê Thảo Vy",
+      "authorRole": "Crafter Tại Gia • Hà Nội",
+      "authorAvatar": "🔨",
+      "createdAt": "2026-11-12T06:20:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Chống Ồn Chung Cư",
+      "badgeType": "solved",
+      "likes": 64,
+      "views": 890,
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "content": "Mình ở chung cư tầng 11, chỉ rảnh làm da từ 20h–23h tối. Dùng búa gỗ/nhựa đóng đục trên mặt bàn bình thường thì tiếng 'cộc cộc' truyền thẳng qua chân bàn xuống sàn bê tông, hàng xóm tầng dưới nhắc nhở suốt. Mình đã lót thớt cao su trắng rồi mà vẫn bị rung trầm xuống sàn. Có cách setup bàn đục hoặc combo vật liệu giảm chấn nào hiệu quả thực sự không ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-094-1",
+          "author": "Bách Nghệ Leather",
+          "authorRole": "Thợ Khâu Chung Cư • TP.HCM",
+          "authorAvatar": "🔇",
+          "isStaff": false,
+          "createdAt": "2026-11-12T06:45:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Lỗi phổ biến nhất là bạn đặt tấm đá granite/thớt đục **vào chính giữa mặt bàn gỗ** — mặt bàn trở thành màng trống khuếch đại tiếng bass dội thẳng xuống chân bàn!\n\nCombo chống ồn triệt để cho chung cư (xếp từ dưới sàn lên):\n1. Dưới 4 chân bàn: kê miếng cao su giảm chấn máy giặt hoặc mút EVA đặc dày 2cm.\n2. Vị trí đục: kê tấm đá granite dày 3–4cm **nằm ngay phía trên đỉnh trụ chân bàn** (không kê giữa nhịp ván bàn), dưới tấm đá lót 1 lớp cao su non / thảm yoga đặc 10mm.\n3. Phía trên đá: dùng thớt nhựa PP xanh/vàng + tấm lót nỉ hoặc tấm đục Punching Mat xốp cao su đặc.\n4. Nếu vẫn làm muộn sau 22h: đầu tư thêm 1 **máy ép đục tay (Silent Press / Arbor Press lắp đầu kẹp đục)** để kẹp cây đục xiên vào và kéo tay cầm xuống — êm 100%, không một tiếng động, lực ấn thẳng đứng lại cực kỳ đều lỗ."
+        }
+      ]
+    },
+    {
+      "id": "thread-093",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Xưởng lắp máy lạnh kín mít: Giải pháp hút bụi máy lạng và xử lý mùi keo dán, sơn cạnh, chất tẩy (Toluen/Aceton) chuẩn an toàn?",
+      "author": "Đặng Thành Công",
+      "authorRole": "Quản Lý Sản Xuất • Biên Hòa",
+      "authorAvatar": "🌬️",
+      "createdAt": "2026-11-12T05:30:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "An Toàn & Thông Gió",
+      "badgeType": "info",
+      "likes": 37,
+      "views": 442,
+      "stage": "lang-keo-gap",
+      "stageLabel": "2. Lạng, Keo & Gấp Mép",
+      "content": "Vì mùa nóng 38–40 độ keo dễ chết nhanh nên xưởng mình lắp máy lạnh đóng kín cửa. Nhưng đóng kín thì thợ kêu nhức đầu vì mùi keo chó/keo PU, dung môi lau keo và mùi sơn cạnh khi sấy nóng; thêm máy lạng mép thổi vụn xơ da bay mù mịt làm bít dàn lạnh điều hòa rất nhanh. Nên thiết kế quạt hút trần hay hút bàn thấp, và đấu hút bụi máy lạng thế nào để ít thất thoát hơi lạnh nhất ạ?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-093-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-12T05:58:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Đây là chi tiết rất nhiều xưởng mới bỏ sót khi lắp điều hòa:\n\n1. Hơi dung môi (keo gốc dung môi, chất tẩy, primer) **nặng hơn không khí**, nên chúng không bay lên trần mà là là ngay tầm mặt bàn và hít thẳng vào mũi thợ ngồi! Nếu bạn chỉ lắp quạt hút gắn trần thì chỉ hút mất hơi lạnh mà mùi keo vẫn đọng dưới bàn.\n   -> Giải pháp: lắp **chụp hút hoặc ống gió mềm Ø100–Ø150 gắn quạt hút ly tâm mini đặt ngang mép sau bàn bôi keo** (cách mặt bàn 10–15cm), có van tiết lưu mở khi bôi keo/sơn và chuyển dần keo mủ gốc nước (water-based glue) cho các bước dán lót để giảm 80% mùi dung môi.\n\n2. Máy lạng da (Skiving Machine): đừng để xơ da rơi xuống khay mở rồi bay ra phòng điều hòa. Hãy chế chụp tôn/mica dưới họng xả dao lạng nối thẳng ống ruột gà Ø60 vào **máy hút bụi công nghiệp lọc HEPA hoặc thùng lọc Cyclone** (đồng bộ công tắc cùng mô-tơ máy lạng). Máy lạng chạy đến đâu, vụn da bị hút sạch vào thùng đến đó, giữ dàn lạnh sạch gấp 4–5 lần.\n\n3. Luôn đặt bình chữa cháy bột/CO2 ngay gần khu vực trữ keo và sơn cạnh, dùng lọ keo nắp bóp/vòi chấm thay vì mở nắp lon lớn suốt cả ngày."
+        }
+      ]
+    },
+    {
+      "id": "thread-092",
+      "categoryId": "setup-xuong",
+      "categoryName": "Setup & Bố Trí Xưởng",
+      "title": "Cách đóng giá treo da nguyên tấm, lưu trữ rập giấy/Mica và khuôn bế thép cho xưởng 20–30m² không bị cong vênh, ẩm mốc?",
+      "author": "Trương Gia Bảo",
+      "authorRole": "Phụ Trách Kho Rập • Bình Dương",
+      "authorAvatar": "🗂️",
+      "createdAt": "2026-11-12T04:45:00Z",
+      "formattedDate": "12/11/2026",
+      "badge": "Kho Da & Rập",
+      "badgeType": "solved",
+      "likes": 31,
+      "views": 389,
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "content": "Xưởng mình làm tới hơn 40 mã túi ví khác nhau, bây giờ rập giấy kraft, rập mica với hơn chục bộ khuôn bế chất đống lên bàn cắt nhìn rất rối, nhiều tấm da cuộn dựng góc tường bị gãy nếp và mốc mặt khi vào mùa mưa. Anh em chia sẻ giúp cách làm kệ treo da và hệ thống lưu rập tìm trong 10 giây khi cần lấy ra cắt lại với ạ.",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-092-1",
+          "author": "Sài Gòn Leather Craft",
+          "authorRole": "Xưởng Sản Xuất • Phú Nhuận",
+          "authorAvatar": "🐂",
+          "isStaff": false,
+          "createdAt": "2026-11-12T05:12:00Z",
+          "formattedDate": "12/11/2026",
+          "content": "Xưởng 20–30m² muốn gọn mà bảo quản vật tư bền lâu thì chia làm 3 hệ kệ riêng:\n\n1. **Kệ treo da (chống gãy nếp & thoáng khí):** Hàn khung chữ A hoặc khung áp tường với các thanh ngang bằng **ống inox tròn Ø34–Ø42mm** (không vắt lên cạnh sắt vuông vì sẽ hằn vết gãy vĩnh viễn trên da). Da cuộn thì cuộn mặt cật hướng ra ngoài (hoặc lót giấy nến giữa các lớp da dầu/sáp), đặt nằm ngang trên giá chữ Y có chêm cao su.\n\n2. **Lưu trữ rập giấy & rập Mica:** Đục 1 lỗ Ø8mm ở góc thừa mỗi chi tiết rập, xâu nguyên bộ theo từng mã sản phẩm (vd `RM-VI-001`) bằng **móc treo rập chuyên dụng chữ S hoặc dây thép bọc nhựa**, treo lên thanh xà ngang sát tường hoặc móc trượt, kèm 1 tờ phiếu ghi thông số da, lót, khóa kéo bên ngoài. Cần bộ nào rút đúng 1 móc, không bao giờ mất mảnh con.\n\n3. **Kệ khuôn bế thép:** Hàn kệ sắt V lỗ nhiều tầng chia rãnh đứng như giá đĩa (lót thảm cao su ở đáy) để dựng nghiêng khuôn bế lưỡi quay vào trong tránh mẻ lưỡi và tránh chạm tay khi lấy. Phòng kín mùa mưa nhớ thêm ẩm kế + máy hút ẩm giữ độ ẩm lý tưởng 50–60% RH để da không lên mốc trắng."
+        }
+      ]
+    },
     {
       "id": "thread-086",
       "categoryId": "da-keo",
