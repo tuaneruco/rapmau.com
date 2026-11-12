@@ -1515,7 +1515,7 @@
         <div class="process-card">
           <div class="process-step-num">1</div>
           <h4 class="process-card-title">Tiếp Nhận &amp; Tư Vấn</h4>
-          <p class="process-card-desc">Lắng nghe ý tưởng, tư vấn chất da, ngân sách và thời hạn giao hàng qua Zalo/Hotline.</p>
+          <p class="process-card-desc">Lắng nghe ý tưởng, tư vấn chất da, ngân sách và thời hạn giao hàng qua Email info@rapmau.com.</p>
         </div>
         <div class="process-card">
           <div class="process-step-num">2</div>
@@ -1887,8 +1887,9 @@
 
       const leadMessage = `[B2B LEADS] Đơn vị: ${company || 'Cá nhân/Brand'} | Dịch vụ: ${service} | Số lượng: ${quantity} | Hạn: ${deadline || 'Linh hoạt'} | Ghi chú: ${notes}`;
 
+      let savedToServer = false;
       try {
-        await fetch('/api/consultations', {
+        const resp = await fetch('/api/consultations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1899,21 +1900,33 @@
             message: leadMessage
           })
         });
+        if (resp && resp.ok) savedToServer = true;
       } catch (err) {
         // Fallback static
       }
 
-      // Hiện thông báo thành công
-      document.getElementById('quoteSuccessAlert').style.display = 'block';
-      submitBtn.innerHTML = '<span>✓ Đã gửi thông tin</span>';
-
       // Tạo đường link gửi Email với nội dung soạn sẵn về info@rapmau.com
       const mailSubject = encodeURIComponent(`[B2B] Yêu cầu kết nối báo giá: ${service} (${quantity})`);
       const mailBody = encodeURIComponent(`Xin chào Ban Kết Nối RAPMAU,\nTôi là ${name} (${company || 'Khách hàng từ website'}).\nNhu cầu: ${service}\nSố lượng dự kiến: ${quantity}\nEmail/Liên hệ lại: ${phone}\nGhi chú: ${notes || 'Trao đổi thêm qua email'}`);
-      document.getElementById('zaloForwardBtn').href = `mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}`;
+      const mailBtn = document.getElementById('zaloForwardBtn');
+      mailBtn.href = `mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}`;
+
+      const alertBox = document.getElementById('quoteSuccessAlert');
+      const alertTitle = alertBox.querySelector('h4');
+      const alertDesc = alertBox.querySelector('p');
+      if (!savedToServer) {
+        if (alertTitle) alertTitle.textContent = '📩 Đã Soạn Sẵn Nội Dung — Bấm Nút Bên Dưới Để Gửi Email!';
+        if (alertDesc) alertDesc.innerHTML = 'Vui lòng bấm nút xanh bên dưới để mở trình gửi thư và gửi thẳng thông tin tới <strong>info@rapmau.com</strong> (hệ thống web tĩnh không lưu tự động trực tiếp).';
+        mailBtn.innerHTML = '<span>✉️ Gửi Ngay Yêu Cầu Về info@rapmau.com →</span>';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>✉️ Soạn lại hoặc Gửi lại</span>';
+      } else {
+        submitBtn.innerHTML = '<span>✓ Đã gửi thông tin</span>';
+      }
+      alertBox.style.display = 'block';
 
       // Cuộn nhẹ xuống thông báo
-      document.getElementById('quoteSuccessAlert').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     // Xử lý Form Đăng Ký Xưởng Liên Kết / Nhà Cung Cấp Nguyên Liệu
@@ -1933,8 +1946,9 @@
 
       const partnerMessage = `[PARTNER NETWORK] Xưởng/NCC: ${org} | Chuyên môn: ${specialty} | Năng lực: ${capacity || 'Chưa ghi'} | Tiêu chuẩn: ${standards || 'Nội địa'} | Ghi chú: ${notes}`;
 
+      let savedToServer = false;
       try {
-        await fetch('/api/consultations', {
+        const resp = await fetch('/api/consultations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1945,18 +1959,31 @@
             message: partnerMessage
           })
         });
+        if (resp && resp.ok) savedToServer = true;
       } catch (err) {
         // Fallback static
       }
 
-      document.getElementById('partnerSuccessAlert').style.display = 'block';
-      submitBtn.innerHTML = '<span>✓ Đã gửi hồ sơ thành công</span>';
-
       const mailSubject = encodeURIComponent(`[ĐỐI TÁC XƯỞNG / NCC] Hồ sơ năng lực ${org}`);
-      const mailBody = encodeURIComponent(`Xin chào Ban Kết Nối RAPMAU,\nTôi là ${name} đại diện ${org}.\nVai trò/Thế mạnh: ${specialty}\nNăng lực dự kiến: ${capacity || 'Trao đổi thêm'}\nTiêu chuẩn: ${standards || 'Nội địa'}\nLiên hệ lại: ${phone}`);
-      document.getElementById('partnerZaloForwardBtn').href = `mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}`;
+      const mailBody = encodeURIComponent(`Xin chào Ban Kết Nối RAPMAU,\nTôi là ${name} đại diện ${org}.\nVai trò/Thế mạnh: ${specialty}\nNăng lực dự kiến: ${capacity || 'Trao đổi thêm'}\nTiêu chuẩn: ${standards || 'Nội địa'}\nLiên hệ lại: ${phone}\nGhi chú: ${notes || '-'}`);
+      const partnerMailBtn = document.getElementById('partnerZaloForwardBtn');
+      partnerMailBtn.href = `mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}`;
 
-      document.getElementById('partnerSuccessAlert').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const partnerBox = document.getElementById('partnerSuccessAlert');
+      const partnerTitle = partnerBox.querySelector('h4');
+      const partnerDesc = partnerBox.querySelector('p');
+      if (!savedToServer) {
+        if (partnerTitle) partnerTitle.textContent = '📩 Đã Soạn Sẵn Hồ Sơ — Bấm Nút Bên Dưới Để Gửi Email!';
+        if (partnerDesc) partnerDesc.innerHTML = 'Vui lòng bấm nút xanh bên dưới để mở trình gửi thư và gửi thẳng hồ sơ năng lực tới <strong>info@rapmau.com</strong> (hệ thống web tĩnh không lưu tự động trực tiếp).';
+        partnerMailBtn.innerHTML = '<span>✉️ Gửi Ngay Hồ Sơ Về info@rapmau.com →</span>';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>✉️ Soạn lại hoặc Gửi lại</span>';
+      } else {
+        submitBtn.innerHTML = '<span>✓ Đã gửi hồ sơ thành công</span>';
+      }
+      partnerBox.style.display = 'block';
+
+      partnerBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     // ==================== HYDRATE NỘI DUNG & BÀI VIẾT B2B TỪ CATALOG / ADMIN ====================

@@ -37,6 +37,54 @@ function formatVND(amount) {
   return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
 }
 
+function resolveDownloadAction({ url, externalUrl, sizeMB, itemLabel }) {
+  if (externalUrl) {
+    return {
+      mode: 'external',
+      href: externalUrl,
+      isDirect: false,
+      sizeLabel: sizeMB ? `${sizeMB} MB` : 'Google Drive'
+    };
+  }
+  const host = typeof window !== 'undefined' && window.location ? window.location.hostname : '';
+  const isLocal =
+    host === 'localhost' ||
+    host === '127.0.0.1' ||
+    host.startsWith('192.168.') ||
+    host.startsWith('10.');
+
+  const oversizedMap = (state.catalog && state.catalog.oversizedMedia) || {};
+  const hasManifest = Object.keys(oversizedMap).length > 0;
+  const nfcUrl = String(url || '').normalize('NFC');
+  const inOversized = Object.prototype.hasOwnProperty.call(oversizedMap, nfcUrl);
+  const effectiveSize =
+    typeof oversizedMap[nfcUrl] === 'number' && oversizedMap[nfcUrl] > 0
+      ? oversizedMap[nfcUrl]
+      : Number(sizeMB) || 0;
+
+  if (!isLocal && (inOversized || (!hasManifest && effectiveSize > 24))) {
+    const label = itemLabel || 'Tài liệu / Bản vẽ PDF';
+    const sizeText = effectiveSize > 0 ? `${effectiveSize} MB` : '>24 MB';
+    const subject = encodeURIComponent(`[NHẬN LINK DRIVE] ${label}`);
+    const body = encodeURIComponent(
+      `Xin chào Ban Quản Trị RAPMAU.COM,\nNhờ gửi giúp mình link tải Google Drive cho tài liệu dung lượng lớn:\n- Tên tài liệu: ${label}\n- Dung lượng: ${sizeText}\n- Đường dẫn tham khảo: ${nfcUrl}\n\nXin cảm ơn!`
+    );
+    return {
+      mode: 'mailto',
+      href: `mailto:info@rapmau.com?subject=${subject}&body=${body}`,
+      isDirect: false,
+      sizeLabel: sizeText
+    };
+  }
+
+  return {
+    mode: 'direct',
+    href: encodeURI(url || '#'),
+    isDirect: true,
+    sizeLabel: effectiveSize > 0 ? `${effectiveSize} MB` : ''
+  };
+}
+
 function saveCart() {
   localStorage.setItem('rapmau_cart', JSON.stringify(state.cart));
   updateCartBadge();
@@ -644,7 +692,7 @@ function renderFreeBooks() {
   const unlockBtn = document.getElementById('openBookUnlockModalBtn');
   if (state.zaloBooksUnlocked) {
     if (statusText) {
-      statusText.innerHTML = `<strong style="color:var(--accent-green);">✅ Đã mở khoá thành viên Nhóm Zalo!</strong> Bạn có thể tải trực tiếp toàn bộ 26 đầu sách PDF bên dưới:`;
+      statusText.innerHTML = `<strong style="color:var(--accent-green);">✅ Thư viện 26 sách &amp; giáo trình mở tự do 100%!</strong> Bấm tải trực tiếp bên dưới (file nặng &gt;24 MB nhận link Google Drive qua Email <strong>info@rapmau.com</strong>):`;
     }
     if (unlockBtn) {
       unlockBtn.textContent = '📂 Xem Danh Sách Tải Nhanh Toàn Bộ 26 Sách';
@@ -674,14 +722,28 @@ function renderFreeBooks() {
   grid.innerHTML = visibleBooks
     .map((b) => {
       const cover = encodeURI(b.cover || '/assets/tools/pattern-placeholder.svg');
-      const dlUrl = encodeURI(b.downloadUrl);
+      const dl = resolveDownloadAction({
+        url: b.downloadUrl,
+        externalUrl: b.externalUrl,
+        sizeMB: b.sizeMB,
+        itemLabel: `${b.id} - ${b.title}`
+      });
+      const btnHref = dl.mode === 'direct' ? `${dl.href}?download=1` : dl.href;
+      const btnAttrs = dl.mode === 'direct' ? 'download' : 'target="_blank" rel="noopener"';
+      const btnBg = dl.mode === 'mailto' ? '#0284c7' : 'var(--accent-green)';
+      const btnLabel =
+        dl.mode === 'mailto'
+          ? `📩 Nhận Link Drive (${b.sizeMB} MB)`
+          : dl.mode === 'external'
+            ? `☁️ Tải Qua Drive (${b.sizeMB} MB)`
+            : `⬇ Tải Sách Miễn Phí (${b.sizeMB} MB)`;
       return `
         <article class="book-card">
           <div class="book-cover-wrap" data-book-action="open" data-book-id="${b.id}">
             <img src="${cover}" alt="${b.title}" loading="lazy" onerror="this.src='/assets/tools/pattern-placeholder.svg'" />
             <div class="card-badges-top">
               <span class="book-folder-badge">📁 ${b.folderKey}</span>
-              <span class="free-badge">🎁 FREE PDF</span>
+              <span class="free-badge">${dl.mode === 'mailto' ? '☁️ DRIVE FREE' : '🎁 FREE ' + (b.format || 'PDF')}</span>
             </div>
             <div class="card-meta-bottom">
               <span class="meta-chip">📄 ${b.format} • ${b.sizeMB} MB</span>
@@ -698,8 +760,8 @@ function renderFreeBooks() {
               ${b.title}
             </h3>
             <div class="card-footer" style="margin-top:auto;">
-              <a href="${dlUrl}?download=1" class="btn-sm btn-add" style="width:100%; text-align:center; text-decoration:none; background:var(--accent-green);" download>
-                ⬇ Tải Sách Miễn Phí (${b.sizeMB} MB)
+              <a href="${btnHref}" class="btn-sm btn-add" style="width:100%; text-align:center; text-decoration:none; background:${btnBg};" ${btnAttrs}>
+                ${btnLabel}
               </a>
             </div>
           </div>
@@ -713,6 +775,14 @@ function openZaloBookModal(bookId) {
   const book = state.freeBooks.find((b) => b.id === bookId) || state.freeBooks[0];
   const backdrop = document.getElementById('cartModalBackdrop');
   const content = document.getElementById('cartModalContent');
+  const activeBookDl = book
+    ? resolveDownloadAction({
+        url: book.downloadUrl,
+        externalUrl: book.externalUrl,
+        sizeMB: book.sizeMB,
+        itemLabel: `${book.id} - ${book.title}`
+      })
+    : null;
 
   content.innerHTML = `
     <div style="text-align:center; margin-bottom:16px;">
@@ -742,25 +812,35 @@ function openZaloBookModal(bookId) {
 
     <div style="background:#f0fdf4; border:1.5px solid #16a34a; border-radius:12px; padding:16px;">
       <strong style="color:#166534; display:block; margin-bottom:10px;">
-        ✅ Thư viện mở 100% — Bấm tải trực tiếp sách bên dưới:
+        ✅ Thư viện mở 100% — Các file &le; 24 MB tải ngay; file dung lượng lớn nhận link Google Drive qua Email info@rapmau.com:
       </strong>
       ${
-        book
-          ? `<a href="${encodeURI(book.downloadUrl)}?download=1" class="btn btn-primary btn-full" download style="margin-bottom:12px;">
-               ⬇ Tải Ngay: ${book.title} (${book.sizeMB} MB)
+        book && activeBookDl
+          ? `<a href="${activeBookDl.mode === 'direct' ? activeBookDl.href + '?download=1' : activeBookDl.href}" class="btn btn-primary btn-full" ${activeBookDl.mode === 'direct' ? 'download' : 'target="_blank" rel="noopener"'} style="margin-bottom:12px; ${activeBookDl.mode === 'mailto' ? 'background:#0284c7; border-color:#0284c7;' : ''}">
+               ${activeBookDl.mode === 'mailto' ? `📩 Nhận Link Google Drive (${book.sizeMB} MB): ${book.title}` : `⬇ Tải Ngay: ${book.title} (${book.sizeMB} MB)`}
              </a>`
           : ''
       }
       <div style="max-height:240px; overflow-y:auto; display:flex; flex-direction:column; gap:6px; border-top:1px dashed #86efac; padding-top:10px;">
         ${state.freeBooks
-          .map(
-            (fb) => `
-          <a href="${encodeURI(fb.downloadUrl)}?download=1" download style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#fff; border-radius:8px; border:1px solid #bbf7d0; text-decoration:none; color:var(--text-main); font-size:13px;">
+          .map((fb) => {
+            const fbDl = resolveDownloadAction({
+              url: fb.downloadUrl,
+              externalUrl: fb.externalUrl,
+              sizeMB: fb.sizeMB,
+              itemLabel: `${fb.id} - ${fb.title}`
+            });
+            const fbHref = fbDl.mode === 'direct' ? `${fbDl.href}?download=1` : fbDl.href;
+            const fbAttrs = fbDl.mode === 'direct' ? 'download' : 'target="_blank" rel="noopener"';
+            const fbColor = fbDl.mode === 'mailto' ? '#0284c7' : 'var(--accent-green)';
+            const fbIcon = fbDl.mode === 'mailto' ? '📩 Drive' : '⬇';
+            return `
+          <a href="${fbHref}" ${fbAttrs} style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#fff; border-radius:8px; border:1px solid #bbf7d0; text-decoration:none; color:var(--text-main); font-size:13px;">
             <span><strong>[${fb.folderKey}]</strong> ${fb.title}</span>
-            <span style="color:var(--accent-green); font-weight:800; white-space:nowrap; margin-left:8px;">⬇ ${fb.sizeMB} MB</span>
+            <span style="color:${fbColor}; font-weight:800; white-space:nowrap; margin-left:8px;">${fbIcon} ${fb.sizeMB} MB</span>
           </a>
-        `
-          )
+        `;
+          })
           .join('')}
       </div>
     </div>
@@ -1067,7 +1147,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
         <!-- Khung cam kết niềm tin & quyền thương mại ngay dưới nút mua -->
         <div class="detail-trust-box">
           <div>✅ <strong>Quyền thương mại:</strong> Được phép sản xuất &amp; bán thương mại sản phẩm đồ da hoàn thiện.</div>
-          <div>🔄 <strong>Bảo hành chuẩn 1:1:</strong> Hỗ trợ gửi lại file qua Zalo trong 15 phút hoặc hoàn tiền 100% nếu lỗi tỷ lệ.</div>
+          <div>🔄 <strong>Bảo hành chuẩn 1:1:</strong> Hỗ trợ kiểm tra, gửi lại file chuẩn 1:1 qua Email info@rapmau.com nếu có sai lệch tỷ lệ.</div>
           <div>🚚 <strong>Giao hàng toàn quốc:</strong> Được kiểm tra Rập Giấy 350gsm / Rập Mica 2mm trước khi thanh toán.</div>
         </div>
 
@@ -1378,15 +1458,35 @@ function openInstantFreeDownloadModal(product) {
             .map(
               (url, idx) => {
                 const cleanName = product.pdfFileNames[idx] || `${product.sku}-Ban-Ve-Rap-1-1-${idx + 1}.pdf`;
-                return `
+                const dl = resolveDownloadAction({
+                  url,
+                  externalUrl: product.externalUrl,
+                  sizeMB: product.fileSizeMB,
+                  itemLabel: `${product.sku} - ${cleanName}`
+                });
+                const labelSize = dl.sizeLabel ? ` (${dl.sizeLabel})` : '';
+                if (dl.mode === 'mailto') {
+                  return `
             <a
-              href="${encodeURI(url)}"
+              href="${dl.href}"
               class="btn btn-primary"
-              download="${cleanName}"
+              style="background:#0284c7; border-color:#0284c7;"
               target="_blank"
               rel="noopener"
             >
-              ⬇ Tải File PDF: ${cleanName} (${product.fileSizeMB} MB)
+              📩 Nhận Link Google Drive: ${cleanName}${labelSize}
+            </a>
+          `;
+                }
+                return `
+            <a
+              href="${dl.href}"
+              class="btn btn-primary"
+              ${dl.mode === 'direct' ? `download="${cleanName}"` : ''}
+              target="_blank"
+              rel="noopener"
+            >
+              ${dl.mode === 'external' ? '☁️ Tải Qua Drive' : '⬇ Tải File PDF'}: ${cleanName}${labelSize}
             </a>
           `;
               }
@@ -1397,15 +1497,21 @@ function openInstantFreeDownloadModal(product) {
               (url, idx) => {
                 const ext = url.split('.').pop() || 'dxf';
                 const cleanCadName = `${product.sku}-Vector-CAD-${idx + 1}.${ext}`;
+                const dl = resolveDownloadAction({
+                  url,
+                  externalUrl: product.externalUrl,
+                  sizeMB: 0,
+                  itemLabel: `${product.sku} - ${cleanCadName}`
+                });
                 return `
             <a
-              href="${encodeURI(url)}"
+              href="${dl.href}"
               class="btn btn-secondary"
-              download="${cleanCadName}"
+              ${dl.mode === 'direct' ? `download="${cleanCadName}"` : ''}
               target="_blank"
               rel="noopener"
             >
-              📐 Tải File CAD/Vector: ${cleanCadName}
+              ${dl.mode === 'mailto' ? `📩 Nhận Link Drive CAD: ${cleanCadName}` : `📐 Tải File CAD/Vector: ${cleanCadName}`}
             </a>
           `;
               }
@@ -2474,6 +2580,7 @@ function bindEvents() {
       message: document.getElementById('consultMessage').value.trim()
     };
     let entryId = `TV${Date.now().toString().slice(-6)}`;
+    let savedToServer = false;
     try {
       const res = await fetch('/api/consultations', {
         method: 'POST',
@@ -2483,14 +2590,18 @@ function bindEvents() {
       if (res.ok) {
         const data = await res.json();
         if (data.ok && data.entry?.id) entryId = data.entry.id;
+        savedToServer = true;
       }
     } catch {
       // Fallback trên bản Cloud Static
     }
+    const mailHref = `mailto:info@rapmau.com?subject=${encodeURIComponent(`[YÊU CẦU #${entryId}] ${payload.needType}`)}&body=${encodeURIComponent(`Người gửi: ${payload.name}\nLiên hệ lại: ${payload.phone}\nMã tham khảo: ${payload.skuRef || '-'}\nNội dung: ${payload.message}`)}`;
     const fb = document.getElementById('consultFeedback');
-    fb.innerHTML = `✅ Đã ghi nhận yêu cầu <strong>#${entryId}</strong>! Hệ thống kết nối sẽ phản hồi qua Email <strong>info@rapmau.com</strong>. <a href="mailto:info@rapmau.com?subject=${encodeURIComponent(`[YÊU CẦU #${entryId}] ${payload.needType}`)}&body=${encodeURIComponent(`Người gửi: ${payload.name}\nLiên hệ lại: ${payload.phone}\nMã tham khảo: ${payload.skuRef || '-'}\nNội dung: ${payload.message}`)}" style="color:#0369a1; font-weight:700; text-decoration:underline; margin-left:6px;">Bấm để gửi kèm ảnh qua Email →</a>`;
+    fb.innerHTML = savedToServer
+      ? `✅ Đã ghi nhận yêu cầu <strong>#${entryId}</strong>! Hệ thống kết nối sẽ phản hồi qua Email <strong>info@rapmau.com</strong>. <a href="${mailHref}" style="color:#0369a1; font-weight:700; text-decoration:underline; margin-left:6px;">Bấm để gửi kèm ảnh qua Email →</a>`
+      : `📩 Đã soạn sẵn yêu cầu <strong>#${entryId}</strong>! Bấm nút bên phải để hoàn tất gửi về Email <strong>info@rapmau.com</strong>: <a href="${mailHref}" style="display:inline-block; margin-left:8px; padding:4px 10px; background:#0284c7; color:#fff; border-radius:6px; font-weight:700; text-decoration:none;">✉️ Gửi Email Ngay →</a>`;
     fb.classList.remove('hidden');
-    e.target.reset();
+    if (savedToServer) e.target.reset();
   });
 }
 

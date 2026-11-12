@@ -467,6 +467,7 @@
     const notes = document.getElementById('rmMeetupNotes').value.trim();
 
     let regId = `CF${Date.now().toString().slice(-6)}`;
+    let savedToServer = false;
     try {
       const resp = await fetch('/api/consultations', {
         method: 'POST',
@@ -481,7 +482,10 @@
       });
       if (resp && resp.ok) {
         const json = await resp.json();
-        if (json?.ok && json?.entry?.id) regId = json.entry.id;
+        if (json?.ok && json?.entry?.id) {
+          regId = json.entry.id;
+          savedToServer = true;
+        }
       }
     } catch {
       // Bản tĩnh Cloud vẫn hiển thị bước xác nhận Email
@@ -499,16 +503,24 @@
     );
 
     const bodyEl = document.getElementById('rmMeetupBody');
+    const titleText = savedToServer
+      ? `Đã Ghi Nhận Đăng Ký #${regId}!`
+      : `Đã Soạn Sẵn Đơn Đăng Ký #${regId} — Bấm Gửi Email!`;
+    const descHtml = savedToServer
+      ? `Cảm ơn <strong>${escapeHtml(name)}</strong>! Ban điều phối sẽ sàng lọc và ghép nhóm <strong>6–8 thành viên bổ trợ lẫn nhau</strong> tại khu vực <strong>${escapeHtml(area)}</strong>, sau đó gửi lịch &amp; địa điểm cụ thể về Email <strong>${escapeHtml(email)}</strong> từ <strong>info@rapmau.com</strong>.`
+      : `Cảm ơn <strong>${escapeHtml(name)}</strong>! Hãy bấm nút bên dưới để gửi thông tin đăng ký (khu vực <strong>${escapeHtml(area)}</strong>) thẳng về Email <strong>info@rapmau.com</strong> giúp Ban điều phối ghép đúng nhóm 6–8 thành viên phù hợp.`;
+    const mailBtnLabel = savedToServer
+      ? '✉️ Gửi Kèm Ảnh Mẫu / Hồ Sơ Về info@rapmau.com'
+      : '✉️ Hoàn Tất Gửi Đăng Ký Về info@rapmau.com →';
+
     bodyEl.innerHTML = `
       <div class="rm-meetup-success">
-        <div style="font-size:38px; line-height:1;">☕✅</div>
-        <h4>Đã Ghi Nhận Đăng Ký #${regId}!</h4>
-        <p>
-          Cảm ơn <strong>${escapeHtml(name)}</strong>! Ban điều phối sẽ sàng lọc và ghép nhóm <strong>6–8 thành viên bổ trợ lẫn nhau</strong> tại khu vực <strong>${escapeHtml(area)}</strong>, sau đó gửi lịch &amp; địa điểm cụ thể về Email <strong>${escapeHtml(email)}</strong> từ <strong>info@rapmau.com</strong>.
-        </p>
+        <div style="font-size:38px; line-height:1;">${savedToServer ? '☕✅' : '☕📩'}</div>
+        <h4>${titleText}</h4>
+        <p>${descHtml}</p>
         <div>
           <a href="mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}" class="rm-meetup-mailto">
-            ✉️ Gửi Kèm Ảnh Mẫu / Hồ Sơ Về info@rapmau.com
+            ${mailBtnLabel}
           </a>
         </div>
         <button type="button" class="rm-meetup-later" id="rmMeetupDoneCloseBtn">Đóng cửa sổ</button>
