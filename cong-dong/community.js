@@ -8,7 +8,7 @@
 
   let categories = [];
   let threads = [];
-  let activeCategory = 'all';
+  let activeCategory = new URLSearchParams(window.location.search).get('category') || 'all';
   let activeStage = 'all';
   let searchQuery = '';
   let likedThreadIds = new Set();
