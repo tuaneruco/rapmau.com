@@ -468,6 +468,7 @@
 
     let regId = `CF${Date.now().toString().slice(-6)}`;
     let savedToServer = false;
+    let sentToGoogleForm = false;
     try {
       const resp = await fetch('/api/consultations', {
         method: 'POST',
@@ -488,8 +489,20 @@
         }
       }
     } catch {
-      // Bản tĩnh Cloud vẫn hiển thị bước xác nhận Email
+      // Bản tĩnh Cloud dùng Google Form Bridge bên dưới
     }
+
+    if (typeof window.submitRapmauGoogleForm === 'function') {
+      sentToGoogleForm = await window.submitRapmauGoogleForm({
+        name,
+        contact: email,
+        type: `☕ Cafe Giao Lưu 6–8 Người (#${regId})`,
+        roleArea: `${role} — ${area}`,
+        details: notes
+      });
+    }
+
+    const isRecorded = savedToServer || sentToGoogleForm;
 
     try {
       localStorage.setItem(LS_DISMISSED_UNTIL, String(Date.now() + SUBMIT_TTL_MS));
@@ -503,19 +516,23 @@
     );
 
     const bodyEl = document.getElementById('rmMeetupBody');
-    const titleText = savedToServer
+    const titleText = isRecorded
       ? `Đã Ghi Nhận Đăng Ký #${regId}!`
       : `Đã Soạn Sẵn Đơn Đăng Ký #${regId} — Bấm Gửi Email!`;
-    const descHtml = savedToServer
-      ? `Cảm ơn <strong>${escapeHtml(name)}</strong>! Ban điều phối sẽ sàng lọc và ghép nhóm <strong>6–8 thành viên bổ trợ lẫn nhau</strong> tại khu vực <strong>${escapeHtml(area)}</strong>, sau đó gửi lịch &amp; địa điểm cụ thể về Email <strong>${escapeHtml(email)}</strong> từ <strong>info@rapmau.com</strong>.`
-      : `Cảm ơn <strong>${escapeHtml(name)}</strong>! Hãy bấm nút bên dưới để gửi thông tin đăng ký (khu vực <strong>${escapeHtml(area)}</strong>) thẳng về Email <strong>info@rapmau.com</strong> giúp Ban điều phối ghép đúng nhóm 6–8 thành viên phù hợp.`;
-    const mailBtnLabel = savedToServer
-      ? '✉️ Gửi Kèm Ảnh Mẫu / Hồ Sơ Về info@rapmau.com'
+    const descHtml = isRecorded
+      ? `Cảm ơn <strong>${escapeHtml(name)}</strong>! Thông tin của bạn đã được lưu tự động vào hệ thống Google Sheet theo dõi của Ban điều phối. Chúng tôi sẽ ghép nhóm <strong>6–8 thành viên bổ trợ lẫn nhau</strong> tại khu vực <strong>${escapeHtml(area)}</strong> và gửi lịch về <strong>${escapeHtml(email)}</strong> từ <strong>info@rapmau.com</strong>.`
+      : `Cảm ơn <strong>${escapeHtml(name)}</strong>! Hãy bấm nút bên dưới để gửi thông tin đăng ký (khu vực <strong>${escapeHtml(area)}</strong>) về Email <strong>info@rapmau.com</strong>.`;
+    const mailBtnLabel = isRecorded
+      ? '✉️ Gửi Kèm Ảnh Mẫu (Nếu Có) Qua Email'
       : '✉️ Hoàn Tất Gửi Đăng Ký Về info@rapmau.com →';
+    const gformLinkHtml =
+      !isRecorded && window.RAPMAU_GFORM?.viewUrl
+        ? `<div style="margin-top:8px;"><a href="${window.RAPMAU_GFORM.viewUrl}" target="_blank" rel="noopener" style="font-size:12.5px; color:#0284c7; font-weight:700; text-decoration:underline;">Hoặc điền trực tiếp trên Google Form →</a></div>`
+        : '';
 
     bodyEl.innerHTML = `
       <div class="rm-meetup-success">
-        <div style="font-size:38px; line-height:1;">${savedToServer ? '☕✅' : '☕📩'}</div>
+        <div style="font-size:38px; line-height:1;">${isRecorded ? '☕✅' : '☕📩'}</div>
         <h4>${titleText}</h4>
         <p>${descHtml}</p>
         <div>
@@ -523,6 +540,7 @@
             ${mailBtnLabel}
           </a>
         </div>
+        ${gformLinkHtml}
         <button type="button" class="rm-meetup-later" id="rmMeetupDoneCloseBtn">Đóng cửa sổ</button>
       </div>
     `;

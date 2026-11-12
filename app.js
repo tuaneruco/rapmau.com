@@ -2581,6 +2581,7 @@ function bindEvents() {
     };
     let entryId = `TV${Date.now().toString().slice(-6)}`;
     let savedToServer = false;
+    let sentToGoogleForm = false;
     try {
       const res = await fetch('/api/consultations', {
         method: 'POST',
@@ -2593,15 +2594,27 @@ function bindEvents() {
         savedToServer = true;
       }
     } catch {
-      // Fallback trên bản Cloud Static
+      // Fallback trên bản Cloud Static dùng Google Form Bridge
     }
+
+    if (typeof window.submitRapmauGoogleForm === 'function') {
+      sentToGoogleForm = await window.submitRapmauGoogleForm({
+        name: payload.name,
+        contact: payload.phone,
+        type: `${payload.needType} (#${entryId})`,
+        roleArea: payload.skuRef ? `SKU/Ref: ${payload.skuRef}` : 'Trang chủ RAPMAU',
+        details: payload.message
+      });
+    }
+
+    const isRecorded = savedToServer || sentToGoogleForm;
     const mailHref = `mailto:info@rapmau.com?subject=${encodeURIComponent(`[YÊU CẦU #${entryId}] ${payload.needType}`)}&body=${encodeURIComponent(`Người gửi: ${payload.name}\nLiên hệ lại: ${payload.phone}\nMã tham khảo: ${payload.skuRef || '-'}\nNội dung: ${payload.message}`)}`;
     const fb = document.getElementById('consultFeedback');
-    fb.innerHTML = savedToServer
-      ? `✅ Đã ghi nhận yêu cầu <strong>#${entryId}</strong>! Hệ thống kết nối sẽ phản hồi qua Email <strong>info@rapmau.com</strong>. <a href="${mailHref}" style="color:#0369a1; font-weight:700; text-decoration:underline; margin-left:6px;">Bấm để gửi kèm ảnh qua Email →</a>`
+    fb.innerHTML = isRecorded
+      ? `✅ Đã ghi nhận yêu cầu <strong>#${entryId}</strong> vào hệ thống Google Sheet của RAPMAU.COM! Chúng tôi sẽ phản hồi qua <strong>${payload.phone}</strong> / Email <strong>info@rapmau.com</strong>. <a href="${mailHref}" style="color:#0369a1; font-weight:700; text-decoration:underline; margin-left:6px;">Bấm để gửi kèm ảnh mẫu qua Email (nếu có) →</a>`
       : `📩 Đã soạn sẵn yêu cầu <strong>#${entryId}</strong>! Bấm nút bên phải để hoàn tất gửi về Email <strong>info@rapmau.com</strong>: <a href="${mailHref}" style="display:inline-block; margin-left:8px; padding:4px 10px; background:#0284c7; color:#fff; border-radius:6px; font-weight:700; text-decoration:none;">✉️ Gửi Email Ngay →</a>`;
     fb.classList.remove('hidden');
-    if (savedToServer) e.target.reset();
+    if (isRecorded) e.target.reset();
   });
 }
 

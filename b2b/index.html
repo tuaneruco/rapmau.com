@@ -1888,6 +1888,7 @@
       const leadMessage = `[B2B LEADS] Đơn vị: ${company || 'Cá nhân/Brand'} | Dịch vụ: ${service} | Số lượng: ${quantity} | Hạn: ${deadline || 'Linh hoạt'} | Ghi chú: ${notes}`;
 
       let savedToServer = false;
+      let sentToGoogleForm = false;
       try {
         const resp = await fetch('/api/consultations', {
           method: 'POST',
@@ -1902,8 +1903,20 @@
         });
         if (resp && resp.ok) savedToServer = true;
       } catch (err) {
-        // Fallback static
+        // Fallback static dùng Google Form Bridge
       }
+
+      if (typeof window.submitRapmauGoogleForm === 'function') {
+        sentToGoogleForm = await window.submitRapmauGoogleForm({
+          name: company ? `${name} (${company})` : name,
+          contact: phone,
+          type: `🏭 B2B Đặt Hàng / Báo Giá: ${service}`,
+          roleArea: `Số lượng: ${quantity} | Hạn: ${deadline || 'Linh hoạt'}`,
+          details: leadMessage
+        });
+      }
+
+      const isRecorded = savedToServer || sentToGoogleForm;
 
       // Tạo đường link gửi Email với nội dung soạn sẵn về info@rapmau.com
       const mailSubject = encodeURIComponent(`[B2B] Yêu cầu kết nối báo giá: ${service} (${quantity})`);
@@ -1914,14 +1927,17 @@
       const alertBox = document.getElementById('quoteSuccessAlert');
       const alertTitle = alertBox.querySelector('h4');
       const alertDesc = alertBox.querySelector('p');
-      if (!savedToServer) {
+      if (isRecorded) {
+        if (alertTitle) alertTitle.textContent = '🎉 Đã Ghi Nhận Yêu Cầu Kết Nối Vào Hệ Thống!';
+        if (alertDesc) alertDesc.innerHTML = 'Cảm ơn bạn! Thông tin đã được lưu tự động vào Google Sheet điều phối của RAPMAU.COM để kết nối xưởng phù hợp phản hồi sớm nhất.';
+        mailBtn.innerHTML = '<span>✉️ Gửi kèm ảnh mẫu / rập tham khảo qua info@rapmau.com</span>';
+        submitBtn.innerHTML = '<span>✓ Đã gửi thông tin</span>';
+      } else {
         if (alertTitle) alertTitle.textContent = '📩 Đã Soạn Sẵn Nội Dung — Bấm Nút Bên Dưới Để Gửi Email!';
-        if (alertDesc) alertDesc.innerHTML = 'Vui lòng bấm nút xanh bên dưới để mở trình gửi thư và gửi thẳng thông tin tới <strong>info@rapmau.com</strong> (hệ thống web tĩnh không lưu tự động trực tiếp).';
+        if (alertDesc) alertDesc.innerHTML = 'Vui lòng bấm nút xanh bên dưới để mở trình gửi thư và gửi thẳng thông tin tới <strong>info@rapmau.com</strong>.';
         mailBtn.innerHTML = '<span>✉️ Gửi Ngay Yêu Cầu Về info@rapmau.com →</span>';
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<span>✉️ Soạn lại hoặc Gửi lại</span>';
-      } else {
-        submitBtn.innerHTML = '<span>✓ Đã gửi thông tin</span>';
       }
       alertBox.style.display = 'block';
 
@@ -1947,6 +1963,7 @@
       const partnerMessage = `[PARTNER NETWORK] Xưởng/NCC: ${org} | Chuyên môn: ${specialty} | Năng lực: ${capacity || 'Chưa ghi'} | Tiêu chuẩn: ${standards || 'Nội địa'} | Ghi chú: ${notes}`;
 
       let savedToServer = false;
+      let sentToGoogleForm = false;
       try {
         const resp = await fetch('/api/consultations', {
           method: 'POST',
@@ -1961,8 +1978,20 @@
         });
         if (resp && resp.ok) savedToServer = true;
       } catch (err) {
-        // Fallback static
+        // Fallback static dùng Google Form Bridge
       }
+
+      if (typeof window.submitRapmauGoogleForm === 'function') {
+        sentToGoogleForm = await window.submitRapmauGoogleForm({
+          name: `${name} — ${org}`,
+          contact: phone,
+          type: `🤝 Đối Tác Xưởng / NCC: ${specialty}`,
+          roleArea: `Năng lực: ${capacity || 'Chưa ghi'} | Chuẩn: ${standards || 'Nội địa'}`,
+          details: partnerMessage
+        });
+      }
+
+      const isRecorded = savedToServer || sentToGoogleForm;
 
       const mailSubject = encodeURIComponent(`[ĐỐI TÁC XƯỞNG / NCC] Hồ sơ năng lực ${org}`);
       const mailBody = encodeURIComponent(`Xin chào Ban Kết Nối RAPMAU,\nTôi là ${name} đại diện ${org}.\nVai trò/Thế mạnh: ${specialty}\nNăng lực dự kiến: ${capacity || 'Trao đổi thêm'}\nTiêu chuẩn: ${standards || 'Nội địa'}\nLiên hệ lại: ${phone}\nGhi chú: ${notes || '-'}`);
@@ -1972,14 +2001,17 @@
       const partnerBox = document.getElementById('partnerSuccessAlert');
       const partnerTitle = partnerBox.querySelector('h4');
       const partnerDesc = partnerBox.querySelector('p');
-      if (!savedToServer) {
+      if (isRecorded) {
+        if (partnerTitle) partnerTitle.textContent = '🎉 Đã Ghi Nhận Hồ Sơ Đối Tác Vào Hệ Thống!';
+        if (partnerDesc) partnerDesc.innerHTML = 'Cảm ơn Quý Đối Tác! Hồ sơ năng lực đã được lưu tự động vào Google Sheet đối tác của RAPMAU.COM để kết nối đơn hàng phù hợp.';
+        partnerMailBtn.innerHTML = '<span>✉️ Gửi kèm ảnh xưởng / sản phẩm mẫu qua info@rapmau.com</span>';
+        submitBtn.innerHTML = '<span>✓ Đã gửi hồ sơ thành công</span>';
+      } else {
         if (partnerTitle) partnerTitle.textContent = '📩 Đã Soạn Sẵn Hồ Sơ — Bấm Nút Bên Dưới Để Gửi Email!';
-        if (partnerDesc) partnerDesc.innerHTML = 'Vui lòng bấm nút xanh bên dưới để mở trình gửi thư và gửi thẳng hồ sơ năng lực tới <strong>info@rapmau.com</strong> (hệ thống web tĩnh không lưu tự động trực tiếp).';
+        if (partnerDesc) partnerDesc.innerHTML = 'Vui lòng bấm nút xanh bên dưới để mở trình gửi thư và gửi thẳng hồ sơ năng lực tới <strong>info@rapmau.com</strong>.';
         partnerMailBtn.innerHTML = '<span>✉️ Gửi Ngay Hồ Sơ Về info@rapmau.com →</span>';
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<span>✉️ Soạn lại hoặc Gửi lại</span>';
-      } else {
-        submitBtn.innerHTML = '<span>✓ Đã gửi hồ sơ thành công</span>';
       }
       partnerBox.style.display = 'block';
 
@@ -2201,6 +2233,7 @@
       }
     })();
   </script>
+  <script src="/google-form-bridge.js" defer></script>
   <script src="/meetup-popup.js" defer></script>
 </body>
 </html>
