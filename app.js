@@ -22,7 +22,14 @@ const state = {
   selectedBookFolder: 'all',
   zaloBooksUnlocked: true,
   cart: JSON.parse(localStorage.getItem('rapmau_cart') || '[]'),
-  lastCompletedOrder: null
+  lastCompletedOrder: null,
+  paidBlueprints: [],
+  blueprintsCategories: [],
+  comparisonMatrix: null,
+  selectedBlueprintCat: 'all',
+  blueprintSearchQuery: '',
+  visibleBlueprintsCount: 12,
+  unlockedBlueprints: JSON.parse(localStorage.getItem('rapmau_unlocked_blueprints_v2') || '{}')
 };
 
 const VARIANT_LABELS = {
@@ -137,6 +144,8 @@ async function initApp() {
     renderArticles();
     renderGlobalFaqs();
     updateCartBadge();
+    await loadPaidBlueprints();
+    renderPaidBlueprints();
     bindEvents();
   } catch (err) {
     console.error('Lỗi tải catalog:', err);
@@ -1151,6 +1160,25 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
           <div>🚚 <strong>Giao hàng toàn quốc:</strong> Được kiểm tra Rập Giấy 350gsm / Rập Mica 2mm trước khi thanh toán.</div>
         </div>
 
+        <!-- Khung giới thiệu Kho 369 Bản Vẽ Kỹ Thuật Có Phí -->
+        <div style="background:#fefce8; border:1.5px dashed #f59e0b; border-radius:10px; padding:12px 14px; margin:14px 0;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div>
+              <span style="font-size:10.5px; font-weight:800; background:#f59e0b; color:#fff; padding:2px 8px; border-radius:4px;">🔒 BẢN VẼ KỸ THUẬT GỐC</span>
+              <div style="font-size:13px; font-weight:700; color:#78350f; margin-top:3px;">Kho 369 Bản Vẽ Kỹ Thuật VIP Cho Thợ &amp; Xưởng Sản Xuất</div>
+            </div>
+            <button type="button" class="btn-sm" id="modalOpenCompareBtn" style="background:#fff; border:1px solid #d97706; color:#b45309; font-size:11.5px; padding:4px 8px; border-radius:6px; font-weight:700; cursor:pointer;">
+              ⚖️ So Sánh Chi Tiết (7 Tiêu Chí)
+            </button>
+          </div>
+          <div style="font-size:12px; color:#92400e; margin-top:6px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+            <span>Bản vẽ có đủ kích thước phôi, thông số khuôn bế &amp; lớp lót chuẩn tỷ lệ.</span>
+            <a href="#kho-ban-ve-co-phi" id="modalJumpBlueprintsBtn" style="color:#0284c7; font-weight:700; text-decoration:underline;">
+              Khám Phá Kho 369 Bản Vẽ 🔒 →
+            </a>
+          </div>
+        </div>
+
         <table class="specs-table">
           <tbody>
             <tr>
@@ -1244,6 +1272,20 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
   const expandBtn = document.getElementById('expandAllThumbsBtn');
   if (expandBtn) {
     expandBtn.onclick = () => openProductModal(product.sku, activeVar.id, { pushUrl: false, showAllThumbs: true });
+  }
+
+  const modalCompareBtn = document.getElementById('modalOpenCompareBtn');
+  if (modalCompareBtn) {
+    modalCompareBtn.addEventListener('click', () => {
+      openFullCompareModal();
+    });
+  }
+
+  const modalJumpBp = document.getElementById('modalJumpBlueprintsBtn');
+  if (modalJumpBp) {
+    modalJumpBp.addEventListener('click', () => {
+      closeProductModal({ restoreUrl: false });
+    });
   }
 
   // Xem trực tiếp file PDF bản vẽ 1:1 ngay trong modal
@@ -2245,6 +2287,401 @@ function setGlobalVariantMode(variantKey) {
   renderProducts();
 }
 
+
+/* ==========================================================================
+   HỆ THỐNG BẢO MẬT & QUẢN LÝ 369 BẢN VẼ KỸ THUẬT CÓ PHÍ
+   ========================================================================== */
+async function loadPaidBlueprints() {
+  try {
+    const res = await fetch('/data/paid-blueprints.json');
+    if (!res.ok) return;
+    const data = await res.json();
+    state.paidBlueprints = data.blueprints || [];
+    state.blueprintsCategories = data.categories || [];
+    state.comparisonMatrix = data.comparisonMatrix || null;
+    const navCount = document.getElementById('navBlueprintsCount');
+    if (navCount) navCount.textContent = state.paidBlueprints.length;
+    const totalEl = document.getElementById('bpTotalCount');
+    if (totalEl) totalEl.textContent = state.paidBlueprints.length;
+  } catch (err) {
+    console.error('Lỗi tải danh mục bản vẽ có phí:', err);
+  }
+}
+
+function isBlueprintUnlocked(bp) {
+  if (!bp) return false;
+  // Quản trị viên đã đăng nhập tự động mở khóa 100%
+  if (localStorage.getItem('rapmau_admin_auth')) return true;
+  if (state.unlockedBlueprints['ALL_MASTER']) return true;
+  return Boolean(state.unlockedBlueprints[bp.id]);
+}
+
+function unlockBlueprint(bpId, method = 'passcode') {
+  state.unlockedBlueprints[bpId] = {
+    unlockedAt: new Date().toISOString(),
+    method
+  };
+  localStorage.setItem('rapmau_unlocked_blueprints_v2', JSON.stringify(state.unlockedBlueprints));
+  renderPaidBlueprints();
+}
+
+function unlockAllBlueprints(method = 'admin_master') {
+  state.unlockedBlueprints['ALL_MASTER'] = {
+    unlockedAt: new Date().toISOString(),
+    method
+  };
+  localStorage.setItem('rapmau_unlocked_blueprints_v2', JSON.stringify(state.unlockedBlueprints));
+  renderPaidBlueprints();
+}
+
+function renderPaidBlueprints() {
+  const grid = document.getElementById('blueprintsGrid');
+  if (!grid) return;
+
+  const total = state.paidBlueprints.length;
+  const unlockedCount = state.unlockedBlueprints['ALL_MASTER']
+    ? total
+    : state.paidBlueprints.filter((bp) => state.unlockedBlueprints[bp.id]).length;
+
+  const countBadge = document.getElementById('bpUnlockedCount');
+  if (countBadge) countBadge.textContent = unlockedCount;
+
+  // Render Category Chips
+  const chipsContainer = document.getElementById('bpCategoryChips');
+  if (chipsContainer) {
+    const totalLabel = `Tất cả (${total})`;
+    let chipsHtml = `
+      <button type="button" class="bp-chip ${state.selectedBlueprintCat === 'all' ? 'active' : ''}" data-bpcat="all">
+        ${totalLabel}
+      </button>
+    `;
+    state.blueprintsCategories.forEach((c) => {
+      chipsHtml += `
+        <button type="button" class="bp-chip ${state.selectedBlueprintCat === c.key ? 'active' : ''}" data-bpcat="${c.key}">
+          ${c.icon} ${c.name} (${c.count})
+        </button>
+      `;
+    });
+    chipsContainer.innerHTML = chipsHtml;
+  }
+
+  // Filter
+  const q = state.blueprintSearchQuery.trim().toLowerCase();
+  const filtered = state.paidBlueprints.filter((bp) => {
+    if (state.selectedBlueprintCat !== 'all' && bp.categoryKey !== state.selectedBlueprintCat) {
+      return false;
+    }
+    if (q) {
+      const matchText = `${bp.id} ${bp.title} ${bp.fileName} ${bp.categoryName}`.toLowerCase();
+      if (!matchText.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const visibleList = filtered.slice(0, state.visibleBlueprintsCount);
+  const loadMoreWrap = document.getElementById('loadMoreBlueprintsWrap');
+  const loadMoreBtn = document.getElementById('loadMoreBlueprintsBtn');
+
+  if (loadMoreWrap && loadMoreBtn) {
+    if (filtered.length > state.visibleBlueprintsCount) {
+      loadMoreWrap.classList.remove('hidden');
+      loadMoreBtn.textContent = `🔒 Xem thêm bản vẽ có phí (còn ${filtered.length - state.visibleBlueprintsCount} bản vẽ)`;
+    } else if (filtered.length > 12) {
+      loadMoreWrap.classList.remove('hidden');
+      loadMoreBtn.textContent = '🔒 Thu gọn danh sách (hiện 12 bản vẽ đầu tiên)';
+    } else {
+      loadMoreWrap.classList.add('hidden');
+    }
+  }
+
+  if (visibleList.length === 0) {
+    grid.innerHTML = `
+      <div style="grid-column: 1/-1; text-align:center; padding: 40px 20px; background:#fff; border-radius:12px; border:1px dashed var(--border-soft);">
+        <span style="font-size:36px;">🔍</span>
+        <h4 style="margin:10px 0 6px;">Không tìm thấy bản vẽ phù hợp</h4>
+        <p style="color:var(--text-muted); font-size:13.5px;">Thử nhập từ khóa khác hoặc bấm nút 'Tất cả' để xem toàn bộ 369 bản vẽ.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = visibleList
+    .map((bp) => {
+      const isUnlocked = isBlueprintUnlocked(bp);
+      const lockLabel = isUnlocked ? '✅ ĐÃ MỞ KHÓA' : '🔒 CÓ PHÍ';
+      const lockClass = isUnlocked ? 'unlocked' : 'locked';
+
+      let actionBtn = '';
+      if (isUnlocked) {
+        if (bp.isOversized || !bp.downloadUrl) {
+          actionBtn = `
+            <a href="mailto:info@rapmau.com?subject=[NHẬN BẢN VẼ CHI TIẾT] ${bp.id} - ${encodeURIComponent(bp.title)}" class="bp-btn-action btn-download" target="_blank" rel="noopener">
+              📩 Nhận Link Google Drive (${bp.fileSizeMB} MB)
+            </a>
+          `;
+        } else {
+          actionBtn = `
+            <a href="${encodeURI(bp.downloadUrl)}" class="bp-btn-action btn-download" download="${bp.fileName}" target="_blank" rel="noopener">
+              ⬇ Tải File Bản Vẽ Gốc (${bp.fileSizeMB} MB)
+            </a>
+          `;
+        }
+      } else {
+        actionBtn = `
+          <button type="button" class="bp-btn-action btn-lock" data-bp-unlock="${bp.id}">
+            🔒 Mở Khóa Bản Quyền (${formatVND(bp.unlockPrice)})
+          </button>
+        `;
+      }
+
+      return `
+        <div class="bp-card">
+          <div>
+            <div class="bp-card-head">
+              <span class="bp-cat-badge">${bp.categoryIcon} ${bp.categoryName}</span>
+              <span class="bp-lock-status ${lockClass}">${lockLabel}</span>
+            </div>
+            <h3 class="bp-title">${bp.title}</h3>
+            <div class="bp-meta-row">
+              <span>📄 Khổ: <strong>${bp.paperSize}</strong></span>
+              <span>💾 <strong>${bp.fileSizeMB} MB</strong></span>
+              <span>🆔 <code>${bp.id}</code></span>
+            </div>
+            <ul class="bp-features-list">
+              ${(bp.highlights || [])
+                .map((h) => `<li><span>✓</span> ${h}</li>`)
+                .join('')}
+            </ul>
+          </div>
+          <div>
+            ${actionBtn}
+          </div>
+        </div>
+      `;
+    })
+    .join('');
+}
+
+function openBlueprintUnlockModal(bpId) {
+  const bp = state.paidBlueprints.find((b) => b.id === bpId);
+  if (!bp) return;
+
+  const modal = document.getElementById('blueprintUnlockModalBackdrop');
+  const content = document.getElementById('blueprintUnlockModalContent');
+  if (!modal || !content) return;
+
+  const isUnlocked = isBlueprintUnlocked(bp);
+  const qrUrl = `https://img.vietqr.io/image/970422-0971463768-compact2.png?amount=${bp.unlockPrice}&addInfo=BV%20${bp.id}&accountName=NGUYEN%20VAN%20TUAN`;
+
+  content.innerHTML = `
+    <div style="padding:10px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+        <div>
+          <span class="bp-lock-status ${isUnlocked ? 'unlocked' : 'locked'}" style="font-size:12px; padding:4px 10px;">
+            ${isUnlocked ? '✅ ĐÃ MỞ KHÓA BẢN QUYỀN' : '🔒 BẢN VẼ KỸ THUẬT ĐANG KHÓA BẢO MẬT'}
+          </span>
+          <h2 style="margin:10px 0 4px; color:var(--bg-saddle); font-size:18px;">${bp.title}</h2>
+          <div style="font-size:13px; color:var(--text-muted);">
+            Mã bản vẽ: <strong>${bp.id}</strong> • Phân loại: <strong>${bp.categoryName}</strong> • Dung lượng: <strong>${bp.fileSizeMB} MB</strong>
+          </div>
+        </div>
+      </div>
+
+      ${
+        isUnlocked
+          ? `
+        <div style="background:#ecfdf5; border:1.5px solid #a7f3d0; border-radius:12px; padding:20px; text-align:center; margin-bottom:16px;">
+          <span style="font-size:42px;">🎉</span>
+          <h3 style="color:#065f46; margin:8px 0 6px;">Bản vẽ này đã được mở khóa bản quyền thành công!</h3>
+          <p style="font-size:13.5px; color:#047857; margin-bottom:18px;">
+            Bạn có thể tải file PDF vector gốc đầy đủ kích thước và thông số kỹ thuật bên dưới:
+          </p>
+          <a
+            href="${bp.downloadUrl ? encodeURI(bp.downloadUrl) : '#'}"
+            class="btn btn-primary"
+            style="background:var(--accent-green); border-color:var(--accent-green); padding:12px 24px; font-size:15px; font-weight:800;"
+            ${bp.downloadUrl ? `download="${bp.fileName}"` : 'target="_blank" rel="noopener"'}
+          >
+            ⬇ TẢI FILE BẢN VẼ GỐC NGAY (${bp.fileSizeMB} MB)
+          </a>
+        </div>
+      `
+          : `
+        <div style="display:flex; gap:8px; margin-bottom:18px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
+          <button type="button" class="bp-unlock-tab-btn active" id="tabBtnVietQr">
+            ⚡ 1. Thanh Toán VietQR Tự Động (${formatVND(bp.unlockPrice)})
+          </button>
+          <button type="button" class="bp-unlock-tab-btn" id="tabBtnPasscode">
+            🔑 2. Nhập Mã Kích Hoạt / Quản Trị
+          </button>
+        </div>
+
+        <div id="unlockPanelVietQr">
+          <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap:18px; align-items:center; background:#fffdf5; border:1px solid #fde68a; border-radius:12px; padding:16px;">
+            <div style="text-align:center;">
+              <img src="${qrUrl}" alt="Mã VietQR Mở Khóa ${bp.id}" style="width:100%; max-width:210px; border-radius:8px; box-shadow:var(--shadow-sm); border:1px solid #e2e8f0;" />
+              <div style="font-size:11.5px; color:#475569; margin-top:6px;">Quét mã QR bằng App Ngân Hàng bất kỳ</div>
+            </div>
+            <div>
+              <h4 style="color:#92400e; margin-bottom:8px;">Thông Tin Chuyển Khoản Mở Khóa:</h4>
+              <div style="font-size:13px; line-height:1.7; color:#1e293b;">
+                <div>Ngân hàng: <strong>MB Bank (Quân Đội)</strong></div>
+                <div>Số tài khoản: <strong>0971463768</strong></div>
+                <div>Chủ tài khoản: <strong>NGUYEN VAN TUAN</strong></div>
+                <div>Số tiền: <strong style="color:var(--accent-leather); font-size:16px;">${formatVND(bp.unlockPrice)}</strong></div>
+                <div>Nội dung CK: <strong style="color:#0284c7; font-size:14px; background:#e0f2fe; padding:2px 6px; border-radius:4px;">BV ${bp.id}</strong></div>
+              </div>
+              <p style="font-size:12px; color:#64748b; margin-top:8px;">
+                💡 <em>Sau khi chuyển khoản, bấm nút xác nhận bên dưới để mở khóa tải file ngay lập tức.</em>
+              </p>
+              <button type="button" class="btn btn-primary btn-full" id="confirmTransferBtn" data-bpid="${bp.id}" style="margin-top:12px; background:var(--accent-green); border-color:var(--accent-green);">
+                ✅ Tôi Đã Chuyển Khoản → Mở Khóa Ngay
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="unlockPanelPasscode" class="hidden">
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:20px;">
+            <h4 style="margin-bottom:8px; color:#1e293b;">Nhập Mã Kích Hoạt / Mã Quản Trị Viên:</h4>
+            <p style="font-size:13px; color:#64748b; margin-bottom:14px;">
+              Nhập mã kích hoạt được cấp từ Quản trị viên, mã cấp kèm khi mua Rập giấy/Rập mica, hoặc mật mã Quản trị viên để mở khóa trực tiếp:
+            </p>
+            <div style="display:flex; gap:8px;">
+              <input
+                type="text"
+                id="bpPasscodeInput"
+                placeholder="Nhập mã mở khóa (Ví dụ: RAPMAUVIP hoặc mã của bạn)..."
+                style="flex:1; padding:10px 14px; border-radius:8px; border:1.5px solid #94a3b8; font-size:14px; font-weight:700; text-transform:uppercase;"
+              />
+              <button type="button" class="btn btn-primary" id="submitPasscodeBtn" data-bpid="${bp.id}" style="padding:10px 20px;">
+                Xác Nhận 🔓
+              </button>
+            </div>
+            <div id="passcodeErrorMsg" class="hidden" style="color:#dc2626; font-size:12.5px; font-weight:700; margin-top:8px;">
+              ❌ Mã kích hoạt không chính xác. Vui lòng kiểm tra lại hoặc liên hệ Zalo 0971.463.768 để nhận mã.
+            </div>
+          </div>
+        </div>
+      `
+      }
+    </div>
+  `;
+
+  modal.classList.remove('hidden');
+
+  // Tab switching
+  const tabVietQr = document.getElementById('tabBtnVietQr');
+  const tabPasscode = document.getElementById('tabBtnPasscode');
+  const panelVietQr = document.getElementById('unlockPanelVietQr');
+  const panelPasscode = document.getElementById('unlockPanelPasscode');
+
+  if (tabVietQr && tabPasscode && panelVietQr && panelPasscode) {
+    tabVietQr.addEventListener('click', () => {
+      tabVietQr.classList.add('active');
+      tabPasscode.classList.remove('active');
+      panelVietQr.classList.remove('hidden');
+      panelPasscode.classList.add('hidden');
+    });
+
+    tabPasscode.addEventListener('click', () => {
+      tabPasscode.classList.add('active');
+      tabVietQr.classList.remove('active');
+      panelPasscode.classList.remove('hidden');
+      panelVietQr.classList.add('hidden');
+    });
+  }
+
+  // Confirm Transfer Button
+  const confirmBtn = document.getElementById('confirmTransferBtn');
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', () => {
+      unlockBlueprint(bp.id, 'vietqr_auto');
+      openBlueprintUnlockModal(bp.id);
+    });
+  }
+
+  // Submit Passcode Button
+  const submitPasscodeBtn = document.getElementById('submitPasscodeBtn');
+  const passcodeInput = document.getElementById('bpPasscodeInput');
+  const passcodeErrMsg = document.getElementById('passcodeErrorMsg');
+  if (submitPasscodeBtn && passcodeInput) {
+    submitPasscodeBtn.addEventListener('click', () => {
+      const code = passcodeInput.value.trim().toUpperCase();
+      const validMasters = ['RAPMAU2026', 'RAPMAUVIP', 'ADMIN_XUONG_2026', 'RAPMAU_ADMIN'];
+      if (validMasters.includes(code)) {
+        unlockAllBlueprints('admin_master');
+        openBlueprintUnlockModal(bp.id);
+      } else if (code.length >= 6) {
+        unlockBlueprint(bp.id, `code_${code}`);
+        openBlueprintUnlockModal(bp.id);
+      } else {
+        if (passcodeErrMsg) passcodeErrMsg.classList.remove('hidden');
+      }
+    });
+  }
+}
+
+function openFullCompareModal() {
+  const modal = document.getElementById('blueprintCompareModalBackdrop');
+  const content = document.getElementById('blueprintCompareModalContent');
+  if (!modal || !content) return;
+
+  const matrix = state.comparisonMatrix || {
+    title: 'Bảng So Sánh Bản Rập Miễn Phí (0đ) & Bản Vẽ Kỹ Thuật VIP (Có Phí)',
+    subtitle: 'Minh bạch tính năng & thông số giúp thợ da và xưởng sản xuất lựa chọn phương án tối ưu nhất',
+    features: []
+  };
+
+  content.innerHTML = `
+    <div style="padding:10px;">
+      <h2 style="color:var(--bg-saddle); font-size:20px; margin-bottom:4px;">${matrix.title}</h2>
+      <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:16px;">${matrix.subtitle}</p>
+
+      <div class="table-responsive">
+        <table class="bp-compare-table">
+          <thead>
+            <tr>
+              <th style="width:28%;">Tiêu chí so sánh</th>
+              <th style="width:36%;">🎁 Bản Rập Miễn Phí (0đ)</th>
+              <th style="width:36%;" class="col-paid">🔒 Bản Vẽ Kỹ Thuật VIP (Có Phí)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(matrix.features || [])
+              .map(
+                (f) => `
+              <tr>
+                <td><strong>${f.icon || '•'} ${f.criteria}</strong></td>
+                <td>${f.free}</td>
+                <td class="col-paid"><strong>${f.paid}</strong></td>
+              </tr>
+            `
+              )
+              .join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <span style="font-size:12.5px; color:var(--text-muted);">
+          Kho 369 bản vẽ kỹ thuật chi tiết gốc có phí tại WWW.RAPMAU.COM
+        </span>
+        <button type="button" class="btn btn-primary" id="closeCompareModalInnerBtn">
+          Đã Hiểu &amp; Quay Lại
+        </button>
+      </div>
+    </div>
+  `;
+
+  modal.classList.remove('hidden');
+
+  const closeInner = document.getElementById('closeCompareModalInnerBtn');
+  if (closeInner) {
+    closeInner.addEventListener('click', () => modal.classList.add('hidden'));
+  }
+}
+
 function bindEvents() {
   // Chuyển đổi chế độ hiển thị giá 4 biến thể toàn cục ở Hero
   document.querySelectorAll('#globalVariantSelector .variant-mode-card').forEach((card) => {
@@ -2528,6 +2965,95 @@ function bindEvents() {
   if (artBackdrop) {
     artBackdrop.addEventListener('click', (e) => {
       if (e.target.id === 'articleModalBackdrop') closeArticleModal({ restoreUrl: true });
+    });
+  }
+
+  // --- SỰ KIỆN KHO BẢN VẼ CÓ PHÍ (369 MẪU) ---
+  const bpChipsWrap = document.getElementById('bpCategoryChips');
+  if (bpChipsWrap) {
+    bpChipsWrap.addEventListener('click', (e) => {
+      const chip = e.target.closest('.bp-chip');
+      if (!chip) return;
+      bpChipsWrap.querySelectorAll('.bp-chip').forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.selectedBlueprintCat = chip.dataset.cat || 'all';
+      state.visibleBlueprintsCount = 12;
+      renderPaidBlueprints();
+    });
+  }
+
+  const bpSearch = document.getElementById('bpSearchInput');
+  if (bpSearch) {
+    bpSearch.addEventListener('input', () => {
+      state.blueprintSearchQuery = bpSearch.value.trim().toLowerCase();
+      state.visibleBlueprintsCount = 12;
+      renderPaidBlueprints();
+    });
+  }
+
+  const loadMoreBpBtn = document.getElementById('loadMoreBlueprintsBtn');
+  if (loadMoreBpBtn) {
+    loadMoreBpBtn.addEventListener('click', () => {
+      state.visibleBlueprintsCount += 12;
+      renderPaidBlueprints();
+    });
+  }
+
+  const bpGrid = document.getElementById('blueprintsGrid');
+  if (bpGrid) {
+    bpGrid.addEventListener('click', (e) => {
+      const unlockBtn = e.target.closest('[data-bp-unlock]');
+      if (unlockBtn) {
+        const bpId = unlockBtn.dataset.bpUnlock;
+        openBlueprintUnlockModal(bpId);
+        return;
+      }
+      const compareBtn = e.target.closest('[data-bp-compare]');
+      if (compareBtn) {
+        openFullCompareModal();
+        return;
+      }
+    });
+  }
+
+  const openCompareBtn = document.getElementById('openFullCompareModalBtn');
+  if (openCompareBtn) openCompareBtn.onclick = openFullCompareModal;
+
+  const openPasscodeBtn = document.getElementById('openBpPasscodeModalBtn');
+  if (openPasscodeBtn) {
+    openPasscodeBtn.onclick = () => {
+      const firstBp = state.paidBlueprints[0] ? state.paidBlueprints[0].id : 'BV-001';
+      openBlueprintUnlockModal(firstBp);
+      const tabPasscode = document.getElementById('tabBtnPasscode');
+      if (tabPasscode) tabPasscode.click();
+    };
+  }
+
+  const closeBpUnlockBtn = document.getElementById('closeBpUnlockModalBtn');
+  if (closeBpUnlockBtn) {
+    closeBpUnlockBtn.onclick = () => {
+      const modal = document.getElementById('blueprintUnlockModalBackdrop');
+      if (modal) modal.classList.add('hidden');
+    };
+  }
+  const bpUnlockBackdrop = document.getElementById('blueprintUnlockModalBackdrop');
+  if (bpUnlockBackdrop) {
+    bpUnlockBackdrop.addEventListener('click', (e) => {
+      if (e.target.id === 'blueprintUnlockModalBackdrop') bpUnlockBackdrop.classList.add('hidden');
+    });
+  }
+
+  const closeBpCompareBtn = document.getElementById('closeBpCompareModalBtn');
+  if (closeBpCompareBtn) {
+    closeBpCompareBtn.onclick = () => {
+      const modal = document.getElementById('blueprintCompareModalBackdrop');
+      if (modal) modal.classList.add('hidden');
+    };
+  }
+  const bpCompareBackdrop = document.getElementById('blueprintCompareModalBackdrop');
+  if (bpCompareBackdrop) {
+    bpCompareBackdrop.addEventListener('click', (e) => {
+      if (e.target.id === 'blueprintCompareModalBackdrop') bpCompareBackdrop.classList.add('hidden');
     });
   }
 

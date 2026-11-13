@@ -483,19 +483,19 @@ body {
 /* Forum Spotlight Strip (Home) */
 .forum-spotlight-section {
   background: var(--bg-parchment);
-  padding: 14px 0 2px;
+  padding: 14px 0 6px;
 }
 
 .forum-spotlight-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
+  gap: 20px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #fffdf5 100%);
   border: 1.5px solid #86efac;
   border-radius: 14px;
   padding: 16px 20px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.08);
 }
 
 .forum-spotlight-info {
@@ -507,25 +507,33 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.03em;
   color: #065f46;
   background: #dcfce7;
   border: 1px solid #a7f3d0;
   border-radius: 99px;
-  padding: 3px 10px;
-  margin-bottom: 7px;
+  padding: 4px 11px;
+  margin-bottom: 6px;
   max-width: 100%;
+  white-space: nowrap;
 }
 
 .forum-spotlight-info h2 {
   font-size: 16.5px;
-  line-height: 1.35;
+  line-height: 1.4;
   font-weight: 800;
   color: var(--bg-espresso);
-  margin-bottom: 10px;
+  margin: 0 0 4px 0;
   letter-spacing: -0.01em;
+}
+
+.forum-spotlight-desc {
+  font-size: 12.5px;
+  color: #57534e;
+  line-height: 1.45;
+  margin: 0 0 10px 0;
 }
 
 .forum-topic-chips {
@@ -541,11 +549,12 @@ body {
   font-weight: 700;
   color: #064e3b;
   background: #ffffff;
-  border: 1px solid #a7f3d0;
+  border: 1px solid #bbf7d0;
   border-radius: 99px;
-  padding: 5px 10px;
+  padding: 5px 11px;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
   transition: all 0.15s;
 }
 
@@ -629,7 +638,7 @@ body {
   }
 
   .forum-spotlight-section {
-    padding: 10px 0 2px;
+    padding: 8px 0 2px;
   }
 
   .forum-spotlight-card {
@@ -640,14 +649,23 @@ body {
 
   .forum-spotlight-eyebrow {
     font-size: 10px;
-    padding: 3px 9px;
-    margin-bottom: 6px;
+    padding: 3px 8px;
+    margin-bottom: 5px;
+    white-space: nowrap;
   }
 
   .forum-spotlight-info h2 {
     font-size: 14.5px;
     line-height: 1.35;
-    margin-bottom: 8px;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+  }
+
+  .forum-spotlight-desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+    color: #57534e;
   }
 
   .forum-topic-chips {
@@ -656,13 +674,14 @@ body {
   }
 
   .forum-topic-chip {
-    font-size: 11px;
-    padding: 4px 9px;
+    font-size: 10.5px;
+    padding: 4px 8px;
   }
 
   .btn-forum-spotlight {
     font-size: 13px;
     padding: 10px 14px;
+    letter-spacing: -0.2px;
   }
 }
 
@@ -2700,6 +2719,21 @@ body {
   }
 }
 
+/* Ẩn hoàn toàn thanh topbar trên mọi màn hình di động & tablet <= 992px */
+@media (max-width: 992px) {
+  .topbar,
+  .desktop-only-topbar {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    visibility: hidden !important;
+    overflow: hidden !important;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding-bottom: 70px;
@@ -2710,34 +2744,16 @@ body {
   }
 
   /* 1. Ẩn thanh topbar trên di động để tiết kiệm không gian màn hình đầu */
-  .topbar {
+  .topbar,
+  .desktop-only-topbar {
     display: none !important;
-  }
-
-  .topbar-inner {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 4px 6px;
-  }
-
-  .topbar-left {
-    flex: 0 0 auto;
-    overflow: visible;
-  }
-
-  .domain-pill {
-    font-size: 10px;
-    padding: 2px 6px;
-  }
-
-  .topbar-left span:not(.domain-pill) {
-    display: none;
-  }
-
-  .topbar-link,
-  .topbar-right a[href^="mailto:"],
-  .topbar-right a[href="/api/export-csv"] {
-    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    visibility: hidden !important;
+    overflow: hidden !important;
   }
 
   .topbar-right {
@@ -3531,4 +3547,344 @@ body {
   font-size: 13.5px;
   line-height: 1.6;
   color: var(--text-main);
+}
+
+
+/* ==========================================================================
+   KHO BẢN VẼ KỸ THUẬT CÓ PHÍ (369 BẢN VẼ - BẢO MẬT & MỞ KHÓA)
+   ========================================================================== */
+.blueprints-section {
+  background: #fbf8f3;
+  padding: 38px 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.hq-pill-blueprint {
+  background: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.hq-pill-blueprint:hover {
+  background: #b91c1c;
+  color: #ffffff;
+  border-color: #b91c1c;
+}
+
+.bp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  margin: 16px 0 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bp-search-wrap {
+  flex: 1;
+  min-width: 260px;
+  position: relative;
+}
+
+.bp-search-input {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+  font-size: 13.5px;
+  background: var(--bg-parchment);
+}
+
+.bp-actions-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bp-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  padding: 6px 12px;
+  border-radius: 99px;
+}
+
+.bp-btn-passcode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.bp-btn-passcode:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.bp-btn-compare {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.bp-btn-compare:hover {
+  background: #d1fae5;
+}
+
+.bp-cat-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.bp-chip:hover,
+.bp-chip.active {
+  background: var(--bg-saddle);
+  color: #ffffff;
+  border-color: var(--bg-saddle);
+}
+
+.blueprints-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .blueprints-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .blueprints-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bp-card {
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.bp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-stitch);
+}
+
+.bp-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.bp-cat-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4b5563;
+  background: #f3f4f6;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.bp-lock-status {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.bp-lock-status.locked {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.bp-lock-status.unlocked {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.bp-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--bg-espresso);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.bp-meta-row {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.bp-features-list {
+  list-style: none;
+  font-size: 11.5px;
+  color: #475569;
+  margin-bottom: 14px;
+  padding-left: 0;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 8px;
+}
+
+.bp-features-list li {
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bp-btn-action {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.16s;
+  border: none;
+}
+
+.bp-btn-action.btn-lock {
+  background: linear-gradient(135deg, #a85418 0%, #8a410f 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(168, 84, 24, 0.25);
+}
+
+.bp-btn-action.btn-lock:hover {
+  background: #73340b;
+}
+
+.bp-btn-action.btn-download {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+}
+
+.bp-btn-action.btn-download:hover {
+  background: #065f46;
+}
+
+/* Modal So Sánh & Mở Khóa */
+.bp-compare-box {
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.bp-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.bp-compare-table th,
+.bp-compare-table td {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.bp-compare-table th {
+  background: #f8fafc;
+  font-weight: 800;
+}
+
+.bp-compare-table th.col-paid {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.bp-compare-table td.col-paid {
+  background: #fffdf5;
+  font-weight: 600;
+}
+
+.bp-unlock-tab-btn {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.bp-unlock-tab-btn.active {
+  background: var(--bg-saddle);
+  color: #ffffff;
+  border-color: var(--bg-saddle);
 }

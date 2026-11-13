@@ -1348,6 +1348,38 @@ function bindAdminEvents() {
     });
   }
 
+  // Quản trị viên mở khóa bản vẽ & tạo mã bản quyền
+  const adminUnlockAllBpBtn = document.getElementById('btnAdminUnlockAllBp');
+  if (adminUnlockAllBpBtn) {
+    adminUnlockAllBpBtn.addEventListener('click', () => {
+      try {
+        const key = 'rapmau_unlocked_blueprints_v2';
+        const current = JSON.parse(localStorage.getItem(key) || '{}');
+        current['ALL'] = true;
+        current['MASTER_ADMIN'] = true;
+        localStorage.setItem(key, JSON.stringify(current));
+        showToast('🔓 Đã mở khóa toàn bộ 369 bản vẽ có phí trên thiết bị này!');
+      } catch (err) {
+        showToast('❌ Không thể lưu vào LocalStorage!');
+      }
+    });
+  }
+
+  const genKeyBtn = document.getElementById('btnGenLicenseKey');
+  const genKeyInput = document.getElementById('adminGeneratedKey');
+  if (genKeyBtn && genKeyInput) {
+    genKeyBtn.addEventListener('click', () => {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let part1 = '';
+      let part2 = '';
+      for (let i = 0; i < 4; i++) part1 += chars.charAt(Math.floor(Math.random() * chars.length));
+      for (let i = 0; i < 4; i++) part2 += chars.charAt(Math.floor(Math.random() * chars.length));
+      const code = `RMVIP-${part1}-${part2}`;
+      genKeyInput.value = code;
+      showToast(`🎟️ Đã tạo mã kích hoạt: ${code}`);
+    });
+  }
+
   const importInput = document.getElementById('inputImportCatalogJson');
   if (importInput) {
     importInput.addEventListener('change', (e) => {
