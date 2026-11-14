@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 103
+      "count": 104
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 40
+      "count": 41
     },
     {
       "id": "son-canh",
@@ -62,6 +62,47 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-104",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "title": "Máy may chân vịt bước Juki DU-1181N (ổ ngang lớn, nâng gối 15mm): So sánh với máy trụ, chỉnh chỉ #8–#20 & bảo dưỡng bơm dầu tự động",
+      "author": "Võ Thành Nhân",
+      "authorRole": "Thợ Da Thủ Công • Q.Phú Nhuận",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-14T10:30:00Z",
+      "formattedDate": "14/11/2026",
+      "badge": "Chuyên Sâu Máy Móc",
+      "badgeType": "solved",
+      "likes": 36,
+      "views": 472,
+      "stage": "may-rap",
+      "stageLabel": "3. May Ráp & Lên Phom",
+      "content": "Mình đang phân vân đầu tư máy Juki DU-1181N (chân vịt bước cào trên dưới, ổ ngang lớn) để may ví, túi tote, dây nịt và nội thất da. Nhờ anh em đang chạy Juki DU-1181N giải đáp giúp:\n1. DU-1181N dùng ổ ngang lớn (double-capacity horizontal hook) so với dòng ổ đứng như Sunstar KM-340BL thì có ưu/nhược điểm gì khi chạy chỉ sáp/chỉ dù to cỡ #20 hoặc #8?\n2. Khi may da bò mềm hoặc da Veg-tan mặt cật dễ trầy, cách chỉnh độ cao/nghiêng răng cưa dưới và bước nhấc chân vịt (2–5mm) để không để lại dấu răng mà phôi vẫn đi đều?\n3. Hệ thống bơm dầu tự động phía dưới kết hợp hộp mỡ ở cụm cào trên của DU-1181N cần kiểm tra và châm bổ sung thế nào để máy chạy êm 2.000 mũi/phút?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-104-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-14T10:48:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Juki DU-1181N là một trong những mẫu máy chân vịt bước (top & bottom feed) bền, êm và phổ biến nhất cho xưởng túi xách, ví, dây lưng và bọc ghế da tại Việt Nam.\n\n1. **Ổ ngang lớn của DU-1181N & khả năng chạy chỉ to (#40 – #8):**\n- **Ưu điểm:** Ổ ngang lớn đặt dưới mặt nguyệt giúp **thay suốt cực nhanh ngay trên mặt bàn** không cần lật ngửa đầu máy (tiện hơn ổ đứng khi chạy hàng loạt), suốt to chứa nhiều chỉ, chạy êm và ít rung ở tốc độ cao (tối đa **2.000 mũi/phút**).\n- **Lưu ý chỉ to:** DU-1181N dùng kim **DP×17 (#14 đến #23, chuẩn #21)**, kéo được chỉ từ **#40 tới #8**. Tuy nhiên nếu thường xuyên chạy chỉ quá cứng/sáp dính nhiều (#8 sáp dày), ổ ngang dễ bị vón sáp ở khe trượt thuyền nếu không vệ sinh; nên ưu tiên chỉ dù/nylon trơn (#20 hoặc #30) và giữ hành trình trụ kim **36.5 mm** chuẩn hãng.\n\n2. **Chỉnh cào & tránh hằn răng lên mặt da:**\n- DU-1181N có lỗ chỉnh ngay trên đỉnh đầu máy để tinh chỉnh **độ cao & độ nghiêng răng cưa dưới** cũng như **bước nhấc chân vịt luân phiên (2 – 5 mm)**.\n- Với da mềm/da mộc dễ hằn: hạ răng cưa dưới xuống mức vừa phải (nhú lên ~0.8 mm thay vì 1.2 mm), giảm áp lực lò xo chân vịt vừa đủ bám, và dùng chân vịt đế trơn hoặc dán Teflon dưới mặt tiếp xúc.\n- Điểm cộng lớn của DU-1181N là **nâng chân vịt bằng gối tới 15 mm** và **khoảng họng máy rộng 261 mm**, luồn thân túi lớn hoặc bo góc dày rất thoải mái.\n\n3. **Bôi trơn bơm dầu tự động & hộp mỡ cụm trên:**\n- Khay dưới dùng **bơm dầu tự động** (nên dùng dầu trắng Juki No.7 / ISO VG7), giữ mức dầu nằm giữa vạch HIGH – LOW và kiểm tra mắt kính báo dầu tuần hoàn trên đỉnh máy khi chạy.\n- Cụm cào trên dùng **hộp mỡ (grease tank)**: cứ 6–12 tháng kiểm tra tra thêm mỡ chịu nhiệt chuyên dụng cho máy may để giữ các khớp truyền động chân vịt bước êm và không rơ."
+        },
+        {
+          "id": "cmt-104-2",
+          "author": "Xưởng Da Sài Gòn",
+          "authorRole": "Sản Xuất Túi & Nội Thất • Q.Tân Bình",
+          "authorAvatar": "🏭",
+          "isStaff": false,
+          "createdAt": "2026-11-14T11:05:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Đang chạy 3 con Juki DU-1181N gắn motor servo liền trục/rời 550W ở xưởng: máy cực kỳ lành, ít vặt, mũi chỉ dài tối đa 9mm rất đều cả tiến lẫn lùi. Anh em mua máy cũ nhớ soi kỹ **máng dầu và bánh răng côn dưới ổ ngang** xem có bị mòn rơ không là yên tâm chạy nhiều năm."
+        }
+      ]
+    },
     {
       "id": "thread-103",
       "categoryId": "may-moc-xuong",
