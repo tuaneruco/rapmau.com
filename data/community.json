@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 102
+      "count": 103
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 39
+      "count": 40
     },
     {
       "id": "son-canh",
@@ -62,6 +62,47 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-103",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "title": "Máy may chân vịt bước Sunstar KM-340BL (ổ lớn đứng, mũi dài 9mm): Chỉnh bước cào may quai túi, dây nịt & da bò dày với chỉ to #20/#10",
+      "author": "Phạm Quang Huy",
+      "authorRole": "Xưởng Dây Nịt & Túi Da • Q.Bình Tân",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-14T10:00:00Z",
+      "formattedDate": "14/11/2026",
+      "badge": "Chuyên Sâu Máy Móc",
+      "badgeType": "solved",
+      "likes": 27,
+      "views": 356,
+      "stage": "may-rap",
+      "stageLabel": "3. May Ráp & Lên Phom",
+      "content": "Xưởng mình chuyên làm dây nịt, quai túi và túi tote da bò dày 2.0–3.5mm, mới lấy thêm máy 1 kim chân vịt bước ổ lớn Sunstar KM-340BL (bàn phẳng, cào trên dưới). Nhờ anh em đã dùng KM-340BL chia sẻ kinh nghiệm:\n1. Máy ổ lớn đứng KM-340BL chạy chỉ to cỡ #20, #10 hoặc chỉ dù 0.6–0.8mm có cần thay lò xo đồng tiền căng chỉ nặng hơn không? Dùng kim DPx17 số mấy là đẹp nhất?\n2. Khi may qua đoạn gập đầu quai túi (dày 5–6mm) để giữ mũi chỉ đều 5–6mm (máy chỉnh được tới 9mm) mà không bị rút mũi ngắn lại thì chỉnh bước nhấc chân vịt (2–5mm) thế nào?\n3. Cách cân chỉnh lại mũi lại mối (lùi) cho trùng đúng lỗ mũi tiến trên KM-340BL khi chạy da thật?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-103-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-14T10:18:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Sunstar KM-340BL là dòng máy bàn phẳng **chân vịt bước (cào trên dưới) ổ lớn trục đứng (Double-Capacity Vertical Rotary Hook)** cực kỳ khỏe, rất hợp may dây lưng, quai xách, mặt túi phẳng cần mũi chỉ dài và chỉ to.\n\n1. **Chọn kim DPx17 & chỉnh chỉ to (#20 / #10):**\n- **Chỉ #20 (~0.55mm):** dùng kim **DPx17 #21 (130)** hoặc **#22 (140)**.\n- **Chỉ #10 (~0.7–0.8mm):** dùng kim **DPx17 #23 (160)** hoặc **#24 (180)**.\n- Với ổ lớn đứng của KM-340BL, khi chạy chỉ to nên chỉnh **lò xo đánh lửa / giật chỉ (check spring)** có độ căng vừa phải và hành trình dài hơn một chút để rút nút chỉ nằm gọn vào giữa 2 lớp da; đồng thời nới nhẹ ốc lá thép trên thuyền suốt dưới để chỉ dưới thoát mượt, không bị kéo giật mặt dưới.\n\n2. **Chỉnh bước nhấc chân vịt khi leo gờ dày 5–6mm:**\n- KM-340BL nâng chân vịt bằng gối được tới **14 mm** (tay **8 mm**) và chỉnh độ cao bước chân vịt luân phiên từ **2 – 5 mm**.\n- Khi may phẳng bình thường để bước nhấc ~2–2.5mm cho êm máy; khi gặp đoạn gập quai túi hoặc nối dây dày 5–6mm, vặn núm tăng bước nhấc lên **4–5mm** để chân vịt bước nhấc thoát hẳn qua gờ, không bị trượt làm ngắn mũi.\n- Chỉnh mũi chỉ đẹp cho đồ da thủ công/xưởng trên KM-340BL thường ở mức **4.5 – 6.0 mm** (chỉ to 0.8mm có thể để 6–7mm).\n\n3. **Chỉnh trùng lỗ khi lại mũi (back-tack):**\n- Trên thân máy KM-340BL có tay gạt lại mũi kết hợp bộ chỉnh lệch tiến/lùi. May thử trên một miếng da thừa 5 mũi tiến + 5 mũi lùi: nếu mũi lùi ngắn hơn mũi tiến, chỉnh ốc cân bằng hành trình cần gạt lại mũi phía sau trụ đứng để lỗ kim lùi đâm khít đúng lỗ mũi tiến, tránh làm nát mép da."
+        },
+        {
+          "id": "cmt-103-2",
+          "author": "Cơ Khí Máy May Tân Phú",
+          "authorRole": "Thợ Sửa Máy Da • Tân Phú",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-14T10:35:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Lưu ý nhỏ cho anh em dùng Sunstar KM-340BL: nhớ kiểm tra **ly hợp an toàn (safety clutch)** dưới gầm máy định kỳ; nếu lỡ kẹt chỉ to vào ổ lớn, tuyệt đối không cố đạp ga mà phải nhấn nút nhả ly hợp để xoay bánh đà trả ngược lấy chỉ ra, tránh lệch cam ổ đứng."
+        }
+      ]
+    },
     {
       "id": "thread-102",
       "categoryId": "may-moc-xuong",
