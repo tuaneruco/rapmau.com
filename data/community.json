@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 101
+      "count": 102
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 38
+      "count": 39
     },
     {
       "id": "son-canh",
@@ -62,6 +62,47 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-102",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "title": "Máy trụ cao Sunstar KM-818 (cào bơi trụ đứng 445mm): Cách chọn kim DPx17, chỉnh ổ & may hông túi/balo không bỏ mũi, không trầy mặt da",
+      "author": "Nguyễn Hoàng Vũ",
+      "authorRole": "Xưởng Túi Xách & Balo • Bình Dương",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-14T09:30:00Z",
+      "formattedDate": "14/11/2026",
+      "badge": "Chuyên Sâu Máy Móc",
+      "badgeType": "solved",
+      "likes": 33,
+      "views": 419,
+      "stage": "may-rap",
+      "stageLabel": "3. May Ráp & Lên Phom",
+      "content": "Xưởng mình đang dùng máy trụ cao Sunstar KM-818 (trụ mảnh 445mm, cào bơi đồng bộ 3 bước) để may hông túi xách, bo viền balo và các góc sâu. Nhờ anh em thợ máy và các xưởng chia sẻ thêm:\n1. Với chỉ dù/chỉ sáp 0.45–0.55mm (hoặc chỉ #20/#30), nên dùng kim DPx17 (135x17) cỡ bao nhiêu và mũi kim đầu tròn hay đầu dẹt (LR/S) để đường chỉ xiên đẹp như khâu tay?\n2. Khi may qua đoạn gồ dày 3–4 lớp da (giao điểm dây viền piping) đôi lúc bị bỏ mũi hoặc đứt chỉ dưới, cần chỉnh cam ổ và hành trình chân vịt bước thế nào?\n3. Châm dầu hệ thống bôi trơn bán tự động trên trụ cao KM-818 cần lưu ý những điểm nào để tránh dầu văng ra mặt da sáng màu?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-102-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-14T09:50:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Sunstar KM-818 là dòng máy trụ cao thon (445 mm) cào bơi đồng bộ (Unison/Triple Feed: răng cưa dưới + kim đẩy + chân vịt bước) rất được các xưởng túi xách, balo và giày da ưa chuộng vì luồn được vào các góc hẹp sâu mà máy trụ ngang hay máy bằng không vào tới.\n\n1. **Chọn kim DPx17 (135x17) & chỉ chuẩn:**\n- Chỉ **#30 (~0.45mm):** dùng kim **DPx17 #18 (110)** hoặc **#19 (120)**.\n- Chỉ **#20 (~0.55mm):** dùng kim **DPx17 #20 (125)** hoặc **#21 (130)**.\n- Để đường chỉ nổi xiên đẹp giống khâu tay trên da bò/Veg-tan, ưu tiên kim đầu cắt da **DPx17 LR** (hoặc **DI / S** tùy hướng xiên mong muốn); nếu may da mềm/vải lót tránh rách lỗ thì dùng đầu tròn R.\n\n2. **Xử lý bỏ mũi / đứt chỉ khi leo gờ dày (piping 3–4 lớp):**\n- Kiểm tra **tỷ lệ bước nhấc của chân vịt bước (alternating presser foot lift)**: chỉnh lại bộ điều chỉnh độ cao bước chân vịt phía sau đầu máy để hai chân vịt bước đều nhau qua gờ dày, tránh bị treo chân vịt.\n- **Canh lại thời điểm mỏ ổ (hook timing) & trụ kim:** khi qua lớp da dày, kim dễ bị uốn nhẹ; đặt khe hở giữa mỏ ổ và vát kim khoảng **0.05–0.1 mm**, giữ đúng độ cao trụ kim sao cho mỏ ổ bắt vòng chỉ trên mắt kim (khoảng 2 mm phía trên lỗ kim khi kim đi lên).\n- Giảm tốc độ motor servo khi leo qua góc nối dây viền (từ tốc độ tối đa 1.600–2.000 SPM hạ xuống chậm đều) và chỉnh mũi chỉ **3.5–4.5 mm** (KM-818 chỉnh tối đa tới 6 mm).\n\n3. **Chăm sóc hệ thống bôi trơn bán tự động & tránh hằn da:**\n- Kiểm tra bấc dẫn dầu (oil wick) trong đầu trụ đứng: chỉ châm dầu máy trắng chuyên dụng (loại không màu) vừa đủ vạch, không đổ tràn khay trên vì dầu có thể chảy theo trục xuống ổ thuyền làm ố da mộc.\n- Để không trầy/hằn răng chân vịt lên da mềm, có thể dán thêm băng keo Teflon/nhám mịn dưới đáy chân vịt hoặc chuyển sang chân vịt mượt không răng."
+        },
+        {
+          "id": "cmt-102-2",
+          "author": "Xưởng Balo Thành Đạt",
+          "authorRole": "Gia Công Balo Túi • Q.12",
+          "authorAvatar": "🏭",
+          "isStaff": false,
+          "createdAt": "2026-11-14T10:10:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Anh em chạy Sunstar KM-818 nhớ sắm thêm 1 bộ **chân vịt may dây viền (piping foot)** và **chân vịt 1 giò trái/phải** hệ DPx17/trụ cao, khi tra khóa kéo hoặc may viền miệng túi trụ cao 445mm chạy một mạch cực sướng, không bị cấn phom túi."
+        }
+      ]
+    },
     {
       "id": "thread-101",
       "categoryId": "may-moc-xuong",
