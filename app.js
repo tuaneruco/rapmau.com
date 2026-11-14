@@ -738,7 +738,12 @@ function getFilteredProducts() {
     }
 
     if (state.specialFilter === 'free' && !p.isFreePdf) return false;
-    if (state.specialFilter === 'with_photo' && p.images[0]?.startsWith('/previews/')) return false;
+    if (
+      state.specialFilter === 'with_photo' &&
+      !(p.images || []).some((img) => img && !img.startsWith('/previews/') && !img.includes('pattern-placeholder'))
+    ) {
+      return false;
+    }
     if (state.specialFilter === 'cad' && p.cadCount === 0) return false;
     if (state.specialFilter === 'beginner' && !p.difficulty.toLowerCase().includes('cơ bản')) return false;
 

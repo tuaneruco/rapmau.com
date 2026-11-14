@@ -413,7 +413,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 21,
+      "imageCount": 22,
       "fileSizeMB": 7.56,
       "isFreePdf": true,
       "isFeatured": true,
@@ -422,6 +422,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-001-preview.jpg",
         "/media/Balo/01/22.jpg",
         "/media/Balo/01/4.jpg",
         "/media/Balo/01/5.jpg",
@@ -508,7 +509,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-001-preview.jpg"
     },
     {
       "id": "RM-BALO-002",
@@ -529,7 +531,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 3.24,
       "isFreePdf": true,
       "isFeatured": true,
@@ -538,6 +540,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-002-preview.jpg",
         "/media/Balo/02/il_1140xN.2266948520_5ow8.jpg",
         "/media/Balo/02/il_1140xN.2266948626_f2ec.jpg",
         "/media/Balo/02/il_1140xN.2266948732_qsh6.jpg",
@@ -609,7 +612,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-002-preview.jpg"
     },
     {
       "id": "RM-BALO-003",
@@ -630,7 +634,7 @@
       ],
       "pdfCount": 4,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 2.19,
       "isFreePdf": true,
       "isFeatured": false,
@@ -639,6 +643,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-003-preview.jpg",
         "/media/Balo/03/1.jpg",
         "/media/Balo/03/2.jpg",
         "/media/Balo/03/3.jpg",
@@ -712,7 +717,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-003-preview.jpg"
     },
     {
       "id": "RM-BALO-004",
@@ -733,7 +739,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.96,
       "isFreePdf": true,
       "isFeatured": false,
@@ -742,6 +748,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-004-preview.jpg",
         "/media/Balo/04/il_570xN.606085246_gu7l.jpg"
       ],
       "cadPreview": "/previews/rm-balo-004-preview.jpg",
@@ -806,7 +813,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-004-preview.jpg"
     },
     {
       "id": "RM-BALO-005",
@@ -827,7 +835,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.31,
       "isFreePdf": true,
       "isFeatured": false,
@@ -836,6 +844,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-005-preview.jpg",
         "/media/Balo/05/photo_2020-12-21_20-06-26.jpg"
       ],
       "cadPreview": "/previews/rm-balo-005-preview.jpg",
@@ -900,7 +909,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-005-preview.jpg"
     },
     {
       "id": "RM-BALO-006",
@@ -1015,7 +1025,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.01,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1024,6 +1034,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-007-preview.jpg",
         "/media/Balo/07/Bag111 - preview - 1.jpg",
         "/media/Balo/07/Bag111 - preview - 2.jpg"
       ],
@@ -1089,7 +1100,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-007-preview.jpg"
     },
     {
       "id": "RM-BALO-008",
@@ -1110,7 +1122,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 72.53,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1119,6 +1131,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-008-preview.jpg",
         "/media/Balo/08/280497838_683022269598098_2926535246243583016_n.jpg",
         "/media/Balo/08/il_1140xN.2652965406_79kl.jpg",
         "/media/Balo/08/il_1140xN.2657405942_66cl.jpg",
@@ -1189,7 +1202,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-008-preview.jpg"
     },
     {
       "id": "RM-BALO-009",
@@ -1210,7 +1224,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.98,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1219,6 +1233,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-009-preview.jpg",
         "/media/Balo/09/9KMJ3rK25bc.jpg",
         "/media/Balo/09/Primer.jpg",
         "/media/Balo/09/Q1LsXSZ6qk0.jpg",
@@ -1227,7 +1242,7 @@
         "/media/Balo/09/photo_2022-10-30_04-56-57.jpg",
         "/media/Balo/09/tHcbw_cUHXA.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-009-preview.jpg",
       "pdfFiles": [
         "/media/Balo/09/Primer.pdf",
         "/media/Balo/09/Redhead01.pdf"
@@ -1291,7 +1306,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-009-preview.jpg"
     },
     {
       "id": "RM-BALO-010",
@@ -1312,7 +1328,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 1.12,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1321,9 +1337,10 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-010-preview.jpg",
         "/media/Balo/10/photo_2022-10-13_03-13-33.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-010-preview.jpg",
       "pdfFiles": [
         "/media/Balo/10/Backpack Chocolate PDF.pdf"
       ],
@@ -1385,7 +1402,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-010-preview.jpg"
     },
     {
       "id": "RM-BALO-011",
@@ -1406,7 +1424,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 11.24,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1415,6 +1433,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-011-preview.jpg",
         "/media/Balo/11/photo_2022-04-09_10-03-40 (2).jpg",
         "/media/Balo/11/photo_2022-04-09_10-03-40.jpg",
         "/media/Balo/11/photo_2022-04-09_10-03-41 (2).jpg",
@@ -1424,7 +1443,7 @@
         "/media/Balo/11/photo_2022-04-09_10-03-42.jpg",
         "/media/Balo/11/photo_2022-04-09_10-04-00.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-011-preview.jpg",
       "pdfFiles": [
         "/media/Balo/11/Backpack Рюкзак-1.pdf"
       ],
@@ -1486,7 +1505,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-011-preview.jpg"
     },
     {
       "id": "RM-BALO-012",
@@ -1507,7 +1527,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.6,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1516,6 +1536,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-012-preview.jpg",
         "/media/Balo/12/il_1140xN.3953744008_ecxa.jpg",
         "/media/Balo/12/il_1140xN.3953745538_earo.jpg",
         "/media/Balo/12/il_1140xN.3953746156_clet.jpg",
@@ -1524,7 +1545,7 @@
         "/media/Balo/12/il_794xN.4001407275_fqh9.jpeg",
         "/media/Balo/12/photo_2022-10-29_01-19-02.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-012-preview.jpg",
       "pdfFiles": [
         "/media/Balo/12/bagfull.pdf"
       ],
@@ -1586,7 +1607,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-012-preview.jpg"
     },
     {
       "id": "RM-BALO-013",
@@ -1607,7 +1629,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 3.49,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1616,11 +1638,12 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-013-preview.jpg",
         "/media/Balo/13/171317904_364777658194935_765594873472279045_n.jpg",
         "/media/Balo/13/171699685_127360416030802_1938826548536631570_n.jpg",
         "/media/Balo/13/173033100_474987293917988_1324959329792226496_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-013-preview.jpg",
       "pdfFiles": [
         "/media/Balo/13/ryukzak_baykera.pdf"
       ],
@@ -1682,7 +1705,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-013-preview.jpg"
     },
     {
       "id": "RM-BALO-014",
@@ -1703,7 +1727,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1712,6 +1736,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-014-preview.jpg",
         "/media/Balo/14/il_1140xN.2911806684_lqlo.jpg",
         "/media/Balo/14/il_1140xN.2911808060_sa1w.jpg",
         "/media/Balo/14/il_1140xN.2911808166_kst8.jpg",
@@ -1720,7 +1745,7 @@
         "/media/Balo/14/il_1140xN.2959501207_8ldy.jpg",
         "/media/Balo/14/il_1140xN.2959513165_hm1g.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-014-preview.jpg",
       "pdfFiles": [
         "/media/Balo/14/4bed8ac9f50ab2a455bb84478b5a443c523bec6e.pdf"
       ],
@@ -1782,7 +1807,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-014-preview.jpg"
     },
     {
       "id": "RM-BALO-015",
@@ -1803,7 +1829,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.61,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1812,9 +1838,10 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-015-preview.jpg",
         "/media/Balo/15/photo_2021-10-01_14-07-19.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-015-preview.jpg",
       "pdfFiles": [
         "/media/Balo/15/Women_s backpack.pdf"
       ],
@@ -1876,7 +1903,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-015-preview.jpg"
     },
     {
       "id": "RM-BALO-016",
@@ -1897,7 +1925,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 28,
+      "imageCount": 29,
       "fileSizeMB": 0.09,
       "isFreePdf": true,
       "isFeatured": false,
@@ -1906,6 +1934,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-016-preview.jpg",
         "/media/Balo/16/f (1).jpg",
         "/media/Balo/16/f (10).jpg",
         "/media/Balo/16/f (11).jpg",
@@ -1935,7 +1964,7 @@
         "/media/Balo/16/f (8).jpg",
         "/media/Balo/16/f (9).jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-016-preview.jpg",
       "pdfFiles": [
         "/media/Balo/16/ACC-64 key steps instruction.pdf"
       ],
@@ -1997,7 +2026,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-016-preview.jpg"
     },
     {
       "id": "RM-BALO-017",
@@ -2018,7 +2048,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.59,
       "isFreePdf": true,
       "isFeatured": false,
@@ -2027,11 +2057,12 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "14.0 - 22.0 Pia (SF)",
       "images": [
+        "/previews/rm-balo-017-preview.jpg",
         "/media/Balo/17/19895070_756404267872736_2940332642382423446_n.jpg",
         "/media/Balo/17/19905154_756404291206067_7843894650550954476_n.jpg",
         "/media/Balo/17/19905454_756404284539401_1991552006705306967_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-balo-017-preview.jpg",
       "pdfFiles": [
         "/media/Balo/17/ACC-27-A1.pdf"
       ],
@@ -2093,7 +2124,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-balo-017-preview.jpg"
     },
     {
       "id": "RM-BK-001",
@@ -2114,7 +2146,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.59,
       "isFreePdf": true,
       "isFeatured": true,
@@ -2123,6 +2155,7 @@
       "chiselPitch": "3.38mm hoặc 3.85mm",
       "leatherEstimate": "1.5 - 2.0 Pia (SF)",
       "images": [
+        "/previews/rm-bk-001-preview.jpg",
         "/media/Bao Kinh/Glasses case/Screenshot_20200509_214541_com.google.android.youtube.jpg",
         "/media/Bao Kinh/Glasses case/Screenshot_20200509_214545_com.google.android.youtube.jpg",
         "/media/Bao Kinh/Glasses case/Screenshot_20200509_214548_com.google.android.youtube.jpg",
@@ -2191,7 +2224,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-001-preview.jpg"
     },
     {
       "id": "RM-BK-002",
@@ -2212,7 +2246,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": true,
@@ -2221,6 +2255,7 @@
       "chiselPitch": "3.38mm hoặc 3.85mm",
       "leatherEstimate": "1.5 - 2.0 Pia (SF)",
       "images": [
+        "/previews/rm-bk-002-preview.jpg",
         "/media/Bao Kinh/kính/168506503_2660563694241040_2328834225660681458_n.jpg",
         "/media/Bao Kinh/kính/168794166_477504813404364_1623771288112600302_n.jpg",
         "/media/Bao Kinh/kính/168864891_496592694688628_8060328614900875844_n.jpg",
@@ -2287,7 +2322,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-002-preview.jpg"
     },
     {
       "id": "RM-BK-003",
@@ -2471,7 +2507,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-004-preview.jpg"
     },
     {
       "id": "RM-BK-005",
@@ -2564,7 +2601,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-005-preview.jpg"
     },
     {
       "id": "RM-BK-006",
@@ -2657,7 +2695,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-006-preview.jpg"
     },
     {
       "id": "RM-BK-007",
@@ -2750,7 +2789,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-007-preview.jpg"
     },
     {
       "id": "RM-BK-008",
@@ -2843,7 +2883,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-008-preview.jpg"
     },
     {
       "id": "RM-BK-009",
@@ -2936,7 +2977,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-009-preview.jpg"
     },
     {
       "id": "RM-BK-010",
@@ -3029,7 +3071,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-010-preview.jpg"
     },
     {
       "id": "RM-BK-011",
@@ -3122,7 +3165,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-011-preview.jpg"
     },
     {
       "id": "RM-BK-012",
@@ -3215,7 +3259,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bk-012-preview.jpg"
     },
     {
       "id": "RM-BDLT-001",
@@ -3236,7 +3281,7 @@
       ],
       "pdfCount": 5,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.78,
       "isFreePdf": true,
       "isFeatured": true,
@@ -3245,6 +3290,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 7.0 Pia (SF)",
       "images": [
+        "/previews/rm-bdlt-001-preview.jpg",
         "/media/Bao da laptop/01/Screenshot_20210407_060950.jpg"
       ],
       "cadPreview": "/previews/rm-bdlt-001-preview.jpg",
@@ -3316,7 +3362,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bdlt-001-preview.jpg"
     },
     {
       "id": "RM-BDDT-001",
@@ -3337,7 +3384,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": true,
@@ -3346,6 +3393,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "1.5 - 2.5 Pia (SF)",
       "images": [
+        "/previews/rm-bddt-001-preview.jpg",
         "/media/Bao da điện thoại/01/photo_2021-07-01_10-09-55.jpg"
       ],
       "cadPreview": "/previews/rm-bddt-001-preview.jpg",
@@ -3409,7 +3457,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bddt-001-preview.jpg"
     },
     {
       "id": "RM-BDDT-002",
@@ -3502,7 +3551,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bddt-002-preview.jpg"
     },
     {
       "id": "RM-BDDT-003",
@@ -3523,7 +3573,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -3532,6 +3582,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "1.5 - 2.5 Pia (SF)",
       "images": [
+        "/previews/rm-bddt-003-preview.jpg",
         "/media/Bao da điện thoại/03/oprRkibYQas.jpg",
         "/media/Bao da điện thoại/03/uBvcqeVHOdU.jpg"
       ],
@@ -3596,7 +3647,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bddt-003-preview.jpg"
     },
     {
       "id": "RM-BDDT-004",
@@ -3617,7 +3669,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -3626,6 +3678,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "1.5 - 2.5 Pia (SF)",
       "images": [
+        "/previews/rm-bddt-004-preview.jpg",
         "/media/Bao da điện thoại/04/001.jpg",
         "/media/Bao da điện thoại/04/82983106_1465050376989454_8119564874847092736_o.jpg",
         "/media/Bao da điện thoại/04/83040423_1465050330322792_6984978886274580480_o.jpg",
@@ -3693,7 +3746,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-bddt-004-preview.jpg"
     },
     {
       "id": "RM-CT-001",
@@ -3714,7 +3768,7 @@
       ],
       "pdfCount": 4,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 486.26,
       "isFreePdf": true,
       "isFeatured": true,
@@ -3723,6 +3777,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-001-preview.jpg",
         "/media/Cặp táp/01/167592439_111565184269978_3424995066800946757_n.jpg",
         "/media/Cặp táp/01/169482353_930582534372599_3251154575248240926_n.jpg"
       ],
@@ -3794,7 +3849,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-001-preview.jpg"
     },
     {
       "id": "RM-CT-002",
@@ -3815,7 +3871,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": true,
@@ -3824,6 +3880,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-002-preview.jpg",
         "/media/Cặp táp/02/4Qmw0LxbHpc.jpg",
         "/media/Cặp táp/02/Ypycknwaiz8.jpg"
       ],
@@ -3889,7 +3946,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-002-preview.jpg"
     },
     {
       "id": "RM-CT-003",
@@ -3910,7 +3968,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 841.91,
       "isFreePdf": true,
       "isFeatured": false,
@@ -3919,6 +3977,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-003-preview.jpg",
         "/media/Cặp táp/03/Portfel.jpg"
       ],
       "cadPreview": "/previews/rm-ct-003-preview.jpg",
@@ -3985,7 +4044,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-003-preview.jpg"
     },
     {
       "id": "RM-CT-004",
@@ -4006,7 +4066,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 9,
+      "imageCount": 10,
       "fileSizeMB": 0.36,
       "isFreePdf": true,
       "isFeatured": false,
@@ -4015,6 +4075,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-004-preview.jpg",
         "/media/Cặp táp/04/il_1140xN.1906122866_iqc8.jpg",
         "/media/Cặp táp/04/il_1140xN.1906123204_aolz.jpg",
         "/media/Cặp táp/04/il_1140xN.1906123322_rpgq.jpg",
@@ -4087,7 +4148,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-004-preview.jpg"
     },
     {
       "id": "RM-CT-005",
@@ -4111,7 +4173,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 1,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 3.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -4120,6 +4182,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-005-preview.jpg",
         "/media/Cặp táp/05/22140974_795962670583562_2684078756647442138_n.jpg",
         "/media/Cặp táp/05/22141274_795962650583564_3609109821422437583_n.jpg",
         "/media/Cặp táp/05/22154567_795962703916892_3085440150487952374_n.jpg",
@@ -4192,7 +4255,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-005-preview.jpg"
     },
     {
       "id": "RM-CT-006",
@@ -4214,7 +4278,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 11,
+      "imageCount": 12,
       "fileSizeMB": 0.95,
       "isFreePdf": true,
       "isFeatured": false,
@@ -4223,6 +4287,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-006-preview.jpg",
         "/media/Cặp táp/06/08121920_5208b6fd9aa7f.jpg",
         "/media/Cặp táp/06/08121920_5208b70279489.jpg",
         "/media/Cặp táp/06/08121920_5208b7071e7e2.jpg",
@@ -4299,7 +4364,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-006-preview.jpg"
     },
     {
       "id": "RM-CT-007",
@@ -4321,7 +4387,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 2.85,
       "isFreePdf": true,
       "isFeatured": false,
@@ -4330,6 +4396,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-007-preview.jpg",
         "/media/Cặp táp/07/Screen Shot 2020-02-17 at 19.48.27.png"
       ],
       "cadPreview": "/previews/rm-ct-007-preview.jpg",
@@ -4396,7 +4463,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-007-preview.jpg"
     },
     {
       "id": "RM-CT-008",
@@ -4417,7 +4485,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -4426,6 +4494,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "12.0 - 18.0 Pia (SF)",
       "images": [
+        "/previews/rm-ct-008-preview.jpg",
         "/media/Cặp táp/08/22089761_1448706191911371_5363323605725252704_n.jpg",
         "/media/Cặp táp/08/22221926_1448706188578038_7160335762551521875_n.jpg"
       ],
@@ -4491,7 +4560,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ct-008-preview.jpg"
     },
     {
       "id": "RM-MA-001",
@@ -4584,7 +4654,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ma-001-preview.jpg"
     },
     {
       "id": "RM-MA-002",
@@ -4605,7 +4676,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.67,
       "isFreePdf": true,
       "isFeatured": true,
@@ -4614,6 +4685,7 @@
       "chiselPitch": "3.38mm hoặc 3.85mm",
       "leatherEstimate": "2.0 - 5.0 Pia (SF)",
       "images": [
+        "/previews/rm-ma-002-preview.jpg",
         "/media/Máy ảnh/02/il_1140xN.1685964688_cb08.jpg",
         "/media/Máy ảnh/02/il_1140xN.1733427843_kr3r.jpg",
         "/media/Máy ảnh/02/il_794xN.1701507880_tuf2.jpg",
@@ -4680,7 +4752,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ma-002-preview.jpg"
     },
     {
       "id": "RM-MA-003",
@@ -4773,7 +4846,8 @@
         "TOOL-CHISEL-338"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ma-003-preview.jpg"
     },
     {
       "id": "RM-MK-001",
@@ -4794,7 +4868,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.22,
       "isFreePdf": true,
       "isFeatured": true,
@@ -4803,6 +4877,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "0.5 - 1.5 Pia (SF)",
       "images": [
+        "/previews/rm-mk-001-preview.jpg",
         "/media/Móc khóa/01/Screenshot_20200628_200432.jpg",
         "/media/Móc khóa/01/Screenshot_20200628_200518.jpg",
         "/media/Móc khóa/01/Screenshot_20200628_200528.jpg",
@@ -4869,7 +4944,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mk-001-preview.jpg"
     },
     {
       "id": "RM-MK-002",
@@ -4890,7 +4966,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.01,
       "isFreePdf": true,
       "isFeatured": true,
@@ -4899,6 +4975,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "0.5 - 1.5 Pia (SF)",
       "images": [
+        "/previews/rm-mk-002-preview.jpg",
         "/media/Móc khóa/02/IMG_330-650x650.jpg",
         "/media/Móc khóa/02/IMG_331-650x650.jpg"
       ],
@@ -4963,7 +5040,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mk-002-preview.jpg"
     },
     {
       "id": "RM-MK-003",
@@ -4984,7 +5062,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.74,
       "isFreePdf": true,
       "isFeatured": false,
@@ -4993,6 +5071,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "0.5 - 1.5 Pia (SF)",
       "images": [
+        "/previews/rm-mk-003-preview.jpg",
         "/media/Móc khóa/03/il_fullxfull.2713430152_fgcl.jpg",
         "/media/Móc khóa/03/il_fullxfull.2713430246_1f7e.jpg",
         "/media/Móc khóa/03/il_fullxfull.2713430412_m7zp.jpg",
@@ -5061,7 +5140,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mk-003-preview.jpg"
     },
     {
       "id": "RM-MK-004",
@@ -5082,7 +5162,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5091,6 +5171,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "0.5 - 1.5 Pia (SF)",
       "images": [
+        "/previews/rm-mk-004-preview.jpg",
         "/media/Móc khóa/04/Model1.jpg",
         "/media/Móc khóa/04/Model2.jpg"
       ],
@@ -5157,7 +5238,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mk-004-preview.jpg"
     },
     {
       "id": "RM-MN-001",
@@ -5178,7 +5260,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 4.94,
       "isFreePdf": true,
       "isFeatured": true,
@@ -5187,6 +5269,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-001-preview.jpg",
         "/media/Mũ, nón/01/il_794xN.1002985231_oazn.jpg",
         "/media/Mũ, nón/01/il_794xN.2010166144_1rbs.jpg"
       ],
@@ -5255,7 +5338,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-001-preview.jpg"
     },
     {
       "id": "RM-MN-002",
@@ -5276,7 +5360,7 @@
       ],
       "pdfCount": 4,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 438.89,
       "isFreePdf": true,
       "isFeatured": true,
@@ -5285,6 +5369,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-002-preview.jpg",
         "/media/Mũ, nón/02/il_1140xN.2267036988_ddro.jpg",
         "/media/Mũ, nón/02/il_1140xN.2267045910_lj56.jpg",
         "/media/Mũ, nón/02/il_1140xN.2314645275_55rg.jpg"
@@ -5356,7 +5441,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-002-preview.jpg"
     },
     {
       "id": "RM-MN-003",
@@ -5377,7 +5463,7 @@
       ],
       "pdfCount": 5,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 6.04,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5386,6 +5472,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-003-preview.jpg",
         "/media/Mũ, nón/03/il_1140xN.2425769944_5n72.jpg",
         "/media/Mũ, nón/03/il_1140xN.2425770024_es5o.jpg",
         "/media/Mũ, nón/03/il_1140xN.2425773544_8iqn.jpg",
@@ -5463,7 +5550,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-003-preview.jpg"
     },
     {
       "id": "RM-MN-004",
@@ -5484,7 +5572,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 9.5,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5493,6 +5581,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-004-preview.jpg",
         "/media/Mũ, nón/04/268296863_658147352281206_2845597218509105042_n.jpg"
       ],
       "cadPreview": "/previews/rm-mn-004-preview.jpg",
@@ -5556,7 +5645,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-004-preview.jpg"
     },
     {
       "id": "RM-MN-005",
@@ -5675,7 +5765,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 29.94,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5684,6 +5774,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-006-preview.jpg",
         "/media/Mũ, nón/06/WoWVruGWLso.jpg",
         "/media/Mũ, nón/06/rSNe8j7AWfE.jpg"
       ],
@@ -5752,7 +5843,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-006-preview.jpg"
     },
     {
       "id": "RM-MN-007",
@@ -5773,7 +5865,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.08,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5782,6 +5874,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-007-preview.jpg",
         "/media/Mũ, nón/07/Bz7MUaD4L6o.jpg",
         "/media/Mũ, nón/07/Ki9MC3uMki0.jpg",
         "/media/Mũ, nón/07/Xe7ozFgc1Ew.jpg",
@@ -5852,7 +5945,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-007-preview.jpg"
     },
     {
       "id": "RM-MN-008",
@@ -5873,7 +5967,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 3.24,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5882,6 +5976,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-008-preview.jpg",
         "/media/Mũ, nón/08/photo_2021-10-27_14-57-37.jpg"
       ],
       "cadPreview": "/previews/rm-mn-008-preview.jpg",
@@ -5947,7 +6042,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-008-preview.jpg"
     },
     {
       "id": "RM-MN-009",
@@ -5968,7 +6064,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 1.58,
       "isFreePdf": true,
       "isFeatured": false,
@@ -5977,13 +6073,14 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "3.5 - 5.5 Pia (SF)",
       "images": [
+        "/previews/rm-mn-009-preview.jpg",
         "/media/Mũ, nón/09/9bexWPCWPMY.jpg",
         "/media/Mũ, nón/09/E86k6-49C3g.jpg",
         "/media/Mũ, nón/09/SL6hY7-Vv3E.jpg",
         "/media/Mũ, nón/09/p_ZjnPaZbh8.jpg",
         "/media/Mũ, nón/09/zWWhhYSti7Y.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-mn-009-preview.jpg",
       "pdfFiles": [
         "/media/Mũ, nón/09/Sub-Zero_Mask_Template_-_SKS_Props.pdf"
       ],
@@ -6044,7 +6141,8 @@
         "TOOL-THREAD-055"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-mn-009-preview.jpg"
     },
     {
       "id": "RM-SPK-001",
@@ -6065,7 +6163,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 2.97,
       "isFreePdf": true,
       "isFeatured": true,
@@ -6074,6 +6172,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-001-preview.jpg",
         "/media/SP khác/01/Screenshot_20200707_230704.jpg"
       ],
       "cadPreview": "/previews/rm-spk-001-preview.jpg",
@@ -6137,7 +6236,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-001-preview.jpg"
     },
     {
       "id": "RM-SPK-002",
@@ -6158,7 +6258,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 1.12,
       "isFreePdf": true,
       "isFeatured": true,
@@ -6167,6 +6267,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-002-preview.jpg",
         "/media/SP khác/02/Screenshot_20200708_220855.jpg"
       ],
       "cadPreview": "/previews/rm-spk-002-preview.jpg",
@@ -6230,7 +6331,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-002-preview.jpg"
     },
     {
       "id": "RM-SPK-003",
@@ -6251,7 +6353,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 2.3,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6260,6 +6362,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-003-preview.jpg",
         "/media/SP khác/03/Screenshot_20200708_220914.jpg"
       ],
       "cadPreview": "/previews/rm-spk-003-preview.jpg",
@@ -6323,7 +6426,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-003-preview.jpg"
     },
     {
       "id": "RM-SPK-004",
@@ -6418,7 +6522,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-004-preview.jpg"
     },
     {
       "id": "RM-SPK-005",
@@ -6439,7 +6544,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 2.48,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6448,6 +6553,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-005-preview.jpg",
         "/media/SP khác/05/LPDEywout7E.jpg",
         "/media/SP khác/05/SMivCe3T2pI.jpg",
         "/media/SP khác/05/WOTOpECxr5k.jpg",
@@ -6517,7 +6623,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-005-preview.jpg"
     },
     {
       "id": "RM-SPK-006",
@@ -6538,7 +6645,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.5,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6547,6 +6654,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-006-preview.jpg",
         "/media/SP khác/06/W-7t9Nmvf_U.jpg",
         "/media/SP khác/06/qCgp23v9OxI.jpg"
       ],
@@ -6611,7 +6719,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-006-preview.jpg"
     },
     {
       "id": "RM-SPK-007",
@@ -6632,7 +6741,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.24,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6641,6 +6750,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-007-preview.jpg",
         "/media/SP khác/07/il_1140xN.2392557710_rx2x.jpg",
         "/media/SP khác/07/il_1140xN.2392558794_6lgr.jpg",
         "/media/SP khác/07/il_1140xN.2392559182_hghr.jpg",
@@ -6710,7 +6820,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-007-preview.jpg"
     },
     {
       "id": "RM-SPK-008",
@@ -6731,7 +6842,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.18,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6740,6 +6851,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-008-preview.jpg",
         "/media/SP khác/08/A3ftAGbXBq8.jpg"
       ],
       "cadPreview": "/previews/rm-spk-008-preview.jpg",
@@ -6803,7 +6915,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-008-preview.jpg"
     },
     {
       "id": "RM-SPK-009",
@@ -6824,7 +6937,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.3,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6833,12 +6946,13 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-009-preview.jpg",
         "/media/SP khác/09/il_794xN.2355784040_71us.jpg",
         "/media/SP khác/09/il_794xN.2355817440_96p0.jpg",
         "/media/SP khác/09/il_794xN.2355819256_hxvp.jpg",
         "/media/SP khác/09/il_794xN.2403413325_sefz.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-009-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/09/PaintyeeBaphometDollPDFPattern.pdf"
       ],
@@ -6899,7 +7013,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-009-preview.jpg"
     },
     {
       "id": "RM-SPK-010",
@@ -6920,7 +7035,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.36,
       "isFreePdf": true,
       "isFeatured": false,
@@ -6929,6 +7044,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-010-preview.jpg",
         "/media/SP khác/10/il_1140xN.2328580994_e0xk.jpg",
         "/media/SP khác/10/il_1140xN.2328581176_igr8.jpg",
         "/media/SP khác/10/il_1140xN.2328581490_q021.jpg",
@@ -6937,7 +7053,7 @@
         "/media/SP khác/10/il_1140xN.2376171829_1zce.jpg",
         "/media/SP khác/10/il_794xN.2376170483_natq.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-010-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/10/PaintyeeDragonEggPursePDFPattern.pdf"
       ],
@@ -6998,7 +7114,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-010-preview.jpg"
     },
     {
       "id": "RM-SPK-011",
@@ -7019,7 +7136,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.46,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7028,6 +7145,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-011-preview.jpg",
         "/media/SP khác/11/il_1140xN.2435178584_ig11.jpg",
         "/media/SP khác/11/il_1140xN.2482806527_hlcr.jpg",
         "/media/SP khác/11/il_1140xN.2482807229_qb5b.jpg",
@@ -7036,7 +7154,7 @@
         "/media/SP khác/11/il_1140xN.2482808395_lg31.jpg",
         "/media/SP khác/11/il_1140xN.2482808999_pohx.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-011-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/11/PaintyeeDragonMaskPDFPattern.pdf"
       ],
@@ -7097,7 +7215,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-011-preview.jpg"
     },
     {
       "id": "RM-SPK-012",
@@ -7118,7 +7237,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7127,12 +7246,13 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-012-preview.jpg",
         "/media/SP khác/12/168151712_253352443175828_1142534802117385468_n.png",
         "/media/SP khác/12/168357556_732903994044299_2130186947963965217_n.png",
         "/media/SP khác/12/168457536_161471775758418_1742520028941375659_n.png",
         "/media/SP khác/12/170147881_260325749085485_1322251253522195690_n.png"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-012-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/12/OFISNAYa_PORTUPEYa-1.pdf",
         "/media/SP khác/12/OFISNAYa_PORTUPEYa-2.pdf",
@@ -7197,7 +7317,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-012-preview.jpg"
     },
     {
       "id": "RM-SPK-013",
@@ -7218,7 +7339,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 7.54,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7227,6 +7348,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-013-preview.jpg",
         "/media/SP khác/13/aa1-1920x1080.jpg",
         "/media/SP khác/13/llllllllllo (10)-1920x1080.jpg",
         "/media/SP khác/13/llllllllllo (2)-1920x1080.jpg",
@@ -7235,7 +7357,7 @@
         "/media/SP khác/13/llllllllllo (5)-1920x1080.jpg",
         "/media/SP khác/13/llllllllllo (8)-1920x1080.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-013-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/13/ASSEMBLYINSTRUCIONPHOTOS_PDF.pdf",
         "/media/SP khác/13/LeatherWineTotePDFPattern.pdf"
@@ -7298,7 +7420,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-013-preview.jpg"
     },
     {
       "id": "RM-SPK-014",
@@ -7319,7 +7442,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.2,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7328,6 +7451,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-014-preview.jpg",
         "/media/SP khác/14/il_1140xN.2585096190_nics.jpg",
         "/media/SP khác/14/il_1140xN.2585096372_ln16.jpg",
         "/media/SP khác/14/il_1140xN.2632766473_4ot4.jpg",
@@ -7336,7 +7460,7 @@
         "/media/SP khác/14/il_1140xN.2632767145_1tfs.jpg",
         "/media/SP khác/14/il_1140xN.2632767227_gfyl.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-014-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/14/belt_bag_leatherHUB.pdf"
       ],
@@ -7397,7 +7521,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-014-preview.jpg"
     },
     {
       "id": "RM-SPK-015",
@@ -7418,7 +7543,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.82,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7427,6 +7552,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-015-preview.jpg",
         "/media/SP khác/15/il_fullxfull.2585009274_57km.jpg",
         "/media/SP khác/15/il_fullxfull.2585009594_m3kv.jpg",
         "/media/SP khác/15/il_fullxfull.2585009610_tcmp.jpg",
@@ -7434,7 +7560,7 @@
         "/media/SP khác/15/il_fullxfull.2632679125_e6di.jpg",
         "/media/SP khác/15/il_fullxfull.2632679347_4st5.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-015-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/15/doc449321729_564795478.pdf"
       ],
@@ -7495,7 +7621,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-015-preview.jpg"
     },
     {
       "id": "RM-SPK-016",
@@ -7516,7 +7643,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 9,
+      "imageCount": 10,
       "fileSizeMB": 7.51,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7525,6 +7652,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-016-preview.jpg",
         "/media/SP khác/16/il_fullxfull.2376191066_q4eb.jpg",
         "/media/SP khác/16/il_fullxfull.2470136011_6w5j.jpg",
         "/media/SP khác/16/il_fullxfull.2471598189_1lss.jpg",
@@ -7535,7 +7663,7 @@
         "/media/SP khác/16/il_fullxfull.2585012642_37ym.jpg",
         "/media/SP khác/16/il_fullxfull.2632681733_r45b.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-016-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/16/LeatherHub_Wallet.pdf",
         "/media/SP khác/16/Teddy_bear_pattern.pdf",
@@ -7600,7 +7728,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-016-preview.jpg"
     },
     {
       "id": "RM-SPK-017",
@@ -7621,7 +7750,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 9,
+      "imageCount": 10,
       "fileSizeMB": 3.55,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7630,6 +7759,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-017-preview.jpg",
         "/media/SP khác/17/il_fullxfull.2584952714_1cb5.jpg",
         "/media/SP khác/17/il_fullxfull.2584953026_mpuc.jpg",
         "/media/SP khác/17/il_fullxfull.2632622083_dnu2.jpg",
@@ -7640,7 +7770,7 @@
         "/media/SP khác/17/il_fullxfull.2632624793_rs1h.jpg",
         "/media/SP khác/17/il_fullxfull.2753867204_oi46.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-017-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/17/Big_skull_pattern.pdf",
         "/media/SP khác/17/Candle_skull_pattern.pdf",
@@ -7705,7 +7835,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-017-preview.jpg"
     },
     {
       "id": "RM-SPK-018",
@@ -7726,7 +7857,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 3.47,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7735,6 +7866,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-018-preview.jpg",
         "/media/SP khác/18/il_fullxfull.2584925482_hv5u.jpg",
         "/media/SP khác/18/il_fullxfull.2632594275_d95w.jpg",
         "/media/SP khác/18/il_fullxfull.2632594549_nw8n.jpg",
@@ -7742,7 +7874,7 @@
         "/media/SP khác/18/il_fullxfull.2632594983_do0q.jpg",
         "/media/SP khác/18/il_fullxfull.2632595141_2511.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-018-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/18/SVIN_Ya_KOPILKA_128076.pdf"
       ],
@@ -7803,7 +7935,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-018-preview.jpg"
     },
     {
       "id": "RM-SPK-019",
@@ -7824,7 +7957,7 @@
       ],
       "pdfCount": 5,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 29.58,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7833,6 +7966,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-019-preview.jpg",
         "/media/SP khác/19/il_1140xN.2584841156_by8x.jpg",
         "/media/SP khác/19/il_1140xN.2584841184_d4oe.jpg",
         "/media/SP khác/19/il_1140xN.2584841196_aara.jpg",
@@ -7842,7 +7976,7 @@
         "/media/SP khác/19/il_1140xN.2632510529_22tm.jpg",
         "/media/SP khác/19/il_1140xN.2632510531_i1vx.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-019-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/19/Facehugger_pattern_L.pdf",
         "/media/SP khác/19/Facehugger_pattern_M.pdf",
@@ -7911,7 +8045,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-019-preview.jpg"
     },
     {
       "id": "RM-SPK-020",
@@ -7932,7 +8067,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -7941,9 +8076,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-020-preview.jpg",
         "/media/SP khác/20/Screenshot_20200518_011554_com.google.android.youtube.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-020-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/20/Baseball.pdf"
       ],
@@ -8004,7 +8140,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-020-preview.jpg"
     },
     {
       "id": "RM-SPK-021",
@@ -8025,7 +8162,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.27,
       "isFreePdf": true,
       "isFeatured": false,
@@ -8034,6 +8171,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-021-preview.jpg",
         "/media/SP khác/21/il_1140xN.1794738662_opci.jpg",
         "/media/SP khác/21/il_1140xN.1794738820_c0d4.jpg",
         "/media/SP khác/21/il_1140xN.1794738822_3ruk.jpg",
@@ -8041,7 +8179,7 @@
         "/media/SP khác/21/il_1140xN.1842199947_91ox.jpg",
         "/media/SP khác/21/il_1140xN.1842200023_g8sg.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-021-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/21/bikermask.pdf"
       ],
@@ -8102,7 +8240,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-021-preview.jpg"
     },
     {
       "id": "RM-SPK-022",
@@ -8123,7 +8262,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.4,
       "isFreePdf": true,
       "isFeatured": false,
@@ -8132,9 +8271,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "2.0 - 8.0 Pia (SF)",
       "images": [
+        "/previews/rm-spk-022-preview.jpg",
         "/media/SP khác/22/20638611_1880899625570442_5751881708612799446_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-spk-022-preview.jpg",
       "pdfFiles": [
         "/media/SP khác/22/¦«-f---í-f¦-+¦-ISO A4.pdf"
       ],
@@ -8195,7 +8335,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-022-preview.jpg"
     },
     {
       "id": "RM-SPK-023",
@@ -8288,7 +8429,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-spk-023-preview.jpg"
     },
     {
       "id": "RM-SACH-001",
@@ -8381,7 +8523,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-sach-001-preview.jpg"
     },
     {
       "id": "RM-SACH-002",
@@ -8462,7 +8605,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-sach-002-preview.jpg"
     },
     {
       "id": "RM-SACH-003",
@@ -8545,7 +8689,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-sach-003-preview.jpg"
     },
     {
       "id": "RM-TDL-001",
@@ -8566,7 +8711,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 27.78,
       "isFreePdf": true,
       "isFeatured": true,
@@ -8575,6 +8720,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "18.0 - 26.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdl-001-preview.jpg",
         "/media/Túi du lịch/01/il_1140xN.1676022734_ez0f.jpg",
         "/media/Túi du lịch/01/il_1140xN.1676022736_f49j.jpg",
         "/media/Túi du lịch/01/il_1140xN.1676022846_ln0e.jpg",
@@ -8650,7 +8796,8 @@
         "ACC-BUCKLE-BRASS"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdl-001-preview.jpg"
     },
     {
       "id": "RM-TDL-002",
@@ -8671,7 +8818,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 3.02,
       "isFreePdf": true,
       "isFeatured": true,
@@ -8680,6 +8827,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "18.0 - 26.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdl-002-preview.jpg",
         "/media/Túi du lịch/02/170264417_442085887095221_4197195958822729980_n.jpg"
       ],
       "cadPreview": "/previews/rm-tdl-002-preview.jpg",
@@ -8746,7 +8894,8 @@
         "ACC-BUCKLE-BRASS"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdl-002-preview.jpg"
     },
     {
       "id": "RM-TDL-003",
@@ -8768,7 +8917,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 9,
+      "imageCount": 10,
       "fileSizeMB": 4.16,
       "isFreePdf": true,
       "isFeatured": false,
@@ -8777,6 +8926,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "18.0 - 26.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdl-003-preview.jpg",
         "/media/Túi du lịch/03/photo_2022-11-17_07-11-10.jpg",
         "/media/Túi du lịch/03/photo_2022-11-17_07-11-16.jpg",
         "/media/Túi du lịch/03/photo_2022-11-17_07-11-22.jpg",
@@ -8853,7 +9003,8 @@
         "ACC-BUCKLE-BRASS"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdl-003-preview.jpg"
     },
     {
       "id": "RM-TN-001",
@@ -8874,7 +9025,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.88,
       "isFreePdf": true,
       "isFeatured": true,
@@ -8883,6 +9034,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-001-preview.jpg",
         "/media/Túi nữ/TX001/44447385_2103115979720155_9026707709163995136_n.jpg",
         "/media/Túi nữ/TX001/44502067_2103115989720154_9059229261658849280_n.jpg",
         "/media/Túi nữ/TX001/44506895_2103116066386813_4416400774670581760_n.jpg",
@@ -8952,7 +9104,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-001-preview.jpg"
     },
     {
       "id": "RM-TN-002",
@@ -8973,7 +9126,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.06,
       "isFreePdf": true,
       "isFeatured": true,
@@ -8982,6 +9135,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-002-preview.jpg",
         "/media/Túi nữ/TX002-A3/21557691_491158077928282_1931757764873347420_n.jpg"
       ],
       "cadPreview": "/previews/rm-tn-002-preview.jpg",
@@ -9046,7 +9200,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-002-preview.jpg"
     },
     {
       "id": "RM-TN-003",
@@ -9067,7 +9222,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.04,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9076,6 +9231,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-003-preview.jpg",
         "/media/Túi nữ/TX003-A3/20708323_1883667121960359_6399135894055386819_n.jpg"
       ],
       "cadPreview": "/previews/rm-tn-003-preview.jpg",
@@ -9140,7 +9296,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-003-preview.jpg"
     },
     {
       "id": "RM-TN-004",
@@ -9161,7 +9318,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.78,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9170,6 +9327,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-004-preview.jpg",
         "/media/Túi nữ/TX004/20638192_1881378438855894_5805594735091505185_n.jpg"
       ],
       "cadPreview": "/previews/rm-tn-004-preview.jpg",
@@ -9234,7 +9392,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-004-preview.jpg"
     },
     {
       "id": "RM-TN-005",
@@ -9255,7 +9414,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9264,6 +9423,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-005-preview.jpg",
         "/media/Túi nữ/TX004-A3/19957051_1868336263493445_1202601834771120445_o.jpg"
       ],
       "cadPreview": "/previews/rm-tn-005-preview.jpg",
@@ -9328,7 +9488,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-005-preview.jpg"
     },
     {
       "id": "RM-TN-006",
@@ -9349,7 +9510,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9358,6 +9519,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-006-preview.jpg",
         "/media/Túi nữ/TX005-A2/20106479_1867611870232551_1891594045322588073_n.jpg"
       ],
       "cadPreview": "/previews/rm-tn-006-preview.jpg",
@@ -9422,7 +9584,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-006-preview.jpg"
     },
     {
       "id": "RM-TN-007",
@@ -9443,7 +9606,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.46,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9452,6 +9615,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-007-preview.jpg",
         "/media/Túi nữ/TX006-A1/19904944_756505044529325_5632529489541846257_n.jpg",
         "/media/Túi nữ/TX006-A1/19905381_756504677862695_3350125655860481561_n.jpg",
         "/media/Túi nữ/TX006-A1/19989617_756504517862711_6493448889187748867_n.jpg",
@@ -9519,7 +9683,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-007-preview.jpg"
     },
     {
       "id": "RM-TN-008",
@@ -9540,7 +9705,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 2.65,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9549,6 +9714,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-008-preview.jpg",
         "/media/Túi nữ/TX007/19904985_1867511400242598_3816069200351061496_n.jpg"
       ],
       "cadPreview": "/previews/rm-tn-008-preview.jpg",
@@ -9613,7 +9779,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-008-preview.jpg"
     },
     {
       "id": "RM-TN-009",
@@ -9634,7 +9801,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.38,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9643,11 +9810,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-009-preview.jpg",
         "/media/Túi nữ/TX008/19601600_751734368339726_8850650758545198900_n.jpg",
         "/media/Túi nữ/TX008/19657274_751734381673058_2142017946941216225_n.jpg",
         "/media/Túi nữ/TX008/19731930_751734331673063_4349888309286558559_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tn-009-preview.jpg",
       "pdfFiles": [
         "/media/Túi nữ/TX008/LZpatternBXK-07A1.pdf"
       ],
@@ -9709,7 +9877,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-009-preview.jpg"
     },
     {
       "id": "RM-TN-010",
@@ -9730,7 +9899,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.45,
       "isFreePdf": true,
       "isFeatured": false,
@@ -9739,6 +9908,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "6.0 - 10.0 Pia (SF)",
       "images": [
+        "/previews/rm-tn-010-preview.jpg",
         "/media/Túi nữ/TX009/19601128_751727451673751_7378848695182402214_n.jpg",
         "/media/Túi nữ/TX009/19601245_751727941673702_22686888031894757_n.jpg",
         "/media/Túi nữ/TX009/19642569_751727985007031_3920931567446847678_n.jpg",
@@ -9747,7 +9917,7 @@
         "/media/Túi nữ/TX009/19702471_751727871673709_7784516355613846463_n.jpg",
         "/media/Túi nữ/TX009/19702519_751727478340415_503380552908170537_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tn-010-preview.jpg",
       "pdfFiles": [
         "/media/Túi nữ/TX009/LZpatternBXK-02A1.pdf"
       ],
@@ -9809,7 +9979,8 @@
         "TOOL-SKIVER-MACHINE"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tn-010-preview.jpg"
     },
     {
       "id": "RM-TX-001",
@@ -9830,7 +10001,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.1,
       "isFreePdf": true,
       "isFeatured": true,
@@ -9839,6 +10010,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-001-preview.jpg",
         "/media/Túi xách/01/12036463_549693195210512_4661388665173008201_n.jpg",
         "/media/Túi xách/01/13164328_549693128543852_8662059561403779136_n.jpg",
         "/media/Túi xách/01/13165990_549693221877176_8156460794267371486_n.jpg",
@@ -9907,7 +10079,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-001-preview.jpg"
     },
     {
       "id": "RM-TX-002",
@@ -9928,7 +10101,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.94,
       "isFreePdf": true,
       "isFeatured": true,
@@ -9937,6 +10110,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-002-preview.jpg",
         "/media/Túi xách/06/Screenshot_20200628_181519.jpg",
         "/media/Túi xách/06/Screenshot_20200628_181549.jpg",
         "/media/Túi xách/06/Screenshot_20200628_181600.jpg",
@@ -10004,7 +10178,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-002-preview.jpg"
     },
     {
       "id": "RM-TX-003",
@@ -10025,7 +10200,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 3.11,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10034,6 +10209,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-003-preview.jpg",
         "/media/Túi xách/07/Screenshot_20200511_222659_com.vkontakte.android.jpg",
         "/media/Túi xách/07/Screenshot_20200511_222710_com.vkontakte.android.jpg",
         "/media/Túi xách/07/Screenshot_20200511_222746_com.vkontakte.android.jpg",
@@ -10105,7 +10281,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-003-preview.jpg"
     },
     {
       "id": "RM-TX-004",
@@ -10126,7 +10303,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 7.67,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10135,6 +10312,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-004-preview.jpg",
         "/media/Túi xách/08/168000895_315462576784850_2355115275113193470_n.jpg",
         "/media/Túi xách/08/168355134_744643846233777_3655681036108398003_n.jpg",
         "/media/Túi xách/08/170572690_277048913912624_1734909087823772267_n.jpg"
@@ -10201,7 +10379,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-004-preview.jpg"
     },
     {
       "id": "RM-TX-005",
@@ -10222,7 +10401,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 10,
+      "imageCount": 11,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10231,6 +10410,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-005-preview.jpg",
         "/media/Túi xách/09/166988196_913709032724885_2151741978587900576_n.jpg",
         "/media/Túi xách/09/167145205_3821744094572979_1188535201564496703_n.jpg",
         "/media/Túi xách/09/167192216_208420557280515_4595755978637549734_n.jpg",
@@ -10304,7 +10484,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-005-preview.jpg"
     },
     {
       "id": "RM-TX-006",
@@ -10325,7 +10506,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.06,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10334,6 +10515,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-006-preview.jpg",
         "/media/Túi xách/10/DSC_0029-1.jpg"
       ],
       "cadPreview": "/previews/rm-tx-006-preview.jpg",
@@ -10398,7 +10580,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-006-preview.jpg"
     },
     {
       "id": "RM-TX-007",
@@ -10419,7 +10602,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.52,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10428,6 +10611,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-007-preview.jpg",
         "/media/Túi xách/11/PF1qbZ2xV4A.jpg",
         "/media/Túi xách/11/ikc3oibsoi4.jpg",
         "/media/Túi xách/11/ipYYFitGq0Y.jpg",
@@ -10495,7 +10679,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-007-preview.jpg"
     },
     {
       "id": "RM-TX-008",
@@ -10517,7 +10702,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.18,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10526,6 +10711,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-008-preview.jpg",
         "/media/Túi xách/12/1-650x650.jpg",
         "/media/Túi xách/12/2-650x650.jpg",
         "/media/Túi xách/12/4-650x650.jpg",
@@ -10595,7 +10781,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-008-preview.jpg"
     },
     {
       "id": "RM-TX-009",
@@ -10616,7 +10803,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.2,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10625,13 +10812,14 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-009-preview.jpg",
         "/media/Túi xách/13/il_570xN_546833800_tdqy-650x650 (1).jpg",
         "/media/Túi xách/13/il_570xN_546833810_qje4-650x650.jpg",
         "/media/Túi xách/13/il_570xN_546833814_wj5r-650x650.jpg",
         "/media/Túi xách/13/il_570xN_546923829_shzo-650x650.jpg",
         "/media/Túi xách/13/il_570xN_546923835_4tgt-650x650.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-009-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/13/SB.pdf"
       ],
@@ -10693,7 +10881,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-009-preview.jpg"
     },
     {
       "id": "RM-TX-010",
@@ -10714,7 +10903,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 3.06,
       "isFreePdf": true,
       "isFeatured": false,
@@ -10723,6 +10912,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-010-preview.jpg",
         "/media/Túi xách/14/il_1140xN.1349357662_awe8.jpg",
         "/media/Túi xách/14/il_1140xN.1396637865_r0f0.jpg",
         "/media/Túi xách/14/il_1140xN.1396637905_h8k0.jpg",
@@ -10731,7 +10921,7 @@
         "/media/Túi xách/14/il_1140xN.904616094_bdtz.jpg",
         "/media/Túi xách/14/il_1140xN.904616202_58hi.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-010-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/14/6turnedmessengerr2.pdf"
       ],
@@ -10793,7 +10983,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-010-preview.jpg"
     },
     {
       "id": "RM-TX-011",
@@ -10887,7 +11078,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-011-preview.jpg"
     },
     {
       "id": "RM-TX-012",
@@ -10983,7 +11175,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-012-preview.jpg"
     },
     {
       "id": "RM-TX-013",
@@ -11004,7 +11197,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 85.28,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11013,12 +11206,13 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-013-preview.jpg",
         "/media/Túi xách/17/il_794xN.2144996694_3z6w.jpg",
         "/media/Túi xách/17/il_794xN.2144997112_loib.jpg",
         "/media/Túi xách/17/il_794xN.2144997292_rngo.jpg",
         "/media/Túi xách/17/il_794xN.2192552791_rhi7.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-013-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/17/Assembly_Instructions_Top-Handle_Bag.pdf",
         "/media/Túi xách/17/Bag_Strap_Pattern_And_Instructions.pdf",
@@ -11084,7 +11278,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-013-preview.jpg"
     },
     {
       "id": "RM-TX-014",
@@ -11105,7 +11300,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 2.38,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11114,9 +11309,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-014-preview.jpg",
         "/media/Túi xách/18/LlyBllLxbIo.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-014-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/18/Vykroyka_sumki_shoppera.pdf"
       ],
@@ -11178,7 +11374,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-014-preview.jpg"
     },
     {
       "id": "RM-TX-015",
@@ -11199,7 +11396,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 1.71,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11208,9 +11405,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-015-preview.jpg",
         "/media/Túi xách/19/Screenshot_20200531_160332.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-015-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/19/Shopper_bag_A4.market.pdf"
       ],
@@ -11272,7 +11470,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-015-preview.jpg"
     },
     {
       "id": "RM-TX-016",
@@ -11293,7 +11492,7 @@
       ],
       "pdfCount": 4,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 9.12,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11302,13 +11501,14 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-016-preview.jpg",
         "/media/Túi xách/20/2.jpg",
         "/media/Túi xách/20/3.jpg",
         "/media/Túi xách/20/5.jpg",
         "/media/Túi xách/20/6.jpg",
         "/media/Túi xách/20/7.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-016-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/20/AssemblyInstructionsbabybag.pdf",
         "/media/Túi xách/20/Babybagcleanfront.pdf",
@@ -11376,7 +11576,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-016-preview.jpg"
     },
     {
       "id": "RM-TX-017",
@@ -11397,7 +11598,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 0.87,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11406,6 +11607,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-017-preview.jpg",
         "/media/Túi xách/21/il_1140xN.1676610984_izdy.jpg",
         "/media/Túi xách/21/il_1140xN.1676611056_kdsc.jpg",
         "/media/Túi xách/21/il_1140xN.1676611220_lucv.jpg",
@@ -11414,7 +11616,7 @@
         "/media/Túi xách/21/il_1140xN.1724084095_magq.jpg",
         "/media/Túi xách/21/il_1140xN.1724084309_l2xt.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-017-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/21/fleurdelisbagPATTERN.pdf"
       ],
@@ -11476,7 +11678,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-017-preview.jpg"
     },
     {
       "id": "RM-TX-018",
@@ -11497,7 +11700,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 1.68,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11506,12 +11709,13 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-018-preview.jpg",
         "/media/Túi xách/22/86735269_1358507154329072_7479525296459218944_n.jpg",
         "/media/Túi xách/22/86735373_211584693327156_565795798751641600_n.jpg",
         "/media/Túi xách/22/86738710_129085045125580_7236492634984808448_n.jpg",
         "/media/Túi xách/22/87058046_185249639415488_6613624769638039552_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-018-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/22/Crossbody_24_A2_2019.pdf"
       ],
@@ -11573,7 +11777,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-018-preview.jpg"
     },
     {
       "id": "RM-TX-019",
@@ -11594,7 +11799,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.18,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11603,9 +11808,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-019-preview.jpg",
         "/media/Túi xách/23/2(1).jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-019-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/23/3_PDF-NO-PRENT-BY-ATTRACTIVE(1).pdf"
       ],
@@ -11667,7 +11873,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-019-preview.jpg"
     },
     {
       "id": "RM-TX-020",
@@ -11688,7 +11895,7 @@
       ],
       "pdfCount": 8,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.23,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11697,10 +11904,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-020-preview.jpg",
         "/media/Túi xách/24/Zhenskaya_sumochka_ot_Taeyarh_Leather.jpg",
         "/media/Túi xách/24/Zhenskaya_sumochka_ot_Taeyarh_Leather2.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-020-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/24/CrossTopZip.11.pdf",
         "/media/Túi xách/24/CrossTopZip.12.pdf",
@@ -11776,7 +11984,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-020-preview.jpg"
     },
     {
       "id": "RM-TX-021",
@@ -11870,7 +12079,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-021-preview.jpg"
     },
     {
       "id": "RM-TX-022",
@@ -11891,7 +12101,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11900,13 +12110,14 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-022-preview.jpg",
         "/media/Túi xách/26/Screenshot_20200522_144429_com.google.android.youtube.jpg",
         "/media/Túi xách/26/Screenshot_20200522_144441_com.google.android.youtube.jpg",
         "/media/Túi xách/26/Screenshot_20200522_144456_com.google.android.youtube.jpg",
         "/media/Túi xách/26/Screenshot_20200522_144516_com.google.android.youtube.jpg",
         "/media/Túi xách/26/Screenshot_20200522_144528_com.google.android.youtube.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-022-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/26/Crossbag.pdf"
       ],
@@ -11968,7 +12179,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-022-preview.jpg"
     },
     {
       "id": "RM-TX-023",
@@ -11989,7 +12201,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -11998,11 +12210,12 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-023-preview.jpg",
         "/media/Túi xách/27/Screenshot_20200605_022854.jpg",
         "/media/Túi xách/27/Screenshot_20200605_022918.jpg",
         "/media/Túi xách/27/Screenshot_20200605_022931.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-023-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/27/39_minibag.pdf"
       ],
@@ -12064,7 +12277,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-023-preview.jpg"
     },
     {
       "id": "RM-TX-024",
@@ -12085,7 +12299,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12094,6 +12308,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-024-preview.jpg",
         "/media/Túi xách/28/Screenshot_20200525_032155.jpg",
         "/media/Túi xách/28/Screenshot_20200525_032225.jpg",
         "/media/Túi xách/28/Screenshot_20200525_032246.jpg",
@@ -12103,7 +12318,7 @@
         "/media/Túi xách/28/Screenshot_20200629_152205.jpg",
         "/media/Túi xách/28/Screenshot_20200629_152222.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-024-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/28/49_RingTotebag.pdf"
       ],
@@ -12165,7 +12380,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-024-preview.jpg"
     },
     {
       "id": "RM-TX-025",
@@ -12186,7 +12402,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.52,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12195,10 +12411,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-025-preview.jpg",
         "/media/Túi xách/29/photo_2021-09-27_00-04-51.jpg",
         "/media/Túi xách/29/photo_2021-09-29_04-22-36.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-025-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/29/1_5084779097033277762.pdf"
       ],
@@ -12260,7 +12477,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-025-preview.jpg"
     },
     {
       "id": "RM-TX-026",
@@ -12281,7 +12499,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12290,10 +12508,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-026-preview.jpg",
         "/media/Túi xách/30/168071651_222513069623552_4342635593507284721_n.jpg",
         "/media/Túi xách/30/168484855_130922645662667_9111068064362075468_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-026-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/30/904_Net_Bag_A3.pdf"
       ],
@@ -12355,7 +12574,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-026-preview.jpg"
     },
     {
       "id": "RM-TX-027",
@@ -12376,7 +12596,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12385,9 +12605,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-027-preview.jpg",
         "/media/Túi xách/31/20768128_1884803768513361_6574377647867580500_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-027-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/31/Totebag1.pdf",
         "/media/Túi xách/31/Totebag2.pdf"
@@ -12451,7 +12672,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-027-preview.jpg"
     },
     {
       "id": "RM-TX-028",
@@ -12472,7 +12694,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12481,6 +12703,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-028-preview.jpg",
         "/media/Túi xách/32/il_1140xN.2424462334_2yrx.jpg",
         "/media/Túi xách/32/il_1140xN.2424462344_5s3p.jpg",
         "/media/Túi xách/32/il_1140xN.2472089635_8064.jpg",
@@ -12490,7 +12713,7 @@
         "/media/Túi xách/32/il_1140xN.2472089661_syhq.jpg",
         "/media/Túi xách/32/il_1140xN.2472089687_nufn.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-028-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/32/Vykroyka_sumki_shoper_v_formate_A3.pdf"
       ],
@@ -12552,7 +12775,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-028-preview.jpg"
     },
     {
       "id": "RM-TX-029",
@@ -12646,7 +12870,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-029-preview.jpg"
     },
     {
       "id": "RM-TX-030",
@@ -12667,7 +12892,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.37,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12676,10 +12901,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-030-preview.jpg",
         "/media/Túi xách/34/SJBjDyhYMRk.jpg",
         "/media/Túi xách/34/opQXLcniivA.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-030-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/34/Chanel_1.pdf",
         "/media/Túi xách/34/Chanel_2.pdf"
@@ -12743,7 +12969,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-030-preview.jpg"
     },
     {
       "id": "RM-TX-031",
@@ -12849,7 +13076,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-031-preview.jpg"
     },
     {
       "id": "RM-TX-032",
@@ -12870,7 +13098,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 1.09,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12879,11 +13107,12 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-032-preview.jpg",
         "/media/Túi xách/36/photo_2020-10-12_23-35-45.jpg",
         "/media/Túi xách/36/photo_2020-10-12_23-36-17.jpg",
         "/media/Túi xách/36/photo_2020-10-12_23-36-19.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-032-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/36/Cross Body Bag.pdf"
       ],
@@ -12945,7 +13174,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-032-preview.jpg"
     },
     {
       "id": "RM-TX-033",
@@ -12966,7 +13196,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -12975,9 +13205,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-033-preview.jpg",
         "/media/Túi xách/37/СУМКА Ж Н  -5276196091836086754_121.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-033-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/37/СУМКА Ж Н сумка 1.pdf"
       ],
@@ -13039,7 +13270,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-033-preview.jpg"
     },
     {
       "id": "RM-TX-034",
@@ -13060,7 +13292,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.08,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13069,10 +13301,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-034-preview.jpg",
         "/media/Túi xách/38/photo_2022-10-17_07-48-33 (2).jpg",
         "/media/Túi xách/38/photo_2022-10-17_07-48-33.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-034-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/38/doc217953300_651267729.pdf"
       ],
@@ -13134,7 +13367,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-034-preview.jpg"
     },
     {
       "id": "RM-TX-035",
@@ -13155,7 +13389,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.18,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13164,13 +13398,14 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-035-preview.jpg",
         "/media/Túi xách/39/R-oq4naoo_U.jpg",
         "/media/Túi xách/39/SANfHT5PDkk.jpg",
         "/media/Túi xách/39/TFhcRk0o3u0.jpg",
         "/media/Túi xách/39/photo_2021-09-22_05-39-10.jpg",
         "/media/Túi xách/39/photo_2021-09-22_05-39-26.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-035-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/39/KL.pdf"
       ],
@@ -13232,7 +13467,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-035-preview.jpg"
     },
     {
       "id": "RM-TX-036",
@@ -13253,7 +13489,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.27,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13262,9 +13498,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-036-preview.jpg",
         "/media/Túi xách/40/5b3C6fQ_7PA.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-036-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/40/mini_shoulder_bag.pdf"
       ],
@@ -13326,7 +13563,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-036-preview.jpg"
     },
     {
       "id": "RM-TX-037",
@@ -13347,7 +13585,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.19,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13356,10 +13594,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-037-preview.jpg",
         "/media/Túi xách/41/gS4wdqBJNlE.jpg",
         "/media/Túi xách/41/mplTON4ulvw.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-037-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/41/puzatik_na_4_mm.pdf"
       ],
@@ -13421,7 +13660,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-037-preview.jpg"
     },
     {
       "id": "RM-TX-038",
@@ -13442,7 +13682,7 @@
       ],
       "pdfCount": 6,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.17,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13451,12 +13691,13 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-038-preview.jpg",
         "/media/Túi xách/42/MfHAMVnlCsE.jpg",
         "/media/Túi xách/42/WTEpOln20iY.jpg",
         "/media/Túi xách/42/jHBMx88Ve2I.jpg",
         "/media/Túi xách/42/lmPNSja-77I.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-038-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/42/Round Bag_1.pdf",
         "/media/Túi xách/42/Round Bag_3_4_5.pdf",
@@ -13528,7 +13769,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-038-preview.jpg"
     },
     {
       "id": "RM-TX-039",
@@ -13549,7 +13791,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.72,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13558,10 +13800,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-039-preview.jpg",
         "/media/Túi xách/43/126901792_187173016367223_486141070034122892_n.jpg",
         "/media/Túi xách/43/127280817_187172823033909_7842236647078768798_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-039-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/43/SEIWA_KOREA_PATTERN_Mini_doctor_bag.pdf"
       ],
@@ -13623,7 +13866,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-039-preview.jpg"
     },
     {
       "id": "RM-TX-040",
@@ -13644,7 +13888,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 2.26,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13653,13 +13897,14 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-040-preview.jpg",
         "/media/Túi xách/44/6xRdFKN49l4.jpg",
         "/media/Túi xách/44/AhbEUctuap0.jpg",
         "/media/Túi xách/44/GpvS193r8-8.jpg",
         "/media/Túi xách/44/IMG_20200531_031222.jpg",
         "/media/Túi xách/44/ZQoMEzo1q_U.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-040-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/44/женская сумка 3.1.pdf",
         "/media/Túi xách/44/женская сумка 3.2.pdf",
@@ -13725,7 +13970,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-040-preview.jpg"
     },
     {
       "id": "RM-TX-041",
@@ -13746,7 +13992,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.4,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13755,12 +14001,13 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-041-preview.jpg",
         "/media/Túi xách/45/photo_2021-09-08_11-58-15 (2).jpg",
         "/media/Túi xách/45/photo_2021-09-08_11-58-15 (3).jpg",
         "/media/Túi xách/45/photo_2021-09-08_11-58-15.jpg",
         "/media/Túi xách/45/photo_2021-09-08_11-58-16.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-041-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/45/tote bag 2-1.pdf",
         "/media/Túi xách/45/tote bag 2-2.pdf"
@@ -13824,7 +14071,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-041-preview.jpg"
     },
     {
       "id": "RM-TX-042",
@@ -13845,7 +14093,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13854,6 +14102,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-042-preview.jpg",
         "/media/Túi xách/46/0x7UymK8Fkg.jpg",
         "/media/Túi xách/46/3sjPv2CKppc.jpg",
         "/media/Túi xách/46/4vnCasi_vQM.jpg",
@@ -13861,7 +14110,7 @@
         "/media/Túi xách/46/Q3ZTJ9Y5mRQ.jpg",
         "/media/Túi xách/46/_bYm2a1WxTg.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-042-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/46/Tote_A3.pdf"
       ],
@@ -13923,7 +14172,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-042-preview.jpg"
     },
     {
       "id": "RM-TX-043",
@@ -13944,7 +14194,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 2.61,
       "isFreePdf": true,
       "isFeatured": false,
@@ -13953,10 +14203,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-043-preview.jpg",
         "/media/Túi xách/47/4dosKrpDaNc.jpg",
         "/media/Túi xách/47/k3KR6fobBbc.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-043-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/47/Tote_Bag_T.pdf"
       ],
@@ -14018,7 +14269,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-043-preview.jpg"
     },
     {
       "id": "RM-TX-045",
@@ -14039,7 +14291,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -14048,11 +14300,12 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-045-preview.jpg",
         "/media/Túi xách/49/Tjpc8NWoEVM.jpg",
         "/media/Túi xách/49/gkuzSW3RSxc.jpg",
         "/media/Túi xách/49/kTC3yphEr9s.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-045-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/49/Шальное лето.pdf"
       ],
@@ -14114,7 +14367,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-045-preview.jpg"
     },
     {
       "id": "RM-TX-046",
@@ -14135,7 +14389,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.04,
       "isFreePdf": true,
       "isFeatured": false,
@@ -14144,9 +14398,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-046-preview.jpg",
         "/media/Túi xách/50/photo_2020-05-26_05-46-40.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-046-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/50/сумка через плечо.pdf"
       ],
@@ -14208,7 +14463,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-046-preview.jpg"
     },
     {
       "id": "RM-TX-047",
@@ -14229,7 +14485,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.01,
       "isFreePdf": true,
       "isFeatured": false,
@@ -14238,11 +14494,12 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-047-preview.jpg",
         "/media/Túi xách/51/6tPfI3gnbEk.jpg",
         "/media/Túi xách/51/ppho9T0vAG4.jpg",
         "/media/Túi xách/51/tI1eEL1RfwM.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-047-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/51/Twist_bag_A4.pdf"
       ],
@@ -14304,7 +14561,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-047-preview.jpg"
     },
     {
       "id": "RM-TX-048",
@@ -14325,7 +14583,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.22,
       "isFreePdf": true,
       "isFeatured": false,
@@ -14334,10 +14592,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "8.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-tx-048-preview.jpg",
         "/media/Túi xách/52/Obp2zTlWWuY.jpg",
         "/media/Túi xách/52/fVjsBIStNqo.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tx-048-preview.jpg",
       "pdfFiles": [
         "/media/Túi xách/52/doc217953300_589630900.pdf"
       ],
@@ -14399,7 +14658,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-048-preview.jpg"
     },
     {
       "id": "RM-TX-049",
@@ -14493,7 +14753,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-049-preview.jpg"
     },
     {
       "id": "RM-TX-050",
@@ -14587,7 +14848,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-050-preview.jpg"
     },
     {
       "id": "RM-TX-051",
@@ -14681,7 +14943,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-051-preview.jpg"
     },
     {
       "id": "RM-TX-052",
@@ -14775,7 +15038,8 @@
         "ACC-DRING-SET"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tx-052-preview.jpg"
     },
     {
       "id": "RM-TDC-001",
@@ -14869,7 +15133,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-001-preview.jpg"
     },
     {
       "id": "RM-TDC-002",
@@ -14890,7 +15155,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.21,
       "isFreePdf": true,
       "isFeatured": true,
@@ -14899,6 +15164,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-002-preview.jpg",
         "/media/Túi đeo chéo/02/167844163_292565282227951_3653223295331422586_n.jpg",
         "/media/Túi đeo chéo/02/168167024_470695943980268_3854794672480796319_n.jpg",
         "/media/Túi đeo chéo/02/169300919_294926332338401_4318924547565073154_n.jpg",
@@ -14970,7 +15236,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-002-preview.jpg"
     },
     {
       "id": "RM-TDC-003",
@@ -14991,7 +15258,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.34,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15000,6 +15267,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-003-preview.jpg",
         "/media/Túi đeo chéo/03/photo_2021-05-15_10-28-43.jpg",
         "/media/Túi đeo chéo/03/photo_2021-05-15_10-28-44.jpg",
         "/media/Túi đeo chéo/03/photo_2021-05-15_10-44-54.jpg",
@@ -15071,7 +15339,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-003-preview.jpg"
     },
     {
       "id": "RM-TDC-004",
@@ -15092,7 +15361,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.06,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15101,6 +15370,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-004-preview.jpg",
         "/media/Túi đeo chéo/04/XFIkogGjIG8.jpg",
         "/media/Túi đeo chéo/04/aWtLmNhDYK0.jpg"
       ],
@@ -15168,7 +15438,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-004-preview.jpg"
     },
     {
       "id": "RM-TDC-005",
@@ -15189,7 +15460,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.01,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15198,6 +15469,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-005-preview.jpg",
         "/media/Túi đeo chéo/05/photo_2022-03-25_12-25-26.jpg"
       ],
       "cadPreview": "/previews/rm-tdc-005-preview.jpg",
@@ -15264,7 +15536,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-005-preview.jpg"
     },
     {
       "id": "RM-TDC-006",
@@ -15285,7 +15558,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.29,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15294,6 +15567,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-006-preview.jpg",
         "/media/Túi đeo chéo/06/OtkbubNwh1w.jpg",
         "/media/Túi đeo chéo/06/WuqCFiG418w.jpg",
         "/media/Túi đeo chéo/06/vK0lbiN7G9E.jpg"
@@ -15360,7 +15634,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-006-preview.jpg"
     },
     {
       "id": "RM-TDC-007",
@@ -15482,7 +15757,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.65,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15491,6 +15766,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-008-preview.jpg",
         "/media/Túi đeo chéo/08/8Xl14Q3LMQU.jpg",
         "/media/Túi đeo chéo/08/RbJXP1tMuiA.jpg",
         "/media/Túi đeo chéo/08/gMdoSme_frk.jpg",
@@ -15559,7 +15835,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-008-preview.jpg"
     },
     {
       "id": "RM-TDC-009",
@@ -15653,7 +15930,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-009-preview.jpg"
     },
     {
       "id": "RM-TDC-010",
@@ -15674,7 +15952,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15683,11 +15961,12 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-010-preview.jpg",
         "/media/Túi đeo chéo/10/167084874_140407087955419_9056268443063183465_n.jpg",
         "/media/Túi đeo chéo/10/167448343_218836920014112_8880930815090055465_n.jpg",
         "/media/Túi đeo chéo/10/167967754_126171329481603_999238530740486531_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-010-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/10/OLIVAleather_FREE_Pattern_Leather_Belt_Pouch.pdf"
       ],
@@ -15749,7 +16028,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-010-preview.jpg"
     },
     {
       "id": "RM-TDC-011",
@@ -15770,7 +16050,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 10,
+      "imageCount": 11,
       "fileSizeMB": 279.69,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15779,6 +16059,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-011-preview.jpg",
         "/media/Túi đeo chéo/11/9op-1920x1080.jpg",
         "/media/Túi đeo chéo/11/iop-1920x1080.jpg",
         "/media/Túi đeo chéo/11/oop-1920x1080.jpg",
@@ -15790,7 +16071,7 @@
         "/media/Túi đeo chéo/11/tyuio-1920x1080.jpg",
         "/media/Túi đeo chéo/11/uyio-1920x1080.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-011-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/11/AssemblyPhotosInstruction-LeatherBeltPouch.pdf",
         "/media/Túi đeo chéo/11/LeatherBeltPouch-slimversion.pdf",
@@ -15856,7 +16137,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-011-preview.jpg"
     },
     {
       "id": "RM-TDC-012",
@@ -15877,7 +16159,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 102.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15886,9 +16168,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-012-preview.jpg",
         "/media/Túi đeo chéo/12/US-Mail-bag.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-012-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/12/US-Mail-bag.pdf"
       ],
@@ -15950,7 +16233,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-012-preview.jpg"
     },
     {
       "id": "RM-TDC-013",
@@ -15971,7 +16255,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.06,
       "isFreePdf": true,
       "isFeatured": false,
@@ -15980,13 +16264,14 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-013-preview.jpg",
         "/media/Túi đeo chéo/13/ChQfgTOWbG0.jpg",
         "/media/Túi đeo chéo/13/N0Q9UFsxjZ0.jpg",
         "/media/Túi đeo chéo/13/TqyVsQMVTuM.jpg",
         "/media/Túi đeo chéo/13/UGGomMjkWHU.jpg",
         "/media/Túi đeo chéo/13/dRzLL89EIOw.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-013-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/13/A4_format_clutch_pattern.pdf"
       ],
@@ -16048,7 +16333,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-013-preview.jpg"
     },
     {
       "id": "RM-TDC-014",
@@ -16070,7 +16356,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 7,
+      "imageCount": 8,
       "fileSizeMB": 2.56,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16079,6 +16365,7 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-014-preview.jpg",
         "/media/Túi đeo chéo/14/223745-650x650.jpg",
         "/media/Túi đeo chéo/14/aaa-650x650.jpg",
         "/media/Túi đeo chéo/14/bbb-650x650.jpg",
@@ -16087,7 +16374,7 @@
         "/media/Túi đeo chéo/14/eee-650x650.jpg",
         "/media/Túi đeo chéo/14/main-650x650 (1).jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-014-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/14/BagBXK-23_-_pattern_-_A0.pdf",
         "/media/Túi đeo chéo/14/BagBXK-23_-_pattern_-_A4.pdf"
@@ -16151,7 +16438,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-014-preview.jpg"
     },
     {
       "id": "RM-TDC-015",
@@ -16172,7 +16460,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.12,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16181,9 +16469,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-015-preview.jpg",
         "/media/Túi đeo chéo/15/19642760_751741688338994_66960576713204532_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-015-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/15/LZpatternBXK-11A3-02.pdf"
       ],
@@ -16245,7 +16534,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-015-preview.jpg"
     },
     {
       "id": "RM-TDC-016",
@@ -16266,7 +16556,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.15,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16275,9 +16565,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-016-preview.jpg",
         "/media/Túi đeo chéo/16/6XQNmyYhCek.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-016-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/16/1 -a2.pdf"
       ],
@@ -16339,7 +16630,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-016-preview.jpg"
     },
     {
       "id": "RM-TDC-017",
@@ -16360,7 +16652,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.1,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16369,9 +16661,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-017-preview.jpg",
         "/media/Túi đeo chéo/17/4_5771503389380708358.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-017-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/17/4_5771503389380708358.pdf"
       ],
@@ -16433,7 +16726,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-017-preview.jpg"
     },
     {
       "id": "RM-TDC-018",
@@ -16454,7 +16748,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.2,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16463,9 +16757,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-018-preview.jpg",
         "/media/Túi đeo chéo/18/IMG_20210503_010313_337.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-018-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/18/4_5798856485605739236.pdf"
       ],
@@ -16527,7 +16822,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-018-preview.jpg"
     },
     {
       "id": "RM-TDC-019",
@@ -16548,7 +16844,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.04,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16557,9 +16853,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-019-preview.jpg",
         "/media/Túi đeo chéo/19/44347588_2035474013142554_5740782428910256128_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-019-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/19/body bag patterns.pdf"
       ],
@@ -16621,7 +16918,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-019-preview.jpg"
     },
     {
       "id": "RM-TDC-020",
@@ -16642,7 +16940,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.19,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16651,10 +16949,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-020-preview.jpg",
         "/media/Túi đeo chéo/20/photo_2021-10-22_22-25-22.jpg",
         "/media/Túi đeo chéo/20/photo_2021-10-23_09-39-01.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-020-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/20/Mini Bag - A4.pdf"
       ],
@@ -16716,7 +17015,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-020-preview.jpg"
     },
     {
       "id": "RM-TDC-021",
@@ -16737,7 +17037,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.23,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16746,10 +17046,11 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-021-preview.jpg",
         "/media/Túi đeo chéo/21/MAkEbh-StoSMHzmFEN4B7lgHOIcu_atRsdLKnEPn2ZrixUWPBOb4WmoIeQ1k_dofgir4WwVDfek9sZTs1KWJo1jV.jpg",
         "/media/Túi đeo chéo/21/jShyZkOjrtB-XavNbQVEc-oILTwmZf7CkJpzbqAdawQWY9ATJpiEjLP1LJJgmlFuWoHVwgm39AOeM121QXdVnJKE.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-021-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/21/2_5321539310959204240.pdf"
       ],
@@ -16811,7 +17112,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-021-preview.jpg"
     },
     {
       "id": "RM-TDC-022",
@@ -16832,7 +17134,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16841,9 +17143,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-022-preview.jpg",
         "/media/Túi đeo chéo/22/FQVK7HDHIF052XL.MEDIUM.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-022-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/22/purse_onefourthscale.pdf",
         "/media/Túi đeo chéo/22/purse_onefourthscale_dimensioned.pdf"
@@ -16907,7 +17210,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-022-preview.jpg"
     },
     {
       "id": "RM-TDC-023",
@@ -16928,7 +17232,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.12,
       "isFreePdf": true,
       "isFeatured": false,
@@ -16937,9 +17241,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-023-preview.jpg",
         "/media/Túi đeo chéo/23/95606253_1719961611477105_1429702447135195136_o.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-023-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/23/Untitled-3.pdf"
       ],
@@ -17001,7 +17306,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-023-preview.jpg"
     },
     {
       "id": "RM-TDC-024",
@@ -17022,7 +17328,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.09,
       "isFreePdf": true,
       "isFeatured": false,
@@ -17031,9 +17337,10 @@
       "chiselPitch": "3.85mm hoặc 4.0mm",
       "leatherEstimate": "5.0 - 9.0 Pia (SF)",
       "images": [
+        "/previews/rm-tdc-024-preview.jpg",
         "/media/Túi đeo chéo/24/P-UjCwZ87tc.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-tdc-024-preview.jpg",
       "pdfFiles": [
         "/media/Túi đeo chéo/24/raschet_sumki_Mdl_1_v2_347_web.pdf"
       ],
@@ -17095,7 +17402,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-tdc-024-preview.jpg"
     },
     {
       "id": "RM-TDC-025",
@@ -17212,7 +17520,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 0.32,
       "isFreePdf": true,
       "isFeatured": true,
@@ -17221,6 +17529,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "10.0 - 15.0 Pia (SF)",
       "images": [
+        "/previews/rm-td-001-preview.jpg",
         "/media/Tạp dề/01/il_1140xN.1648012466_sv5j.jpg",
         "/media/Tạp dề/01/il_1140xN.1648017626_jicb.jpg",
         "/media/Tạp dề/01/il_1140xN.1676009052_l8fu.jpg",
@@ -17291,7 +17600,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-td-001-preview.jpg"
     },
     {
       "id": "RM-VI-001",
@@ -17312,7 +17622,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.34,
       "isFreePdf": true,
       "isFeatured": true,
@@ -17321,6 +17631,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-001-preview.jpg",
         "/media/Ví/01/1-1000x1000w.jpg",
         "/media/Ví/01/2-1000x1000w.jpg",
         "/media/Ví/01/3-1000x1000w.jpg",
@@ -17389,7 +17700,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-001-preview.jpg"
     },
     {
       "id": "RM-VI-002",
@@ -17483,7 +17795,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-002-preview.jpg"
     },
     {
       "id": "RM-VI-003",
@@ -17504,7 +17817,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -17513,6 +17826,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-003-preview.jpg",
         "/media/Ví/03/photo_2022-03-25_12-11-22.jpg"
       ],
       "cadPreview": "/previews/rm-vi-003-preview.jpg",
@@ -17577,7 +17891,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-003-preview.jpg"
     },
     {
       "id": "RM-VI-004",
@@ -17598,7 +17913,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.38,
       "isFreePdf": true,
       "isFeatured": false,
@@ -17607,6 +17922,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-004-preview.jpg",
         "/media/Ví/04/fUkFJOsAnSg.jpg"
       ],
       "cadPreview": "/previews/rm-vi-004-preview.jpg",
@@ -17671,7 +17987,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-004-preview.jpg"
     },
     {
       "id": "RM-VI-005",
@@ -17692,7 +18009,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.85,
       "isFreePdf": true,
       "isFeatured": false,
@@ -17701,6 +18018,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-005-preview.jpg",
         "/media/Ví/05/photo_2022-10-16_09-07-35 (2).jpg",
         "/media/Ví/05/photo_2022-10-16_09-07-35.jpg"
       ],
@@ -17766,7 +18084,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-005-preview.jpg"
     },
     {
       "id": "RM-VI-006",
@@ -17787,7 +18106,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.35,
       "isFreePdf": true,
       "isFeatured": false,
@@ -17796,6 +18115,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-006-preview.jpg",
         "/media/Ví/06/Kartkholder_ot_ARF_handmade3.jpg",
         "/media/Ví/06/Kartkholder_ot_ARF_handmade4.jpg"
       ],
@@ -17863,7 +18183,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-006-preview.jpg"
     },
     {
       "id": "RM-VI-007",
@@ -17884,7 +18205,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.57,
       "isFreePdf": true,
       "isFeatured": false,
@@ -17893,6 +18214,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-007-preview.jpg",
         "/media/Ví/07/classic_card_wallet_Caspia.jpg",
         "/media/Ví/07/eCFnR0OUdzU.jpg"
       ],
@@ -17958,7 +18280,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-007-preview.jpg"
     },
     {
       "id": "RM-VI-008",
@@ -18052,7 +18375,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-008-preview.jpg"
     },
     {
       "id": "RM-VI-009",
@@ -18073,7 +18397,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.35,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18082,9 +18406,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-009-preview.jpg",
         "/media/Ví/09/free-leather-bi-fold-wallet-pdf-template.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-009-preview.jpg",
       "pdfFiles": [
         "/media/Ví/09/makesupply_free-bi-fold-wallet-pdf-template-a4.pdf",
         "/media/Ví/09/makesupply_free-bi-fold-wallet-pdf-template-letter.pdf"
@@ -18148,7 +18473,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-009-preview.jpg"
     },
     {
       "id": "RM-VI-011",
@@ -18169,7 +18495,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.14,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18178,12 +18504,13 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-011-preview.jpg",
         "/media/Ví/11/photo_2021-12-03_09-19-07.jpg",
         "/media/Ví/11/photo_2021-12-03_09-24-45.jpg",
         "/media/Ví/11/photo_2021-12-03_09-24-47.jpg",
         "/media/Ví/11/photo_2021-12-03_09-24-49.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-011-preview.jpg",
       "pdfFiles": [
         "/media/Ví/11/makesupply-front_pocket_card_wallet--print-only(A4).pdf",
         "/media/Ví/11/makesupply-front_pocket_card_wallet--print-only(letter).pdf"
@@ -18247,7 +18574,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-011-preview.jpg"
     },
     {
       "id": "RM-VI-012",
@@ -18268,7 +18596,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.13,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18277,11 +18605,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-012-preview.jpg",
         "/media/Ví/12/Trifold_wallet_!.jpg",
         "/media/Ví/12/Trifold_wallet_2.jpg",
         "/media/Ví/12/Trifold_wallet_4.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-012-preview.jpg",
       "pdfFiles": [
         "/media/Ví/12/TW05A.pdf"
       ],
@@ -18343,7 +18672,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-012-preview.jpg"
     },
     {
       "id": "RM-VI-013",
@@ -18364,7 +18694,7 @@
       ],
       "pdfCount": 4,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18373,12 +18703,13 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-013-preview.jpg",
         "/media/Ví/13/M-dYI9q6CiE.jpg",
         "/media/Ví/13/gjRoICHD4Ak.jpg",
         "/media/Ví/13/oGYuLW3jiRo.jpg",
         "/media/Ví/13/qZMiCcEvd7Y.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-013-preview.jpg",
       "pdfFiles": [
         "/media/Ví/13/z_e_1.pdf",
         "/media/Ví/13/z_e_2.pdf",
@@ -18446,7 +18777,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-013-preview.jpg"
     },
     {
       "id": "RM-VI-014",
@@ -18467,7 +18799,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18476,9 +18808,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-014-preview.jpg",
         "/media/Ví/14/photo_2021-12-14_22-32-41.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-014-preview.jpg",
       "pdfFiles": [
         "/media/Ví/14/ví bao thư.pdf"
       ],
@@ -18540,7 +18873,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-014-preview.jpg"
     },
     {
       "id": "RM-VI-015",
@@ -18561,7 +18895,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.04,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18570,11 +18904,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-015-preview.jpg",
         "/media/Ví/15/B (1).jpg",
         "/media/Ví/15/B (2).jpg",
         "/media/Ví/15/B (3).jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-015-preview.jpg",
       "pdfFiles": [
         "/media/Ví/15/15.pdf"
       ],
@@ -18636,7 +18971,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-015-preview.jpg"
     },
     {
       "id": "RM-VI-016",
@@ -18657,7 +18993,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -18666,9 +19002,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-016-preview.jpg",
         "/media/Ví/16/zqQ55pLMxZE.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-016-preview.jpg",
       "pdfFiles": [
         "/media/Ví/16/Chertezh2.pdf"
       ],
@@ -18730,7 +19067,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-016-preview.jpg"
     },
     {
       "id": "RM-VI-017",
@@ -18824,7 +19162,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-017-preview.jpg"
     },
     {
       "id": "RM-VI-018",
@@ -19038,7 +19377,7 @@
       ],
       "pdfCount": 5,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.08,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19047,13 +19386,14 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-020-preview.jpg",
         "/media/Ví/20/-RIEW0P0fHU.jpg",
         "/media/Ví/20/5DKxaYN4OKE.jpg",
         "/media/Ví/20/Ehv3BanRG2Q.jpg",
         "/media/Ví/20/MZaQvK0RJ9Q.jpg",
         "/media/Ví/20/hJmeqZR9-gE.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-020-preview.jpg",
       "pdfFiles": [
         "/media/Ví/20/Bez_klapana.pdf",
         "/media/Ví/20/Polukrugly_klapan_knopka_alfa_12mm.pdf",
@@ -19123,7 +19463,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-020-preview.jpg"
     },
     {
       "id": "RM-VI-021",
@@ -19144,7 +19485,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.75,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19153,9 +19494,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-021-preview.jpg",
         "/media/Ví/21/Screenshot_20200602_173859.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-021-preview.jpg",
       "pdfFiles": [
         "/media/Ví/21/EP13 x-design-card-holder.pdf"
       ],
@@ -19217,7 +19559,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-021-preview.jpg"
     },
     {
       "id": "RM-VI-022",
@@ -19313,7 +19656,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-022-preview.jpg"
     },
     {
       "id": "RM-VI-023",
@@ -19407,7 +19751,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-023-preview.jpg"
     },
     {
       "id": "RM-VI-024",
@@ -19428,7 +19773,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19437,9 +19782,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-024-preview.jpg",
         "/media/Ví/24/Screenshot_20200521_182103_com.google.android.youtube.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-024-preview.jpg",
       "pdfFiles": [
         "/media/Ví/24/k011.pdf"
       ],
@@ -19501,7 +19847,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-024-preview.jpg"
     },
     {
       "id": "RM-VI-025",
@@ -19522,7 +19869,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.04,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19531,9 +19878,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-025-preview.jpg",
         "/media/Ví/25/Screenshot_20200521_180234_com.google.android.youtube.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-025-preview.jpg",
       "pdfFiles": [
         "/media/Ví/25/k001.pdf"
       ],
@@ -19595,7 +19943,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-025-preview.jpg"
     },
     {
       "id": "RM-VI-026",
@@ -19617,7 +19966,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 1,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.06,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19626,9 +19975,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-026-preview.jpg",
         "/media/Ví/26/il_570xN_552049265_r041.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-026-preview.jpg",
       "pdfFiles": [
         "/media/Ví/26/LZpatternQQW-21-A4.pdf"
       ],
@@ -19692,7 +20042,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-026-preview.jpg"
     },
     {
       "id": "RM-VI-027",
@@ -19714,7 +20065,7 @@
       ],
       "pdfCount": 4,
       "cadCount": 0,
-      "imageCount": 25,
+      "imageCount": 26,
       "fileSizeMB": 0.12,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19723,6 +20074,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-027-preview.jpg",
         "/media/Ví/27/02_Identification_cardholder.png",
         "/media/Ví/27/10_clutch.jpg",
         "/media/Ví/27/13_wallet_cover.jpg",
@@ -19749,7 +20101,7 @@
         "/media/Ví/27/169002568_176144231006875_1250320072352365883_n.jpg",
         "/media/Ví/27/169399453_751748312203008_1908234842036633657_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-027-preview.jpg",
       "pdfFiles": [
         "/media/Ví/27/02_Identification_cardholder_pattern.pdf",
         "/media/Ví/27/10_seamless-clutch_pattern_a3.pdf",
@@ -19817,7 +20169,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-027-preview.jpg"
     },
     {
       "id": "RM-VI-028",
@@ -19839,7 +20192,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 1.14,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19848,9 +20201,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-028-preview.jpg",
         "/media/Ví/28/Q20170624154301-1000x1000w.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-028-preview.jpg",
       "pdfFiles": [
         "/media/Ví/28/LWP-36-A1-3_85mm.pdf",
         "/media/Ví/28/LWP-36-A4-3_85mm.pdf"
@@ -19914,7 +20268,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-028-preview.jpg"
     },
     {
       "id": "RM-VI-029",
@@ -19936,7 +20291,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 10,
+      "imageCount": 11,
       "fileSizeMB": 0.45,
       "isFreePdf": true,
       "isFeatured": false,
@@ -19945,6 +20300,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-029-preview.jpg",
         "/media/Ví/29/07142bb99eeb42b885c7f039dc8f5bddf3901e45-1000x1000w.jpg",
         "/media/Ví/29/09f2a25ee45bd15bdfcfc8f0e1870721ce6cc8d0-1000x1000w.jpg",
         "/media/Ví/29/347672898774bda62dec2a1c084fb6a1166f65a9-1000x1000w.jpg",
@@ -19956,7 +20312,7 @@
         "/media/Ví/29/b9c8e563c49df50e5656fbc8dad5a356f2083f1d-1000x1000w.jpg",
         "/media/Ví/29/dfc95405f9ca453c72a29c3bb3c5bcc471a24737-1000x1000w.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-029-preview.jpg",
       "pdfFiles": [
         "/media/Ví/29/LWP-31-A3.pdf",
         "/media/Ví/29/LWP-31-A4.pdf"
@@ -20020,7 +20376,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-029-preview.jpg"
     },
     {
       "id": "RM-VI-030",
@@ -20042,7 +20399,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 1.01,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20051,9 +20408,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-030-preview.jpg",
         "/media/Ví/30/03291628_515542b34ed2a-1000x1000w.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-030-preview.jpg",
       "pdfFiles": [
         "/media/Ví/30/LWP-30-A3.pdf",
         "/media/Ví/30/LWP-30-A4.pdf",
@@ -20119,7 +20477,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-030-preview.jpg"
     },
     {
       "id": "RM-VI-031",
@@ -20213,7 +20572,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-031-preview.jpg"
     },
     {
       "id": "RM-VI-032",
@@ -20234,7 +20594,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 9,
+      "imageCount": 10,
       "fileSizeMB": 0.12,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20243,6 +20603,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-032-preview.jpg",
         "/media/Ví/32/1-650x650.jpg",
         "/media/Ví/32/2-650x650.jpg",
         "/media/Ví/32/3-650x650.jpg",
@@ -20253,7 +20614,7 @@
         "/media/Ví/32/full_3357_138398_Withinstructionleatherwalletpatterns_2.jpg",
         "/media/Ví/32/full_6396_138398_Withinstructionleatherwalletpatterns_3.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-032-preview.jpg",
       "pdfFiles": [
         "/media/Ví/32/LWP-12-A2.pdf"
       ],
@@ -20315,7 +20676,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-032-preview.jpg"
     },
     {
       "id": "RM-VI-033",
@@ -20336,7 +20698,7 @@
       ],
       "pdfCount": 6,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.42,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20345,11 +20707,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-033-preview.jpg",
         "/media/Ví/33/60-1000x1000w.jpg",
         "/media/Ví/33/61-1000x1000w.jpg",
         "/media/Ví/33/62-1000x1000h.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-033-preview.jpg",
       "pdfFiles": [
         "/media/Ví/33/LWP-07-A4.pdf",
         "/media/Ví/33/Portmone.pdf",
@@ -20421,7 +20784,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-033-preview.jpg"
     },
     {
       "id": "RM-VI-034",
@@ -20442,7 +20806,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 0.27,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20451,6 +20815,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-034-preview.jpg",
         "/media/Ví/34/1407222263-1000x1000w.jpg",
         "/media/Ví/34/1407222265-1000x1000w.jpg",
         "/media/Ví/34/1407222268-1000x1000w.jpg",
@@ -20458,7 +20823,7 @@
         "/media/Ví/34/1407222277-1000x1000w (1).jpg",
         "/media/Ví/34/1407222277-1000x1000w.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-034-preview.jpg",
       "pdfFiles": [
         "/media/Ví/34/WalletLWP-04_-_pattern_-_A4.pdf"
       ],
@@ -20520,7 +20885,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-034-preview.jpg"
     },
     {
       "id": "RM-VI-035",
@@ -20541,7 +20907,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.1,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20550,9 +20916,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-035-preview.jpg",
         "/media/Ví/35/download.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-035-preview.jpg",
       "pdfFiles": [
         "/media/Ví/35/wallet_one.pdf"
       ],
@@ -20614,7 +20981,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-035-preview.jpg"
     },
     {
       "id": "RM-VI-036",
@@ -20708,7 +21076,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-036-preview.jpg"
     },
     {
       "id": "RM-VI-037",
@@ -20729,7 +21098,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.55,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20738,9 +21107,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-037-preview.jpg",
         "/media/Ví/37/l5zOZ5K3Gpc.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-037-preview.jpg",
       "pdfFiles": [
         "/media/Ví/37/pattern1.pdf"
       ],
@@ -20802,7 +21172,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-037-preview.jpg"
     },
     {
       "id": "RM-VI-038",
@@ -20823,7 +21194,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20832,9 +21203,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-038-preview.jpg",
         "/media/Ví/38/9WoivflWC4o.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-038-preview.jpg",
       "pdfFiles": [
         "/media/Ví/38/LongWallet_A4_AT.pdf"
       ],
@@ -20896,7 +21268,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-038-preview.jpg"
     },
     {
       "id": "RM-VI-039",
@@ -20917,7 +21290,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 2.53,
       "isFreePdf": true,
       "isFeatured": false,
@@ -20926,9 +21299,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-039-preview.jpg",
         "/media/Ví/39/photo_2021-11-09_00-40-28.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-039-preview.jpg",
       "pdfFiles": [
         "/media/Ví/39/Iskhodnaya_kitayskaya_vykroyka.pdf",
         "/media/Ví/39/Pattern_Zip_Wallet_5_mm.pdf"
@@ -20992,7 +21366,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-039-preview.jpg"
     },
     {
       "id": "RM-VI-040",
@@ -21013,7 +21388,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21022,13 +21397,14 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-040-preview.jpg",
         "/media/Ví/40/5dnHZAR-w18.jpg",
         "/media/Ví/40/9AuOjqWztX8.jpg",
         "/media/Ví/40/gmI2FkzUWCQ.jpg",
         "/media/Ví/40/kdBYYRkX6Og.jpg",
         "/media/Ví/40/t3EED1SZBYk.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-040-preview.jpg",
       "pdfFiles": [
         "/media/Ví/40/Longer_portmone.pdf"
       ],
@@ -21090,7 +21466,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-040-preview.jpg"
     },
     {
       "id": "RM-VI-041",
@@ -21111,7 +21488,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21120,10 +21497,11 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-041-preview.jpg",
         "/media/Ví/41/Xg4sRr7xkh4.jpg",
         "/media/Ví/41/gzCpgtaeQYU.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-041-preview.jpg",
       "pdfFiles": [
         "/media/Ví/41/dokkholder_portmone.pdf"
       ],
@@ -21185,7 +21563,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-041-preview.jpg"
     },
     {
       "id": "RM-VI-042",
@@ -21206,7 +21585,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.45,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21215,13 +21594,14 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-042-preview.jpg",
         "/media/Ví/42/il_1140xN.2572068854_o7py.jpg",
         "/media/Ví/42/il_1140xN.2572070360_1o6h.jpg",
         "/media/Ví/42/il_1140xN.2619722855_oecr.jpg",
         "/media/Ví/42/il_1140xN.2647435679_f8zo.jpg",
         "/media/Ví/42/il_1140xN.2647439245_kr42.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-042-preview.jpg",
       "pdfFiles": [
         "/media/Ví/42/Leather_Long_Wallet_w.pdf"
       ],
@@ -21283,7 +21663,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-042-preview.jpg"
     },
     {
       "id": "RM-VI-043",
@@ -21469,7 +21850,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-044-preview.jpg"
     },
     {
       "id": "RM-VI-045",
@@ -21563,7 +21945,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-045-preview.jpg"
     },
     {
       "id": "RM-VI-046",
@@ -21584,7 +21967,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.26,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21593,10 +21976,11 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-046-preview.jpg",
         "/media/Ví/46/BhLJQ9JRQxY.jpg",
         "/media/Ví/46/pT4J5ckhq2w.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-046-preview.jpg",
       "pdfFiles": [
         "/media/Ví/46/Pattern-A4-Size-TruckerWallet_WalT01.pdf",
         "/media/Ví/46/Pattern-US-Letter-TruckerWallet_WalT01.pdf"
@@ -21660,7 +22044,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-046-preview.jpg"
     },
     {
       "id": "RM-VI-047",
@@ -21681,7 +22066,7 @@
       ],
       "pdfCount": 7,
       "cadCount": 0,
-      "imageCount": 8,
+      "imageCount": 9,
       "fileSizeMB": 9.91,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21690,6 +22075,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-047-preview.jpg",
         "/media/Ví/47/il_1140xN.1359380144_f83q.jpg",
         "/media/Ví/47/il_1140xN.1359380146_o7zy.jpg",
         "/media/Ví/47/il_1140xN.1406644119_ea0j.jpg",
@@ -21699,7 +22085,7 @@
         "/media/Ví/47/il_1140xN.1525416027_ekex.jpg",
         "/media/Ví/47/pnMds9rxF_s.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-047-preview.jpg",
       "pdfFiles": [
         "/media/Ví/47/Instruction-LongZipperWallet_WalZ01.pdf",
         "/media/Ví/47/Pattern-LongZipperWallet_WalZ01_1.pdf",
@@ -21773,7 +22159,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-047-preview.jpg"
     },
     {
       "id": "RM-VI-048",
@@ -21795,7 +22182,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.39,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21804,13 +22191,14 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-048-preview.jpg",
         "/media/Ví/49/lbg (1).jpg",
         "/media/Ví/49/lbg (2).jpg",
         "/media/Ví/49/lbg (3).jpg",
         "/media/Ví/49/lbg (4).jpg",
         "/media/Ví/49/lbg (5).jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-048-preview.jpg",
       "pdfFiles": [
         "/media/Ví/49/LZpatternCDD-16-A3.pdf",
         "/media/Ví/49/LZpatternCDD-16-A4.pdf"
@@ -21874,7 +22262,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-048-preview.jpg"
     },
     {
       "id": "RM-VI-049",
@@ -21895,7 +22284,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 6,
+      "imageCount": 7,
       "fileSizeMB": 1.11,
       "isFreePdf": true,
       "isFeatured": false,
@@ -21904,6 +22293,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-049-preview.jpg",
         "/media/Ví/50/T22CyLXXJaXXXXXXXX_!!417658884.jpg",
         "/media/Ví/50/T29PeMXeNXXXXXXXXX_!!417658884.jpg",
         "/media/Ví/50/T2N0GMXjFXXXXXXXXX_!!417658884.jpg",
@@ -21911,7 +22301,7 @@
         "/media/Ví/50/T2ffCQXcxaXXXXXXXX_!!417658884.jpg",
         "/media/Ví/50/T2mwCMXipXXXXXXXXX_!!417658884.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-049-preview.jpg",
       "pdfFiles": [
         "/media/Ví/50/LZpatternCCD-07A3-01.pdf",
         "/media/Ví/50/LZpatternCCD-07A3-02.pdf",
@@ -21977,7 +22367,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-049-preview.jpg"
     },
     {
       "id": "RM-VI-050",
@@ -21998,7 +22389,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.37,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22007,12 +22398,13 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-050-preview.jpg",
         "/media/Ví/51/03041151_53153fa832bef-650x650.jpg",
         "/media/Ví/51/03041151_53153fc4eaecc-650x650.jpg",
         "/media/Ví/51/03041151_53153fcf113c4-650x650.jpg",
         "/media/Ví/51/03041152_53153fe36bbba-650x650.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-050-preview.jpg",
       "pdfFiles": [
         "/media/Ví/51/Wallet_A4.pdf"
       ],
@@ -22074,7 +22466,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-050-preview.jpg"
     },
     {
       "id": "RM-VI-052",
@@ -22095,7 +22488,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22104,11 +22497,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-052-preview.jpg",
         "/media/Ví/53/Screenshot_20200619_190821.jpg",
         "/media/Ví/53/Screenshot_20200619_190832.jpg",
         "/media/Ví/53/Screenshot_20200619_190853.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-052-preview.jpg",
       "pdfFiles": [
         "/media/Ví/53/namecard_wallet_3.pdf"
       ],
@@ -22170,7 +22564,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-052-preview.jpg"
     },
     {
       "id": "RM-VI-053",
@@ -22191,7 +22586,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22200,11 +22595,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-053-preview.jpg",
         "/media/Ví/54/Screenshot_20200602_173445.jpg",
         "/media/Ví/54/Screenshot_20200602_173503.jpg",
         "/media/Ví/54/Screenshot_20200602_173517.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-053-preview.jpg",
       "pdfFiles": [
         "/media/Ví/54/38_simplecardwallet.pdf"
       ],
@@ -22266,7 +22662,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-053-preview.jpg"
     },
     {
       "id": "RM-VI-054",
@@ -22287,7 +22684,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22296,9 +22693,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-054-preview.jpg",
         "/media/Ví/55/80834047_3181945958488321_1858726184871788544_o.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-054-preview.jpg",
       "pdfFiles": [
         "/media/Ví/55/RV002.pdf"
       ],
@@ -22360,7 +22758,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-054-preview.jpg"
     },
     {
       "id": "RM-VI-055",
@@ -22381,7 +22780,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22390,9 +22789,10 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-055-preview.jpg",
         "/media/Ví/56/Screen Shot 2020-02-17 at 19.40.33.png"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-055-preview.jpg",
       "pdfFiles": [
         "/media/Ví/56/001.pdf"
       ],
@@ -22454,7 +22854,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-055-preview.jpg"
     },
     {
       "id": "RM-VI-056",
@@ -22475,7 +22876,7 @@
       ],
       "pdfCount": 2,
       "cadCount": 0,
-      "imageCount": 10,
+      "imageCount": 11,
       "fileSizeMB": 0.17,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22484,6 +22885,7 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-056-preview.jpg",
         "/media/Ví/57/IMG_20130907_095343.jpg",
         "/media/Ví/57/IMG_20130907_095430.jpg",
         "/media/Ví/57/IMG_20130907_095508.jpg",
@@ -22495,7 +22897,7 @@
         "/media/Ví/57/IMG_20130907_095837.jpg",
         "/media/Ví/57/IMG_20130907_095934.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-056-preview.jpg",
       "pdfFiles": [
         "/media/Ví/57/LZpatternCSL-01A3-01.pdf",
         "/media/Ví/57/LZpatternCSL-01A3-02.pdf"
@@ -22559,7 +22961,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-056-preview.jpg"
     },
     {
       "id": "RM-VI-057",
@@ -22580,7 +22983,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.17,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22589,11 +22992,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-057-preview.jpg",
         "/media/Ví/58/31353704_1055272631297200_5458737162372866169_n.jpg",
         "/media/Ví/58/31356644_1055272624630534_6754867656847359179_n.jpg",
         "/media/Ví/58/31369030_1055272627963867_4831922641792183847_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-057-preview.jpg",
       "pdfFiles": [
         "/media/Ví/58/long wallet 1.pdf"
       ],
@@ -22655,7 +23059,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-057-preview.jpg"
     },
     {
       "id": "RM-VI-058",
@@ -22676,7 +23081,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 1.29,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22685,10 +23090,11 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-058-preview.jpg",
         "/media/Ví/59/20621269_1881042755556129_1543362978653632689_n.jpg",
         "/media/Ví/59/20637825_1881042758889462_6389318749282415880_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-058-preview.jpg",
       "pdfFiles": [
         "/media/Ví/59/大冢无带长夹图纸.pdf"
       ],
@@ -22750,7 +23156,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-058-preview.jpg"
     },
     {
       "id": "RM-VI-059",
@@ -22771,7 +23178,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.24,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22780,12 +23187,13 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-059-preview.jpg",
         "/media/Ví/60/19642362_752191148294048_6684229937409653567_n.jpg",
         "/media/Ví/60/19665139_752191348294028_421955918198807737_n.jpg",
         "/media/Ví/60/19748491_752191134960716_3622222510748773174_n.jpg",
         "/media/Ví/60/19748889_752191154960714_2316523631477632926_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-059-preview.jpg",
       "pdfFiles": [
         "/media/Ví/60/SWP-10-A4.pdf"
       ],
@@ -22847,7 +23255,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-059-preview.jpg"
     },
     {
       "id": "RM-VI-060",
@@ -22868,7 +23277,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 3,
+      "imageCount": 4,
       "fileSizeMB": 0.07,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22877,11 +23286,12 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-060-preview.jpg",
         "/media/Ví/61/70707281_10219589566545157_5256254738613141504_o.jpg",
         "/media/Ví/61/71016825_10219589566665160_6600245220661526528_o.jpg",
         "/media/Ví/61/71237132_10219589566745162_2920052503959568384_o.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-060-preview.jpg",
       "pdfFiles": [
         "/media/Ví/61/A4.pdf"
       ],
@@ -22943,7 +23353,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-060-preview.jpg"
     },
     {
       "id": "RM-VI-061",
@@ -22964,7 +23375,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 4,
+      "imageCount": 5,
       "fileSizeMB": 0.11,
       "isFreePdf": true,
       "isFeatured": false,
@@ -22973,12 +23384,13 @@
       "chiselPitch": "3.0mm hoặc 3.38mm",
       "leatherEstimate": "1.5 - 3.0 Pia (SF)",
       "images": [
+        "/previews/rm-vi-061-preview.jpg",
         "/media/Ví/62/19884480_755906947922468_4912870256648926236_n.jpg",
         "/media/Ví/62/19905098_755906504589179_5782079610916088570_n.jpg",
         "/media/Ví/62/19905386_755906291255867_1200994416889672741_n.jpg",
         "/media/Ví/62/19989748_755906957922467_7952684997516711399_n.jpg"
       ],
-      "cadPreview": "",
+      "cadPreview": "/previews/rm-vi-061-preview.jpg",
       "pdfFiles": [
         "/media/Ví/62/LZpatternCDS-02A3.pdf"
       ],
@@ -23040,7 +23452,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-061-preview.jpg"
     },
     {
       "id": "RM-VI-064",
@@ -23134,7 +23547,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-064-preview.jpg"
     },
     {
       "id": "RM-VI-065",
@@ -23228,7 +23642,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-065-preview.jpg"
     },
     {
       "id": "RM-VI-066",
@@ -23322,7 +23737,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-066-preview.jpg"
     },
     {
       "id": "RM-VI-067",
@@ -23416,7 +23832,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-067-preview.jpg"
     },
     {
       "id": "RM-VI-068",
@@ -23510,7 +23927,8 @@
         "ACC-SNAP-BUTTON"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-vi-068-preview.jpg"
     },
     {
       "id": "RM-PP-001",
@@ -23531,7 +23949,7 @@
       ],
       "pdfCount": 3,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.03,
       "isFreePdf": true,
       "isFeatured": true,
@@ -23540,6 +23958,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "1.5 - 2.5 Pia (SF)",
       "images": [
+        "/previews/rm-pp-001-preview.jpg",
         "/media/bao pasport/01/hygpJve2D6Y.jpg"
       ],
       "cadPreview": "/previews/rm-pp-001-preview.jpg",
@@ -23607,7 +24026,8 @@
         "TOOL-THREAD-045"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-pp-001-preview.jpg"
     },
     {
       "id": "RM-PP-002",
@@ -23628,7 +24048,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.02,
       "isFreePdf": true,
       "isFeatured": true,
@@ -23637,6 +24057,7 @@
       "chiselPitch": "3.38mm",
       "leatherEstimate": "1.5 - 2.5 Pia (SF)",
       "images": [
+        "/previews/rm-pp-002-preview.jpg",
         "/media/bao pasport/02/tZPF9f6A_uY.jpg",
         "/media/bao pasport/02/uS8eGyDnrDM.jpg"
       ],
@@ -23701,7 +24122,8 @@
         "TOOL-THREAD-045"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-pp-002-preview.jpg"
     },
     {
       "id": "RM-PP-003",
@@ -23794,7 +24216,8 @@
         "TOOL-THREAD-045"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-pp-003-preview.jpg"
     },
     {
       "id": "RM-PP-004",
@@ -23890,7 +24313,8 @@
         "TOOL-THREAD-045"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-pp-004-preview.jpg"
     },
     {
       "id": "RM-DDH-001",
@@ -23911,7 +24335,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 5,
+      "imageCount": 6,
       "fileSizeMB": 0.26,
       "isFreePdf": true,
       "isFeatured": true,
@@ -23920,6 +24344,7 @@
       "chiselPitch": "2.7mm hoặc 3.0mm",
       "leatherEstimate": "0.5 - 1.0 Pia (SF)",
       "images": [
+        "/previews/rm-ddh-001-preview.jpg",
         "/media/dây đồng hồ/01/Screenshot_20200509_213227_com.google.android.youtube.jpg",
         "/media/dây đồng hồ/01/Screenshot_20200509_213231_com.google.android.youtube.jpg",
         "/media/dây đồng hồ/01/Screenshot_20200509_213234_com.google.android.youtube.jpg",
@@ -23987,7 +24412,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ddh-001-preview.jpg"
     },
     {
       "id": "RM-DDH-002",
@@ -24082,7 +24508,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ddh-002-preview.jpg"
     },
     {
       "id": "RM-GD-001",
@@ -24175,7 +24602,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-gd-001-preview.jpg"
     },
     {
       "id": "RM-GD-002",
@@ -24196,7 +24624,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.05,
       "isFreePdf": true,
       "isFeatured": true,
@@ -24205,6 +24633,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "4.0 - 6.5 Pia (SF)",
       "images": [
+        "/previews/rm-gd-002-preview.jpg",
         "/media/giày dép/02/JULIA.jpg"
       ],
       "cadPreview": "/previews/rm-gd-002-preview.jpg",
@@ -24268,7 +24697,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-gd-002-preview.jpg"
     },
     {
       "id": "RM-GD-003",
@@ -24289,7 +24719,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 2,
+      "imageCount": 3,
       "fileSizeMB": 0.91,
       "isFreePdf": true,
       "isFeatured": false,
@@ -24298,6 +24728,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "4.0 - 6.5 Pia (SF)",
       "images": [
+        "/previews/rm-gd-003-preview.jpg",
         "/media/giày dép/03/BsIDTsZDidG6z0tAdyyVBCyksQUXHon2b2a_i7kjR2tuAlLCWSLV3p-eJfKE8a7NEdD-BCShtmDIthLw6UzeVxpv.jpg",
         "/media/giày dép/03/putZn1-WPWURMaGVzZgSVdIgKXtjhGSEoXQfPx0eOMQPfOMtTw7mQGFealSAaujXz-3wHStLaC10iidCfcvyJna-.jpg"
       ],
@@ -24362,7 +24793,8 @@
         "TOOL-CUTTING-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-gd-003-preview.jpg"
     },
     {
       "id": "RM-HV-001",
@@ -24454,7 +24886,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-hv-001-preview.jpg"
     },
     {
       "id": "RM-HV-002",
@@ -24558,7 +24991,8 @@
         "TOOL-EDGE-KIT"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-hv-002-preview.jpg"
     },
     {
       "id": "RM-HV-003",
@@ -24811,7 +25245,7 @@
       ],
       "pdfCount": 1,
       "cadCount": 0,
-      "imageCount": 1,
+      "imageCount": 2,
       "fileSizeMB": 0.62,
       "isFreePdf": true,
       "isFeatured": true,
@@ -24820,6 +25254,7 @@
       "chiselPitch": "4.0mm",
       "leatherEstimate": "18.0 - 30.0 Pia (SF)",
       "images": [
+        "/previews/rm-ad-001-preview.jpg",
         "/media/áo da/01/lqWmz8CvZeY.jpg"
       ],
       "cadPreview": "/previews/rm-ad-001-preview.jpg",
@@ -24883,7 +25318,8 @@
         "TOOL-CHISEL-400"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ad-001-preview.jpg"
     },
     {
       "id": "RM-AD-002",
@@ -24980,7 +25416,8 @@
         "TOOL-CHISEL-400"
       ],
       "vendorId": "rapmau",
-      "vendorName": "Xưởng RAPMAU.COM"
+      "vendorName": "Xưởng RAPMAU.COM",
+      "primaryImage": "/previews/rm-ad-002-preview.jpg"
     }
   ],
   "accessories": [
