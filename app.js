@@ -329,8 +329,6 @@ async function initApp() {
     renderArticles();
     renderGlobalFaqs();
     updateCartBadge();
-    await loadPaidBlueprints();
-    renderPaidBlueprints();
     bindEvents();
   } catch (err) {
     console.error('Lỗi tải catalog:', err);
@@ -1354,25 +1352,6 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
           <div>🚚 <strong>Giao hàng toàn quốc:</strong> Được kiểm tra Rập Giấy 350gsm / Rập Mica 2mm trước khi thanh toán.</div>
         </div>
 
-        <!-- Khung giới thiệu Kho 369 Bản Vẽ Kỹ Thuật Có Phí -->
-        <div style="background:#fefce8; border:1.5px dashed #f59e0b; border-radius:10px; padding:12px 14px; margin:14px 0;">
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
-            <div>
-              <span style="font-size:10.5px; font-weight:800; background:#f59e0b; color:#fff; padding:2px 8px; border-radius:4px;">🔒 BẢN VẼ KỸ THUẬT GỐC</span>
-              <div style="font-size:13px; font-weight:700; color:#78350f; margin-top:3px;">Kho 369 Bản Vẽ Kỹ Thuật VIP Cho Thợ &amp; Xưởng Sản Xuất</div>
-            </div>
-            <button type="button" class="btn-sm" id="modalOpenCompareBtn" style="background:#fff; border:1px solid #d97706; color:#b45309; font-size:11.5px; padding:4px 8px; border-radius:6px; font-weight:700; cursor:pointer;">
-              ⚖️ So Sánh Chi Tiết (7 Tiêu Chí)
-            </button>
-          </div>
-          <div style="font-size:12px; color:#92400e; margin-top:6px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-            <span>Bản vẽ có đủ kích thước phôi, thông số khuôn bế &amp; lớp lót chuẩn tỷ lệ.</span>
-            <a href="#kho-ban-ve-co-phi" id="modalJumpBlueprintsBtn" style="color:#0284c7; font-weight:700; text-decoration:underline;">
-              Khám Phá Kho 369 Bản Vẽ 🔒 →
-            </a>
-          </div>
-        </div>
-
         <table class="specs-table">
           <tbody>
             <tr>
@@ -1466,20 +1445,6 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
   const expandBtn = document.getElementById('expandAllThumbsBtn');
   if (expandBtn) {
     expandBtn.onclick = () => openProductModal(product.sku, activeVar.id, { pushUrl: false, showAllThumbs: true });
-  }
-
-  const modalCompareBtn = document.getElementById('modalOpenCompareBtn');
-  if (modalCompareBtn) {
-    modalCompareBtn.addEventListener('click', () => {
-      openFullCompareModal();
-    });
-  }
-
-  const modalJumpBp = document.getElementById('modalJumpBlueprintsBtn');
-  if (modalJumpBp) {
-    modalJumpBp.addEventListener('click', () => {
-      closeProductModal({ restoreUrl: false });
-    });
   }
 
   // Xem trực tiếp file PDF bản vẽ 1:1 ngay trong modal

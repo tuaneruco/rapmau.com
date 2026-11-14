@@ -436,10 +436,6 @@
           <span>🏭 Bài Viết &amp; Trang B2B</span>
           <span id="sideCountB2bArticles">3</span>
         </button>
-        <button type="button" class="admin-nav-btn" data-tab="tab-blueprints" id="navBtnBlueprints">
-          <span>🔒 Kho 369 Bản Vẽ Có Phí</span>
-          <span id="sideCountBlueprints" style="background:#f59e0b; color:#fff; border-radius:99px; padding:1px 6px; font-size:11px; font-weight:800;">369</span>
-        </button>
         <button type="button" class="admin-nav-btn" data-tab="tab-settings" id="navBtnSettings">
           <span id="navSettingsLabel">⚙️ Nội Dung, VietQR &amp; Mật Khẩu</span>
         </button>
@@ -1132,81 +1128,6 @@
               <button type="button" id="btnResetB2bArticleForm" class="btn btn-outline">Làm mới</button>
             </div>
           </form>
-        </div>
-      </section>
-
-      <!-- TAB BLUEPRINTS: KHO 369 BẢN VẼ KỸ THUẬT GỐC CÓ PHÍ & HỆ THỐNG MÃ BẢO MẬT -->
-      <section id="tab-blueprints" class="admin-tab-panel hidden">
-        <div class="cms-card" style="margin-bottom:16px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <h2 style="color:var(--bg-saddle); margin-bottom:4px;">🔒 Quản Trị Kho 369 Bản Vẽ Kỹ Thuật Gốc (Có Phí)</h2>
-              <p style="font-size:13.5px; color:var(--text-muted); margin:0;">
-                Hệ thống lưu trữ 369 file PDF bản vẽ kỹ thuật chi tiết: <strong>232 bản vẽ gốc</strong> + <strong>100 mẫu ví chi tiết</strong> + <strong>37 mẫu in vector A4 1:1</strong>.
-              </p>
-            </div>
-            <div style="display:flex; gap:8px;">
-              <button type="button" id="btnAdminUnlockAllBp" class="btn btn-primary" style="background:var(--accent-green); border-color:var(--accent-green);">
-                🔓 Mở Khóa Toàn Bộ Cho Thiết Bị Này
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
-          <!-- Mã Quản Trị & Master Key -->
-          <div class="cms-card">
-            <h3 style="color:#92400e; margin-bottom:8px;">🔑 Mật Khẩu Master Admin Mở Khóa:</h3>
-            <p style="font-size:12.5px; color:#64748b; margin-bottom:12px;">
-              Nhập một trong các mã này trên giao diện người dùng để mở khóa tức thì toàn bộ 369 bản vẽ:
-            </p>
-            <div style="display:flex; flex-direction:column; gap:6px;">
-              <code style="background:#fef3c7; color:#92400e; padding:6px 10px; border-radius:6px; font-weight:800; font-size:13px;">RAPMAU2026</code>
-              <code style="background:#fef3c7; color:#92400e; padding:6px 10px; border-radius:6px; font-weight:800; font-size:13px;">RAPMAUVIP</code>
-              <code style="background:#fef3c7; color:#92400e; padding:6px 10px; border-radius:6px; font-weight:800; font-size:13px;">ADMIN_XUONG_2026</code>
-            </div>
-          </div>
-
-          <!-- Trình Tạo Mã Khách Hàng (License Generator) -->
-          <div class="cms-card">
-            <h3 style="color:#0284c7; margin-bottom:8px;">🎟️ Trình Cấp Mã Kích Hoạt Cho Khách Hàng:</h3>
-            <p style="font-size:12.5px; color:#64748b; margin-bottom:10px;">
-              Tạo mã kích hoạt khi khách hàng mua gói bản vẽ hoặc gửi qua Zalo/Email:
-            </p>
-            <div style="display:flex; gap:8px; margin-bottom:8px;">
-              <input type="text" id="adminGeneratedKey" readonly style="flex:1; padding:8px 12px; font-weight:800; font-size:14px; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; text-transform:uppercase;" placeholder="Bấm 'Tạo mã mới' bên phải..." />
-              <button type="button" id="btnGenLicenseKey" class="btn btn-secondary" style="white-space:nowrap;">
-                🎲 Tạo Mã Mới
-              </button>
-            </div>
-            <small style="color:#64748b;">Mã cấp có thể nhập vào ô "Nhập mã kích hoạt" trên web để mở khóa bản vẽ tương ứng.</small>
-          </div>
-        </div>
-
-        <!-- Bảng Thống Kê Phân Loại & Trạng Thái Dung Lượng -->
-        <div class="cms-card">
-          <h3 style="color:var(--bg-saddle); margin-bottom:10px;">📊 Thống Kê Danh Mục &amp; Dung Lượng Lưu Trữ</h3>
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:10px; margin-bottom:14px;">
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px 14px;">
-              <div style="font-size:12px; color:#64748b;">Tổng số bản vẽ</div>
-              <div style="font-size:22px; font-weight:900; color:var(--bg-espresso);">369 PDF</div>
-            </div>
-            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:10px 14px;">
-              <div style="font-size:12px; color:#166534;">Tải trực tiếp (&le; 24MB)</div>
-              <div style="font-size:22px; font-weight:900; color:#15803d;">355 Files</div>
-            </div>
-            <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:8px; padding:10px 14px;">
-              <div style="font-size:12px; color:#92400e;">Giao qua Drive (&gt; 24MB)</div>
-              <div style="font-size:22px; font-weight:900; color:#d97706;">14 Files</div>
-            </div>
-            <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:10px 14px;">
-              <div style="font-size:12px; color:#0369a1;">Số nhóm danh mục</div>
-              <div style="font-size:22px; font-weight:900; color:#0284c7;">16 Nhóm</div>
-            </div>
-          </div>
-          <p style="font-size:12.5px; color:#475569; margin:0;">
-            💡 <em>Lưu ý về Cloudflare Pages: Hệ thống giới hạn 25MB/file tĩnh. 14 file dung lượng lớn được tự động dẫn qua link Google Drive chính thức hoặc gửi file gốc chất lượng cao qua Email <code>info@rapmau.com</code> khi khách hàng mở khóa.</em>
-          </p>
         </div>
       </section>
 
