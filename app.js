@@ -44,6 +44,114 @@ function formatVND(amount) {
   return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
 }
 
+function safeMediaUrl(rawUrl, fallback = '/assets/tools/pattern-placeholder.svg') {
+  const s = String(rawUrl || '').trim();
+  if (!s) return fallback;
+  if (s.startsWith('data:') || s.startsWith('blob:')) return s;
+  const nfc = s.normalize('NFC');
+  if (nfc.startsWith('http://') || nfc.startsWith('https://')) return nfc;
+  try {
+    return encodeURI(decodeURI(nfc));
+  } catch {
+    return encodeURI(nfc);
+  }
+}
+
+const IDB_NAME = 'rapmau_cms_db';
+const IDB_VERSION = 1;
+const uploadedBlobUrlCache = {};
+
+function openRapmauIdb() {
+  return new Promise((resolve, reject) => {
+    if (typeof indexedDB === 'undefined') {
+      reject(new Error('IndexedDB unsupported'));
+      return;
+    }
+    const req = indexedDB.open(IDB_NAME, IDB_VERSION);
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains('cms_state')) {
+        db.createObjectStore('cms_state');
+      }
+      if (!db.objectStoreNames.contains('uploaded_files')) {
+        db.createObjectStore('uploaded_files');
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function idbGet(storeName, key) {
+  try {
+    const db = await openRapmauIdb();
+    return await new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, 'readonly');
+      const req = tx.objectStore(storeName).get(key);
+      req.onsuccess = () => resolve(req.result ?? null);
+      req.onerror = () => reject(req.error);
+    });
+  } catch {
+    return null;
+  }
+}
+
+function dataUrlToBlobUrl(dataUrl) {
+  try {
+    const parts = String(dataUrl || '').split(',');
+    if (parts.length < 2) return dataUrl;
+    const mimeMatch = parts[0].match(/:(.*?);/);
+    const mime = mimeMatch ? mimeMatch[1] : 'application/pdf';
+    const bstr = atob(parts[1]);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    const blob = new Blob([u8arr], { type: mime });
+    return URL.createObjectURL(blob);
+  } catch {
+    return dataUrl;
+  }
+}
+
+async function hydrateUploadedFilesCache(products) {
+  for (const p of products || []) {
+    for (const fUrl of [...(p.pdfFiles || []), ...(p.cadFiles || [])]) {
+      const s = String(fUrl || '').trim();
+      if (!s) continue;
+      if (s.startsWith('data:')) {
+        uploadedBlobUrlCache[s] = dataUrlToBlobUrl(s);
+      } else if (s.startsWith('/media/uploads/') && !uploadedBlobUrlCache[s]) {
+        const rec = await idbGet('uploaded_files', s);
+        if (rec && rec.dataUrl) {
+          uploadedBlobUrlCache[s] = dataUrlToBlobUrl(rec.dataUrl);
+        }
+      }
+    }
+  }
+}
+
+function normalizeCatalogTreeNFC(obj) {
+  if (typeof obj === 'string') {
+    if (obj.startsWith('data:') || obj.startsWith('blob:')) return obj;
+    return obj.normalize('NFC');
+  }
+  if (Array.isArray(obj)) {
+    for (let i = 0; i < obj.length; i++) {
+      obj[i] = normalizeCatalogTreeNFC(obj[i]);
+    }
+    return obj;
+  }
+  if (obj && typeof obj === 'object') {
+    for (const k of Object.keys(obj)) {
+      obj[k] = normalizeCatalogTreeNFC(obj[k]);
+    }
+    return obj;
+  }
+  return obj;
+}
+
 function resolveDownloadAction({ url, externalUrl, sizeMB, itemLabel }) {
   if (externalUrl) {
     return {
@@ -53,6 +161,26 @@ function resolveDownloadAction({ url, externalUrl, sizeMB, itemLabel }) {
       sizeLabel: sizeMB ? `${sizeMB} MB` : 'Google Drive'
     };
   }
+  const rawStr = String(url || '').trim();
+  if (uploadedBlobUrlCache[rawStr]) {
+    const effSz = Number(sizeMB) || 0;
+    return {
+      mode: 'direct',
+      href: uploadedBlobUrlCache[rawStr],
+      isDirect: true,
+      sizeLabel: effSz > 0 ? `${effSz} MB` : ''
+    };
+  }
+  if (rawStr.startsWith('data:') || rawStr.startsWith('blob:')) {
+    const effSz = Number(sizeMB) || 0;
+    return {
+      mode: 'direct',
+      href: rawStr.startsWith('data:') ? dataUrlToBlobUrl(rawStr) : rawStr,
+      isDirect: true,
+      sizeLabel: effSz > 0 ? `${effSz} MB` : ''
+    };
+  }
+
   const host = typeof window !== 'undefined' && window.location ? window.location.hostname : '';
   const isLocal =
     host === 'localhost' ||
@@ -62,14 +190,14 @@ function resolveDownloadAction({ url, externalUrl, sizeMB, itemLabel }) {
 
   const oversizedMap = (state.catalog && state.catalog.oversizedMedia) || {};
   const hasManifest = Object.keys(oversizedMap).length > 0;
-  const nfcUrl = String(url || '').normalize('NFC');
+  const nfcUrl = rawStr.normalize('NFC');
   const inOversized = Object.prototype.hasOwnProperty.call(oversizedMap, nfcUrl);
   const effectiveSize =
     typeof oversizedMap[nfcUrl] === 'number' && oversizedMap[nfcUrl] > 0
       ? oversizedMap[nfcUrl]
       : Number(sizeMB) || 0;
 
-  if (!isLocal && (inOversized || (!hasManifest && effectiveSize > 24))) {
+  if (!isLocal && !nfcUrl.startsWith('/media/uploads/') && (inOversized || (!hasManifest && effectiveSize > 24))) {
     const label = itemLabel || 'Tài liệu / Bản vẽ PDF';
     const sizeText = effectiveSize > 0 ? `${effectiveSize} MB` : '>24 MB';
     const subject = encodeURIComponent(`[NHẬN LINK DRIVE] ${label}`);
@@ -86,7 +214,7 @@ function resolveDownloadAction({ url, externalUrl, sizeMB, itemLabel }) {
 
   return {
     mode: 'direct',
-    href: encodeURI(url || '#'),
+    href: safeMediaUrl(nfcUrl, '#'),
     isDirect: true,
     sizeLabel: effectiveSize > 0 ? `${effectiveSize} MB` : ''
   };
@@ -110,24 +238,78 @@ function getEffectiveVariant(product, variantId) {
 
 async function initApp() {
   try {
+    const isLocalHost =
+      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     let fromApi = false;
-    let res = await fetch('/api/catalog').catch(() => null);
-    if (res && res.ok) {
-      fromApi = true;
-    } else {
-      res = await fetch('/data/catalog.json');
+    let data = null;
+
+    if (isLocalHost) {
+      const apiRes = await fetch('/api/catalog').catch(() => null);
+      if (apiRes && apiRes.ok) {
+        const candidate = await apiRes.json().catch(() => null);
+        if (candidate && Array.isArray(candidate.products)) {
+          data = candidate;
+          fromApi = true;
+        }
+      }
     }
-    let data = await res.json();
+
+    let staticCatalog = null;
     if (!fromApi) {
+      const staticRes = await fetch('/data/catalog.json?v=' + Date.now()).catch(() => fetch('/data/catalog.json'));
+      staticCatalog = await staticRes.json();
+      data = staticCatalog;
+    }
+
+    let overrideData = await idbGet('cms_state', 'catalog_override');
+    if (!overrideData) {
       const localOverride = localStorage.getItem('rapmau_cms_catalog_override_v4');
       if (localOverride) {
         try {
-          data = JSON.parse(localOverride);
+          overrideData = JSON.parse(localOverride);
         } catch {
           // ignore
         }
       }
     }
+
+    if (overrideData && Array.isArray(overrideData.products)) {
+      data = overrideData;
+      if (staticCatalog && Array.isArray(staticCatalog.products)) {
+        const staticBySku = new Map(staticCatalog.products.map((p) => [p.sku, p]));
+        for (const cur of data.products) {
+          const st = staticBySku.get(cur.sku);
+          if (!st) continue;
+          if (!cur._editedAt) {
+            const firstImg = (cur.images && cur.images[0]) || '';
+            if (!firstImg.startsWith('data:') && !firstImg.startsWith('/media/uploads/')) {
+              cur.images = st.images;
+              cur.primaryImage = st.primaryImage;
+              cur.imageCount = st.imageCount;
+            }
+            const firstPdf = (cur.pdfFiles && cur.pdfFiles[0]) || '';
+            if (!firstPdf.startsWith('data:') && !firstPdf.startsWith('/media/uploads/')) {
+              cur.pdfFiles = st.pdfFiles;
+              cur.pdfFileNames = st.pdfFileNames;
+              cur.pdfCount = st.pdfCount;
+              cur.fileSizeMB = st.fileSizeMB;
+            }
+          }
+        }
+        const curSkus = new Set(data.products.map((p) => p.sku));
+        const deletedSkus = new Set(data._deletedPatternSkus || []);
+        for (const st of staticCatalog.products) {
+          if (!curSkus.has(st.sku) && !deletedSkus.has(st.sku)) {
+            data.products.push(st);
+          }
+        }
+        data.oversizedMedia = staticCatalog.oversizedMedia || data.oversizedMedia || {};
+      }
+    }
+
+    normalizeCatalogTreeNFC(data);
+    await hydrateUploadedFilesCache(data.products || []);
+
     state.catalog = data;
     state.products = data.products || [];
     state.accessories = data.accessories || [];
@@ -617,7 +799,7 @@ function renderProducts() {
     .map((p) => {
       const activeVar = getEffectiveVariant(p);
       const isFree = activeVar.id === 'pdf_dxf' && activeVar.price === 0;
-      const thumb = encodeURI(p.images[0] || '/assets/tools/pattern-placeholder.svg');
+      const thumb = safeMediaUrl((p.images && p.images[0]) || p.primaryImage, '/assets/tools/pattern-placeholder.svg');
       const sizeText = p.paperSizes.join('/');
 
       return `
@@ -730,7 +912,7 @@ function renderFreeBooks() {
 
   grid.innerHTML = visibleBooks
     .map((b) => {
-      const cover = encodeURI(b.cover || '/assets/tools/pattern-placeholder.svg');
+      const cover = safeMediaUrl(b.cover, '/assets/tools/pattern-placeholder.svg');
       const dl = resolveDownloadAction({
         url: b.downloadUrl,
         externalUrl: b.externalUrl,
@@ -809,7 +991,7 @@ function openZaloBookModal(bookId) {
     ${
       book
         ? `<div style="display:flex; gap:16px; align-items:center; background:var(--bg-parchment); padding:14px; border-radius:12px; border:1px solid var(--border-soft); margin-bottom:16px;">
-            <img src="${encodeURI(book.cover)}" alt="${book.title}" style="width:84px; height:110px; object-fit:cover; border-radius:8px; border:1px solid var(--border-stitch);" />
+            <img src="${safeMediaUrl(book.cover)}" alt="${book.title}" style="width:84px; height:110px; object-fit:cover; border-radius:8px; border:1px solid var(--border-stitch);" />
             <div style="flex:1;">
               <span class="sku-badge">📁 Thư mục: ${book.folderKey}</span>
               <h4 style="margin:6px 0 4px; color:var(--bg-saddle);">${book.title}</h4>
@@ -926,7 +1108,7 @@ function renderTools() {
 
   grid.innerHTML = visibleTools
     .map((item) => {
-      const thumb = encodeURI(item.images[0] || '/assets/tools/starter-kit.svg');
+      const thumb = safeMediaUrl(item.images && item.images[0], '/assets/tools/starter-kit.svg');
       return `
         <article class="tool-card">
           <div class="card-thumb-wrap" data-action="tool-detail" data-id="${item.id}">
@@ -1030,8 +1212,12 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
   const visibleThumbs = hasMoreThumbs ? galleryImages.slice(0, MAX_VISIBLE_THUMBS - 1) : galleryImages;
   const hiddenCount = galleryImages.length - visibleThumbs.length;
 
-  const matchingTools = state.accessories.filter((a) => product.recommendedTools.includes(a.id));
-  const firstPdfUrl = product.pdfFiles[0] ? encodeURI(product.pdfFiles[0]) : '';
+  const matchingTools = state.accessories.filter((a) => (product.recommendedTools || []).includes(a.id));
+  const rawFirstPdf = (product.pdfFiles && product.pdfFiles[0]) || '';
+  const firstPdfUrl = rawFirstPdf
+    ? uploadedBlobUrlCache[rawFirstPdf] ||
+      (rawFirstPdf.startsWith('data:') ? dataUrlToBlobUrl(rawFirstPdf) : safeMediaUrl(rawFirstPdf, ''))
+    : '';
   const isFreePdf = activeVar.id === 'pdf_dxf' && activeVar.price === 0;
   let currentImgIdx = 0;
 
@@ -1041,7 +1227,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
       <div class="detail-media-col">
         <div class="detail-media-stage" id="detailMediaDisplay">
           <img
-            src="${encodeURI(galleryImages[0])}"
+            src="${safeMediaUrl(galleryImages[0])}"
             alt="${product.title}"
             class="detail-main-img"
             id="detailMainImage"
@@ -1069,8 +1255,8 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
           ${visibleThumbs
             .map(
               (img, idx) => `
-            <button type="button" class="detail-thumb-btn ${idx === 0 ? 'active' : ''}" data-idx="${idx}" data-img="${encodeURI(img)}">
-              <img src="${encodeURI(img)}" alt="${product.sku} - Ảnh ${idx + 1}" loading="lazy" />
+            <button type="button" class="detail-thumb-btn ${idx === 0 ? 'active' : ''}" data-idx="${idx}" data-img="${safeMediaUrl(img)}">
+              <img src="${safeMediaUrl(img)}" alt="${product.sku} - Ảnh ${idx + 1}" loading="lazy" />
             </button>
           `
             )
@@ -1246,7 +1432,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
     currentImgIdx = (newIdx + galleryImages.length) % galleryImages.length;
     const mainImg = document.getElementById('detailMainImage');
     if (mainImg) {
-      mainImg.src = encodeURI(galleryImages[currentImgIdx]);
+      mainImg.src = safeMediaUrl(galleryImages[currentImgIdx]);
     }
     const counter = document.getElementById('stageCounterBadge');
     if (counter) {
@@ -1339,15 +1525,15 @@ function openToolDetailModal(toolId) {
   content.innerHTML = `
     <div class="detail-grid">
       <div>
-        <img src="${encodeURI(tool.images[0])}" alt="${tool.title}" class="detail-main-img" id="toolMainImg" />
+        <img src="${safeMediaUrl(tool.images && tool.images[0], '/assets/tools/starter-kit.svg')}" alt="${tool.title}" class="detail-main-img" id="toolMainImg" />
         ${
           tool.images.length > 1
             ? `<div class="detail-thumbs">
                 ${tool.images
                   .map(
                     (img, i) => `
-                  <button type="button" class="detail-thumb-btn ${i === 0 ? 'active' : ''}" data-img="${encodeURI(img)}">
-                    <img src="${encodeURI(img)}" alt="Ảnh ${i + 1}" />
+                  <button type="button" class="detail-thumb-btn ${i === 0 ? 'active' : ''}" data-img="${safeMediaUrl(img)}">
+                    <img src="${safeMediaUrl(img)}" alt="Ảnh ${i + 1}" />
                   </button>
                 `
                   )
@@ -1566,7 +1752,7 @@ function openInstantFreeDownloadModal(product) {
                 const cleanImgName = `${product.sku}-Ban-Rap-1-1-Trang-${idx + 1}.${ext}`;
                 return `
             <a
-              href="${encodeURI(url)}"
+              href="${safeMediaUrl(url)}"
               class="btn btn-primary"
               download="${cleanImgName}"
               target="_blank"

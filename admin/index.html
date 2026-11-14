@@ -1315,9 +1315,14 @@
   <!-- MODAL 1: THÊM / CHỈNH SỬA CHI TIẾT MẪU RẬP -->
   <div id="addPatternModal" class="admin-modal-backdrop hidden">
     <div class="admin-modal-card" style="max-width: 760px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid var(--border-soft); padding-bottom:10px;">
-        <h3 id="patternModalHeading" style="color:var(--bg-saddle); font-size:18px;">➕ Thêm Mẫu Rập Đồ Da Mới</h3>
-        <button type="button" id="closeAddPatternModalBtn" class="btn-danger-sm">✕ Đóng</button>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid var(--border-soft); padding-bottom:10px; position:sticky; top:-24px; background:#fff; z-index:10; padding-top:6px;">
+        <h3 id="patternModalHeading" style="color:var(--bg-saddle); font-size:17px; margin:0;">➕ Thêm Mẫu Rập Đồ Da Mới</h3>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <button type="submit" form="addPatternForm" id="topSubmitPatternBtn" class="btn btn-primary" style="padding:7px 14px; font-size:13px; font-weight:800; background:#15803d; border-color:#15803d;">
+            💾 Lưu Ngay
+          </button>
+          <button type="button" id="closeAddPatternModalBtn" class="btn-danger-sm">✕ Đóng</button>
+        </div>
       </div>
       <form id="addPatternForm">
         <input type="hidden" id="editPatternSku" value="" />
@@ -1395,16 +1400,23 @@
           <div class="form-field" style="margin-bottom:10px;">
             <label style="color:#92400e; font-weight:800;">🖼️ Ảnh đại diện sản phẩm chính (Dán link hoặc tải từ máy)</label>
             <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-              <img id="newPatImgPreview" src="/assets/tools/pattern-placeholder.svg" style="width:44px; height:44px; object-fit:cover; border-radius:6px; border:1px solid #d97706; background:#fff;" alt="Preview" />
+              <img id="newPatImgPreview" src="/assets/tools/pattern-placeholder.svg" onerror="this.onerror=null;this.src='/assets/tools/pattern-placeholder.svg';" style="width:48px; height:48px; object-fit:cover; border-radius:6px; border:1.5px solid #d97706; background:#fff;" alt="Preview" />
               <input type="text" id="newPatImageUrl" placeholder="/media/..." style="flex:1;" />
               <label class="btn btn-outline" style="padding:8px 12px; font-size:12.5px; cursor:pointer; margin:0; background:#fff;">
                 📷 Tải ảnh từ máy
                 <input type="file" id="newPatImageFile" accept="image/*" style="display:none;" />
               </label>
             </div>
+            <div id="newPatImgStatus" style="font-size:11.5px; color:#15803d; font-weight:700; margin-top:4px; display:none;"></div>
           </div>
           <div class="form-field">
-            <label style="color:#92400e; font-size:12px; font-weight:700;">📸 Thư viện ảnh chi tiết (Mỗi dòng 1 link ảnh):</label>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; flex-wrap:wrap; gap:6px;">
+              <label style="color:#92400e; font-size:12px; font-weight:700; margin:0;">📸 Thư viện ảnh chi tiết (Mỗi dòng 1 link ảnh):</label>
+              <label class="btn btn-outline" style="padding:4px 10px; font-size:11.5px; cursor:pointer; margin:0; background:#fff;">
+                📷 + Tải thêm ảnh chi tiết
+                <input type="file" id="newPatMoreImageFile" accept="image/*" multiple style="display:none;" />
+              </label>
+            </div>
             <textarea id="newPatMoreImages" rows="3" style="width:100%; padding:8px; border-radius:6px; border:1px solid #fcd34d; font-family:monospace; font-size:12px;" placeholder="/media/Balo/01/22.jpg&#10;/media/Balo/01/4.jpg"></textarea>
           </div>
         </div>
@@ -1420,6 +1432,7 @@
                 <input type="file" id="newPatPdfFile" accept=".pdf" style="display:none;" />
               </label>
             </div>
+            <div id="newPatPdfStatus" style="font-size:11.5px; color:#047857; font-weight:700; margin-top:4px; display:none;"></div>
           </div>
           <div class="form-field">
             <label style="color:#065f46; font-size:12px; font-weight:700;">📐 File Vector CAD / DXF tải về (tùy chọn):</label>
@@ -1430,6 +1443,7 @@
                 <input type="file" id="newPatCadFile" accept=".dxf,.dwg,.ai,.cdr" style="display:none;" />
               </label>
             </div>
+            <div id="newPatCadStatus" style="font-size:11.5px; color:#047857; font-weight:700; margin-top:4px; display:none;"></div>
           </div>
         </div>
 
@@ -1439,9 +1453,11 @@
           <textarea id="newPatDescription" rows="3" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-stitch); font-family:inherit; font-size:13px;" placeholder="Mô tả cấu trúc ngăn, cách xử lý mép cạnh da, lưu ý khi dán ghép và cắt dưỡng..."></textarea>
         </div>
 
-        <button type="submit" id="submitPatternBtn" class="btn btn-primary btn-full" style="padding:12px; font-size:15px; font-weight:800;">
-          💾 Lưu Thông Tin Mẫu Rập
-        </button>
+        <div style="position:sticky; bottom:-24px; background:#fff; padding:10px 0 6px; border-top:1px solid var(--border-soft); z-index:10;">
+          <button type="submit" id="submitPatternBtn" class="btn btn-primary btn-full" style="padding:12px; font-size:15px; font-weight:800;">
+            💾 Lưu Thông Tin Mẫu Rập
+          </button>
+        </div>
       </form>
     </div>
   </div>

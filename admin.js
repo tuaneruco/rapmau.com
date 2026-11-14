@@ -176,12 +176,87 @@ function inferItemVendorName(item) {
   return 'Xưởng RAPMAU.COM';
 }
 
+function safeMediaUrl(rawUrl, fallback = '/assets/tools/pattern-placeholder.svg') {
+  if (!rawUrl || typeof rawUrl !== 'string') return fallback;
+  const trimmed = rawUrl.trim();
+  if (!trimmed) return fallback;
+  if (
+    trimmed.startsWith('data:') ||
+    trimmed.startsWith('blob:') ||
+    trimmed.startsWith('http://') ||
+    trimmed.startsWith('https://')
+  ) {
+    return trimmed;
+  }
+  const nfc = typeof trimmed.normalize === 'function' ? trimmed.normalize('NFC') : trimmed;
+  try {
+    return encodeURI(decodeURI(nfc));
+  } catch {
+    return encodeURI(nfc);
+  }
+}
+
+function openRapmauIdb() {
+  return new Promise((resolve, reject) => {
+    if (!window.indexedDB) {
+      resolve(null);
+      return;
+    }
+    const req = window.indexedDB.open('rapmau_cms_db', 1);
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains('cms_state')) {
+        db.createObjectStore('cms_state');
+      }
+      if (!db.objectStoreNames.contains('uploaded_files')) {
+        db.createObjectStore('uploaded_files');
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function idbGet(storeName, key) {
+  try {
+    const db = await openRapmauIdb();
+    if (!db) return null;
+    return await new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, 'readonly');
+      const store = tx.objectStore(storeName);
+      const req = store.get(key);
+      req.onsuccess = () => resolve(req.result ?? null);
+      req.onerror = () => reject(req.error);
+    });
+  } catch {
+    return null;
+  }
+}
+
+async function idbSet(storeName, key, value) {
+  try {
+    const db = await openRapmauIdb();
+    if (!db) return false;
+    return await new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, 'readwrite');
+      const store = tx.objectStore(storeName);
+      const req = store.put(value, key);
+      req.onsuccess = () => resolve(true);
+      req.onerror = () => reject(req.error);
+    });
+  } catch (err) {
+    console.warn('IndexedDB save warning:', err);
+    return false;
+  }
+}
+
 function syncCatalogStatsAndPersistLocal() {
   if (!adminState.catalog) return;
   adminState.catalog.products = adminState.products;
   adminState.catalog.accessories = adminState.accessories;
   adminState.catalog.freeBooks = adminState.freeBooks;
   adminState.catalog.vendors = adminState.vendors;
+  adminState.catalog._localUpdatedAt = Date.now();
 
   const counts = {};
   for (const p of adminState.products) {
@@ -199,10 +274,14 @@ function syncCatalogStatsAndPersistLocal() {
     adminState.catalog.stats.freeBooksCount = adminState.freeBooks.length;
   }
 
+  // 1. Lưu không giới hạn dung lượng vào IndexedDB
+  idbSet('cms_state', 'catalog_override', adminState.catalog);
+
+  // 2. Lưu đồng thời vào localStorage để đồng bộ tức thì
   try {
     localStorage.setItem(CMS_OVERRIDE_KEY, JSON.stringify(adminState.catalog));
   } catch (e) {
-    console.warn('Lưu bộ nhớ trình duyệt đầy:', e);
+    console.warn('LocalStorage đạt ngưỡng 5MB, dữ liệu đã được lưu an toàn vào IndexedDB:', e);
   }
 }
 
@@ -484,18 +563,39 @@ function setupLoginGate() {
   }
 }
 
+function normalizeCatalogTreeNFC(obj) {
+  if (!obj) return obj;
+  try {
+    const raw = JSON.stringify(obj);
+    return JSON.parse(typeof raw.normalize === 'function' ? raw.normalize('NFC') : raw);
+  } catch {
+    return obj;
+  }
+}
+
 async function initAdmin() {
   let catData = null;
   let admData = { orders: [], consultations: [] };
+  const isLocalHost =
+    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-  try {
-    const catRes = await fetch('/api/catalog');
-    if (catRes.ok) {
-      catData = await catRes.json();
-      adminState.isLocalBackend = true;
+  if (isLocalHost) {
+    try {
+      const [catRes, admRes] = await Promise.all([
+        fetch('/api/catalog'),
+        fetch('/api/admin-data')
+      ]);
+      if (catRes.ok && admRes.ok) {
+        const admContentType = admRes.headers.get('content-type') || '';
+        if (admContentType.includes('application/json')) {
+          catData = await catRes.json();
+          admData = await admRes.json();
+          adminState.isLocalBackend = true;
+        }
+      }
+    } catch {
+      // fallback to static
     }
-  } catch {
-    // fallback
   }
 
   if (!catData) {
@@ -503,30 +603,65 @@ async function initAdmin() {
     catData = await staticRes.json();
   }
 
-  if (!adminState.isLocalBackend) {
-    const savedOverride = localStorage.getItem(CMS_OVERRIDE_KEY);
-    if (savedOverride) {
+  catData = normalizeCatalogTreeNFC(catData);
+
+  // Đọc dữ liệu đã lưu từ IndexedDB (ưu tiên vì không giới hạn 5MB) hoặc LocalStorage
+  let savedOverride = await idbGet('cms_state', 'catalog_override');
+  if (!savedOverride) {
+    const rawLocal = localStorage.getItem(CMS_OVERRIDE_KEY);
+    if (rawLocal) {
       try {
-        catData = JSON.parse(savedOverride);
+        savedOverride = JSON.parse(rawLocal);
       } catch {
         // ignore
       }
     }
-  } else {
+  }
+
+  if (savedOverride && !adminState.isLocalBackend) {
+    savedOverride = normalizeCatalogTreeNFC(savedOverride);
+    // Giữ nguyên các sản phẩm/danh mục mới từ bản build tĩnh nhưng ưu tiên toàn bộ chỉnh sửa của Admin
+    const overrideProdMap = new Map(
+      (savedOverride.products || []).map((p) => [p.sku, p])
+    );
+    const mergedProducts = [];
+    const seenSkus = new Set();
+
+    // Giữ thứ tự và các mẫu mới thêm trong savedOverride
+    for (const p of savedOverride.products || []) {
+      if (p && p.sku) {
+        mergedProducts.push(p);
+        seenSkus.add(p.sku);
+      }
+    }
+    // Nếu có sản phẩm nào trong static chưa có và chưa bị xoá chủ đích
+    const deletedSkus = new Set(savedOverride._deletedPatternSkus || []);
+    for (const staticProd of catData.products || []) {
+      if (staticProd && staticProd.sku && !seenSkus.has(staticProd.sku) && !deletedSkus.has(staticProd.sku)) {
+        mergedProducts.push(staticProd);
+      } else if (staticProd && staticProd.sku && overrideProdMap.has(staticProd.sku)) {
+        // Nếu bản lưu cũ bị lỗi đường dẫn NFD hoặc thiếu ảnh gốc, tự động đồng bộ đường dẫn NFC chuẩn nếu chưa sửa ảnh
+        const cur = overrideProdMap.get(staticProd.sku);
+        if (!cur._editedAt) {
+          cur.images = staticProd.images;
+          cur.pdfFiles = staticProd.pdfFiles;
+          cur.pdfFileNames = staticProd.pdfFileNames;
+        }
+      }
+    }
+
+    catData = {
+      ...catData,
+      ...savedOverride,
+      products: mergedProducts
+    };
+  } else if (adminState.isLocalBackend) {
+    idbSet('cms_state', 'catalog_override', catData);
     try {
       localStorage.setItem(CMS_OVERRIDE_KEY, JSON.stringify(catData));
     } catch {
       // ignore
     }
-  }
-
-  try {
-    const admRes = await fetch('/api/admin-data');
-    if (admRes.ok) {
-      admData = await admRes.json();
-    }
-  } catch {
-    // ignore on static host
   }
 
   // Gộp thêm đơn hàng lưu trên trình duyệt (nếu có)
@@ -715,7 +850,7 @@ function renderPatternsTable() {
     .map((p) => {
       const vMap = {};
       for (const v of p.variants || []) vMap[v.id] = v.price;
-      const thumb = encodeURI((p.images && p.images[0]) || '/assets/tools/pattern-placeholder.svg');
+      const thumb = safeMediaUrl((p.images && p.images[0]) || p.primaryImage || '/assets/tools/pattern-placeholder.svg');
       const checked = adminState.selectedPatternSkus.has(p.sku) ? 'checked' : '';
 
       return `
@@ -724,7 +859,7 @@ function renderPatternsTable() {
             <input type="checkbox" class="chk-row pat-row-chk" data-check-sku="${p.sku}" ${checked} />
           </td>
           <td>
-            <img src="${thumb}" alt="${p.sku}" style="width:50px; height:50px; object-fit:cover; border-radius:6px; border:1px solid var(--border-soft);" />
+            <img src="${thumb}" alt="${p.sku}" onerror="this.onerror=null;this.src='/assets/tools/pattern-placeholder.svg';" style="width:50px; height:50px; object-fit:cover; border-radius:6px; border:1px solid var(--border-soft);" />
           </td>
           <td>
             <strong style="color:var(--bg-saddle);">${p.sku}</strong>
@@ -794,7 +929,7 @@ function renderToolsTable() {
 
   tbody.innerHTML = filtered
     .map((a) => {
-      const thumb = encodeURI((a.images && a.images[0]) || '/assets/tools/tool-1.svg');
+      const thumb = safeMediaUrl((a.images && a.images[0]) || '/assets/tools/tool-1.svg', '/assets/tools/tool-1.svg');
       const checked = adminState.selectedToolIds.has(a.id) ? 'checked' : '';
       const vName = inferItemVendorName(a);
       return `
@@ -803,7 +938,7 @@ function renderToolsTable() {
           <input type="checkbox" class="chk-row tool-row-chk" data-check-tool="${a.id}" ${checked} />
         </td>
         <td>
-          <img src="${thumb}" alt="${a.sku}" style="width:52px; height:52px; object-fit:cover; border-radius:6px; border:1px solid var(--border-soft);" />
+          <img src="${thumb}" alt="${a.sku}" onerror="this.onerror=null;this.src='/assets/tools/tool-1.svg';" style="width:52px; height:52px; object-fit:cover; border-radius:6px; border:1px solid var(--border-soft);" />
         </td>
         <td>
           <strong>${a.sku}</strong>
@@ -1232,64 +1367,149 @@ function updateVietQrPreview() {
   document.getElementById('previewVietQrText').textContent = `${bankId} • STK: ${accountNo} (${accountName})`;
 }
 
+function compressImageDataUrl(rawDataUrl, maxDim = 1280, quality = 0.84) {
+  return new Promise((resolve) => {
+    if (!rawDataUrl || !rawDataUrl.startsWith('data:image/')) {
+      resolve(rawDataUrl);
+      return;
+    }
+    const img = new Image();
+    img.onload = () => {
+      try {
+        let w = img.naturalWidth || img.width;
+        let h = img.naturalHeight || img.height;
+        if (w > maxDim || h > maxDim) {
+          if (w >= h) {
+            h = Math.round((h * maxDim) / w);
+            w = maxDim;
+          } else {
+            w = Math.round((w * maxDim) / h);
+            h = maxDim;
+          }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, w, h);
+        ctx.drawImage(img, 0, 0, w, h);
+        const compressed = canvas.toDataURL('image/jpeg', quality);
+        resolve(compressed && compressed.length < rawDataUrl.length ? compressed : rawDataUrl);
+      } catch {
+        resolve(rawDataUrl);
+      }
+    };
+    img.onerror = () => resolve(rawDataUrl);
+    img.src = rawDataUrl;
+  });
+}
+
 async function handleImageFileUpload(fileInputEl, targetUrlInputEl, onSuccess) {
   const file = fileInputEl.files && fileInputEl.files[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = async () => {
-    const dataUrl = reader.result;
-    try {
-      const res = await fetch('/api/upload-image', {
-        method: 'POST',
-        headers: getAuthHeaders(),
-        body: JSON.stringify({ fileName: file.name, dataUrl })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        const uploaded = data.url || data.imageUrl;
-        if (data.ok && uploaded) {
-          targetUrlInputEl.value = uploaded;
-          if (onSuccess) onSuccess(uploaded);
-          showToast('📷 Đã tải ảnh lên máy chủ thành công!');
-          return;
+    const rawDataUrl = reader.result;
+    const optimizedDataUrl = await compressImageDataUrl(rawDataUrl, 1280, 0.84);
+
+    if (adminState.isLocalBackend) {
+      try {
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          headers: getAuthHeaders(),
+          body: JSON.stringify({ fileName: file.name, dataUrl: optimizedDataUrl })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const uploaded = data.url || data.imageUrl;
+          if (data.ok && uploaded) {
+            const cleanUrl = typeof uploaded.normalize === 'function' ? uploaded.normalize('NFC') : uploaded;
+            targetUrlInputEl.value = cleanUrl;
+            if (onSuccess) onSuccess(cleanUrl, file.name);
+            showToast('📷 Đã tải & lưu ảnh lên máy chủ thành công!');
+            return;
+          }
         }
+      } catch {
+        // fallback to IndexedDB + DataURL
       }
-    } catch {
-      // fallback dataUrl
     }
-    targetUrlInputEl.value = dataUrl;
-    if (onSuccess) onSuccess(dataUrl);
-    showToast('📷 Đã nạp ảnh vào biểu mẫu!');
+
+    const cleanName = (typeof file.name.normalize === 'function' ? file.name.normalize('NFC') : file.name).replace(/\s+/g, '-');
+    const virtualPath = `/media/uploads/${Date.now()}-${cleanName}`;
+    await idbSet('uploaded_files', virtualPath, {
+      url: virtualPath,
+      fileName: file.name,
+      mimeType: 'image/jpeg',
+      sizeMB: Math.max(0.01, Math.round((optimizedDataUrl.length * 0.75) / 10485.76) / 100),
+      dataUrl: optimizedDataUrl,
+      updatedAt: Date.now()
+    });
+
+    targetUrlInputEl.value = optimizedDataUrl;
+    if (onSuccess) onSuccess(optimizedDataUrl, file.name);
+    showToast(`📷 Đã nạp & lưu ảnh "${file.name}" thành công!`);
   };
   reader.readAsDataURL(file);
 }
 
-async function handleGenericFileUpload(fileInputEl, targetUrlInputEl, label = 'file') {
+async function handleGenericFileUpload(fileInputEl, targetUrlInputEl, label = 'file', onSuccess) {
   const file = fileInputEl.files && fileInputEl.files[0];
   if (!file) return;
+  const sizeMB = Math.max(0.01, Math.round((file.size / (1024 * 1024)) * 100) / 100);
+  showToast(`⏳ Đang xử lý & lưu ${label} "${file.name}" (${sizeMB} MB)...`);
+
   const reader = new FileReader();
   reader.onload = async () => {
     const dataUrl = reader.result;
-    try {
-      const res = await fetch('/api/upload-file', {
-        method: 'POST',
-        headers: getAuthHeaders(),
-        body: JSON.stringify({ fileName: file.name, dataUrl })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        const uploaded = data.fileUrl || data.url;
-        if (data.ok && uploaded) {
-          targetUrlInputEl.value = uploaded;
-          showToast(`📁 Đã tải ${label} "${file.name}" lên máy chủ!`);
-          return;
+    const cleanFileName = typeof file.name.normalize === 'function' ? file.name.normalize('NFC') : file.name;
+
+    if (adminState.isLocalBackend) {
+      try {
+        const res = await fetch('/api/upload-file', {
+          method: 'POST',
+          headers: getAuthHeaders(),
+          body: JSON.stringify({ fileName: cleanFileName, dataUrl })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const uploaded = data.fileUrl || data.url;
+          if (data.ok && uploaded) {
+            const cleanUrl = typeof uploaded.normalize === 'function' ? uploaded.normalize('NFC') : uploaded;
+            targetUrlInputEl.value = cleanUrl;
+            await idbSet('uploaded_files', cleanUrl, {
+              url: cleanUrl,
+              fileName: cleanFileName,
+              mimeType: file.type || 'application/pdf',
+              sizeMB,
+              dataUrl,
+              updatedAt: Date.now()
+            });
+            if (onSuccess) onSuccess(cleanUrl, cleanFileName, sizeMB);
+            showToast(`📁 Đã tải & lưu ${label} "${cleanFileName}" (${sizeMB} MB) thành công!`);
+            return;
+          }
         }
+      } catch {
+        // fallback to IndexedDB
       }
-    } catch {
-      // fallback
     }
-    targetUrlInputEl.value = `/media/uploads/${file.name}`;
-    showToast(`📁 Đã nạp đường dẫn ${label}: ${file.name}!`);
+
+    const safeSlugName = cleanFileName.replace(/[^a-zA-Z0-9._\-\u00C0-\u1EF9 ]/g, '_');
+    const virtualUrl = `/media/uploads/${safeSlugName}`;
+    await idbSet('uploaded_files', virtualUrl, {
+      url: virtualUrl,
+      fileName: cleanFileName,
+      mimeType: file.type || 'application/pdf',
+      sizeMB,
+      dataUrl,
+      updatedAt: Date.now()
+    });
+
+    targetUrlInputEl.value = virtualUrl;
+    if (onSuccess) onSuccess(virtualUrl, cleanFileName, sizeMB);
+    showToast(`✅ Đã lưu ${label} "${cleanFileName}" (${sizeMB} MB) vào hệ thống!`);
   };
   reader.readAsDataURL(file);
 }
@@ -1478,16 +1698,19 @@ function bindAdminEvents() {
         }
         const pdfVar = (adminState.products[idx].variants || []).find((v) => v.id === 'pdf_dxf');
         adminState.products[idx].isFreePdf = Boolean(pdfVar && pdfVar.price === 0);
+        adminState.products[idx]._editedAt = Date.now();
       }
 
-      try {
-        await fetch(`/api/product/${encodeURIComponent(sku)}`, {
-          method: 'PUT',
-          headers: getAuthHeaders(),
-          body: JSON.stringify({ title, variantPrices })
-        });
-      } catch {
-        // offline fallback
+      if (adminState.isLocalBackend) {
+        try {
+          await fetch(`/api/product/${encodeURIComponent(sku)}`, {
+            method: 'PUT',
+            headers: getAuthHeaders(),
+            body: JSON.stringify({ title, variantPrices })
+          });
+        } catch {
+          // offline fallback
+        }
       }
 
       syncCatalogStatsAndPersistLocal();
@@ -1515,14 +1738,20 @@ function bindAdminEvents() {
 
       adminState.products = adminState.products.filter((p) => p.sku !== sku);
       adminState.selectedPatternSkus.delete(sku);
+      if (adminState.catalog) {
+        if (!Array.isArray(adminState.catalog._deletedPatternSkus)) adminState.catalog._deletedPatternSkus = [];
+        if (!adminState.catalog._deletedPatternSkus.includes(sku)) adminState.catalog._deletedPatternSkus.push(sku);
+      }
 
-      try {
-        await fetch(`/api/product/${encodeURIComponent(sku)}`, {
-          method: 'DELETE',
-          headers: getAuthHeaders()
-        });
-      } catch {
-        // offline fallback
+      if (adminState.isLocalBackend) {
+        try {
+          await fetch(`/api/product/${encodeURIComponent(sku)}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+          });
+        } catch {
+          // offline fallback
+        }
       }
 
       syncCatalogStatsAndPersistLocal();
@@ -1547,15 +1776,23 @@ function bindAdminEvents() {
     const skuSet = new Set(skus);
     adminState.products = adminState.products.filter((p) => !skuSet.has(p.sku));
     adminState.selectedPatternSkus.clear();
+    if (adminState.catalog) {
+      if (!Array.isArray(adminState.catalog._deletedPatternSkus)) adminState.catalog._deletedPatternSkus = [];
+      for (const s of skus) {
+        if (!adminState.catalog._deletedPatternSkus.includes(s)) adminState.catalog._deletedPatternSkus.push(s);
+      }
+    }
 
-    try {
-      await fetch('/api/products/bulk-delete', {
-        method: 'POST',
-        headers: getAuthHeaders(),
-        body: JSON.stringify({ skus })
-      });
-    } catch {
-      // offline fallback
+    if (adminState.isLocalBackend) {
+      try {
+        await fetch('/api/products/bulk-delete', {
+          method: 'POST',
+          headers: getAuthHeaders(),
+          body: JSON.stringify({ skus })
+        });
+      } catch {
+        // offline fallback
+      }
     }
 
     syncCatalogStatsAndPersistLocal();
@@ -1568,7 +1805,67 @@ function bindAdminEvents() {
   // Mở / Đóng Modal Thêm / Chỉnh Sửa Mẫu Rập
   const addPatModal = document.getElementById('addPatternModal');
 
+  function clearPatternUploadStatuses() {
+    for (const id of ['newPatImgStatus', 'newPatPdfStatus', 'newPatCadStatus']) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.display = 'none';
+        el.textContent = '';
+      }
+    }
+  }
+
+  function showPatternUploadStatus(id, msg) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+  }
+
+  function autoSaveOpenPatternMedia(statusId, statusLabel) {
+    const editSku = (document.getElementById('editPatternSku')?.value || '').trim();
+    if (!editSku) return;
+    const p = adminState.products.find((prod) => prod.sku === editSku);
+    if (!p) return;
+
+    const primaryImg = (document.getElementById('newPatImageUrl')?.value || '').trim() || '/assets/tools/pattern-placeholder.svg';
+    const moreImgs = (document.getElementById('newPatMoreImages')?.value || '')
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const images = [primaryImg, ...moreImgs].filter(Boolean);
+
+    const pdfInputEl = document.getElementById('newPatPdfUrl');
+    const cadInputEl = document.getElementById('newPatCadUrl');
+    const pdfDownloadUrl = (pdfInputEl?.value || '').trim();
+    const cadDownloadUrl = (cadInputEl?.value || '').trim();
+    const pdfFiles = pdfDownloadUrl ? [pdfDownloadUrl] : [];
+    const cadFiles = cadDownloadUrl ? [cadDownloadUrl] : [];
+
+    p.images = images;
+    p.primaryImage = images[0] || '/assets/tools/pattern-placeholder.svg';
+    p.imageCount = images.length;
+    p.pdfFiles = pdfFiles;
+    p.pdfFileNames = pdfFiles.map((f) => String(f).split('/').pop() || 'ban-ve.pdf');
+    p.pdfCount = pdfFiles.length;
+    if (pdfInputEl && pdfInputEl.dataset.uploadedSizeMb) {
+      const sz = Number(pdfInputEl.dataset.uploadedSizeMb);
+      if (sz > 0) p.fileSizeMB = sz;
+    }
+    p.cadFiles = cadFiles;
+    p.cadCount = cadFiles.length;
+    p._editedAt = Date.now();
+
+    syncCatalogStatsAndPersistLocal();
+    renderPatternsTable();
+    if (statusId && statusLabel) {
+      showPatternUploadStatus(statusId, `✅ Đã tự động lưu ${statusLabel} cho mẫu [${editSku}]! Bạn có thể đóng cửa sổ hoặc bấm Lưu.`);
+    }
+  }
+
   function openEditPatternModal(p) {
+    clearPatternUploadStatuses();
     document.getElementById('patternModalHeading').textContent = `✏️ Chỉnh Sửa Chi Tiết Mẫu Rập [${p.sku}]`;
     document.getElementById('editPatternSku').value = p.sku;
     document.getElementById('newPatTitle').value = p.title || '';
@@ -1594,25 +1891,36 @@ function bindAdminEvents() {
     document.getElementById('newPatPriceMica').value = vMap.rap_mica ?? 135000;
     document.getElementById('newPatPriceDie').value = vMap.khuon_be ?? 450000;
 
-    const firstImg = (p.images && p.images[0]) || '';
+    const firstImg = (p.images && p.images[0]) || p.primaryImage || '';
     document.getElementById('newPatImageUrl').value = firstImg;
     const preview = document.getElementById('newPatImgPreview');
-    if (preview) preview.src = firstImg || '/assets/tools/pattern-placeholder.svg';
+    if (preview) preview.src = safeMediaUrl(firstImg);
 
     const moreImages = (p.images || []).slice(1);
     document.getElementById('newPatMoreImages').value = moreImages.join('\n');
 
-    document.getElementById('newPatPdfUrl').value = (p.pdfFiles && p.pdfFiles[0]) || '';
-    document.getElementById('newPatCadUrl').value = (p.cadFiles && p.cadFiles[0]) || '';
+    const pdfUrlInput = document.getElementById('newPatPdfUrl');
+    if (pdfUrlInput) {
+      pdfUrlInput.value = (p.pdfFiles && p.pdfFiles[0]) || '';
+      delete pdfUrlInput.dataset.uploadedSizeMb;
+    }
+    const cadUrlInput = document.getElementById('newPatCadUrl');
+    if (cadUrlInput) {
+      cadUrlInput.value = (p.cadFiles && p.cadFiles[0]) || '';
+      delete cadUrlInput.dataset.uploadedSizeMb;
+    }
     document.getElementById('newPatDescription').value = p.description || '';
 
     const submitBtn = document.getElementById('submitPatternBtn');
     if (submitBtn) submitBtn.textContent = `💾 Lưu Thay Đổi Mẫu Rập [${p.sku}]`;
+    const topSubmitBtn = document.getElementById('topSubmitPatternBtn');
+    if (topSubmitBtn) topSubmitBtn.textContent = `💾 Lưu Ngay [${p.sku}]`;
 
     addPatModal.classList.remove('hidden');
   }
 
   document.getElementById('btnOpenAddPatternModal').addEventListener('click', () => {
+    clearPatternUploadStatuses();
     document.getElementById('patternModalHeading').textContent = '➕ Thêm Mẫu Rập Đồ Da Mới';
     document.getElementById('editPatternSku').value = '';
     document.getElementById('addPatternForm').reset();
@@ -1623,6 +1931,8 @@ function bindAdminEvents() {
     if (preview) preview.src = '/assets/tools/pattern-placeholder.svg';
     const submitBtn = document.getElementById('submitPatternBtn');
     if (submitBtn) submitBtn.textContent = '💾 Tạo Mẫu Rập Mới';
+    const topSubmitBtn = document.getElementById('topSubmitPatternBtn');
+    if (topSubmitBtn) topSubmitBtn.textContent = '💾 Tạo Ngay';
     addPatModal.classList.remove('hidden');
   });
 
@@ -1633,28 +1943,76 @@ function bindAdminEvents() {
   document.getElementById('newPatImageFile').addEventListener('change', (e) => {
     handleImageFileUpload(e.target, document.getElementById('newPatImageUrl'), (uploaded) => {
       const prev = document.getElementById('newPatImgPreview');
-      if (prev) prev.src = uploaded;
+      if (prev) prev.src = safeMediaUrl(uploaded);
+      autoSaveOpenPatternMedia('newPatImgStatus', 'ảnh đại diện mới');
     });
   });
 
+  const moreImgFileInput = document.getElementById('newPatMoreImageFile');
+  if (moreImgFileInput) {
+    moreImgFileInput.addEventListener('change', async (e) => {
+      const files = Array.from(e.target.files || []);
+      if (!files.length) return;
+      const textarea = document.getElementById('newPatMoreImages');
+      const existing = (textarea.value || '')
+        .split('\n')
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+      for (const file of files) {
+        await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = async (ev) => {
+            const compressed = await compressImageDataUrl(ev.target.result);
+            existing.push(compressed);
+            resolve();
+          };
+          reader.onerror = () => resolve();
+          reader.readAsDataURL(file);
+        });
+      }
+      textarea.value = existing.join('\n');
+      e.target.value = '';
+      autoSaveOpenPatternMedia('newPatImgStatus', `${files.length} ảnh phụ thư viện`);
+      showToast(`📷 Đã thêm và lưu ${files.length} ảnh phụ vào thư viện!`);
+    });
+  }
+
   document.getElementById('newPatImageUrl').addEventListener('input', (e) => {
     const prev = document.getElementById('newPatImgPreview');
-    if (prev) prev.src = e.target.value.trim() || '/assets/tools/pattern-placeholder.svg';
+    if (prev) prev.src = safeMediaUrl(e.target.value.trim());
+    autoSaveOpenPatternMedia('newPatImgStatus', 'đường dẫn ảnh đại diện');
+  });
+
+  document.getElementById('newPatMoreImages').addEventListener('change', () => {
+    autoSaveOpenPatternMedia('newPatImgStatus', 'thư viện ảnh phụ');
   });
 
   const pdfFileInput = document.getElementById('newPatPdfFile');
   if (pdfFileInput) {
     pdfFileInput.addEventListener('change', (e) => {
-      handleGenericFileUpload(e.target, document.getElementById('newPatPdfUrl'), 'file PDF');
+      handleGenericFileUpload(e.target, document.getElementById('newPatPdfUrl'), 'file PDF', () => {
+        autoSaveOpenPatternMedia('newPatPdfStatus', 'file PDF rập mới');
+      });
     });
   }
+
+  document.getElementById('newPatPdfUrl').addEventListener('change', () => {
+    autoSaveOpenPatternMedia('newPatPdfStatus', 'đường dẫn file PDF');
+  });
 
   const cadFileInput = document.getElementById('newPatCadFile');
   if (cadFileInput) {
     cadFileInput.addEventListener('change', (e) => {
-      handleGenericFileUpload(e.target, document.getElementById('newPatCadUrl'), 'file CAD/DXF');
+      handleGenericFileUpload(e.target, document.getElementById('newPatCadUrl'), 'file CAD/DXF', () => {
+        autoSaveOpenPatternMedia('newPatCadStatus', 'file CAD/DXF mới');
+      });
     });
   }
+
+  document.getElementById('newPatCadUrl').addEventListener('change', () => {
+    autoSaveOpenPatternMedia('newPatCadStatus', 'đường dẫn file CAD/DXF');
+  });
 
   document.getElementById('addPatternForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1685,7 +2043,8 @@ function bindAdminEvents() {
       .filter(Boolean);
     const images = [primaryImg, ...moreImgs].filter(Boolean);
 
-    const pdfDownloadUrl = document.getElementById('newPatPdfUrl').value.trim();
+    const pdfInputEl = document.getElementById('newPatPdfUrl');
+    const pdfDownloadUrl = pdfInputEl.value.trim();
     const cadDownloadUrl = document.getElementById('newPatCadUrl').value.trim();
     const pdfFiles = pdfDownloadUrl ? [pdfDownloadUrl] : [];
     const cadFiles = cadDownloadUrl ? [cadDownloadUrl] : [];
@@ -1708,11 +2067,18 @@ function bindAdminEvents() {
         p.difficulty = difficulty;
         p.description = description;
         p.images = images;
+        p.primaryImage = images[0] || '/assets/tools/pattern-placeholder.svg';
         p.imageCount = images.length;
         p.pdfFiles = pdfFiles;
+        p.pdfFileNames = pdfFiles.map((f) => String(f).split('/').pop() || 'ban-ve.pdf');
         p.pdfCount = pdfFiles.length;
+        if (pdfInputEl && pdfInputEl.dataset.uploadedSizeMb) {
+          const sz = Number(pdfInputEl.dataset.uploadedSizeMb);
+          if (sz > 0) p.fileSizeMB = sz;
+        }
         p.cadFiles = cadFiles;
         p.cadCount = cadFiles.length;
+        p._editedAt = Date.now();
 
         const catObj = adminState.categories.find((c) => c.key === categoryKey);
         if (catObj) {
@@ -1731,27 +2097,29 @@ function bindAdminEvents() {
         p.isFreePdf = variantPrices.pdf_dxf === 0;
       }
 
-      try {
-        await fetch(`/api/product/${encodeURIComponent(editSku)}`, {
-          method: 'PUT',
-          headers: getAuthHeaders(),
-          body: JSON.stringify({
-            title,
-            categoryKey,
-            paperSizes,
-            leatherThickness,
-            chiselPitch,
-            leatherEstimate,
-            difficulty,
-            description,
-            images,
-            pdfFiles,
-            cadFiles,
-            variantPrices
-          })
-        });
-      } catch {
-        // offline fallback
+      if (adminState.isLocalBackend) {
+        try {
+          await fetch(`/api/product/${encodeURIComponent(editSku)}`, {
+            method: 'PUT',
+            headers: getAuthHeaders(),
+            body: JSON.stringify({
+              title,
+              categoryKey,
+              paperSizes,
+              leatherThickness,
+              chiselPitch,
+              leatherEstimate,
+              difficulty,
+              description,
+              images,
+              pdfFiles,
+              cadFiles,
+              variantPrices
+            })
+          });
+        } catch {
+          // offline fallback
+        }
       }
 
       syncCatalogStatsAndPersistLocal();
