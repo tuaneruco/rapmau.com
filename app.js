@@ -870,9 +870,13 @@ function renderProducts() {
                 <button type="button" class="btn-sm btn-detail" data-action="detail" data-sku="${p.sku}">
                   Chi tiết
                 </button>
-                <button type="button" class="btn-sm btn-add" data-action="add-cart" data-sku="${p.sku}" data-var="${activeVar.id}">
-                  ${isFree ? '⬇ Tải Free' : '+ Chọn mua'}
-                </button>
+                ${
+                  isFree
+                    ? `<button type="button" class="btn-sm btn-add" data-action="add-cart" data-sku="${p.sku}" data-var="${activeVar.id}">⬇ Tải Free</button>`
+                    : Number(activeVar.price) <= 0
+                      ? `<button type="button" class="btn-sm btn-add" data-action="quick-rfq" data-sku="${p.sku}" data-var="${activeVar.id}">📩 Báo giá nhanh</button>`
+                      : `<button type="button" class="btn-sm btn-add" data-action="add-cart" data-sku="${p.sku}" data-var="${activeVar.id}">+ Chọn mua</button>`
+                }
               </div>
             </div>
           </div>
@@ -1335,15 +1339,13 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
         </div>
 
         <div class="detail-cta-row">
-          <button
-            type="button"
-            class="btn btn-primary detail-buy-btn"
-            data-action="add-cart-modal"
-            data-sku="${product.sku}"
-            data-var="${activeVar.id}"
-          >
-            ${isFreePdf ? '⬇ Tải File PDF Miễn Phí Ngay' : `🛒 Đặt Mua ${activeVar.shortLabel} Ngay`}
-          </button>
+          ${
+            isFreePdf
+              ? `<button type="button" class="btn btn-primary detail-buy-btn" data-action="add-cart-modal" data-sku="${product.sku}" data-var="${activeVar.id}">⬇ Tải File PDF Miễn Phí Ngay</button>`
+              : Number(activeVar.price) <= 0
+                ? `<button type="button" class="btn btn-primary detail-buy-btn" data-action="quick-rfq-modal" data-sku="${product.sku}" data-var="${activeVar.id}">📩 Yêu Cầu Báo Giá Nhanh (${activeVar.shortLabel})</button>`
+                : `<button type="button" class="btn btn-primary detail-buy-btn" data-action="add-cart-modal" data-sku="${product.sku}" data-var="${activeVar.id}">🛒 Đặt Mua ${activeVar.shortLabel} Ngay</button>`
+          }
           <button
             type="button"
             class="btn btn-secondary detail-ask-btn"
@@ -1768,9 +1770,151 @@ function openInstantFreeDownloadModal(product) {
 
   backdrop.classList.remove('hidden');
   const pBtn = document.getElementById('upsellPaperBtn');
-  if (pBtn) pBtn.onclick = () => addPatternToCart(product.sku, 'rap_giay');
+  if (pBtn) pBtn.onclick = () => {
+    document.getElementById('cartModalBackdrop').classList.add('hidden');
+    openQuickQuoteModal(product.sku, 'rap_giay');
+  };
   const mBtn = document.getElementById('upsellMicaBtn');
-  if (mBtn) mBtn.onclick = () => addPatternToCart(product.sku, 'rap_mica');
+  if (mBtn) mBtn.onclick = () => {
+    document.getElementById('cartModalBackdrop').classList.add('hidden');
+    openQuickQuoteModal(product.sku, 'rap_mica');
+  };
+}
+
+const MOLD_TYPE_LABELS = {
+  khuon_be: 'Khuôn Bế Thép (Dao Nhật / Đế ván hoặc Mica)',
+  rap_giay: 'Khuôn Sắt Chuẩn Xưởng 1:1',
+  rap_mica: 'Khuôn Mica (Rập Mica Trong 2mm / 3mm)',
+  in_3d: 'Khuôn In 3D (Form Định Hình / Cữ May / Ép Nổi)',
+  in_logo: 'Khuôn In Logo (Dấu Đồng / Ép Nhiệt / Ép Nhũ)'
+};
+
+function openQuickQuoteModal(sku = '', moldType = 'khuon_be') {
+  const product = sku ? state.products.find((p) => p.sku === sku) : null;
+  const backdrop = document.getElementById('cartModalBackdrop');
+  const content = document.getElementById('cartModalContent');
+  const selectedType = MOLD_TYPE_LABELS[moldType] ? moldType : 'khuon_be';
+  const skuDisplay = product ? `${product.sku} — ${product.title}` : sku || '';
+
+  content.innerHTML = `
+    <h2 style="color:var(--bg-saddle); margin-bottom:6px;">📩 Yêu Cầu Báo Giá Nhanh (RFQ)</h2>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px;">
+      Phiếu thông số được gửi trực tiếp tới điều phối viên &amp; nhà cung cấp khu vực gần bạn qua <strong>info@rapmau.com</strong>.
+    </p>
+
+    <form id="quickRfqForm" style="display:flex; flex-direction:column; gap:10px;">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Mã rập mẫu (SKU) / Tên sản phẩm</label>
+          <input type="text" id="rfqSkuInput" value="${String(skuDisplay).replace(/"/g, '&quot;')}" placeholder="VD: RM-VI-061 (hoặc để trống nếu đặt mẫu/logo riêng)" />
+        </div>
+        <div class="form-field">
+          <label>Loại khuôn gia công *</label>
+          <select id="rfqMoldType" required>
+            ${Object.entries(MOLD_TYPE_LABELS)
+              .map(([k, label]) => `<option value="${k}" ${k === selectedType ? 'selected' : ''}>${label}</option>`)
+              .join('')}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label>Họ tên / Tên Xưởng *</label>
+          <input type="text" id="rfqCustomerName" required placeholder="VD: Anh Tuấn / Xưởng Da..." />
+        </div>
+        <div class="form-field">
+          <label>SĐT / Zalo hoặc Email nhận báo giá *</label>
+          <input type="text" id="rfqCustomerContact" required placeholder="VD: 09xx... hoặc email@domain.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label>Tỉnh / Thành phố nhận hàng *</label>
+          <input type="text" id="rfqCity" required placeholder="VD: TP.HCM, Hà Nội, Đà Nẵng..." />
+        </div>
+        <div class="form-field">
+          <label>Số lượng dự kiến</label>
+          <input type="text" id="rfqQty" value="1 bộ" placeholder="VD: 1 bộ, 5 cái..." />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label>Ghi chú kỹ thuật (Độ dày mica/thép, có đục lỗ sẵn, kích thước logo cm, link file STL/AI...)</label>
+        <textarea id="rfqNote" rows="2" placeholder="VD: Cắt rập mica 2mm khắc mã chi tiết, hoặc làm dấu đồng logo 3x3cm gắn máy ép nhiệt..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full">📩 Gửi Yêu Cầu Báo Giá Ngay</button>
+    </form>
+  `;
+
+  backdrop.classList.remove('hidden');
+
+  const form = document.getElementById('quickRfqForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const rfqSku = document.getElementById('rfqSkuInput').value.trim() || 'Đặt gia công riêng';
+      const rfqTypeKey = document.getElementById('rfqMoldType').value;
+      const rfqTypeLabel = MOLD_TYPE_LABELS[rfqTypeKey] || rfqTypeKey;
+      const name = document.getElementById('rfqCustomerName').value.trim();
+      const contact = document.getElementById('rfqCustomerContact').value.trim();
+      const city = document.getElementById('rfqCity').value.trim();
+      const qty = document.getElementById('rfqQty').value.trim() || '1 bộ';
+      const note = document.getElementById('rfqNote').value.trim();
+      const rfqCode = 'RFQ-' + Date.now().toString(36).toUpperCase();
+
+      const orders = JSON.parse(localStorage.getItem('rapmau_orders') || '[]');
+      orders.unshift({
+        orderCode: rfqCode,
+        createdAt: new Date().toISOString(),
+        customer: { name, phone: contact, address: city, note: `[${rfqTypeLabel}] ${rfqSku} (${qty}) - ${note}` },
+        paymentMethod: 'rfq',
+        totalAmount: 0,
+        items: [{ sku: rfqSku, title: rfqTypeLabel, variantName: qty, qty: 1, price: 0 }],
+        status: 'pending_quote'
+      });
+      localStorage.setItem('rapmau_orders', JSON.stringify(orders.slice(0, 50)));
+
+      if (typeof window.rapmauGoogleFormSubmit === 'function') {
+        window.rapmauGoogleFormSubmit({
+          type: 'RFQ_BAO_GIA',
+          code: rfqCode,
+          name,
+          contact,
+          city,
+          sku: rfqSku,
+          moldType: rfqTypeLabel,
+          qty,
+          note
+        });
+      }
+
+      const mailSubject = encodeURIComponent(`[BÁO GIÁ NHANH ${rfqCode}] ${rfqTypeLabel} - ${rfqSku}`);
+      const mailBody = encodeURIComponent(
+        `Mã phiếu: ${rfqCode}\nMẫu/SKU: ${rfqSku}\nLoại khuôn: ${rfqTypeLabel}\nSố lượng: ${qty}\nKhách hàng: ${name}\nLiên hệ: ${contact}\nKhu vực: ${city}\nGhi chú: ${note}`
+      );
+
+      content.innerHTML = `
+        <div style="text-align:center; padding:14px 6px;">
+          <div style="font-size:40px; margin-bottom:8px;">✅</div>
+          <h3 style="color:var(--accent-green); margin-bottom:6px;">Đã Ghi Nhận Yêu Cầu Báo Giá (${rfqCode})</h3>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:14px;">
+            Thông tin <strong>${rfqTypeLabel}</strong> (${rfqSku}) tại <strong>${city}</strong> đã được lưu để điều phối tới nhà cung cấp phù hợp.
+          </p>
+          <a href="mailto:info@rapmau.com?subject=${mailSubject}&body=${mailBody}" class="btn btn-primary" style="text-decoration:none; display:inline-block; margin-bottom:10px;">
+            ✉️ Gửi Kèm File Logo / STL Qua info@rapmau.com
+          </a>
+          <div>
+            <button type="button" class="btn btn-secondary btn-sm" id="closeRfqDoneBtn">Đóng</button>
+          </div>
+        </div>
+      `;
+      const closeDone = document.getElementById('closeRfqDoneBtn');
+      if (closeDone) closeDone.onclick = () => backdrop.classList.add('hidden');
+    });
+  }
 }
 
 function openCartModal() {
@@ -2917,7 +3061,17 @@ function bindEvents() {
       }
     } else if (action === 'add-cart') {
       addPatternToCart(sku, btn.dataset.var);
+    } else if (action === 'quick-rfq') {
+      openQuickQuoteModal(sku, btn.dataset.var);
     }
+  });
+
+  // Sự kiện mở Modal Yêu Cầu Báo Giá Nhanh (RFQ) từ các thẻ gia công khuôn
+  document.addEventListener('click', (e) => {
+    const rfqTrigger = e.target.closest('[data-open-rfq]');
+    if (!rfqTrigger) return;
+    e.preventDefault();
+    openQuickQuoteModal(rfqTrigger.dataset.sku || '', rfqTrigger.dataset.openRfq || 'khuon_be');
   });
 
   // Sự kiện uỷ quyền trên lưới Dụng cụ & Phụ kiện
@@ -2938,6 +3092,9 @@ function bindEvents() {
     if (btn.dataset.action === 'add-cart-modal') {
       document.getElementById('productModalBackdrop').classList.add('hidden');
       addPatternToCart(btn.dataset.sku, btn.dataset.var);
+    } else if (btn.dataset.action === 'quick-rfq-modal') {
+      document.getElementById('productModalBackdrop').classList.add('hidden');
+      openQuickQuoteModal(btn.dataset.sku, btn.dataset.var);
     } else if (btn.dataset.action === 'add-tool') {
       addToolToCart(btn.dataset.id);
     }
