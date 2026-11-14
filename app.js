@@ -34,7 +34,7 @@ const state = {
 
 const VARIANT_LABELS = {
   pdf_dxf: 'File PDF / DXF (Tải ngay 1:1)',
-  rap_giay: 'Rập Giấy Cứng 350gsm (Cắt máy sẵn)',
+  rap_giay: 'Khuôn Sắt Chuẩn Xưởng 1:1',
   rap_mica: 'Rập Mica Trong 2mm (Cắt Laser CNC)',
   khuon_be: 'Khuôn Bế Thép (Đặt theo mẫu)'
 };
@@ -42,6 +42,15 @@ const VARIANT_LABELS = {
 function formatVND(amount) {
   if (amount === 0) return 'Miễn phí (0đ)';
   return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
+}
+
+function formatVariantPrice(variant) {
+  if (!variant) return 'Miễn phí (0đ)';
+  const amount = Number(variant.price) || 0;
+  if (variant.id === 'rap_giay' || variant.id === 'rap_mica' || variant.id === 'khuon_be') {
+    return amount > 0 ? formatVND(amount) : 'Giá liên hệ';
+  }
+  return formatVND(amount);
 }
 
 function safeMediaUrl(rawUrl, fallback = '/assets/tools/pattern-placeholder.svg') {
@@ -336,12 +345,12 @@ async function initApp() {
 }
 
 const DEFAULT_SEO = {
-  title: 'RAPMAU.COM — Rập Mẫu Đồ Da PDF/DXF, Rập Giấy, Rập Mica, Khuôn Bế & Dụng Cụ Làm Đồ Da',
+  title: 'RAPMAU.COM — Rập Mẫu Đồ Da PDF/DXF, Khuôn Sắt, Rập Mica, Khuôn Bế & Dụng Cụ Làm Đồ Da',
   description:
     'Kho kiến thức nghề da, rập PDF/DXF tỷ lệ 1:1 miễn phí, công cụ chế tác và diễn đàn kỹ thuật đồ da. Kết nối xưởng gia công, nhà cung cấp & khách hàng B2B qua Email: info@rapmau.com.',
   canonical: 'https://www.rapmau.com/',
   h1Html:
-    'Chọn <span class="text-accent">rập PDF/DXF</span>, <span class="text-accent">rập giấy</span>, <span class="text-accent">rập mica</span> hoặc <span class="text-accent">khuôn theo mẫu</span>'
+    'Chọn <span class="text-accent">rập PDF/DXF</span>, <span class="text-accent">khuôn sắt</span>, <span class="text-accent">rập mica</span> hoặc <span class="text-accent">khuôn theo mẫu</span>'
 };
 
 function setDocumentMeta({ title, description, canonical, h1Text, jsonLd }) {
@@ -392,7 +401,7 @@ function buildProductJsonLd(product) {
     sku: product.sku,
     mpn: product.sku,
     image: [imgUrl],
-    description: `${product.title} chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}). Độ dày da khuyên dùng: ${product.leatherThickness}, bước đục: ${product.chiselPitch}. Cung cấp đủ 4 phiên bản: File PDF/DXF, Rập Giấy 350gsm, Rập Mica 2mm và Khuôn Bế Thép tại www.rapmau.com.`,
+    description: `${product.title} chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}). Độ dày da khuyên dùng: ${product.leatherThickness}, bước đục: ${product.chiselPitch}. Cung cấp đủ 4 phiên bản: File PDF/DXF, Khuôn Sắt, Rập Mica 2mm và Khuôn Bế Thép tại www.rapmau.com.`,
     brand: {
       '@type': 'Brand',
       name: 'RAPMAU.COM'
@@ -426,7 +435,7 @@ function buildCategoryJsonLd(catObj, catProducts) {
     '@type': 'CollectionPage',
     name: `${catObj.name} (${catObj.count} mẫu chuẩn 1:1)`,
     url: catUrl,
-    description: `Tuyển tập ${catObj.count} mẫu ${catObj.name.toLowerCase()} chuẩn tỷ lệ 1:1 tại www.rapmau.com: tải file PDF/DXF hoặc đặt cắt Rập Giấy 350gsm, Rập Mica 2mm và Khuôn Bế Thép.`,
+    description: `Tuyển tập ${catObj.count} mẫu ${catObj.name.toLowerCase()} chuẩn tỷ lệ 1:1 tại www.rapmau.com: tải file PDF/DXF hoặc đặt cắt Khuôn Sắt, Rập Mica 2mm và Khuôn Bế Thép.`,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: catProducts.length,
@@ -463,8 +472,8 @@ function syncCategorySeoAndUrl(catKey, { pushUrl = true } = {}) {
   }
   const catProducts = state.products.filter((p) => p.categoryKey === catObj.key);
   setDocumentMeta({
-    title: `${catObj.name} — ${catObj.count} Mẫu Rập PDF/DXF, Rập Giấy, Rập Mica 1:1 | RAPMAU.COM`,
-    description: `Chọn ngay ${catObj.count} mẫu ${catObj.name} chuẩn tỷ lệ 1:1: tải file PDF/DXF miễn phí 24/7, đặt cắt CNC Rập Giấy 350gsm, Rập Mica 2mm hoặc Khuôn Bế Thép. Kết nối xưởng & nhà cung cấp qua Email: info@rapmau.com.`,
+    title: `${catObj.name} — ${catObj.count} Mẫu Rập PDF/DXF, Khuôn Sắt, Rập Mica 1:1 | RAPMAU.COM`,
+    description: `Chọn ngay ${catObj.count} mẫu ${catObj.name} chuẩn tỷ lệ 1:1: tải file PDF/DXF miễn phí 24/7, đặt cắt CNC Khuôn Sắt, Rập Mica 2mm hoặc Khuôn Bế Thép. Kết nối xưởng & nhà cung cấp qua Email: info@rapmau.com.`,
     canonical: `https://www.rapmau.com${targetPath}`,
     h1Text: `${catObj.name} (${catObj.count} Mẫu Chuẩn 1:1)`,
     jsonLd: buildCategoryJsonLd(catObj, catProducts)
@@ -845,7 +854,7 @@ function renderProducts() {
                   data-var="${v.id}"
                   title="${v.name}"
                 >
-                  ${v.id === 'pdf_dxf' ? 'PDF/DXF' : v.id === 'rap_giay' ? 'Rập Giấy' : v.id === 'rap_mica' ? 'Rập Mica' : 'Khuôn Bế'}
+                  ${v.id === 'pdf_dxf' ? 'PDF/DXF' : v.id === 'rap_giay' ? 'Khuôn Sắt' : v.id === 'rap_mica' ? 'Rập Mica' : 'Khuôn Bế'}
                 </button>
               `
                 )
@@ -854,7 +863,7 @@ function renderProducts() {
 
             <div class="card-footer">
               <div class="price-block">
-                <span class="price-current ${isFree ? 'is-free' : ''}">${formatVND(activeVar.price)}</span>
+                <span class="price-current ${isFree ? 'is-free' : ''}">${formatVariantPrice(activeVar)}</span>
                 <span class="price-variant-label">${activeVar.shortLabel} • ${activeVar.badge}</span>
               </div>
               <div class="card-actions">
@@ -1200,8 +1209,8 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
     window.history.pushState({ type: 'product', sku: product.sku }, '', targetProdPath);
   }
   setDocumentMeta({
-    title: `${product.title} — PDF/DXF, Rập Giấy, Rập Mica, Khuôn Bế | RAPMAU.COM`,
-    description: `Mua hoặc tải ${product.title} chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}, Đục ${product.chiselPitch}, Da ${product.leatherThickness}). Đủ 4 biến thể: File PDF/DXF, Rập Giấy 350gsm, Rập Mica 2mm & Khuôn Bế Thép.`,
+    title: `${product.title} — PDF/DXF, Khuôn Sắt, Rập Mica, Khuôn Bế | RAPMAU.COM`,
+    description: `Mua hoặc tải ${product.title} chuẩn tỷ lệ 1:1 (Khổ ${product.paperSizes.join('/')}, Đục ${product.chiselPitch}, Da ${product.leatherThickness}). Đủ 4 biến thể: File PDF/DXF, Khuôn Sắt, Rập Mica 2mm & Khuôn Bế Thép.`,
     canonical: `https://www.rapmau.com${targetProdPath}`,
     h1Text: product.title,
     jsonLd: buildProductJsonLd(product)
@@ -1291,9 +1300,9 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
           <div style="font-size:12px; color:var(--text-muted); font-weight:700;">GIÁ BIẾN THỂ ĐANG CHỌN (${activeVar.shortLabel.toUpperCase()}):</div>
           <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-top:4px;">
             <span style="font-size:28px; font-weight:900; color:${isFreePdf ? 'var(--accent-green)' : 'var(--accent-leather)'};">
-              ${formatVND(activeVar.price)}
+              ${formatVariantPrice(activeVar)}
             </span>
-            <del style="color:var(--text-muted); font-size:14px;">${formatVND(activeVar.originalPrice)}</del>
+            ${Number(activeVar.originalPrice) > 0 && Number(activeVar.price) > 0 ? `<del style="color:var(--text-muted); font-size:14px;">${formatVND(activeVar.originalPrice)}</del>` : ''}
             <span class="vm-badge" style="background:var(--bg-saddle); color:#fde68a;">${activeVar.badge}</span>
           </div>
           <p style="font-size:13px; color:var(--text-main); margin-top:6px;">${activeVar.description}</p>
@@ -1301,7 +1310,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
 
         <div>
           <label style="font-size:13px; font-weight:800; color:var(--bg-saddle);">
-            CHỌN HÌNH THỨC RẬP (PDF/DXF • RẬP GIẤY • RẬP MICA • KHUÔN BẾ):
+            CHỌN HÌNH THỨC RẬP (PDF/DXF • KHUÔN SẮT • RẬP MICA • KHUÔN BẾ):
           </label>
           <div class="detail-variant-list">
             ${product.variants
@@ -1315,7 +1324,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
               >
                 <div class="dvo-top">
                   <span>${v.shortLabel}</span>
-                  <span class="dvo-price">${formatVND(v.price)}</span>
+                  <span class="dvo-price">${formatVariantPrice(v)}</span>
                 </div>
                 <div class="dvo-lead">${v.leadTime}</div>
               </button>
@@ -1349,7 +1358,7 @@ function openProductModal(sku, preferredVariantId, { pushUrl = true, showAllThum
         <div class="detail-trust-box">
           <div>✅ <strong>Quyền thương mại:</strong> Được phép sản xuất &amp; bán thương mại sản phẩm đồ da hoàn thiện.</div>
           <div>🔄 <strong>Bảo hành chuẩn 1:1:</strong> Hỗ trợ kiểm tra, gửi lại file chuẩn 1:1 qua Email info@rapmau.com nếu có sai lệch tỷ lệ.</div>
-          <div>🚚 <strong>Giao hàng toàn quốc:</strong> Được kiểm tra Rập Giấy 350gsm / Rập Mica 2mm trước khi thanh toán.</div>
+          <div>🚚 <strong>Giao hàng toàn quốc:</strong> Được kiểm tra Khuôn Sắt / Rập Mica 2mm trước khi thanh toán.</div>
         </div>
 
         <table class="specs-table">
@@ -1743,11 +1752,11 @@ function openInstantFreeDownloadModal(product) {
       <div style="background:var(--bg-warm); padding:14px; border-radius:10px; text-align:left; font-size:13.5px; margin-bottom:18px;">
         <strong>💡 Bạn không tiện in hoặc muốn rập cắt sẵn bền đẹp?</strong>
         <p style="margin:4px 0 10px; color:var(--text-muted);">
-          Đặt ngay <strong>Rập Giấy Cứng 350gsm</strong> hoặc <strong>Rập Mica 2mm Cắt Laser</strong> của mẫu ${product.sku} để áp lên da cắt ngay không cần dán ghép giấy:
+          Đặt ngay <strong>Khuôn Sắt</strong> hoặc <strong>Rập Mica 2mm Cắt Laser</strong> của mẫu ${product.sku} để áp lên da cắt ngay không cần dán ghép giấy:
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button type="button" class="btn-sm btn-add" id="upsellPaperBtn">+ Đặt Rập Giấy (${formatVND(product.variants[1]?.price || 55000)})</button>
-          ${product.variants[2] ? `<button type="button" class="btn-sm btn-add" id="upsellMicaBtn">+ Đặt Rập Mica 2mm (${formatVND(product.variants[2].price)})</button>` : ''}
+          <button type="button" class="btn-sm btn-add" id="upsellPaperBtn">+ Đặt Khuôn Sắt (${formatVariantPrice(product.variants[1])})</button>
+          ${product.variants[2] ? `<button type="button" class="btn-sm btn-add" id="upsellMicaBtn">+ Đặt Rập Mica 2mm (${formatVariantPrice(product.variants[2])})</button>` : ''}
         </div>
       </div>
 
@@ -1772,7 +1781,7 @@ function openCartModal() {
     content.innerHTML = `
       <div style="text-align:center; padding:36px 16px;">
         <h3 style="color:var(--bg-saddle); margin-bottom:8px;">Giỏ hàng của bạn đang trống</h3>
-        <p style="color:var(--text-muted); margin-bottom:18px;">Hãy chọn mẫu rập PDF/DXF, Rập Giấy, Rập Mica hoặc Dụng cụ làm đồ da để bắt đầu.</p>
+        <p style="color:var(--text-muted); margin-bottom:18px;">Hãy chọn mẫu rập PDF/DXF, Khuôn Sắt, Rập Mica hoặc Dụng cụ làm đồ da để bắt đầu.</p>
         <button type="button" class="btn btn-primary" id="closeEmptyCartBtn">Tiếp tục chọn mẫu rập</button>
       </div>
     `;
@@ -1836,14 +1845,14 @@ function openCartModal() {
           <label>Phương thức xử lý</label>
           <select id="chkMethod">
             <option value="email_b2b">Kết nối qua Email info@rapmau.com (Tải file ngay &amp; nhận báo giá gia công)</option>
-            ${hasPhysical ? '<option value="cod">Thanh toán khi nhận hàng (COD cho Rập Giấy / Mica / Dụng cụ)</option>' : ''}
+            ${hasPhysical ? '<option value="cod">Thanh toán khi nhận hàng (COD cho Khuôn Sắt / Mica / Dụng cụ)</option>' : ''}
           </select>
         </div>
       </div>
       ${
         hasPhysical
           ? `<div class="form-field">
-              <label>Địa chỉ nhận hàng (Dành cho Rập Giấy / Rập Mica / Khuôn / Dụng cụ) *</label>
+              <label>Địa chỉ nhận hàng (Dành cho Khuôn Sắt / Rập Mica / Khuôn / Dụng cụ) *</label>
               <input type="text" id="chkAddress" required placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành..." />
              </div>`
           : ''
@@ -2704,7 +2713,7 @@ function openBlueprintUnlockModal(bpId) {
           <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:20px;">
             <h4 style="margin-bottom:8px; color:#1e293b;">Nhập Mã Kích Hoạt / Mã Quản Trị Viên:</h4>
             <p style="font-size:13px; color:#64748b; margin-bottom:14px;">
-              Nhập mã kích hoạt được cấp từ Quản trị viên, mã cấp kèm khi mua Rập giấy/Rập mica, hoặc mật mã Quản trị viên để mở khóa trực tiếp:
+              Nhập mã kích hoạt được cấp từ Quản trị viên, mã cấp kèm khi mua Khuôn sắt/Rập mica, hoặc mật mã Quản trị viên để mở khóa trực tiếp:
             </p>
             <div style="display:flex; gap:8px;">
               <input

@@ -872,13 +872,13 @@ function renderPatternsTable() {
             <input type="number" class="cms-input-sm" data-field="pdf_dxf" value="${vMap.pdf_dxf ?? 0}" />
           </td>
           <td>
-            <input type="number" class="cms-input-sm" data-field="rap_giay" value="${vMap.rap_giay ?? 0}" />
+            <input type="text" class="cms-input-sm" data-field="rap_giay" value="${Number(vMap.rap_giay) > 0 ? vMap.rap_giay : 'Giá liên hệ'}" />
           </td>
           <td>
-            <input type="number" class="cms-input-sm" data-field="rap_mica" value="${vMap.rap_mica ?? 0}" />
+            <input type="text" class="cms-input-sm" data-field="rap_mica" value="${Number(vMap.rap_mica) > 0 ? vMap.rap_mica : 'Giá liên hệ'}" />
           </td>
           <td>
-            <input type="number" class="cms-input-sm" data-field="khuon_be" value="${vMap.khuon_be ?? 0}" />
+            <input type="text" class="cms-input-sm" data-field="khuon_be" value="${Number(vMap.khuon_be) > 0 ? vMap.khuon_be : 'Giá liên hệ'}" />
           </td>
           <td>
             <div style="display:flex; gap:6px; align-items:center; flex-wrap:nowrap;">
@@ -1855,9 +1855,9 @@ function bindAdminEvents() {
     const vMap = {};
     for (const v of p.variants || []) vMap[v.id] = v.price;
     document.getElementById('newPatPricePdf').value = vMap.pdf_dxf ?? 0;
-    document.getElementById('newPatPricePaper').value = vMap.rap_giay ?? 55000;
-    document.getElementById('newPatPriceMica').value = vMap.rap_mica ?? 135000;
-    document.getElementById('newPatPriceDie').value = vMap.khuon_be ?? 450000;
+    document.getElementById('newPatPricePaper').value = Number(vMap.rap_giay) > 0 ? vMap.rap_giay : 'Giá liên hệ';
+    document.getElementById('newPatPriceMica').value = Number(vMap.rap_mica) > 0 ? vMap.rap_mica : 'Giá liên hệ';
+    document.getElementById('newPatPriceDie').value = Number(vMap.khuon_be) > 0 ? vMap.khuon_be : 'Giá liên hệ';
 
     const firstImg = (p.images && p.images[0]) || p.primaryImage || '';
     document.getElementById('newPatImageUrl').value = firstImg;
@@ -2019,9 +2019,9 @@ function bindAdminEvents() {
 
     const variantPrices = {
       pdf_dxf: Number(document.getElementById('newPatPricePdf').value) || 0,
-      rap_giay: Number(document.getElementById('newPatPricePaper').value) || 55000,
-      rap_mica: Number(document.getElementById('newPatPriceMica').value) || 135000,
-      khuon_be: Number(document.getElementById('newPatPriceDie').value) || 450000
+      rap_giay: Number(document.getElementById('newPatPricePaper').value) || 0,
+      rap_mica: Number(document.getElementById('newPatPriceMica').value) || 0,
+      khuon_be: Number(document.getElementById('newPatPriceDie').value) || 0
     };
 
     if (editSku) {
