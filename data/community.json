@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 100
+      "count": 101
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 37
+      "count": 38
     },
     {
       "id": "son-canh",
@@ -62,6 +62,47 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-101",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "title": "Máy lạng mép da Nippy NP-201 (Nhật Bản): Cách lắp motor servo, chọn chân vịt & chỉnh dao chuông lạng mép ví/túi không bị lẹm da",
+      "author": "Lê Hữu Phước",
+      "authorRole": "Thợ Làm Ví Thủ Công • Gò Vấp",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-14T09:00:00Z",
+      "formattedDate": "14/11/2026",
+      "badge": "Chuyên Sâu Máy Móc",
+      "badgeType": "solved",
+      "likes": 29,
+      "views": 384,
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "content": "Mình vừa lấy lại một đầu máy lạng mép da Nippy NP-201 nội địa Nhật để chuyên lạng mép gập ví và quai túi. Nhờ anh em có kinh nghiệm dùng dòng NP-201 tư vấn giúp:\n1. Nên ghép đầu máy NP-201 với motor servo bao nhiêu W và đặt tốc độ vòng tua (RPM) bao nhiêu để lạng mép da bò mềm không bị kéo rách?\n2. Khi lạng mép gập 10–15mm (chiều rộng lạng tối đa 50mm) hay bị hiện tượng dao ăn sâu đột ngột (lẹm da) ở đoạn cuối miếng da thì cần kiểm tra bộ phận nào?\n3. Nên dùng trục cuốn đá nhám hay trục cuốn cao su/PU khi lạng da Swift, Epsom và Veg-tan mỏng?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-101-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-14T09:18:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Nippy NP-201 là dòng máy lạng mép dao chuông (bell knife skiver) tiêu chuẩn của Nhật, đầu máy nặng ~41 kg, chạy cực kỳ đầm và ít rung nhờ trục chính dạng collet.\n\n1. **Chọn motor & tốc độ cho NP-201:**\n- Nên lắp **motor servo 400W (hoặc 550W) loại tiết kiệm điện có chỉnh tốc độ điện tử**, giữ tốc độ đầu máy trong khoảng **1.000 – 1.200 RPM**. Kết hợp chỉnh puly 3 cấp tốc độ cuốn phôi trên thân máy để tách biệt tốc độ dao và tốc độ đẩy da.\n- Làm đồ da thủ công (ví, dây đồng hồ) ưu tiên servo để đạp ga chậm từng bước ở góc bo tròn.\n\n2. **Xử lý lỗi lẹm da ở cuối mép lạng:**\n- Kiểm tra **khe hở giữa mép dao chuông và chân vịt**: chuẩn nhất là **0.2 – 0.3 mm** (vừa lọt tờ giấy mỏng, tuyệt đối không để dao chạm chân vịt gây mẻ lưỡi).\n- Kiểm tra **độ đồng tâm dao chuông & lực ép lò xo trục cuốn**: nếu lò xo ép trục quá căng, khi cuối miếng da thoát khỏi chân vịt sẽ bị nảy lên và ăn lẹm; hãy nới nhẹ lực ép lò xo và kiểm tra **bộ đẩy phoi (scrap-ejecting device)** xem có bị kẹt mùn da làm đội miếng da lên không.\n- Tận dụng **công tắc bật/tắt đá mài độc lập (Grinder ON/OFF)**: chỉ gạt đá mài khi thấy dao hơi cùn (mài 2–3 giây rồi tắt ngay), tránh bật đá mài liên tục làm nóng và nhanh mòn dao chuông.\n\n3. **Chọn trục cuốn & chân vịt:**\n- **Da Veg-tan, da bò sáp dày:** dùng **trục cuốn nhám (stone/emery roller)** + chân vịt phẳng thép để bám kéo đều.\n- **Da mềm cao cấp (Swift, Nappa, dê, cá sấu) hoặc da mặt cật dễ trầy:** đổi sang **trục cuốn cao su/PU** hoặc **chân vịt con lăn (roller presser foot)** để không hằn vết răng trên mặt da."
+        },
+        {
+          "id": "cmt-101-2",
+          "author": "Minh Trí Leathercraft",
+          "authorRole": "Xưởng Ví & Dây Đồng Hồ • Q.3",
+          "authorAvatar": "🧰",
+          "isStaff": false,
+          "createdAt": "2026-11-14T09:35:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Chuẩn luôn! Với NP-201 anh em nhớ thay bộ **búa sửa đá (diamond dresser)** định kỳ để mặt đá mài luôn phẳng vuông góc với mép dao chuông, lạng vát 10° để gập mép ví cực kỳ ngọt, không bị gờ cộm."
+        }
+      ]
+    },
     {
       "id": "thread-100",
       "categoryId": "may-moc-xuong",
