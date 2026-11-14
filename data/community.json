@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 99
+      "count": 100
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 36
+      "count": 37
     },
     {
       "id": "son-canh",
@@ -62,6 +62,47 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-100",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "title": "Kinh nghiệm vận hành & chỉnh máy lạng da nguyên tấm Camoga CN-403 (Italia): lạng mỏng 0.4–0.6mm không gợn sóng, chọn đá mài & bảo dưỡng lưỡi dao",
+      "author": "Trần Quốc Bảo",
+      "authorRole": "Chủ Xưởng Ví & Túi • Bình Thạnh",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-14T08:30:00Z",
+      "formattedDate": "14/11/2026",
+      "badge": "Chuyên Sâu Máy Móc",
+      "badgeType": "solved",
+      "likes": 41,
+      "views": 528,
+      "stage": "cat-dap",
+      "stageLabel": "1. Cắt & Dập Da",
+      "content": "Xưởng mình mới đầu tư con máy lạng da nguyên tấm Camoga CN-403 (Italia, khổ lạng 400mm) để chủ động lạng da Epsom, Swift và Veg-tan làm ví mỏng 0.5–0.8mm. Anh em nào đang chạy dòng Camoga CN-403 cho mình hỏi kinh nghiệm thực tế:\n1. Thông số lưỡi dao vòng chuẩn của CN-403 (chiều dài, bản rộng, độ dày) và khi nào nên thay lưỡi?\n2. Khi lạng da mềm xuống 0.4–0.5mm hay bị gợn sóng nhẹ hoặc xéo độ dày 2 bên mép thì chỉnh trục ép và cữ dao như thế nào?\n3. Đá mài corundum zin hay đá kim cương giữ cạnh dao tốt hơn, và máy hút bụi gắn kèm công suất bao nhiêu thì hút sạch mùn da?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-100-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-14T08:55:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Camoga CN-403 là dòng máy lạng da nguyên tấm (bandknife splitting machine) chuẩn công nghiệp của Ý rất bền và chính xác nếu căn chỉnh đúng kỹ thuật:\n\n1. **Thông số lưỡi dao vòng chuẩn Camoga CN-403:**\n- Kích thước chuẩn: **2.790 mm × 50 mm × 0.6 mm** (dùng chung hệ CN401/402/403). Khổ làm việc tối đa **400 mm**.\n- Khi bản dao mài mòn xuống còn dưới ~36–38 mm hoặc dao bị rỗ/lượn sóng không ôm sát thanh dẫn hướng (knife guide) thì nên thay lưỡi mới.\n\n2. **Cách xử lý lỗi gợn sóng hoặc lệch độ dày hai bên mép:**\n- Kiểm tra **độ song song giữa trục cuốn trên (feed roller) và lưỡi dao**: đo thước kẹp 2 đầu miếng da thử (trái – giữa – phải). Nếu lệch >0.05mm, chỉnh ốc cân bằng gối đỡ trục bên phía dày hơn.\n- **Khoảng hở mép dao với thanh kẹp (guide gibs):** giữ khe hở đều và sát nhất có thể mà không cọ kẹt; đồng thời chỉnh **cơ cấu tiếp cận dao (knife approach)** sao cho mép lưỡi luôn nằm đúng tâm đường tiếp xúc 2 trục cuốn.\n- Với da mềm (Swift, Nappa, dê) lạng mỏng 0.4–0.5mm: giảm tốc độ cuốn phôi (feed speed) về mức chậm, lót thêm 1 tờ bìa kraft mỏng hoặc màng PP chịu lực dưới mặt da để tăng độ ổn định khi qua dao.\n\n3. **Đá mài & hút bụi:**\n- Xưởng chạy liên tục nên dùng **đá mài kim cương (diamond grinding wheels)** kết hợp vệ sinh dầu/nhựa bám trên đá thường xuyên; đá corundum rẻ hơn nhưng phải sửa mặt đá (dressing) đều tay để không làm cháy/xước mép dao.\n- Nên đấu nối **máy hút bụi công nghiệp 1.5–2.2 kW** vào cổng hút dưới gầm máy để hút triệt để mùn da và bụi đá mài, tránh kẹt bạc đạn bánh đà và thanh dẫn hướng."
+        },
+        {
+          "id": "cmt-100-2",
+          "author": "Xưởng Da Minh Phát",
+          "authorRole": "Gia Công Túi Ví • Tân Bình",
+          "authorAvatar": "🏭",
+          "isStaff": false,
+          "createdAt": "2026-11-14T09:20:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Bổ sung thêm một mẹo nhỏ cho anh em chạy CN-403: trước khi lạng da thảo mộc (Veg-tan) dày >2.5mm xuống mỏng, nên chia làm **2 lượt lạng** (lượt 1 hạ bớt phần thô, lượt 2 chốt đúng độ dày 0.6mm), mặt da sẽ mịn lì như nhung và lưỡi dao giữ sắc lâu gấp đôi."
+        }
+      ]
+    },
     {
       "id": "thread-099",
       "categoryId": "setup-xuong",
