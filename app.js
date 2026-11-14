@@ -48,7 +48,10 @@ function safeMediaUrl(rawUrl, fallback = '/assets/tools/pattern-placeholder.svg'
   const s = String(rawUrl || '').trim();
   if (!s) return fallback;
   if (s.startsWith('data:') || s.startsWith('blob:')) return s;
-  const nfc = s.normalize('NFC');
+  let nfc = s.normalize('NFC');
+  if (nfc.startsWith('/previews/') && !nfc.includes('?v=')) {
+    nfc += '?v=20261114c';
+  }
   if (nfc.startsWith('http://') || nfc.startsWith('https://')) return nfc;
   try {
     return encodeURI(decodeURI(nfc));

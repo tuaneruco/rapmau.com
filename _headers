@@ -5,7 +5,7 @@
 /media/*
   Cache-Control: public, max-age=604800, immutable
 /previews/*
-  Cache-Control: public, max-age=604800, immutable
+  Cache-Control: public, max-age=3600
 /assets/*
   Cache-Control: public, max-age=604800, immutable
 /rapmau-studio/assets/*
