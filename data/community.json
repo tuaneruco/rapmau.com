@@ -4,7 +4,7 @@
       "id": "all",
       "name": "Tất Cả Thảo Luận",
       "icon": "💬",
-      "count": 104
+      "count": 105
     },
     {
       "id": "nhap-mon",
@@ -28,7 +28,7 @@
       "id": "may-moc-xuong",
       "name": "Máy Móc & Sửa Chữa Xưởng",
       "icon": "⚙️",
-      "count": 41
+      "count": 42
     },
     {
       "id": "son-canh",
@@ -62,6 +62,47 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-105",
+      "categoryId": "may-moc-xuong",
+      "categoryName": "Máy Móc & Sửa Chữa Xưởng",
+      "title": "Máy may điện tử 1 kim Sunstar KM-250 (A-7S / B-7S cắt chỉ tự động): Cách chọn bản may lót túi & da mỏng, đổi chân vịt Teflon và chỉnh dao cắt chỉ",
+      "author": "Đặng Minh Hiếu",
+      "authorRole": "Xưởng Gia Công Túi Ví • Q.Tân Phú",
+      "authorAvatar": "⚙️",
+      "createdAt": "2026-11-14T11:00:00Z",
+      "formattedDate": "14/11/2026",
+      "badge": "Chuyên Sâu Máy Móc",
+      "badgeType": "solved",
+      "likes": 24,
+      "views": 318,
+      "stage": "may-rap",
+      "stageLabel": "3. May Ráp & Lên Phom",
+      "content": "Xưởng mình chuyên may ví, túi vải canvas và lót túi da (vải lót, da dê/da cừu mỏng 0.5–1.0mm), đang định lấy thêm máy may điện tử 1 kim Sunstar KM-250 (-7S cắt chỉ tự động, định vị kim). Nhờ anh em thợ xưởng tư vấn giúp:\n1. Giữa bản KM-250A-7S (mũi chỉ 0–4mm, kim DBx1 #9–#18) và KM-250B-7S (hàng dày, mũi chỉ 0–7mm, kim #20–#23) thì chọn bản nào hợp nhất cho may lót túi, tra dây kéo và may viền mỏng?\n2. Máy 1 kim cào dưới Sunstar KM-250 khi may lên da thật mỏng hay bị rít mặt da dưới chân vịt sắt zin, mình nên thay chân vịt loại gì và chỉnh răng cưa ra sao?\n3. Bộ dao cắt chỉ tự động trên bản điện tử KM-250-7S hay gặp tình trạng cắt không đứt hẳn chỉ dù #40/#50 hoặc bị tuột chỉ đầu mối khi khởi động, xử lý thế nào?",
+      "images": [],
+      "comments": [
+        {
+          "id": "cmt-105-1",
+          "author": "Kỹ Thuật Rập Mẫu",
+          "authorRole": "Quản Trị Xưởng • 11 năm KN",
+          "authorAvatar": "🛠️",
+          "isStaff": true,
+          "createdAt": "2026-11-14T11:20:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Sunstar KM-250 (đặc biệt các bản điện tử **KM-250A-7S / B-7S**) là dòng máy 1 kim cào dưới rất bền, chạy êm, cực kỳ hữu ích ở xưởng đồ da cho khâu **may vải lót túi, tra khóa kéo mỏng, may ngăn thẻ ví và đáp nhãn mác**.\n\n1. **Chọn bản KM-250A-7S hay KM-250B-7S:**\n- Nếu chủ yếu may **vải lót (polyester, linen, canvas mỏng), tra dây kéo YKK #3/#5 và da mỏng 0.5–1.0mm**: chọn **KM-250A-7S** (kim **DB×1 #11–#16**, mũi chỉ **0–4 mm**, tốc độ tối đa 5.500 SPM) — đường chỉ mịn, ổ nhỏ bắt mũi vải mỏng không bị nhăn.\n- Nếu muốn kiêm may **canvas dày, đệm mút hoặc da bò mềm 1.2–1.6mm** cần mũi dài hơn (tối đa **7 mm**) và chỉ **#30/#40**: chọn **KM-250B-7S** (kim **DB×1 #18–#22**). Tuy nhiên lưu ý máy 1 kim cào dưới không thay thế được máy chân vịt bước khi may nhiều lớp da dày.\n\n2. **Xử lý rít mặt da trên máy 1 kim cào dưới KM-250:**\n- Thay ngay chân vịt sắt zin sang **chân vịt nhựa Teflon** hoặc **chân vịt con lăn (roller foot)** để mặt chân vịt trượt êm trên da thuộc mà không để lại vết xước.\n- Hạ bớt độ cao răng cưa dưới và giảm lực ép trụ chân vịt trên đỉnh máy, đồng thời dùng bảng điều khiển điện tử giới hạn tốc độ tối đa xuống **1.500 – 2.200 SPM** cho dễ kiểm soát góc cua.\n\n3. **Chỉnh dao cắt chỉ tự động & chống tuột chỉ đầu mối:**\n- Khi chạy chỉ dù/nylon #40–#50, dao động và dao tĩnh dưới mặt nguyệt phải sắc và khít; nếu cắt nhay không đứt, tháo mặt nguyệt kiểm tra lò xo ép dao tĩnh hoặc mài/thay lưỡi dao cắt chỉ.\n- Để không bị tuột chỉ khi bắt đầu may sau khi cắt: chỉnh **độ dài đuôi chỉ sau cắt** (thread wiper / căng chỉ phụ khi cắt) trên hộp điều khiển, đồng thời bật chế độ **lại mũi đầu tự động (start back-tack)** 2–3 mũi."
+        },
+        {
+          "id": "cmt-105-2",
+          "author": "Thợ Máy Tuấn Anh",
+          "authorRole": "Bảo Trì Máy May • Bình Thạnh",
+          "authorAvatar": "🔧",
+          "isStaff": false,
+          "createdAt": "2026-11-14T11:38:00Z",
+          "formattedDate": "14/11/2026",
+          "content": "Anh em chạy Sunstar KM-250 điện tử nhớ để ý khay dầu tự động dưới gầm: châm dầu máy trắng sạch đúng vạch và vệ sinh lưới lọc bơm dầu 3 tháng/lần để tránh bụi vải lót làm nghẹt đường dầu lên trục kim."
+        }
+      ]
+    },
     {
       "id": "thread-104",
       "categoryId": "may-moc-xuong",
